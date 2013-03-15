@@ -14,3 +14,22 @@
 the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
 should you have any questions.</p>
+
+<button id="snapshot">Создать аватар</button> 
+<img src="" id='cropped_img' alt="" />
+
+<script type="text/javascript">
+$(document).ready(function() {
+	//alert("hola");
+    $("#snapshot").html5WebCam({
+        oncrop: function(cropped_url) { 
+            // cropped_url - base64 image 
+            //alert(cropped_url);
+            var $img = $("<img/>");
+            $img.attr('src', cropped_url);
+            $('body').append($img);
+        },
+    });
+});
+
+</script>

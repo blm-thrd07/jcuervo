@@ -11,6 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
+	<?php
+  $baseUrl = Yii::app()->baseUrl; 
+  $cs = Yii::app()->getClientScript();
+
+  $cs->registerCoreScript('jquery');
+  $cs->registerCoreScript('jquery.min');
+  $cs->registerScriptFile($baseUrl.'/js/html5-webcam-build.js');
+  $cs->registerCssFile($baseUrl.'/css/html5-webcam.css');
+  ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
