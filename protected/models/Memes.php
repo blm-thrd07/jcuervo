@@ -4,7 +4,7 @@
  * This is the model class for table "tbl_memes".
  *
  * The followings are the available columns in table 'tbl_memes':
- * @property integer $id
+ * @property integer $id_meme
  * @property integer $id_background
  * @property string $comentario_globo
  * @property integer $id_zapato
@@ -51,7 +51,7 @@ class Memes extends CActiveRecord
 			array('comentario_globo', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_background, comentario_globo, id_zapato', 'safe', 'on'=>'search'),
+			array('id_meme, id_background, comentario_globo, id_zapato', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,7 +79,7 @@ class Memes extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id_meme' => 'ID',
 			'id_background' => 'Id Background',
 			'comentario_globo' => 'Comentario Globo',
 			'id_zapato' => 'Id Zapato',
@@ -97,7 +97,7 @@ class Memes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('id_meme',$this->id_meme);
 		$criteria->compare('id_background',$this->id_background);
 		$criteria->compare('comentario_globo',$this->comentario_globo,true);
 		$criteria->compare('id_zapato',$this->id_zapato);

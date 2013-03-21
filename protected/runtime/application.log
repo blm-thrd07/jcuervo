@@ -552,3 +552,111 @@ Stack trace:
 REQUEST_URI=/josecuervo/index.php?r=memes/delete&id=1
 HTTP_REFERER=http://localhost/josecuervo/index.php?r=memes/view&id=1
 ---
+2013/03/21 21:01:02 [error] [exception.CException] exception 'CException' with message 'Property "Memes.id" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/Memes.php(100): CActiveRecord->__get('id')
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/memes/admin.php(42): Memes->search()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/MemesController.php(148): CController->render('admin', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): MemesController->actionAdmin()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('admin')
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('memes/admin')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/josecuervo/index.php?r=memes/admin
+HTTP_REFERER=http://localhost/josecuervo/index.php?r=memes/view&id=1
+---
+2013/03/21 21:01:29 [error] [exception.CException] exception 'CException' with message 'Property "Memes.id" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/Memes.php(100): CActiveRecord->__get('id')
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/memes/admin.php(42): Memes->search()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/MemesController.php(148): CController->render('admin', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): MemesController->actionAdmin()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('admin')
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('memes/admin')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/josecuervo/index.php?r=memes/admin
+HTTP_REFERER=http://localhost/josecuervo/index.php?r=memes/view&id=1
+---
+2013/03/21 21:30:34 [error] [exception.CException] exception 'CException' with message 'Property "Memes.id" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/Memes.php(100): CActiveRecord->__get('id')
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/memes/admin.php(42): Memes->search()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/MemesController.php(148): CController->render('admin', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): MemesController->actionAdmin()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('admin')
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('memes/admin')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/josecuervo/index.php?r=memes/admin
+HTTP_REFERER=http://localhost/josecuervo/index.php?r=memes/view&id=1
+---
+2013/03/21 21:30:36 [error] [exception.CException] exception 'CException' with message 'Property "Memes.id" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/Memes.php(100): CActiveRecord->__get('id')
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/memes/admin.php(42): Memes->search()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/MemesController.php(148): CController->render('admin', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): MemesController->actionAdmin()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('admin')
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('memes/admin')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/josecuervo/index.php?r=memes/admin
+HTTP_REFERER=http://localhost/josecuervo/index.php?r=memes/view&id=1
+---
