@@ -33,6 +33,12 @@
 		<?php echo $form->error($model,'id_album'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'sexo'); ?>
+		<?php echo ZHtml::enumDropDownList( $model,'sexo' ); ?>
+		<?php echo $form->error($model,'sexo'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

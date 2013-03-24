@@ -660,3 +660,113 @@ Stack trace:
 REQUEST_URI=/josecuervo/index.php?r=memes/admin
 HTTP_REFERER=http://localhost/josecuervo/index.php?r=memes/view&id=1
 ---
+2013/03/21 23:41:32 [error] [exception.CException] exception 'CException' with message 'Property "Usuarios.complexion" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(144): CComponent->__get('complexion')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/helpers/CHtml.php(2044): CActiveRecord->__get('complexion')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/helpers/CHtml.php(1402): CHtml::resolveValue(Object(Usuarios), 'complexion')
+#3 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/components/ZHtml.php(7): CHtml::activeDropDownList(Object(Usuarios), 'complexion', Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/usuarios/_form.php(38): ZHtml::enumDropDownList(Object(Usuarios), 'complexion')
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#8 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/usuarios/create.php(15): CController->renderPartial('_form', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php(78): CController->render('create', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): UsuariosController->actionCreate()
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#22 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('create')
+#24 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('usuarios/create')
+#25 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/josecuervo/index.php?r=usuarios/create
+HTTP_REFERER=http://localhost/josecuervo/index.php?r=usuarios/view&id=2
+---
+2013/03/21 23:43:26 [warning] [application] Failed to set unsafe attribute "sexo" of "Usuarios".
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php (71)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/22 00:02:39 [warning] [application] Failed to set unsafe attribute "sexo" of "Usuarios".
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php (71)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/22 00:04:24 [warning] [application] Failed to set unsafe attribute "sexo" of "Usuarios".
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php (71)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/22 00:05:30 [warning] [application] Failed to set unsafe attribute "sexo" of "Usuarios".
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php (71)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/22 00:16:21 [warning] [application] Failed to set unsafe attribute "sexo" of "Usuarios".
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php (71)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/22 00:18:12 [warning] [application] Failed to set unsafe attribute "sexo" of "Usuarios".
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/UsuariosController.php (71)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/24 19:07:03 [error] [php] include(Facebook.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/YiiBase.php:418)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/AppController.php(40): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): AppController->actionLogin()
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): AppController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): AppController->filterAccessControl()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): AppController->runActionWithFilters()
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): AppController->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CWebApplication->run()
+REQUEST_URI=/josecuervo/index.php
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/AppController.php (40)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/24 19:24:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'jcuervodb.tbl_cara' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_cara`.
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/CaraController.php (130)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php (13)
+2013/03/24 19:24:44 [error] [exception.CDbException] exception 'CDbException' with message 'The table "tbl_cara" for active record class "Cara" cannot be found in the database.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cara))
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CActiveDataProvider.php(75): CActiveRecord::model('Cara')
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/CaraController.php(130): CActiveDataProvider->__construct('Cara')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): CaraController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('')
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('cara')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/josecuervo/index.php/cara
+---
+2013/03/24 19:25:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cara".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('cara')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/josecuervo/index.php/cara
+---
+2013/03/24 19:25:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "avatar".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('avatar')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/josecuervo/index.php/avatar
+---
