@@ -770,3 +770,208 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/josecuervo/index.php/avatar
 ---
+2013/03/24 19:42:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'jcuervodb.tbl_admin' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_admin`.
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/Admin.php (20)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/components/UserIdentity.php (22)
+in /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/LoginForm.php (52)
+2013/03/24 19:42:30 [error] [exception.CDbException] exception 'CDbException' with message 'The table "tbl_admin" for active record class "Admin" cannot be found in the database.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Admin))
+#1 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/Admin.php(20): CActiveRecord::model('Admin')
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/components/UserIdentity.php(22): Admin::model()
+#3 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/validators/CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/SiteController.php(88): CModel->validate()
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('login')
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('site/login')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/josecuervo/index.php/site/login
+HTTP_REFERER=http://localhost/josecuervo/index.php/site/login
+---
+2013/03/24 19:59:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:337
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('CrearAvatar')
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('App/CrearAvatar...')
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/josecuervo/index.php/App/CrearAvatar/url?_=1364155148300
+HTTP_REFERER=http://localhost/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:00:43 [error] [exception.CException] exception 'CException' with message 'AppController and its behaviors do not have a method or closure named "CreaateUrl".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('CreaateUrl', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/app/CrearAvatar.php(3): CController->CreaateUrl('app/pieza')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('CrearAvatar', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/AppController.php(94): CController->render('CrearAvatar', Array)
+#7 [internal function]: AppController->actionCrearAvatar('100001421156741')
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(AppController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(AppController), Object(ReflectionMethod), Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('CrearAvatar')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('App/CrearAvatar')
+#20 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:01:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pieza".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(271): CController->missingAction('pieza')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('pieza')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('app/pieza')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/josecuervo/index.php/app/pieza?_=1364155287783
+HTTP_REFERER=http://localhost/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:08:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pieza".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(271): CController->missingAction('pieza')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('pieza')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('app/pieza')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/josecuervo/index.php/app/pieza?_=1364155683661
+HTTP_REFERER=http://localhost/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:08:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pieza".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(271): CController->missingAction('pieza')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('pieza')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('app/pieza')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/josecuervo/index.php/app/pieza?_=1364155733924
+HTTP_REFERER=http://localhost/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:18:04 [error] [exception.CException] exception 'CException' with message 'AppController cannot find the requested view "_ajaxContent".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/app/CrearAvatar.php(2): CController->renderPartial('_ajaxContent', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('CrearAvatar', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/AppController.php(97): CController->render('CrearAvatar', Array)
+#6 [internal function]: AppController->actionCrearAvatar('100001421156741')
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(AppController), Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(AppController), Object(ReflectionMethod), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('CrearAvatar')
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('App/CrearAvatar')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:18:19 [error] [exception.CException] exception 'CException' with message 'AppController cannot find the requested view "_ajaxPieza".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/views/app/CrearAvatar.php(2): CController->renderPartial('_ajaxPieza', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(127): require('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(783): CController->renderPartial('CrearAvatar', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/AppController.php(97): CController->render('CrearAvatar', Array)
+#6 [internal function]: AppController->actionCrearAvatar('100001421156741')
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(AppController), Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(AppController), Object(ReflectionMethod), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('CrearAvatar')
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('App/CrearAvatar')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:35:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php:337
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('app/UpdatePieza')
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/josecuervo/index.php/app/UpdatePieza
+HTTP_REFERER=http://localhost/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:39:12 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.id" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/schema/CDbCriteria.php(153): CComponent->__set('id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/schema/CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/db/ar/CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/protected/controllers/AppController.php(105): CActiveRecord->findAll(Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/actions/CInlineAction.php(50): AppController->actionUpdatePieza()
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('app/UpdatePieza')
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/josecuervo/index.php/app/UpdatePieza
+HTTP_REFERER=http://localhost/josecuervo/index.php/App/CrearAvatar/100001421156741
+---
+2013/03/24 20:47:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "avatar".' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/web/CWebApplication.php(135): CWebApplication->runController('avatar')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.10.r3566/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/josecuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/josecuervo/index.php/avatar
+---

@@ -17,7 +17,7 @@ class AppController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view','create','login','profile'),
+				'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -78,12 +78,35 @@ class AppController extends Controller
         
      }else{
      	  //print_r($user_profile);
-         $this->redirect(array('App/Profile/'.$user_profile['id'])); 
+         $this->redirect(array('App/CrearAvatar/'.$user_profile['id'])); 
      }
 
      }else{
    	       $this->render('Login',array('loginUrl'=>$loginUrl));
      }
+  }
+
+  public function actionCrearAvatar($id){
+    $tipo_piezas = TiposPiezasAvatar::model()->findAll();  
+    echo CJSON::encode($tipo_piezas);
+    $piezas = PiezaAvatar::model()->findAll("tipo_pieza_id=1");
+    //print_r($piezas);
+    $this->render('CrearAvatar',array(
+        'TipoPiezas'=>$tipo_piezas,
+        'piezas'=>$piezas,
+      ));
+  }
+
+  public function actionUpdateTipoPieza(){
+    //$this->renderPartial('')
+    //echo "hola";
+    $id = $_POST['id'];
+    echo $id;
+    $criteria = new CDbCriteria();
+    $criteria->condition = "tipo_pieza_id=:id";
+    $criteria->params = array(':id' => $id);
+    $piezas = PiezaAvatar::model()->findAll($criteria);
+    $this->renderPartial('_ajaxPieza', array('piezas'=>$piezas), false, true);
   }
 
 
