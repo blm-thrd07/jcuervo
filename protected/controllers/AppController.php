@@ -94,8 +94,6 @@ public function actionLogin(){
 
     }
 
-
-
   public function actionProfile($id)
   {
 
@@ -204,23 +202,6 @@ public function actionLogin(){
     }
     // AvatarsPiezas::model()->findAll();
   }
-
-	public function actionProfile($id)
-	{
-      //$my_access_token=$this->facebook->getAccessToken();
-
-       $logoutUrl = $_SESSION['facebook']->getLogoutUrl();
-       echo "<a href='".$logoutUrl."'>Logout</a>";  
-       $model=new Usuarios;
-       $response= $model->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));
-       //print_r($response);
-       echo $response[0]->correo;
-       print_r($this->FacebookGetPhotos());
-  
-  //print_r()
-       //$model       
-	
-	}
 
     public function ShareMemeLink($my_access_token,$link,$message){
 
