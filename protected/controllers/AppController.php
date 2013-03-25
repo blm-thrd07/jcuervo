@@ -17,7 +17,7 @@ class AppController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza'),
+				'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza','UpdatePieza'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -78,7 +78,8 @@ class AppController extends Controller
         
      }else{
      	  //print_r($user_profile);
-         $this->redirect(array('App/CrearAvatar/'.$user_profile['id'])); 
+        Yii::app()->session['usuario_id'] = $model->id;
+        $this->redirect(array('App/CrearAvatar/'.$user_profile['id'])); 
      }
 
      }else{
@@ -87,6 +88,8 @@ class AppController extends Controller
   }
 
   public function actionCrearAvatar($id){
+    $avatar = Avatars::model()->find(array('condition'=>'usuario_id=:id', 'params'=>array(':id'=>Yii::app()->session['usuario_id'])));
+    Yii::app()->session['avatar_id'] = $avatar->id;
     $tipo_piezas = TiposPiezasAvatar::model()->findAll();  
     echo CJSON::encode($tipo_piezas);
     $piezas = PiezaAvatar::model()->findAll("tipo_pieza_id=1");
@@ -94,13 +97,14 @@ class AppController extends Controller
     $this->render('CrearAvatar',array(
         'TipoPiezas'=>$tipo_piezas,
         'piezas'=>$piezas,
+        //'avatar_id'=>$id,
       ));
   }
 
   public function actionUpdateTipoPieza(){
     //$this->renderPartial('')
     //echo "hola";
-    $id = $_POST['id'];
+    $id = $_POST['tipo_pieza_id'];
     echo $id;
     $criteria = new CDbCriteria();
     $criteria->condition = "tipo_pieza_id=:id";
@@ -109,7 +113,26 @@ class AppController extends Controller
     $this->renderPartial('_ajaxPieza', array('piezas'=>$piezas), false, true);
   }
 
+  public function actionUpdatePieza(){
+    $pieza_id = $_POST['pieza_id']; 
+    $accion = $_POST['accion'];
+    
+    if(!strcmp($accion,'INSERTAR')){
+      $model = new AvatarsPiezas;
+      $model->avatar_id = Yii::app()->session['avatar_id'];
+      $model->pieza_id = $pieza_id;
+      if ($model->save(false)) {
+        echo "insertado";
+      } else{
+        echo "no";
+      }
+    } else if($accion=="ACTUALIZAR"){
 
+    }else if($accion=="ELIMINAR"){
+
+    }
+    // AvatarsPiezas::model()->findAll();
+  }
 
 	public function actionProfile($id)
 	{
