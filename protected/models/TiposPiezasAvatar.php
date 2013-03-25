@@ -8,7 +8,7 @@
  * @property string $descripcion
  *
  * The followings are the available model relations:
- * @property PiezaAvatar[] $piezaAvatars
+ * @property TblPiezaAvatar[] $tblPiezaAvatars
  */
 class TiposPiezasAvatar extends CActiveRecord
 {
@@ -54,7 +54,7 @@ class TiposPiezasAvatar extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'piezaAvatars' => array(self::HAS_MANY, 'PiezaAvatar', 'tipo_pieza_id'),
+			'tblPiezaAvatars' => array(self::HAS_MANY, 'TblPiezaAvatar', 'tipo_pieza_id'),
 		);
 	}
 
