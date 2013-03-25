@@ -34,64 +34,135 @@ class AppController extends Controller
 		);
 	}
 
-
-  public function actionLogin(){
+public function actionLogin(){
     
-		$this->facebook = new Facebook(array(
-      'appId'  => '342733185828640',
-      'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-     ));
-    $_SESSION['facebook']=$this->facebook;
+    $this->facebook = new Facebook(array(
+        'appId'  => '342733185828640',
+        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+       ));
+       
+       $_SESSION['facebook']=$this->facebook;
 
 
-    $this->user = $this->facebook->getUser();
-    $my_access_token=$this->facebook->getAccessToken();
+        $this->user = $this->facebook->getUser();
+        $my_access_token=$this->facebook->getAccessToken();
 
-    if ($this->user) {
-       try {
-          // Proceed knowing you have a logged in user who's authenticated.
-          $user_profile = $this->facebook->api('/me');
-        } catch (FacebookApiException $e) {
-           error_log($e);
-           $this->user = null;
+
+
+        if ($this->user) {
+           try {
+              // Proceed knowing you have a logged in user who's authenticated.
+              $user_profile = $this->facebook->api('/me');
+            } catch (FacebookApiException $e) {
+               error_log($e);
+               $this->user = null;
+             }
          }
-        $logoutUrl = $this->facebook->getLogoutUrl();
-    } else {
-        $loginUrl = $this->facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
+
+        if ($this->user) {
+            $logoutUrl = $this->facebook->getLogoutUrl();
+        } else {
+            $loginUrl = $this->facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
+        }
+
+       if($this->user){
+         $model = new Usuarios;
+         $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
+        
+
+        if(count($response)==0){
+
+          $model->correo=$user_profile['email'];
+          $model->nombre=$user_profile['name'];
+          $model->id_facebook=$user_profile['id'];
+          $model->sexo=$user_profile['gender'];
+
+             if($model->save()){
+                      $this->redirect(array('App/Profile/'.$user_profile['id'])); 
+                }
+                
+         }else{
+             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
+         }
+
+         }else{
+               $this->render('Login',array('loginUrl'=>$loginUrl));
+       }
+
+       
+
+
     }
 
-    if($this->user){
 
-   	 $model = new Usuarios;
-     $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
+
+  public function actionProfile($id)
+  {
+
+     $logoutUrl = $_SESSION['facebook']->getLogoutUrl();
+     echo "<a href='".$logoutUrl."'>Logout</a>";  
     
-    if(count($response)==0){
+   $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+   
+   $model_PiezaAvatar=new PiezaAvatar;
+   $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
+   $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
+   $catalogo_accesorios=$model_PiezaAvatar->getCatalogoAccesorios();
 
-       $model->correo=$user_profile['email'];
-       $model->nombre=$user_profile['fist_name']." ".$user_profile['last_name'];
-       $model->id_facebook=$user_profile['id'];
-       $model->id_album="12312312";
-       $model->sexo="masculino";
+   $numero_comics=count($response[0]->Comics);
+   for($count=0;$count<$numero_comics;$count++){
+   
+      $comics[$count]=array(
+       'id'=> $response[0]->Comics[$count]->Comic->id,
+       'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
+       'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
+       'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
+       'destacado'=>$response[0]->Comics[$count]->destacado);
+  
 
-      if($model->save())
-        $this->redirect(array('App/Profile/'.$user_profile['id'])); 
-        
-     }else{
-     	  //print_r($user_profile);
-        Yii::app()->session['usuario_id'] = $model->id;
-        $this->redirect(array('App/CrearAvatar/'.$user_profile['id'])); 
-     }
+        $countComentarios=count($response[0]->Comics[$count]->Comic->Coments);
+           for($com=0;$com<$countComentarios;$com++){
+               $comics[$count]['comentarios'][$com]=array(
+                  'id'=>$response[0]->Comics[$count]->Comic->Coments[$com]->id,
+                  'mensaje'=>$response[0]->Comics[$count]->Comic->Coments[$com]->comment,
+                  'date'=>$response[0]->Comics[$count]->Comic->Coments[$com]->date,
+                  'nombreUsuario'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->nombre,
+                  'idFb'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->id_facebook
+              );
+       }
 
-     }else{
-   	       $this->render('Login',array('loginUrl'=>$loginUrl));
-     }
+   }
+
+
+    $cantidad=count($response[0]->Avatar->AvatarP);
+    $datosAvatar[0]="";
+    for($count=0;$count<$cantidad;$count++){
+      $datosAvatar[$count]=array(
+        'piezaid'=>$response[0]->Avatar->AvatarP[$count]->pieza_id,
+        'descripcion'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->AvatarTipo->descripcion,
+        'AvatarImg'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->url,
+        'scalex'=>$response[0]->Avatar->AvatarP[$count]->scalex,
+        'scaley'=>$response[0]->Avatar->AvatarP[$count]->scaley,
+        'posx'=>$response[0]->Avatar->AvatarP[$count]->posx,
+        'posy'=>$response[0]->Avatar->AvatarP[$count]->posy,
+        'rotation'=>$response[0]->Avatar->AvatarP[$count]->rotation
+        );
+    }
+
+    $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'accesorios'=>$catalogo_accesorios);
+    $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
+    $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
+    'avatarPiezas'=>$datosAvatar,'comics'=>$comics); 
+    
+    echo json_encode($json);
+
   }
 
   public function actionCrearAvatar($id){
     $avatar = Avatars::model()->find(array('condition'=>'usuario_id=:id', 'params'=>array(':id'=>Yii::app()->session['usuario_id'])));
     Yii::app()->session['avatar_id'] = $avatar->id;
     $tipo_piezas = TiposPiezasAvatar::model()->findAll();  
-    echo CJSON::encode($tipo_piezas);
+    //echo CJSON::encode($tipo_piezas);
     $piezas = PiezaAvatar::model()->findAll("tipo_pieza_id=1");
     //print_r($piezas);
     $this->render('CrearAvatar',array(
