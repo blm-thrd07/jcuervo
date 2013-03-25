@@ -54,6 +54,8 @@ class UsuariosHasTblComics extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		'Comic' => array(self::BELONGS_TO, 'Comics', 'tbl_comics_id'),
+
 		);
 	}
 
