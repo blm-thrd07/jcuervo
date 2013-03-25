@@ -9,8 +9,8 @@
  * @property string $url
  *
  * The followings are the available model relations:
- * @property AvatarsPiezas[] $avatarsPiezases
- * @property TiposPiezasAvatar $tipoPieza
+ * @property TblAvatars[] $tblAvatars
+ * @property TblTiposPiezasAvatar $tipoPieza
  */
 class PiezaAvatar extends CActiveRecord
 {
@@ -57,8 +57,8 @@ class PiezaAvatar extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'avatarsPiezases' => array(self::HAS_MANY, 'AvatarsPiezas', 'pieza_id'),
-			'tipoPieza' => array(self::BELONGS_TO, 'TiposPiezasAvatar', 'tipo_pieza_id'),
+			'tblAvatars' => array(self::MANY_MANY, 'TblAvatars', 'tbl_avatars_piezas(pieza_id, avatar_id)'),
+			'AvatarTipo' => array(self::BELONGS_TO, 'TiposPiezasAvatar', 'tipo_pieza_id'),
 		);
 	}
 
@@ -73,6 +73,56 @@ class PiezaAvatar extends CActiveRecord
 			'url' => 'Url',
 		);
 	}
+
+    public function getCatalogoCaras(){
+
+       $model_caras=PiezaAvatar::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id=2'));
+       $catalogos_caras_cantidad= count($model_caras);
+       $catalogo_caras;
+
+      for($cont=0;$cont<$catalogos_caras_cantidad;$cont++){
+        $catalogo_caras[$cont]=array(
+           'id'=>$model_caras[$cont]->id,
+           'tipo_pieza_id'=>$model_caras[$cont]->tipo_pieza_id,
+           'url'=>$model_caras[$cont]->url);
+      }
+       return $catalogo_caras;
+    }
+
+
+    public function getCatalogoCuerpos(){
+     
+     $model_cuerpos=PiezaAvatar::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id=1'));
+     $catalogos_cuerpos_cantidad=count($model_cuerpos);
+     $catalogo_cuerpos;
+
+       for($cont=0;$cont<$catalogos_cuerpos_cantidad;$cont++){
+                $catalogo_cuerpos[$cont]=array(
+             'id'=>$model_cuerpos[$cont]->id,
+             'tipo_pieza_id'=>$model_cuerpos[$cont]->tipo_pieza_id,
+             'url'=>$model_cuerpos[$cont]->url);
+        }
+
+        return $catalogo_cuerpos;
+
+    }
+
+
+    public function getCatalogoAccesorios(){
+    
+    $model_accesorios=PiezaAvatar::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id=4'));
+    $catalogos_accesorios_cantidad= count($model_accesorios);
+    $catalogo_accesorios;
+
+       for($cont=0;$cont<$catalogos_accesorios_cantidad;$cont++){
+            $catalogo_accesorios[$cont]=array(
+                'id'=>$model_accesorios[$cont]->id,
+                'tipo_pieza_id'=>$model_accesorios[$cont]->tipo_pieza_id,
+                'url'=>$model_accesorios[$cont]->url);
+        }
+        return $catalogo_accesorios;
+    }
+
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
