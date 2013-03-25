@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'tbl_comics':
  * @property integer $id
  * @property string $imagen
+ * @property string $date
  *
  * The followings are the available model relations:
  * @property TblUsuarios[] $tblUsuarioses
@@ -38,12 +39,12 @@ class Comics extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+			array('id, imagen, date', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
-			array('imagen', 'length', 'max'=>45),
+			array('imagen', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, imagen', 'safe', 'on'=>'search'),
+			array('id, imagen, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +57,8 @@ class Comics extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'tblUsuarioses' => array(self::MANY_MANY, 'TblUsuarios', 'tbl_usuarios_has_tbl_comics(tbl_comics_id, tbl_usuarios_id)'),
+             'Coments' => array(self::HAS_MANY, 'UsuariosComicsComentarios', 'tbl_comics_id'),
+		 
 		);
 	}
 
@@ -67,6 +70,7 @@ class Comics extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'imagen' => 'Imagen',
+			'date' => 'Date',
 		);
 	}
 
@@ -83,6 +87,7 @@ class Comics extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('imagen',$this->imagen,true);
+		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

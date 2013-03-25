@@ -9,9 +9,13 @@
  * @property string $nombre
  * @property string $id_facebook
  * @property string $id_album
+ * @property string $sexo
  *
  * The followings are the available model relations:
- * @property Memes[] $tblMemes
+ * @property TblAmigos[] $tblAmigoses
+ * @property TblAmigos[] $tblAmigoses1
+ * @property TblAvatars[] $tblAvatars
+ * @property TblComics[] $tblComics
  */
 class Usuarios extends CActiveRecord
 {
@@ -41,10 +45,13 @@ class Usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('correo, nombre, id_facebook, id_album', 'length', 'max'=>45),
+			array('correo, nombre, id_facebook, sexo', 'required'),
+			array('correo, id_facebook, id_album', 'length', 'max'=>100),
+			array('nombre', 'length', 'max'=>60),
+			array('sexo', 'length', 'max'=>6),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, correo, nombre, id_facebook, id_album, tipo_usuario', 'safe', 'on'=>'search'),
+			array('id, correo, nombre, id_facebook, id_album, sexo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +63,10 @@ class Usuarios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Memes' => array(self::MANY_MANY, 'Memes', 'tbl_usuarios_has_tbl_memes(usuarios_id, memes_id)'),
+			//'tblAmigoses' => array(self::HAS_MANY, 'TblAmigos', 'usuarios_id'),
+			//'tblAmigoses1' => array(self::HAS_MANY, 'TblAmigos', 'amigo_id'),
+			'Avatar' => array(self::HAS_ONE, 'Avatars', 'usuario_id'),
+			'Comics' => array(self::MANY_MANY, 'UsuariosHasTblComics', 'tbl_usuarios_has_tbl_comics(tbl_usuarios_id, tbl_comics_id)'),
 		);
 	}
 
@@ -71,6 +81,7 @@ class Usuarios extends CActiveRecord
 			'nombre' => 'Nombre',
 			'id_facebook' => 'Id Facebook',
 			'id_album' => 'Id Album',
+			'sexo' => 'Sexo',
 		);
 	}
 
@@ -90,10 +101,10 @@ class Usuarios extends CActiveRecord
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('id_facebook',$this->id_facebook,true);
 		$criteria->compare('id_album',$this->id_album,true);
+		$criteria->compare('sexo',$this->sexo,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
 }

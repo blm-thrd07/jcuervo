@@ -14,8 +14,8 @@
  * @property string $rotation
  *
  * The followings are the available model relations:
- * @property Avatars $avatar
- * @property PiezaAvatar $pieza
+ * @property TblAvatars $avatar
+ * @property TblPiezaAvatar $pieza
  */
 class AvatarsPiezas extends CActiveRecord
 {
@@ -50,7 +50,7 @@ class AvatarsPiezas extends CActiveRecord
 			array('scalex, scaley, posx, posy, rotation', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, avatar_id, pieza_id, scalex, scaley, posx, posy, rotation', 'safe', 'on'=>'search'),
+			array('avatar_id, pieza_id, scalex, scaley, posx, posy, rotation', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,8 +62,8 @@ class AvatarsPiezas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'avatar' => array(self::BELONGS_TO, 'Avatars', 'avatar_id'),
-			'pieza' => array(self::BELONGS_TO, 'PiezaAvatar', 'pieza_id'),
+		    'AvatarImg' => array(self::BELONGS_TO, 'PiezaAvatar', 'pieza_id'),
+
 		);
 	}
 
@@ -73,7 +73,6 @@ class AvatarsPiezas extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
 			'avatar_id' => 'Avatar',
 			'pieza_id' => 'Pieza',
 			'scalex' => 'Scalex',
@@ -95,7 +94,6 @@ class AvatarsPiezas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('avatar_id',$this->avatar_id);
 		$criteria->compare('pieza_id',$this->pieza_id);
 		$criteria->compare('scalex',$this->scalex,true);

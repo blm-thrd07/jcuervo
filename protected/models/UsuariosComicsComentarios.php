@@ -4,9 +4,15 @@
  * This is the model class for table "tbl_usuarios_comics_comentarios".
  *
  * The followings are the available columns in table 'tbl_usuarios_comics_comentarios':
+ * @property integer $id
  * @property integer $tbl_usuarios_id
  * @property integer $tbl_comics_id
  * @property string $comment
+ * @property string $date
+ *
+ * The followings are the available model relations:
+ * @property TblUsuarios $tblUsuarios
+ * @property TblComics $tblComics
  */
 class UsuariosComicsComentarios extends CActiveRecord
 {
@@ -36,12 +42,12 @@ class UsuariosComicsComentarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tbl_usuarios_id, tbl_comics_id, comment', 'required'),
+			array('tbl_usuarios_id, tbl_comics_id, comment, date', 'required'),
 			array('tbl_usuarios_id, tbl_comics_id', 'numerical', 'integerOnly'=>true),
-			array('comment', 'length', 'max'=>45),
+			array('comment', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tbl_usuarios_id, tbl_comics_id, comment', 'safe', 'on'=>'search'),
+			array('id, tbl_usuarios_id, tbl_comics_id, comment, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +59,8 @@ class UsuariosComicsComentarios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+              'Usuarios' => array(self::BELONGS_TO, 'Usuarios', 'tbl_usuarios_id'),
+			  'tblComics' => array(self::BELONGS_TO, 'TblComics', 'tbl_comics_id'),
 		);
 	}
 
@@ -62,9 +70,11 @@ class UsuariosComicsComentarios extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'tbl_usuarios_id' => 'Tbl Usuarios',
 			'tbl_comics_id' => 'Tbl Comics',
 			'comment' => 'Comment',
+			'date' => 'Date',
 		);
 	}
 
@@ -79,9 +89,11 @@ class UsuariosComicsComentarios extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('tbl_usuarios_id',$this->tbl_usuarios_id);
 		$criteria->compare('tbl_comics_id',$this->tbl_comics_id);
 		$criteria->compare('comment',$this->comment,true);
+		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
