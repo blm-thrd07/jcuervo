@@ -202,11 +202,12 @@ public function actionLogin(){
       if(!strcmp(strtolower($tipo_pieza),"cuerpo") || !strcmp(strtolower($tipo_pieza),"cara")){
         $avatar_piezas = AvatarsPiezas::model()->findAll(array('condition'=>'avatar_id=:avatar_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'])));
         //recorre todas las piezas del avatar
+        $siexiste=false;
         if(is_array($avatar_piezas)){
           foreach ($avatar_piezas as $key => $value) {
             //si ya existe ese cuerpo o cara
             $descripcion = $value->AvatarImg->AvatarTipo->descripcion;
-            if(!strcmp(strtolower($descripcion),"cuerpo") || !strcmp(strtolower($descripcion),"cara")){
+            if(!strcmp(strtolower($descripcion),"cara")){
               //actualizo esa pieza_id
               $model = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND pieza_id=:pieza_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],'pieza_id'=>$value->AvatarImg->id)));
               $model->pieza_id=$pieza_id;
@@ -215,9 +216,24 @@ public function actionLogin(){
               } else{
                 echo "no actualizados";
               }
+              $siexiste=true;
             }
+            if(!strcmp(strtolower($descripcion),"cuerpo") ){
+              //actualizo esa pieza_id
+              $model = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND pieza_id=:pieza_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],'pieza_id'=>$value->AvatarImg->id)));
+              $model->pieza_id=$pieza_id;
+              if ($model->save(false)) {
+                echo "actualizado";
+              } else{
+                echo "no actualizados";
+              }
+              $siexiste=true;
+            }
+            
           }
-        } else{
+        } 
+
+        if(!$siexiste){
           $model = new AvatarsPiezas;
           $model->avatar_id = Yii::app()->session['usuario_id'];
           $model->pieza_id = $pieza_id;
