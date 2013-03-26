@@ -160,6 +160,7 @@ public function actionLogin(){
         'scaley'=>$response[0]->Avatar->AvatarP[$count]->scaley,
         'posx'=>$response[0]->Avatar->AvatarP[$count]->posx,
         'posy'=>$response[0]->Avatar->AvatarP[$count]->posy,
+        'zindex'=>$response[0]->Avatar->AvatarP[$count]->zindex,
         'rotation'=>$response[0]->Avatar->AvatarP[$count]->rotation
         );
     }
