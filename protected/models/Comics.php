@@ -9,6 +9,7 @@
  * @property string $date
  *
  * The followings are the available model relations:
+ * @property TblUsuariosComicsComentarios[] $tblUsuariosComicsComentarioses
  * @property TblUsuarios[] $tblUsuarioses
  */
 class Comics extends CActiveRecord
@@ -39,8 +40,7 @@ class Comics extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, imagen, date', 'required'),
-			array('id', 'numerical', 'integerOnly'=>true),
+			array('imagen, date', 'required'),
 			array('imagen', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -56,9 +56,8 @@ class Comics extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'Coments' => array(self::HAS_MANY, 'UsuariosComicsComentarios', 'tbl_comics_id'),
 			'tblUsuarioses' => array(self::MANY_MANY, 'TblUsuarios', 'tbl_usuarios_has_tbl_comics(tbl_comics_id, tbl_usuarios_id)'),
-             'Coments' => array(self::HAS_MANY, 'UsuariosComicsComentarios', 'tbl_comics_id'),
-		 
 		);
 	}
 

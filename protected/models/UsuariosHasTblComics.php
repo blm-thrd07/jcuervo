@@ -38,7 +38,7 @@ class UsuariosHasTblComics extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tbl_usuarios_id, tbl_comics_id, destacado, NoComentarios, NoVisto', 'required'),
+			array('tbl_usuarios_id, tbl_comics_id', 'required'),
 			array('tbl_usuarios_id, tbl_comics_id, destacado, NoComentarios, NoVisto', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -54,8 +54,7 @@ class UsuariosHasTblComics extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		'Comic' => array(self::BELONGS_TO, 'Comics', 'tbl_comics_id'),
-
+				'Comic' => array(self::BELONGS_TO, 'Comics', 'tbl_comics_id'),
 		);
 	}
 
