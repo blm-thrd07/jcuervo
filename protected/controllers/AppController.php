@@ -214,7 +214,7 @@ public function actionLogin(){
               if ($model->save(false)) {
                 echo "actualizado";
               } else{
-                echo "no actualizados";
+                echo "no actualiszados";
               }
               $siexiste=true;
             }
