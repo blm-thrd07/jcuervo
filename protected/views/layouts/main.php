@@ -29,8 +29,9 @@
 <body>
 
 
+
 	<div id="header">
-		<div id="logo"><?php //echo CHtml::encode(Yii::app()->name); ?></div>
+		<div id="logo"><?php //echo CHtml::encode(Yii::ahpp()->name); ?></div>
 	</div><!-- header -->
 
 
