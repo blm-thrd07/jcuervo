@@ -78,11 +78,13 @@ public function actionLogin(){
           $model->sexo=$user_profile['gender'];
 
              if($model->save()){
-                      $this->redirect(array('App/Profile/'.$user_profile['id'])); 
-                }
+              Yii::app()->session['usuario_id']=$model->id;
+              $this->redirect(array('App/Profile/'.$user_profile['id'])); 
+             }
                 
          }else{
-             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
+            Yii::app()->session['usuario_id']=$model->id;
+            $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
 
          }else{
@@ -151,14 +153,18 @@ public function actionLogin(){
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
     $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
     'avatarPiezas'=>$datosAvatar,'comics'=>$comics); 
-    
-    echo json_encode($json);
+    //print_r($json);
+    print_r(Yii::app()->session['usuario_id']);
+    //echo json_encode($json);
+    $this->render('profile',array(
+        'json'=>$json,
+      ));
 
   }
 
   public function actionCrearAvatar($id){
     $avatar = Avatars::model()->find(array('condition'=>'usuario_id=:id', 'params'=>array(':id'=>Yii::app()->session['usuario_id'])));
-    Yii::app()->session['avatar_id'] = $avatar->id;
+    Yii::app()->session['usuario_id'] = $avatar->id;
     $tipo_piezas = TiposPiezasAvatar::model()->findAll();  
     //echo CJSON::encode($tipo_piezas);
     $piezas = PiezaAvatar::model()->findAll("tipo_pieza_id=1");
@@ -186,14 +192,48 @@ public function actionLogin(){
     $pieza_id = $_POST['pieza_id']; 
     $accion = $_POST['accion'];
     
+    //insertar
     if(!strcmp($accion,'INSERTAR')){
-      $model = new AvatarsPiezas;
-      $model->avatar_id = Yii::app()->session['avatar_id'];
-      $model->pieza_id = $pieza_id;
-      if ($model->save(false)) {
-        echo "insertado";
+      
+      $tipo_pieza = PiezaAvatar::model()->findByPk($pieza_id)->AvatarTipo->descripcion;
+      echo $tipo_pieza;
+
+      //es cuerpo o cara
+      if(!strcmp(strtolower($tipo_pieza),"cuerpo") || !strcmp(strtolower($tipo_pieza),"cara")){
+        $avatar_piezas = AvatarsPiezas::model()->findAll(array('condition'=>'avatar_id=:avatar_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'])));
+        //recorre todas las piezas del avatar
+        if(is_array($avatar_piezas)){
+          foreach ($avatar_piezas as $key => $value) {
+            //si ya existe ese cuerpo o cara
+            $descripcion = $value->AvatarImg->AvatarTipo->descripcion;
+            if(!strcmp(strtolower($descripcion),"cuerpo") || !strcmp(strtolower($descripcion),"cara")){
+              //actualizo esa pieza_id
+              $model = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND pieza_id=:pieza_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],'pieza_id'=>$value->AvatarImg->id)));
+              $model->pieza_id=$pieza_id;
+              if ($model->save(false)) {
+                echo "actualizado";
+              } else{
+                echo "no actualizado";
+              }
+            }
+          }
+        } else{
+          $model = new AvatarsPiezas;
+          $model->avatar_id = Yii::app()->session['usuario_id'];
+          $model->pieza_id = $pieza_id;
+          if ($model->save(false)) {
+            echo "insertado";
+          } else{
+            echo "no";
+          }
+        } else{
+          
+        }
       } else{
-        echo "no";
+        $model = new AvatarsPiezas;
+        $model->avatar_id = Yii::app()->session['usuario_id'];
+        $model->pieza_id = $pieza_id;
+        if ($model->save(false)) echo "accesorio guardado";
       }
     } else if($accion=="ACTUALIZAR"){
 
