@@ -158,7 +158,7 @@ public function actionLogin(){
       ));
 
   }
-
+//
     public function ShareMemeLink($my_access_token,$link,$message){
 
        $photo_url="http://sharefavoritebibleverses.com/images/bible_verses.png";
