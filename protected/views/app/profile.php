@@ -26,7 +26,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 		var pieza_id = $(this).attr("name");
 		$.ajax({
 		  type: "POST",
-		  data: "pieza_id="+pieza_id+"&accion=INSERTAR",
+		  data: "pieza_id="+pieza_id+"&accion=INSERTAR&tipo=pieza",
 		  success: function() {  },
 		  error: function(){ alert("error"); },
 		  url: "'.CController::CreateUrl('avatars/UpdatePieza').'",

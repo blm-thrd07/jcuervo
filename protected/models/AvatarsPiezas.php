@@ -66,7 +66,7 @@ class AvatarsPiezas extends CActiveRecord
 		return array(
 			'avatar' => array(self::BELONGS_TO, 'TblAvatars', 'avatar_id'),
 			'piezaAvatar' => array(self::BELONGS_TO, 'TblCatalogoPiezas', 'pieza_avatar_id'),
-			'tipoPieza' => array(self::BELONGS_TO, 'TblCatalogoPiezas', 'tipo_pieza_id'),
+			'tipoPieza' => array(self::BELONGS_TO, 'CatalogoPiezas', 'tipo_pieza_id'),
 			'AvatarImg' => array(self::BELONGS_TO, 'CatalogoPiezas', 'pieza_avatar_id'),
 
 		);

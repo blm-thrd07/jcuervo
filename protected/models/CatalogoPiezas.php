@@ -59,7 +59,7 @@ class CatalogoPiezas extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'tblAvatarsPiezases' => array(self::HAS_MANY, 'TblAvatarsPiezas', 'pieza_avatar_id'),
-			'tblAvatarsPiezases1' => array(self::HAS_MANY, 'TblAvatarsPiezas', 'tipo_pieza_id'),
+			'tipoPieza' => array(self::HAS_MANY, 'AvatarsPiezas', 'tipo_pieza_id'),
 		    'AvatarTipo' => array(self::BELONGS_TO, 'TiposPiezas', 'tipo_pieza_id'),
 
 		);

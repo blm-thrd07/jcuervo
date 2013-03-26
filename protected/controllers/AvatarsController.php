@@ -177,54 +177,49 @@ class AvatarsController extends Controller
   public function actionUpdatePieza(){
     $pieza_id = $_POST['pieza_id']; 
     $accion = $_POST['accion'];
+    $tipo = $_POST['tipo'];
+
+    if($tipo==="pieza"){
+    	echo "pieza"; //
+    	$cat_pieza = CatalogoPiezas::model()->find(array(
+    		'condition'=>'id=:id',
+    		'params'=>array(
+	    			':id'=>$pieza_id,
+    			)
+    		)	
+    	);
+		//print_r("avatar_id ".Yii::app()->session['usuario_id']." id_catalogo ".$cat_pieza->id." tipo_pieza ".$cat_pieza->tipo_pieza_id);
+    	$m = AvatarsPiezas::model()->find(array(
+    		'condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id',
+    		'params'=>array(
+	    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			//':pieza_avatar_id'=>$cat_pieza->id,
+	    			':tipo_pieza_id'=>$cat_pieza->tipo_pieza_id,
+    			)
+    		)	
+    	);
+    	//insertar
+    	if(count($m)==0){
+    		$m=new AvatarsPiezas;
+    		$m->avatar_id=Yii::app()->session['usuario_id'];
+    		$m->pieza_avatar_id=$cat_pieza->id;
+    		$m->tipo_pieza_id=$cat_pieza->tipo_pieza_id;
+    		$m->save(false);
+    	}
+    	//actualizar
+    	else{
+    		$m->pieza_avatar_id=$cat_pieza->id;
+    		$m->save(false);
+    	}
+    	print_r($m);
+    	
+    } else if($tipo==="accesorio"){
+    	echo "accesorio";
+    }
     
     //insertar
     if(!strcmp($accion,'INSERTAR')){
-      $cat_piezas = TiposPiezasAvatar::model()->findAll();
-      $tipo_pieza = PiezaAvatar::model()->findByPk($pieza_id)->AvatarTipo->descripcion;
-      echo $tipo_pieza;
-      $siexiste=false;
-      //recorre catalogo de tipo piezas //cuerpo//cara//caraweb//accesorios
-
-      foreach ($cat_piezas as $k => $val) {
-        //si es igual al tipo de pieza que queremos ingresar
-        $siexiste=false;
-        if(!strcmp(strtolower($tipo_pieza),strtolower($val->descripcion)) ){
-          $avatar_piezas = AvatarsPiezas::model()->findAll(array('condition'=>'avatar_id=:avatar_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'])));
-          //recorre todas las piezas del avatars
-          
-          if(is_array($avatar_piezas)){
-            foreach ($avatar_piezas as $key => $value) {
-              //si ya existe ese cuerpo o cara
-              $descripcion = $value->AvatarImg->AvatarTipo->descripcion;
-              if(!strcmp(strtolower($descripcion),strtolower($val->descripcion)) ){
-                //actualizo esa pieza_id
-                $model = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND pieza_id=:pieza_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],'pieza_id'=>$value->AvatarImg->id)));
-                $model->pieza_id=$pieza_id;
-                if ($model->save(false)) {
-                  echo "actualizado";
-                } else{
-                  echo "no actualizados";
-                }
-                echo "true";
-                $siexiste=true;
-              }
-              
-            }
-          } 
-        }
-        if(!$siexiste && !strcmp(strtolower($tipo_pieza),strtolower($val->descripcion))){
-        	echo "entre";
-          $model = new AvatarsPiezas;
-          $model->avatar_id = Yii::app()->session['usuario_id'];
-          $model->pieza_id = $pieza_id;
-          if ($model->save(false)) {
-            echo "insertado";
-          } else{
-            echo "no";
-          }
-        } 
-      }
+      
      
     } else if($accion=="ACTUALIZAR"){
 
