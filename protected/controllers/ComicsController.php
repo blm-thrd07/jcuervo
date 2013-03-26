@@ -62,8 +62,9 @@ class ComicsController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$modelRelComics=new UsuariosHasTblComics;
 		$model=new Comics;
-		$model=new UsuariosHasTblComics;
+
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -72,9 +73,13 @@ class ComicsController extends Controller
 		{
 			$model->attributes=$_POST['Comics'];
 			if($model->save()){
- 
- 			}
-				//$this->redirect(array('view','id'=>$model->id));
+                 $modelRelComics->tbl_usuarios_id=Yii::app()->session['usuario_id'];
+                 $modelRelComics->tbl_comics_id=$model->id;
+                 if($modelRelComics->save()){
+                     $this->redirect(array('view','id'=>$model->id));
+                 }
+
+			}
 		}
 
 		$this->render('create',array(
