@@ -3,7 +3,7 @@
 </div>
 
 <?php
-//print_r($json['catalogos']['cuerpos']);
+print_r($json);
 
 foreach ($json['catalogos']['cuerpos'] as $key => $value) {
 	echo CHtml::link($value['url'], "#", array('class'=>"insertar",'name'=>$value['id']))." "; 
