@@ -69,6 +69,20 @@ class Accesorios extends CActiveRecord
 		);
 	}
 
+	  public function getCatalogoAccesorios(){
+
+       $model_accesorios=Accesorios::model()->findAll();
+       $catalogos_accesorios_cantidad= count($model_accesorios);
+       $catalogo_accesorios;
+
+      for($cont=0;$cont<$catalogos_accesorios_cantidad;$cont++){
+        $catalogo_accesorios[$cont]=array(
+           'id'=>$model_accesorios[$cont]->id,
+           'url'=>$model_accesorios[$cont]->url);
+      }
+       return $catalogo_accesorios;
+    }
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

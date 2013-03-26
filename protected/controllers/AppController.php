@@ -117,9 +117,10 @@ public function actionLogin(){
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
    $model_PiezaAvatar=new CatalogoPiezas;
+   $model_Accesorios=new Accesorios;
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
-   $catalogo_accesorios=$model_PiezaAvatar->getCatalogoAccesorios();
+   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
 
    $numero_comics=count($response[0]->Comics);
 

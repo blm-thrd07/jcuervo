@@ -11,6 +11,7 @@
  * @property string $scaley
  * @property string $posx
  * @property string $posy
+ * @property string $zindex
  * @property string $rotation
  *
  * The followings are the available model relations:
@@ -46,12 +47,12 @@ class AvatarsPiezas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('avatar_id, pieza_avatar_id, tipo_pieza_id, scalex, scaley, posx, posy, rotation', 'required'),
+			array('avatar_id, pieza_avatar_id, tipo_pieza_id, scalex, scaley, posx, posy, zindex, rotation', 'required'),
 			array('avatar_id, pieza_avatar_id, tipo_pieza_id', 'numerical', 'integerOnly'=>true),
-			array('scalex, scaley, posx, posy, rotation', 'length', 'max'=>45),
+			array('scalex, scaley, posx, posy, zindex, rotation', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('avatar_id, pieza_avatar_id, tipo_pieza_id, scalex, scaley, posx, posy, rotation', 'safe', 'on'=>'search'),
+			array('avatar_id, pieza_avatar_id, tipo_pieza_id, scalex, scaley, posx, posy, zindex, rotation', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,6 +85,7 @@ class AvatarsPiezas extends CActiveRecord
 			'scaley' => 'Scaley',
 			'posx' => 'Posx',
 			'posy' => 'Posy',
+			'zindex' => 'Zindex',
 			'rotation' => 'Rotation',
 		);
 	}
@@ -106,6 +108,7 @@ class AvatarsPiezas extends CActiveRecord
 		$criteria->compare('scaley',$this->scaley,true);
 		$criteria->compare('posx',$this->posx,true);
 		$criteria->compare('posy',$this->posy,true);
+		$criteria->compare('zindex',$this->zindex,true);
 		$criteria->compare('rotation',$this->rotation,true);
 
 		return new CActiveDataProvider($this, array(
