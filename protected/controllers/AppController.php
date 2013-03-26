@@ -2,6 +2,7 @@
 
 class AppController extends Controller
 {
+  public $layout='//layouts/main';
 
   var $facebook;
   var $user;
