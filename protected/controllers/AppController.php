@@ -116,7 +116,7 @@ public function actionLogin(){
     
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
-   $model_PiezaAvatar=new PiezaAvatar;
+   $model_PiezaAvatar=new CatalogoPiezas;
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
    $catalogo_accesorios=$model_PiezaAvatar->getCatalogoAccesorios();
