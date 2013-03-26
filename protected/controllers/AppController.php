@@ -213,7 +213,7 @@ public function actionLogin(){
               if ($model->save(false)) {
                 echo "actualizado";
               } else{
-                echo "no actualizado";
+                echo "no actualizados";
               }
             }
           }
