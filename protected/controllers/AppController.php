@@ -132,7 +132,7 @@ public function actionLogin(){
        }
 
    }
-
+//
 
     $cantidad=count($response[0]->Avatar->AvatarP);
     $datosAvatar[0]="";
