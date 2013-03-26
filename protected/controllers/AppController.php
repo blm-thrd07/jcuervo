@@ -174,11 +174,45 @@ public function actionLogin(){
       ));
 
       
-
-//print_r($_SESSION['facebook']->api(array('method' => 'friends.getAppUsers')));
-
+    echo "<br>";
+    
+    $amigosApp=$_SESSION['facebook']->api(array('method' => 'friends.getAppUsers'));
+    $this->insertAmigosApp($amigosApp);
 
   }
+
+
+    public function insertAmigosApp($array){
+      
+      $model_usuarios=new Usuarios;
+      $model_amigos=new Amigos;
+      $numero_amigos_app=count($array);
+       
+      for($count=0;$count<$numero_amigos_app;$count++){       
+         $existeApp=$model_usuarios->find(
+                 array('condition'=>'id_facebook=:fid ','params'=>array(':fid'=>$array[$count])));
+         $existe=count($existeApp);
+        
+        if($existe==1){
+          $response=$model_amigos->find(
+             array('condition'=>'usuarios_id=:uid and amigo_id=:aid ',
+                   'params'=>array(':uid'=>Yii::app()->session['usuario_id'],':aid'=>$existeApp->id)));
+        
+          $existeAmigo=count($response);
+          if($existeAmigo==0){
+                $model_amigos_nuevo = new Amigos;
+                $model_amigos_nuevo->usuarios_id=Yii::app()->session['usuario_id'];
+                $model_amigos_nuevo->amigo_id=$existeApp->id;
+                  if($model_amigos_nuevo->save(false)){
+                  }
+          }else{
+               echo "\nno existe en app";
+          }
+      }
+    }
+
+ }
+
 
     public function ShareMemeLink($my_access_token,$link,$message){
 
