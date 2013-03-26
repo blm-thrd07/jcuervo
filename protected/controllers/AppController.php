@@ -3,36 +3,36 @@
 class AppController extends Controller
 {
 
-	var $facebook;
-	var $user;
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
-		);
-	}
+  var $facebook;
+  var $user;
+  public function filters()
+  {
+    return array(
+      'accessControl', // perform access control for CRUD operations
+      'postOnly + delete', // we only allow deletion via POST request
+    );
+  }
 
     public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza','UpdatePieza'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','index'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+  {
+    return array(
+      array('allow',  // allow all users to perform 'index' and 'view' actions
+        'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza','UpdatePieza'),
+        'users'=>array('*'),
+      ),
+      array('allow', // allow authenticated user to perform 'create' and 'update' actions
+        'actions'=>array('create','update'),
+        'users'=>array('@'),
+      ),
+      array('allow', // allow admin user to perform 'admin' and 'delete' actions
+        'actions'=>array('admin','delete','index'),
+        'users'=>array('admin'),
+      ),
+      array('deny',  // deny all users
+        'users'=>array('*'),
+      ),
+    );
+  }
 
 public function actionLogin(){
     
@@ -275,7 +275,7 @@ public function actionLogin(){
        echo '</body></html>';
     }
 
-	public function FacebookGetCommentById($post_id){
+  public function FacebookGetCommentById($post_id){
  
        $params = array(
             'method' => 'fql.query',
@@ -286,9 +286,9 @@ public function actionLogin(){
              $result = $_SESSION['facebook']->api($params);
 
         return $result;
-	}
+  }
 
-	public function FacebookShareComent($user,$message,$name,$caption,$description,$link,$link_picture){
+  public function FacebookShareComent($user,$message,$name,$caption,$description,$link,$link_picture){
 
       $params = array(
                 'message'       =>  $message,
@@ -303,11 +303,11 @@ public function actionLogin(){
         return $post['id'];
 
 
-	}
+  }
     
     public function FacebookGetPhotos(){
 
-    	$fql_query  =   array(
+      $fql_query  =   array(
             'method' => 'fql.query',
             'query' => "SELECT aid, name FROM album WHERE owner = me()"
          );
@@ -317,8 +317,8 @@ public function actionLogin(){
     }
     
     public function FacebookGetFeed(){
-    	$my_access_token=$_SESSION['facebook']->getAccessToken();
-    	$page_feed = $_SESSION['facebook']->api(
+      $my_access_token=$_SESSION['facebook']->getAccessToken();
+      $page_feed = $_SESSION['facebook']->api(
           '/me/feed',
            'GET',
         array('access_token' => $my_access_token)
@@ -331,10 +331,10 @@ public function actionLogin(){
       $friends = $_SESSION['facebook']->api('/me/friends',array('access_token'=>$my_access_token));
       return $friends;
 
-	}
+  }
 
 
-	
+  
 
-	
+  
 }
