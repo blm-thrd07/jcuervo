@@ -153,7 +153,7 @@ public function actionLogin(){
     $datosAvatar[0]="";
     for($count=0;$count<$cantidad;$count++){
       $datosAvatar[$count]=array(
-        'piezaid'=>$response[0]->Avatar->AvatarP[$count]->pieza_id,
+        'piezaid'=>$response[0]->Avatar->AvatarP[$count]->pieza_avatar_id,
         'descripcion'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->AvatarTipo->descripcion,
         'AvatarImg'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->url,
         'scalex'=>$response[0]->Avatar->AvatarP[$count]->scalex,
@@ -172,6 +172,11 @@ public function actionLogin(){
     $this->render('profile',array(
         'json'=>$json,
       ));
+
+      
+
+//print_r($_SESSION['facebook']->api(array('method' => 'friends.getAppUsers')));
+
 
   }
 
