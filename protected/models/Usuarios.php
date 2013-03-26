@@ -63,7 +63,7 @@ class Usuarios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			//'tblAmigoses' => array(self::HAS_MANY, 'TblAmigos', 'usuarios_id'),
+			'Amigos' => array(self::HAS_MANY, 'Amigos', 'usuarios_id'),
 			//'tblAmigoses1' => array(self::HAS_MANY, 'TblAmigos', 'amigo_id'),
 			'Avatar' => array(self::HAS_ONE, 'Avatars', 'usuario_id'),
 			'Comics' => array(self::MANY_MANY, 'UsuariosHasTblComics', 'tbl_usuarios_has_tbl_comics(tbl_usuarios_id, tbl_comics_id)'),

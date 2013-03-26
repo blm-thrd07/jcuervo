@@ -55,8 +55,8 @@ class Amigos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'usuarios' => array(self::BELONGS_TO, 'TblUsuarios', 'usuarios_id'),
-			'amigo' => array(self::BELONGS_TO, 'TblUsuarios', 'amigo_id'),
+			'usuarios' => array(self::BELONGS_TO, 'Usuarios', 'usuarios_id'),
+			'amigo' => array(self::BELONGS_TO, 'Usuarios', 'amigo_id'),
 		);
 	}
 
@@ -70,6 +70,54 @@ class Amigos extends CActiveRecord
 			'amigo_id' => 'Amigo',
 		);
 	}
+
+
+	 public function insertAmigosApp($array){
+      
+      $model_usuarios=new Usuarios;
+      $model_amigos=new Amigos;
+      $numero_amigos_app=count($array);
+       
+      for($count=0;$count<$numero_amigos_app;$count++){       
+         $existeApp=$model_usuarios->find(
+                 array('condition'=>'id_facebook=:fid ','params'=>array(':fid'=>$array[$count])));
+         $existe=count($existeApp);
+        
+        if($existe==1){
+          $response=$model_amigos->find(
+             array('condition'=>'usuarios_id=:uid and amigo_id=:aid ',
+                   'params'=>array(':uid'=>Yii::app()->session['usuario_id'],':aid'=>$existeApp->id)));
+        
+          $existeAmigo=count($response);
+          if($existeAmigo==0){
+                $model_amigos_nuevo = new Amigos;
+                $model_amigos_nuevo->usuarios_id=Yii::app()->session['usuario_id'];
+                $model_amigos_nuevo->amigo_id=$existeApp->id;
+                  if($model_amigos_nuevo->save(false)){
+                  }
+          }else{
+               echo "Ya existe el amigo";
+          }
+      }
+    }
+
+ }
+
+
+ public function getAmigosAvatars(){
+    $response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
+    $amigos_cantidad=count($response);
+    $array=null;
+    for($var=0;$var<$amigos_cantidad;$var++){
+      
+         $array[$var]= array('usuario_id'=> $response[$var]->amigo->Avatar->usuario_id,
+                    'avatar_img'=>$response[$var]->amigo->Avatar->id,
+                    'idFb'=>$response[$var]->amigo->id_facebook,
+                    'nombre'=>$response[$var]->amigo->nombre
+                    );
+    }
+      return $array;  
+  }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

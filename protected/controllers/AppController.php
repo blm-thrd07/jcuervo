@@ -118,9 +118,11 @@ public function actionLogin(){
    
    $model_PiezaAvatar=new CatalogoPiezas;
    $model_Accesorios=new Accesorios;
+   $model_Amigos_Avatars=new Amigos;
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
    $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
+   $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 
    $numero_comics=count($response[0]->Comics);
 
@@ -168,50 +170,33 @@ public function actionLogin(){
     $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'accesorios'=>$catalogo_accesorios);
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
     $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
-    'avatarPiezas'=>$datosAvatar,'comics'=>$comics); 
+    'avatarPiezas'=>$datosAvatar,'comics'=>$comics,'AmigosAvatars'=>$amigosAvatars); 
     $this->render('profile',array(
         'json'=>$json,
       ));
 
       
-    echo "<br>";
     
+    $amigos=new Amigos;
     $amigosApp=$_SESSION['facebook']->api(array('method' => 'friends.getAppUsers'));
-    $this->insertAmigosApp($amigosApp);
+
+
+    $amigos->insertAmigosApp($amigosApp);
+
+
+    
+
+    
+
+
 
   }
 
 
-    public function insertAmigosApp($array){
-      
-      $model_usuarios=new Usuarios;
-      $model_amigos=new Amigos;
-      $numero_amigos_app=count($array);
-       
-      for($count=0;$count<$numero_amigos_app;$count++){       
-         $existeApp=$model_usuarios->find(
-                 array('condition'=>'id_facebook=:fid ','params'=>array(':fid'=>$array[$count])));
-         $existe=count($existeApp);
-        
-        if($existe==1){
-          $response=$model_amigos->find(
-             array('condition'=>'usuarios_id=:uid and amigo_id=:aid ',
-                   'params'=>array(':uid'=>Yii::app()->session['usuario_id'],':aid'=>$existeApp->id)));
-        
-          $existeAmigo=count($response);
-          if($existeAmigo==0){
-                $model_amigos_nuevo = new Amigos;
-                $model_amigos_nuevo->usuarios_id=Yii::app()->session['usuario_id'];
-                $model_amigos_nuevo->amigo_id=$existeApp->id;
-                  if($model_amigos_nuevo->save(false)){
-                  }
-          }else{
-               echo "\nno existe en app";
-          }
-      }
-    }
+  
 
- }
+
+   
 
 
     public function ShareMemeLink($my_access_token,$link,$message){
