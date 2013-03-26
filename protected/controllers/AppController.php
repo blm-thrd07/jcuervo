@@ -153,9 +153,6 @@ public function actionLogin(){
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
     $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
     'avatarPiezas'=>$datosAvatar,'comics'=>$comics); 
-    //print_r($json);
-    print_r(Yii::app()->session['usuario_id']);
-    //echo json_encode($json);
     $this->render('profile',array(
         'json'=>$json,
       ));
