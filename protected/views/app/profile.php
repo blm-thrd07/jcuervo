@@ -20,7 +20,9 @@ if(is_array($json['catalogos']['accesorios'])){
 	}
 }
 
+echo CHtml::link("cara_web", "#", array('class'=>"insertar",'name'=>"url_cara_web"))." "; 
 
+//pieza//accesorio//cara_web
 Yii::app()->getClientScript()->registerScript('registrar', '
 	$(".insertar").live("click",function(){
 		var pieza_id = $(this).attr("name");
@@ -36,6 +38,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 	
 
 ',CClientScript::POS_READY);
+
 
 
 

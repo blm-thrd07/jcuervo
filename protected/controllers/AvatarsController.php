@@ -198,6 +198,25 @@ class AvatarsController extends Controller
     			)
     		)	
     	);
+
+    	//si es cara
+    	if($cat_pieza->tipo_pieza_id==2){ 
+    		$mcaras = CaraWeb::model()->find(array(
+	    		'condition'=>'avatar_id=:avatar_id',
+	    		'params'=>array(
+		    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			)
+	    		)	
+	    	);
+	    	if(!count($mcaras)==0){
+	    		$mcaras->delete();
+	    		echo "borrar";
+	    	} else{
+	    		echo "no borrado";
+	    	}
+	    		
+    	}
+
     	//insertar
     	if(count($m)==0){
     		$m=new AvatarsPiezas;
@@ -215,6 +234,65 @@ class AvatarsController extends Controller
     	
     } else if($tipo==="accesorio"){
     	echo "accesorio";
+		//print_r("avatar_id ".Yii::app()->session['usuario_id']." id_catalogo ".$cat_pieza->id." tipo_pieza ".$cat_pieza->tipo_pieza_id);
+    	$m = AvatarHasAccesorios::model()->find(array(
+    		'condition'=>'avatar_id=:avatar_id AND accesorios_id=:accesorios_id',
+    		'params'=>array(
+	    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			//':pieza_avatar_id'=>$cat_pieza->id,
+	    			':accesorios_id'=>$pieza_id, //$cat_accesorios->id, //
+    			)
+    		)	
+    	);
+    	//insertar
+    	if(count($m)==0){
+    		$m=new AvatarHasAccesorios;
+    		$m->avatar_id=Yii::app()->session['usuario_id'];
+    		$m->accesorios_id=$cat_accesorios->id;
+    		$m->save(false);
+    	}
+    	//actualizar
+    	else{
+    		//nada
+    	}
+    	print_r($m);
+    } else if($tipo==='cara_web'){
+    	echo "cara_web"; //
+    	
+    	$m = CaraWeb::model()->find(array(
+    		'condition'=>'avatar_id=:avatar_id',
+    		'params'=>array(
+	    			':avatar_id'=>Yii::app()->session['usuario_id'],
+    			)
+    		)	
+    	);
+    	if(count($m)==0){
+    		$m = new CaraWeb;
+    		$m->url = $pieza_id;
+    		$m->save(false);
+    	}
+    	//actualizar
+    	else{
+    		$m->url = $pieza_id;
+    		$m->save(false);
+    	}
+    	$mcaras = AvatarsPiezas::model()->find(array(
+    		'condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id',
+    		'params'=>array(
+	    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			':tipo_pieza_id'=>2,
+    			)
+    		)	
+    	);
+    	
+    	if(count($mcaras)==0){
+    		
+    	}
+    	//elimina la pieza cara si existe
+    	else{
+    		$mcaras->delete();
+    	}
+    	print_r($m);
     }
     
     //insertar
@@ -225,7 +303,7 @@ class AvatarsController extends Controller
 
     }else if($accion=="ELIMINAR"){
 
-    }
+    }	
     // AvatarsPiezas::model()->findAll();
   }
 }
