@@ -2113,3 +2113,32 @@ Stack trace:
 REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
 HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
 ---
+2013/03/26 05:16:12 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Applications/XAMPP/xamppfiles/htdocs/jcuervo/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Applications/X...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(463): CAssetManager->publish('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(500): CClientScript->getCoreScriptUrl()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(316): CClientScript->getPackageBaseUrl('jquery')
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(209): CClientScript->renderCoreScripts()
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(352): CClientScript->render('<!DOCTYPE html ...')
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(789): CController->processOutput('<!DOCTYPE html ...')
+#8 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AppController.php(158): CController->render('profile', Array)
+#9 [internal function]: AppController->actionProfile('100004850712781')
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(AppController), Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(AppController), Object(ReflectionMethod), Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(283): CController->run('Profile')
+#21 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('App/Profile')
+#22 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#23 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/jcuervo/index.php/App/Profile/100004850712781
+---
