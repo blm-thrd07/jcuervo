@@ -17,7 +17,7 @@ class AppController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza','UpdatePieza'),
+				'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza','UpdatePieza','CreateComic'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -96,6 +96,7 @@ public function actionLogin(){
 
   public function actionProfile($id)
   {
+
 
      $logoutUrl = $_SESSION['facebook']->getLogoutUrl();
      echo "<a href='".$logoutUrl."'>Logout</a>";  
@@ -276,6 +277,9 @@ public function actionLogin(){
       return $friends;
 
 	}
+
+
+  
 
 
 	
