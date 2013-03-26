@@ -195,7 +195,7 @@ class AvatarsController extends Controller
             foreach ($avatar_piezas as $key => $value) {
               //si ya existe ese cuerpo o cara
               $descripcion = $value->AvatarImg->AvatarTipo->descripcion;
-              if(!strcmp(strtolower($descripcion),strtolower($val->descripcion)) ){
+              if(strcmp(strtolower($descripcion),strtolower('accesorio')) ){
                 //actualizo esa pieza_id
                 $model = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND pieza_id=:pieza_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],'pieza_id'=>$value->AvatarImg->id)));
                 $model->pieza_id=$pieza_id;
