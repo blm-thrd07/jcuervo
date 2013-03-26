@@ -226,10 +226,10 @@ public function actionLogin(){
           } else{
             echo "no";
           }
-        } else{
-          
-        }
-      } else{
+        } 
+      } 
+      //no es cuerpo ni cara
+      else{
         $model = new AvatarsPiezas;
         $model->avatar_id = Yii::app()->session['usuario_id'];
         $model->pieza_id = $pieza_id;
