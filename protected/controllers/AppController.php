@@ -203,7 +203,7 @@ public function actionLogin(){
         //si es igual al tipo de pieza que queremos ingresar
         if(!strcmp(strtolower($tipo_pieza),strtolower($val->descripcion)) ){
           $avatar_piezas = AvatarsPiezas::model()->findAll(array('condition'=>'avatar_id=:avatar_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'])));
-          //recorre todas las piezas del avatar
+          //recorre todas las piezas del avatars
           $siexiste=false;
           if(is_array($avatar_piezas)){
             foreach ($avatar_piezas as $key => $value) {
