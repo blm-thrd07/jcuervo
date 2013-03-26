@@ -183,14 +183,16 @@ class AvatarsController extends Controller
       $cat_piezas = TiposPiezasAvatar::model()->findAll();
       $tipo_pieza = PiezaAvatar::model()->findByPk($pieza_id)->AvatarTipo->descripcion;
       echo $tipo_pieza;
-
+      $siexiste=false;
       //recorre catalogo de tipo piezas //cuerpo//cara//caraweb//accesorios
+
       foreach ($cat_piezas as $k => $val) {
         //si es igual al tipo de pieza que queremos ingresar
+        $siexiste=false;
         if(!strcmp(strtolower($tipo_pieza),strtolower($val->descripcion)) ){
           $avatar_piezas = AvatarsPiezas::model()->findAll(array('condition'=>'avatar_id=:avatar_id', 'params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'])));
           //recorre todas las piezas del avatars
-          $siexiste=false;
+          
           if(is_array($avatar_piezas)){
             foreach ($avatar_piezas as $key => $value) {
               //si ya existe ese cuerpo o cara
@@ -204,14 +206,15 @@ class AvatarsController extends Controller
                 } else{
                   echo "no actualizados";
                 }
+                echo "true";
                 $siexiste=true;
               }
               
             }
           } 
         }
-
-        if(!$siexiste && !strcmp(strtolower($tipo_pieza),$val->descripcion)){
+        if(!$siexiste && !strcmp(strtolower($tipo_pieza),strtolower($val->descripcion))){
+        	echo "entre";
           $model = new AvatarsPiezas;
           $model->avatar_id = Yii::app()->session['usuario_id'];
           $model->pieza_id = $pieza_id;

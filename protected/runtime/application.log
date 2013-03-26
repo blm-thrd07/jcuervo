@@ -2152,3 +2152,153 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/jcuervo/index.php/App/comics/create
 ---
+2013/03/26 13:48:07 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2-5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `tbl_avatars_piezas` (`avatar_id`, `pieza_id`) VALUES (:yp0, :yp1).
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php (191)
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php (13)
+2013/03/26 13:48:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2-5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `tbl_avatars_piezas` (`avatar_id`, `pieza_id`) VALUES (:yp0, :yp1)' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php(191): CActiveRecord->save(false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AvatarsController->actionUpdatePieza()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('avatars/UpdateP...')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
+HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
+---
+2013/03/26 14:06:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Comic/create".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('Comic/create')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jcuervo/index.php/Comic/create
+---
+2013/03/26 14:06:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Comic/create".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('Comic/create')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jcuervo/index.php/Comic/create
+---
+2013/03/26 14:07:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Comic".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('Comic')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jcuervo/index.php/Comic/
+---
+2013/03/26 14:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comic".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('comic')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jcuervo/index.php/comic/
+---
+2013/03/26 14:07:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comic/create ".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('comic/create ')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jcuervo/index.php/comic/create+
+---
+2013/03/26 14:07:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comic/create".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('comic/create')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jcuervo/index.php/comic/create
+---
+2013/03/26 15:23:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `tbl_avatars_piezas` (`avatar_id`, `pieza_id`) VALUES (:yp0, :yp1).
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php (221)
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php (13)
+2013/03/26 15:23:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `tbl_avatars_piezas` (`avatar_id`, `pieza_id`) VALUES (:yp0, :yp1)' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php(221): CActiveRecord->save(false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AvatarsController->actionUpdatePieza()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('avatars/UpdateP...')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
+HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
+---
+2013/03/26 15:30:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-5' for key 'PRIMARY'. The SQL statement executed was: UPDATE `tbl_avatars_piezas` SET `avatar_id`=:yp0, `pieza_id`=:yp1, `scalex`=:yp2, `scaley`=:yp3, `posx`=:yp4, `posy`=:yp5, `rotation`=:yp6 WHERE `tbl_avatars_piezas`.`avatar_id`=1 AND `tbl_avatars_piezas`.`pieza_id`=6.
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php (204)
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php (13)
+2013/03/26 15:30:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-5' for key 'PRIMARY'. The SQL statement executed was: UPDATE `tbl_avatars_piezas` SET `avatar_id`=:yp0, `pieza_id`=:yp1, `scalex`=:yp2, `scaley`=:yp3, `posx`=:yp4, `posy`=:yp5, `rotation`=:yp6 WHERE `tbl_avatars_piezas`.`avatar_id`=1 AND `tbl_avatars_piezas`.`pieza_id`=6' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1681): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1061): CActiveRecord->updateByPk(Array, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php(204): CActiveRecord->save(false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AvatarsController->actionUpdatePieza()
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('avatars/UpdateP...')
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
+HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
+---
+2013/03/26 15:30:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-6' for key 'PRIMARY'. The SQL statement executed was: UPDATE `tbl_avatars_piezas` SET `avatar_id`=:yp0, `pieza_id`=:yp1, `scalex`=:yp2, `scaley`=:yp3, `posx`=:yp4, `posy`=:yp5, `rotation`=:yp6 WHERE `tbl_avatars_piezas`.`avatar_id`=1 AND `tbl_avatars_piezas`.`pieza_id`=5.
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php (204)
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php (13)
+2013/03/26 15:30:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-6' for key 'PRIMARY'. The SQL statement executed was: UPDATE `tbl_avatars_piezas` SET `avatar_id`=:yp0, `pieza_id`=:yp1, `scalex`=:yp2, `scaley`=:yp3, `posx`=:yp4, `posy`=:yp5, `rotation`=:yp6 WHERE `tbl_avatars_piezas`.`avatar_id`=1 AND `tbl_avatars_piezas`.`pieza_id`=5' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1681): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1061): CActiveRecord->updateByPk(Array, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php(204): CActiveRecord->save(false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AvatarsController->actionUpdatePieza()
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('avatars/UpdateP...')
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
+HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
+---
