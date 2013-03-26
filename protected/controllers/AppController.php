@@ -83,7 +83,7 @@ public function actionLogin(){
              }
                 
          }else{
-            Yii::app()->session['usuario_id']=$model->id;
+            Yii::app()->session['usuario_id']=$response[0]->id;
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
 
