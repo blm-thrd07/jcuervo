@@ -100,6 +100,17 @@ public function actionLogin(){
   public function actionProfile($id)
   {
 
+    $modelcom = Usuarios::model()->with('Comics')->findAll();
+    
+    print_r($modelcom->Comics);
+
+    $modelc= new UsuariosHasTblComics;
+    $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
+    
+
+    //print_r($comic[0]);
+    //echo $comic[0]->Comic->Coments[0]->comment;
+
      $logoutUrl = $_SESSION['facebook']->getLogoutUrl();
      echo "<a href='".$logoutUrl."'>Logout</a>";  
     
@@ -111,6 +122,8 @@ public function actionLogin(){
    $catalogo_accesorios=$model_PiezaAvatar->getCatalogoAccesorios();
 
    $numero_comics=count($response[0]->Comics);
+
+
    for($count=0;$count<$numero_comics;$count++){
    
       $comics[$count]=array(
