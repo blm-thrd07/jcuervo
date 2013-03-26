@@ -28,12 +28,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 		  data: "pieza_id="+pieza_id+"&accion=INSERTAR",
 		  success: function() {  },
 		  error: function(){ alert("error"); },
-		  url: "'.CController::CreateUrl('app/UpdatePieza').'",
+		  url: "'.CController::CreateUrl('avatars/UpdatePieza').'",
 		  cache:false
 		});
 	});
 	
 
 ',CClientScript::POS_READY);
+
+
 
 ?>
