@@ -1,29 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "tbl_avatars_piezas".
+ * This is the model class for table "tbl_avatar_has_Accesorios".
  *
- * The followings are the available columns in table 'tbl_avatars_piezas':
+ * The followings are the available columns in table 'tbl_avatar_has_Accesorios':
  * @property integer $avatar_id
- * @property integer $pieza_avatar_id
- * @property integer $tipo_pieza_id
+ * @property integer $accesorios_id
  * @property string $scalex
  * @property string $scaley
- * @property string $posx
  * @property string $posy
+ * @property string $posx
  * @property string $rotation
- *
- * The followings are the available model relations:
- * @property TblAvatars $avatar
- * @property TblCatalogoPiezas $piezaAvatar
- * @property TblCatalogoPiezas $tipoPieza
  */
-class AvatarsPiezas extends CActiveRecord
+class AvatarHasAccesorios extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return AvatarsPiezas the static model class
+	 * @return AvatarHasAccesorios the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -35,7 +29,7 @@ class AvatarsPiezas extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_avatars_piezas';
+		return 'tbl_avatar_has_Accesorios';
 	}
 
 	/**
@@ -46,12 +40,12 @@ class AvatarsPiezas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('avatar_id, pieza_avatar_id, tipo_pieza_id, scalex, scaley, posx, posy, rotation', 'required'),
-			array('avatar_id, pieza_avatar_id, tipo_pieza_id', 'numerical', 'integerOnly'=>true),
-			array('scalex, scaley, posx, posy, rotation', 'length', 'max'=>45),
+			array('avatar_id, accesorios_id, scalex, scaley, posy, posx, rotation', 'required'),
+			array('avatar_id, accesorios_id', 'numerical', 'integerOnly'=>true),
+			array('scalex, scaley, posy, posx, rotation', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('avatar_id, pieza_avatar_id, tipo_pieza_id, scalex, scaley, posx, posy, rotation', 'safe', 'on'=>'search'),
+			array('avatar_id, accesorios_id, scalex, scaley, posy, posx, rotation', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,11 +57,6 @@ class AvatarsPiezas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'avatar' => array(self::BELONGS_TO, 'TblAvatars', 'avatar_id'),
-			'piezaAvatar' => array(self::BELONGS_TO, 'TblCatalogoPiezas', 'pieza_avatar_id'),
-			'tipoPieza' => array(self::BELONGS_TO, 'TblCatalogoPiezas', 'tipo_pieza_id'),
-			'AvatarImg' => array(self::BELONGS_TO, 'CatalogoPiezas', 'pieza_avatar_id'),
-
 		);
 	}
 
@@ -78,12 +67,11 @@ class AvatarsPiezas extends CActiveRecord
 	{
 		return array(
 			'avatar_id' => 'Avatar',
-			'pieza_avatar_id' => 'Pieza Avatar',
-			'tipo_pieza_id' => 'Tipo Pieza',
+			'accesorios_id' => 'Accesorios',
 			'scalex' => 'Scalex',
 			'scaley' => 'Scaley',
-			'posx' => 'Posx',
 			'posy' => 'Posy',
+			'posx' => 'Posx',
 			'rotation' => 'Rotation',
 		);
 	}
@@ -100,12 +88,11 @@ class AvatarsPiezas extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('avatar_id',$this->avatar_id);
-		$criteria->compare('pieza_avatar_id',$this->pieza_avatar_id);
-		$criteria->compare('tipo_pieza_id',$this->tipo_pieza_id);
+		$criteria->compare('accesorios_id',$this->accesorios_id);
 		$criteria->compare('scalex',$this->scalex,true);
 		$criteria->compare('scaley',$this->scaley,true);
-		$criteria->compare('posx',$this->posx,true);
 		$criteria->compare('posy',$this->posy,true);
+		$criteria->compare('posx',$this->posx,true);
 		$criteria->compare('rotation',$this->rotation,true);
 
 		return new CActiveDataProvider($this, array(
