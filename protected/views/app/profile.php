@@ -5,6 +5,7 @@
 <?php
 //print_r($json);
 echo json_encode($json);
+echo "<br><br><br>";
 
 foreach ($json['catalogos']['cuerpos'] as $key => $value) {
 	echo CHtml::link($value['url'], "#", array('class'=>"insertar",'name'=>$value['id']))." "; 
