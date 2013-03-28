@@ -10,9 +10,9 @@
         <ul>
           <li><a href="#tab1">Cabeza</a></li>
           <li><a href="#tab2">Cuerpo</a></li>
-          <li><a href="#tab3">Ojos</a></li>
+          <li><a href="#tab3">Accesorios</a></li>
           <li><a href="#tab4">Boca</a></li>
-          <li><a href="#tab5">Accesorios</a></li>
+          <li><a href="#tab5">Tangas</a></li>
           <li><a href="#tab6">Otros</a></li>
         </ul>
         <div id="tab1">
@@ -39,8 +39,7 @@
           ?>
         </div>
         <div id="tab4">
-          <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/200x200.png"></div>
-          
+            <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/200x200.png"></div>
         </div>
         <div id="tab5">
           <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/200x200.png"></div>
@@ -58,21 +57,8 @@
 
 <?php
 //print_r($json);
-//echo json_encode($json);
+echo json_encode($json);
 
-foreach ($json['catalogos']['cuerpos'] as $key => $value) {
-	echo CHtml::link($value['url'], "#", array('class'=>"insertar",'name'=>$value['id']))." "; 
-}
-
-foreach ($json['catalogos']['caras'] as $key => $value) {
-	echo CHtml::link($value['url'], "#", array('class'=>"insertar",'name'=>$value['id']))." "; 
-}
-
-if(is_array($json['catalogos']['accesorios'])){
-	foreach ($json['catalogos']['accesorios'] as $key => $value) {
-		echo CHtml::link($value['url'], "#", array('class'=>"insertar",'name'=>$value['id']))." "; 
-	}
-}
 
 echo CHtml::link("cara_web", "#", array('class'=>"insertar",'name'=>"url_cara_web"))." "; 
 
