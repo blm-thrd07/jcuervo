@@ -6,6 +6,8 @@ class AppController extends Controller
 
   var $facebook;
   var $user;
+  private $_identity;
+
   public function filters()
   {
     return array(
@@ -18,11 +20,11 @@ class AppController extends Controller
   {
     return array(
       array('allow',  // allow all users to perform 'index' and 'view' actions
-        'actions'=>array('view','create','login','profile','CrearAvatar','UpdateTipoPieza','UpdatePieza'),
+        'actions'=>array('view','Logout','login'),
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        'actions'=>array('create','update'),
+        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza'),
         'users'=>array('@'),
       ),
       array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -37,17 +39,14 @@ class AppController extends Controller
 
 public function actionLogin(){
     
-    $this->facebook = new Facebook(array(
+       $this->facebook = new Facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-       ));
+        ));
        
-       $_SESSION['facebook']=$this->facebook;
-
-
+        $_SESSION['facebook']=$this->facebook;
         $this->user = $this->facebook->getUser();
         $my_access_token=$this->facebook->getAccessToken();
-
 
 
         if ($this->user) {
@@ -83,19 +82,32 @@ public function actionLogin(){
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
                 
-         }else{
-            Yii::app()->session['usuario_id']=$response[0]->id;
+         }else{  
+            $model=new Login;
+            $model->username=$response[0]->id;
+            $model->login();
+            Yii::app()->session['usuario_id']=$response[0]->id; 
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
-
          }else{
                $this->render('Login',array('loginUrl'=>$loginUrl));
        }
 
-       
 
+      //$this->_identity=new UserIdentity($this->username,$this->password);
+    //  print_r(Yii::app()->user);
+
+
+    //  echo file_get_contents($loginUrl);
 
     }
+
+
+public function actionLogout(){
+  Yii::app()->user->logout();
+}
+
+
 
   public function actionProfile($id)
   {
@@ -177,21 +189,9 @@ public function actionLogin(){
         'json'=>$json,
       ));
 
-      
-    
-
-
     $amigos=new Amigos;
     $amigosApp=$_SESSION['facebook']->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
-
-
-    
-
-    
-
-
-
   }
 
 
