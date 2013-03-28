@@ -115,11 +115,10 @@
       callback: function(dataUrl) {
 
     //datos=dataUrl.split(",");    
-   datos=dataUrl;
    $.ajax({
         type: "POST",
         url: "/jcuervo/index.php/avatars/update/"+iU,
-        data: "avatarImg="+datos,
+        data: "avatarImg="+dataUrl,
         success: function(datos){
            alert( "Se guardaron los datos: " + datos);
         }

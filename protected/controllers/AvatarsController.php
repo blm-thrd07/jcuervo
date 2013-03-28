@@ -93,13 +93,13 @@ class AvatarsController extends Controller
         
         if(isset($_POST['avatarImg'])){
 
-           if(file_exists(Yii::app()->basePath.'/../images/'.$model->avatar_img)){
-               unlink(Yii::app()->basePath.'/../images/'.$model->avatar_img);
+           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
+               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
            }
-           
+
            $model->avatar_img=$_POST['avatarImg'];
            $data=$_POST['avatarImg'];
-           define('UPLOAD_DIR', Yii::app()->basePath.'/../images/');
+           define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
 	       $img = $data;
 	       $img = str_replace('data:image/png;base64,', '', $img);
 	       $img = str_replace(' ', '+', $img);
