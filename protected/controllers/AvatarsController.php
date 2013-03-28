@@ -83,23 +83,48 @@ class AvatarsController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+        
+        if(isset($_POST['avatarImg'])){
 
-		if(isset($_POST['Avatars']))
-		{
+           if(file_exists(Yii::app()->basePath.'/../images/'.$model->avatar_img)){
+               unlink(Yii::app()->basePath.'/../images/'.$model->avatar_img);
+           }
+           
+           $model->avatar_img=$_POST['avatarImg'];
+           $data=$_POST['avatarImg'];
+           define('UPLOAD_DIR', Yii::app()->basePath.'/../images/');
+	       $img = $data;
+	       $img = str_replace('data:image/png;base64,', '', $img);
+	       $img = str_replace(' ', '+', $img);
+	       $data = base64_decode($img);
+	       $filename=uniqid().'.png';
+	       $file = UPLOAD_DIR .$filename;
+	       $success = file_put_contents($file, $data);
+	       $model->avatar_img=$filename;
+	       if($model->save()){
+	       	  echo "Avatar Actualizado";
+	       }
+
+         }
+
+        if(isset($_POST['Avatars']))
+	 	{
 			$model->attributes=$_POST['Avatars'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-		}
+		}	
 
-		$this->render('update',array(
+		/*$this->render('update',array(
 			'model'=>$model,
 		));
+	    */
 	}
 
 	/**

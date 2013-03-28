@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
+    <script> var iU=<?echo Yii::app()->session['usuario_id'];?>; </script>
     
   </head>
   <body>

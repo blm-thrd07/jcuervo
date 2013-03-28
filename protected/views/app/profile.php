@@ -16,7 +16,6 @@
           <li><a href="#tab6">Otros</a></li>
         </ul>
         <div id="tab1">
-          
           <? 
            foreach ($json['catalogos']['caras'] as $key => $value) {
               echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/200x200.png","cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
