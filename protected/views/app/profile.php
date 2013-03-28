@@ -1,11 +1,64 @@
+ <a href="<? echo $logoutUrl ?>"> LOGOUT</a>
+ <section id="crearPersonaje">
+      <h1>Crea tu personaje</h1>
+      <h2>Nombre del Usuario</h2>
+      <div class="canvas">
+        <div id="personajeCanvas"></div>
+      </div>
+      <div class="controllers"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-listenerStat" class="btn">JSON log</a><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a></div>
+      <div class="tabEngine itemSelector">
+        <ul>
+          <li><a href="#tab1">Cabeza</a></li>
+          <li><a href="#tab2">Cuerpo</a></li>
+          <li><a href="#tab3">Ojos</a></li>
+          <li><a href="#tab4">Boca</a></li>
+          <li><a href="#tab5">Accesorios</a></li>
+          <li><a href="#tab6">Otros</a></li>
+        </ul>
+        <div id="tab1">
+          <? 
+           foreach ($json['catalogos']['caras'] as $key => $value) {
+              echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/200x200.png","cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+            }
+         ?>
+        </div>
+        <div id="tab2">
+        <?
+            foreach ($json['catalogos']['cuerpos'] as $key => $value) {
+              echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+            }
+        ?>
+        </div>
+        <div id="tab3">
+          <?
+               if(is_array($json['catalogos']['accesorios'])){
+	              foreach ($json['catalogos']['accesorios'] as $key => $value) {
+                echo '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"accesorio",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+	              }
+                }
+          ?>
+        </div>
+        <div id="tab4">
+          <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/200x200.png"></div>
+          
+        </div>
+        <div id="tab5">
+          <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/200x200.png"></div>
+        </div>
+        <div id="tab6">
+          <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/200x200.png"></div>
+        </div>
+      </div>
+    </section>
+
+
 <div id="data">
 <?php //$this->renderPartial('_ajaxPieza', array('piezas'=>$piezas),false,true); ?>
 </div>
 
 <?php
 //print_r($json);
-echo json_encode($json);
-echo "<br><br><br>";
+//echo json_encode($json);
 
 foreach ($json['catalogos']['cuerpos'] as $key => $value) {
 	echo CHtml::link($value['url'], "#", array('class'=>"insertar",'name'=>$value['id']))." "; 
@@ -39,8 +92,5 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 	
 
 ',CClientScript::POS_READY);
-
-
-
 
 ?>
