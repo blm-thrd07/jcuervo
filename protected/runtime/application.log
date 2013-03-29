@@ -2506,3 +2506,27 @@ Stack trace:
 REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
 HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
 ---
+2013/03/29 21:31:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: DELETE FROM `tbl_avatar_has_Accesorios` WHERE avatar_id=:avatar_id AND accesorios_id=:accesorios_id.
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php (232)
+in /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php (13)
+2013/03/29 21:31:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: DELETE FROM `tbl_avatar_has_Accesorios` WHERE avatar_id=:avatar_id AND accesorios_id=:accesorios_id' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(1751): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AvatarsController.php(232): CActiveRecord->deleteAll(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AvatarsController->actionUpdatePieza()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(276): CController->run('UpdatePieza')
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('avatars/UpdateP...')
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/jcuervo/index.php/avatars/UpdatePieza
+HTTP_REFERER=http://localhost/jcuervo/index.php/App/Profile/100001421156741
+---

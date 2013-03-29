@@ -202,20 +202,49 @@ class AvatarsController extends Controller
   public function actionUpdatePieza(){
     //$pieza_id = $_POST['pieza_id']; 
     //$accion = $_POST['accion'];
+    $edit=$_POST['edit'];
+    //borra todo
+    if($edit==1){
+    	$m = AvatarsPiezas::model()->deleteAll(array(
+	    		'condition'=>'avatar_id=:avatar_id',
+	    		'params'=>array(
+		    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			)
+	    		)	
+	    	);
+    	//if(count($m)!=0)
+    	//	$m->delete();
+    	$mcaras = CaraWeb::model()->deleteAll(array(
+	    		'condition'=>'avatar_id=:avatar_id',
+	    		'params'=>array(
+		    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			)
+	    		)	
+	    	);
+    	//if(count($mcaras)!=0)
+    	//	$mcaras->delete();
+    	$maccesorios = AvatarHasAccesorios::model()->deleteAll(array(
+	    		'condition'=>'avatar_id=:avatar_id',
+	    		'params'=>array(
+		    			':avatar_id'=>Yii::app()->session['usuario_id'],
+	    			)
+	    		)	
+	    	);
+    	//if(count($maccesorios)!=0)
+    	//	$maccesorios->delete();
+    }
     $avatar = $_POST['avatar'];
     foreach ($avatar as $p => $pieza) {
     	$tipo = $pieza['attrs']['tipo'];
     	$pieza_id = $pieza['attrs']['id'];
+    	$posx=$pieza['attrs']['x'];
+    	$posy=$pieza['attrs']['y'];
+    	//$zindex=$pieza['attrs'][]
+    	$rotation=$pieza['attrs']['rotation'];
+
     	print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
     	if($tipo==TiposPiezas::CUERPO || $tipo==TiposPiezas::CARA){
-	    	echo "pieza"; //
-	    	/*$cat_pieza = CatalogoPiezas::model()->find(array(
-	    		'condition'=>'id=:id',
-	    		'params'=>array(
-		    			':id'=>$pieza_id,
-	    			)
-	    		)	
-	    	);*/
+	    	echo " pieza ";
 	    	$m = AvatarsPiezas::model()->find(array(
 	    		'condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id',
 	    		'params'=>array(
@@ -226,7 +255,7 @@ class AvatarsController extends Controller
 	    		)	
 	    	);
 
-	    	//si es cara
+	    	//si es cara borra cara_web
 	    	if($tipo==TiposPiezas::CARA){ 
 	    		$mcaras = CaraWeb::model()->find(array(
 		    		'condition'=>'avatar_id=:avatar_id',
@@ -250,11 +279,17 @@ class AvatarsController extends Controller
 	    		$m->avatar_id=Yii::app()->session['usuario_id'];
 	    		$m->pieza_avatar_id=$pieza_id;
 	    		$m->tipo_pieza_id=$tipo;
+	    		$m->posx=$posx;
+	    		$m->posy=$posy;
+	    		$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
 	    	//actualizar
 	    	else{
 	    		$m->pieza_avatar_id=$pieza_id;
+	    		$m->posx=$posx;
+	    		$m->posy=$posy;
+	    		$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
 	    	
@@ -274,11 +309,17 @@ class AvatarsController extends Controller
 	    		$m=new AvatarHasAccesorios;
 	    		$m->avatar_id=Yii::app()->session['usuario_id'];
 	    		$m->accesorios_id=$pieza_id;
+	    		$m->posx=$posx;
+	    		$m->posy=$posy;
+	    		$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
 	    	//actualizar
 	    	else{
-	    		//nada
+	    		$m->posx=$posx;
+	    		$m->posy=$posy;
+	    		$m->rotation=$rotation;
+	    		$m->save(false);
 	    	}
 	    } else if($tipo==TiposPiezas::CARA_WEB){
 	    	echo "cara_web"; //
@@ -293,6 +334,9 @@ class AvatarsController extends Controller
 	    	if(count($m)==0){
 	    		$m = new CaraWeb;
 	    		$m->url = $pieza_id;
+	    		//$m->posx=$posx;
+	    		//$m->posy=$posy;
+	    		//$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
 	    	//actualizar

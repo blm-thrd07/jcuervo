@@ -193,7 +193,7 @@
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
     console.log(json.children);
-    var avatarJson = { avatar: json.children };
+    var avatarJson = { avatar: json.children, edit:1 };
 
     $.ajax({
       type: 'POST',
@@ -274,6 +274,7 @@
       tabActiveClass: 'selected',
       updateHash: false
     });
+
     return layerPersonaje.draw();
   });
 

@@ -111,7 +111,7 @@ public function actionLogout(){
 
   public function actionProfile($id)
   {
-
+    
     $modelcom = Usuarios::model()->with('Comics')->findAll();
     
     print_r($modelcom->Comics);
