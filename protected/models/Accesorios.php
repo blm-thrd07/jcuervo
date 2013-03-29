@@ -78,7 +78,8 @@ class Accesorios extends CActiveRecord
       for($cont=0;$cont<$catalogos_accesorios_cantidad;$cont++){
         $catalogo_accesorios[$cont]=array(
            'id'=>$model_accesorios[$cont]->id,
-           'url'=>$model_accesorios[$cont]->url);
+           'url'=>$model_accesorios[$cont]->url,
+        	'tipo_pieza_id'=>TiposPiezas::ACCESORIO);
       }
        return $catalogo_accesorios;
     }

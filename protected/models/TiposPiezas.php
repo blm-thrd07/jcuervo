@@ -12,6 +12,12 @@
  */
 class TiposPiezas extends CActiveRecord
 {
+	const ACCESORIO=1;
+	const CARA_WEB=2;
+	const CARA=3;
+	const CUERPO=4;
+	
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
