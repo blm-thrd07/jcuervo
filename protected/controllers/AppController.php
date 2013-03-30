@@ -121,7 +121,7 @@ public function actionLogout(){
     //print_r($comic[0]);
     //echo $comic[0]->Comic->Coments[0]->comment;
 
-   $logoutUrl = $_SESSION['facebook']->getLogoutUrl();    
+   //$logoutUrl = $_SESSION['facebook']->getLogoutUrl();    
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
    $model_PiezaAvatar=new CatalogoPiezas;
