@@ -39,7 +39,7 @@ class AppController extends Controller
 
 public function actionLogin(){
     
-       $this->facebook = new Facebook(array(
+       $this->facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
