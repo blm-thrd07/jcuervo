@@ -113,9 +113,6 @@ public function actionLogout(){
   {
     
     $modelcom = Usuarios::model()->with('Comics')->findAll();
-    
-    print_r($modelcom->Comics);
-
     $modelc= new UsuariosHasTblComics;
     $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
     
@@ -123,7 +120,7 @@ public function actionLogout(){
     //print_r($comic[0]);
     //echo $comic[0]->Comic->Coments[0]->comment;
 
-     $logoutUrl = $_SESSION['facebook']->getLogoutUrl();    
+   $logoutUrl = $_SESSION['facebook']->getLogoutUrl();    
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
    $model_PiezaAvatar=new CatalogoPiezas;
@@ -135,7 +132,7 @@ public function actionLogout(){
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 
    $numero_comics=count($response[0]->Comics);
-
+   $comics;
 
    for($count=0;$count<$numero_comics;$count++){
    
