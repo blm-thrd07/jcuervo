@@ -184,6 +184,16 @@
   saveToImage = function() {
     stagePersonaje.toDataURL({
       callback: function(dataUrl) {
+        
+     $.ajax({
+        type: 'POST',
+        url: "https://apps.t2omedia.com.mx/php2/jcuervo/index.php/jcuervo/index.php/avatars/update"+iU,
+        data: dataUrl,
+        success: function(data){
+           alert(data);
+        }
+    });
+
         return window.open(dataUrl);
       }
     });
