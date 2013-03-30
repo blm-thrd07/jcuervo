@@ -73,7 +73,7 @@ class Accesorios extends CActiveRecord
 
        $model_accesorios=Accesorios::model()->findAll();
        $catalogos_accesorios_cantidad= count($model_accesorios);
-       $catalogo_accesorios;
+       $catalogo_accesorios=null;
 
       for($cont=0;$cont<$catalogos_accesorios_cantidad;$cont++){
         $catalogo_accesorios[$cont]=array(

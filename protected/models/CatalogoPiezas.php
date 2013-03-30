@@ -100,7 +100,7 @@ class CatalogoPiezas extends CActiveRecord
      
      $model_cuerpos=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CUERPO));
      $catalogos_cuerpos_cantidad=count($model_cuerpos);
-     $catalogo_cuerpos;
+     $catalogo_cuerpos=null;
 
        for($cont=0;$cont<$catalogos_cuerpos_cantidad;$cont++){
                 $catalogo_cuerpos[$cont]=array(
