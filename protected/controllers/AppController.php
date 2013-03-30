@@ -133,7 +133,7 @@ public function actionLogout(){
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 
    $numero_comics=count($response[0]->Comics);
-echo "hola";
+echo "hola"
 /*
    for($count=0;$count<$numero_comics;$count++){
    
