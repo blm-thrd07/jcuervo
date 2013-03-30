@@ -187,7 +187,7 @@
         
      $.ajax({
         type: 'POST',
-        url: "https://apps.t2omedia.com.mx/php2/jcuervo/index.php/jcuervo/index.php/avatars/Update/"+iU,
+        url: "https://apps.t2omedia.com.mx/php2/jcuervo/index.php/avatars/update/"+iU,
         data: dataUrl,
         success: function(data){
            alert(data);
