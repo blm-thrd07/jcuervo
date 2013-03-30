@@ -127,13 +127,17 @@ public function actionLogout(){
    $model_PiezaAvatar=new CatalogoPiezas;
    $model_Accesorios=new Accesorios;
    $model_Amigos_Avatars=new Amigos;
+   
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
+   
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
+   /*
    $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 
    $numero_comics=count($response[0]->Comics);
-echo "hola"
+
+   */
 /*
    for($count=0;$count<$numero_comics;$count++){
    
