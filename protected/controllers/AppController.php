@@ -111,7 +111,9 @@ public function actionLogout(){
 
   public function actionProfile($id)
   {
-    
+
+    echo "hola";
+    /*
     $modelcom = Usuarios::model()->with('Comics')->findAll();
     $modelc= new UsuariosHasTblComics;
     $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
@@ -188,6 +190,9 @@ public function actionLogout(){
     $amigos=new Amigos;
    // $amigosApp=$_SESSION['facebook']->api(array('method' => 'friends.getAppUsers'));
    // $amigos->insertAmigosApp($amigosApp);
+  
+
+*/
   }
 
 
