@@ -84,7 +84,7 @@ class CatalogoPiezas extends CActiveRecord
 
        $model_caras=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CARA));
        $catalogos_caras_cantidad= count($model_caras);
-       $catalogo_caras=array();
+       $catalogo_caras=null;
 
       for($cont=0;$cont<$catalogos_caras_cantidad;$cont++){
         $catalogo_caras[$cont]=array(
