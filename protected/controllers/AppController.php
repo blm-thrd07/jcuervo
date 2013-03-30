@@ -112,8 +112,7 @@ public function actionLogout(){
   public function actionProfile($id)
   {
 
-    echo "hola";
-    /*
+
     $modelcom = Usuarios::model()->with('Comics')->findAll();
     $modelc= new UsuariosHasTblComics;
     $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
@@ -134,8 +133,8 @@ public function actionLogout(){
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 
    $numero_comics=count($response[0]->Comics);
-
-
+echo "hola";
+/*
    for($count=0;$count<$numero_comics;$count++){
    
       $comics[$count]=array(
