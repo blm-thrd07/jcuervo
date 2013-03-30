@@ -116,11 +116,7 @@ public function actionLogout(){
     $modelcom = Usuarios::model()->with('Comics')->findAll();
     $modelc= new UsuariosHasTblComics;
     $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
-    
-
-    //print_r($comic[0]);
-    //echo $comic[0]->Comic->Coments[0]->comment;
-
+    $logoutUrl=null;
    //$logoutUrl = $_SESSION['facebook']->getLogoutUrl();    
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
