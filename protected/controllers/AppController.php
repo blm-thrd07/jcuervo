@@ -90,7 +90,7 @@ public function actionLogin(){
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
          }else{
-               $this->render('Login',array('loginUrl'=>$loginUrl));
+               $this->render('login',array('loginUrl'=>$loginUrl));
        }
 
 
