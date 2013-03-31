@@ -1,11 +1,11 @@
 <?
 
-//echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
+echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
 
 ?>
 
-
-    <a id="login" href="">Login</a>
+<?
+/*    <a id="login" href="">Login</a>
   
     <div id="fb-root"></div>
     <script>
@@ -40,4 +40,6 @@
 
    
    </script>
+
+   */
    	
