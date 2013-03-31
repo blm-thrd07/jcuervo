@@ -1,7 +1,7 @@
  <a href="<? echo $logoutUrl ?>"> LOGOUT</a>
  <section id="crearPersonaje">
       <h1>Crea tu personaje</h1>
-      <h2>Nombre del Usuario</h2>
+      <h2><?echo $json['usuario']['nombre']; ?></h2>
       <div class="canvas">
         <div id="personajeCanvas"></div>
       </div>
