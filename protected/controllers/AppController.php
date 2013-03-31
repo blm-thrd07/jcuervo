@@ -99,9 +99,7 @@ public function actionLogin(){
 
       //$this->_identity=new UserIdentity($this->username,$this->password);
     //  print_r(Yii::app()->user);
-
-
-    //  echo file_get_contents($loginUrl);
+     echo file_get_contents($loginUrl);
 
     }
 
@@ -186,7 +184,7 @@ public function actionLogout(){
     $amigos=new Amigos;
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
-    
+
     $this->render('profile',array(
         'json'=>$json,'logoutUrl'=>$logoutUrl  
 
