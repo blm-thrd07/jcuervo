@@ -88,6 +88,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
+		'facebook'=>''
 		'adminEmail'=>'webmaster@example.com',
 	),
 );
