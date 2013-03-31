@@ -113,6 +113,11 @@ public function actionLogout(){
   public function actionProfile($id)
   {
 
+   $this->facebook = new facebook(array(
+        'appId'  => '342733185828640',
+        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+        ));
+
    $modelcom = Usuarios::model()->with('Comics')->findAll();
    $modelc= new UsuariosHasTblComics;
    $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
