@@ -78,13 +78,13 @@ public function actionLogin(){
           $model->id_facebook=$user_profile['id'];
           $model->sexo=$user_profile['gender'];
 
-/*
+
              if($model->save()){
               Yii::app()->session['usuario_id']=$model->id;
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
 
-             */
+            
                 
          }else{  
             $model=new Login;
