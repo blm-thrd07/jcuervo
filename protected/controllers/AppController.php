@@ -44,7 +44,6 @@ public function actionLogin(){
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
        
-        $_SESSION['facebook']=$this->facebook;
 
         Yii::app()->facebook=$this->facebook;
         $this->user =Yii::app()->facebook->getUser();
