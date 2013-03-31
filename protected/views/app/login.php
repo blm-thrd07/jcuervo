@@ -1,5 +1,5 @@
 <?
 
-echo "<a href='".$loginUrl."' target='_parent'>Login</a>";
+echo "<a href='".$loginUrl."' target='_self'>Login</a>";
 
 ?>
