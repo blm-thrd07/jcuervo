@@ -45,7 +45,7 @@ public function actionLogin(){
         ));
        
 
-        YII::app()->params['facebook']=$this->facebook;
+        //YII::app()->params['facebook']=$this->facebook;
         $this->user =Yii::app()->facebook->getUser();
         $my_access_token= Yii::app()->facebook->getAccessToken();
 
@@ -61,9 +61,9 @@ public function actionLogin(){
          }
 
         if ($this->user) {
-            $logoutUrl = Yii::app()->facebook->getLogoutUrl();
+            $logoutUrl = $this->facebook->getLogoutUrl();
         } else {
-            $loginUrl = Yii::app()->facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
+            $loginUrl = $this->facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
         }
 
        if($this->user){
