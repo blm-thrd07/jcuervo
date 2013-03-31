@@ -1,4 +1,10 @@
+<?
 
+echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
+
+?>
+<?
+/*
     <a id="login" href="">Login</a>
   
     <div id="fb-root"></div>
@@ -68,4 +74,5 @@
     document.getElementById('removePerms').onclick = function() {
       removePermissions(['read_stream']);
     };
-   </script>	
+   </script>
+   */	
