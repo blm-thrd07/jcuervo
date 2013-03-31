@@ -53,7 +53,7 @@ public function actionLogin(){
         if ($this->user) {
            try {
               // Proceed knowing you have a logged in user who's authenticated.
-              $user_profile =  Yii::app()->facebook->api('/me');
+              $user_profile =  $this->facebook->api('/me');
             } catch (FacebookApiException $e) {
                error_log($e);
                $this->user = null;
