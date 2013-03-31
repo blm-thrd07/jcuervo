@@ -51,6 +51,11 @@
     </section>
 
 
+    <section>
+      
+    </section>
+
+
 <div id="data">
 <?php //$this->renderPartial('_ajaxPieza', array('piezas'=>$piezas),false,true); ?>
 </div>
