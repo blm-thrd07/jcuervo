@@ -39,21 +39,21 @@ class AppController extends Controller
 
 public function actionLogin(){
     
-       $this->facebook = new facebook(array(
+       $facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
        
 
-        //YII::app()->params['facebook']=$this->facebook;
-        $this->user =$this->facebook->getUser();
-        $my_access_token= $this->facebook->getAccessToken();
+        //YII::app()->params['facebook']=$facebook;
+        $this->user =$facebook->getUser();
+        $my_access_token= $facebook->getAccessToken();
 
 
         if ($this->user) {
            try {
               // Proceed knowing you have a logged in user who's authenticated.
-              $user_profile =  $this->facebook->api('/me');
+              $user_profile =  $facebook->api('/me');
             } catch (FacebookApiException $e) {
                error_log($e);
                $this->user = null;
@@ -61,9 +61,9 @@ public function actionLogin(){
          }
 
         if ($this->user) {
-            $logoutUrl = $this->facebook->getLogoutUrl();
+            $logoutUrl = $facebook->getLogoutUrl();
         } else {
-            $loginUrl = $this->facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
+            $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
         }
 
        if($this->user){
@@ -113,7 +113,7 @@ public function actionLogout(){
   public function actionProfile($id)
   {
 
-   $this->facebook = new facebook(array(
+   $facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
@@ -122,7 +122,7 @@ public function actionLogout(){
    $modelc= new UsuariosHasTblComics;
    $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
    $logoutUrl=null;
-   //$logoutUrl = $this->facebook->getLogoutUrl();    
+   //$logoutUrl = $facebook->getLogoutUrl();    
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
    $model_PiezaAvatar=new CatalogoPiezas;
@@ -183,7 +183,7 @@ public function actionLogout(){
    
 
  $amigos=new Amigos;
-    $amigosApp=$this->facebook->api(array('method' => 'friends.getAppUsers'));
+    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     print_r($amigosApp);
     $amigos->insertAmigosApp($amigosApp);
     
@@ -219,7 +219,7 @@ public function actionLogout(){
              FROM stream WHERE source_id = 100004850712781  and post_id="'.$post_id.'"',
          );
 
-             $result = Yii::app()->facebook->api($params);
+             $result = $facebook->api($params);
 
         return $result;
   }
@@ -235,7 +235,7 @@ public function actionLogout(){
                 'picture'       =>  $link_picture,
             );
 
-       $post = Yii::app()->facebook->api("/$user/feed","POST",$params);
+       $post = $facebook->api("/$user/feed","POST",$params);
         return $post['id'];
 
 
@@ -248,13 +248,13 @@ public function actionLogout(){
             'query' => "SELECT aid, name FROM album WHERE owner = me()"
          );
 
-         $albums = Yii::app()->facebook->api($fql_query);
+         $albums = $facebook->api($fql_query);
        return $albums;
     }
     
     public function FacebookGetFeed(){
-      $my_access_token=Yii::app()->facebook->getAccessToken();
-      $page_feed = Yii::app()->facebook->api(
+      $my_access_token=$facebook->getAccessToken();
+      $page_feed = $facebook->api(
           '/me/feed',
            'GET',
         array('access_token' => $my_access_token)
@@ -263,8 +263,8 @@ public function actionLogout(){
     }
 
     public function FacebookGetFriends(){
-      $my_access_token=Yii::app()->facebook->getAccessToken();
-      $friends = Yii::app()->facebook->api('/me/friends',array('access_token'=>$my_access_token));
+      $my_access_token=$facebook->getAccessToken();
+      $friends = $facebook->api('/me/friends',array('access_token'=>$my_access_token));
       return $friends;
 
   }

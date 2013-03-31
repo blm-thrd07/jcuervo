@@ -93,9 +93,18 @@ class AvatarsController extends Controller
         
         if(isset($_POST['avatarImg'])){
 
+         $facebook = new facebook(array(
+           'appId'  => '342733185828640',
+           'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+         ));
+       
+        $user =$facebook->getUser();
+        $my_access_token= $facebook->getAccessToken();
+
            if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
                unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
            }
+
 
            $model->avatar_img=$_POST['avatarImg'];
            $data=$_POST['avatarImg'];
@@ -109,7 +118,7 @@ class AvatarsController extends Controller
 	       $success = file_put_contents($file, $data);
 	       $model->avatar_img=$filename;
 	       if($model->save()){
-	       	  echo "Avatar Actualizado";
+	       	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
 
          }
@@ -126,6 +135,21 @@ class AvatarsController extends Controller
 		));
 	    */
 	}
+
+
+	public function ShareMemeLink($my_access_token,$link,$message){
+
+       $photo_url=$link;
+       $photo_caption=$message;
+       $graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"
+      . "url=" . urlencode($photo_url)
+      . "&message=" . urlencode($photo_caption)
+      . "&method=POST"
+      . "&access_token=" .$my_access_token;
+       echo '<html><body>';
+       echo file_get_contents($graph_url);
+       echo '</body></html>';
+    }
 
 	/**
 	 * Deletes a particular model.
