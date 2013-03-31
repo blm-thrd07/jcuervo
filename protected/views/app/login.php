@@ -8,8 +8,6 @@
     <button id="checkPerms">Check Permissions</button><br/>
     <button id="removePerms">Remove Permissions</button>
     <div id="fb-root"></div>
-
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script>
     FB.init({
       appId  : '342733185828640',
