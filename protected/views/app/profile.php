@@ -52,7 +52,9 @@
 
 
     <section>
-      
+            <h1>Mi Avatar.</h1>
+            <? echo "<img src='https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/".$json['avatar']['avatarImg']"' />"; ?>
+
     </section>
 
 
