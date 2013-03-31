@@ -1,6 +1,6 @@
 <?
 
-echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
+echo "<a  target='_top' href='".$loginUrl."' target='_self'>Login</a>";
 
 ?>
 
