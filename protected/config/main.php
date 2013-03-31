@@ -1,4 +1,4 @@
-<?php
+t2<?php
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
