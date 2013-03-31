@@ -42,9 +42,9 @@
     id: 3
   });
 
-  imageCabeza.src = '/php2/jcuervo/img/cabeza-3.png';
+  imageCabeza.src = '/php2/jcuervo/img/cabeza-1.png';
 
-  imageCuerpo.src = '/php2/jcuervo/img/cabeza-2.png';
+  imageCuerpo.src = '/php2/jcuervo/img/cuerpo-1.png';
 
   layerPersonaje.add(cabeza);
 
