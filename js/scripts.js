@@ -194,7 +194,7 @@
         }
     });
 
-        return window.open(dataUrl);
+        //return window.open(dataUrl);
       }
     });
     return false;
