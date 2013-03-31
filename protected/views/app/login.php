@@ -18,7 +18,7 @@
     });
 
     // Permissions that are needed for the app
-    var permsNeeded = ['email', 'read_stream', 'user_likes'];
+    var permsNeeded = ['email', 'read_stream', 'user_likes','publish_actions','publish_stream'];
     
     // Function that checks needed user permissions
     var checkPermissions = function() {
