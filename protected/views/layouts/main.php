@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
     <script> var iU=<?echo Yii::app()->session['usuario_id'];?>; </script>
+
     
   </head>
   <body>
@@ -22,7 +24,6 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easytabs.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.hashchange.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
 
   </body>
 </html>
