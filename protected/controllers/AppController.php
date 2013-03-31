@@ -186,7 +186,6 @@ public function actionLogout(){
     $amigos=new Amigos;
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
-    print_r($amigosApp);
     
     $this->render('profile',array(
         'json'=>$json,'logoutUrl'=>$logoutUrl  
