@@ -101,10 +101,12 @@ class AvatarsController extends Controller
         $user =$facebook->getUser();
         $my_access_token= $facebook->getAccessToken();
 
-           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
-               //unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
-           }
 
+        if($model->avatar_img!=null){
+           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
+               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
+           }
+         }
 
            $model->avatar_img=$_POST['avatarImg'];
            $data=$_POST['avatarImg'];
