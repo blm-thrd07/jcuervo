@@ -111,7 +111,7 @@ class Amigos extends CActiveRecord
     for($var=0;$var<$amigos_cantidad;$var++){
       
          $array[$var]= array('usuario_id'=> $response[$var]->amigo->Avatar->usuario_id,
-                    'avatar_img'=>$response[$var]->amigo->Avatar->id,
+                    'avatar_img'=>$response[$var]->amigo->Avatar->avatar_img,
                     'idFb'=>$response[$var]->amigo->id_facebook,
                     'nombre'=>$response[$var]->amigo->nombre
                     );
