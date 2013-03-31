@@ -1,11 +1,5 @@
 <?php
 
-$facebook = new facebook(array(
-        'appId'  => '342733185828640',
-        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-        ));
-
-
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -94,7 +88,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'facebook'=>$facebook,
 		'adminEmail'=>'webmaster@example.com',
 	),
 );
