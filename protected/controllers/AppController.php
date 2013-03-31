@@ -184,8 +184,8 @@ public function actionLogout(){
       
 
     $amigos=new Amigos;
-   // $amigosApp=Yii::app()->facebook->api(array('method' => 'friends.getAppUsers'));
-   // $amigos->insertAmigosApp($amigosApp);
+    $amigosApp=$this->facebook->api(array('method' => 'friends.getAppUsers'));
+    $amigos->insertAmigosApp($amigosApp);
   
 
 
