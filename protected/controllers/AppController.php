@@ -185,6 +185,8 @@ public function actionLogout(){
 
     $amigos=new Amigos;
     $amigosApp=$this->facebook->api(array('method' => 'friends.getAppUsers'));
+
+    print_r($amigosApp);
     $amigos->insertAmigosApp($amigosApp);
   
 
