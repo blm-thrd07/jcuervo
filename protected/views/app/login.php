@@ -1,12 +1,6 @@
-<?
 
-//echo "<a href='".$loginUrl."' target='_self'>Login</a>";
-
-?>
-
-    <button id="login">Login</button><br/>
-    <button id="checkPerms">Check Permissions</button><br/>
-    <button id="removePerms">Remove Permissions</button>
+    <a id="login" href="">Login</a>
+  
     <div id="fb-root"></div>
     <script>
     FB.init({
