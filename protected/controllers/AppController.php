@@ -69,7 +69,7 @@ public function actionLogin(){
        if($this->user){
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
-        
+        print_r($response);
 
         if(count($response)==0){
 
@@ -78,10 +78,13 @@ public function actionLogin(){
           $model->id_facebook=$user_profile['id'];
           $model->sexo=$user_profile['gender'];
 
+/*
              if($model->save()){
               Yii::app()->session['usuario_id']=$model->id;
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
+
+             */
                 
          }else{  
             $model=new Login;

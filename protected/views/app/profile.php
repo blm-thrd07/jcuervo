@@ -56,6 +56,11 @@
             <? echo "<img src='https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/".$json['avatar']['avatarImg']."' />"; ?>
 
     </section>
+    <section>
+      <h1>Memes de mis amigos</h1>
+      
+    </section>
+
 
 
 <div id="data">
