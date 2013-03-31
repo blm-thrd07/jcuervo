@@ -177,19 +177,15 @@ public function actionLogout(){
     'avatarPiezas'=>$datosAvatar,'comics'=>$comics,'AmigosAvatars'=>$amigosAvatars); 
    
 
+ $amigos=new Amigos;
+    $amigosApp=$this->facebook->api(array('method' => 'friends.getAppUsers'));
+    print_r($amigosApp);
+    $amigos->insertAmigosApp($amigosApp);
+    
     $this->render('profile',array(
         'json'=>$json,'logoutUrl'=>$logoutUrl  
 
       ));
-      
-
-    $amigos=new Amigos;
-    $amigosApp=$this->facebook->api(array('method' => 'friends.getAppUsers'));
-
-    print_r($amigosApp);
-    $amigos->insertAmigosApp($amigosApp);
-  
-
 
   }
 
