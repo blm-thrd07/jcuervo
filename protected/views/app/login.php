@@ -21,26 +21,7 @@
     var permsNeeded = ['email', 'read_stream', 'user_likes','publish_actions','publish_stream'];
     
     // Function that checks needed user permissions
-    var checkPermissions = function() {
-      FB.api('/me/permissions', function(response) {
-        var permsArray = response.data[0];
-
-        var permsToPrompt = [];
-        for (var i in permsNeeded) {
-          if (permsArray[permsNeeded[i]] == null) {
-            permsToPrompt.push(permsNeeded[i]);
-          }
-        }
-        
-        if (permsToPrompt.length > 0) {
-          alert('Need to re-prompt user for permissions: ' + 
-            permsToPrompt.join(','));
-          promptForPerms(permsToPrompt);
-        } else {
-          alert('No need to prompt for any permissions');
-        }
-      });
-    };
+   
     
     // Re-prompt user for missing permissions
     var promptForPerms = function(perms) {
@@ -49,17 +30,6 @@
         }, {scope: perms.join(',')});
     };
 
-    var removePermissions = function(perms) {
-      FB.api(
-          {
-            method: 'auth.revokeExtendedPermission',
-            perm: perms.join(',')
-          },
-          function(response) {
-            console.log(response);
-          }
-      ); 
-    };
 
     document.getElementById("login").onclick = function() {
       FB.login(function(response) {
@@ -68,12 +38,6 @@
       }, {scope: permsNeeded.join(',')});
     };
 
-    document.getElementById('checkPerms').onclick = function() {
-      checkPermissions();
-    };
-
-    document.getElementById('removePerms').onclick = function() {
-      removePermissions(['read_stream']);
-    };
+   
    </script>
    	
