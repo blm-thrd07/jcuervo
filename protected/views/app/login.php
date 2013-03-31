@@ -63,7 +63,8 @@
 
     document.getElementById("login").onclick = function() {
       FB.login(function(response) {
-        alert(response);
+
+            window.location = "https://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/login"
       }, {scope: permsNeeded.join(',')});
     };
 
