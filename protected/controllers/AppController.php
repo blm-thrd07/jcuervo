@@ -117,7 +117,7 @@ public function actionLogout(){
    $modelc= new UsuariosHasTblComics;
    $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
    $logoutUrl=null;
-   $logoutUrl = $this->facebook->getLogoutUrl();    
+   //$logoutUrl = $this->facebook->getLogoutUrl();    
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
    $model_PiezaAvatar=new CatalogoPiezas;
