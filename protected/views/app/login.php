@@ -1,10 +1,10 @@
 <?
 
-echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
+//echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
 
 ?>
-<?
-/*
+
+
     <a id="login" href="">Login</a>
   
     <div id="fb-root"></div>
@@ -63,7 +63,7 @@ echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
 
     document.getElementById("login").onclick = function() {
       FB.login(function(response) {
-        console.log(response);
+        alert(response);
       }, {scope: permsNeeded.join(',')});
     };
 
@@ -75,4 +75,4 @@ echo "<a   href='".$loginUrl."' target='_self'>Login</a>";
       removePermissions(['read_stream']);
     };
    </script>
-   */	
+   	
