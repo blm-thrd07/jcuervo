@@ -45,7 +45,7 @@ public function actionLogin(){
         ));
        
 
-        Yii::app()->facebook=$this->facebook;
+        YII::app()->params['facebook']=$this->facebook;
         $this->user =Yii::app()->facebook->getUser();
         $my_access_token= Yii::app()->facebook->getAccessToken();
 
