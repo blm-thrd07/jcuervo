@@ -15,6 +15,5 @@
 document.getElementById("login").onclick = function() {
   window.top.location = oauth_url;
   }
-
 </script>
 
