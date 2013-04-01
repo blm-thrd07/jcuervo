@@ -68,7 +68,7 @@ if(is_array($json['AmigosAvatars'])){
 
              */ 
 
-              print_r($json);
+              print_r($json['AmigosAvatars'][0]);
       ?>
     </section>
 
