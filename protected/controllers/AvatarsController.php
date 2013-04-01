@@ -123,8 +123,7 @@ class AvatarsController extends Controller
 	       
 	       
 	       if($model->save()){
-	       	echo "guardado";
-	       	    //$this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+	       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
 	      
 
@@ -153,9 +152,9 @@ class AvatarsController extends Controller
       . "&message=" . urlencode($photo_caption)
       . "&method=POST"
       . "&access_token=" .$my_access_token;
-       echo '<html><body>';
+      // echo '<html><body>';
        echo file_get_contents($graph_url);
-       echo '</body></html>';
+       //echo '</body></html>';
     }
 
 	/**
