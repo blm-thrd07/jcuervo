@@ -102,7 +102,7 @@ class AvatarsController extends Controller
         $my_access_token= $facebook->getAccessToken();
 
 
-        if($model->avatar_img!=null){
+        if($model->avatar_img != null){
            if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
                unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
            }
@@ -118,9 +118,13 @@ class AvatarsController extends Controller
 	       $file = UPLOAD_DIR .$filename;
 	       $success = file_put_contents($file, $data);
 	       $model->avatar_img=$filename;
+	       
+echo "hola";
+	       /*
 	       if($model->save()){
 	       	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
+	       */
 
          }
 
