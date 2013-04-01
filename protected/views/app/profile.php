@@ -62,7 +62,7 @@
       
 if(is_array($json['avatar']['amigosAvatars'])){
                 foreach ($json['avatar']['amigosAvatars'] as $key => $value) {
-                echo '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],$value['nombre'],array('id'=>$value['idFb'])).'</div>'; 
+                echo '<div>'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture',$value['nombre'],array('id'=>$value['idFb'])).'  '.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],$value['nombre'],array('id'=>$value['idFb'])).'</div>'; 
                 }
               }
 
