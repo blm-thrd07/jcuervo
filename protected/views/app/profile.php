@@ -62,7 +62,7 @@
       
 if(is_array($json['avatar']['amigosAvatars'])){
                 foreach ($json['avatar']['amigosAvatars'] as $key => $value) {
-                echo '<div>'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture',$value['nombre'],array('id'=>$value['idFb'])).'  '.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],$value['nombre'],array('id'=>$value['idFb'])).'</div>'; 
+                echo '<div><h2>'.$value['nombre'].'</h2>'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture',$value['nombre'],array('id'=>$value['idFb'])).'  '.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],$value['nombre'],array('id'=>$value['idFb'])).'</div>'; 
                 }
               }
 
@@ -74,17 +74,12 @@ if(is_array($json['avatar']['amigosAvatars'])){
 
 <section>
 <h1>Mis Comics</h1>
-
-   <?
-      
-if(is_array($json['avatar']['comics'])){
+   <? 
+   if(is_array($json['avatar']['comics'])){
                 foreach ($json['avatar']['comics'] as $key => $value) {
                    echo '<div>'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],$value['imagen'],array('id'=>'comic')).'</div>'; 
                 }
-              }
-
-              
-
+   }
       ?>
 
 </section>
