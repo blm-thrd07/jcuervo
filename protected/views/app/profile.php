@@ -38,7 +38,7 @@
         </ul>
         <div id="tab1">
           <? 
-          if(is_array($json['catalogos']['accesorios'])){
+          if(is_array($json['catalogos']['caras'])){
            foreach ($json['catalogos']['caras'] as $key => $value) {
               echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/200x200.png","cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
             }
@@ -47,7 +47,7 @@
         </div>
         <div id="tab2">
         <?
-          if(is_array($json['catalogos']['accesorios'])){
+          if(is_array($json['catalogos']['cuerpos'])){
             foreach ($json['catalogos']['cuerpos'] as $key => $value) {
               echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
             }
@@ -152,7 +152,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   if(edit){
     for(var k=0; k < avatar.avatarPiezas.length; k++){
       if(avatar.avatarPiezas[k].descripcion=="cara"){
-        cabeza.insertCabeza(parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,tipo_pieza_id);
+        insertCabeza(parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,tipo_pieza_id);
       }
 
       if(avatar.avatarPiezas[k].descripcion=="cuerpo")
