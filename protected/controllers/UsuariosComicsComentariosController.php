@@ -77,7 +77,7 @@ class UsuariosComicsComentariosController extends Controller
 			        $numeroTotal=$modelUsuariosComics->NoComentarios;
                     $numeroTotal+=1;
 			        $modelUsuariosComics->NoComentarios=$numeroTotal;
-			        if($modelUsuariosComics->save()){
+			        if($modelUsuariosComics->save(false)){
 			        		$this->redirect(array('view','id'=>$model->id));
 			        }
 			        
