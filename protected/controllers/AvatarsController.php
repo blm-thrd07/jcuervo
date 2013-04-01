@@ -103,9 +103,7 @@ class AvatarsController extends Controller
         $user =$facebook->getUser();
         $my_access_token= $facebook->getAccessToken();
 
-print_r($user);
 
-/*
         if($model->avatar_img != null){
            if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
                unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
@@ -128,8 +126,6 @@ print_r($user);
 	       	echo "guardado";
 	       	    //$this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
-
-	       */
 	      
 
          }
