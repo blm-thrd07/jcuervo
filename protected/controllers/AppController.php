@@ -180,11 +180,11 @@ public function actionLogout(){
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
     $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
     'avatarPiezas'=>$datosAvatar,'comics'=>$comics,'amigosAvatars'=>$amigosAvatars); 
-  /*
+  
     $amigos=new Amigos;
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
-*/
+
     $this->render('profile',array(
         'json'=>$json,'logoutUrl'=>$logoutUrl  
 
