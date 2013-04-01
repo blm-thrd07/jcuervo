@@ -94,7 +94,7 @@ class AvatarsController extends Controller
 
         if(isset($_POST['avatarImg'])){
 
-
+/*
          $facebook = new facebook(array(
            'appId'  => '342733185828640',
            'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
@@ -126,7 +126,7 @@ class AvatarsController extends Controller
 	       	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
 	      
-
+*/
          }
 
         if(isset($_POST['Avatars']))
