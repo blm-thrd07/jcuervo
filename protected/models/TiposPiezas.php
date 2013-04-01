@@ -16,6 +16,8 @@ class TiposPiezas extends CActiveRecord
 	const CARA_WEB=2;
 	const CARA=3;
 	const CUERPO=4;
+	const OJOS=5;
+	const BOCA=6;
 	
 
 	/**
