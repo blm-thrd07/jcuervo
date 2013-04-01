@@ -57,7 +57,7 @@
 
     </section>
     <section>
-      <h1>Memes de mis amigos</h1>
+      <h1>Avatars de mis amigos</h1>
       <?
       
 if(is_array($json['avatar']['amigosAvatars'])){
@@ -71,6 +71,23 @@ if(is_array($json['avatar']['amigosAvatars'])){
       ?>
     </section>
 
+
+<section>
+<h1>Mis Comics</h1>
+
+   <?
+      
+if(is_array($json['avatar']['comics'])){
+                foreach ($json['avatar']['comics'] as $key => $value) {
+                   echo '<div>'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],$value['imagen'],array('id'=>'comic')).'</div>'; 
+                }
+              }
+
+              
+
+      ?>
+
+</section>
 
 
 <div id="data">
