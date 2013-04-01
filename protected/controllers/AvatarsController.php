@@ -90,10 +90,10 @@ class AvatarsController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-        
+        echo "hola";
+
         if(isset($_POST['avatarImg'])){
 
-echo "hola";
 /*
          $facebook = new facebook(array(
            'appId'  => '342733185828640',
