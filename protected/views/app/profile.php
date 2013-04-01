@@ -59,16 +59,15 @@
     <section>
       <h1>Memes de mis amigos</h1>
       <?
-      /*
-if(is_array($json['AmigosAvatars'])){
-                foreach ($json['AmigosAvatars'] as $key => $value) {
+      
+if(is_array($json['avatar']['amigosAvatars'])){
+                foreach ($json['avatar']['amigosAvatars'] as $key => $value) {
                 echo '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],$value['nombre'],array('id'=>$value['idFb'])).'</div>'; 
                 }
               }
 
-             */ 
+              
 
-//              print_r($json->AmigosAvatars);
       ?>
     </section>
 
@@ -80,8 +79,11 @@ if(is_array($json['AmigosAvatars'])){
 
 <?php
 //print_r($json);
-echo json_encode($json);
 
+//echo count($json);
+//echo json_encode($json);
+
+//print_r($json['avatar']['amigosAvatars']);
 
 echo CHtml::link("cara_web", "#", array('class'=>"insertar",'name'=>"url_cara_web"))." "; 
 

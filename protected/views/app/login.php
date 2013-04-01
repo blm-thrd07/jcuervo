@@ -1,3 +1,9 @@
+<?
+
+//echo "<a   href='".$loginUrl."'>Login</a>";
+
+?>
+
 
 <a  id="login">Login</a>
 <script>
@@ -11,3 +17,4 @@ document.getElementById("login").onclick = function() {
   }
 
 </script>
+
