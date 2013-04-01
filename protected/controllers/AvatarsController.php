@@ -90,7 +90,7 @@ class AvatarsController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+print_r($_POST);
 
 if($_POST['avatarImg']){
 
