@@ -123,7 +123,8 @@ class AvatarsController extends Controller
 	       
 	       
 	       if($model->save()){
-	       	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+	       	echo "guardado";
+	       	    //$this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
 	      
 
