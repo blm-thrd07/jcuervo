@@ -71,13 +71,10 @@ class UsuariosComicsComentariosController extends Controller
 		{
 			$model->attributes=$_POST['UsuariosComicsComentarios'];
 			if($model->save()){
-                    
                     $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
 			        $numeroTotal=$modelUsuariosComics->NoComentarios;
                     $numeroTotal+=1;
 			        $modelUsuariosComics->NoComentarios=$numeroTotal;
-
-			       
 			        if($modelUsuariosComics->save(false)){
 			        		$this->redirect(array('view','id'=>$model->id));
 			        }

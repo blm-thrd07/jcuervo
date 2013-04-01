@@ -102,7 +102,11 @@ class Amigos extends CActiveRecord
     }
 
  }
+public function getAmigosComics(){
+    $response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
+    
 
+}
 
  public function getAmigosAvatars(){
     $response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
