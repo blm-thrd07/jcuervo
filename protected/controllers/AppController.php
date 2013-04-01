@@ -135,7 +135,7 @@ public function actionLogout(){
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 
    $numero_comics=count($response[0]->Comics);
-   $comics=null;
+   $comics=array();
    for($count=0;$count<$numero_comics;$count++){
    
       $comics[$count]=array(
