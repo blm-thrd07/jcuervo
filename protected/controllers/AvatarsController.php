@@ -103,8 +103,8 @@ class AvatarsController extends Controller
         $user =$facebook->getUser();
         $my_access_token= $facebook->getAccessToken();
 
+print_r($user);
 
-echo $my_access_token;
 /*
         if($model->avatar_img != null){
            if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
