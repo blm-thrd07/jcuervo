@@ -76,10 +76,14 @@ class UsuariosComicsComentariosController extends Controller
                     $modelUsuariosComics->findAll(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
 			        
 			        $numeroTotal=$modelUsuariosComics->NoComentarios;
+
+			        echo $numeroTotal;
+			        /*
 			        $modelUsuariosComics->NoComentarios=$numeroTotal+1;
 			        if($modelUsuariosComics->save()){
 			        		$this->redirect(array('view','id'=>$model->id));
 			        }
+			        */
 
 			}
 		}
