@@ -38,24 +38,28 @@
         </ul>
         <div id="tab1">
           <? 
+          if(is_array($json['catalogos']['accesorios'])){
            foreach ($json['catalogos']['caras'] as $key => $value) {
               echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/200x200.png","cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
             }
+          }
          ?>
         </div>
         <div id="tab2">
         <?
+          if(is_array($json['catalogos']['accesorios'])){
             foreach ($json['catalogos']['cuerpos'] as $key => $value) {
               echo   '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cabeza",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
             }
+          }
         ?>
         </div>
         <div id="tab3">
           <?
                if(is_array($json['catalogos']['accesorios'])){
-	              foreach ($json['catalogos']['accesorios'] as $key => $value) {
+                foreach ($json['catalogos']['accesorios'] as $key => $value) {
                 echo '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"accesorio",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
-	              }
+                }
               }
           ?>
         </div>
@@ -148,201 +152,26 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   if(edit){
     for(var k=0; k < avatar.avatarPiezas.length; k++){
       if(avatar.avatarPiezas[k].descripcion=="cara"){
-        cabeza = new Kinetic.Image({
-          x: parseInt(avatar.avatarPiezas[k].posx),
-          y: parseInt(avatar.avatarPiezas[k].posy),
-          dragOnTop: false,
-          height: 200,
-          width: 200,
-          image: imageCabeza,
-          draggable: true,
-          offset: [100, 100],
-          tipo: avatar.avatarPiezas[k].tipo_pieza_id,
-          id: avatar.avatarPiezas[k].piezaid
-        });
-        imageCabeza.src = "/jcuervo/img/"+avatar.avatarPiezas[k].AvatarImg;
+        cabeza.insertCabeza(parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,tipo_pieza_id);
       }
 
       if(avatar.avatarPiezas[k].descripcion=="cuerpo")
       {
-        cuerpo = new Kinetic.Image({
-          x: parseInt(avatar.avatarPiezas[k].posx),
-          y: parseInt(avatar.avatarPiezas[k].posy),
-          dragOnTop: false,
-          height: 200,
-          width: 200,
-          image: imageCuerpo,
-          draggable: true,
-          offset: [100, 100],
-          tipo: avatar.avatarPiezas[k].tipo_pieza_id,
-          id: avatar.avatarPiezas[k].piezaid
-        });
-        imageCuerpo.src = "/jcuervo/img/"+avatar.avatarPiezas[k].AvatarImg;
+        
       }
       if(avatar.avatarPiezas[k].descripcion=="ojos")
       {
-        ojos = new Kinetic.Image({
-          x: parseInt(avatar.avatarPiezas[k].posx),
-          y: parseInt(avatar.avatarPiezas[k].posy),
-          height: 200,
-          width: 200,
-          image: imageOjos,
-          draggable: true,
-          offset: [100, 100],
-          tipo: avatar.avatarPiezas[k].tipo_pieza_id,
-          id: avatar.avatarPiezas[k].piezaid
-        });
-        imageOjos.src="/jcuervo/img/"+avatar.avatarPiezas[k].AvatarImg;
+      
       }
       if(avatar.avatarPiezas[k].descripcion=="boca")
       {
-        boca = new Kinetic.Image({
-          x: parseInt(avatar.avatarPiezas[k].posx),
-          y: parseInt(avatar.avatarPiezas[k].posy),
-          height: 200,
-          width: 200,
-          image: imageBoca,
-          draggable: true,
-          offset: [100, 100],
-          tipo: avatar.avatarPiezas[k].tipo_pieza_id,
-          id: avatar.avatarPiezas[k].piezaid
-        });
-        imageBoca.src = "/jcuervo/img/"+avatar.avatarPiezas[k].AvatarImg;
+      
       }
     }
   
   }
-  //es nuevo
-  else{ 
-    cabeza = new Kinetic.Image({
-      x: 100,
-      y: 100,
-      height: 200,
-      width: 200,
-      image: imageCabeza,
-      draggable: true,
-      offset: [100, 100],
-      tipo: 3,
-      id: 1
-    });
-
-    cuerpo = new Kinetic.Image({
-      x: 400,
-      y: 100,
-      height: 200,
-      width: 200,
-      image: imageCuerpo,
-      draggable: true,
-      offset: [100, 100],
-      tipo: 4,
-      id: 3
-    });
-
-    ojos = new Kinetic.Image({
-      x: 200,
-      y: 200,
-      height: 200,
-      width: 200,
-      image: imageOjos,
-      draggable: true,
-      offset: [100, 100],
-      visible: false,
-    });
-
-    boca = new Kinetic.Image({
-      x: 300,
-      y: 300,
-      height: 200,
-      width: 200,
-      image: imageOjos,
-      draggable: true,
-      offset: [100, 100],
-      visible: false,
-    });
-
-    imageCabeza.src = "/jcuervo/img/cabeza-3.png";
-    imageCuerpo.src = "/jcuervo/img/cabeza-2.png";
-    imageOjos.src = "jcuervo/img/cabeza-2.png";
-    imageBoca.src = "jcuervo/img/cabeza-2.png";
-  }
-
-  layerPersonaje.add(cabeza);
-  layerPersonaje.add(cuerpo);
-  layerPersonaje.add(boca);
-  layerPersonaje.add(ojos);
-
-  console.log(layerPersonaje);
 
   stagePersonaje.add(layerPersonaje);
-
-  cabeza.on("mouseover", function() {
-    this.setStroke("980d2e");
-    this.setStrokeWidth(1);
-    return layerPersonaje.draw();
-  });
-
-  cabeza.on("mouseout", function() {
-    this.setStroke(null);
-    this.setStrokeWidth(0);
-    return layerPersonaje.draw();
-  });
-
-  cabeza.on("click", function() {
-    currentSelected = this;
-    return currentLayer = layerPersonaje;
-  });
-
-  cuerpo.on("mouseover", function() {
-    this.setStroke("980d2e");
-    this.setStrokeWidth(1);
-    layerPersonaje.draw();
-  });
-
-  cuerpo.on("mouseout", function() {
-    this.setStroke(null);
-    this.setStrokeWidth(0);
-    layerPersonaje.draw();
-  });
-
-  cuerpo.on("click", function() {
-    currentSelected = this;
-    return currentLayer = layerPersonaje;
-  });
-/*
- boca.on("mouseover", function() {
-    this.setStroke("980d2e");
-    this.setStrokeWidth(1);
-    layerPersonaje.draw();
-  });
-
-  boca.on("mouseout", function() {
-    this.setStroke(null);
-    this.setStrokeWidth(0);
-    layerPersonaje.draw();
-  });
-
-  boca.on("click", function() {
-    currentSelected = this;
-    return currentLayer = layerPersonaje;
-  });
-
- ojos.on("mouseover", function() {
-    this.setStroke("980d2e");
-    this.setStrokeWidth(1);
-    layerPersonaje.draw();
-  });
-
-  ojos.on("mouseout", function() {
-    this.setStroke(null);
-    this.setStrokeWidth(0);
-    layerPersonaje.draw();
-  });
-
-  ojos.on("click", function() {
-    currentSelected = this;
-    return currentLayer = layerPersonaje;
-  });
-*/
 
 //BOTONES
 
@@ -362,15 +191,59 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return $("#js-sendBack").on("click", sendBack);
   };
 
-  insertCabeza = function() {
-    var imgUrl = $(this).find("img").attr("src");
+  insertCabeza = function(x,y,pieza_id,tipo_pieza_id) {
+    alert("x: " +x +" y: "+ y+ " pieza_id: "+ pieza_id+ " tipo_pieza_id: "+tipo_pieza_id);
+    //x = typeof x !== "undefined" ? x : 100;
+    //y = typeof x !== "undefined" ? y : 100;
+
     pieza = $(this).find("img").attr("id").split("-");
-    cabeza.attrs.id=pieza[0];
-    cabeza.attrs.tipo=pieza[1];
-    cabeza.setVisible(true);
-    console.log("CABEZA id: "+pieza[0]+"tipo: "+pieza[1]);
-    imageCabeza.src = imgUrl;
-    return layerPersonaje.draw();
+    var insertar=true;
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == pieza[0])
+        insertar=false; // !=pieza[0]);
+    }
+    if(insertar){
+      imageAccesorio = new Image();
+      accesorio = new Kinetic.Image({
+        x: 400,
+        y: 100,
+        height: 200,
+        width: 200,
+        image: imageCabeza,
+        draggable: true,
+        offset: [100, 100],
+        tipo: pieza[1],
+        id: pieza[0]
+      });
+
+      var imgUrl;
+      imgUrl = $(this).find("img").attr("src");
+      
+      imageAccesorio.src = imgUrl;
+      accesorio.on("mouseover", function() {
+        this.setStroke("980d2e");
+        this.setStrokeWidth(1);
+        return layerPersonaje.draw();
+      });
+
+      accesorio.on("mouseout", function() {
+        this.setStroke(null);
+        this.setStrokeWidth(0);
+        return layerPersonaje.draw();
+      });
+
+      accesorio.on("click", function() {
+        currentSelected = this;
+        return currentLayer = layerPersonaje;
+      });
+      console.log(imgUrl);
+      console.log("ACCESORIO: id: "+pieza[0]+"tipo: "+pieza[1]);
+      layerPersonaje.add(accesorio);
+      accesorios.push(accesorio);
+      layerPersonaje.draw();
+      return true;
+    }
+    return false;
   };
 
   insertCuerpo = function() {
