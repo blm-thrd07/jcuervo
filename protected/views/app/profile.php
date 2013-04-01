@@ -81,7 +81,7 @@ if(is_array($json['avatar']['amigosAvatars'])){
 //print_r($json);
 
 //echo count($json);
-//echo json_encode($json);
+echo json_encode($json);
 
 //print_r($json['avatar']['amigosAvatars']);
 
