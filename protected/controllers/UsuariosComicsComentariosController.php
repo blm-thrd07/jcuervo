@@ -63,6 +63,7 @@ class UsuariosComicsComentariosController extends Controller
 	public function actionCreate()
 	{
 		$model=new UsuariosComicsComentarios;
+		$modelUsuariosComics=new UsuariosHasTblComics;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -70,13 +71,23 @@ class UsuariosComicsComentariosController extends Controller
 		if(isset($_POST['UsuariosComicsComentarios']))
 		{
 			$model->attributes=$_POST['UsuariosComicsComentarios'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                    $modelUsuariosComics->findAll(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
+			        $numeroTotal=(int)$modelUsuariosComics->NoComentarios;
+			        $modelUsuariosComics->NoComentarios=$numeroTotal+1;
+			        if($modelUsuariosComics->save()){
+			        		$this->redirect(array('view','id'=>$model->id));
+			        }
+
+			}
 		}
 
+
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
+
 	}
 
 	/**
