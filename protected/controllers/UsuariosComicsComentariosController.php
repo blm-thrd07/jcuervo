@@ -77,7 +77,7 @@ class UsuariosComicsComentariosController extends Controller
 			        
 			        $numeroTotal=$modelUsuariosComics->NoComentarios;
 
-			        echo $numeroTotal;
+			        echo $numeroTotal+1;
 			        /*
 			        $modelUsuariosComics->NoComentarios=$numeroTotal+1;
 			        if($modelUsuariosComics->save()){
