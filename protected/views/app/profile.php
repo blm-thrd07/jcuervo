@@ -59,11 +59,16 @@
     <section>
       <h1>Memes de mis amigos</h1>
       <?
+      /*
 if(is_array($json['AmigosAvatars'])){
                 foreach ($json['AmigosAvatars'] as $key => $value) {
                 echo '<div class="item">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],$value['nombre'],array('id'=>$value['idFb'])).'</div>'; 
                 }
               }
+
+             */ 
+
+              print_r($json['AmigosAvatars']);
       ?>
     </section>
 
