@@ -91,12 +91,10 @@ class AvatarsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-echo "juan";
         if(isset($_POST['avatarImg'])){
 
-        	echo "hola";
 
-/*
+
          $facebook = new facebook(array(
            'appId'  => '342733185828640',
            'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
@@ -128,7 +126,7 @@ echo "juan";
 	       	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
 	      
-*/
+
          }
 
         if(isset($_POST['Avatars']))
