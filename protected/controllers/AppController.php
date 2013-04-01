@@ -38,7 +38,6 @@ class AppController extends Controller
   }
 
 public function actionLogin(){
-    
        $facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
@@ -110,9 +109,8 @@ public function actionLogout(){
 
 
 
-  public function actionProfile($id)
+  public function actionProfile($id=1)
   {
-
    $facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
@@ -161,10 +159,15 @@ public function actionLogout(){
 //
 
     $cantidad=count($response[0]->Avatar->AvatarP);
+    if(count($cantidad)==0){
+      $json['edit']="0"; } 
+    else{ $json['edit']="1"; }
+
     $datosAvatar[0]="";
     for($count=0;$count<$cantidad;$count++){
       $datosAvatar[$count]=array(
         'piezaid'=>$response[0]->Avatar->AvatarP[$count]->pieza_avatar_id,
+        'tipo_pieza_id'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->AvatarTipo->id,
         'descripcion'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->AvatarTipo->descripcion,
         'AvatarImg'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->url,
         'scalex'=>$response[0]->Avatar->AvatarP[$count]->scalex,
@@ -184,11 +187,29 @@ public function actionLogout(){
     $amigos=new Amigos;
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
+    
+      $mcaras = CaraWeb::model()->findAll(array(
+          'condition'=>'avatar_id=:avatar_id',
+          'params'=>array(
+              ':avatar_id'=>Yii::app()->session['usuario_id'],
+            )
+          ) 
+        );
+      $maccesorios = AvatarHasAccesorios::model()->findAll(array(
+          'condition'=>'avatar_id=:avatar_id',
+          'params'=>array(
+              ':avatar_id'=>Yii::app()->session['usuario_id'],
+            )
+          ) 
+        );
+      
+      //$model['piezas']=$m;
+      $json['avatar']['avatarPiezas']['cara_web']=$mcaras;
+      $json['avatar']['avatarPiezas']['accesorios']=$maccesorios;
+    
 
-    $this->render('profile',array(
-        'json'=>$json,'logoutUrl'=>$logoutUrl  
-
-      ));
+    //print_r($model);
+    $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
 
   }
 
