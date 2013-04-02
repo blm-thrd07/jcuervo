@@ -213,14 +213,17 @@ public function actionLogout(){
 
   }
 
-
+  public function actionDestacados(){
+    $this->renderPartial('//app/destacados');
+  }
+  
   public function actionMisMemes(){
-     $this->render('mismemes');
+    $this->renderPartial('//app/mismemes');
   }
 
   public function actionMisAmigos(){
    
-   $this->render('misamigos');
+    $this->renderPartial('//app/misamigos');
   }
 
   public function actionCategoria(){
