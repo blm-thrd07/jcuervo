@@ -343,12 +343,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         //return window.open(dataUrl);
       }
     });
-    /*stagePersonaje.toImage({
-      callback: function(dataUrl) {
-        alert(dataUrl);
+   // stagePersonaje.toImage({
+     // callback: function(dataUrl) {
+       // alert(dataUrl);
         //return window.open(dataUrl);
-      }
-    });*/
+     // }
+    //})
     return false;
   };
 
@@ -438,6 +438,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 */
+
+
 $("#des").click(function(){
 $.ajax({
           type: "GET",
