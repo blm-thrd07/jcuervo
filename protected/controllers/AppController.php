@@ -24,7 +24,7 @@ class AppController extends Controller
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza'),
+        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes'),
         'users'=>array('@'),
       ),
       array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -211,6 +211,21 @@ public function actionLogout(){
     //print_r($model);
     $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
 
+  }
+
+
+  public function actionMisMemes(){
+     $this->render('mismemes');
+  }
+
+  public function actionMisAmigos(){
+   
+   $this->render('misamigos');
+  }
+
+  public function actionCategoria(){
+
+    $this->render('categoria');
   }
 
 
