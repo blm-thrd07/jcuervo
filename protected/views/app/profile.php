@@ -439,10 +439,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 $("#categoria").click(function(){
 $.ajax({
           type: "GET",
-          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/categoria",
+          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Categoria",
           success: function(data){
               $("#panelContent").html(data);
-             return false;
           }
         });
 
