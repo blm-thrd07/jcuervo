@@ -24,7 +24,7 @@ class AppController extends Controller
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Destacados'),
+        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest'),
         'users'=>array('@'),
       ),
       array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -221,7 +221,7 @@ print_r($user_profile);
 
   }
 
-  public function actionDestacados(){
+  public function actionDest(){
     $this->renderPartial('//app/_destacados');
   }
   
