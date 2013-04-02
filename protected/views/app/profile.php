@@ -108,28 +108,31 @@ if(is_array($json['avatar']['amigosAvatars'])){
 
 </section>
 
+<button id="snapshot" name="url_cara_web<?php echo Yii::app()->session["usuario_id"]; ?>">foto</button> 
+<img src="" id='cropped_img' alt="" />
 
-?>
 <?php
 //print_r($json);
-
 //echo count($json);
-//echo json_encode($json);
-//echo "<br><br>";
-//echo json_encode($avatar);
-//print_r($json['avatar']['amigosAvatars']);
+$baseUrl = Yii::app()->baseUrl; 
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl.'/js/html5-webcam-build.js'); 
+$cs->registerCssFile($baseUrl.'/css/html5-webcam.css');
 
-//echo CHtml::link("cara_web", "#", array('class'=>"insertar",'name'=>"url_cara_web"))." "; 
+echo json_encode($json);
+echo "<br><br>";
+
+echo CHtml::link("cara_web", "#", array('class'=>"btn",'name'=>"url_cara_web_".Yii::app()->session['usuario_id']))." "; 
 
 //pieza//accesorio//cara_web
 Yii::app()->getClientScript()->registerScript('registrar', '
   var edit='.$json['edit'].';
   var avatar = '.CJSON::encode($json['avatar']).';
-  
-/*
+  var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
+  var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, cabeza, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
-
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
+  
   currentSelected = null;
   currentLayer = null;
 
@@ -137,36 +140,31 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     container: "personajeCanvas",
     width: 640,
     height: 480,
-    dragOnTop: false,
   });
 
-  layerPersonaje = new Kinetic.Layer({
-    dragOnTop: false,
-  });
-
-  imageCabeza = new Image();
-  imageCuerpo = new Image();
-  imageOjos = new Image();
-  imageBoca = new Image();
+  layerPersonaje = new Kinetic.Layer();
 
   //se va a editar
   if(edit){
-    for(var k=0; k < avatar.avatarPiezas.length; k++){
-      if(avatar.avatarPiezas[k].descripcion=="cara"){
-        insertCabeza(parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,tipo_pieza_id);
-      }
+    for(var a in avatar_accesorios){
+      insertarAccesorio(parseInt(avatar_accesorios[a].posx),parseInt(avatar_accesorios[a].posy),parseInt(avatar_accesorios[a].accesorios_id),'.TiposPiezas::ACCESORIO.',avatar_accesorios[a].accesorioImg);
+    }
 
-      if(avatar.avatarPiezas[k].descripcion=="cuerpo")
-      {
-        
+    for(var k=0; k < avatar.avatarPiezas.length; k++){
+      if(avatar.avatarPiezas[k].descripcion==="cara"){ 
+        insertarPieza("cara",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
+      }
+      if(avatar.avatarPiezas[k].descripcion==="cuerpo")
+      { 
+        insertarPieza("cuerpo",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
       }
       if(avatar.avatarPiezas[k].descripcion=="ojos")
-      {
-      
+      { 
+        insertarPieza("ojos",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
       }
       if(avatar.avatarPiezas[k].descripcion=="boca")
-      {
-      
+      { 
+        insertarPieza("boca",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
       }
     }
   
@@ -175,14 +173,22 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerPersonaje);
 
 //BOTONES
-*/
+
   init = function() {
     console.log("ok go");
-    $("#tab1 div").on("click", insertCabeza);
-    $("#tab2 div").on("click", insertCuerpo);
-    $("#tab3 div").on("click", insertAccesorio);
-    $("#tab4 div").on("click", insertOjos);
-    $("#tab5 div").on("click", insertBoca);
+    $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cara",100,100,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cuerpo",100,100,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarAccesorio(100,100,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("ojos",100,100,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("boca",100,100,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#snapshot").html5WebCam({
+                oncrop: function(cropped_url) { 
+                  $("#cropped_img").attr("src", cropped_url); 
+                  var url = $("#snapshot").find("a").attr("name");
+                  insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',$("#cropped_img").attr("src"));
+                },
+            });
+    $("#camara").on("click", function(e){ var url = $(this).find("a").attr("name"); insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',imagen) });
     $("#js-toImage").on("click", saveToImage);
     $("#js-listenerStat").on("click", listenerStat);
     $("#js-rotateLeft").on("click", rotateLeft);
@@ -191,121 +197,89 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#remove").on("click", removeImage);
     return $("#js-sendBack").on("click", sendBack);
   };
-/*
-  insertCabeza = function(x,y,pieza_id,tipo_pieza_id) {
-    alert("x: " +x +" y: "+ y+ " pieza_id: "+ pieza_id+ " tipo_pieza_id: "+tipo_pieza_id);
-    //x = typeof x !== "undefined" ? x : 100;
-    //y = typeof x !== "undefined" ? y : 100;
 
-    pieza = $(this).find("img").attr("id").split("-");
+  function insertarPieza(obj,x,y,pieza_id,tipo_pieza_id,img) {
+    var aux;
+    if(obj==="cara"){ aux=obj; obj=cara; if(cara_web) cara_web.remove(); } 
+    if(obj==="cara_web"){ aux=obj; obj=cara_web; if(cara) cara.remove(); } 
+    if(obj==="cuerpo"){ aux=obj; obj=cuerpo; }
+    if(obj==="ojos"){ aux=obj; obj=ojos; }
+    if(obj==="boca"){ aux=obj; obj=boca; }
+
+    if(obj) {
+      x=obj.attrs.x;
+      y=obj.attrs.y;
+      obj.remove();
+    }
+    var image = new Image();
+    obj = new Kinetic.Image({
+      x: x,
+      y: y,
+      height: 200,
+      width: 200,
+      image: image,
+      draggable: true,
+      offset: [100, 100],
+      tipo: tipo_pieza_id,
+      id: pieza_id
+    });
+    layerPersonaje.add(obj);
+    img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+    console.log(img);
+    if(aux!=="cara_web")
+      image.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+    else{
+      alert(img); 
+      image.src = "data:image/png;base64," + img + "";
+      //image.src=img; 
+    }
+    obj.on("mouseover", function() {
+      this.setStroke("980d2e");
+      this.setStrokeWidth(1);
+      return layerPersonaje.draw();
+    });
+
+    obj.on("mouseout", function() {
+      this.setStroke(null);
+      this.setStrokeWidth(0);
+      return layerPersonaje.draw();
+    });
+
+    obj.on("click", function() {
+      currentSelected = this;
+      return currentLayer = layerPersonaje;
+    });
+
+    if(aux==="cara"){ cara=obj; } 
+    if(aux==="cuerpo"){ cuerpo=obj; } 
+    if(aux==="ojos"){ ojos=obj; } 
+    if(aux==="boca"){ boca=obj; } 
+
+    layerPersonaje.draw();
+  };
+
+  function insertarAccesorio(x,y,pieza_id,tipo_pieza_id,img) {
     var insertar=true;
     for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == pieza[0])
-        insertar=false; // !=pieza[0]);
+      if(accesorios[i].attrs.id == pieza_id) insertar=false;
     }
     if(insertar){
       imageAccesorio = new Image();
       accesorio = new Kinetic.Image({
-        x: 400,
-        y: 100,
-        height: 200,
-        width: 200,
-        image: imageCabeza,
-        draggable: true,
-        offset: [100, 100],
-        tipo: pieza[1],
-        id: pieza[0]
-      });
-
-      var imgUrl;
-      imgUrl = $(this).find("img").attr("src");
-      
-      imageAccesorio.src = imgUrl;
-      accesorio.on("mouseover", function() {
-        this.setStroke("980d2e");
-        this.setStrokeWidth(1);
-        return layerPersonaje.draw();
-      });
-
-      accesorio.on("mouseout", function() {
-        this.setStroke(null);
-        this.setStrokeWidth(0);
-        return layerPersonaje.draw();
-      });
-
-      accesorio.on("click", function() {
-        currentSelected = this;
-        return currentLayer = layerPersonaje;
-      });
-      console.log(imgUrl);
-      console.log("ACCESORIO: id: "+pieza[0]+"tipo: "+pieza[1]);
-      layerPersonaje.add(accesorio);
-      accesorios.push(accesorio);
-      layerPersonaje.draw();
-      return true;
-    }
-    return false;
-  };
-
-  insertCuerpo = function() {
-    var imgUrl = $(this).find("img").attr("src");
-    console.log(imgUrl);
-    pieza = $(this).find("img").attr("id").split("-");
-    cuerpo.attrs.id=pieza[0];
-    cuerpo.attrs.tipo=pieza[1];
-    console.log("CUERPO id: "+pieza[0]+"tipo: "+pieza[1]);
-    cuerpo.setVisible(true);
-    imageCuerpo.src = imgUrl;
-    return layerPersonaje.draw();
-  };
-
-  insertOjos = function() {
-    var imgUrl = $(this).find("img").attr("src");
-    pieza = $(this).find("img").attr("id").split("-");
-    ojos.attrs.id=pieza[0];
-    ojos.attrs.tipo=pieza[1];
-    ojos.setVisible(true);
-    console.log("OJOS id: "+pieza[0]+"tipo: "+pieza[1]);
-    imageOjos.src = imgUrl;
-    return layerPersonaje.draw();
-  };
-
-  insertBoca = function() {
-    var imgUrl = $(this).find("img").attr("src");
-    pieza = $(this).find("img").attr("id").split("-");
-    boca.attrs.id=pieza[0];
-    boca.attrs.tipo=pieza[1];
-    boca.setVisible(true);
-    console.log("BOCA id: "+pieza[0]+"tipo: "+pieza[1]);
-    imageBoca.src = imgUrl;
-    return layerPersonaje.draw();
-  };
-
-  insertAccesorio = function() {
-    pieza = $(this).find("img").attr("id").split("-");
-    var insertar=true;
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == pieza[0])
-        insertar=false; // !=pieza[0]);
-    }
-    if(insertar){
-      imageAccesorio = new Image();
-      accesorio = new Kinetic.Image({
-        x: 400,
-        y: 100,
+        x: x,
+        y: y,
         height: 200,
         width: 200,
         image: imageAccesorio,
         draggable: true,
         offset: [100, 100],
-        tipo: pieza[1],
-        id: pieza[0]
+        tipo: tipo_pieza_id,
+        id: pieza_id
       });
-
-      var imgUrl;
-      imgUrl = $(this).find("img").attr("src");
-      
-      imageAccesorio.src = imgUrl;
+      console.log(img);
+      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+      console.log(img);
+      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/img/"+img;
       accesorio.on("mouseover", function() {
         this.setStroke("980d2e");
         this.setStrokeWidth(1);
@@ -322,8 +296,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
         return currentLayer = layerPersonaje;
       });
-      console.log(imgUrl);
-      console.log("ACCESORIO: id: "+pieza[0]+"tipo: "+pieza[1]);
+      console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
       layerPersonaje.draw();
@@ -341,12 +314,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         //return window.open(dataUrl);
       }
     });
-   // stagePersonaje.toImage({
-     // callback: function(dataUrl) {
-       // alert(dataUrl);
+    /*stagePersonaje.toImage({
+      callback: function(dataUrl) {
+        alert(dataUrl);
         //return window.open(dataUrl);
-     // }
-    //})
+      }
+    });*/
     return false;
   };
 
@@ -435,26 +408,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("back");
     return false;
   };
-*/
 
-
-$(".menu").live("click",function(){
-
-var id=$(this).attr("id");
-$.ajax({
-          type: "GET",
-          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+id,
-          success: function(data){
-              $("#panelContent").html(data);
-          }
-        });
-
- return false;
-
-});
-
-
-  //$(document).on("ready", init);
+  $(document).on("ready", init);
 ',CClientScript::POS_READY);
 
 ?>
