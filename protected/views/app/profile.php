@@ -127,6 +127,8 @@ if(is_array($json['avatar']['amigosAvatars'])){
 Yii::app()->getClientScript()->registerScript('registrar', '
   var edit='.$json['edit'].';
   var avatar = '.CJSON::encode($json['avatar']).';
+  
+/*
   var accesorios=[]; var piezas=[];
   var angle, cabeza, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
 
@@ -175,7 +177,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerPersonaje);
 
 //BOTONES
-
+*/
   init = function() {
     console.log("ok go");
     $("#tab1 div").on("click", insertCabeza);
@@ -191,7 +193,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#remove").on("click", removeImage);
     return $("#js-sendBack").on("click", sendBack);
   };
-
+/*
   insertCabeza = function(x,y,pieza_id,tipo_pieza_id) {
     alert("x: " +x +" y: "+ y+ " pieza_id: "+ pieza_id+ " tipo_pieza_id: "+tipo_pieza_id);
     //x = typeof x !== "undefined" ? x : 100;
@@ -435,7 +437,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("back");
     return false;
   };
-
+*/
 $("#des").click(function(){
 $.ajax({
           type: "GET",
