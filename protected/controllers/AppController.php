@@ -128,6 +128,8 @@ public function actionLogout(){
    $model_PiezaAvatar=new CatalogoPiezas;
    $model_Accesorios=new Accesorios;
    $model_Amigos_Avatars=new Amigos;
+
+   $model_Amigos_Avatars->getAmigosComics();
    
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
