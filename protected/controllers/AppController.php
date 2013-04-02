@@ -80,8 +80,6 @@ public function actionLogin(){
 
 
              if($model->save()){
-
-              print_r($user_profile);
               Yii::app()->session['usuario_id']=$model->id;
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
@@ -120,6 +118,10 @@ public function actionLogout(){
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
 
+                 $user_profile =  $facebook->api('/me');
+
+
+print_r($user_profile);
    $modelcom = Usuarios::model()->with('Comics')->findAll();
    $modelc= new UsuariosHasTblComics;
    $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
