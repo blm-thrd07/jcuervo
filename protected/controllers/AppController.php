@@ -49,6 +49,8 @@ public function actionLogin(){
         $my_access_token= $facebook->getAccessToken();
 
 
+
+
         if ($this->user) {
            try {
               // Proceed knowing you have a logged in user who's authenticated.
@@ -78,6 +80,8 @@ public function actionLogin(){
 
 
              if($model->save()){
+
+              print_r($user_profile);
               Yii::app()->session['usuario_id']=$model->id;
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
