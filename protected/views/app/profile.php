@@ -1,5 +1,5 @@
  <section id="panelPersonaje">
-        <h1>Nombre del Usuario</h1>
+        <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div><img src="http://ima.gs/transparent/NONE/A2A2A2/258x460.png"></div>
         <div id="actions"><a href="#" class="btn"><i class="icon-edit"></i> Editar</a></div>
 </section>
@@ -111,7 +111,7 @@ if(is_array($json['avatar']['amigosAvatars'])){
 
 ?>
 <?php
-print_r($json);
+//print_r($json);
 
 //echo count($json);
 //echo json_encode($json);
