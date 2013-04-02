@@ -378,7 +378,7 @@ class AvatarsController extends Controller
 	    		'condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id',
 	    		'params'=>array(
 		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-		    			':tipo_pieza_id'=>2,
+		    			':tipo_pieza_id'=>TiposPiezas::CARA,
 	    			)
 	    		)	
 	    	);
