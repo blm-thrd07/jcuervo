@@ -5,7 +5,7 @@
       </section>
       <section id="panelContent">
         <h2>Mis Memes</h2>
-        <div class="tabs"><a href="destacados.html">Destacados</a><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes" class="selectedTab">Mis Memes</a><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/misamigos">De mis amigos</a><a  id="categoria" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/categoria">Por categoría</a></div>
+        <div class="tabs"><a href="destacados.html">Destacados</a><a id="mismemes" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes" class="selectedTab">Mis Memes</a><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/misamigos">De mis amigos</a><a  id="categoria" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/categoria">Por categoría</a></div>
         <div class="memeThumbs">
           <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
           <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
@@ -436,10 +436,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-$("#categoria").click(function(){
+$("#mismemes").click(function(){
 $.ajax({
           type: "GET",
-          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Categoria",
+          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes",
           success: function(data){
               $("#panelContent").html(data);
           }
