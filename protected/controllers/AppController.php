@@ -180,6 +180,26 @@ public function actionLogout(){
         'rotation'=>$response[0]->Avatar->AvatarP[$count]->rotation
         );
     }
+    $AvatarAccesorios[0]="";
+    $cantidad=count($response[0]->Avatar->AvatarA);
+    for ($count=0; $count < $cantidad; $count++) { 
+      $AvatarAccesorios[$count]=array(
+        'accesorios_id'=>$response[0]->Avatar->AvatarA[$count]->accesorios_id,
+        'posx'=>$response[0]->Avatar->AvatarA[$count]->posx,
+        'posy'=>$response[0]->Avatar->AvatarA[$count]->posy,
+        //'zindex'=>$response[0]->Avatar->AvatarA[$count]->zindex,
+        'rotation'=>$response[0]->Avatar->AvatarA[$count]->rotation,
+        'accesorioImg'=>$response[0]->Avatar->AvatarA[$count]->Accesorios->url
+      );
+    }
+
+    $AvatarCaraWeb[0]="";
+    $cantidad=count($response[0]->Avatar->CaraWeb);
+    if($cantidad==1){
+      $AvatarCaraWeb=array(
+        'url'=>$response[0]->Avatar->CaraWeb->url,
+      );
+    }
 
     $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'accesorios'=>$catalogo_accesorios);
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
@@ -190,27 +210,9 @@ public function actionLogout(){
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
     
-      $mcaras = CaraWeb::model()->findAll(array(
-          'condition'=>'avatar_id=:avatar_id',
-          'params'=>array(
-              ':avatar_id'=>Yii::app()->session['usuario_id'],
-            )
-          ) 
-        );
-      $maccesorios = AvatarHasAccesorios::model()->findAll(array(
-          'condition'=>'avatar_id=:avatar_id',
-          'params'=>array(
-              ':avatar_id'=>Yii::app()->session['usuario_id'],
-            )
-          ) 
-        );
-      
-      //$model['piezas']=$m;
-      $json['avatar']['avatarPiezas']['cara_web']=$mcaras;
-      $json['avatar']['avatarPiezas']['accesorios']=$maccesorios;
+      $json['avatar']['cara_web']=$AvatarCaraWeb;
+      $json['avatar']['accesorios']=$AvatarAccesorios;
     
-
-    //print_r($model);
     $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
 
   }
