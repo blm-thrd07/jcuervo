@@ -5,7 +5,7 @@
 </section>
       <section id="panelContent">
      <h2>Mis Memes</h2>
-        <div class="tabs"><a id="destacados" href="#">Destacados</a><a href="mismemes.html" class="selectedTab">Mis Memes</a><a href="misamigos.html">De mis amigos</a><a href="categoria.html">Por categoría</a></div>
+        <div class="tabs"><a id="des" href="#">Destacados</a><a href="mismemes.html" class="selectedTab">Mis Memes</a><a href="misamigos.html">De mis amigos</a><a href="categoria.html">Por categoría</a></div>
         <div class="memeThumbs">
           <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
           <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
@@ -436,7 +436,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-$("#destacados").click(function(){
+$("#des").click(function(){
 $.ajax({
           type: "GET",
           url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes",
