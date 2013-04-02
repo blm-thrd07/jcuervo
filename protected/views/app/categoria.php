@@ -1,5 +1,5 @@
         <h2>Memes por categoría</h2>
-        <div class="tabs"><a id="des" class="menu" href="#" >Destacados</a><a href="mismemes.html" class="menu">Mis Memes</a><a  id="misamigos"  class="menu" href="">De mis amigos</a><a id="categoria" class="selectedTab menu" href="">Por categoría</a></div>
+        <div class="tabs"><a id="Destacados" class="menu" href="#" >Destacados</a><a  id="mismemes" href="#" class="menu">Mis Memes</a><a  id="misamigos"  class="menu" href="">De mis amigos</a><a id="categoria" class="selectedTab menu" href="">Por categoría</a></div>
         <div class="memeThumbs">
           <div class="itemMeme"><a href="#c" class="itemAction selectedTab"><i class="icon-eye-open"></i>Los + Vistos</a></div>
           <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Los + Compartidos</a></div>
