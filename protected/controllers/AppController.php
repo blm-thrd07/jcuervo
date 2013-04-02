@@ -218,17 +218,17 @@ public function actionLogout(){
   }
   
   public function actionMisMemes(){
-    $this->renderPartial('//app/mismemes');
+    $this->renderPartial('//app/_mismemes');
   }
 
   public function actionMisAmigos(){
    
-    $this->renderPartial('//app/misamigos');
+    $this->renderPartial('//app/_misamigos');
   }
 
   public function actionCategoria(){
 
-    $this->renderPartial('//app/categoria');
+    $this->renderPartial('//app/_categoria');
 
   }
 
