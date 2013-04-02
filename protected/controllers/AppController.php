@@ -192,6 +192,8 @@ print_r($user_profile);
   
     $amigos=new Amigos;
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
+
+    print_r($amigosApp);
     $amigos->insertAmigosApp($amigosApp);
     
       $mcaras = CaraWeb::model()->findAll(array(
