@@ -62,7 +62,8 @@ class Avatars extends CActiveRecord
 			'Usuario' => array(self::BELONGS_TO, 'Usuarios', 'usuario_id'),
 			//'AvatarP' => array(self::MANY_MANY, 'AvatarsPiezas', 'tbl_avatars_piezas(avatar_id, pieza_id)'),
            'AvatarP' => array(self::HAS_MANY, 'AvatarsPiezas', 'avatar_id'),
-
+           'AvatarA' => array(self::HAS_MANY, 'AvatarHasAccesorios', 'avatar_id'),
+           'CaraWeb' => array(self::HAS_ONE, 'CaraWeb', 'avatar_id'),
 		);
 	}
 
