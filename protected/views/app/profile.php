@@ -16,8 +16,8 @@
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
 </section>
-<?
-/*
+
+
  <a href="<? echo $logoutUrl ?>"> LOGOUT</a>
  <section id="crearPersonaje">
       <h1>Crea tu personaje</h1>
@@ -108,11 +108,10 @@ if(is_array($json['avatar']['amigosAvatars'])){
 
 </section>
 
-?>
-*/
+
 ?>
 <?php
-//print_r($json);
+print_r($json);
 
 //echo count($json);
 //echo json_encode($json);
