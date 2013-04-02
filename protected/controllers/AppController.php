@@ -109,7 +109,7 @@ public function actionLogout(){
 
 
 
-  public function actionProfile($id=1)
+  public function actionProfile($id)
   {
    $facebook = new facebook(array(
         'appId'  => '342733185828640',
