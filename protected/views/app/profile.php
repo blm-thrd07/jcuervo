@@ -439,7 +439,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 */
 
 
-$(".menu").click(function(){
+$(".menu").live("click",function(){
 
 var id=$(this).attr("id");
 $.ajax({
