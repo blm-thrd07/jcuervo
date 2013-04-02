@@ -454,7 +454,7 @@ $.ajax({
 });
 
 
-  $(document).on("ready", init);
+  //$(document).on("ready", init);
 ',CClientScript::POS_READY);
 
 ?>
