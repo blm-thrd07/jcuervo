@@ -214,7 +214,7 @@ public function actionLogout(){
   }
 
   public function actionDestacados(){
-    $this->renderPartial('//app/destacados');
+    $this->renderPartial('//app/_destacados');
   }
   
   public function actionMisMemes(){
