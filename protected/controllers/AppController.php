@@ -225,7 +225,8 @@ public function actionLogout(){
 
   public function actionCategoria(){
 
-    $this->render('categoria');
+    $this->renderPartial('//app/categoria');
+
   }
 
 
