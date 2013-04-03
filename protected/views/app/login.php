@@ -1,5 +1,8 @@
-<?
 
+<?
+header("p3p: CP=\"ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV\"");
+?>
+<?
 //echo "<a   href='".$loginUrl."'>Login</a>";
 echo "<a   href='".$loginUrl."'>Login</a>";
 ?>

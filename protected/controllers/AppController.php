@@ -91,7 +91,7 @@ public function actionLogin(){
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
          }else{
-               $this->render('login',array('loginUrl'=>$loginUrl));
+              $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
        }
 }
 
