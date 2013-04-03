@@ -105,7 +105,7 @@ class Amigos extends CActiveRecord
 public function getAmigosComics(){
     $response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
      //     print_r($response[0]->amigo->Comics[0]->Comic);
-    $response=Amigos::model()->with('amigo.Comics.Comic.Comets');
+    $response=Amigos::model()->with('amigo.Comics.Comic.Coments');
     print_r($response);
 
      //print_r($response[1]->amigo->Comics);
