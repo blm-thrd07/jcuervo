@@ -17,6 +17,6 @@
 
 foreach ($comics['comics'] as $key => $value) {
 
-
+         echo $value['imagen'];
 }
     ?>
