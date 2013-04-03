@@ -20,7 +20,6 @@
       $.ajax({
           type: "GET",
           url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
-          data: avatarJson,
           success: function(data){
             $("#panelContent").html(data);
           }
