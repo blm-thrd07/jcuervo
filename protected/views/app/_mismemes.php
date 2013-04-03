@@ -3,7 +3,7 @@
         <div class="memeThumbs">
         <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
         <? 
-        if(is_array($json['comics'])){
+        if(is_array($comics['comics'])){
         foreach ($comics['comics'] as $key => $value) {
              echo '<div class="itemMeme"><a href="#a">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],"Comic").'</a></div>';
            } 
