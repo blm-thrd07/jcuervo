@@ -5,15 +5,15 @@
 </section>
 <section id="panelContent">
      <h2>Mis Memes</h2>
-     <?print_r($json['avatar']['comics']);?>
         <div class="tabs"><a id="dest" class="menu" href="#" >Destacados</a><a id="mismemes" href="#" class="selectedTab menu">Mis Memes</a><a  id="misamigos"  class="menu" href="#">De mis amigos</a><a id="categoria" class="menu" href="#">Por categoría</a></div>
         <div class="memeThumbs">
           <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
           <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
-          <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
-          <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
-          <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
-          <div class="itemMeme"><a href="#a"><img src="http://placehold.it/640x480.png"></a></div>
+          
+               <? foreach ($json['avatar']['comics'] as $key => $value) {
+                 echo $value['imagen'];
+               } ?>
+
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
 </section>
