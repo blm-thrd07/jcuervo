@@ -6,34 +6,12 @@
           <div class="itemMeme"><a href="detalle.html"><img src="http://placehold.it/640x480.png"></a>
             <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
           </div>
-          
           <?
-
-
-
-
-$cantidad_comics=count($comicsAmigos['comicsAmigos']);
-
-echo $cantidad_comics;
-
-foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
-              # code...
-          echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
+          foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
+            echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/"'.$value['idFb'].'>'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
              </div>';
-
-        }            
-
-/*
-            echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
-             </div>';
-
-*/
-                
-        ?>
-
+          }                   
+          ?>
 
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
-        <?
-print_r(json_encode($comicsAmigos));
-        ?>
