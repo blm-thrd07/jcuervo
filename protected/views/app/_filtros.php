@@ -1,10 +1,8 @@
 
-<? echo $destacados[0]->Comic->imagen;
-   echo "<br>";
-   echo  $destacados[0]->Usuario->nombre;
- ?>
-
-
-<div class="itemMeme"><a href="detalle.html"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
-</div>
+<?
+$cantidad_resultados=count($resultado);
+for($i=0;$i<$cantidad_resultados;$i++){
+echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$resultado[$i]->Comic->imagen).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$destacados[$i]->Usuario->id_facebook.'">'.CHtml::image('https://graph.facebook.com/'.$destacados[$i]->Usuario->id_facebook.'/picture').'</a></div>
+             </div>';
+}
+?>

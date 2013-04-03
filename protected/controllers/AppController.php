@@ -280,8 +280,8 @@ public function actionLogout(){
 
   public function actionCatjoscuer(){
         $modelComics=new UsuariosHasTblComics;
-        $destacados=$modelComics->findAll(array('condition'=>'destacado=1'));
-        $this->renderPartial('//app/_filtros',array('destacados'=>$destacados));
+        $resultado=$modelComics->findAll(array('condition'=>'destacado=1'));
+        $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
 
   }
 
