@@ -5,6 +5,13 @@
           <div class="itemMeme"><a href="#" id="catmascomp" class="itemAction subcat"><i class="icon-plus-sign"></i>Los + Compartidos</a></div>
           <div class="itemMeme"><a href="#" id="catmascome" class="itemAction subcat"><i class="icon-share-alt"></i>Los + Comentados</a></div>
           <div class="itemMeme"><a href="#" id="catjoscuer" class="itemAction subcat"><i class="icon-star"></i>Seleccion Especial José Cuervo</a></div>
+          
+          <div id="response">
+          <div class="itemMeme"><a href="detalle.html"><img src="http://placehold.it/640x480.png"></a>
+          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
+          </div>
+
+
           <div class="itemMeme"><a href="detalle.html"><img src="http://placehold.it/640x480.png"></a>
             <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
           </div>
@@ -38,8 +45,8 @@
           <div class="itemMeme"><a href="detalle.html"><img src="http://placehold.it/640x480.png"></a>
             <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
           </div>
-          <div class="itemMeme"><a href="detalle.html"><img src="http://placehold.it/640x480.png"></a>
-            <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
-          </div>
+
+        </div>
+
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
