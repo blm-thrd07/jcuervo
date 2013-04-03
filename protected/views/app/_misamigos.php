@@ -15,10 +15,13 @@
         foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
           
                
-             //print_r($value);
+             print_r($value);
            
+           /*
             echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['comics']['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
              </div>';
+
+             */
 
             
 
