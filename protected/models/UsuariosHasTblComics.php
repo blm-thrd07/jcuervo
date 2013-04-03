@@ -9,6 +9,7 @@
  * @property integer $destacado
  * @property integer $NoComentarios
  * @property integer $NoVisto
+ * @property integer $NoCompartido
  */
 class UsuariosHasTblComics extends CActiveRecord
 {
@@ -39,10 +40,10 @@ class UsuariosHasTblComics extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('tbl_usuarios_id, tbl_comics_id', 'required'),
-			array('tbl_usuarios_id, tbl_comics_id, destacado, NoComentarios, NoVisto', 'numerical', 'integerOnly'=>true),
+			array('tbl_usuarios_id, tbl_comics_id, destacado, NoComentarios, NoVisto,NoCompartido', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tbl_usuarios_id, tbl_comics_id, destacado, NoComentarios, NoVisto', 'safe', 'on'=>'search'),
+			array('tbl_usuarios_id, tbl_comics_id, destacado, NoComentarios, NoVisto, NoCompartido', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,6 +72,7 @@ class UsuariosHasTblComics extends CActiveRecord
 			'destacado' => 'Destacado',
 			'NoComentarios' => 'No Comentarios',
 			'NoVisto' => 'No Visto',
+			'NoCompartido'=>'No Compartido'
 		);
 	}
 
@@ -90,6 +92,7 @@ class UsuariosHasTblComics extends CActiveRecord
 		$criteria->compare('destacado',$this->destacado);
 		$criteria->compare('NoComentarios',$this->NoComentarios);
 		$criteria->compare('NoVisto',$this->NoVisto);
+		$criteria->compare('NoCompartido',$this->NoCompartido);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
