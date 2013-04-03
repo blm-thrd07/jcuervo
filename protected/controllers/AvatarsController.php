@@ -136,10 +136,10 @@ class AvatarsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}	
 
-		/*$this->render('update',array(
+		$this->render('update',array(
 			'model'=>$model,
 		));
-	    */
+	    
 	}
 
 
