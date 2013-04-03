@@ -39,7 +39,9 @@ class AppController extends Controller
 
 public function actionLogin(){
 
-  header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
+  //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
+   header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+
 
        $facebook = new facebook(array(
         'appId'  => '342733185828640',
@@ -107,6 +109,9 @@ public function actionLogout(){
 
   public function actionProfile($id)
   {
+
+  header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+ 
    $facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
