@@ -107,7 +107,8 @@ public function getAmigosComics(){
      //     print_r($response[0]->amigo->Comics[0]->Comic);
     $response=Amigos::model()->with('amigo.Comics.Comic.Coments')->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));
 
-   print_r($response);
+echo count($response);
+   //print_r($response);
      //print_r($response[1]->amigo->Comics);
 
 }
