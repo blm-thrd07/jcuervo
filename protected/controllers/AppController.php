@@ -20,7 +20,7 @@ class AppController extends Controller
   {
     return array(
       array('allow',  // allow all users to perform 'index' and 'view' actions
-        'actions'=>array('view','Logout','login'),
+        'actions'=>array('view','Logout','login','Dest'),
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -129,7 +129,6 @@ public function actionLogout(){
    $model_Accesorios=new Accesorios;
    $model_Amigos_Avatars=new Amigos;
 
-   //$model_Amigos_Avatars->getAmigosComics();
    
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
@@ -220,14 +219,14 @@ public function actionLogout(){
   }
 
   public function actionDest(){
+       $model_Amigos_Avatars=new Amigos;
+       $model_Amigos_Avatars->getAmigosComics();
+
     $this->renderPartial('//app/_destacados');
   }
   
   public function actionMisMemes(){
-
-
     $this->renderPartial('//app/_mismemes');
-  
 
   }
 
