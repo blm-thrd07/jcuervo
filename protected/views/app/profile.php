@@ -96,24 +96,11 @@ if(is_array($json['avatar']['amigosAvatars'])){
     </section>
 
 
-<section>
-<h1>Mis Comics</h1>
-   <? 
-   if(is_array($json['avatar']['comics'])){
-                foreach ($json['avatar']['comics'] as $key => $value) {
-                   echo '<div>'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],$value['imagen'],array('id'=>'comic')).'</div>'; 
-                }
-   }
-      ?>
-
-</section>
 
 <button id="snapshot" name="url_cara_web<?php echo Yii::app()->session["usuario_id"]; ?>">foto</button> 
 <img src="" id='cropped_img' alt="" />
 
 <?php
-//print_r($json);
-//echo count($json);
 $baseUrl = Yii::app()->baseUrl; 
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/html5-webcam-build.js'); 
