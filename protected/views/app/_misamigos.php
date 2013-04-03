@@ -12,14 +12,14 @@
 
         if(is_array($comicsAmigos['comicsAmigos'])){
         
-        foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
+        foreach ($comicsAmigos['comicsAmigos'] as $key => $amigo) {
           
                
-             print_r($value);
 
              foreach ($value['comics'] as $key => $value) {
-                 print_r($value);
-  
+                
+echo $amigo['idFb'].$value['imagen'];
+
                }
            
            /*
