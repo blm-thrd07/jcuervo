@@ -122,8 +122,7 @@ public function getAmigosComics(){
   	 
   	     			for($coment=0;$coment<$cantidad_coment;$coment++){
   	        				
-  	        				print_r($response[$i]->amigo->Comics[$comic]->Comic->Coments);
-  	        				/*
+  	        				
   	        				$json['comicsAmigos'][$i]['comics'][$comic]['comentarios'][$coment]=array(
   	         					'id'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->id,
   	         					'comment'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->comment,
@@ -131,7 +130,7 @@ public function getAmigosComics(){
                 				'nombre'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->Usuarios->nombre,
                 				'idFb'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->Usuarios->id_facebook
   	         				);
-  	         				*/
+  	         			
   	     			    } 
   	    
     			} 
