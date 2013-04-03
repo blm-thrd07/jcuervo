@@ -96,7 +96,7 @@ class Amigos extends CActiveRecord
                   if($model_amigos_nuevo->save(false)){
                   }
           }else{
-               //echo "Ya existe el amigo";
+               echo "Ya existe el amigo";
           }
       }
     }

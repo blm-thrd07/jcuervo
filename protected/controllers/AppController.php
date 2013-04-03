@@ -83,9 +83,6 @@ public function actionLogin(){
               Yii::app()->session['usuario_id']=$model->id;
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
-
-            
-                
          }else{  
             $model=new Login;
             $model->username=$response[0]->id;
@@ -96,13 +93,7 @@ public function actionLogin(){
          }else{
                $this->render('login',array('loginUrl'=>$loginUrl));
        }
-
-
-      //$this->_identity=new UserIdentity($this->username,$this->password);
-    //  print_r(Yii::app()->user);
-   //  echo file_get_contents($loginUrl);
-
-    }
+}
 
 
 public function actionLogout(){
@@ -160,7 +151,6 @@ public function actionLogout(){
        }
 
    }
-//
 
     $cantidad=count($response[0]->Avatar->AvatarP);
     if(count($cantidad)==0){
@@ -207,14 +197,12 @@ public function actionLogout(){
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
     $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
     'avatarPiezas'=>$datosAvatar,'comics'=>$comics,'amigosAvatars'=>$amigosAvatars,'comicsAmigos'=>$amigosComics); 
-  
-    $amigos=new Amigos;
-    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
-    $amigos->insertAmigosApp($amigosApp);
-    
-    print_r($amigosApp);
     $json['avatar']['cara_web']=$AvatarCaraWeb;
     $json['avatar']['accesorios']=$AvatarAccesorios;
+    
+    $amigos=new Amigos;
+    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
+    $amigos->insertAmigosApp($amigosApp);    
     
     $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
 
