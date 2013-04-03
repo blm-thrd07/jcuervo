@@ -14,7 +14,7 @@
 
 
   });
-
+//navigation menu
   $(".menu").live('click',function(){
       var url=$(this).attr('id');
       $.ajax({
@@ -26,5 +26,13 @@
         });
       return false;
   })
+
+//submenu categorias
+$(".subcat").live('click',function(){
+     var url=$(this).attr('id');
+      
+      alert(url);
+});
+
 
 }).call(this);
