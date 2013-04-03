@@ -11,7 +11,7 @@
 
         if(is_array($comicsAmigos['comicsAmigos'])){
         
-        foreach ($comics['comicsAmigos'] as $key => $value) {
+        foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
           
                echo $value['iFb'];
            /*
