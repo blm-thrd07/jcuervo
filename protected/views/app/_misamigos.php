@@ -12,7 +12,7 @@
 
 
 
-$cantidad_comics=count($comicsAmigos->comicsAmigos);
+$cantidad_comics=count($comicsAmigos['comicsAmigos']);
 
 echo $cantidad_comics;
             
