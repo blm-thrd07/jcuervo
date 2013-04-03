@@ -13,3 +13,4 @@
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
     
+    <? print_r($comics); ?>

@@ -113,7 +113,8 @@ public function actionLogout(){
    $modelc= new UsuariosHasTblComics;
    $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
    $logoutUrl=null;
-   //$logoutUrl = $facebook->getLogoutUrl();    
+
+
    $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    
    $model_PiezaAvatar=new CatalogoPiezas;
@@ -127,6 +128,7 @@ public function actionLogout(){
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
    $amigosComics=$model_Amigos_Avatars->getAmigosComics();
 
+   
    $numero_comics=count($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
@@ -213,7 +215,33 @@ public function actionLogout(){
   }
   
   public function actionMisMemes(){
-    $this->renderPartial('//app/_mismemes');
+  
+   $response= Usuarios::model()->with('Comics.Comic.Coments')->findAll(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+   $numero_comics=count($response[0]->Comics);
+   $comics=array();
+   for($count=0;$count<$numero_comics;$count++){
+   
+      $comics['comics'][$count]=array(
+       'id'=> $response[0]->Comics[$count]->Comic->id,
+       'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
+       'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
+       'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
+       'destacado'=>$response[0]->Comics[$count]->destacado);
+  
+
+        $countComentarios=count($response[0]->Comics[$count]->Comic->Coments);
+           for($com=0;$com<$countComentarios;$com++){
+               $comics['comics'][$count]['comentarios'][$com]=array(
+                  'id'=>$response[0]->Comics[$count]->Comic->Coments[$com]->id,
+                  'mensaje'=>$response[0]->Comics[$count]->Comic->Coments[$com]->comment,
+                  'date'=>$response[0]->Comics[$count]->Comic->Coments[$com]->date,
+                  'nombreUsuario'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->nombre,
+                  'idFb'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->id_facebook
+              );
+       }
+
+   }
+    $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
 
   }
 
