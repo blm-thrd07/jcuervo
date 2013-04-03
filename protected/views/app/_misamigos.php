@@ -8,7 +8,7 @@
           </div>
           
           <? 
-        if(is_array($json['comicsAmigos'])){
+        if(is_array($comicsAmigos['comicsAmigos'])){
         /*
         foreach ($comics['comics'] as $key => $value) {
              echo '<div class="itemMeme"><a href="#a">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],"Comic").'</a></div>';
