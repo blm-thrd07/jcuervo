@@ -34,7 +34,7 @@ $(".subcat").live('click',function(){
       alert(url);
 
 
-      return false;
+      //return false;
 });
 
 
