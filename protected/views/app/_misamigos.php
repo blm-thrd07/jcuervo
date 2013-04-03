@@ -15,7 +15,13 @@
 $cantidad_comics=count($comicsAmigos['comicsAmigos']);
 
 echo $cantidad_comics;
-            
+
+foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
+              # code...
+          echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
+             </div>';
+
+        }            
 
 /*
             echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
