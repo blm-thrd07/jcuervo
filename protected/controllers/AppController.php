@@ -250,7 +250,7 @@ public function actionLogout(){
     $model_Amigos_Avatars=new Amigos;
     $amigosComics=$model_Amigos_Avatars->getAmigosComics();
     $comics=array('comicsAmigos'=>$amigosComics);
-    $this->renderPartial('//app/_misamigos','comicsAmigos'=>$comicsAmigos);
+    $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos));
   }
 
   public function actionCategoria(){
