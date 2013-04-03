@@ -15,7 +15,7 @@
         foreach ($comicsAmigos['comicsAmigos']['comics'] as $key => $amigo) {
           
                
-         print_r($amigo)
+         print_r($amigo);
             
 
            
@@ -28,7 +28,7 @@
             
 
              
-           
+           } 
          }
 
                 
