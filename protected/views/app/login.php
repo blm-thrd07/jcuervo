@@ -4,11 +4,13 @@
 //echo "<a   href='".$loginUrl."'>Login</a>";
 //echo "<a   href='".$loginUrl."'>Login</a>";
 ?>
-<? header("p3p: CP=\"ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV\"");?>
 
 <html>
 <header>
-<script>
+</header>
+<body>
+	<a  id="login">Login</a>
+	<script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
   oauth_url += '&redirect_uri=' + encodeURIComponent('http://www.facebook.com/Lnx1337?sk=app_342733185828640');
@@ -18,9 +20,6 @@ document.getElementById("login").onclick = function() {
   window.top.location = oauth_url;
   }
 </script>
-</header>
-<body>
-	<a  id="login">Login</a>
 </body>
 </html>
 
