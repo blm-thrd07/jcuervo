@@ -29,14 +29,16 @@
 
 //submenu categorias
 $(".subcat").live('click',function(){
-     var url=$(this).attr('id');
+    var url=$(this).attr('id');
     //$(this).attr('class','itemAction selectedTab subcat'); 
-      //alert(url);
-      
-      $(".hola").html("<h1>saludos</h1>");
-
-
-      //return false;
+    $.ajax({
+          type: "GET",
+          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          success: function(data){
+             $(".hola").html(data);
+          }
+        });
+      return false;
 });
 
 

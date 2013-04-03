@@ -24,7 +24,7 @@ class AppController extends Controller
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest'),
+        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest','Catmasvist','Catmascomp','Catjosecuer','Catmascome'),
         'users'=>array('@'),
       ),
       array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -257,9 +257,31 @@ public function actionLogout(){
   public function actionCategoria(){
 
     $this->renderPartial('//app/_categoria');
+  }
+
+
+  public function actionCatmasvist(){
+
+        $this->renderPartial('//app/_filtros',array('donde'=>'masvistos'));
+  }
+   
+  public function actionCatmascomp(){
+
+          $this->renderPartial('//app/_filtros',array('donde'=>'mascompartidos'));
+
+  }
+  
+  public function actionCatmascome(){
+        $this->renderPartial('//app/_filtros',array('donde'=>'mascomentados'));
+
 
   }
 
+
+  public function actionCatjosecuer(){
+        $this->renderPartial('//app/_filtros',array('donde'=>'josecuervo'));
+
+  }
 
     public function ShareMemeLink($my_access_token,$link,$message){
 
