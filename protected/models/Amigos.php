@@ -110,7 +110,7 @@ public function getAmigosComics(){
 
 for ($i=0; $i <count($response) ; $i++) { 
 	$car=$response[$i]->amigo->Comics[0]->Comic->imagen;
-	//echo $car;
+	echo $car;
 }
 
 
