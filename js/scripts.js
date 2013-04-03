@@ -30,7 +30,7 @@
 //submenu categorias
 $(".subcat").live('click',function(){
      var url=$(this).attr('id');
-      
+     $(this).attr('class','selectedTab subcat'); 
       alert(url);
 
 
