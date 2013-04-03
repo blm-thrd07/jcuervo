@@ -335,7 +335,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         $.ajax({
           type: "POST",
-          url: "'.Yii::app()->request->baseUrl.'/'.CController::CreateUrl("avatars/UpdatePieza").'",
+          url: "'.CController::CreateUrl("avatars/UpdatePieza").'",
           data: avatarJson,
           success: function(data){
               //alert(data);
