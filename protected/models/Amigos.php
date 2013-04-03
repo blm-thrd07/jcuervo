@@ -114,7 +114,7 @@ for ($i=0; $i <count($response) ; $i++) {
 }
 */
 
-	$car=$response[0]->amigo->Comics[0]->Comic->imagen;
+	$car=$response[1]->amigo->Comics[0]->Comic->imagen;
 echo $car;
 
 
