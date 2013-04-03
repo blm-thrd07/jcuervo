@@ -12,21 +12,13 @@
 
         if(is_array($comicsAmigos['comicsAmigos'])){
         
-        foreach ($comicsAmigos['comicsAmigos'] as $key => $amigo) {
+        foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
           
-               
-         print_r($amigo[0]);
-            
-
-           
-           /*
-            echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['comics']['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
+      
+            echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
              </div>';
 
-             */
-
             
-
              
            } 
          }
