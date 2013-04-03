@@ -56,6 +56,7 @@ class UsuariosHasTblComics extends CActiveRecord
 		
 		return array(
 				'Comic' => array(self::BELONGS_TO, 'Comics', 'tbl_comics_id'),
+				'Usuario'=>array(self::BELONGS_TO,'Usuarios','tbl_usuarios_id')
 		);
 	}
 
