@@ -12,16 +12,14 @@
     return true; //layerPersonaje.draw();
   
 
+
+  });
+
+
   $(".menu").live('click',function(){
 
       alert('click');
 
   })
-
-
-  });
-
-
-  
 
 }).call(this);
