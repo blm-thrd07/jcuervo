@@ -129,13 +129,13 @@ public function actionLogout(){
    $model_Accesorios=new Accesorios;
    $model_Amigos_Avatars=new Amigos;
 
-   $model_Amigos_Avatars->getAmigosComics();
+   //$model_Amigos_Avatars->getAmigosComics();
    
    $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
    $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
-   //$amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
-   //$amigosAvatars=null;
+   $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
+   $amigosAvatars=null;
    $numero_comics=count($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
