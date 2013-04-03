@@ -242,7 +242,7 @@ public function actionLogout(){
        }
 
    }
-   $comics=null;
+
     $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
 
   }
