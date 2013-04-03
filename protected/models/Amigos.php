@@ -115,7 +115,7 @@ public function getAmigosComics(){
  			 for($comic=0;$comic<$cantidad_comic;$comic++){
   	    			
 
-  	    			$json['comics'][$comic]=array('id'=>$response[$i]->amigo->Comics[$comic]->Comic->id ,'imagen'=>$response[$i]->amigo->Comics[$comic]->Comic->imagen,
+  	    			$json['comics'][$i]=array('id'=>$response[$i]->amigo->Comics[$comic]->Comic->id ,'imagen'=>$response[$i]->amigo->Comics[$comic]->Comic->imagen,
   	    				'idFb'=>$response[$i]->amigo->id_facebook,'nombre'=>$response[$i]->amigo->nombre);
 		            $cantidad_coment=count($response[$i]->amigo->Comics[$comic]->Comic->Coments);
   	 
