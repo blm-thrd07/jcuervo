@@ -18,7 +18,7 @@
 
              foreach ($value['comics'] as $key => $value) {
                 
-echo $amigo['idFb'].$value['imagen'];
+                print_r($value);
 
                }
            
