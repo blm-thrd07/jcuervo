@@ -107,11 +107,15 @@ public function getAmigosComics(){
      //     print_r($response[0]->amigo->Comics[0]->Comic);
     $response=Amigos::model()->with('amigo.Comics.Comic.Coments')->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> 1)));
 
-
+/*
 for ($i=0; $i <count($response) ; $i++) { 
 	$car=$response[$i]->amigo->Comics[0]->Comic->imagen;
 	echo $car;
 }
+*/
+
+	$car=$response[0]->amigo->Comics[0]->Comic->imagen;
+echo $car;
 
 
 //print_r($response[1]->amigo);
