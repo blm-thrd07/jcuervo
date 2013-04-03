@@ -32,6 +32,9 @@ $(".subcat").live('click',function(){
      var url=$(this).attr('id');
       
       alert(url);
+
+
+      return false;
 });
 
 
