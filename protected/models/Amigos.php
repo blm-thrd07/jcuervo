@@ -103,30 +103,36 @@ class Amigos extends CActiveRecord
 
  }
 public function getAmigosComics(){
-    //$response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
-     //     print_r($response[0]->amigo->Comics[0]->Comic);
-    $response=Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> 1)));
+  
+  	$response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
+ 	$cantidad_amigos=count($response);
+	$json=null;
+	
+	for ($i=0; $i <$cantidad_amigos;$i++) {
+  		$json['comicsAmigos'][$i]=array('idFb'=>$response[$i]->amigo->id_facebook,'nombre'=>$response[$i]->amigo->nombre);
+  		$cantidad_comic=count($response[$i]->amigo->Comics);
+  
+ 			 for($comic=0;$comic<$cantidad_comic;$comic++){
+  	    			$json['comicsAmigos'][$i]['comics'][$comic]=array('id'=>$response[$i]->amigo->Comics[$comic]->Comic->id ,'imagen'=>$response[$i]->amigo->Comics[$comic]->Comic->imagen);
+		            $cantidad_coment=count($response[$i]->amigo->Comics[$comic]->Comic);
+  	 
+  	     			for($coment=0;$coment<$cantidad_coment;$coment++){
+  	        				
+  	        				$json['comicsAmigos'][$i]['comics'][$comic]['comentarios'][$coment]=array(
+  	         					'id'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->id,
+  	         					'comment'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->comment,
+  	         					'date'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->date,
+                				'nombre'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->Usuarios->nombre,
+                				'idFb'=>$response[$i]->amigo->Comics[$comic]->Comic->Coments[$coment]->Usuarios->id_facebook
+  	         				);
+  	     			    } 
+  	    
+    			} 
+	
+	
+	}
 
-/*
-for ($i=0; $i <count($response) ; $i++) { 
-	$car=$response[$i]->amigo->Comics[0]->Comic->imagen;
-	echo $car;
-}
-*/
-
-
-print_r($response[0]->amigo->Comics[0]->Comic->imagen);
-/*
-	$car=$response[0]->amigo->Comics[0]->Comic->imagen;
-echo $car;
-
-*/
-
-
-//print_r($response[1]->amigo);
-   //print_r($response);
-     //print_r($response[1]->amigo->Comics);
-
+   return $json;
 }
 
  public function getAmigosAvatars(){
