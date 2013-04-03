@@ -3,9 +3,6 @@
 class AppController extends Controller
 {
   public $layout='//layouts/main';
-
-  var $facebook;
-  var $user;
   private $_identity;
 
   public function filters()
@@ -50,29 +47,29 @@ public function actionLogin(){
        
 
         //YII::app()->params['facebook']=$facebook;
-        $this->user =$facebook->getUser();
+        $user =$facebook->getUser();
         $my_access_token= $facebook->getAccessToken();
 
 
 
 
-        if ($this->user) {
+        if ($user) {
            try {
               // Proceed knowing you have a logged in user who's authenticated.
               $user_profile =  $facebook->api('/me');
             } catch (FacebookApiException $e) {
                error_log($e);
-               $this->user = null;
+               $user = null;
              }
          }
 
-        if ($this->user) {
+        if ($user) {
             $logoutUrl = $facebook->getLogoutUrl();
         } else {
             $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
         }
 
-       if($this->user){
+       if($user){
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
 
