@@ -7,12 +7,14 @@
             <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
           </div>
           
-          <? 
+          <?
+
         if(is_array($comicsAmigos['comicsAmigos'])){
-        /*
-        foreach ($comics['comics'] as $key => $value) {
-             echo '<div class="itemMeme"><a href="#a">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],"Comic").'</a></div>';
-           } */
+        
+        foreach ($comics['comicsAmigos'] as $key => $value) {
+            echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['comics']['imagen'],"Comic").'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture'.'</a></div>
+             </div>';
+           } 
          }        
         ?>
 
