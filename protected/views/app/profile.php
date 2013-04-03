@@ -255,6 +255,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(accesorios[i].attrs.id == pieza_id) insertar=false;
     }
     if(insertar){
+      alert(rotation);
       imageAccesorio = new Image();
       accesorio = new Kinetic.Image({
         x: x,
