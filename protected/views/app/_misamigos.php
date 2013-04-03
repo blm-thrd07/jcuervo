@@ -15,7 +15,7 @@
         foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
           
                
-             print_r($value);
+             //print_r($value);
            
             echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
              </div>';
@@ -33,5 +33,5 @@
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
         <?
-            print_r(json_encode($comicsAmigos));
+print_r(json_encode($comicsAmigos));
         ?>
