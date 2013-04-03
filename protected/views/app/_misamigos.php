@@ -14,9 +14,9 @@
         
         foreach ($comicsAmigos['comicsAmigos'] as $key => $value) {
           
-               /*
+               
                echo $value['iFb'];
-           
+           /*
             echo '<div class="itemMeme"><a href="detalle.html">'.''.'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture'.'</a></div>
              </div>';
 
