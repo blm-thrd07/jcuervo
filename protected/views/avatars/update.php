@@ -23,7 +23,6 @@
                 <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-3.png" class="lazy"></div>
                 <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-4.png" class="lazy"></div>
                 <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-5.png" class="lazy"></div>
-                <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-6.png" class="lazy"></div>
                 <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-7.png" class="lazy"></div>
                 <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-8.png" class="lazy"></div>
                 <div class="itemMeme"><img src="images/placeholder.png" data-original="images/cabezas/cabeza-9.png" class="lazy"></div>
