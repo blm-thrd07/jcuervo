@@ -16,9 +16,9 @@
           
                
 
-             foreach ($value['comics'] as $key => $value) {
+             foreach ($value['comics'] as $key => $otro) {
                 
-                print_r($value);
+                print_r($otro);
 
                }
            
