@@ -16,12 +16,11 @@
           
                
              print_r($value);
-             echo $value['idFb'];
-           /*
+           
             echo '<div class="itemMeme"><a href="detalle.html">'.''.'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture'.'</a></div>
              </div>';
 
-            */
+            
 
              
            } 
