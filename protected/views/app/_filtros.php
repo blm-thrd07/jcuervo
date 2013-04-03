@@ -1,7 +1,7 @@
 
 <? echo $destacados[0]->Comic->imagen;
    echo "<br>";
-   echo  $destacado[0]->Usuario->nombre;
+   echo  $destacados[0]->Usuario->nombre;
  ?>
 
 
