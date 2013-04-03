@@ -134,7 +134,7 @@ public function getAmigosComics(){
 	
 	}
 
-print_r($json);
+print_r(json_encode($json));
    //return $json;
 }
 
