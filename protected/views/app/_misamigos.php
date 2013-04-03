@@ -10,7 +10,18 @@
           <?
 
 
-        
+
+
+$catidad_comics=count($comicsAmigos);
+
+echo $cantidad_comics;
+            
+
+/*
+            echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="amigo.html">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
+             </div>';
+
+*/
                 
         ?>
 
