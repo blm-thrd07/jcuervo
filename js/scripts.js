@@ -35,7 +35,7 @@ $(".subcat").live('click',function(){
           type: "GET",
           url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
           success: function(data){
-             $(".hola").html(data);
+             $(".response").html(data);
           }
         });
       return false;
