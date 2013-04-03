@@ -12,10 +12,10 @@
 
         if(is_array($comicsAmigos['comicsAmigos'])){
         
-        foreach ($comicsAmigos['comicsAmigos'][0]['comics'] as $key => $amigo) {
+        foreach ($comicsAmigos['comicsAmigos'] as $key => $amigo) {
           
                
-         print_r($amigo);
+         print_r($amigo[0]);
             
 
            
