@@ -212,6 +212,7 @@ public function actionLogout(){
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
     
+    print_r($amigosApp);
     $json['avatar']['cara_web']=$AvatarCaraWeb;
     $json['avatar']['accesorios']=$AvatarAccesorios;
     
