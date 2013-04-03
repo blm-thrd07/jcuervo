@@ -4,10 +4,10 @@
 //echo "<a   href='".$loginUrl."'>Login</a>";
 //echo "<a   href='".$loginUrl."'>Login</a>";
 ?>
+<? header("p3p: CP=\"ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV\"");?>
 
 <html>
 <header>
-<? header("p3p: CP=\"ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV\"");?>
 <script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
