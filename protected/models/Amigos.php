@@ -114,7 +114,7 @@ for ($i=0; $i <count($response) ; $i++) {
 }
 */
 
-print_r($response[0]->amigo[0]);
+print_r($response[0]->amigo);
    //print_r($response);
      //print_r($response[1]->amigo->Comics);
 
