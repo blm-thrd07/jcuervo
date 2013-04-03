@@ -137,8 +137,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   //se va a editar
   if(edit){
     for(var a in avatar_accesorios){
-      alert(avatar_accesorios[a].rotation);
-      insertarAccesorio(parseInt(avatar_accesorios[a].posx),parseInt(avatar_accesorios[a].posy),parseInt(avatar_accesorios[a].rotation),parseInt(avatar_accesorios[a].accesorios_id),'.TiposPiezas::ACCESORIO.',avatar_accesorios[a].accesorioImg);
+      insertarAccesorio(parseInt(avatar_accesorios[a].posx),parseInt(avatar_accesorios[a].posy),parseDouble(avatar_accesorios[a].rotation),parseInt(avatar_accesorios[a].accesorios_id),'.TiposPiezas::ACCESORIO.',avatar_accesorios[a].accesorioImg);
     }
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
@@ -256,7 +255,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(accesorios[i].attrs.id == pieza_id) insertar=false;
     }
     if(insertar){
-      alert(rotation);
       imageAccesorio = new Image();
       accesorio = new Kinetic.Image({
         x: x,
