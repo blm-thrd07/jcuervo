@@ -12,7 +12,7 @@
 
 
 
-$catidad_comics=count($comicsAmigos);
+$cantidad_comics=count($comicsAmigos);
 
 echo $cantidad_comics;
             
