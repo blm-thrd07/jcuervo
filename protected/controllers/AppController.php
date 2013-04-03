@@ -167,7 +167,7 @@ $amigosAvatars=null;
       $json['edit']="0"; } 
     else{ $json['edit']="1"; }
 
-    $datosAvatar[0]="";
+    $datosAvatar=array();
     for($count=0;$count<$cantidad;$count++){
       $datosAvatar[$count]=array(
         'piezaid'=>$response[0]->Avatar->AvatarP[$count]->pieza_avatar_id,
@@ -182,7 +182,7 @@ $amigosAvatars=null;
         'rotation'=>$response[0]->Avatar->AvatarP[$count]->rotation
         );
     }
-    $AvatarAccesorios[0]="";
+    $AvatarAccesorios=array();
     $cantidad=count($response[0]->Avatar->AvatarA);
     for ($count=0; $count < $cantidad; $count++) { 
       $AvatarAccesorios[$count]=array(
@@ -195,7 +195,7 @@ $amigosAvatars=null;
       );
     }
 
-    $AvatarCaraWeb[0]="";
+    $AvatarCaraWeb=array();
     $cantidad=count($response[0]->Avatar->CaraWeb);
     if($cantidad==1){
       $AvatarCaraWeb=array(
