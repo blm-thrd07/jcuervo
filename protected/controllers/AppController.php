@@ -135,7 +135,7 @@ public function actionLogout(){
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
    $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
    //$amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
-
+$amigosAvatars=null;
    $numero_comics=count($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
