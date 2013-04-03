@@ -134,7 +134,8 @@ public function actionLogout(){
    $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
    $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
    $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
-   $amigosAvatars=null;
+   $amigosComics=$model_Amigos_Avatars->getAmigosComics();
+
    $numero_comics=count($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
@@ -205,23 +206,20 @@ public function actionLogout(){
     $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'accesorios'=>$catalogo_accesorios);
     $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
     $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
-    'avatarPiezas'=>$datosAvatar,'comics'=>$comics,'amigosAvatars'=>$amigosAvatars); 
+    'avatarPiezas'=>$datosAvatar,'comics'=>$comics,'amigosAvatars'=>$amigosAvatars,$amigosComics); 
   
     $amigos=new Amigos;
     $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
     $amigos->insertAmigosApp($amigosApp);
     
-      $json['avatar']['cara_web']=$AvatarCaraWeb;
-      $json['avatar']['accesorios']=$AvatarAccesorios;
+    $json['avatar']['cara_web']=$AvatarCaraWeb;
+    $json['avatar']['accesorios']=$AvatarAccesorios;
     
     $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
 
   }
 
   public function actionDest(){
-       $model_Amigos_Avatars=new Amigos;
-       $model_Amigos_Avatars->getAmigosComics();
-
     $this->renderPartial('//app/_destacados');
   }
   
