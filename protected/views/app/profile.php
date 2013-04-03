@@ -347,11 +347,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   removeImage = function(){
     //layerPersonaje.remove();
     for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == currentSelected.attrs.id) accesorios.setVisible(false);
-        //accesorios.remove(currentSelected);
+      if(accesorios[i].attrs.id == currentSelected.attrs.id)
+        accesorios.remove(currentSelected);
     }
     currentSelected.remove();
-    //currentSelected.setVisible(false);
     currentLayer.draw();
   }
 
