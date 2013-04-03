@@ -114,7 +114,7 @@ for ($i=0; $i <count($response) ; $i++) {
 }
 */
 
-echo count($response[1]->amigo->Comics);
+//echo count($response[1]->amigo->Comics);
 //print_r($response[1]->amigo);
    //print_r($response);
      //print_r($response[1]->amigo->Comics);
