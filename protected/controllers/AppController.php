@@ -279,7 +279,9 @@ public function actionLogout(){
 
 
   public function actionCatjoscuer(){
-        $this->renderPartial('//app/_filtros',array('donde'=>'josecuervo'));
+        $modelComics=new UsuariosHasTblComics;
+        $destacados=$modelComics->findAll(array('condition'=>'destacado=1'));
+        $this->renderPartial('//app/_filtros',array('destacados'=>$destacados));
 
   }
 
