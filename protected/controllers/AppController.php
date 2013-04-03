@@ -50,9 +50,6 @@ public function actionLogin(){
         $user =$facebook->getUser();
         $my_access_token= $facebook->getAccessToken();
 
-
-
-
         if ($user) {
            try {
               // Proceed knowing you have a logged in user who's authenticated.
