@@ -31,7 +31,9 @@
 $(".subcat").live('click',function(){
      var url=$(this).attr('id');
     //$(this).attr('class','itemAction selectedTab subcat'); 
-      alert(url);
+      //alert(url);
+      
+      $(".hola").html("<h1>saludos</h1>");
 
 
       //return false;
