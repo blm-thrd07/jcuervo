@@ -2,11 +2,10 @@
 
 <?
 //echo "<a   href='".$loginUrl."'>Login</a>";
-//echo "<a   href='".$loginUrl."'>Login</a>";
+echo "<a   href='".$loginUrl."'>Login</a>";
 ?>
 
 <?
-header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 
 ?>
 <html>
