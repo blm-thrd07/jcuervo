@@ -24,7 +24,7 @@ class AppController extends Controller
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest','Catmasvist','Catmascomp','Catjosecuer','Catmascome'),
+        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest','Catmasvist','Catmascomp','Catjoscuer','Catmascome'),
         'users'=>array('@'),
       ),
       array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -278,7 +278,7 @@ public function actionLogout(){
   }
 
 
-  public function actionCatjosecuer(){
+  public function actionCatjoscuer(){
         $this->renderPartial('//app/_filtros',array('donde'=>'josecuervo'));
 
   }
