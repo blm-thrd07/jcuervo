@@ -18,10 +18,10 @@
           <div id="tab1" class="memeThumbs">
             <ul class="js-slides-1 bx-slides">
               <? 
-              /*
+              
                   //$n_slides=0;
                   if(is_array($json['catalogos']['caras'])){
-                    //$n_slides=count($json['catalogos']['cuerpos'])/12;
+                    //$n_slides=count($json['catalogos']['caras'])/12;
                     //if(count($json['catalogos']['cuerpos'])%12>0) $n_slides++;
                     echo '<ul class="js-slides-1 bx-slides"';
                     foreach ($json['catalogos']['caras'] as $key => $value) {  
@@ -31,13 +31,13 @@
                     }
                     echo "</ul>";
                   }
-                  */
+                  
                 ?>   
             </ul>
           </div>
           <div id="tab2" class="memeThumbs">
                 <? 
-                /*
+                
                   if(is_array($json['catalogos']['cuerpos'])){
                     echo '<ul class="js-slides-2 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
@@ -47,7 +47,7 @@
                     }
                     echo "</ul>";
                   }
-                  */
+                  
                 ?>   
           </div>
           <div id="tab3" class="memeThumbs">
@@ -98,7 +98,7 @@
 
 
 <?php
-/*
+
 $baseUrl = Yii::app()->baseUrl; 
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/html5-webcam-build.js'); 
@@ -424,5 +424,5 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).on("ready", init);
 ',CClientScript::POS_READY);
-*/
+
 ?>
