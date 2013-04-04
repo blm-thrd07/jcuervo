@@ -84,9 +84,10 @@ class ComicsController extends Controller
 		$avatar = Avatars::model()->findByPk(Yii::app()->session['usuario_id']);
 		$amigos = new Amigos;
 		$objetos = null; // Objetos::model()->findAll();
-		print_r($avatar);
+		print_r($avatar->id);
+		print_r($avatar->avatar_img);
 		echo "<br><br>";
-		print_r($amigos->getAmigosAvatars);
+		print_r($amigos->getAmigosAvatars());
 		$this->render('create',array(
 			'model'=>$model,
 			'avatar'=>$avatar,
