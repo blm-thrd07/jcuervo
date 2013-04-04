@@ -60,6 +60,8 @@ class CatalogoPiezas extends CActiveRecord
 		return array(
 			'tblAvatarsPiezases' => array(self::HAS_MANY, 'TblAvatarsPiezas', 'pieza_avatar_id'),
 			'tipoPieza' => array(self::HAS_MANY, 'AvatarsPiezas', 'tipo_pieza_id'),
+		    'AvatarTipo' => array(self::BELONGS_TO, 'TiposPiezas', 'tipo_pieza_id'),
+
 		);
 	}
 
@@ -76,10 +78,8 @@ class CatalogoPiezas extends CActiveRecord
 	}
 
 	public static function getCatalogoByTipo($tipo){
-		print_r($tipo);
-       $model=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id=:id ','params'=>array(':id'=>3)));
+       $model=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id=:id ','params'=>array(':id'=>$tipo)));
        $count= count($model);
-       print_r($model);
        $catalogo=null;
 
       for($cont=0;$cont<$count;$cont++){
@@ -95,7 +95,7 @@ class CatalogoPiezas extends CActiveRecord
 
 	public function getCatalogoCaras(){
 
-       $model_caras=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CARA));
+       $model_caras=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CARA));
        $catalogos_caras_cantidad= count($model_caras);
        $catalogo_caras=null;
 
@@ -111,7 +111,7 @@ class CatalogoPiezas extends CActiveRecord
 
     public function getCatalogoCuerpos(){
      
-     $model_cuerpos=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CUERPO));
+     $model_cuerpos=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CUERPO));
      $catalogos_cuerpos_cantidad=count($model_cuerpos);
      $catalogo_cuerpos=null;
 
