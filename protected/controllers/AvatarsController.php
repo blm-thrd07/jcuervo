@@ -86,6 +86,9 @@ class AvatarsController extends Controller
 
 	public function actionUpdate($id)
 	{
+		
+
+/*
 		header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
  
 	   	$facebook = new facebook(array(
@@ -104,6 +107,7 @@ class AvatarsController extends Controller
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
+	   */
 	   echo "hola";
 	   
 	  // $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); //$model_PiezaAvatar->getCatalogoCaras();
