@@ -60,28 +60,28 @@
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
-                    echo "</ul>"
+                    echo "</ul>";
                   }
                   */
                 ?>   
           </div>
           <div id="tab4" class="memeThumbs">
            <? 
-           /*
-                  if(is_array($json['catalogos']['boca'])){
+           
+                  if(is_array($json['catalogos']['bocas'])){
                     echo '<ul class="js-slides-4 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
-                    echo "</ul>"
+                    echo "</ul>";
                   }
-                  */
+                  
                 ?>   
           <div id="tab5" class="memeThumbs">
             <? 
-                  if(is_array($json['catalogos']['boca'])){
+                  if(is_array($json['catalogos']['accesorios'])){
                     echo '<ul class="js-slides-5 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
