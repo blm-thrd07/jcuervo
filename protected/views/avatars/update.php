@@ -27,11 +27,11 @@
                     echo '<ul class="js-slides-1 bx-slides"';
                     foreach ($json['catalogos']['caras'] as $key => $value) {  
                       if($key%12==0) {
-                        if($bandera) echo '</li>';
-                        echo "<li>"
+                        if($bandera) echo '</li>'; else $bandera=false;
+                        echo "<li>";
+
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
-                      if($key%12==0) echo '</li>';
                     }
                     echo "</li></ul>";
                   }
