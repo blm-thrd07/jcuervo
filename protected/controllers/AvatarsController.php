@@ -102,7 +102,7 @@ class AvatarsController extends Controller
 	   $logoutUrl=null;
 
 
-	   $response=Usuarios::model()->with('Avatar.AvatarP.AvatarImg')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+	   $response=Usuarios::model()->with('Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
 	   
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
