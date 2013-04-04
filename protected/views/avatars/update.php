@@ -49,7 +49,7 @@
           <div id="tab3" class="memeThumbs">
             <? 
                   if(is_array($json['catalogos']['ojos'])){
-                    echo '<ul class="js-slides-2 bx-slides"';
+                    echo '<ul class="js-slides-3 bx-slides"';
                     foreach ($json['catalogos']['ojos'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
@@ -61,8 +61,8 @@
           </div>
           <div id="tab4" class="memeThumbs">
            <? 
-                  if(is_array($json['catalogos']['ojos'])){
-                    echo '<ul class="js-slides-2 bx-slides"';
+                  if(is_array($json['catalogos']['boca'])){
+                    echo '<ul class="js-slides-4 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
@@ -72,18 +72,17 @@
                   }
                 ?>   
           <div id="tab5" class="memeThumbs">
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
+            <? 
+                  if(is_array($json['catalogos']['boca'])){
+                    echo '<ul class="js-slides-5 bx-slides"';
+                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
+                      if($key%12==0) echo '<li>';
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
+                      if($key%12==0) echo '</li>';
+                    }
+                    echo "</ul>"
+                  }
+                ?>   
           </div>
         </div>
       </section>
@@ -155,9 +154,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("ok go");
     $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cara",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarAccesorio(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarAccesorio(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("ojos",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("boca",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("boca",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#snapshot").html5WebCam({
                 oncrop: function(cropped_url) { 
                   $("#cropped_img").attr("src", cropped_url); 
@@ -412,8 +411,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
     return layerPersonaje.draw();
   });
-
-  
 
 
   $(document).on("ready", init);
