@@ -36,7 +36,7 @@ FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
   function FacebookInviteFriends()
   { 
-      FB.ui({method: 'apprequests', message: 'Your Message diaolog'});
+      FB.ui({method: 'apprequests', message: 'Generador de Memes Jose Cuervo'});
       return false;
   }
 
