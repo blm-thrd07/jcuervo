@@ -16,7 +16,6 @@
             <li><a href="#tab5">Accesorios</a></li>
           </ul>
           <div id="tab1" class="memeThumbs">
-            <ul class="js-slides-1 bx-slides">
               <? 
               
                   //$n_slides=0;
@@ -24,7 +23,7 @@
                   if(is_array($json['catalogos']['caras'])){
                     //$n_slides=count($json['catalogos']['caras'])/12;
                     //if(count($json['catalogos']['cuerpos'])%12>0) $n_slides++;
-                    echo '<ul class="js-slides-1 bx-slides"';
+                    echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($json['catalogos']['caras'] as $key => $value) {  
                       if($key%12==0) {
                         if($bandera) echo '</li>'; else $bandera=false;
@@ -37,7 +36,6 @@
                   }
                   
                 ?>   
-            </ul>
           </div>
           <div id="tab2" class="memeThumbs">
                 <? 
