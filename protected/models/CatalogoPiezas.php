@@ -76,9 +76,10 @@ class CatalogoPiezas extends CActiveRecord
 	}
 
 	public static function getCatalogoByTipo($tipo){
-
+		print_r($tipo);
        $model=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id='.$tipo));
        $count= count($model);
+       print_r($model);
        $catalogo=null;
 
       for($cont=0;$cont<$count;$cont++){
