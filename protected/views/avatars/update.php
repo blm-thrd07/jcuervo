@@ -28,7 +28,7 @@
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
-                    echo "</ul>"
+                    echo "</ul>";
                   }
                 ?>   
             </ul>
@@ -42,7 +42,7 @@
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
-                    echo "</ul>"
+                    echo "</ul>";
                   }
                 ?>   
           </div>
