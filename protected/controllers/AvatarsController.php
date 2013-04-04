@@ -102,12 +102,12 @@ class AvatarsController extends Controller
 	   $logoutUrl=null;
 
 
-	   $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
-	   /*
+	  // $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+	   
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
-	   */
+	  
 	   echo "hola";
 	   
 	  // $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); //$model_PiezaAvatar->getCatalogoCaras();
