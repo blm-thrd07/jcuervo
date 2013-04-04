@@ -104,31 +104,22 @@ class AvatarsController extends Controller
 
 	   $response=Usuarios::model()->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
 	   
-	   $model_PiezaAvatar=new CatalogoPiezas;
+	  // $model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
 	  
-	  
-	   
+	 
 	   $catalogo_caras= CatalogoPiezas::getCatalogoByTipo(3); 
-	   //$catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
-	   $catalogo_cuerpos=null;
-	   $catalogo_ojos=null;
-	   $catalogo_bocas=null;
-	   $catalogo_accesorios=null;
-
-print_r($catalogo_caras);
-	   /*
 	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(4);
 	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(5);
 	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(6);
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
-	  */
+	 
 
 
       // print_r($catalogo_caras);     
       
-      /*
+      
 	   $numero_comics=count($response[0]->Comics);
 	   $comics=array();
 	   for($count=0;$count<$numero_comics;$count++){
@@ -201,7 +192,7 @@ print_r($catalogo_caras);
 	    'avatarPiezas'=>$datosAvatar); 
 	    $json['avatar']['cara_web']=$AvatarCaraWeb;
 	    $json['avatar']['accesorios']=$AvatarAccesorios;
-	    */
+	   
 	  
 
 	     
