@@ -86,8 +86,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
-    width: 640,
-    height: 480,
+    width: 258,
+    height: 460,
   });
 
   layerPersonaje = new Kinetic.Layer();
@@ -137,8 +137,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
                 },
             });
     $("#camara").on("click", function(e){ var url = $(this).find("a").attr("name"); insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',imagen) });
-    $(".saveBtn").on("click", saveToImage);
-    $("#js-listenerStat").on("click", listenerStat);
+    $(".saveBtn").on("click", listenerStat);
+    $("#js-listenerStat").on("click", saveToImage); 
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);

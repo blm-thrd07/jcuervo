@@ -180,7 +180,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             });
     $("#camara").on("click", function(e){ var url = $(this).find("a").attr("name"); insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',imagen) });
     $("#js-toImage").on("click", saveToImage);
-    $("#js-listenerStat").on("click", listenerStat);
+    $("#js-listenerStat").on("click", listenerStat); //listenerStat
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
