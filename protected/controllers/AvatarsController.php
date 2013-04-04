@@ -107,7 +107,7 @@ class AvatarsController extends Controller
 	   $model_Amigos_Avatars=new Amigos;
 	  
 	 
-	   $catalogo_caras= $model_PiezaAvatar->getCatalogoCaras(); //CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CARA); 
+	   $catalogo_caras= CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CARA); 
 	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CUERPO);
 	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::OJOS);
 	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::BOCA);
@@ -241,9 +241,10 @@ class AvatarsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}	
 		*/
-		$this->render('update',array(
+		print_r($json);
+		/*$this->render('update',array(
 			'json'=>$json,
-		));
+		));*/
 	    
 	}
 
