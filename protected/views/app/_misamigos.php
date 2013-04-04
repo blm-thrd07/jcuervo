@@ -12,13 +12,16 @@
               <p>No tienes amigos compartiendo memes aún. Pero puedes invitar a que se unan.</p>
               <a href="#" class="btn" onclick="FacebookInviteFriends();" ><i class="icon-group"></i> Invitar Amigos</a>
             </article>
+          
           <? } ?>
 
            <?
-           foreach ($comicsAmigos['comicsAmigos'] as $key => $value){
-              echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
-             </div>';
-            }                   
+           if(is_array($comicsAmigos['comicsAmigos'])){
+             foreach ($comicsAmigos['comicsAmigos'] as $key => $value){
+                echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
+                 </div>';
+              }    
+            }               
           ?>
 
         </div>
