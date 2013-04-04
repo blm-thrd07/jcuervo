@@ -102,8 +102,9 @@ class AvatarsController extends Controller
 	   $logoutUrl=null;
 
 
-	   $response=Usuarios::model()->with('Avatar.AvatarP.AvatarImg')->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+	   $response=Usuarios::model()->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
 	   
+	   print_r($response);
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
