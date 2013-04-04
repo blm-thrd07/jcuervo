@@ -42,14 +42,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarAccesorio(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("ojos",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("boca",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#snapshot").html5WebCam({
-                oncrop: function(cropped_url) { 
-                  $("#cropped_img").attr("src", cropped_url); 
-                  var url = $("#snapshot").find("a").attr("name");
-                  insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',$("#cropped_img").attr("src"));
-                },
-            });
-    $("#camara").on("click", function(e){ var url = $(this).find("a").attr("name"); insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',imagen) });
     $("#js-toImage").on("click", saveToImage);
     $("#js-listenerStat").on("click", listenerStat);
     $("#js-rotateLeft").on("click", rotateLeft);
