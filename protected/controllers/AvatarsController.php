@@ -111,7 +111,12 @@ class AvatarsController extends Controller
 	  
 	   
 	   //$catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); 
-	   $model_PiezaAvatar->getCatalogoCaras();
+	   $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
+	   $catalogo_cuerpos=null;
+	   $catalogo_ojos=null;
+	   $catalogo_bocas=null;
+	   $catalogo_accesorios=null;
+
 	   /*
 	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(4);
 	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(5);
