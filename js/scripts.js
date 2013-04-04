@@ -2,42 +2,6 @@
 (function() {
   var angle, cabeza, cuerpo, currentLayer, currentSelected, imageCabeza, imageCuerpo, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, removeElement, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, texter;
 
-  currentSelected = null;
-
-  currentLayer = null;
-
-  stagePersonaje = new Kinetic.Stage({
-    container: 'personajeCanvas',
-    width: 258,
-    height: 460
-  });
-
-  layerPersonaje = new Kinetic.Layer();
-
-  imageCabeza = new Image();
-
-  imageCuerpo = new Image();
-
-  cabeza = new Kinetic.Image({
-    x: stagePersonaje.getWidth() / 2,
-    y: (stagePersonaje.getHeight() / 2) - 170,
-    height: 120,
-    width: 120,
-    image: imageCabeza,
-    draggable: true,
-    offset: [60, 60]
-  });
-
-  cuerpo = new Kinetic.Image({
-    x: stagePersonaje.getWidth() / 2,
-    y: (stagePersonaje.getHeight() / 2) + 50,
-    height: 320,
-    width: 200,
-    image: imageCuerpo,
-    draggable: true,
-    offset: [100, 160]
-  });
-
   /*
   texto = new Kinetic.Text
     x: 0
@@ -50,54 +14,7 @@
     padding: 5
     align: "left"
     draggable: true
-  */
 
-
-  imageCabeza.src = 'spr/cabezas/cabeza-1.png';
-
-  imageCuerpo.src = 'spr/cuerpos/cuerpo-1.png';
-
-  layerPersonaje.add(cabeza);
-
-  layerPersonaje.add(cuerpo);
-
-  stagePersonaje.add(layerPersonaje);
-
-  cabeza.on("mouseover", function() {
-    this.setStroke("980d2e");
-    this.setStrokeWidth(1);
-    return layerPersonaje.draw();
-  });
-
-  cabeza.on("mouseout", function() {
-    this.setStroke(null);
-    this.setStrokeWidth(0);
-    return layerPersonaje.draw();
-  });
-
-  cabeza.on("click", function() {
-    currentSelected = this;
-    return currentLayer = layerPersonaje;
-  });
-
-  cuerpo.on("mouseover", function() {
-    this.setStroke("980d2e");
-    this.setStrokeWidth(1);
-    return layerPersonaje.draw();
-  });
-
-  cuerpo.on("mouseout", function() {
-    this.setStroke(null);
-    this.setStrokeWidth(0);
-    return layerPersonaje.draw();
-  });
-
-  cuerpo.on("click", function() {
-    currentSelected = this;
-    return currentLayer = layerPersonaje;
-  });
-
-  /*
   texto.on "mouseover", ->
     @.setStroke "980d2e"
     @.setStrokeWidth(1)
@@ -112,191 +29,17 @@
   texto.on "click", ->
     currentSelected = @
     currentLayer = layerPersonaje
-  */
-
-
-  init = function() {
-    console.log("ok go");
-    $('#tab1 .itemMeme').on('click', insertCabeza);
-    $('#tab2 .itemMeme').on('click', insertCuerpo);
-    $('#js-toImage').on('click', saveToImage);
-    $('#js-listenerStat').on('click', listenerStat);
-    $('#js-rotateLeft').on('click', rotateLeft);
-    $('#js-rotateRight').on('click', rotateRight);
-    $('#js-sendFront').on('click', sendFront);
-    $('#js-sendBack').on('click', sendBack);
-    $('#js-removeElement').on('click', removeElement);
-    $('#js-texter').on('click', texter);
-    return $('.js-tabEngine a').on('click', function() {
-      console.log('you hace clicked a tab btn');
-      return setTimeout((function() {
-        $(window).trigger("scroll");
-        return console.log('ok tab ok');
-      }), 600);
-    });
-  };
-
-  insertCabeza = function() {
-    var imgUrl;
-    imgUrl = $(this).find('img').attr('src');
-    console.log(imgUrl);
-    imageCabeza.src = imgUrl;
-    return setTimeout((function() {
-      layerPersonaje.draw();
-      return console.log('ok redraw!');
-    }), 100);
-  };
-
-  insertCuerpo = function() {
-    var imgUrl;
-    imgUrl = $(this).find('img').attr('src');
-    console.log(imgUrl);
-    imageCuerpo.src = imgUrl;
-    return setTimeout((function() {
-      layerPersonaje.draw();
-      return console.log('ok redraw!');
-    }), 100);
-  };
-
-  saveToImage = function() {
-    stagePersonaje.toDataURL({
-      callback: function(dataUrl) {
-        console.log(dataUrl);
-        return window.open(dataUrl);
-      }
-    });
-    return false;
-  };
-
-  listenerStat = function() {
-    console.log(stagePersonaje.toJSON());
-    return false;
-  };
-
-  removeElement = function() {
-    currentSelected.remove();
-    return currentLayer.draw();
-  };
 
   texter = function() {
     console.log(texto.getText());
     texto.setText($('#textinput').val());
     layerPersonaje.draw();
     return false;
-  };
-
-  angle = 0.34906585;
-
-  newangle = null;
-
-  rotateLeft = function() {
-    newangle = currentSelected.getRotation() - angle;
-    console.log(newangle);
-    console.log(angle);
-    currentSelected.transitionTo({
-      rotation: newangle,
-      duration: 0.2,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
-    currentLayer.draw();
-    return false;
-  };
-
-  rotateRight = function() {
-    newangle = currentSelected.getRotation() + angle;
-    console.log(newangle);
-    console.log(angle);
-    currentSelected.transitionTo({
-      rotation: newangle,
-      duration: 0.2,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
-    currentLayer.draw();
-    return false;
-  };
-
-  sendFront = function() {
-    currentSelected.moveToTop();
-    currentLayer.draw();
-    console.log('front');
-    return false;
-  };
-
-  sendBack = function() {
-    currentSelected.moveToBottom();
-    currentLayer.draw();
-    console.log('back');
-    return false;
-  };
-
-  $(function() {
-    $(".lazy").lazyload({
-      effect: "fadeIn"
-    });
-    return setTimeout((function() {
-      $(window).trigger("scroll");
-      console.log(':)');
-      return layerPersonaje.draw();
-    }), 100);
-  });
-
-  $(document).ready(function() {
-    $(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: 'selected',
-      updateHash: false
-    });
-    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: '→',
-      prevText: '←'
-    });
-    $("a.bx-prev, a.bx-next").bind("click", function() {
-      return setTimeout((function() {
-        $(window).trigger("scroll");
-        return console.log('yeah');
-      }), 600);
-    });
-    return layerPersonaje.draw();
-  });
-
-
-  //navigation menu
-  $(".menu").live('click',function(){
-      var url=$(this).attr('id');
-      $.ajax({
-          type: "GET",
-          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
-          success: function(data){
-            $("#panelContent").html(data);
-          }
-        });
-      return false;
-  })
-
-//submenu categorias
-$(".subcat").live('click',function(){
-    var url=$(this).attr('id');
-    //$(this).attr('class','itemAction selectedTab subcat'); 
-    $.ajax({
-          type: "GET",
-          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
-          success: function(data){
-             $(".response").html(data);
-          }
-        });
-      return false;
-});
+  }; */
 
 
 
-  $(document).on('ready', init);
+  //$(document).on('ready', init);
 
 }).call(this);
 

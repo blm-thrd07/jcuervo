@@ -137,7 +137,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
                 },
             });
     $("#camara").on("click", function(e){ var url = $(this).find("a").attr("name"); insertarPieza("cara_web",100,100,url,'.TiposPiezas::CARA_WEB.',imagen) });
-    $("#js-toImage").on("click", saveToImage);
+    $(".saveBtn").on("click", saveToImage);
     $("#js-listenerStat").on("click", listenerStat);
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
@@ -258,23 +258,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   saveToImage = function() {
-    stagePersonaje.toDataURL({
-      callback: function(dataUrl) {
-        alert(dataUrl);
-        //return window.open(dataUrl);
-      }
-    });
-    /*stagePersonaje.toImage({
-      callback: function(dataUrl) {
-        alert(dataUrl);
-        //return window.open(dataUrl);
-      }
-    });*/
-    return false;
-  };
-
-  listenerStat = function() {
-    var json = JSON.parse(layerPersonaje.toJSON()); 
+   var json = JSON.parse(layerPersonaje.toJSON()); 
     console.log(json.children);
     
     stagePersonaje.toDataURL({
@@ -293,6 +277,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
       }
     });
+    return false;
+  };
+
+  listenerStat = function() {
+    var json = JSON.parse(layerPersonaje.toJSON()); 
+    console.log(json.children);
+  });
     
     
     return false;
@@ -361,6 +352,69 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("back");
     return false;
   };
+
+
+  $(function() {
+    $(".lazy").lazyload({
+      effect: "fadeIn"
+    });
+    return setTimeout((function() {
+      $(window).trigger("scroll");
+      console.log(":)");
+      return layerPersonaje.draw();
+    }), 100);
+  });
+
+  $(document).ready(function() {
+    $(".js-tabEngine").easytabs({
+      animate: false,
+      tabActiveClass: "selected",
+      updateHash: false
+    });
+    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+      startingSlide: 1,
+      pager: false,
+      controls: true,
+      nextText: "→",
+      prevText: "←",
+    });
+    $("a.bx-prev, a.bx-next").bind("click", function() {
+      return setTimeout((function() {
+        $(window).trigger("scroll");
+        return console.log("yeah");
+      }), 600);
+    });
+    return layerPersonaje.draw();
+  });
+
+
+  //navigation menu
+  $(".menu").live("click",function(){
+      var url=$(this).attr("id");
+      $.ajax({
+          type: "GET",
+          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          success: function(data){
+            $("#panelContent").html(data);
+          }
+        });
+      return false;
+  })
+
+    //submenu categorias
+    $(".subcat").live("click",function(){
+        var url=$(this).attr("id");
+        //$(this).attr("class","itemAction selectedTab subcat"); 
+        $.ajax({
+              type: "GET",
+              url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+              success: function(data){
+                 $(".response").html(data);
+              }
+            });
+          return false;
+    });
+
 
   $(document).on("ready", init);
 ',CClientScript::POS_READY);

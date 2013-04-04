@@ -340,7 +340,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  angle = 0.174532925;
+  angle = 0.34906585;
 
   newangle = null;
 
