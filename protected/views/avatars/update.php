@@ -18,6 +18,7 @@
           <div id="tab1" class="memeThumbs">
             <ul class="js-slides-1 bx-slides">
               <? 
+              /*
                   //$n_slides=0;
                   if(is_array($json['catalogos']['caras'])){
                     //$n_slides=count($json['catalogos']['cuerpos'])/12;
@@ -30,11 +31,13 @@
                     }
                     echo "</ul>";
                   }
+                  */
                 ?>   
             </ul>
           </div>
           <div id="tab2" class="memeThumbs">
                 <? 
+                /*
                   if(is_array($json['catalogos']['cuerpos'])){
                     echo '<ul class="js-slides-2 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
@@ -44,10 +47,12 @@
                     }
                     echo "</ul>";
                   }
+                  */
                 ?>   
           </div>
           <div id="tab3" class="memeThumbs">
             <? 
+            /*
                   if(is_array($json['catalogos']['ojos'])){
                     echo '<ul class="js-slides-3 bx-slides"';
                     foreach ($json['catalogos']['ojos'] as $key => $value) {  
@@ -57,10 +62,12 @@
                     }
                     echo "</ul>"
                   }
+                  */
                 ?>   
           </div>
           <div id="tab4" class="memeThumbs">
            <? 
+           /*
                   if(is_array($json['catalogos']['boca'])){
                     echo '<ul class="js-slides-4 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
@@ -70,6 +77,7 @@
                     }
                     echo "</ul>"
                   }
+                  */
                 ?>   
           <div id="tab5" class="memeThumbs">
             <? 
@@ -80,7 +88,7 @@
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
-                    echo "</ul>"
+                    echo "</ul>";
                   }
                 ?>   
           </div>
