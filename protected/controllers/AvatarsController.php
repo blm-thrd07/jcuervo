@@ -88,7 +88,7 @@ class AvatarsController extends Controller
 	{
 		
 
-/*
+
 		header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
  
 	   	$facebook = new facebook(array(
@@ -101,7 +101,7 @@ class AvatarsController extends Controller
 	   $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
 	   $logoutUrl=null;
 
-
+/*
 	   $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
 	   
 	   //$model_PiezaAvatar=new CatalogoPiezas;
