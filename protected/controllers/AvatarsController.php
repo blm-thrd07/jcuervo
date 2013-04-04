@@ -98,11 +98,11 @@ class AvatarsController extends Controller
 
 	   $modelcom = Usuarios::model()->with('Comics')->findAll();
 	   $modelc= new UsuariosHasTblComics;
-	   $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
+	   $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>Yii::app()->session['usuario_id'])));
 	   $logoutUrl=null;
 
 
-	  // $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+	   $response=Usuarios::model()->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
 	   
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
