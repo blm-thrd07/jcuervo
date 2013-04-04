@@ -113,7 +113,8 @@ class AvatarsController extends Controller
 	   $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 	   $amigosComics=$model_Amigos_Avatars->getAmigosComics();
 
-	   
+       print_r($catalogo_caras);     
+     /*  
 	   $numero_comics=count($response[0]->Comics);
 	   $comics=array();
 	   for($count=0;$count<$numero_comics;$count++){
@@ -190,7 +191,10 @@ class AvatarsController extends Controller
 	    
 	    $amigos=new Amigos;
 	    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
-	    $amigos->insertAmigosApp($amigosApp);   
+	    $amigos->insertAmigosApp($amigosApp); 
+
+
+	    */  
 		//$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -241,7 +245,7 @@ class AvatarsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}	
 		*/
-		print_r($json);
+		//print_r($json);
 		/*$this->render('update',array(
 			'json'=>$json,
 		));*/
