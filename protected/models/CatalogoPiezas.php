@@ -78,7 +78,8 @@ class CatalogoPiezas extends CActiveRecord
 	}
 
 	public static function getCatalogoByTipo(tipo){
-
+echo "hola";
+/*
        $model=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.$tipo));
        $count= count($model);
        $catalogo=null;
@@ -89,7 +90,9 @@ class CatalogoPiezas extends CActiveRecord
            'tipo_pieza_id'=>$model->tipo_pieza_id,
            'url'=>$model[$cont]->url);
       }
-       return $catalogo;
+     
+      return $catalogo;
+      */
     }
 
 	public function getCatalogoCaras(){
