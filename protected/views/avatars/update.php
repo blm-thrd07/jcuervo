@@ -282,10 +282,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
-    console.log(json.children);
-  });
-    
-    
+    console.log(json.children);    
     return false;
   };
 
