@@ -363,8 +363,8 @@ class AvatarsController extends Controller
 	               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
 	           }
 	        }
-           $model->avatar_img=$_POST['avatarImg'];
-           $data=$_POST['avatarImg'];
+           $model->avatar_img=$_POST['img'];
+           $data=$_POST['img'];
            define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
 	       $img = $data;
 	       $img = str_replace('data:image/png;base64,', '', $img);
