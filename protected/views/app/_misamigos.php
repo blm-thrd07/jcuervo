@@ -4,7 +4,7 @@
         <div class="memeThumbs">
           <? $comicsAmigos=null;
             
-          if(count($comicsAmigos)>0){ ?>
+          if(count($comicsAmigos)==0){?>
              
             <article id="noFriends">
               <div id='fb-root'>
