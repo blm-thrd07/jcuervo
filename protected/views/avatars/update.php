@@ -52,25 +52,25 @@
           </div>
           <div id="tab3" class="memeThumbs">
             <? 
-            /*
-                  if(is_array($json['catalogos']['ojos'])){
+            
+                  if(is_array($json['catalogos']['bocas'])){
                     echo '<ul class="js-slides-3 bx-slides"';
-                    foreach ($json['catalogos']['ojos'] as $key => $value) {  
+                    foreach ($json['catalogos']['bocas'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
                     echo "</ul>";
                   }
-                  */
+                  
                 ?>   
           </div>
           <div id="tab4" class="memeThumbs">
            <? 
            
-                  if(is_array($json['catalogos']['bocas'])){
+                  if(is_array($json['catalogos']['ojos'])){
                     echo '<ul class="js-slides-4 bx-slides"';
-                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
+                    foreach ($json['catalogos']['ojos'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
@@ -83,7 +83,7 @@
             <? 
                   if(is_array($json['catalogos']['accesorios'])){
                     echo '<ul class="js-slides-5 bx-slides"';
-                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
+                    foreach ($json['catalogos']['accesorios'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
