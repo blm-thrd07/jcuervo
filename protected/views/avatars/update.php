@@ -90,6 +90,7 @@
 
 
 <?php
+/*
 $baseUrl = Yii::app()->baseUrl; 
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/html5-webcam-build.js'); 
@@ -415,5 +416,5 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).on("ready", init);
 ',CClientScript::POS_READY);
-
+*/
 ?>
