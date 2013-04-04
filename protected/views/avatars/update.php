@@ -351,7 +351,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
 
-  /*$(function() {
+  $(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
     });
@@ -360,7 +360,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(":)");
       return layerPersonaje.draw();
     }), 100);
-  });*/
+  });
 
   $(document).ready(function() {
     $(".js-tabEngine").easytabs({
