@@ -104,8 +104,9 @@ class AvatarsController extends Controller
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
+	   echo "hola";
 	   
-	   $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); //$model_PiezaAvatar->getCatalogoCaras();
+	  // $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); //$model_PiezaAvatar->getCatalogoCaras();
 	   /*
 	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(4);
 	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(5);
@@ -117,7 +118,7 @@ class AvatarsController extends Controller
 	   $amigosComics=$model_Amigos_Avatars->getAmigosComics();
 	   */
 
-       print_r($catalogo_caras);     
+      // print_r($catalogo_caras);     
      /*  
 	   $numero_comics=count($response[0]->Comics);
 	   $comics=array();
