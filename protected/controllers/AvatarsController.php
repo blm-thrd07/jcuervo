@@ -88,7 +88,7 @@ class AvatarsController extends Controller
 	{
 		header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
  
-	   $facebook = new facebook(array(
+	   	$facebook = new facebook(array(
 	        'appId'  => '342733185828640',
 	        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
 	        ));
@@ -105,10 +105,10 @@ class AvatarsController extends Controller
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
 	   
-	   $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CARA); //$model_PiezaAvatar->getCatalogoCaras();
-	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CUERPO);
-	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::OJOS);
-	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::BOCA);
+	   $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); //$model_PiezaAvatar->getCatalogoCaras();
+	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(4);
+	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(5);
+	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(6);
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
 	   $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 	   $amigosComics=$model_Amigos_Avatars->getAmigosComics();
