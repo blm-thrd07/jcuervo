@@ -348,7 +348,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     //layerPersonaje.remove();
     for(i=0;i<accesorios.length;i++){
       if(accesorios[i].attrs.id == currentSelected.attrs.id)
-        accesorios.remove(currentSelected);
+        delete accesorios[accesorios.indexOf(currentSelected)];
+        //accesorios.remove(currentSelected);
     }
     currentSelected.remove();
     currentLayer.draw();
