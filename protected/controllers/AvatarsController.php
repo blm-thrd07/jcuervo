@@ -191,10 +191,6 @@ class AvatarsController extends Controller
 	  
 
 	     
-		//$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 
         /*if(isset($_POST['avatarImg'])){
 
@@ -338,39 +334,56 @@ class AvatarsController extends Controller
   public function actionUpdatePieza(){
     //$pieza_id = $_POST['pieza_id']; 
     //$accion = $_POST['accion'];
+
+    $facebook = new facebook(array(
+       'appId'  => '342733185828640',
+       'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+     ));
+   
+    $user =$facebook->getUser();
+    $my_access_token= $facebook->getAccessToken();
+
+
     $edit=$_POST['edit'];
     //borra todo
     if($edit==1){
-    	$m = AvatarsPiezas::model()->deleteAll(array(
-	    		'condition'=>'avatar_id=:avatar_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-	    			)
-	    		)	
-	    	);
-    	//if(count($m)!=0)
-    	//	$m->delete();
-    	$mcaras = CaraWeb::model()->deleteAll(array(
-	    		'condition'=>'avatar_id=:avatar_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-	    			)
-	    		)	
-	    	);
-    	//if(count($mcaras)!=0)
-    	//	$mcaras->delete();
-    	$maccesorios = AvatarHasAccesorios::model()->deleteAll(array(
-	    		'condition'=>'avatar_id=:avatar_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-	    			)
-	    		)	
-	    	);
-    	//if(count($maccesorios)!=0)
-    	//	$maccesorios->delete();
+    	$m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+    	$mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+    	$maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     }
     $avatar = $_POST['avatar'];
+    if(isset($_POST['img'])){
+		$model=$this->loadModel(Yii::app()->session['usuario_id']);
+
+        if(isset($_POST['img'])){
+         
+
+	        if($model->avatar_img != null){
+	           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
+	               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
+	           }
+	        }
+           $model->avatar_img=$_POST['avatarImg'];
+           $data=$_POST['avatarImg'];
+           define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
+	       $img = $data;
+	       $img = str_replace('data:image/png;base64,', '', $img);
+	       $img = str_replace(' ', '+', $img);
+	       $data = base64_decode($img);
+	       $filename=uniqid().'.png';
+	       $file = UPLOAD_DIR .$filename;
+	       $success = file_put_contents($file, $data);
+	       $model->avatar_img=$filename;
+	       
+	       if($model->save()){
+	       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+	       }
+	      
+
+     	}
+    }
     foreach ($avatar as $p => $pieza) {
+
     	$tipo = $pieza['attrs']['tipo'];
     	$pieza_id = $pieza['attrs']['id'];
     	$posx=$pieza['attrs']['x'];
@@ -378,35 +391,16 @@ class AvatarsController extends Controller
     	//$zindex=$pieza['attrs'][]
     	$rotation=$pieza['attrs']['rotation'];
 
-    	print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
+    	//print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
     	if($tipo==TiposPiezas::CUERPO || $tipo==TiposPiezas::CARA){
 	    	echo " pieza ";
-	    	$m = AvatarsPiezas::model()->find(array(
-	    		'condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-		    			//':pieza_avatar_id'=>$cat_pieza->id,
-		    			':tipo_pieza_id'=>$tipo,
-	    			)
-	    		)	
-	    	);
+	    	$m = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>$tipo,)));
 
 	    	//si es cara borra cara_web
 	    	if($tipo==TiposPiezas::CARA){ 
-	    		$mcaras = CaraWeb::model()->find(array(
-		    		'condition'=>'avatar_id=:avatar_id',
-		    		'params'=>array(
-			    			':avatar_id'=>Yii::app()->session['usuario_id'],
-		    			)
-		    		)	
-		    	);
-		    	if(!count($mcaras)==0){
-		    		$mcaras->delete();
-		    		echo " --borrar cara web-- ";
-		    	} else{
-		    		echo " --no borrar cara web-- ";
-		    	}
-		    		
+	    		$mcaras = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+		    	if(!count($mcaras)==0){ $mcaras->delete(); echo " --borrar cara web-- "; } 
+		    	else{ echo " --no borrar cara web-- "; }		
 	    	}
 
 	    	//insertar
@@ -431,15 +425,7 @@ class AvatarsController extends Controller
 	    	
 	    } else if($tipo==TiposPiezas::ACCESORIO){
 	    	echo "accesorio";
-	    	$m = AvatarHasAccesorios::model()->find(array(
-	    		'condition'=>'avatar_id=:avatar_id AND accesorios_id=:accesorios_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-		    			//':pieza_avatar_id'=>$cat_pieza->id,
-		    			':accesorios_id'=>$pieza_id, //$cat_accesorios->id, //
-	    			)
-	    		)	
-	    	);
+	    	$m = AvatarHasAccesorios::model()->find(array('condition'=>'avatar_id=:avatar_id AND accesorios_id=:accesorios_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':accesorios_id'=>$pieza_id,)));
 	    	//insertar
 	    	if(count($m)==0){
 	    		$m=new AvatarHasAccesorios;
@@ -460,13 +446,7 @@ class AvatarsController extends Controller
 	    } else if($tipo==TiposPiezas::CARA_WEB){
 	    	echo "cara_web"; //
 	    	
-	    	$m = CaraWeb::model()->find(array(
-	    		'condition'=>'avatar_id=:avatar_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-	    			)
-	    		)	
-	    	);
+	    	$m = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
 	    	if(count($m)==0){
 	    		$m = new CaraWeb;
 	    		$m->url = $pieza_id;
@@ -480,14 +460,7 @@ class AvatarsController extends Controller
 	    		$m->url = $pieza_id;
 	    		$m->save(false);
 	    	}
-	    	$mcaras = AvatarsPiezas::model()->find(array(
-	    		'condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id',
-	    		'params'=>array(
-		    			':avatar_id'=>Yii::app()->session['usuario_id'],
-		    			':tipo_pieza_id'=>TiposPiezas::CARA,
-	    			)
-	    		)	
-	    	);
+	    	$mcaras = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>TiposPiezas::CARA,)));
 	    	
 	    	if(count($mcaras)==0){
 	    		
