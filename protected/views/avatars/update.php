@@ -133,6 +133,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   //se va a editar
   if(edit){
     for(var a in avatar_accesorios){
+      alert(parseFloat(avatar_accesorios[a].rotation));
       insertarAccesorio(parseInt(avatar_accesorios[a].posx),parseInt(avatar_accesorios[a].posy),parseFloat(avatar_accesorios[a].rotation),parseInt(avatar_accesorios[a].accesorios_id),'.TiposPiezas::ACCESORIO.',avatar_accesorios[a].accesorioImg);
     }
 
