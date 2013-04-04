@@ -25,6 +25,6 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.hashchange.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.bxslider.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
-
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
   </body>
 </html>
