@@ -77,10 +77,22 @@ class CatalogoPiezas extends CActiveRecord
 		);
 	}
 
+	public static function getCatalogoByTipo(tipo){
 
+       $model=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.$tipo));
+       $count= count($model);
+       $catalogo=null;
 
+      for($cont=0;$cont<$count;$cont++){
+        $catalogo[$cont]=array(
+           'id'=>$model[$cont]->id,
+           'tipo_pieza_id'=>$model->tipo_pieza_id,
+           'url'=>$model[$cont]->url);
+      }
+       return $catalogo;
+    }
 
-	  public function getCatalogoCaras(){
+	public function getCatalogoCaras(){
 
        $model_caras=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CARA));
        $catalogos_caras_cantidad= count($model_caras);

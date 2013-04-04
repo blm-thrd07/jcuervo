@@ -101,13 +101,14 @@ class AvatarsController extends Controller
 
 	   $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
 	   
-	   $model_PiezaAvatar=new CatalogoPiezas;
+	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
-
 	   
-	   $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
-	   $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
+	   $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CARA); //$model_PiezaAvatar->getCatalogoCaras();
+	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CUERPO);
+	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::OJOS);
+	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::BOCA);
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
 	   $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
 	   $amigosComics=$model_Amigos_Avatars->getAmigosComics();
@@ -179,7 +180,7 @@ class AvatarsController extends Controller
 	      );
 	    }
 
-	    $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'accesorios'=>$catalogo_accesorios);
+	    $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'ojos'=>$catalogo_ojos,'bocas'=>$catalogo_bocas,'accesorios'=>$catalogo_accesorios);
 	    $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
 	    $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
 	    'avatarPiezas'=>$datosAvatar,'amigosAvatars'=>$amigosAvatars,'comicsAmigos'=>$amigosComics); 
