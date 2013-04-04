@@ -26,7 +26,7 @@
                     echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($json['catalogos']['caras'] as $key => $value) {  
                       if($key%12==0) {
-                        if($bandera) echo '</li>'; else $bandera=false;
+                        if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
 
                       }
