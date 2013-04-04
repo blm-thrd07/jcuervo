@@ -95,7 +95,7 @@ class CatalogoPiezas extends CActiveRecord
 
 	public function getCatalogoCaras(){
 
-       $model_caras=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CARA));
+       $model_caras=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CARA));
        $catalogos_caras_cantidad= count($model_caras);
        $catalogo_caras=null;
 
@@ -111,7 +111,7 @@ class CatalogoPiezas extends CActiveRecord
 
     public function getCatalogoCuerpos(){
      
-     $model_cuerpos=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CUERPO));
+     $model_cuerpos=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id='.TiposPiezas::CUERPO));
      $catalogos_cuerpos_cantidad=count($model_cuerpos);
      $catalogo_cuerpos=null;
 
