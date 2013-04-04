@@ -28,53 +28,49 @@
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
+                    echo "</ul>"
                   }
                 ?>   
             </ul>
           </div>
           <div id="tab2" class="memeThumbs">
                 <? 
-                  //$n_slides=0;
                   if(is_array($json['catalogos']['cuerpos'])){
-                    //$n_slides=count($json['catalogos']['cuerpos'])/12;
-                    //if(count($json['catalogos']['cuerpos'])%12>0) $n_slides++;
                     echo '<ul class="js-slides-2 bx-slides"';
                     foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
                       if($key%12==0) echo '<li>';
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
                       if($key%12==0) echo '</li>';
                     }
+                    echo "</ul>"
                   }
                 ?>   
           </div>
           <div id="tab3" class="memeThumbs">
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
-            <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
+            <? 
+                  if(is_array($json['catalogos']['ojos'])){
+                    echo '<ul class="js-slides-2 bx-slides"';
+                    foreach ($json['catalogos']['ojos'] as $key => $value) {  
+                      if($key%12==0) echo '<li>';
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
+                      if($key%12==0) echo '</li>';
+                    }
+                    echo "</ul>"
+                  }
+                ?>   
           </div>
           <div id="tab4" class="memeThumbs">
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-          </div>
+           <? 
+                  if(is_array($json['catalogos']['ojos'])){
+                    echo '<ul class="js-slides-2 bx-slides"';
+                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
+                      if($key%12==0) echo '<li>';
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
+                      if($key%12==0) echo '</li>';
+                    }
+                    echo "</ul>"
+                  }
+                ?>   
           <div id="tab5" class="memeThumbs">
             <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
             <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
@@ -93,7 +89,7 @@
       </section>
     </div>
 
-    
+
 <?php
 $baseUrl = Yii::app()->baseUrl; 
 $cs = Yii::app()->getClientScript();
@@ -417,19 +413,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return layerPersonaje.draw();
   });
 
-    //submenu categorias
-    $(".subcat").live("click",function(){
-        var url=$(this).attr("id");
-        //$(this).attr("class","itemAction selectedTab subcat"); 
-        $.ajax({
-              type: "GET",
-              url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
-              success: function(data){
-                 $(".response").html(data);
-              }
-            });
-          return false;
-    });
+  
 
 
   $(document).on("ready", init);
