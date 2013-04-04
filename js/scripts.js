@@ -27,14 +27,16 @@
         return false;
   });
 
-  FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
+  
+
+}).call(this);
+
+
+FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
   function FacebookInviteFriends()
   { 
       FB.ui({method: 'apprequests', message: 'Your Message diaolog'});
       return false;
   }
-
-}).call(this);
-
 
