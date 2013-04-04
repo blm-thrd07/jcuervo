@@ -114,11 +114,8 @@ class AvatarsController extends Controller
 	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(5);
 	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(6);
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
-	 
-
 
       // print_r($catalogo_caras);     
-      
       
 	   $numero_comics=count($response[0]->Comics);
 	   $comics=array();
@@ -246,10 +243,9 @@ class AvatarsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}	
 		*/
-		print_r($json);
-		/*$this->render('update',array(
+		$this->render('update',array(
 			'json'=>$json,
-		));*/
+		));
 	    
 	}
 
