@@ -128,8 +128,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
-    width: 640,
-    height: 480,
+    width: 258,
+    height: 460,
   });
 
   layerPersonaje = new Kinetic.Layer();
