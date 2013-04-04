@@ -241,10 +241,10 @@ class AvatarsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}	
 		*/
-		
-		$this->render('update',array(
+		print_r($json);
+		/*$this->render('update',array(
 			'json'=>$json,
-		));
+		));*/
 	    
 	}
 
