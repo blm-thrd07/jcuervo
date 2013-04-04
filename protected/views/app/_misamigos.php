@@ -5,7 +5,7 @@
           <?
 
 
-          if(count($comicsAmigos)==0){
+          if(count($comicsAmigos)>0){
                echo "<a href='#' onclick='FacebookInviteFriends();'>Facebook Invite Friends Link</a>"
           }
           
