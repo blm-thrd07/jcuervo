@@ -242,7 +242,7 @@ class AvatarsController extends Controller
 		*/
 
 		$this->render('update',array(
-			'model'=>$model,
+			'json'=>$json,
 		));
 	    
 	}
