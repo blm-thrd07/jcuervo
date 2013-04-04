@@ -6,7 +6,7 @@
 
 
           if(count($comicsAmigos)>0){
-               echo "<a href='#' onclick='FacebookInviteFriends();'>Facebook Invite Friends Link</a>"
+               echo "<a href='#' onclick='FacebookInviteFriends();'>Facebook Invite Friends Link</a>";
           }
           
           foreach ($comicsAmigos['comicsAmigos'] as $key => $value){
