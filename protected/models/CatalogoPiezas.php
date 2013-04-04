@@ -60,8 +60,6 @@ class CatalogoPiezas extends CActiveRecord
 		return array(
 			'tblAvatarsPiezases' => array(self::HAS_MANY, 'TblAvatarsPiezas', 'pieza_avatar_id'),
 			'tipoPieza' => array(self::HAS_MANY, 'AvatarsPiezas', 'tipo_pieza_id'),
-		    'AvatarTipo' => array(self::BELONGS_TO, 'TiposPiezas', 'tipo_pieza_id'),
-
 		);
 	}
 
@@ -79,7 +77,7 @@ class CatalogoPiezas extends CActiveRecord
 
 	public static function getCatalogoByTipo($tipo){
 
-       $model=CatalogoPiezas::model()->with('AvatarTipo')->findAll(array('condition'=>'t.tipo_pieza_id='.$tipo));
+       $model=CatalogoPiezas::model()->findAll(array('condition'=>'t.tipo_pieza_id='.$tipo));
        $count= count($model);
        $catalogo=null;
 
