@@ -104,12 +104,11 @@ class AvatarsController extends Controller
 
 	   $response=Usuarios::model()->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
 	   
-	   print_r($response);
 	   //$model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
 	  
-	   echo "hola";
+	  
 	   
 	  // $catalogo_caras=CatalogoPiezas::getCatalogoByTipo(3); //$model_PiezaAvatar->getCatalogoCaras();
 	   /*
@@ -124,7 +123,7 @@ class AvatarsController extends Controller
 	   */
 
       // print_r($catalogo_caras);     
-     /*  
+      
 	   $numero_comics=count($response[0]->Comics);
 	   $comics=array();
 	   for($count=0;$count<$numero_comics;$count++){
@@ -194,17 +193,13 @@ class AvatarsController extends Controller
 	    $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'ojos'=>$catalogo_ojos,'bocas'=>$catalogo_bocas,'accesorios'=>$catalogo_accesorios);
 	    $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
 	    $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
-	    'avatarPiezas'=>$datosAvatar,'amigosAvatars'=>$amigosAvatars,'comicsAmigos'=>$amigosComics); 
-	    $json['avatar']['comics']=$comics;
+	    'avatarPiezas'=>$datosAvatar); 
 	    $json['avatar']['cara_web']=$AvatarCaraWeb;
 	    $json['avatar']['accesorios']=$AvatarAccesorios;
 	    
-	    $amigos=new Amigos;
-	    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
-	    $amigos->insertAmigosApp($amigosApp); 
+	  
 
-
-	    */  
+	     
 		//$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -255,7 +250,7 @@ class AvatarsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}	
 		*/
-		//print_r($json);
+		print_r($json);
 		/*$this->render('update',array(
 			'json'=>$json,
 		));*/
