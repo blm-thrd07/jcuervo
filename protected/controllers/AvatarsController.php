@@ -102,15 +102,14 @@ class AvatarsController extends Controller
 
 	   $response=Usuarios::model()->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
 	   
-	  // $model_PiezaAvatar=new CatalogoPiezas;
 	   $model_Accesorios=new Accesorios;
 	   $model_Amigos_Avatars=new Amigos;
 	  
 	 
-	   $catalogo_caras= CatalogoPiezas::getCatalogoByTipo(3); 
-	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(4);
-	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(5);
-	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(6);
+	   $catalogo_caras= CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CARA); 
+	   $catalogo_cuerpos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::CUERPO);
+	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::OJOS);
+	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::BOCA);
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
 
       // print_r($catalogo_caras);     
