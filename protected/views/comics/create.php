@@ -128,6 +128,16 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
+  $(function() {
+    $(".lazy").lazyload({
+      effect: "fadeIn"
+    });
+    return setTimeout((function() {
+      $(window).trigger("scroll");
+      console.log(':)');
+      return layerPersonaje.draw();
+    }), 100);
+  });
 
   $(document).ready(function() {
     console.log("ok go");
@@ -149,17 +159,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return console.log("yeah");
       }), 600);
     });
-    $(".js-lightbox").fancybox({
-      maxWidth: 810,
-      maxHeight: 600,
-      fitToView: false,
-      width: "70%",
-      height: "70%",
-      autoSize: false,
-      closeClick: false,
-      openEffect: "none",
-      closeEffect: "none"
-    });
+    
     return layerPersonaje.draw();
   });
 
