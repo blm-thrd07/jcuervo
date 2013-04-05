@@ -23,6 +23,7 @@
                     if($bandera) echo '</li>'; else $bandera=true;
                     echo "<li>";
                   }
+                  print_r($key);
                   echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id_background'],'data-original'=>Yii::app()->request->baseUrl."/img/".$value['url'],'class'=>'lazy')).'</div>'; 
                 }
                 echo "</li></ul>";
