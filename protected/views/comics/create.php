@@ -133,9 +133,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-sendFront").on("click", sendFront);
     $("#remove").on("click", removeImage);
     $("#js-sendBack").on("click", sendBack);
-    return $(".js-tabEngine a").on("click", function() {
+    $(".js-tabEngine a").on("click", function() {
       console.log("you hace clicked a tab btn");
-      return setTimeout((function() {
+      setTimeout((function() {
         $(window).trigger("scroll");
         layerPersonaje.draw();
         return console.log("ok tab ok");
