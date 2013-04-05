@@ -131,32 +131,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
   currentSelected = null; init=null;
 
-
-  stagePersonaje = new Kinetic.Stage({
-    container: "personajeCanvas",
-    width: 640,
-    height: 480,
-  });
-  
-  layerFondo = new Kinetic.Layer();
-  layerPersonaje = new Kinetic.Layer();
-  stagePersonaje.add(layerFondo);
-  stagePersonaje.add(layerPersonaje);
-  imageBackground = new Image();
-  fondo = new Kinetic.Image({
-    x: 0,
-    y: 0,
-    rotation: rotation,
-    height: 640,
-    width: 480,
-    image: imageBackground,
-    draggable: true,
-    offset: [100, 100],
-    tipo: "fondo",
-    id: 1
-  });
-  layerFondo.add(fondo);
-
   console.log("tabs engine");
   $(".js-tabEngine").easytabs({
       animate: false,
@@ -182,20 +156,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }), 100);
   });
 
-  removeImage = function(){
-    //layerPersonaje.remove();
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == currentSelected.attrs.id){
-        o = accesorios.indexOf(currentSelected)
-        delete accesorios[o];
-        accesorios.splice(o,o+1);
-      }
-        //accesorios.remove(currentSelected);
-    }
-    currentSelected.remove();
-    currentLayer.draw();
-  }
-
     console.log("onclick");
     //$("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     //$("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
@@ -212,6 +172,30 @@ Yii::app()->getClientScript()->registerScript('registrar', '
    
 
 
+  stagePersonaje = new Kinetic.Stage({
+    container: "personajeCanvas",
+    width: 640,
+    height: 480,
+  });
+  
+  layerFondo = new Kinetic.Layer();
+  layerPersonaje = new Kinetic.Layer();
+  stagePersonaje.add(layerFondo);
+  stagePersonaje.add(layerPersonaje);
+  imageBackground = new Image();
+  fondo = new Kinetic.Image({
+    x: 0,
+    y: 0,
+    rotation: rotation,
+    height: 640,
+    width: 480,
+    image: imageBackground,
+    draggable: true,
+    offset: [100, 100],
+    tipo: "fondo",
+    id: 1
+  });
+  layerFondo.add(fondo);
 
 
   insertar = function(obj,pieza_id,img) {
@@ -250,6 +234,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   angle = 0.174532925;
   newangle = null;
+
+  removeImage = function(){
+    //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
+      }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw();
+  }
 
   rotateLeft = function() {
     newangle = currentSelected.getRotation() - angle;
