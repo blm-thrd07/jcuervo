@@ -156,7 +156,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }), 100);
   });
 
-  removeImage = function(){
+  function removeImage(){
     //layerPersonaje.remove();
     for(i=0;i<accesorios.length;i++){
       if(accesorios[i].attrs.id == currentSelected.attrs.id){
