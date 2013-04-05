@@ -289,7 +289,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $(document).ready(function() {
+
   	console.log("ready");
     $(".js-tabEngine").easytabs({
       animate: false,
@@ -309,10 +309,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return console.log("yeah");
       }), 600);
     });
-    return layerPersonaje.draw();
-  });
+   // return layerPersonaje.draw();
 
-  $(document).on("ready", init);
 ',CClientScript::POS_READY);
 
 ?>
