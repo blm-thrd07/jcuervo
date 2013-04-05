@@ -128,6 +128,14 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
+
+  sendBack = function() {
+    currentSelected.moveToBottom();
+    currentLayer.draw();
+    console.log("back");
+    return false;
+  };
+
   $(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
