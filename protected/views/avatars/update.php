@@ -29,7 +29,7 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/200x200.png",'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/img/200x200.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/img/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
