@@ -134,7 +134,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
     return setTimeout((function() {
       $(window).trigger("scroll");
-      console.log(':)');
+      console.log(":)");
       return layerPersonaje.draw();
     }), 100);
   });
