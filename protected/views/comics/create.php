@@ -266,6 +266,28 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
+  $(document).ready(function() {
+    $(".js-tabEngine").easytabs({
+      animate: false,
+      tabActiveClass: "selected",
+      updateHash: false
+    });
+    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+      startingSlide: 1,
+      pager: false,
+      controls: true,
+      nextText: "→",
+      prevText: "←"
+    });
+    $("a.bx-prev, a.bx-next").bind("click", function() {
+      return setTimeout((function() {
+        $(window).trigger("scroll");
+        return console.log("yeah");
+      }), 600);
+    });
+    return layerPersonaje.draw();
+  });
+
   $(document).on("ready", init);
 ',CClientScript::POS_READY);
 
