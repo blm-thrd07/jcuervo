@@ -267,6 +267,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   $(document).ready(function() {
+  	alert("a");
     $(".js-tabEngine").easytabs({
       animate: false,
       tabActiveClass: "selected",
