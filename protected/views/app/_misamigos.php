@@ -10,7 +10,7 @@
                 <a href="#" class="btn" onclick="FacebookInviteFriends();" ><i class="icon-group"></i> Invitar Amigos</a>
               </article>
           <? } ?>
-          <? if(is_array($comicsAmigos['comicsAmigos'])){
+          <? if(count($comicsAmigos)!=0){
              foreach ($comicsAmigos['comicsAmigos'] as $key => $value){
                 echo '<div class="itemMeme"><a href="detalle.html">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
                  </div>';
