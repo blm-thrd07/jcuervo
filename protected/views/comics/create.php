@@ -151,8 +151,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     image: imageBackground,
     draggable: true,
     offset: [100, 100],
-    tipo: tipo_pieza_id,
-    id: pieza_id
+    tipo: "fondo",
+    id: 1
   });
   layerFondo.add(fondo);
 
