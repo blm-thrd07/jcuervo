@@ -169,6 +169,93 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-sendFront").on("click", sendFront);
     $("#js-removeElement").on("click", removeImage);
     $("#js-sendBack").on("click", sendBack);
+
+  listenerStat = function() {
+    var json = JSON.parse(layerPersonaje.toJSON()); 
+    console.log(json.children);
+    
+    stagePersonaje.toDataURL({
+      mimeType: "image/png",
+      callback: function(dataUrl) {
+        //alert(dataUrl);
+        var avatarJson = { avatar: json.children, edit: edit, img: dataUrl };
+
+        $.ajax({
+          type: "POST",
+          url: "'.CController::CreateUrl("avatars/UpdatePieza").'",
+          data: avatarJson,
+          success: function(data){
+              //alert(data);
+          }
+        });
+      }
+    });
+    
+    return false;
+  };
+
+  angle = 0.174532925;
+  newangle = null;
+
+  removeImage = function(){
+    //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
+      }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw();
+  }
+
+  rotateLeft = function() {
+    newangle = currentSelected.getRotation() - angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.5,
+      easing: "ease-out",
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    currentLayer.draw();
+    return false;
+  };
+
+  rotateRight = function() {
+    newangle = currentSelected.getRotation() + angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.5,
+      easing: "ease-out",
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    currentLayer.draw();
+    return false;
+  };
+
+  sendFront = function() {
+    currentSelected.moveToTop();
+    currentLayer.draw();
+    console.log("front");
+    return false;
+  };
+
+  sendBack = function() {
+    currentSelected.moveToBottom();
+    currentLayer.draw();
+    console.log("back");
+    return false;
+  };
     
 ',CClientScript::POS_END);
 
