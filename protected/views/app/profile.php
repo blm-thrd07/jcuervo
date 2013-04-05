@@ -1,7 +1,7 @@
  <section id="panelPersonaje">
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div><? echo "<img src='https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/".$json['avatar']['avatarImg']."' />"; ?></div>
-        <div id="actions"><a href="#" class="btn"><i class="icon-edit"></i> Editar</a></div>
+        <div id="actions"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/avatars/update/<?echo Yii::app()->session['usuario_id']; ?>" class="btn"><i class="icon-edit"></i> Editar</a></div>
 </section>
 <section id="panelContent">
      <h2>Mis Memes</h2>
