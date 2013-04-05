@@ -214,8 +214,10 @@ public function actionLogout(){
   }
 
   public function actionDest(){
-    $this->renderPartial('//app/_destacados');
-  }
+         $modelComics=new UsuariosHasTblComics;
+        $resultado=$modelComics->findAll(array('condition'=>'destacado=1'));
+        $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
+      }
   
   public function actionMisMemes(){
   
