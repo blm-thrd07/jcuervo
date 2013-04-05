@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
-    <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
+    <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
+
 
   </head>
+
   <body class="lb">
     <div id="detalle">
+
       <div id="pic"><img src="http://placehold.it/640x480.gif"><a href="#" class="btn"><i class="icon-trash"></i> Eliminar</a>
         <div><span>39</span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
       </div>
