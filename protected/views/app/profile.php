@@ -1,6 +1,6 @@
  <section id="panelPersonaje">
         <h1><?echo $json['usuario']['nombre']; ?></h1>
-        <div><img src="http://ima.gs/transparent/NONE/A2A2A2/258x460.png"></div>
+        <div><? echo "<img src='https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/".$json['avatar']['avatarImg']."' />"; ?></div>
         <div id="actions"><a href="#" class="btn"><i class="icon-edit"></i> Editar</a></div>
 </section>
 <section id="panelContent">
@@ -19,9 +19,6 @@
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
 </section>
 
+            
 
-<?
-print_r($json['Avatar'][0]);
-
-
-?>
+  
