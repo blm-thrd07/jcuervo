@@ -10,7 +10,7 @@
   </head>
   <body>
   
-  <div id="container">
+  <div id="destacados">
     <?php echo $content; ?>
   </div>
 
