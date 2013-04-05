@@ -216,7 +216,7 @@ public function actionLogout(){
   public function actionDest(){
          $modelComics=new UsuariosHasTblComics;
         $resultado=$modelComics->findAll(array('condition'=>'destacado=1'));
-        $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
+        $this->renderPartial('//app/_destacados',array('comics'=>$comics));
       }
   
   public function actionMisMemes(){
