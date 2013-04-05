@@ -46,11 +46,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $(".lazy").lazyload({
       effect: "fadeIn"
     });
+   /*
     return setTimeout((function() {
       $(window).trigger("scroll");
       console.log(":)");
       return layerPersonaje.draw();
     }), 100);
+*/
   });
 
   $(document).ready(function() {
