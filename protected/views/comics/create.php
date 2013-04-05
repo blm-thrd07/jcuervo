@@ -88,9 +88,40 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerFondo);
   stagePersonaje.add(layerPersonaje);
 
+  $(function() {
+    $(".lazy").lazyload({
+      effect: "fadeIn"
+    });
+    return setTimeout((function() {
+      $(window).trigger("scroll");
+      console.log(':)');
+      return layerPersonaje.draw();
+    }), 100);
+  });
+
 //BOTONES
 
   init = function() {
+  	$(".js-tabEngine").easytabs({
+      animate: false,
+      tabActiveClass: 'selected',
+      updateHash: false
+    });
+    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+      startingSlide: 1,
+      pager: false,
+      controls: true,
+      nextText: '→',
+      prevText: '←'
+    });
+    $("a.bx-prev, a.bx-next").bind("click", function() {
+      return setTimeout((function() {
+        $(window).trigger("scroll");
+        return console.log('yeah');
+      }), 600);
+    });
+    
+
     console.log("ok go");
     $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
@@ -106,8 +137,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log("you hace clicked a tab btn");
       return setTimeout((function() {
         $(window).trigger("scroll");
+        layerPersonaje.draw();
         return console.log("ok tab ok");
-      }), 600);
+      }), 700);
     });
   };
 
