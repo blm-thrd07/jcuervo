@@ -128,7 +128,7 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
-  var angle,cuerpos, amigos, objetos, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
+  var angle,cuerpos, amigos,init,rotation, objetos, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
   currentSelected = null;
 
   stagePersonaje = new Kinetic.Stage({
@@ -175,56 +175,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   function insertar(obj,pieza_id,img) {
-    var aux;
-    if(obj==="cuerpo"){ aux=obj; obj=cuerpos; }
-    if(obj==="amigo"){ aux=obj; obj=amigos; }
-    var insertar=true;
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == pieza_id) insertar=false;
-    }
-    if(insertar){
-      imageAccesorio = new Image();
-      accesorio = new Kinetic.Image({
-        x: x,
-        y: y,
-        rotation: rotation,
-        height: 200,
-        width: 200,
-        image: imageAccesorio,
-        draggable: true,
-        offset: [100, 100],
-        tipo: tipo_pieza_id,
-        id: pieza_id
-      });
-      console.log(img);
-      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-      console.log(img);
-      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/img/"+img;
-      accesorio.on("mouseover", function() {
-        this.setStroke("980d2e");
-        this.setStrokeWidth(1);
-        return layerPersonaje.draw();
-      });
-
-      accesorio.on("mouseout", function() {
-        this.setStroke(null);
-        this.setStrokeWidth(0);
-        return layerPersonaje.draw();
-      });
-
-      accesorio.on("click", function() {
-        currentSelected = this;
-        return currentLayer = layerPersonaje;
-      });
-      console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
-      layerPersonaje.add(accesorio);
-      accesorios.push(accesorio);
-      layerPersonaje.draw();
-      return true;
-    }
     
-    console.log("NO SE INSERTO");
-    return false;
+
   };
 
   function insertarFondo(img) {
@@ -235,9 +187,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   listenerStat = function() {
-    var json = JSON.parse(layerPersonaje.toJSON()); 
-    console.log(json.children);
-    
+   
     stagePersonaje.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
