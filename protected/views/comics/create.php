@@ -102,26 +102,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 //BOTONES
 
   init = function() {
-  	$(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: "selected",
-      updateHash: false
-    });
-    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: "→",
-      prevText: "←"
-    });
-    $("a.bx-prev, a.bx-next").bind("click", function() {
-      return setTimeout((function() {
-        $(window).trigger("scroll");
-        return console.log("yeah");
-      }), 600);
-    });
-    
-
     console.log("ok go");
     $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
@@ -304,6 +284,29 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("back");
     return false;
   };
+
+  $(document).ready(function() {
+  	console.log("ready");
+    $(".js-tabEngine").easytabs({
+      animate: false,
+      tabActiveClass: "selected",
+      updateHash: false
+    });
+    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+      startingSlide: 1,
+      pager: false,
+      controls: true,
+      nextText: "→",
+      prevText: "←"
+    });
+    $("a.bx-prev, a.bx-next").bind("click", function() {
+      return setTimeout((function() {
+        $(window).trigger("scroll");
+        return console.log("yeah");
+      }), 600);
+    });
+    return layerPersonaje.draw();
+  });
 
   $(document).on("ready", init);
 ',CClientScript::POS_READY);
