@@ -39,10 +39,6 @@
 $baseUrl = Yii::app()->baseUrl; 
 $cs = Yii::app()->getClientScript();
 
-
-echo json_encode($json);
-
-
 //pieza//accesorio//cara_web
 Yii::app()->getClientScript()->registerScript('registrar', '
   
