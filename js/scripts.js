@@ -29,7 +29,17 @@
         return false;
   });
 
-
+$(".js-lightbox").fancybox({
+      maxWidth: 810,
+      maxHeight: 600,
+      fitToView: false,
+      width: "70%",
+      height: "70%",
+      autoSize: false,
+      closeClick: false,
+      openEffect: "none",
+      closeEffect: "none"
+    });
 
 
 }).call(this);
