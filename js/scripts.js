@@ -32,7 +32,6 @@
         return false;
   });
 
-  $(document).on('ready', init);
 
 
 
