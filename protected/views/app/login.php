@@ -8,6 +8,7 @@
 <?php
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 ?>
+    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
 
 <script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
