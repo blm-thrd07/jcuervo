@@ -128,7 +128,7 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
-  var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
   currentSelected = null; init=null;
 
   console.log("tabs engine");
@@ -167,7 +167,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
-    $("#remove").on("click", removeImage);
+    //$("#remove").on("click", removeImage);
     $("#js-sendBack").on("click", sendBack);
    
 
