@@ -265,20 +265,20 @@ public function actionLogout(){
 
   public function actionCatmasvist(){
         $modelComics=new UsuariosHasTblComics;
-        $resultado=$modelComics->findAll(array('condition'=>'NoVisto=0')); 
+        $resultado=$modelComics->findAll(array('condition'=>'NoVisto>10')); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   }
    
   public function actionCatmascomp(){
           $modelComics=new UsuariosHasTblComics;
-          $resultado=$modelComics->findAll(array('condition'=>'NoCompartido=0'));
+          $resultado=$modelComics->findAll(array('condition'=>'NoCompartido=2'));
           $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
 
   }
   
   public function actionCatmascome(){
         $modelComics=new UsuariosHasTblComics;
-        $resultado=$modelComics->findAll(array('condition'=>'NoComentarios=0'));
+        $resultado=$modelComics->findAll(array('condition'=>'NoComentarios=1'));
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   }
 
