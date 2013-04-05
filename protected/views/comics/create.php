@@ -167,7 +167,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
-    //$("#remove").on("click", removeImage);
+    $("#remove").on("click", removeImage);
     $("#js-sendBack").on("click", sendBack);
    
 
