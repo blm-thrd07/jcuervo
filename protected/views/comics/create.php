@@ -14,7 +14,7 @@
             <li><a href="#tab3">Amigos</a></li>
           </ul>
           <div id="tab1" class="memeThumbs">
-              <? 
+              <? /*
                 $bandera=false;
                     echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($backgrounds as $key => $value) {  
@@ -26,11 +26,11 @@
                     }
                     echo "</li></ul>";
                   }
-                  
+                  */
                 ?>   
           </div>
           <div id="tab2" class="memeThumbs">
-                <? 
+                <? /*
                 $bandera=false;
                     echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($objetos as $key => $value) {  
@@ -42,11 +42,11 @@
                     }
                     echo "</li></ul>";
                   }
-                  
+                  */
                 ?>    
           </div>
           <div id="tab3" class="memeThumbs">
-            <? 
+            <? /*
                 $bandera=false;
                     echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($backgrounds as $key => $value) {  
@@ -58,7 +58,7 @@
                     }
                     echo "</li></ul>";
                   }
-                  
+                  */
                 ?>   
           </div>
         </div>
