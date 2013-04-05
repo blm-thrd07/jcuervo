@@ -29,6 +29,11 @@
         return false;
   });
 
+
+
+
+}).call(this);
+
 $(".js-lightbox").fancybox({
       maxWidth: 810,
       maxHeight: 600,
@@ -40,10 +45,6 @@ $(".js-lightbox").fancybox({
       openEffect: "none",
       closeEffect: "none"
     });
-
-
-}).call(this);
-
 
 FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
