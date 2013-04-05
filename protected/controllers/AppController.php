@@ -216,7 +216,7 @@ public function actionLogout(){
   }
 
   public function actionDetalle($id){
-    echo "hola".$id;
+    $this->renderPartial('//app/_detalle');
  }
 
   public function actionDest(){
