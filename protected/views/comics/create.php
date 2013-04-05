@@ -131,46 +131,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
   currentSelected = null; init=null;
 
-  console.log("tabs engine");
-  $(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: "selected",
-      updateHash: false
-  });
-  $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: "→",
-      prevText: "←"
-  });
-
-  $(function() {
-    $(".lazy").lazyload({
-      effect: "fadeIn"
-    });
-    return setTimeout((function() {
-      $(window).trigger("scroll");
-      console.log(":)");
-      return layerPersonaje.draw();
-    }), 100);
-  });
-
-    console.log("onclick");
-    //$("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    //$("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    //$("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    //$("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    //$("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#js-toImage").on("click", saveToImage);
-    $("#js-listenerStat").on("click", listenerStat);
-    $("#js-rotateLeft").on("click", rotateLeft);
-    $("#js-rotateRight").on("click", rotateRight);
-    $("#js-sendFront").on("click", sendFront);
-    $("#remove").on("click", removeImage);
-    $("#js-sendBack").on("click", sendBack);
-   
-
 
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
@@ -196,6 +156,62 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     id: 1
   });
   layerFondo.add(fondo);
+
+  console.log("tabs engine");
+  $(".js-tabEngine").easytabs({
+      animate: false,
+      tabActiveClass: "selected",
+      updateHash: false
+  });
+  $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+      startingSlide: 1,
+      pager: false,
+      controls: true,
+      nextText: "→",
+      prevText: "←"
+  });
+
+  $(function() {
+    $(".lazy").lazyload({
+      effect: "fadeIn"
+    });
+    return setTimeout((function() {
+      $(window).trigger("scroll");
+      console.log(":)");
+      return layerPersonaje.draw();
+    }), 100);
+  });
+
+  removeImage = function(){
+    //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
+      }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw();
+  }
+
+    console.log("onclick");
+    //$("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#js-toImage").on("click", saveToImage);
+    $("#js-listenerStat").on("click", listenerStat);
+    $("#js-rotateLeft").on("click", rotateLeft);
+    $("#js-rotateRight").on("click", rotateRight);
+    $("#js-sendFront").on("click", sendFront);
+    $("#remove").on("click", removeImage);
+    $("#js-sendBack").on("click", sendBack);
+   
+
+
 
 
   insertar = function(obj,pieza_id,img) {
@@ -234,20 +250,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   angle = 0.174532925;
   newangle = null;
-
-  removeImage = function(){
-    //layerPersonaje.remove();
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == currentSelected.attrs.id){
-        o = accesorios.indexOf(currentSelected)
-        delete accesorios[o];
-        accesorios.splice(o,o+1);
-      }
-        //accesorios.remove(currentSelected);
-    }
-    currentSelected.remove();
-    currentLayer.draw();
-  }
 
   rotateLeft = function() {
     newangle = currentSelected.getRotation() - angle;
