@@ -128,6 +128,199 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
+  var angle,cuerpos, amigos, objetos, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
+  currentSelected = null;
+
+  stagePersonaje = new Kinetic.Stage({
+    container: "personajeCanvas",
+    width: 640,
+    height: 480,
+  });
+  
+  layerFondo = new Kinetic.Layer();
+  layerPersonaje = new Kinetic.Layer();
+  stagePersonaje.add(layerFondo);
+  stagePersonaje.add(layerPersonaje);
+  imageFondo = new Image();
+  fondo = new Kinetic.Image({
+    x: 0,
+    y: 0,
+    rotation: rotation,
+    height: 640,
+    width: 480,
+    image: imageBackground,
+    draggable: true,
+    offset: [100, 100],
+    tipo: tipo_pieza_id,
+    id: pieza_id
+  });
+  imageBackground = new Image();
+  layerFondo.add(fondo);
+
+//BOTONES
+
+  init = function() {
+    console.log("ok go");
+    $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#js-toImage").on("click", saveToImage);
+    $("#js-listenerStat").on("click", listenerStat);
+    $("#js-rotateLeft").on("click", rotateLeft);
+    $("#js-rotateRight").on("click", rotateRight);
+    $("#js-sendFront").on("click", sendFront);
+    $("#remove").on("click", removeImage);
+    $("#js-sendBack").on("click", sendBack);
+   
+  };
+
+  function insertar(obj,pieza_id,img) {
+    var aux;
+    if(obj==="cuerpo"){ aux=obj; obj=cuerpos; }
+    if(obj==="amigo"){ aux=obj; obj=amigos; }
+    var insertar=true;
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == pieza_id) insertar=false;
+    }
+    if(insertar){
+      imageAccesorio = new Image();
+      accesorio = new Kinetic.Image({
+        x: x,
+        y: y,
+        rotation: rotation,
+        height: 200,
+        width: 200,
+        image: imageAccesorio,
+        draggable: true,
+        offset: [100, 100],
+        tipo: tipo_pieza_id,
+        id: pieza_id
+      });
+      console.log(img);
+      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+      console.log(img);
+      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+      accesorio.on("mouseover", function() {
+        this.setStroke("980d2e");
+        this.setStrokeWidth(1);
+        return layerPersonaje.draw();
+      });
+
+      accesorio.on("mouseout", function() {
+        this.setStroke(null);
+        this.setStrokeWidth(0);
+        return layerPersonaje.draw();
+      });
+
+      accesorio.on("click", function() {
+        currentSelected = this;
+        return currentLayer = layerPersonaje;
+      });
+      console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
+      layerPersonaje.add(accesorio);
+      accesorios.push(accesorio);
+      layerPersonaje.draw();
+      return true;
+    }
+    
+    console.log("NO SE INSERTO");
+    return false;
+  };
+
+  function insertarFondo(img) {
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
+    layerFondo.draw();
+    layerPersonaje.draw();
+    layerPersonaje.moveToTop();
+  };
+
+  listenerStat = function() {
+    var json = JSON.parse(layerPersonaje.toJSON()); 
+    console.log(json.children);
+    
+    stagePersonaje.toDataURL({
+      mimeType: "image/png",
+      callback: function(dataUrl) {
+        //alert(dataUrl);
+        var avatarJson = { avatar: json.children, edit: edit, img: dataUrl };
+
+        $.ajax({
+          type: "POST",
+          url: "'.CController::CreateUrl("avatars/UpdatePieza").'",
+          data: avatarJson,
+          success: function(data){
+              //alert(data);
+          }
+        });
+      }
+    });
+    
+    return false;
+  };
+
+  angle = 0.174532925;
+  newangle = null;
+
+  removeImage = function(){
+    //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
+      }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw();
+  }
+
+  rotateLeft = function() {
+    newangle = currentSelected.getRotation() - angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.5,
+      easing: "ease-out",
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    currentLayer.draw();
+    return false;
+  };
+
+  rotateRight = function() {
+    newangle = currentSelected.getRotation() + angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.5,
+      easing: "ease-out",
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    currentLayer.draw();
+    return false;
+  };
+
+  sendFront = function() {
+    currentSelected.moveToTop();
+    currentLayer.draw();
+    console.log("front");
+    return false;
+  };
+
+  sendBack = function() {
+    currentSelected.moveToBottom();
+    currentLayer.draw();
+    console.log("back");
+    return false;
+  };
+
   $(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
