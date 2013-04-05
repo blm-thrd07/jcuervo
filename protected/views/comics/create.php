@@ -101,7 +101,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
     $("#remove").on("click", removeImage);
-    return $("#js-sendBack").on("click", sendBack);
+    $("#js-sendBack").on("click", sendBack);
+    return $(".js-tabEngine a").on("click", function() {
+      console.log("you hace clicked a tab btn");
+      return setTimeout((function() {
+        $(window).trigger("scroll");
+        return console.log("ok tab ok");
+      }), 600);
+    });
   };
 
   function insertar(obj,pieza_id,img) {
@@ -265,25 +272,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("back");
     return false;
   };
-
-  $(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: "selected",
-      updateHash: false
-    });
-    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: "→",
-      prevText: "←"
-    });
-    $("a.bx-prev, a.bx-next").bind("click", function() {
-      return setTimeout((function() {
-        $(window).trigger("scroll");
-        return console.log("yeah");
-      }), 600);
-    });
 
   $(document).on("ready", init);
 ',CClientScript::POS_READY);

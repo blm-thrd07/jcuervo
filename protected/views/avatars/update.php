@@ -242,8 +242,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(aux==="cuerpo"){ cuerpo=obj; } 
     if(aux==="ojos"){ ojos=obj; } 
     if(aux==="boca"){ boca=obj; } 
-
-    layerPersonaje.draw();
+    return setTimeout((function() {
+      layerPersonaje.draw();
+      return console.log("ok redraw!");
+    }), 100);
   };
 
   function insertarAccesorio(x,y,rotation,pieza_id,tipo_pieza_id,img) {
@@ -288,7 +290,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
-      layerPersonaje.draw();
+      
+      return setTimeout((function() {
+        layerPersonaje.draw();
+        return console.log("ok redraw!");
+      }), 100);
+
       return true;
     }
     
