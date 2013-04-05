@@ -8,8 +8,11 @@
 <?php
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 ?>
-    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
 
+<html>
+<head>
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
 <script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
@@ -22,6 +25,8 @@ document.getElementById("login").onclick = function() {
   return false;
   }
 </script>
+</head>
+<body>
 <div id="splash">
       <h1>Memeespecial<br>Generator</h1><a id="login" href="#" class="btn">Genera tu personaje</a>
       <div class="memeThumbsSlash">
@@ -45,6 +50,8 @@ document.getElementById("login").onclick = function() {
         </div>
       </div>
     </div>
+</body>
+</html>
 
 
 
