@@ -132,42 +132,31 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentSelected = null; init=null;
 
   console.log("tabs engine");
-    $(".js-tabEngine").easytabs({
+  $(".js-tabEngine").easytabs({
       animate: false,
       tabActiveClass: "selected",
       updateHash: false
-    });
-    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+  });
+  $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
       startingSlide: 1,
       pager: false,
       controls: true,
       nextText: "→",
       prevText: "←"
-    });
-    $("a.bx-prev, a.bx-next").bind("click", function() {
+  });
+  $("a.bx-prev, a.bx-next").bind("click", function() {
       return setTimeout((function() {
         $(window).trigger("scroll");
         return console.log("yeah");
-    }), 600);
-    
-
-  $(function() {
-    $(".lazy").lazyload({
-      effect: "fadeIn"
-    });
-    return setTimeout((function() {
-      $(window).trigger("scroll");
-      console.log(":)");
-      return layerPersonaje.draw();
-    }), 100);
-  });
+  }), 600);
+  
 
     console.log("onclick");
-    $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    //$("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#js-toImage").on("click", saveToImage);
     $("#js-listenerStat").on("click", listenerStat);
     $("#js-rotateLeft").on("click", rotateLeft);
@@ -203,16 +192,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   layerFondo.add(fondo);
 
-//BOTONES
 
-    
-
-  function insertar(obj,pieza_id,img) {
+  insertar = function(obj,pieza_id,img) {
     
 
   };
 
-  function insertarFondo(img) {
+  insertarFondo = function(img) {
     imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
     layerFondo.draw();
     layerPersonaje.draw();
