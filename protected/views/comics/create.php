@@ -94,7 +94,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
     return setTimeout((function() {
       $(window).trigger("scroll");
-      console.log(':)');
+      console.log(":)");
       return layerPersonaje.draw();
     }), 100);
   });
@@ -104,20 +104,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   init = function() {
   	$(".js-tabEngine").easytabs({
       animate: false,
-      tabActiveClass: 'selected',
+      tabActiveClass: "selected",
       updateHash: false
     });
     $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
       startingSlide: 1,
       pager: false,
       controls: true,
-      nextText: '→',
-      prevText: '←'
+      nextText: "→",
+      prevText: "←"
     });
     $("a.bx-prev, a.bx-next").bind("click", function() {
       return setTimeout((function() {
         $(window).trigger("scroll");
-        return console.log('yeah');
+        return console.log("yeah");
       }), 600);
     });
     
