@@ -167,7 +167,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
-    $("#remove").on("click", function(){ //layerPersonaje.remove();
+    $("#js-removeElement").on("click", function(){ //layerPersonaje.remove();
     for(i=0;i<accesorios.length;i++){
       if(accesorios[i].attrs.id == currentSelected.attrs.id){
         o = accesorios.indexOf(currentSelected)
