@@ -78,7 +78,7 @@ public function actionLogin(){
           $model->sexo=$user_profile['gender'];
 
 
-             if($model->save()){
+             if($model->save(false)){
               Yii::app()->session['usuario_id']=$model->id;
               $this->redirect(array('App/Profile/'.$user_profile['id'])); 
              }
