@@ -152,7 +152,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return setTimeout((function() {
       $(window).trigger("scroll");
       console.log(":)");
-      return layerPersonaje.draw();
+      //return layerPersonaje.draw();
     }), 100);
   });
 
@@ -163,12 +163,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#js-toImage").on("click", saveToImage);
-    $("#js-listenerStat").on("click", listenerStat);
-    $("#js-rotateLeft").on("click", rotateLeft);
-    $("#js-rotateRight").on("click", rotateRight);
-    $("#js-sendFront").on("click", sendFront);
-    $("#js-removeElement").on("click", removeImage);
-    $("#js-sendBack").on("click", sendBack);
+    $("#js-listenerStat").live("click", listenerStat);
+    $("#js-rotateLeft").live("click", rotateLeft);
+    $("#js-rotateRight").live("click", rotateRight);
+    $("#js-sendFront").live("click", sendFront);
+    $("#js-removeElement").live("click", removeImage);
+    $("#js-sendBack").live("click", sendBack);
 
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
