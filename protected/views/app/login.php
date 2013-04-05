@@ -13,18 +13,6 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 <head>
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
-<script>
-  var oauth_url = 'https://www.facebook.com/dialog/oauth/';
-  oauth_url += '?client_id=342733185828640';
-  oauth_url += '&redirect_uri=' + encodeURIComponent('http://www.facebook.com/Lnx1337?sk=app_342733185828640');
-  oauth_url += '&scope=email,read_stream,user_likes,publish_actions,publish_stream,offline_access'
-
-document.getElementById("login").onclick = function() {
-  window.top.location = oauth_url;
-
-  return false;
-  }
-</script>
 </head>
 <body>
 <div id="splash">
@@ -50,6 +38,19 @@ document.getElementById("login").onclick = function() {
         </div>
       </div>
     </div>
+
+    <script>
+  var oauth_url = 'https://www.facebook.com/dialog/oauth/';
+  oauth_url += '?client_id=342733185828640';
+  oauth_url += '&redirect_uri=' + encodeURIComponent('http://www.facebook.com/Lnx1337?sk=app_342733185828640');
+  oauth_url += '&scope=email,read_stream,user_likes,publish_actions,publish_stream,offline_access'
+
+document.getElementById("login").onclick = function() {
+   window.top.location = oauth_url;
+
+  return false;
+  }
+</script>
 </body>
 </html>
 
