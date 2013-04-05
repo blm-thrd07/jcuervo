@@ -14,7 +14,9 @@
             <li><a href="#tab3">Amigos</a></li>
           </ul>
           <div id="tab1" class="memeThumbs">
-              <? /*
+              <?                 echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>1,'data-original'=>Yii::app()->request->baseUrl."/Comics/comic1.jpg",'class'=>'lazy')).'</div>'; 
+
+              /*
                 $bandera=false;
                     echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($backgrounds as $key => $value) {  
@@ -30,7 +32,9 @@
                 ?>   
           </div>
           <div id="tab2" class="memeThumbs">
-                <? /*
+                <?                 echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>1,'data-original'=>Yii::app()->request->baseUrl."/Comics/comic1.jpg",'class'=>'lazy')).'</div>'; 
+
+                 /*
                 $bandera=false;
                     echo '<ul class="js-slides-1 bx-slides">';
                     foreach ($objetos as $key => $value) {  
