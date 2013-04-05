@@ -341,23 +341,23 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
 
   $(document).ready(function() {
-    console.log('ok go');
+    console.log("ok go");
     $(".js-tabEngine").easytabs({
       animate: false,
-      tabActiveClass: 'selected',
+      tabActiveClass: "selected",
       updateHash: false
     });
     $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
       startingSlide: 1,
       pager: false,
       controls: true,
-      nextText: '→',
-      prevText: '←'
+      nextText: "→",
+      prevText: "←"
     });
     $("a.bx-prev, a.bx-next").bind("click", function() {
       return setTimeout((function() {
         $(window).trigger("scroll");
-        return console.log('yeah');
+        return console.log("yeah");
       }), 600);
     });
     $(".js-lightbox").fancybox({
