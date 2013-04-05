@@ -63,7 +63,7 @@ public function actionLogin(){
         if ($user) {
             $logoutUrl = $facebook->getLogoutUrl();
         } else {
-            $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream'));
+            $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
         }
 
        if($user){
