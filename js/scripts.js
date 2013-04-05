@@ -2,13 +2,12 @@
 (function() {
 
 
-alert('hola');
 //navigation menu
   $(".menu").live("click",function(){
       var url=$(this).attr("id");
       $.ajax({
           type: "GET",
-          url: "https://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
           success: function(data){
             $("#panelContent").html(data);
           }
@@ -22,7 +21,7 @@ alert('hola');
       //$(this).attr("class","itemAction selectedTab subcat"); 
       $.ajax({
             type: "GET",
-            url: "https://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
             success: function(data){
                $(".response").html(data);
             }
