@@ -1,6 +1,8 @@
 
 (function() {
 
+
+alert('hola');
 //navigation menu
   $(".menu").live("click",function(){
       var url=$(this).attr("id");
