@@ -156,8 +156,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }), 100);
   });
 
-  
-
     console.log("onclick");
     //$("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     //$("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
@@ -169,17 +167,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
-    $("#remove").on("click", function (){
-        for(i=0;i<accesorios.length;i++){
-          if(accesorios[i].attrs.id == currentSelected.attrs.id){
-            o = accesorios.indexOf(currentSelected)
-            delete accesorios[o];
-            accesorios.splice(o,o+1);
-          }
-        }
-        currentSelected.remove();
-        currentLayer.draw();
-    });
+    $("#remove").on("click", removeImage);
     $("#js-sendBack").on("click", sendBack);
    
 
@@ -247,7 +235,19 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   angle = 0.174532925;
   newangle = null;
 
-  
+  removeImage = function(){
+    //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
+      }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw();
+  }
 
   rotateLeft = function() {
     newangle = currentSelected.getRotation() - angle;
