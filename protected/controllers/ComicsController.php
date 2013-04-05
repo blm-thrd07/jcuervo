@@ -83,7 +83,6 @@ class ComicsController extends Controller
 		$backgrounds = Backgrounds::model()->findAll();
 		//print_r($avatar->id);
 		//print_r($avatar->avatar_img);
-		echo "<br><br>";
 		//print_r($amigos->getAmigosAvatars());
 		$this->render('create',array(
 			'model'=>$model,
