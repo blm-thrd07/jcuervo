@@ -23,4 +23,6 @@
 <?
 print_r($json);
 
+echo $json->Avatar->avatarImg;
+
 ?>
