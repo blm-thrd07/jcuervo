@@ -35,13 +35,8 @@
     </div>
     
 
-     <?php
-       $baseUrl = Yii::app()->baseUrl; 
-       $cs = Yii::app()->getClientScript();
-       $cs->registerCoreScript('jquery');
-       $cs->registerCoreScript('jquery.min');
-    ?>
-    
+   
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.9.0.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/kinetic-v4.3.3.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.lazyload.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easytabs.min.js"></script>
