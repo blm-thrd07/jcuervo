@@ -21,8 +21,7 @@
 
 
 <?
-print_r($json);
+print_r($json['Avatar'][0]);
 
-echo $json->Avatar->avatarImg;
 
 ?>
