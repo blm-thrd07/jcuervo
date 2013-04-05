@@ -305,6 +305,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
     
-',CClientScript::POS_READY);
+',CClientScript::POS_END);
 
 ?>
