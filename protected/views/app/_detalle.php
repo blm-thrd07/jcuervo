@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
+    <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
 
   </head>
@@ -35,12 +36,7 @@
     </div>
     
 
-    <?php
-       $baseUrl = Yii::app()->baseUrl; 
-       $cs = Yii::app()->getClientScript();
-       $cs->registerCoreScript('jquery');
-       $cs->registerCoreScript('jquery.min');
-    ?>   
+     
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/kinetic-v4.3.3.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.lazyload.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easytabs.min.js"></script>
