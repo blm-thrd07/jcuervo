@@ -131,6 +131,53 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
   currentSelected = null; init=null;
 
+  console.log("tabs engine");
+    $(".js-tabEngine").easytabs({
+      animate: false,
+      tabActiveClass: "selected",
+      updateHash: false
+    });
+    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
+      startingSlide: 1,
+      pager: false,
+      controls: true,
+      nextText: "→",
+      prevText: "←"
+    });
+    $("a.bx-prev, a.bx-next").bind("click", function() {
+      return setTimeout((function() {
+        $(window).trigger("scroll");
+        return console.log("yeah");
+    }), 600);
+    
+
+  $(function() {
+    $(".lazy").lazyload({
+      effect: "fadeIn"
+    });
+    return setTimeout((function() {
+      $(window).trigger("scroll");
+      console.log(":)");
+      return layerPersonaje.draw();
+    }), 100);
+  });
+
+    console.log("onclick");
+    $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#js-toImage").on("click", saveToImage);
+    $("#js-listenerStat").on("click", listenerStat);
+    $("#js-rotateLeft").on("click", rotateLeft);
+    $("#js-rotateRight").on("click", rotateRight);
+    $("#js-sendFront").on("click", sendFront);
+    $("#remove").on("click", removeImage);
+    $("#js-sendBack").on("click", sendBack);
+   
+
+
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
     width: 640,
@@ -158,22 +205,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
 //BOTONES
 
-  init = function() {
-    console.log("init");
-    $("#tab5 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab4 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#js-toImage").on("click", saveToImage);
-    $("#js-listenerStat").on("click", listenerStat);
-    $("#js-rotateLeft").on("click", rotateLeft);
-    $("#js-rotateRight").on("click", rotateRight);
-    $("#js-sendFront").on("click", sendFront);
-    $("#remove").on("click", removeImage);
-    $("#js-sendBack").on("click", sendBack);
-   
-  };
+    
 
   function insertar(obj,pieza_id,img) {
     
@@ -272,43 +304,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $(function() {
-    $(".lazy").lazyload({
-      effect: "fadeIn"
-    });
-    return setTimeout((function() {
-      $(window).trigger("scroll");
-      console.log(":)");
-      return layerPersonaje.draw();
-    }), 100);
-  });
-
-  $(document).ready(function() {
-    console.log("ready");
-    $(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: "selected",
-      updateHash: false
-    });
-    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: "→",
-      prevText: "←"
-    });
-    $("a.bx-prev, a.bx-next").bind("click", function() {
-      return setTimeout((function() {
-        $(window).trigger("scroll");
-        return console.log("yeah");
-      }), 600);
-    });
     
-    return layerPersonaje.draw();
-  });
-
-    $(document).on("ready", init);
-
 ',CClientScript::POS_READY);
 
 ?>
