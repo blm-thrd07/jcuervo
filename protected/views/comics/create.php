@@ -128,8 +128,8 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
-  var angle,cuerpos, amigos,init,rotation, objetos, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
-  currentSelected = null;
+  var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
+  currentSelected = null; init=null;
 
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
@@ -141,7 +141,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.add(layerFondo);
   stagePersonaje.add(layerPersonaje);
-  imageFondo = new Image();
+  imageBackground = new Image();
   fondo = new Kinetic.Image({
     x: 0,
     y: 0,
@@ -154,7 +154,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     tipo: tipo_pieza_id,
     id: pieza_id
   });
-  imageBackground = new Image();
   layerFondo.add(fondo);
 
 //BOTONES
