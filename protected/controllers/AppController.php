@@ -21,7 +21,7 @@ class AppController extends Controller
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest','Catmasvist','Catmascomp','Catjoscuer','Catmascome'),
+        'actions'=>array('create','update','create','profile','UpdatePieza','CrearAvatar','UpdateTipoPieza','MisMemes','MisAmigos','Categoria','Dest','Catmasvist','Catmascomp','Catjoscuer','Catmascome','Detalle'),
         'users'=>array('@'),
       ),
       array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -214,6 +214,10 @@ public function actionLogout(){
     $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
 
   }
+
+  public function actionDetalle($id){
+    echo "hola".$id;
+ }
 
   public function actionDest(){
          $modelComics=new UsuariosHasTblComics;
