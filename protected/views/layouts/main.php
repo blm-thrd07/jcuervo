@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
     <script> var iU=<?echo Yii::app()->session['usuario_id'];?>; </script> 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.pack.js"></script>
+
   </head>
   <body>
   
@@ -25,7 +27,6 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easytabs.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.hashchange.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.bxslider.min.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.pack.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
   </body>
 </html>
