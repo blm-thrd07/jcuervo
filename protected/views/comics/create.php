@@ -17,15 +17,15 @@
           <div id="tab1" class="memeThumbs">
             <?php
                 $bandera=false;
-                echo '<ul class="js-slides-1 bx-slides">';
-                foreach ($backgrounds as $key => $value) {  
+                echo '<ul class="js-slides-1 bx-slides"><li>';
+                /*foreach ($backgrounds as $key => $value) {  
                   if($key%12==0) {
                     if($bandera) echo '</li>'; else $bandera=true;
                     echo "<li>";
                   }
                   print_r($key);
                   echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id_background'],'data-original'=>Yii::app()->request->baseUrl."/img/".$value['url'],'class'=>'lazy')).'</div>'; 
-                }
+                }*/
                 echo "</li></ul>";
                 
             ?>
