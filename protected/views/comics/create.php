@@ -167,7 +167,17 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateLeft").on("click", rotateLeft);
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
-    $("#remove").on("click", removeImage);
+    $("#remove").on("click", function(){ //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
+      }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw(); });
     $("#js-sendBack").on("click", sendBack);
    
 
@@ -235,19 +245,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   angle = 0.174532925;
   newangle = null;
 
-  removeImage = function(){
-    //layerPersonaje.remove();
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == currentSelected.attrs.id){
-        o = accesorios.indexOf(currentSelected)
-        delete accesorios[o];
-        accesorios.splice(o,o+1);
-      }
-        //accesorios.remove(currentSelected);
-    }
-    currentSelected.remove();
-    currentLayer.draw();
-  }
 
   rotateLeft = function() {
     newangle = currentSelected.getRotation() - angle;
