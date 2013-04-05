@@ -158,6 +158,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
 //BOTONES
 
+  init = function() {
+    console.log("ok go");
+    $("#tab1 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab2 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab3 div").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#js-toImage").on("click", saveToImage);
+    $("#js-listenerStat").on("click", listenerStat);
+    $("#js-rotateLeft").on("click", rotateLeft);
+    $("#js-rotateRight").on("click", rotateRight);
+    $("#js-sendFront").on("click", sendFront);
+    $("#remove").on("click", removeImage);
+    $("#js-sendBack").on("click", sendBack);
+   
+  };
 
   function insertar(obj,pieza_id,img) {
     
@@ -290,6 +304,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     
     return layerPersonaje.draw();
   });
+
+    $(document).on("ready", init);
 
 ',CClientScript::POS_READY);
 
