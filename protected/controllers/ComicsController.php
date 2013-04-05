@@ -65,10 +65,6 @@ class ComicsController extends Controller
 		$modelRelComics=new UsuariosHasTblComics;
 		$model=new Comics;
 
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Comics']))
 		{
 			$model->attributes=$_POST['Comics'];
@@ -83,7 +79,8 @@ class ComicsController extends Controller
 		}
 		$avatar = Avatars::model()->findByPk(Yii::app()->session['usuario_id']);
 		$amigos = new Amigos;
-		$objetos = null; // Objetos::model()->findAll();
+		$objetos = CatalogoObjetos::model()->findAll();
+		$backgrounds = Backgrounds::model()->findAll();
 		print_r($avatar->id);
 		print_r($avatar->avatar_img);
 		echo "<br><br>";
@@ -93,6 +90,7 @@ class ComicsController extends Controller
 			'avatar'=>$avatar,
 			'amigos_avatars'=>$amigos->getAmigosAvatars(),
 			'objetos'=>$objetos,
+			'backgrounds'=>$backgrounds,
 		));
 	}
 

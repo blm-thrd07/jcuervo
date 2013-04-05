@@ -1,21 +1,72 @@
-<?php
-/* @var $this ComicsController */
-/* @var $model Comics */
+<div id="container">
+      <section id="panelPersonaje">
+        <h1>Nombre del Usuario</h1>
+        <div id="personajeCanvas"></div>
+        <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-reset" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
+      </section>
+      <section id="panelContent">
+        <h2>Crea tu Comic</h2>
+        <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar             </a></div>
+        <div class="js-tabEngine itemSelector">
+          <ul>
+            <li><a href="#tab1">Fondos</a></li>
+            <li><a href="#tab2">Objetos</a></li>
+            <li><a href="#tab3">Amigos</a></li>
+          </ul>
+          <div id="tab1" class="memeThumbs">
+              <? 
+                $bandera=false;
+                    echo '<ul class="js-slides-1 bx-slides">';
+                    foreach ($backgrounds as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</li>'; else $bandera=true;
+                        echo "<li>";
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id_background'],'data-original'=>Yii::app()->request->baseUrl."/img/".$value['url'],'class'=>'lazy')).'</div>'; 
+                    }
+                    echo "</li></ul>";
+                  }
+                  
+                ?>   
+          </div>
+          <div id="tab2" class="memeThumbs">
+                <? 
+                $bandera=false;
+                    echo '<ul class="js-slides-1 bx-slides">';
+                    foreach ($objetos as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</li>'; else $bandera=true;
+                        echo "<li>";
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id'],'data-original'=>Yii::app()->request->baseUrl."/img/".$value['url'],'class'=>'lazy')).'</div>'; 
+                    }
+                    echo "</li></ul>";
+                  }
+                  
+                ?>    
+          </div>
+          <div id="tab3" class="memeThumbs">
+            <? 
+                $bandera=false;
+                    echo '<ul class="js-slides-1 bx-slides">';
+                    foreach ($backgrounds as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</li>'; else $bandera=true;
+                        echo "<li>";
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id_background'],'data-original'=>Yii::app()->request->baseUrl."/img/".$value['url'],'class'=>'lazy')).'</div>'; 
+                    }
+                    echo "</li></ul>";
+                  }
+                  
+                ?>   
+          </div>
+        </div>
+      </section>
+    </div>
 
-$this->breadcrumbs=array(
-	'Comics'=>array('index'),
-	'Create',
-);
 
-$this->menu=array(
-	array('label'=>'List Comics', 'url'=>array('index')),
-	array('label'=>'Manage Comics', 'url'=>array('admin')),
-);
-?>
 
-<h1>Create Comics</h1>
-
-<div id="personajeCanvas"></div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); 
 
