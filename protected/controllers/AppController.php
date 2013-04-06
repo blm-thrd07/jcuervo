@@ -225,7 +225,7 @@ public function actionLogout(){
     echo "<br>";
     print_r($comic->UsuariosComics[0]->Usuario);
 
-    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->facebook_id),
+    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->imagen,'date'=>$comic->date,
                                          'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
                                          'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
