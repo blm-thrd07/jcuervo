@@ -1,10 +1,3 @@
-
-
-<?
-//echo "<a   href='".$loginUrl."'>Login</a>";
-//echo "<a   href='".$loginUrl."'>Login</a>";
-?>
-
 <?php
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 ?>
