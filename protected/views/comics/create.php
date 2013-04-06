@@ -162,7 +162,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    
+    $(".js-tabEngine a").on("click", function() {
+      console.log("you hace clicked a tab btn");
+      $(".bx-viewport").width
+    });
+
+
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
     width: 258,
@@ -212,22 +217,26 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   saveToImage = function() {
     console.log("save");
-    $("#Comics_imagen").text("nulo");
-    $("#Comics_date").text("nulo");
-    var data=$("#comics-form").serialize();
-    $.ajax({
-       type: "POST",
-        url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
-        data:data,
-        success:function(data){
-          alert(data); 
-        },
-        error: function(data) { 
-             alert("Error occured.please try again");
-             alert(data);
-        },
-        dataType:"html"
-      });
+    stagePersonaje.toDataURL({
+      mimeType: "image/png",
+      callback: function(dataUrl) {
+        //alert(dataUrl);
+        var data = { img: dataUrl };
+        $.ajax({
+         type: "POST",
+          url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
+          data:data,
+          success:function(data){
+            alert(data); 
+          },
+          error: function(data) { 
+               alert("Error occured.please try again");
+               alert(data);
+          },
+        });
+      }
+    });
+    
   };
 
   listenerStat = function() {
@@ -372,7 +381,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $("#js-toImage").on("click", saveToImage);
   $("#js-listenerStat").on("click", listenerStat);
-  $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
+  $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").bind("click", rotateRight);
   $("#js-sendFront").on("click", sendFront);
   $("#js-removeElement").on("click", removeImage);
