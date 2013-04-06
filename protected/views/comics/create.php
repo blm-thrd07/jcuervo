@@ -174,7 +174,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerFondo);
   stagePersonaje.add(layerPersonaje);
 
-    $("#js-toImage").on("click", saveToImage);
+    //$("#js-toImage").on("click", saveToImage);
     //$("#js-listenerStat").bind("click", listenerStat);
     //$("#js-rotateLeft").on("click", function(){ rotateLeft(); });
     //$("#js-rotateRight").bind("click", rotateRight);
@@ -183,6 +183,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     //$("#js-sendBack").live("click", sendBack);
 
   saveToImage = function() {
+    console.log("save");
     $("#Comics_imagen").text("nulo");
     $("#Comics_date").text("nulo");
     var data=$("#comics-form").serialize();
