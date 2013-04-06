@@ -14,7 +14,7 @@
         <div><span><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
       </div>
       <div id="comentarios">
-        <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo utf8_encode($json['comic']['usuario']['nombre']); ?></span></div>
+        <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo $json['comic']['usuario']['nombre']; ?></span></div>
         <form>
           <textarea></textarea>
           <button type="button" class="btn"><i class="icon-comment"></i> Comentar</button>
