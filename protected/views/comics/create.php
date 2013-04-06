@@ -193,14 +193,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   imageMiAvatar = new Image();
   MiAvatar = new Kinetic.Image({
-      x: 40,
-      y: 40,
+      x: 0,
+      y: 0,
       rotation: 0,
       height: 258,
       width: 460,
       image: imageMiAvatar,
       offset: [100, 100],
-      tipo: "fondo",
+      tipo: "MiAvatar",
       id: 1
     });
   imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
@@ -295,6 +295,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     currentLayer.draw();
     console.log("back");
     return false;
+  };
+
+  function insertarFondo(img) {
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/fondos/"+img;
+    layerFondo.draw();
+    layerPersonaje.moveToTop();
+
   };
 
   $("#js-toImage").on("click", saveToImage);
