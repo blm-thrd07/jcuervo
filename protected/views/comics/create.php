@@ -206,104 +206,104 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
   layerPersonaje.add(fondo);
   layerPersonaje.moveToTop();
-  currentSelected=MiAvatar;
   layerPersonaje.draw();
+  currentSelected=MiAvatar;
 
   saveToImage = function() {
-        console.log("save");
-        $("#Comics_imagen").text("nulo");
-        $("#Comics_date").text("nulo");
-        var data=$("#comics-form").serialize();
-        $.ajax({
-           type: "POST",
-            url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
-            data:data,
-            success:function(data){
-              alert(data); 
-            },
-            error: function(data) { 
-                 alert("Error occured.please try again");
-                 alert(data);
-            },
-            dataType:"html"
-          });
-      };
+    console.log("save");
+    $("#Comics_imagen").text("nulo");
+    $("#Comics_date").text("nulo");
+    var data=$("#comics-form").serialize();
+    $.ajax({
+       type: "POST",
+        url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
+        data:data,
+        success:function(data){
+          alert(data); 
+        },
+        error: function(data) { 
+             alert("Error occured.please try again");
+             alert(data);
+        },
+        dataType:"html"
+      });
+  };
 
-      listenerStat = function() {
-        var json = JSON.parse(layerPersonaje.toJSON()); 
-        console.log(json.children);
-      };
+  listenerStat = function() {
+    var json = JSON.parse(layerPersonaje.toJSON()); 
+    console.log(json.children);
+  };
 
-      angle = 0.174532925;
-      newangle = null;
+  angle = 0.174532925;
+  newangle = null;
 
-      removeImage = function(){
-        //layerPersonaje.remove();
-        for(i=0;i<accesorios.length;i++){
-          if(accesorios[i].attrs.id == currentSelected.attrs.id){
-            o = accesorios.indexOf(currentSelected)
-            delete accesorios[o];
-            accesorios.splice(o,o+1);
-          }
-            //accesorios.remove(currentSelected);
-        }
-        currentSelected.remove();
-        currentLayer.draw();
+  removeImage = function(){
+    //layerPersonaje.remove();
+    for(i=0;i<accesorios.length;i++){
+      if(accesorios[i].attrs.id == currentSelected.attrs.id){
+        o = accesorios.indexOf(currentSelected)
+        delete accesorios[o];
+        accesorios.splice(o,o+1);
       }
+        //accesorios.remove(currentSelected);
+    }
+    currentSelected.remove();
+    currentLayer.draw();
+  }
 
-      rotateLeft = function() {
-        newangle = currentSelected.getRotation() - angle;
-        console.log(newangle);
-        console.log(angle);
-        currentSelected.transitionTo({
-          rotation: newangle,
-          duration: 0.5,
-          easing: "ease-out",
-          callback: function() {
-            return console.log(currentSelected.getRotation());
-          }
-        });
-        layerPersonaje.draw();
-        return false;
-      };
+  rotateLeft = function() {
+    newangle = currentSelected.getRotation() - angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.5,
+      easing: "ease-out",
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    layerPersonaje.draw();
+    return false;
+  };
 
-      rotateRight = function() {
-        newangle = currentSelected.getRotation() + angle;
-        console.log(newangle);
-        console.log(angle);
-        currentSelected.transitionTo({
-          rotation: newangle,
-          duration: 0.5,
-          easing: "ease-out",
-          callback: function() {
-            return console.log(currentSelected.getRotation());
-          }
-        });
-        currentLayer.draw();
-        return false;
-      };
+  rotateRight = function() {
+    newangle = currentSelected.getRotation() + angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.5,
+      easing: "ease-out",
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    layerPersonaje.draw();
+    return false;
+  };
 
-      sendFront = function() {
-        currentSelected.moveToTop();
-        currentLayer.draw();
-        console.log("front");
-        return false;
-      };
+  sendFront = function() {
+    currentSelected.moveToTop();
+    currentLayer.draw();
+    console.log("front");
+    return false;
+  };
 
-      sendBack = function() {
-        currentSelected.moveToBottom();
-        currentLayer.draw();
-        console.log("back");
-        return false;
-      };
+  sendBack = function() {
+    currentSelected.moveToBottom();
+    currentLayer.draw();
+    console.log("back");
+    return false;
+  };
 
-      $("#js-toImage").on("click", saveToImage);
-      $("#js-listenerStat").on("click", listenerStat);
-      $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
-      $("#js-rotateRight").bind("click", rotateRight);
-      $("#js-sendFront").on("click", sendFront);
-      $("#js-removeElement").on("click", removeImage);
-      $("#js-sendBack").on("click", sendBack);
+  $("#js-toImage").on("click", saveToImage);
+  $("#js-listenerStat").on("click", listenerStat);
+  $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
+  $("#js-rotateRight").bind("click", rotateRight);
+  $("#js-sendFront").on("click", sendFront);
+  $("#js-removeElement").on("click", removeImage);
+  $("#js-sendBack").on("click", sendBack);
 
   
     
