@@ -10,7 +10,7 @@
   <body class="lb">
     <div id="detalle">
 
-      <div id="pic"><img src="http://placehold.it/640x480.gif"><a href="#" class="btn"><i class="icon-trash"></i> Eliminar</a>
+      <div id="pic"><? echo CHtml::image(Yii::app()->request->baseUrl."/Comics/".$json['comic']['comic']['imagen']); ?><a href="#" class="btn"><i class="icon-trash"></i> Eliminar</a>
         <div><span>39</span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
       </div>
       <div id="comentarios">
