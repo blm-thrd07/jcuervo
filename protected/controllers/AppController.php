@@ -230,7 +230,7 @@ public function actionLogout(){
                                          'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
                                          'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
                                          'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
-                                         'destacado'=>$comics->UsuariosComics[0]->destacado
+                                         'destacado'=>$comic->UsuariosComics[0]->destacado
                                          ));
 
     print_r($json);
