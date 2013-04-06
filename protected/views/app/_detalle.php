@@ -21,7 +21,7 @@
         </form>
         
        <? 
-           if(is_array($json['comic']['comic']['comments']){
+           if(is_array($json['comic']['comic']['comments'])){
                 foreach ($json['comic']['comic']['comments'] as $key => $value) {
                     echo $value['comment'];
                 }
