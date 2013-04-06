@@ -11,7 +11,7 @@
     <div id="detalle">
 
       <div id="pic"><? echo CHtml::image(Yii::app()->request->baseUrl."/Comics/".$json['comic']['comic']['imagen']); ?><a href="#" class="btn"><i class="icon-trash"></i> Eliminar</a>
-        <div><span>39</span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
+        <div><span><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
       </div>
       <div id="comentarios">
         <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo utf8_decode($json['comic']['usuario']['nombre']); ?></span></div>
@@ -19,6 +19,8 @@
           <textarea></textarea>
           <button type="button" class="btn"><i class="icon-comment"></i> Comentar</button>
         </form>
+       
+
         <article>
           <h3>Usuario</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
@@ -31,6 +33,8 @@
           <h3>Usuario</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
         </article>
+      
+
       </div>
     </div>
     
