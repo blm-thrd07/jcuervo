@@ -14,7 +14,7 @@
         <div><span>39</span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
       </div>
       <div id="comentarios">
-        <div><img src="http://placehold.it/48x48.gif"><span><? echo $json['comic']['usuario']['nombre'] ?></span></div>
+        <div><img src="http://placehold.it/48x48.gif"><span><? echo utf8_decode($json['comic']['usuario']['nombre']); ?></span></div>
         <form>
           <textarea></textarea>
           <button type="button" class="btn"><i class="icon-comment"></i> Comentar</button>
