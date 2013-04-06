@@ -220,8 +220,9 @@ public function actionLogout(){
     $model_comic= new Comics;
 
     $response=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
+   
+    print_r($response);
    /*
-    print_r($model_comic);
     $this->renderPartial('//app/_detalle',array('model_comic'=>$model_comic));
  */
 
