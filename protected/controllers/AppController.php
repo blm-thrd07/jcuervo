@@ -230,12 +230,6 @@ public function actionLogout(){
                              'nombre'=>$comic->Coments[$i]->Usuarios->nombre);
        }
 
-
-
-
-
-
-
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->imagen,'date'=>$comic->date,
                                          'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
@@ -243,13 +237,8 @@ public function actionLogout(){
                                          'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
                                          'destacado'=>$comic->UsuariosComics[0]->destacado,
                                          'comments'=>$comentarios
-                                         ));
-
-   
-   
-    echo json_encode($json);
-                              
-    //$this->renderPartial('//app/_detalle',array('comic'=>$comic));
+                                         ));                              
+    $this->renderPartial('//app/_detalle',array('comic'=>$json));
  
 
  }
