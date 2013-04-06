@@ -209,11 +209,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentSelected=MiAvatar;
   layerPersonaje.draw();
 
-    
-
-  $(document).ready(function(){
-
-      saveToImage = function() {
+  saveToImage = function() {
         console.log("save");
         $("#Comics_imagen").text("nulo");
         $("#Comics_date").text("nulo");
@@ -308,7 +304,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       $("#js-sendFront").on("click", sendFront);
       $("#js-removeElement").on("click", removeImage);
       $("#js-sendBack").on("click", sendBack);
-  });
 
   
     
