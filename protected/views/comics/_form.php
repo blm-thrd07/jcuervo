@@ -9,6 +9,9 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'comics-form',
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array(
+        'onsubmit'=>"return false;",/* Disable normal form submit */
+        'onkeypress'=>" if(event.keyCode == 13){ send(); } " 
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

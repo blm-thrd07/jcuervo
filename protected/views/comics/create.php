@@ -174,14 +174,33 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerFondo);
   stagePersonaje.add(layerPersonaje);
 
-
     $("#js-toImage").on("click", saveToImage);
     //$("#js-listenerStat").bind("click", listenerStat);
-    $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
-    $("#js-rotateRight").bind("click", rotateRight);
-    $("#js-sendFront").live("click", sendFront);
-    $("#js-removeElement").live("click", removeImage);
-    $("#js-sendBack").live("click", sendBack);
+    //$("#js-rotateLeft").on("click", function(){ rotateLeft(); });
+    //$("#js-rotateRight").bind("click", rotateRight);
+    //$("#js-sendFront").live("click", sendFront);
+    //$("#js-removeElement").live("click", removeImage);
+    //$("#js-sendBack").live("click", sendBack);
+
+  saveToImage = function() {
+    $("#Comics_imagen").text("nulo");
+    $("#Comics_date").text("nulo");
+    var data=$("#comics-form").serialize();
+    $.ajax({
+       type: "POST",
+        url: "<?php echo Yii::app()->createAbsoluteUrl("comics/create"); ?>",
+        data:data,
+        success:function(data){
+          alert(data); 
+        },
+        error: function(data) { 
+             alert("Error occured.please try again");
+             alert(data);
+        },
+        dataType:"html"
+      });
+    
+  });
 
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
