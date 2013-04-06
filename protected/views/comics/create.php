@@ -128,9 +128,9 @@
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
-  var angle,cuerpos, amigos,init,rotation, objetos,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle,cuerpos,init,rotation,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
   currentSelected = null; init=null;
-
+  var amigos=[], objetos=[];
   console.log("tabs engine");
   $(".js-tabEngine").easytabs({
       animate: false,
@@ -199,6 +199,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       height: 258,
       width: 460,
       image: imageMiAvatar,
+      draggable: true,
       offset: [100, 100],
       tipo: "MiAvatar",
       id: 1
@@ -304,6 +305,69 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerFondo.draw();
     layerPersonaje.moveToTop();
 
+  };
+
+  function insertar(obj,pieza_id,img) {
+    var aux, insertar=true;
+    aux=obj;
+    if(obj==="objeto"){ 
+      for(i=0;i<objetos.length;i++){
+        if(objetos[i].attrs.id == pieza_id) insertar=false;
+      }
+    }
+    if(obj==="amigo"){ 
+      for(i=0;i<amigos.length;i++){
+        if(amigos[i].attrs.id == pieza_id) insertar=false;
+      }
+    }
+
+    if(insertar){
+      imageObj = new Image();
+      obj = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        rotation: rotation,
+        height: 300,
+        width: 300,
+        image: imageObj,
+        draggable: true,
+        offset: [100, 100],
+        tipo: aux,
+        id: pieza_id
+      });
+      console.log(img);
+      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+      console.log(img);
+      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+      obj.on("mouseover", function() {
+        this.setStroke("980d2e");
+        this.setStrokeWidth(1);
+        return layerPersonaje.draw();
+      });
+
+      obj.on("mouseout", function() {
+        this.setStroke(null);
+        this.setStrokeWidth(0);
+        layerPersonaje.draw();
+      });
+
+      obj.on("click", function() {
+        currentSelected = this;
+      });
+      console.log(" "+aux+": id: "+pieza_id+"tipo: "+tipo_pieza_id);
+      layerPersonaje.add(obj);
+      if(obj==="objeto"){ 
+        objetos.push(obj);
+      }
+      if(obj==="amigo"){ 
+        amigos.push(obj);
+      }
+      layerPersonaje.draw();
+      return true;
+    }
+    
+    console.log("NO SE INSERTO");
+    return false;
   };
 
   $("#js-toImage").on("click", saveToImage);
