@@ -174,13 +174,32 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerFondo);
   stagePersonaje.add(layerPersonaje);
 
+  imageBackground = new Image();
+  fondo = new Kinetic.Image({
+      x: 0,
+      y: 0,
+      rotation: rotation,
+      height: 258,
+      width: 460,
+      image: imageBackground,
+      draggable: true,
+      offset: [100, 100],
+      tipo: "fondo",
+      id: 1
+    });
+  imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
+  layerFondo.add(fondo);
+  layerPersonaje.moveToTop();
+
     $("#js-toImage").on("click", saveToImage);
-    $("#js-listenerStat").bind("click", listenerStat);
+    $("#js-listenerStat").on("click", listenerStat);
     $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
     $("#js-rotateRight").bind("click", rotateRight);
-    $("#js-sendFront").live("click", sendFront);
-    $("#js-removeElement").live("click", removeImage);
-    $("#js-sendBack").live("click", sendBack);
+    $("#js-sendFront").on("click", sendFront);
+    $("#js-removeElement").on("click", removeImage);
+    $("#js-sendBack").on("click", sendBack);
+
+  
 
   saveToImage = function() {
     console.log("save");
@@ -205,25 +224,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
     console.log(json.children);
-    
-    stagePersonaje.toDataURL({
-      mimeType: "image/png",
-      callback: function(dataUrl) {
-        //alert(dataUrl);
-        var avatarJson = { avatar: json.children, edit: edit, img: dataUrl };
-
-        $.ajax({
-          type: "POST",
-          url: "'.CController::CreateUrl("avatars/UpdatePieza").'",
-          data: avatarJson,
-          success: function(data){
-              //alert(data);
-          }
-        });
-      }
-    });
-    
-    return false;
   };
 
   angle = 0.174532925;
