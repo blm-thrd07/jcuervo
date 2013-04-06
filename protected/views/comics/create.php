@@ -4,7 +4,7 @@
         <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-reset" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
       </section>
       <section id="panelContent">
-        <h2>Crea tu Personaje</h2>
+        <h2>Crea tu Meme</h2>
         <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
         <div class="js-tabEngine itemSelector">
           <ul>
@@ -189,8 +189,25 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
   layerFondo.add(fondo);
   layerFondo.draw();
-  layerPersonaje.moveToTop();
   console.log("fondo agregado");
+
+  imageMiAvatar = new Image();
+  MiAvatar = new Kinetic.Image({
+      x: 40,
+      y: 40,
+      rotation: 0,
+      height: 258,
+      width: 460,
+      image: imageMiAvatar,
+      offset: [100, 100],
+      tipo: "fondo",
+      id: 1
+    });
+  imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
+  layerPersonaje.add(fondo);
+  layerPersonaje.moveToTop();
+  currentSelected=MiAvatar;
+  layerPersonaje.draw();
 
     $("#js-toImage").on("click", saveToImage);
     $("#js-listenerStat").on("click", listenerStat);
@@ -200,95 +217,98 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-removeElement").on("click", removeImage);
     $("#js-sendBack").on("click", sendBack);
 
+  $(document).ready(function(){
+
+      saveToImage = function() {
+        console.log("save");
+        $("#Comics_imagen").text("nulo");
+        $("#Comics_date").text("nulo");
+        var data=$("#comics-form").serialize();
+        $.ajax({
+           type: "POST",
+            url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
+            data:data,
+            success:function(data){
+              alert(data); 
+            },
+            error: function(data) { 
+                 alert("Error occured.please try again");
+                 alert(data);
+            },
+            dataType:"html"
+          });
+      };
+
+      listenerStat = function() {
+        var json = JSON.parse(layerPersonaje.toJSON()); 
+        console.log(json.children);
+      };
+
+      angle = 0.174532925;
+      newangle = null;
+
+      removeImage = function(){
+        //layerPersonaje.remove();
+        for(i=0;i<accesorios.length;i++){
+          if(accesorios[i].attrs.id == currentSelected.attrs.id){
+            o = accesorios.indexOf(currentSelected)
+            delete accesorios[o];
+            accesorios.splice(o,o+1);
+          }
+            //accesorios.remove(currentSelected);
+        }
+        currentSelected.remove();
+        currentLayer.draw();
+      }
+
+      rotateLeft = function() {
+        newangle = currentSelected.getRotation() - angle;
+        console.log(newangle);
+        console.log(angle);
+        currentSelected.transitionTo({
+          rotation: newangle,
+          duration: 0.5,
+          easing: "ease-out",
+          callback: function() {
+            return console.log(currentSelected.getRotation());
+          }
+        });
+        currentLayer.draw();
+        return false;
+      };
+
+      rotateRight = function() {
+        newangle = currentSelected.getRotation() + angle;
+        console.log(newangle);
+        console.log(angle);
+        currentSelected.transitionTo({
+          rotation: newangle,
+          duration: 0.5,
+          easing: "ease-out",
+          callback: function() {
+            return console.log(currentSelected.getRotation());
+          }
+        });
+        currentLayer.draw();
+        return false;
+      };
+
+      sendFront = function() {
+        currentSelected.moveToTop();
+        currentLayer.draw();
+        console.log("front");
+        return false;
+      };
+
+      sendBack = function() {
+        currentSelected.moveToBottom();
+        currentLayer.draw();
+        console.log("back");
+        return false;
+      };
+  });
+
   
-
-  saveToImage = function() {
-    console.log("save");
-    $("#Comics_imagen").text("nulo");
-    $("#Comics_date").text("nulo");
-    var data=$("#comics-form").serialize();
-    $.ajax({
-       type: "POST",
-        url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
-        data:data,
-        success:function(data){
-          alert(data); 
-        },
-        error: function(data) { 
-             alert("Error occured.please try again");
-             alert(data);
-        },
-        dataType:"html"
-      });
-  };
-
-  listenerStat = function() {
-    var json = JSON.parse(layerPersonaje.toJSON()); 
-    console.log(json.children);
-  };
-
-  angle = 0.174532925;
-  newangle = null;
-
-  removeImage = function(){
-    //layerPersonaje.remove();
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == currentSelected.attrs.id){
-        o = accesorios.indexOf(currentSelected)
-        delete accesorios[o];
-        accesorios.splice(o,o+1);
-      }
-        //accesorios.remove(currentSelected);
-    }
-    currentSelected.remove();
-    currentLayer.draw();
-  }
-
-  rotateLeft = function() {
-    newangle = currentSelected.getRotation() - angle;
-    console.log(newangle);
-    console.log(angle);
-    currentSelected.transitionTo({
-      rotation: newangle,
-      duration: 0.5,
-      easing: "ease-out",
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
-    currentLayer.draw();
-    return false;
-  };
-
-  rotateRight = function() {
-    newangle = currentSelected.getRotation() + angle;
-    console.log(newangle);
-    console.log(angle);
-    currentSelected.transitionTo({
-      rotation: newangle,
-      duration: 0.5,
-      easing: "ease-out",
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
-    currentLayer.draw();
-    return false;
-  };
-
-  sendFront = function() {
-    currentSelected.moveToTop();
-    currentLayer.draw();
-    console.log("front");
-    return false;
-  };
-
-  sendBack = function() {
-    currentSelected.moveToBottom();
-    currentLayer.draw();
-    console.log("back");
-    return false;
-  };
     
 ',CClientScript::POS_END);
 
