@@ -174,13 +174,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stagePersonaje.add(layerFondo);
   stagePersonaje.add(layerPersonaje);
 
-    //$("#js-toImage").on("click", saveToImage);
-    //$("#js-listenerStat").bind("click", listenerStat);
-    //$("#js-rotateLeft").on("click", function(){ rotateLeft(); });
-    //$("#js-rotateRight").bind("click", rotateRight);
-    //$("#js-sendFront").live("click", sendFront);
-    //$("#js-removeElement").live("click", removeImage);
-    //$("#js-sendBack").live("click", sendBack);
+    $("#js-toImage").on("click", saveToImage);
+    $("#js-listenerStat").bind("click", listenerStat);
+    $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
+    $("#js-rotateRight").bind("click", rotateRight);
+    $("#js-sendFront").live("click", sendFront);
+    $("#js-removeElement").live("click", removeImage);
+    $("#js-sendBack").live("click", sendBack);
 
   saveToImage = function() {
     console.log("save");
