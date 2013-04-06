@@ -236,7 +236,7 @@ public function actionLogout(){
 
 
 
-    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
+    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuarios->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuarios->id_facebook),
                           'comic'=>array('id'=>$comic->imagen,'date'=>$comic->date,
                                          'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
                                          'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
