@@ -162,7 +162,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#js-toImage").on("click", function(){ saveToImage(); });
+    
+  stagePersonaje = new Kinetic.Stage({
+    container: "personajeCanvas",
+    width: 640,
+    height: 480,
+  });
+  
+  layerFondo = new Kinetic.Layer();
+  layerPersonaje = new Kinetic.Layer();
+  stagePersonaje.add(layerFondo);
+  stagePersonaje.add(layerPersonaje);
+
+
+    $("#js-toImage").on("click", saveToImage);
     //$("#js-listenerStat").bind("click", listenerStat);
     $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
     $("#js-rotateRight").bind("click", rotateRight);
