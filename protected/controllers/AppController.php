@@ -225,6 +225,16 @@ public function actionLogout(){
     echo "<br>";
     print_r($comic->UsuariosComics[0]->Usuario);
 
+    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->facebook_id)
+                          'comic'=>array('id'=>$comic->imagen,'date'=>$comic->date,
+                                         'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
+                                         'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
+                                         'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
+                                         'destacado'=>$comics->UsuariosComics[0]->destacado
+                                         ));
+
+    print_r($json);
+                              
     //$this->renderPartial('//app/_detalle',array('comic'=>$comic));
  
 
