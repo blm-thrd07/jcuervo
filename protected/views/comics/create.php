@@ -199,8 +199,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         },
         dataType:"html"
       });
-    
-  });
+  };
 
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
