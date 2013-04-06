@@ -209,13 +209,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentSelected=MiAvatar;
   layerPersonaje.draw();
 
-    $("#js-toImage").on("click", saveToImage);
-    $("#js-listenerStat").on("click", listenerStat);
-    $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
-    $("#js-rotateRight").bind("click", rotateRight);
-    $("#js-sendFront").on("click", sendFront);
-    $("#js-removeElement").on("click", removeImage);
-    $("#js-sendBack").on("click", sendBack);
+    
 
   $(document).ready(function(){
 
@@ -273,7 +267,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             return console.log(currentSelected.getRotation());
           }
         });
-        currentLayer.draw();
+        layerPersonaje.draw();
         return false;
       };
 
@@ -306,6 +300,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         console.log("back");
         return false;
       };
+
+      $("#js-toImage").on("click", saveToImage);
+      $("#js-listenerStat").on("click", listenerStat);
+      $("#js-rotateLeft").on("click", function(){ rotateLeft(); });
+      $("#js-rotateRight").bind("click", rotateRight);
+      $("#js-sendFront").on("click", sendFront);
+      $("#js-removeElement").on("click", removeImage);
+      $("#js-sendBack").on("click", sendBack);
   });
 
   
