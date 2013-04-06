@@ -241,7 +241,7 @@ public function actionLogout(){
                                          'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
                                          'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
                                          'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
-                                         'destacado'=>$comic->UsuariosComics[0]->destacado
+                                         'destacado'=>$comic->UsuariosComics[0]->destacado,
                                          'comments'=>$comentarios
                                          ));
 
