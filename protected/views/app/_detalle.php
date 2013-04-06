@@ -6,7 +6,6 @@
     <title>Memegenerator Jose Cuervo Especial</title>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.css">
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
   </head>
 
   <body class="lb">
