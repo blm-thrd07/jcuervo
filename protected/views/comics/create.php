@@ -182,13 +182,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       height: 258,
       width: 460,
       image: imageBackground,
-      draggable: true,
       offset: [100, 100],
       tipo: "fondo",
       id: 1
     });
   imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
   layerFondo.add(fondo);
+  layerFondo.draw();
   layerPersonaje.moveToTop();
 
     $("#js-toImage").on("click", saveToImage);
