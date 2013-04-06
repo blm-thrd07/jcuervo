@@ -58,7 +58,7 @@ class Comics extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'Coments' => array(self::HAS_MANY, 'UsuariosComicsComentarios', 'tbl_comics_id'),
-			'tblUsuarioses' => array(self::MANY_MANY, 'TblUsuarios', 'tbl_usuarios_has_tbl_comics(tbl_comics_id, tbl_usuarios_id)'),
+			'UsuariosComics' => array(self::MANY_MANY, 'UsuariosHasTblComics', 'tbl_usuarios_has_tbl_comics(tbl_comics_id, tbl_usuarios_id)'),
 		);
 	}
 

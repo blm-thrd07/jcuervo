@@ -218,13 +218,15 @@ public function actionLogout(){
   public function actionDetalle($id){
    
     $model_comic= new Comics;
+    $comic=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
+    print_r($comic->Coments);
+    echo "<br>";
+    print_r($comic->UsuariosComics);
+    echo "<br>";
+    print_r($comic->UsuariosComics->Usuario);
 
-    $response=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
-   
-    print_r($response);
-   /*
-    $this->renderPartial('//app/_detalle',array('model_comic'=>$model_comic));
- */
+    //$this->renderPartial('//app/_detalle',array('comic'=>$comic));
+ 
 
  }
 
