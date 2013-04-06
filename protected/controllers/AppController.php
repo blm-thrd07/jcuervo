@@ -216,11 +216,13 @@ public function actionLogout(){
   }
 
   public function actionDetalle($id){
-   /*
+   
     $model_comic=new Comics::model()->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
+   /*
     print_r($model_comic);
     $this->renderPartial('//app/_detalle',array('model_comic'=>$model_comic));
  */
+
  }
 
   public function actionDest(){
