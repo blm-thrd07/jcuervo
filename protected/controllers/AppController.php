@@ -219,12 +219,6 @@ public function actionLogout(){
    
     $model_comic= new Comics;
     $comic=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
-    print_r($comic->Coments);
-    echo "<br>";
-    print_r($comic->UsuariosComics);
-    echo "<br>";
-    print_r($comic->UsuariosComics[0]->Usuario);
-
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->imagen,'date'=>$comic->date,
                                          'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
@@ -233,7 +227,7 @@ public function actionLogout(){
                                          'destacado'=>$comic->UsuariosComics[0]->destacado
                                          ));
 
-    print_r($json);
+    echo json_encode($json);
                               
     //$this->renderPartial('//app/_detalle',array('comic'=>$comic));
  
