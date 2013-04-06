@@ -238,7 +238,7 @@ public function actionLogout(){
                                          'destacado'=>$comic->UsuariosComics[0]->destacado,
                                          'comments'=>$comentarios
                                          ));                              
-    $this->renderPartial('//app/_detalle',array('comic'=>$json));
+    $this->renderPartial('//app/_detalle',array('json'=>$json));
  
 
  }
