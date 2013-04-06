@@ -223,7 +223,7 @@ public function actionLogout(){
     echo "<br>";
     print_r($comic->UsuariosComics);
     echo "<br>";
-    print_r($comic->UsuariosComics->Usuario);
+    print_r($comic->UsuariosComics[0]->Usuario);
 
     //$this->renderPartial('//app/_detalle',array('comic'=>$comic));
  
