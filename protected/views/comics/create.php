@@ -178,7 +178,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   fondo = new Kinetic.Image({
       x: 0,
       y: 0,
-      rotation: rotation,
+      rotation: 0,
       height: 258,
       width: 460,
       image: imageBackground,
@@ -190,6 +190,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   layerFondo.add(fondo);
   layerFondo.draw();
   layerPersonaje.moveToTop();
+  console.log("fondo agregado");
 
     $("#js-toImage").on("click", saveToImage);
     $("#js-listenerStat").on("click", listenerStat);
