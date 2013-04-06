@@ -188,7 +188,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var data=$("#comics-form").serialize();
     $.ajax({
        type: "POST",
-        url: "<?php echo Yii::app()->createAbsoluteUrl("comics/create"); ?>",
+        url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
         data:data,
         success:function(data){
           alert(data); 
