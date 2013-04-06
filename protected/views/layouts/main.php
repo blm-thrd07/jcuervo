@@ -8,7 +8,7 @@
     <script> var iU=<?echo Yii::app()->session['usuario_id'];?>; </script> 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
-
+    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.css">
   </head>
   <body>
   
