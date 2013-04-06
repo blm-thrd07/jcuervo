@@ -23,25 +23,26 @@
        <? 
            if(is_array($json['comic']['comic']['comments'])){
                 foreach ($json['comic']['comic']['comments'] as $key => $value) {
-                    echo $value['comment'];
+        ?>            
+
+         <article>
+          <h3><?echo $value['nombre']; ?></h3>
+          <p><? echo $value['comment'] ?></p>
+        </article>
+  
+                   <!--
+                    $value['id'];
+                    $value['comment'];
+                    $value['date'];
+                    $value['idFb'];
+
+                   --> 
+                    
+           <?          
                 }
 
            }
        ?>
-      
-
-        <article>
-          <h3>Usuario</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
-        </article>
-        <article>
-          <h3>Usuario</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
-        </article>
-        <article>
-          <h3>Usuario</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
-        </article>
       
 
       </div>

@@ -226,7 +226,7 @@ public function actionLogout(){
       $comentarios[$i]=array('id'=>$comic->Coments[$i]->id,
                              'comment'=>$comic->Coments[$i]->comment,
                              'date'=>$comic->Coments[$i]->date,
-                             'usuario_id'=>$comic->Coments[$i]->Usuarios->id_facebook,
+                             'idFb'=>$comic->Coments[$i]->Usuarios->id_facebook,
                              'nombre'=>$comic->Coments[$i]->Usuarios->nombre);
        }
 
