@@ -19,7 +19,16 @@
           <textarea></textarea>
           <button type="button" class="btn"><i class="icon-comment"></i> Comentar</button>
         </form>
-       
+        
+       <? 
+           if(is_array($json['comic']['comic']['comments']){
+                foreach ($json['comic']['comic']['comments'] as $key => $value) {
+                    echo $value['comment'];
+                }
+
+           }
+       ?>
+      
 
         <article>
           <h3>Usuario</h3>
