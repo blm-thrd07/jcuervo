@@ -204,7 +204,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       id: 1
     });
   imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
-  layerPersonaje.add(fondo);
+  layerPersonaje.add(MiAvatar);
   layerPersonaje.moveToTop();
   layerPersonaje.draw();
   currentSelected=MiAvatar;
@@ -231,7 +231,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
+    var json2 = JSON.parse(layerFondo.toJSON()); 
     console.log(json.children);
+    console.log(json2.children);
   };
 
   angle = 0.174532925;
