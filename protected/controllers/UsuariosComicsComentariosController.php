@@ -67,14 +67,17 @@ class UsuariosComicsComentariosController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		echo $_POST['UsuariosComicsComentarios'];
         
 
-
-        /*
 		if(isset($_POST['UsuariosComicsComentarios']))
 		{
 			$model->attributes=$_POST['UsuariosComicsComentarios'];
+            $model->tbl_usuarios_id=Yii::app()->session['usuario_id'];
+            $model->date="NOW()";
+
+          print_r($model);
+
+         /*
 			if($model->save()){
                     $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
 			        $numeroTotal=$modelUsuariosComics->NoComentarios;
@@ -87,6 +90,8 @@ class UsuariosComicsComentariosController extends Controller
 			        
 
 			}
+
+			*/
 		}
 		
 		$this->render('create',array(
