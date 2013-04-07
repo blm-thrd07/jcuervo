@@ -303,7 +303,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj = new Kinetic.Image({
         x: 0,
         y: 0,
-        rotation: rotation,
+        rotation: 0,
         height: 300,
         width: 300,
         image: imageObj,
