@@ -187,7 +187,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     stagePersonaje.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
-        //alert(dataUrl);
         var data = { img: dataUrl };
         $.ajax({
          type: "POST",
@@ -217,17 +216,22 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   newangle = null;
 
   removeImage = function(){
-    //layerPersonaje.remove();
-    for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == currentSelected.attrs.id){
-        o = accesorios.indexOf(currentSelected)
-        delete accesorios[o];
-        accesorios.splice(o,o+1);
+    for(i=0;i<objetos.length;i++){
+      if(objetos[i].attrs.id == currentSelected.attrs.id){
+        o = objetos.indexOf(currentSelected)
+        delete objetos[o];
+        objetos.splice(o,o+1);
       }
-        //accesorios.remove(currentSelected);
+    }
+    for(i=0;i<amigos.length;i++){
+      if(amigos[i].attrs.id == currentSelected.attrs.id){
+        o = amigos.indexOf(currentSelected)
+        delete amigos[o];
+        amigos.splice(o,o+1);
+      }
     }
     currentSelected.remove();
-    currentLayer.draw();
+    layerPersonaje.draw();
   }
 
   rotateLeft = function() {
