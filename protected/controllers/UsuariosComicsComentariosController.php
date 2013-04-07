@@ -75,23 +75,23 @@ class UsuariosComicsComentariosController extends Controller
             $model->tbl_usuarios_id=Yii::app()->session['usuario_id'];
             $model->date="NOW()";
 
-          print_r($model->attributes);
 
-         /*
+         
 			if($model->save()){
                     $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
 			        $numeroTotal=$modelUsuariosComics->NoComentarios;
                     $numeroTotal+=1;
 			        $modelUsuariosComics->NoComentarios=$numeroTotal;
 			        if($modelUsuariosComics->save(false)){
-			        		$this->redirect(array('view','id'=>$model->id));
-			        }
-			        
-			        
+			        		echo "guardado";
+			        		//$this->redirect(array('view','id'=>$model->id));
+			        }        
+			}else{
 
+				echo "no guardado";
 			}
 
-			*/
+		
 		}
 		
 		/*
