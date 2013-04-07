@@ -75,7 +75,7 @@ class UsuariosComicsComentariosController extends Controller
             $model->tbl_usuarios_id=Yii::app()->session['usuario_id'];
             $model->date="NOW()";
 
-          print_r($model);
+          print_r($model->attributes);
 
          /*
 			if($model->save()){
