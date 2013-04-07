@@ -137,31 +137,32 @@ class ComicsController extends Controller
 	}
 
 
+      public function actionShare($id){
+        
 
-	public function actionShare($id){
+        $facebook = new facebook(array(
+          'appId'  => '342733185828640',
+          'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+        ));
 
-   $this->FacebookShareComent('100004850712781','blala','jair','hola bkabla','descripcion','http://www.google.com','http://apps.t2omedia.com.mx/php2/jcuervo/Comics/comic1.jpg');
-	
-	}
+        $my_access_token= $facebook->getAccessToken();
+        $this->ShareComic($my_access_token,'http://apps.t2omedia.com.mx/php2/jcuervo/Comics/comic1.jpg','Comic');
+	  }
 
-	 public function FacebookShareComent($user,$message,$name,$caption,$description,$link,$link_picture){
-       $facebook = new facebook(array(
-	        'appId'  => '342733185828640',
-	        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-	        ));
-      
-      $params = array(
-                'message'       =>  $message,
-               // 'name'          =>  $name,
-               // 'caption'       =>  $caption,
-              //  'description'   =>  $description,
-               // 'link'          =>  $link,
-                'picture'       =>  $link_picture,
-            );
+	  public function ShareComic($my_access_token,$link,$message){
 
-       $post = $facebook->api("/$user/feed","POST",$params);
-        echo $post['id'];
-  }
+       $photo_url=$link;
+       $photo_caption=$message;
+       $graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"
+      . "url=" . urlencode($photo_url)
+      . "&message=" . urlencode($photo_caption)
+      . "&method=POST"
+      . "&access_token=" .$my_access_token;
+   
+       echo '<html><body>';
+       echo file_get_contents($graph_url);
+       echo '</body></html>';
+    }
 
 	/**
 	 * Deletes a particular model.
