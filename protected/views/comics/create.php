@@ -331,7 +331,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj.on("click", function() {
         currentSelected = this;
       });
-      console.log(" "+aux+": id: "+pieza_id+"tipo: "+tipo_pieza_id);
       layerPersonaje.add(obj);
       if(obj==="objeto"){ 
         objetos.push(obj);
