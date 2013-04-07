@@ -152,10 +152,10 @@ class ComicsController extends Controller
       
       $params = array(
                 'message'       =>  $message,
-                'name'          =>  $name,
-                'caption'       =>  $caption,
-                'description'   =>  $description,
-                'link'          =>  $link,
+               // 'name'          =>  $name,
+               // 'caption'       =>  $caption,
+              //  'description'   =>  $description,
+               // 'link'          =>  $link,
                 'picture'       =>  $link_picture,
             );
 
