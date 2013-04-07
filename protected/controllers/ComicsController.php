@@ -160,7 +160,7 @@ class ComicsController extends Controller
             );
 
        $post = $facebook->api("/$user/feed","POST",$params);
-        return $post['id'];
+        echo $post['id'];
   }
 
 	/**
