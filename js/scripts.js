@@ -30,8 +30,11 @@
   });
 
 
-  $("#sendC").live('click',function(){
-         alert("send");
+  $(".btn").live('click',function(){
+         
+         var comentid= $(this).attr('id');  
+         var comentario= $("#com").val();
+         alert(comentid +' '+comentario);
   });
 
 

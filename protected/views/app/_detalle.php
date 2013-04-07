@@ -15,8 +15,8 @@
       <div id="comentarios">
         <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo $json['comic']['usuario']['nombre']; ?></span></div>
         <form>
-          <textarea></textarea>
-          <button type="button" class="btn" id="sendC"><i class="icon-comment"></i> Comentar</button>
+          <textarea id="com"></textarea>
+          <button type="button" class="btn" id="<? echo $json['comic']['comic']['id'];  ?>"><i class="icon-comment"></i> Comentar</button>
         </form>
         
        <? 
