@@ -67,6 +67,11 @@ class UsuariosComicsComentariosController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		
+        
+
+
+        /*
 		if(isset($_POST['UsuariosComicsComentarios']))
 		{
 			$model->attributes=$_POST['UsuariosComicsComentarios'];
@@ -83,13 +88,12 @@ class UsuariosComicsComentariosController extends Controller
 
 			}
 		}
-
-
 		
 		$this->render('create',array(
 			'model'=>$model,
 		));
 
+      */
 	}
 
 	/**

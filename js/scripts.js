@@ -34,7 +34,17 @@
          
          var comentid= $(this).attr('id');  
          var comentario= $("#com").val();
-         alert(comentid +' '+comentario);
+
+          $.ajax({
+            type: "POST",
+            data:"UsuariosComicsComentarios[id]="+comentid+"&UsuariosComicsComentarios[comment]="+comentario,
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
+            success: function(data){
+               alert("guardado");
+            }
+          });
+
+
   });
 
 
