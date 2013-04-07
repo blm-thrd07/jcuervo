@@ -48,14 +48,14 @@
   });
 
 $(".share").live('click',function(){
-    var comicid= $(this).attr();
+    var comicid= $(this).attr('id');
     
     $.ajax({
             type: "POST",
             data:"id="+comicid,
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/comics/share/"+comicid,
             success: function(data){
-               alert(data);
+               alert(data+'hols');
             }
           });
 
