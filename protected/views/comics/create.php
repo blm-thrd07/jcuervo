@@ -315,7 +315,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
-      obj.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+      imageObj.src="'.Yii::app()->request->baseUrl.'/img/"+img;
       obj.on("mouseover", function() {
         this.setStroke("980d2e");
         this.setStrokeWidth(1);
