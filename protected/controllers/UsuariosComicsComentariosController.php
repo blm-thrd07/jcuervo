@@ -67,7 +67,7 @@ class UsuariosComicsComentariosController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		
+		echo $_POST['UsuariosComicsComentarios'];
         
 
 
