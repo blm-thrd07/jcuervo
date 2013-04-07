@@ -140,11 +140,11 @@ class ComicsController extends Controller
 
 	public function actionShare($id){
 
-   $this->FacebookShareComent('blala','jair','hola bkabla','descripcion','http://www.google.com','http://apps.t2omedia.com.mx/php2/jcuervo/Comics/comic1.jpg');
+   $this->FacebookShareComent('100004850712781','blala','jair','hola bkabla','descripcion','http://www.google.com','http://apps.t2omedia.com.mx/php2/jcuervo/Comics/comic1.jpg');
 	
 	}
 
-	 public function FacebookShareComent($message,$name,$caption,$description,$link,$link_picture){
+	 public function FacebookShareComent($user,$message,$name,$caption,$description,$link,$link_picture){
        $facebook = new facebook(array(
 	        'appId'  => '342733185828640',
 	        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
