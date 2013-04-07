@@ -37,7 +37,7 @@
 
           $.ajax({
             type: "POST",
-            data:"UsuariosComicsComentarios[id]="+comentid+"&UsuariosComicsComentarios[comment]="+comentario,
+            data:"UsuariosComicsComentarios[tbl_comics_id]="+comentid+"&UsuariosComicsComentarios[comment]="+comentario,
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
                alert(data);
