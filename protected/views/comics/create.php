@@ -279,7 +279,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   function insertarFondo(img) {
-    imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/fondos/"+img;
+    img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
     layerFondo.draw();
     layerPersonaje.moveToTop();
 
