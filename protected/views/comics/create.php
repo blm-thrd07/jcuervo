@@ -8,11 +8,9 @@
         <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
         <div class="js-tabEngine itemSelector">
           <ul>
-            <li><a href="#tab1">Cabeza</a></li>
-            <li><a href="#tab2">Cuerpo</a></li>
-            <li><a href="#tab3">Ojos</a></li>
-            <li><a href="#tab4">Boca</a></li>
-            <li><a href="#tab5">Accesorios</a></li>
+            <li><a href="#tab1">Fondos</a></li>
+            <li><a href="#tab2">Objetos</a></li>
+            <li><a href="#tab3">Avatars de mis amigos</a></li>
           </ul>
           <div id="tab1" class="memeThumbs">
             <ul class="js-slides-1 bx-slides">
@@ -92,34 +90,7 @@
             <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
             <div class="itemMeme"><img src="http://placehold.it/100x100.png"></div>
           </div>
-          <div id="tab4" class="memeThumbs">
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-          </div>
-          <div id="tab5" class="memeThumbs">
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/200x200.png"></div>
-          </div>
+        
         </div>
       </section>
 
@@ -157,11 +128,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
 
     console.log("onclick");
-    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab4 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("amigo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertar("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id"); insertarFondo(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab1 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
+    $("#tab2 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
+    $("#tab3 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
     $(".js-tabEngine a").on("click", function() {
       console.log("you hace clicked a tab btn");
       $(".bx-viewport").width
@@ -297,14 +266,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   sendFront = function() {
     currentSelected.moveToTop();
-    currentLayer.draw();
+    layerPersonaje.draw();
     console.log("front");
     return false;
   };
 
   sendBack = function() {
     currentSelected.moveToBottom();
-    currentLayer.draw();
+    layerPersonaje.draw();
     console.log("back");
     return false;
   };
