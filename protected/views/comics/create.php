@@ -76,7 +76,7 @@
             </ul>
           </div>
           <div id="tab3" class="memeThumbs">
-            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
+                <div class="itemMeme"><img id="1" src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
                 <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
                 <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
                 <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
