@@ -9,7 +9,6 @@
 
   <body class="lb">
     <div id="detalle">
-
       <div id="pic"><? echo CHtml::image(Yii::app()->request->baseUrl."/Comics/".$json['comic']['comic']['imagen']); ?><a href="#" class="btn"><i class="icon-trash"></i> Eliminar</a>
         <div><span><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" class="btn"><i class="icon-share"></i> Compartir</a></div>
       </div>
@@ -17,13 +16,14 @@
         <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo $json['comic']['usuario']['nombre']; ?></span></div>
         <form>
           <textarea></textarea>
-          <button type="button" class="btn"><i class="icon-comment"></i> Comentar</button>
+          <button type="button" class="btn" id="sendC"><i class="icon-comment"></i> Comentar</button>
         </form>
         
        <? 
            if(is_array($json['comic']['comic']['comments'])){
                 foreach ($json['comic']['comic']['comments'] as $key => $value) {
-        ?>            
+        ?>        
+
 
          <article>
           <h3><?echo $value['nombre']; ?></h3>

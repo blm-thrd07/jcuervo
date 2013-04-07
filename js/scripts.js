@@ -30,6 +30,11 @@
   });
 
 
+  $("#sendC").live('click',function(){
+         alert("send");
+  });
+
+
 
 
 }).call(this);
