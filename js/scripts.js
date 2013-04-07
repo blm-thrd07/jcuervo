@@ -30,14 +30,14 @@
   });
 
 
-  $(".btn").live('click',function(){
+  $(".com").live('click',function(){
          
-         var comentid= $(this).attr('id');  
+         var comicid= $(this).attr('id');  
          var comentario= $("#com").val();
 
           $.ajax({
             type: "POST",
-            data:"UsuariosComicsComentarios[tbl_comics_id]="+comentid+"&UsuariosComicsComentarios[comment]="+comentario,
+            data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
                alert(data);
@@ -46,6 +46,20 @@
 
 
   });
+
+$(".share").live('click',function(){
+    var comicid= $(this).attr();
+    
+    $.ajax({
+            type: "POST",
+            data:"id="+comicid,
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/comics/share/"+comicid,
+            success: function(data){
+               alert(data);
+            }
+          });
+
+});
 
 
 

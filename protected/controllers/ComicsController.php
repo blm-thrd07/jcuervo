@@ -32,7 +32,7 @@ class ComicsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','share'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -135,6 +135,33 @@ class ComicsController extends Controller
 			'model'=>$model,
 		));
 	}
+
+
+
+	public function actionShare($id){
+
+   $this->FacebookShareComent('blala','jair','hola bkabla','descripcion','http://www.google.com','http://apps.t2omedia.com.mx/php2/jcuervo/Comics/comic1.jpg');
+	
+	}
+
+	 public function FacebookShareComent($message,$name,$caption,$description,$link,$link_picture){
+       $facebook = new facebook(array(
+	        'appId'  => '342733185828640',
+	        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+	        ));
+      
+      $params = array(
+                'message'       =>  $message,
+                'name'          =>  $name,
+                'caption'       =>  $caption,
+                'description'   =>  $description,
+                'link'          =>  $link,
+                'picture'       =>  $link_picture,
+            );
+
+       $post = $facebook->api("/$user/feed","POST",$params);
+        return $post['id'];
+  }
 
 	/**
 	 * Deletes a particular model.
