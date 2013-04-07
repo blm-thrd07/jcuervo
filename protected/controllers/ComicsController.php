@@ -62,17 +62,36 @@ class ComicsController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$facebook = new facebook(array(
+		   'appId'  => '342733185828640',
+		   'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+		 ));
+
+		$user =$facebook->getUser();
+		$my_access_token= $facebook->getAccessToken();
+		//access token
+
 		$modelRelComics=new UsuariosHasTblComics;
 		$model=new Comics;
 
-		if(isset($_POST['Comics']))
+		if(isset($_POST['img']))
 		{
-			$model->attributes=$_POST['Comics'];
+			$model->date=new CDbExpression('NOW()');
+            $data=$_POST['img'];
+	        $img = str_replace('data:image/png;base64,', '', $data);
+	        $img = str_replace(' ', '+', $img);
+	        $data = base64_decode($img);
+	        $filename=uniqid().'.png';
+	        $file =  Yii::app()->basePath.'/../Comics/'.$filename;
+	        $success = file_put_contents($file, $data);
+	       	$model->imagen=$filename;
+	       
 			if($model->save()){
                  $modelRelComics->tbl_usuarios_id=Yii::app()->session['usuario_id'];
                  $modelRelComics->tbl_comics_id=$model->id;
                  if($modelRelComics->save()){
-                     $this->redirect(array('view','id'=>$model->id));
+                    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$filename,'Meme');
+                    $this->redirect(array('view','id'=>$model->id));
                  }
 
 			}
