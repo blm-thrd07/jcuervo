@@ -94,7 +94,7 @@
 <div id="wrapper">
 <div style="display: none;" id="overlay"></div>
 <div style="display: none;" id="popup">
-    <img src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/fancybox_loading.gif" />
+    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/loading.gif" />
 </div>
 </div>
  
