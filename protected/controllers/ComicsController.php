@@ -93,6 +93,7 @@ class ComicsController extends Controller
                     $this->ShareComic($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$filename,'Meme');
 	       	 		$user = Usuarios::model()->findByPk(Yii::app()->session['usuario_id']);
 	       	 		echo CController::CreateUrl("App/Profile",array("id"=>$user->id_facebook));
+	       	 		Yii::app()->end();
                  }
 
 			}
