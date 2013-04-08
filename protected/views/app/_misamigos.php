@@ -14,6 +14,8 @@
           <?
 
 
+print_r($comicsAmigos);
+
            if(count($comicsAmigos)!=0){
              
  /*
