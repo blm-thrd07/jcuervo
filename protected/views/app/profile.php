@@ -32,7 +32,7 @@ Yii::app()->getClientScript()->registerScript('jquery',
 $('.ajax').colorbox({
  iframe:true, innerWidth:500, innerHeight:630,onClosed:function(){
     $.ajax({
-      url: '".Yii::app()->createUrl('App/nombrefoto')."',
+      url: 'url.php',
       
     }).done(function ( data ) {
         document.getElementById('imagen-perfil').innerHTML =' <img src=\"page.html\" width=\'112\'  height=\'112\' /> ';
