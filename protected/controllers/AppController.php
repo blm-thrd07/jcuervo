@@ -268,7 +268,7 @@ public function actionLogout(){
        'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
        'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
        'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
-       'destacado'=>$response[0]->Comics[$count]->destacado
+       'destacado'=>$response[0]->Comics[$count]->destacado,
        'idFb'=>$response[0]->Comics[$count]->Usuario->id_facebook);
 
    }
