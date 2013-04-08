@@ -295,6 +295,7 @@ class AvatarsController extends Controller
 	       
 	       if($model->save()){
 	       	 AvatarsController::ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+	       	 $this->redirect(array('App/profile','id'=>$model->Usuario->id_facebook));
 	       }
      	}
     }
