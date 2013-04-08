@@ -198,7 +198,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
           data:data,
           success:function(url){
-            window.location=url;
+            window.top.location=url;
           },
           error: function(data) { 
 
