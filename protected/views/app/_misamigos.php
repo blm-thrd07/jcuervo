@@ -13,8 +13,13 @@
           
           <?
            if(count($comicsAmigos)!=0){
+            $cantidad_amigos=count($comicsAmigos);
+
             for($amigo=0;$amigo<$comicsAmigos;$amigo++){
-                for($comic=0;$comic<count($comicsAmigos[$amigo]);$comic++){
+
+              $cantidad_comics_amigo=count($comicsAmigos[$amigo]);
+
+                for($comic=0;$comic<$cantidad_comics_amigo; $comic++){
 
 echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$comicsAmigos[$amigo][$comic]["id"].'"  class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$comicsAmigos[$amigo][$comic]['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$comicsAmigos[$amigo][$comic]['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$comicsAmigos[$amigo][$comic]['idFb'].'/picture').'</a></div>
                   </div>';
