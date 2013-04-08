@@ -117,7 +117,7 @@ echo "amigos cantidad".$cantidad_amigos;
 
  			 for($comic=0;$comic<$cantidad_comic;$comic++){
   	    			
-  	    			$json['Comics'][$i][$comic]=array(
+  	    			$json['Comics'][$comic]=array(
   	    				 'id'=>$response[$i]->amigo->Comics[$comic]->Comic->id,
   	    				 'imagen'=>$response[$i]->amigo->Comics[$comic]->Comic->imagen,
   	    				 'idFb'=>$response[$i]->amigo->id_facebook,
