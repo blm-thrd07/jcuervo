@@ -197,9 +197,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   saveToImage = function() {
     console.log("save");
-    jQuery("#overlay").css("display","block"); // displaying the overlay
-    jQuery("#popup").css("display","block"); // displaying the popup
-    jQuery("#popup").fadeIn(500); // Displaying popup with fade in animation
+    $("#overlay").css("display","block"); // displaying the overlay
+    $("#popup").css("display","block"); // displaying the popup
+    $("#popup").fadeIn("slow";
 
     stagePersonaje.toDataURL({
       mimeType: "image/png",
