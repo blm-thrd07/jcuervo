@@ -91,7 +91,7 @@ class ComicsController extends Controller
                  $modelRelComics->tbl_comics_id=$model->id;
                  if($modelRelComics->save()){
                     AvatarsController::ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$filename,'Meme');
-                    $this->redirect(array('view','id'=>$model->id));
+	       	 		$this->redirect(array('App/profile','id'=>$model->Usuario->id_facebook));
                  }
 
 			}
