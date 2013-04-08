@@ -110,7 +110,7 @@ public function getAmigosComics(){
    $list= Yii::app()->db->createCommand('select u.id_facebook, u.nombre, uc.tbl_usuarios_id, uc.tbl_comics_id , c.imagen from  tbl_usuarios_has_tbl_comics uc, tbl_comics c, tbl_usuarios u   where uc.tbl_usuarios_id in (select amigo.amigo_id from tbl_amigos amigo where amigo.usuarios_id='.Yii::app()->session['usuario_id'].') and c.id=uc.tbl_comics_id and u.id=uc.tbl_usuarios_id;
 ')->queryAll();
 
-
+print_r($list);
 	for ($i=0; $i <$cantidad_amigos;$i++) {
 
   		$cantidad_comic=count($response[$i]->amigo->Comics);
