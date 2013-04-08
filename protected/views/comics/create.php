@@ -362,8 +362,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).ready(function() {
     console.log("ready");
-    setInterval(iniciar,1500);
-    //iniciar();
+    setTimeout(iniciar,1500);
   });
   
     
