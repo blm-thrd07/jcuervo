@@ -242,7 +242,6 @@ public function actionLogout(){
                                          ));                
 
 
-                                         print_r($json);              
     $this->renderPartial('//app/_detalle',array('json'=>$json));
  
 
