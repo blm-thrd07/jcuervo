@@ -258,11 +258,10 @@ public function actionLogout(){
   
   public function actionMisMemes(){
   
-   $response= Usuarios::model()->findAll(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+   $response= Usuarios::model()->with('Comics.Comic')->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
+print_r($response)
    $numero_comics=count($response[0]->Comics);
-echo $numero_comics;
-   print_r($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
    
