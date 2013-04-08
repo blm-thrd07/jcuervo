@@ -184,7 +184,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
     layerPersonaje.add(MiAvatar);
     layerPersonaje.moveToTop();
-    layerPersonaje.draw();
+    //layerPersonaje.draw();
     currentSelected=MiAvatar;
   }
 
@@ -366,7 +366,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).ready(function() {
     console.log("ready");
-    setTimeout(iniciar,3000);
+    iniciar();
+    setTimeout(function(){ layerPersonaje.draw(); },3000);
   });
   
     
