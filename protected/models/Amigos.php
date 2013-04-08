@@ -118,6 +118,8 @@ public function getAmigosComics(){
 
   		echo $response[$i]->amigo->nombre;
 
+  		echo "cantidad".$cantidad_comic;
+
  			 for($comic=0;$comic<$cantidad_comic;$comic++){
   	    			
   	    			$json[$i][$comic]=array(
