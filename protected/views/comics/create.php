@@ -133,9 +133,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log("you hace clicked a tab btn");
       setTimeout(function(){
         console.log("cargado");
-        
+
         //$(".bx-viewport").width
-      }),3000);
+      },3000);
     });
 
 
