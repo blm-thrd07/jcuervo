@@ -239,7 +239,10 @@ public function actionLogout(){
                                          'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
                                          'destacado'=>$comic->UsuariosComics[0]->destacado,
                                          'comments'=>$comentarios
-                                         ));                              
+                                         ));                
+
+
+                                         print_r($json);              
     $this->renderPartial('//app/_detalle',array('json'=>$json));
  
 
