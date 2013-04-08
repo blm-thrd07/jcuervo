@@ -18,7 +18,7 @@
 
             $cantidad_amigos=count($comicsAmigos);
 
-            for($amigo=0;$amigo<$comicsAmigos;$amigo++){
+            for($amigo=0;$amigo<$cantidad_amigos;$amigo++){
 
 echo "holas";
              /*
