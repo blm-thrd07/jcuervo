@@ -139,6 +139,7 @@ class ComicsController extends Controller
 
       public function actionShare($id){
         
+        $model=Comics::model()->findByPk($id);
 
         $facebook = new facebook(array(
           'appId'  => '342733185828640',
@@ -146,8 +147,29 @@ class ComicsController extends Controller
         ));
 
         $my_access_token= $facebook->getAccessToken();
-        $this->ShareComic($my_access_token,'http://apps.t2omedia.com.mx/php2/jcuervo/Comics/comic1.jpg','Comic');
-	  }
+        $user =$facebook->getUser();
+
+        if ($user) {
+           try {
+              // Proceed knowing you have a logged in user who's authenticated.
+              $user_profile =  $facebook->api('/me');
+              $response=$this->ShareComic($my_access_token,'http://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$model->imagen,'Comic');
+              $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
+			  $numeroTotal=$modelUsuariosComics->NoCompartido;
+              $numeroTotal+=1;
+			  $modelUsuariosComics->NoCompartido=$numeroTotal;
+			  if($modelUsuariosComics->save(false)){
+			     echo $response;
+			  }
+
+            } catch (FacebookApiException $e) {
+               error_log($e);
+               $user = null;
+             }
+         }
+               
+
+	 }
 
 	  public function ShareComic($my_access_token,$link,$message){
 
@@ -159,9 +181,7 @@ class ComicsController extends Controller
       . "&method=POST"
       . "&access_token=" .$my_access_token;
    
-       echo '<html><body>';
-       echo file_get_contents($graph_url);
-       echo '</body></html>';
+      return file_get_contents($graph_url);
     }
 
 	/**
