@@ -228,8 +228,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   saveToImage = function() {
     console.log("save");
-    $("#overlay").css("display","block"); // displaying the overlay
-    $("#popup").css("display","block"); // displaying the popup
+    $("#overlay").css("display","block"); 
+    $("#popup").css("display","block"); 
     $("#popup").fadeIn("slow");
 
     stagePersonaje.toDataURL({
@@ -244,7 +244,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             window.location=url;
           },
           error: function(data) { 
-
+            alert("Vuelve a intentarlo");
+            $("#overlay").css("display","none"); 
+            $("#popup").css("display","none"); 
           },
         });
       }
