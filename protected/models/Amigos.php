@@ -110,7 +110,8 @@ public function getAmigosComics(){
 	$json=null;
      
 
-
+echo $response[2]->amigo->nombre;
+print_r($response[2]->amigo->Comics);
 
 	for ($i=0; $i <$cantidad_amigos;$i++) {
 
