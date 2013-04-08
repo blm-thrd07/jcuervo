@@ -14,6 +14,7 @@
           <?
 
           print_r($comicsAmigos);
+          echo $comicsAmigos[0][0]['imagen'];
            if(count($comicsAmigos)!=0){
            
 /*
