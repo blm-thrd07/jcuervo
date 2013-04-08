@@ -3,6 +3,11 @@
         <div class="memeThumbs">
         <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
         <? 
+
+
+        print_r($comics);
+        
+/*
         if(is_array($comics)){
          if(count($comics)!=0){
             print_r($comics['comics']);
@@ -12,7 +17,9 @@ echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2o
              } 
            }
 
-         }        
+         } 
+
+         */       
         ?>
         </div>
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>

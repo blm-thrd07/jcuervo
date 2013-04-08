@@ -125,7 +125,6 @@ public function getAmigosComics(){
 		             
     			} 
 	
-	
 	}
 
    return $json;
