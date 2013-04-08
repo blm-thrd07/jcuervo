@@ -112,6 +112,8 @@ public function actionLogout(){
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
+   $my_access_token= $facebook->getAccessToken();
+
 
    $modelcom = Usuarios::model()->with('Comics')->findAll();
    $modelc= new UsuariosHasTblComics;
@@ -208,7 +210,7 @@ public function actionLogout(){
     $json['avatar']['accesorios']=$AvatarAccesorios;
     
     $amigos=new Amigos;
-    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
+    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers','access_token'=>$my_access_token));
     $amigos->insertAmigosApp($amigosApp);    
     
     $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
