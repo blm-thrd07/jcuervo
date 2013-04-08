@@ -12,9 +12,9 @@
           <? } ?>
           
           <?
+echo json_encode($comicsAmigos);
 
-
-          print_r($comicsAmigos);
+         // print_r($comicsAmigos);
 /*
            if(count($comicsAmigos)!=0){
               foreach ($comicsAmigos['comicsAmigos'] as $key => $value){
