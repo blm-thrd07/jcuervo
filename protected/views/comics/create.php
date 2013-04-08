@@ -165,7 +165,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
     imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
     layerFondo.add(fondo);
-    layerFondo.draw();
     console.log("fondo agregado");
 
     imageMiAvatar = new Image();
@@ -367,7 +366,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(document).ready(function() {
     console.log("ready");
     iniciar();
-    setTimeout(function(){ layerPersonaje.draw(); },3000);
+    setTimeout(function(){ layerFondo.draw(); layerPersonaje.draw(); },3000);
   });
   
     
