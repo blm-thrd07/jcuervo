@@ -91,14 +91,45 @@
         
         </div>
       </section>
-
+<div id="wrapper">
 <div style="display: none;" id="overlay"></div>
 <div style="display: none;" id="popup">
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/fancybox_loading.gif" />
 </div>
+</div>
  
 <!--<a href="www.webstutorial.com/jquery-page-loading-popup/jquery" id="link">Click Here</a>-->
+<style type="text/css">
+#wrapper{
+    width:1002px;
+    margin:10px auto;
+    text-align:center;
+  }
 
+  #overlay {
+    background: #000000;
+    opacity:0.5;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+  }
+  
+  #popup {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 20px solid #DDDDDD;
+    left: 31%;
+    padding: 50px;
+    position: fixed;
+    text-align: center;
+    top: 28%;
+    width: 380px;
+    z-index: 20000;
+    -moz-border-radius:30px 0;
+  }
+</style>
 
 
 <?php //echo $this->renderPartial('_form', array('model'=>$model)); 
