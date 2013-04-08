@@ -8,7 +8,7 @@
         <div class="tabs"><a id="mismemes" href="#" class="selectedTab menu">Mis Memes</a><a  id="misamigos"  class="menu" href="#">De mis amigos</a><a id="categoria" class="menu" href="#">Por categoría</a></div>
         <div class="memeThumbs">
           <div class="itemMeme"><a href="<?php echo CController::CreateUrl('Comics/create'); ?>" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
-              <? 
+              <?php 
               if(is_array($json['avatar']['comics'])){
                     foreach ($json['avatar']['comics'] as $key => $value) {
                      echo '<div class="itemMeme"><a href="#a">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen'],"Comic").'</a></div>';
