@@ -110,12 +110,13 @@ public function getAmigosComics(){
 	$json=null;
      
 
-     echo $cantidad_amigos;
 
 
 	for ($i=0; $i <$cantidad_amigos;$i++) {
 
   		$cantidad_comic=count($response[$i]->amigo->Comics);
+
+  		echo $response[$i]->amigo->nombre;
 
  			 for($comic=0;$comic<$cantidad_comic;$comic++){
   	    			
