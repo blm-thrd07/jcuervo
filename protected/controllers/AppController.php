@@ -268,19 +268,8 @@ public function actionLogout(){
        'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
        'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
        'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
-       'destacado'=>$response[0]->Comics[$count]->destacado);
-  
-
-        $countComentarios=count($response[0]->Comics[$count]->Comic->Coments);
-           for($com=0;$com<$countComentarios;$com++){
-               $comics['comics'][$count]['comentarios'][$com]=array(
-                  'id'=>$response[0]->Comics[$count]->Comic->Coments[$com]->id,
-                  'mensaje'=>$response[0]->Comics[$count]->Comic->Coments[$com]->comment,
-                  'date'=>$response[0]->Comics[$count]->Comic->Coments[$com]->date,
-                  'nombreUsuario'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->nombre,
-                  'idFb'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->id_facebook
-              );
-       }
+       'destacado'=>$response[0]->Comics[$count]->destacado
+       'idFb'=>$response[0]->Comics[$count]->Usuario->id_facebook);
 
    }
 
