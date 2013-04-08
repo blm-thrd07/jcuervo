@@ -45,7 +45,7 @@
             </ul>
           </div>
           <div id="tab2" class="memeThumbs">
-            <ul class="js-slides-2 bx-slides">
+            <ul class="js-slides-1 bx-slides">
               <li>
                 <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
                 <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
