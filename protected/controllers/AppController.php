@@ -261,7 +261,7 @@ public function actionLogout(){
    $response= Usuarios::model()->findAll(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
    $numero_comics=count($response[0]->Comics);
-
+echo $numero_comics;
    print_r($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
