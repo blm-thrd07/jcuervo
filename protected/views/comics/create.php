@@ -92,6 +92,14 @@
         </div>
       </section>
 
+<div style="display: none;" id="overlay"></div>
+<div style="display: none;" id="popup">
+    <img src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/fancybox_loading.gif" />
+</div>
+ 
+<!--<a href="www.webstutorial.com/jquery-page-loading-popup/jquery" id="link">Click Here</a>-->
+
+
 
 <?php //echo $this->renderPartial('_form', array('model'=>$model)); 
 
@@ -189,6 +197,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   saveToImage = function() {
     console.log("save");
+    jQuery("#overlay").css("display","block"); // displaying the overlay
+    jQuery("#popup").css("display","block"); // displaying the popup
+    jQuery("#popup").fadeIn(500); // Displaying popup with fade in animation
+
     stagePersonaje.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
@@ -198,8 +210,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
           data:data,
           success:function(url){
-            alert(url);
-            //window.top.location=url;
+            window.location=url;
           },
           error: function(data) { 
 
@@ -368,6 +379,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("ready");
     iniciar();
     setTimeout(function(){ layerFondo.draw(); layerPersonaje.draw(); },3000);
+
+
+
   });
   
     
