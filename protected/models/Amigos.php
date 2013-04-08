@@ -117,7 +117,7 @@ public function getAmigosComics(){
 
  			 for($comic=0;$comic<$cantidad_comic;$comic++){
   	    			
-  	    			$json[$i]=array(
+  	    			$json['Comics'][$i][$comic]=array(
   	    				 'id'=>$response[$i]->amigo->Comics[$comic]->Comic->id,
   	    				 'imagen'=>$response[$i]->amigo->Comics[$comic]->Comic->imagen,
   	    				 'idFb'=>$response[$i]->amigo->id_facebook,
