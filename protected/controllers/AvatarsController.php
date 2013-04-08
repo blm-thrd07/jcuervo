@@ -271,32 +271,29 @@ class AvatarsController extends Controller
     }
     $avatar = $_POST['avatar'];
     if(isset($_POST['img'])){
-		$model=$this->loadModel(Yii::app()->session['usuario_id']);
+		$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
-        if(isset($_POST['img'])){
-         
-
-	        if($model->avatar_img != null){
-	           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
-	               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
-	           }
-	        }
-           $model->avatar_img=$_POST['img'];
-           $data=$_POST['img'];
-           define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
-	       $img = $data;
-	       $img = str_replace('data:image/png;base64,', '', $img);
-	       $img = str_replace(' ', '+', $img);
-	       $data = base64_decode($img);
-	       $filename=uniqid().'.png';
-	       $file = UPLOAD_DIR .$filename;
-	       $success = file_put_contents($file, $data);
-	       $model->avatar_img=$filename;
-	       
-	       if($model->save()){
-	       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
-	       }
-     	}
+        if($model->avatar_img != null){
+           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
+               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
+           }
+        }
+       $model->avatar_img=$_POST['img'];
+       $data=$_POST['img'];
+       define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
+       $img = $data;
+       $img = str_replace('data:image/png;base64,', '', $img);
+       $img = str_replace(' ', '+', $img);
+       $data = base64_decode($img);
+       $filename=uniqid().'.png';
+       $file = UPLOAD_DIR .$filename;
+       $success = file_put_contents($file, $data);
+       $model->avatar_img=$filename;
+       
+       if($model->save()){
+       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+       }
+     	
     }
     foreach ($avatar as $p => $pieza) {
 
@@ -309,14 +306,16 @@ class AvatarsController extends Controller
 
     	//print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
     	if($tipo==TiposPiezas::CUERPO || $tipo==TiposPiezas::CARA){
-	    	echo " pieza ";
+	    	//echo " pieza ";
 	    	$m = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>$tipo,)));
 
 	    	//si es cara borra cara_web
 	    	if($tipo==TiposPiezas::CARA){ 
 	    		$mcaras = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-		    	if(!count($mcaras)==0){ $mcaras->delete(); echo " --borrar cara web-- "; } 
-		    	else{ echo " --no borrar cara web-- "; }		
+		    	if(!count($mcaras)==0){ $mcaras->delete(); /*echo " --borrar cara web-- ";*/ } 
+		    	else{ 
+		    		//echo " --no borrar cara web-- "; 
+		    	}
 	    	}
 
 	    	//insertar
@@ -340,7 +339,7 @@ class AvatarsController extends Controller
 	    	}
 	    	
 	    } else if($tipo==TiposPiezas::ACCESORIO){
-	    	echo "accesorio";
+	    	//echo "accesorio";
 	    	$m = AvatarHasAccesorios::model()->find(array('condition'=>'avatar_id=:avatar_id AND accesorios_id=:accesorios_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':accesorios_id'=>$pieza_id,)));
 	    	//insertar
 	    	if(count($m)==0){
@@ -360,7 +359,7 @@ class AvatarsController extends Controller
 	    		$m->save(false);
 	    	}
 	    } else if($tipo==TiposPiezas::CARA_WEB){
-	    	echo "cara_web"; //
+	    	//echo "cara_web"; //
 	    	
 	    	$m = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
 	    	if(count($m)==0){
@@ -387,6 +386,8 @@ class AvatarsController extends Controller
 	    	}
 	    }
     }
+
+    echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
     
   }
 }
