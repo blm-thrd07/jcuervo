@@ -110,8 +110,10 @@ public function getAmigosComics(){
 	$json=null;
      
 
-echo $response[2]->amigo->nombre;
-print_r($response[2]->amigo->Comics);
+     $list= Yii::app()->db->createCommand('SELECT `t`.`usuarios_id` AS `t0_c0`, `t`.`amigo_id` AS `t0_c1`, `amigo`.`id` AS `t1_c0`, `amigo`.`correo` AS `t1_c1`, `amigo`.`nombre` AS `t1_c2`, `amigo`.`id_facebook` AS `t1_c3`, `amigo`.`id_album` AS `t1_c4`, `amigo`.`sexo` AS `t1_c5`, `Comics`.`tbl_usuarios_id` AS `t2_c0`, `Comics`.`tbl_comics_id` AS `t2_c1`, `Comics`.`destacado` AS `t2_c2`, `Comics`.`NoComentarios` AS `t2_c3`, `Comics`.`NoVisto` AS `t2_c4`, `Comics`.`NoCompartido` AS `t2_c5`, `Comic`.`id` AS `t3_c0`, `Comic`.`imagen` AS `t3_c1`, `Comic`.`date` AS `t3_c2` FROM `tbl_amigos` `t` LEFT OUTER JOIN `tbl_usuarios` `amigo` ON (`t`.`amigo_id`=`amigo`.`id`) LEFT OUTER JOIN `tbl_usuarios_has_tbl_comics` `Comics_Comics` ON (`amigo`.`id`=`Comics_Comics`.`tbl_usuarios_id`) LEFT OUTER JOIN `tbl_usuarios_has_tbl_comics` `Comics` ON (`Comics`.`tbl_usuarios_id`=`Comics_Comics`.`tbl_comics_id`) LEFT OUTER JOIN `tbl_comics` `Comic` ON (`Comics`.`tbl_comics_id`=`Comic`.`id`) WHERE (usuarios_id='.Yii::app()->session['usuario_id'].')')->queryAll();
+
+
+print_r($list);
 
 	for ($i=0; $i <$cantidad_amigos;$i++) {
 
