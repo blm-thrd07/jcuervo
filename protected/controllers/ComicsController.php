@@ -90,7 +90,7 @@ class ComicsController extends Controller
                  $modelRelComics->tbl_usuarios_id=Yii::app()->session['usuario_id'];
                  $modelRelComics->tbl_comics_id=$model->id;
                  if($modelRelComics->save()){
-                    AvatarsController::ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$filename,'Meme');
+                    $this->ShareComic($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$filename,'Meme');
 	       	 		$this->redirect(array('App/profile','id'=>$model->Usuario->id_facebook));
                  }
 
