@@ -261,9 +261,10 @@ public function actionLogout(){
    $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    $numero_comics=count($response);
    $comics=array();
-   echo $numero_comics;
 
-   /*
+
+$comics['comics']=null;
+   
    for($count=0;$count<$numero_comics;$count++){
    
       $comics['comics'][$count]=array(
@@ -277,7 +278,7 @@ public function actionLogout(){
    }
 
     $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
-*/
+
   }
 
   public function actionMisAmigos(){
