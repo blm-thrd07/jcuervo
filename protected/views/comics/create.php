@@ -199,7 +199,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("save");
     $("#overlay").css("display","block"); // displaying the overlay
     $("#popup").css("display","block"); // displaying the popup
-    $("#popup").fadeIn("slow";
+    $("#popup").fadeIn("slow");
 
     stagePersonaje.toDataURL({
       mimeType: "image/png",
