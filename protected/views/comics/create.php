@@ -358,6 +358,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-removeElement").on("click", removeImage);
   $("#js-sendBack").on("click", sendBack);
 
+  $(document).ready(function() {
+    return layerPersonaje.draw();
+  });
   
     
 ',CClientScript::POS_END);
