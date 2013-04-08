@@ -296,7 +296,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   function insertar(obj,pieza_id,img) {
     var aux, insertar=true;
     aux=obj;
-    if(pieza_id==="undefined") { insertar=false; alert("undefined"); } 
+    if(typeof pieza_id==="undefined") { insertar=false; alert("undefined"); } 
     if(obj==="objeto"){ 
       for(i=0;i<objetos.length;i++){
         if(objetos[i].attrs.id == pieza_id) insertar=false;
