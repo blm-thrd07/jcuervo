@@ -23,35 +23,13 @@
             foreach ($value as $ke => $val) {
 
 
-                  echo $val['imagen'];
-            }
-           }
-
-
-/*
-            $cantidad_amigos=count($comicsAmigos);
-
-            for($amigo=0;$amigo<$cantidad_amigos;$amigo++){
-
-             
-              $cantidad_comics_amigo=count($comicsAmigos[$amigo]);
-
-                for($comic=0;$comic<$cantidad_comics_amigo; $comic++){
-
-
-echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$comicsAmigos[$amigo][$comic]["id"].'"  class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$comicsAmigos[$amigo][$comic]['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$comicsAmigos[$amigo][$comic]['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$comicsAmigos[$amigo][$comic]['idFb'].'/picture').'</a></div>
-                  </div>';
-                  
+echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$val["id"].'"  class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$val['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$val['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$val['idFb'].'/picture').'</a></div>
+                  </div>';            
 
                 }
-
-                
-
-            }
- 
- */
+           }
              
-            }  
+        }  
 
                         
           ?>
