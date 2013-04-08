@@ -362,7 +362,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).ready(function() {
     console.log("ready");
-    setInterval(iniciar,3000);
+    setInterval(iniciar,1500);
     //iniciar();
   });
   
