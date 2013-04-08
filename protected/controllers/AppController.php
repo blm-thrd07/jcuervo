@@ -258,10 +258,12 @@ public function actionLogout(){
   
   public function actionMisMemes(){
   
-  echo Yii::app()->session['usuario_id'];
-   $response= Usuarios::model()->with('Comics.Comic')->findAll(array('condition'=>'Comics_Comics.tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+   $response= Comics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
 print_r($response);
+
+
+/*
    $numero_comics=count($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
@@ -275,8 +277,8 @@ print_r($response);
        'idFb'=>$response[0]->Comics[$count]->Usuario->id_facebook);
 
    }
-
-    $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
+*/
+    //$this->renderPartial('//app/_mismemes',array('comics'=>$comics));
 
   }
 
