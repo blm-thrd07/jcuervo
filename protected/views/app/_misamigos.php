@@ -19,14 +19,10 @@
 
            foreach ($comicsAmigos as $key => $value) {
 
-
-            foreach ($value as $ke => $val) {
-
-
-echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$val["id"].'"  class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$val['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$val['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$val['idFb'].'/picture').'</a></div>
-                  </div>';            
-
-                }
+           echo $value['nombre']
+/*
+          echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$val["id"].'"  class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$val['imagen']).'</a><div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$val['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$val['idFb'].'/picture').'</a></div>
+                  </div>';    */        
            }
              
         }  
