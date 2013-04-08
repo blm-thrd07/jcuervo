@@ -164,7 +164,7 @@ class AvatarsController extends Controller
 	}
 
 
-	public static function ShareMemeLink($my_access_token,$link,$message){
+	public function ShareMemeLink($my_access_token,$link,$message){
 
        $photo_url=$link;
        $photo_caption=$message;
@@ -294,8 +294,7 @@ class AvatarsController extends Controller
 	       $model->avatar_img=$filename;
 	       
 	       if($model->save()){
-	       	 AvatarsController::ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
-	       	 $this->redirect(array('App/profile','id'=>$model->Usuario->id_facebook));
+	       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
      	}
     }
