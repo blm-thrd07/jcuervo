@@ -59,7 +59,7 @@ class UsuariosComicsComentarios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-              'Usuario' => array(self::BELONGS_TO, 'Usuarios', 'tbl_usuarios_id'),
+              'Usuarios' => array(self::BELONGS_TO, 'Usuarios', 'tbl_usuarios_id'),
 			  'Comics' => array(self::BELONGS_TO, 'TblComics', 'tbl_comics_id'),
 		);
 	}
