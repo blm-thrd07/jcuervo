@@ -94,11 +94,7 @@ class AvatarsController extends Controller
 	        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
 	        ));
 
-	   $modelcom = Usuarios::model()->with('Comics')->findAll();
-	   $modelc= new UsuariosHasTblComics;
-	   $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>Yii::app()->session['usuario_id'])));
-	   $logoutUrl=null;
-
+     	$logoutUrl=null;
 
 	   $response=Usuarios::model()->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
 	   
@@ -112,33 +108,6 @@ class AvatarsController extends Controller
 	   $catalogo_ojos=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::OJOS);
 	   $catalogo_bocas=CatalogoPiezas::getCatalogoByTipo(TiposPiezas::BOCA);
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
-
-      // print_r($catalogo_caras);     
-      
-	   $numero_comics=count($response[0]->Comics);
-	   $comics=array();
-	   for($count=0;$count<$numero_comics;$count++){
-	   
-	      $comics[$count]=array(
-	       'id'=> $response[0]->Comics[$count]->Comic->id,
-	       'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
-	       'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
-	       'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
-	       'destacado'=>$response[0]->Comics[$count]->destacado);
-	  
-
-	        $countComentarios=count($response[0]->Comics[$count]->Comic->Coments);
-	           for($com=0;$com<$countComentarios;$com++){
-	               $comics[$count]['comentarios'][$com]=array(
-	                  'id'=>$response[0]->Comics[$count]->Comic->Coments[$com]->id,
-	                  'mensaje'=>$response[0]->Comics[$count]->Comic->Coments[$com]->comment,
-	                  'date'=>$response[0]->Comics[$count]->Comic->Coments[$com]->date,
-	                  'nombreUsuario'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->nombre,
-	                  'idFb'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->id_facebook
-	              );
-	       }
-
-	   }
 
 	    $cantidad=count($response[0]->Avatar->AvatarP);
 	    if(count($cantidad)==0){
@@ -187,56 +156,6 @@ class AvatarsController extends Controller
 	    'avatarPiezas'=>$datosAvatar); 
 	    $json['avatar']['cara_web']=$AvatarCaraWeb;
 	    $json['avatar']['accesorios']=$AvatarAccesorios;
-	   
-	  
-
-	     
-
-        /*if(isset($_POST['avatarImg'])){
-
-
-
-         $facebook = new facebook(array(
-           'appId'  => '342733185828640',
-           'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-         ));
-       
-        $user =$facebook->getUser();
-        $my_access_token= $facebook->getAccessToken();
-
-
-        if($model->avatar_img != null){
-           if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
-               unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
-           }
-         }
-           $model->avatar_img=$_POST['avatarImg'];
-           $data=$_POST['avatarImg'];
-           define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
-	       $img = $data;
-	       $img = str_replace('data:image/png;base64,', '', $img);
-	       $img = str_replace(' ', '+', $img);
-	       $data = base64_decode($img);
-	       $filename=uniqid().'.png';
-	       $file = UPLOAD_DIR .$filename;
-	       $success = file_put_contents($file, $data);
-	       $model->avatar_img=$filename;
-	       
-	       
-	       if($model->save()){
-	       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
-	       }
-	      
-
-         }
-
-        if(isset($_POST['Avatars']))
-	 	{
-			$model->attributes=$_POST['Avatars'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}	
-		*/
 		
 		$this->render('update',array(
 			'json'=>$json,
@@ -245,7 +164,7 @@ class AvatarsController extends Controller
 	}
 
 
-	public function ShareMemeLink($my_access_token,$link,$message){
+	public static function ShareMemeLink($my_access_token,$link,$message){
 
        $photo_url=$link;
        $photo_caption=$message;
@@ -343,7 +262,6 @@ class AvatarsController extends Controller
     $user =$facebook->getUser();
     $my_access_token= $facebook->getAccessToken();
 
-
     $edit=$_POST['edit'];
     //borra todo
     if($edit==1){
@@ -376,10 +294,8 @@ class AvatarsController extends Controller
 	       $model->avatar_img=$filename;
 	       
 	       if($model->save()){
-	       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+	       	 AvatarsController::ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	       }
-	      
-
      	}
     }
     foreach ($avatar as $p => $pieza) {

@@ -199,11 +199,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
           data:data,
           success:function(data){
-            alert(data); 
+
           },
           error: function(data) { 
-               alert("Error occured.please try again");
-               alert(data);
+
           },
         });
       }
