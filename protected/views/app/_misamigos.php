@@ -13,15 +13,15 @@
           
           <?
 
-          print_r($comicsAmigos);
-          echo $comicsAmigos[0][0]['imagen'];
            if(count($comicsAmigos)!=0){
            
-/*
+
             $cantidad_amigos=count($comicsAmigos);
 
             for($amigo=0;$amigo<$comicsAmigos;$amigo++){
 
+echo "holas";
+             /*
               $cantidad_comics_amigo=count($comicsAmigos[$amigo]);
 
                 for($comic=0;$comic<$cantidad_comics_amigo; $comic++){
@@ -31,9 +31,11 @@ echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2o
 
                 }
 
+                */
+
             }
  
- */               
+             
             }  
 
                         
