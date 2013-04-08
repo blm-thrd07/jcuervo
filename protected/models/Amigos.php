@@ -108,7 +108,9 @@ public function getAmigosComics(){
  	$cantidad_amigos=count($response);
 	
 	$json=null;
-	
+     
+
+     echo $cantidad_amigos;
 
 
 	for ($i=0; $i <$cantidad_amigos;$i++) {
