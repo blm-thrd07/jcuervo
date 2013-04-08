@@ -259,26 +259,21 @@ public function actionLogout(){
   public function actionMisMemes(){
   
    $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
-   
-print_r($response);
-
-
-/*
    $numero_comics=count($response[0]->Comics);
    $comics=array();
    for($count=0;$count<$numero_comics;$count++){
    
       $comics['comics'][$count]=array(
-       'id'=> $response[0]->Comics[$count]->Comic->id,
-       'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
-       'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
-       'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
-       'destacado'=>$response[0]->Comics[$count]->destacado,
-       'idFb'=>$response[0]->Comics[$count]->Usuario->id_facebook);
+       'id'=> $response[0]->Comic->id,
+       'imagen'=>$response[0]->Comic->imagen,
+       'NoComentarios'=>$response[0]->NoComentarios,
+       'NoVisto'=>$response[0]->->NoVisto,
+       'destacado'=>$response[0]->->destacado,
+       'idFb'=>$response[0]->Usuario->id_facebook);
 
    }
-*/
-    //$this->renderPartial('//app/_mismemes',array('comics'=>$comics));
+
+    $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
 
   }
 
