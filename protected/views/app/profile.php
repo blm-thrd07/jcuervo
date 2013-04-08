@@ -20,8 +20,8 @@
 </section>
 
 <?php
-$cs->registerScript(
-'jquery',
+
+Yii::app()->getClientScript()->registerScript('jquery', 
 "   
 $('.ajax').colorbox({
  iframe:true, innerWidth:500, innerHeight:630,onClosed:function(){
