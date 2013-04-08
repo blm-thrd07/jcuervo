@@ -109,15 +109,15 @@ public function getAmigosComics(){
 	
 	$json=null;
 	
+
+
 	for ($i=0; $i <$cantidad_amigos;$i++) {
 
-
-  		
   		$cantidad_comic=count($response[$i]->amigo->Comics);
 
  			 for($comic=0;$comic<$cantidad_comic;$comic++){
   	    			
-  	    			$json['Comics'][$i][$comic]=array(
+  	    			$json[$i][$comic]=array(
   	    				 'id'=>$response[$i]->amigo->Comics[$comic]->Comic->id,
   	    				 'imagen'=>$response[$i]->amigo->Comics[$comic]->Comic->imagen,
   	    				 'idFb'=>$response[$i]->amigo->id_facebook,
