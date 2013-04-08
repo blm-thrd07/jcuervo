@@ -258,6 +258,7 @@ class AvatarsController extends Controller
        'appId'  => '342733185828640',
        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
      ));
+    $facebook = $facebook->require_frame();
     $facebook = $facebook->require_login();
     $user =$facebook->getUser();
     $my_access_token= $facebook->getAccessToken();
