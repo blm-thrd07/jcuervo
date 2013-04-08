@@ -107,7 +107,7 @@ public function getAmigosComics(){
   	$response= Amigos::model()->findAll(array('condition'=>'usuarios_id=:uid','params'=>array(':uid'=> Yii::app()->session['usuario_id'])));   
  	$cantidad_amigos=count($response);
 	
-
+echo "amigos cantidad".$cantidad_amigos;
 	$json=null;
 	
 	for ($i=0; $i <$cantidad_amigos;$i++) {
@@ -124,6 +124,8 @@ public function getAmigosComics(){
   	    				 'nombre'=>$response[$i]->amigo->nombre);
 		             
     			} 
+
+    		
 	
 	}
 

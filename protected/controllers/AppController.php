@@ -292,7 +292,7 @@ public function actionLogout(){
 
     $model_Amigos_Avatars=new Amigos;
     $amigosComics=$model_Amigos_Avatars->getAmigosComics();
-    $comicsAmigos=array('comicsAmigos'=>$amigosComics);
+    $comicsAmigos=$amigos;
     $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos));
   }
 
