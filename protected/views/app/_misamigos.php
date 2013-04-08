@@ -12,7 +12,11 @@
           <? } ?>
           
           <?
+
+          print_r($comicsAmigos);
            if(count($comicsAmigos)!=0){
+           
+/*
             $cantidad_amigos=count($comicsAmigos);
 
             for($amigo=0;$amigo<$comicsAmigos;$amigo++){
@@ -28,7 +32,7 @@ echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2o
 
             }
  
-                 
+ */               
             }  
 
                         
