@@ -342,10 +342,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
       });
       layerPersonaje.add(obj);
-      if(obj==="objeto"){ 
+      if(aux==="objeto"){ 
         objetos.push(obj);
       }
-      if(obj==="amigo"){ 
+      if(aux==="amigo"){ 
         amigos.push(obj);
       }
       layerPersonaje.draw();
