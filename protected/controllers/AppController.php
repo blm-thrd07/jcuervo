@@ -258,6 +258,7 @@ public function actionLogout(){
   
   public function actionMisMemes(){
   
+  echo Yii::app()->session['usuario_id'];
    $response= Usuarios::model()->with('Comics.Comic')->findAll(array('condition'=>'t.id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
 print_r($response);
