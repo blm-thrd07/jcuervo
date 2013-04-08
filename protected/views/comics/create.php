@@ -135,52 +135,54 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
 
 
-  stagePersonaje = new Kinetic.Stage({
-    container: "personajeCanvas",
-    width: 258,
-    height: 460,
-  });
-  
-  layerFondo = new Kinetic.Layer();
-  layerPersonaje = new Kinetic.Layer();
-  stagePersonaje.add(layerFondo);
-  stagePersonaje.add(layerPersonaje);
-
-  imageBackground = new Image();
-  fondo = new Kinetic.Image({
-      x: 0,
-      y: 0,
-      rotation: 0,
-      height: 258,
-      width: 460,
-      image: imageBackground,
-      offset: [100, 100],
-      tipo: "fondo",
-      id: 1
+  iniciar = function(){
+    stagePersonaje = new Kinetic.Stage({
+      container: "personajeCanvas",
+      width: 258,
+      height: 460,
     });
-  imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
-  layerFondo.add(fondo);
-  layerFondo.draw();
-  console.log("fondo agregado");
+    
+    layerFondo = new Kinetic.Layer();
+    layerPersonaje = new Kinetic.Layer();
+    stagePersonaje.add(layerFondo);
+    stagePersonaje.add(layerPersonaje);
 
-  imageMiAvatar = new Image();
-  MiAvatar = new Kinetic.Image({
-      x: 0,
-      y: 0,
-      rotation: 0,
-      height: 258,
-      width: 460,
-      image: imageMiAvatar,
-      draggable: true,
-      offset: [100, 100],
-      tipo: "MiAvatar",
-      id: 1
-    });
-  imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
-  layerPersonaje.add(MiAvatar);
-  layerPersonaje.moveToTop();
-  layerPersonaje.draw();
-  currentSelected=MiAvatar;
+    imageBackground = new Image();
+    fondo = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        rotation: 0,
+        height: 258,
+        width: 460,
+        image: imageBackground,
+        offset: [100, 100],
+        tipo: "fondo",
+        id: 1
+      });
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
+    layerFondo.add(fondo);
+    layerFondo.draw();
+    console.log("fondo agregado");
+
+    imageMiAvatar = new Image();
+    MiAvatar = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        rotation: 0,
+        height: 258,
+        width: 460,
+        image: imageMiAvatar,
+        draggable: true,
+        offset: [100, 100],
+        tipo: "MiAvatar",
+        id: 1
+      });
+    imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
+    layerPersonaje.add(MiAvatar);
+    layerPersonaje.moveToTop();
+    layerPersonaje.draw();
+    currentSelected=MiAvatar;
+  }
 
   saveToImage = function() {
     console.log("save");
@@ -353,14 +355,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-toImage").on("click", saveToImage);
   $("#js-listenerStat").on("click", listenerStat);
   $("#js-rotateLeft").on("click", rotateLeft);
-  $("#js-rotateRight").bind("click", rotateRight);
+  $("#js-rotateRight").on("click", rotateRight);
   $("#js-sendFront").on("click", sendFront);
   $("#js-removeElement").on("click", removeImage);
   $("#js-sendBack").on("click", sendBack);
 
   $(document).ready(function() {
     console.log("ready");
-    return layerPersonaje.draw();
+    iniciar();
   });
   
     
