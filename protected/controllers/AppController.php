@@ -258,7 +258,7 @@ public function actionLogout(){
   
   public function actionMisMemes(){
   
-   $response= Comics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+   $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
 print_r($response);
 
