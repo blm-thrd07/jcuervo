@@ -129,7 +129,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab1 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
     $("#tab2 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
     $("#tab3 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
-    $(".js-tabEngine a").on("click", function() {
+    $(".itemSelector a").on("click", function() {
       console.log("you hace clicked a tab btn");
       setTimeout(function(){
         console.log("cargado");
