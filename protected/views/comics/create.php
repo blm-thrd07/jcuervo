@@ -359,6 +359,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-sendBack").on("click", sendBack);
 
   $(document).ready(function() {
+    console.log("ready");
     return layerPersonaje.draw();
   });
   
