@@ -131,7 +131,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab3 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
     $(".js-tabEngine a").on("click", function() {
       console.log("you hace clicked a tab btn");
-      $(".bx-viewport").width
+      setTimeout(function(){
+        console.log("cargado");
+        
+        //$(".bx-viewport").width
+      }),3000);
     });
 
 
