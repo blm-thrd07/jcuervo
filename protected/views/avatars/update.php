@@ -329,6 +329,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   listenerStat = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
     console.log(json.children);    
+    //cara,cuerpo,ojos,boca
+    alert("index cara: "+cara.getZIndex());
+    alert("index cuerpo: "+cuerpo.getZIndex());
+    alert("index ojos: "+ojos.getZIndex());
     return false;
   };
 
