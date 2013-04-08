@@ -19,6 +19,12 @@
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
 </section>
 
+<a class='ajax' href="<?php echo CController::CreateUrl("CaraWeb/create"); ?>" >camara web</a>
+
+
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.colorbox.js"></script>
+
 <?php
 
 Yii::app()->getClientScript()->registerScript('jquery', 

@@ -390,4 +390,9 @@ class AvatarsController extends Controller
     echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
     
   }
+
+  
+  
 }
+
+
