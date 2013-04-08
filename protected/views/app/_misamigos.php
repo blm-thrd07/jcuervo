@@ -16,6 +16,19 @@
            if(count($comicsAmigos)!=0){
            
 
+
+           foreach ($comicsAmigos as $key => $value) {
+
+
+            foreach ($value as $ke => $val) {
+
+
+                  echo $val['imagen'];
+            }
+           }
+
+
+/*
             $cantidad_amigos=count($comicsAmigos);
 
             for($amigo=0;$amigo<$cantidad_amigos;$amigo++){
@@ -36,6 +49,7 @@ echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2o
 
             }
  
+ */
              
             }  
 
