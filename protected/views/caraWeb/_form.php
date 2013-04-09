@@ -50,13 +50,12 @@
   
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script language="JavaScript">
-alert("complete");
 
 	var  visible=0; 
 	$(".espacio_camara").before(webcam.get_html(320, 250));
-	webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
-	webcam.set_quality( 90 ); // JPEG quality (1 -100)
-	webcam.set_shutter_sound( true ); // play shutter click sound
+	//webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
+	//webcam.set_quality( 90 ); // JPEG quality (1 -100)
+	//webcam.set_shutter_sound( true ); // play shutter click sound
 
 	webcam.set_hook( 'onComplete', 'my_completion_handler' );
 	function do_upload() {
