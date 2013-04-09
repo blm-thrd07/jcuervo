@@ -19,6 +19,7 @@
           <button type="button" class="btn com" id="<? echo $json['comic']['comic']['id'];  ?>"><i class="icon-comment"></i> Comentar</button>
         </form>
         
+        <div id="comics">
        <? 
            if(is_array($json['comic']['comic']['comments'])){
                 foreach ($json['comic']['comic']['comments'] as $key => $value) {
@@ -29,6 +30,8 @@
           <h3><?echo $value['nombre']; ?></h3>
           <p><? echo $value['comment'] ?></p>
         </article>
+
+        </div>
   
                    <!--
                     $value['id'];

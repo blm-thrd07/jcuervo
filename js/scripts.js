@@ -41,6 +41,7 @@
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
                alert(data);
+               $(".comics").html(data);
             }
           });
 
