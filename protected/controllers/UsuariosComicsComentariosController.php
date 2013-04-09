@@ -83,8 +83,11 @@ class UsuariosComicsComentariosController extends Controller
                     $numeroTotal+=1;
 			        $modelUsuariosComics->NoComentarios=$numeroTotal;
 			        if($modelUsuariosComics->save(false)){
-			        		echo "guardado";
-			        		//$this->redirect(array('view','id'=>$model->id));
+
+                          $model_comic= new UsuariosComicsComentarios;
+                          $json=$model_comic->getComentarios($id);
+                          $this->renderPartial('//app/_comment',array('json'=>$json));
+
 			        }        
 			}else{
 

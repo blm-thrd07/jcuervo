@@ -217,34 +217,9 @@ public function actionLogout(){
 
   public function actionDetalle($id){
    
-    $model_comic= new Comics;
-    $comic=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
-    
-    $cantidad_comentarios=count($comic->Coments);
-    $comentarios=null;
-    for($i=0;$i<$cantidad_comentarios;$i++){
-      $comentarios[$i]=array('id'=>$comic->Coments[$i]->id,
-                             'comment'=>$comic->Coments[$i]->comment,
-                             'date'=>$comic->Coments[$i]->date,
-                             'idFb'=>$comic->Coments[$i]->Usuarios->id_facebook,
-                             'nombre'=>$comic->Coments[$i]->Usuarios->nombre);
-       }
-
-    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
-                          'comic'=>array('id'=>$comic->id,
-                                         'imagen'=>$comic->imagen,
-                                         'date'=>$comic->date,
-                                         'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
-                                         'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
-                                         'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
-                                         'destacado'=>$comic->UsuariosComics[0]->destacado,
-                                         'comments'=>$comentarios
-                                         ));                
-
-
+    $model_comic= new UsuariosComicsComentarios;
+    $json=$model_comic->getComentarios($id);
     $this->renderPartial('//app/_detalle',array('json'=>$json));
- 
-
  }
 
   public function actionDest(){
