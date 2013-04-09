@@ -65,11 +65,12 @@ class CaraWebController extends Controller
         		
         		if($filepath == null)
                        throw new Exception ("Null filepath!");
-        	    
+        	                  print_r("expression");
+
+        	   /* 
         	    $contents = file_get_contents('php://input');
         		$result = file_put_contents( $filepathname, $contents);
-               print_r("expression");
-               /*
+               
                 if($result){
 
                 $url = Yii::app()->baseUrl. '/AvatarCaras/' . $filename;
