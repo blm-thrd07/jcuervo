@@ -50,6 +50,7 @@
 
 
 <script language="JavaScript">
+alert("complete");
 	webcam.set_hook( 'onComplete', 'my_completion_handler' );
 	function do_upload() {
 		// upload to server
