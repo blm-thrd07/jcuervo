@@ -69,9 +69,9 @@ class CaraWebController extends Controller
         	   
         	    $contents = file_get_contents('php://input');
         	    
-        	    
         		$result = file_put_contents( $filepathname, $contents);
-               
+               print_r("expression");
+               /*
                 if($result){
 
                 $url = Yii::app()->baseUrl. '/AvatarCaras/' . $filename;
@@ -102,7 +102,7 @@ class CaraWebController extends Controller
                      print "ERROR: Failed to write data to $filename, check permissions\n";
                      exit();
                 } 
-                
+                */
        
         }else{
        	    throw new CHttpException(404,'The specified post cannot be found.');
