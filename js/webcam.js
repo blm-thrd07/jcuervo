@@ -169,7 +169,7 @@ window.webcam = {
 		// enable or disable the shutter sound effect
 		// defaults to enabled
 		this.shutter_sound = enabled;
-		this.shutter_url = url ? url : 'http://localhost/noosbit_pf/js/shutter.mp3';
+		this.shutter_url = url ? url : 'http://apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3';
 	},
 	
 	flash_notify: function(type, msg) {
