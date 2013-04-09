@@ -159,11 +159,11 @@ public function actionLogin(){
 
         $modelComics=new UsuariosHasTblComics;
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
-       print_r($row);
-        /*
-        $resultado=$modelComics->findAll(array('condition'=>'NoVisto>'.$somevariable,'limit'=>10)); 
+       
+        
+        $resultado=$modelComics->findAll(array('condition'=>'NoVisto > '.$row[0]['max'],'limit'=>10)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
-  */
+  
   }
    
   public function actionCatmascomp(){
