@@ -161,7 +161,7 @@ public function actionLogin(){
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
         
-        $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$cantidad ,'limit'=>5)); 
+        $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$cantidad.' order by NoVisto desc ' ,'limit'=>5)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   
   }
@@ -171,7 +171,7 @@ public function actionLogin(){
           $modelComics=new UsuariosHasTblComics;
           $row= Yii::app()->db->createCommand('select max(NoCompartido) as max from tbl_usuarios_has_tbl_comics')->queryAll();
           $cantidad=$row[0]['max'];
-          $resultado=$modelComics->findAll(array('condition'=>'NoCompartido<='.$cantidad,'limit'=>5));
+          $resultado=$modelComics->findAll(array('condition'=>'NoCompartido<='.$cantidad.' order by NoCompartido desc ','limit'=>5));
           $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
 
   }
