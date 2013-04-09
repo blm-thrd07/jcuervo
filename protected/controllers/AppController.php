@@ -161,7 +161,7 @@ public function actionLogin(){
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
        
         
-        $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$row[0]['max'],'limit'=>10)); 
+        $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$row[0]['max'],'limit'=>2)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   
   }
