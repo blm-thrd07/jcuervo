@@ -49,11 +49,8 @@ class UsuariosHasTblComicsController extends Controller
          $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
 			   $numeroTotal=$modelUsuariosComics->NoVisto;
                $numeroTotal+=1;
-			   $modelUsuariosComics->NoVisto=$numeroTotal;
-			
+			   $modelUsuariosComics->NoVisto=$numeroTotal;			
 			        if($modelUsuariosComics->save(false)){
-
-                          echo "guardado";
 
 			        }  
          }
