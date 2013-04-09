@@ -112,7 +112,6 @@ public function actionLogin(){
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
-   $user =$facebook->getUser();
 
 
    $logoutUrl=null;
@@ -121,7 +120,21 @@ public function actionLogin(){
    $modelComics= new UsuariosHasTblComics;
    $comics=$modelComics->getMyComics();
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
+   
    $my_access_token=$facebook->getAccessToken();
+
+   $user =$facebook->getUser();
+        $my_access_token= $facebook->getAccessToken();
+
+        if ($user) {
+           try {
+              // Proceed knowing you have a logged in user who's authenticated.
+              $user_profile =  $facebook->api('/me');
+            } catch (FacebookApiException $e) {
+               error_log($e);
+               $user = null;
+             }
+         }
    
    $friends = $facebook->api('/me/friends',array('access_token'=>$my_access_token));
    print_r($friends);
