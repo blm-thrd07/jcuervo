@@ -117,6 +117,10 @@ public function actionLogin(){
    $modelComics= new UsuariosHasTblComics;
    $comics=$modelComics->getMyComics();
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
+   $my_access_token=$facebook->getAccessToken();
+   $friends = $facebook->api('/me/friends',array('access_token'=>$my_access_token));
+   print_r($friends);
+
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
   }
 
