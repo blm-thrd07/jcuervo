@@ -19,8 +19,5 @@
         <div class="pager"><a href="#" class="btn"><i class="icon-chevron-left"></i></a><a href="#" class="btn"><i class="icon-chevron-right"></i></a></div>
 </section>
 
-<a class='ajax' href="<?php echo CController::CreateUrl("CaraWeb/create"); ?>" >camara web</a>
-
-
 
 <a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
