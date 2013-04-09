@@ -2,6 +2,9 @@
 
 class UsuariosHasTblComicsController extends Controller
 {
+
+    public $layout='//layouts/main';
+ 
 	public function actionIndex()
 	{
 		$this->render('index');
@@ -44,6 +47,7 @@ class UsuariosHasTblComicsController extends Controller
 
 	public function actionUpdateViews(){
 
+     /*
       if(isset($_POST['UsuariosHasTblComics'])){
          $id=$_POST['UsuariosHasTblComics']['tbl_comics_id'];
          $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
@@ -57,6 +61,8 @@ class UsuariosHasTblComicsController extends Controller
 
 			        }  
          }
+
+         */
 
 	}
 }
