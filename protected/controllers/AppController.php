@@ -160,8 +160,12 @@ public function actionLogin(){
         $modelComics=new UsuariosHasTblComics;
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
+        if($cantidad!=null){
+            $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$cantidad.' order by NoVisto desc ' ,'limit'=>5)); 
+        }else{
+            $resultado=null;
+        }
         
-        $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$cantidad.' order by NoVisto desc ' ,'limit'=>5)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   
   }
@@ -171,7 +175,11 @@ public function actionLogin(){
           $modelComics=new UsuariosHasTblComics;
           $row= Yii::app()->db->createCommand('select max(NoCompartido) as max from tbl_usuarios_has_tbl_comics')->queryAll();
           $cantidad=$row[0]['max'];
-          $resultado=$modelComics->findAll(array('condition'=>'NoCompartido<='.$cantidad.' order by NoCompartido desc ','limit'=>5));
+          if($cantidad!=null){
+                  $resultado=$modelComics->findAll(array('condition'=>'NoCompartido<='.$cantidad.' order by NoCompartido desc ','limit'=>5));
+          }else{
+            $resultado=null;
+          }
           $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
 
   }
@@ -180,7 +188,13 @@ public function actionLogin(){
         $modelComics=new UsuariosHasTblComics;
         $row= Yii::app()->db->createCommand('select max(NoComentarios) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
-        $resultado=$modelComics->findAll(array('condition'=>'NoComentarios <= '.$cantidad.' order by  NoComentarios desc','limit'=>5));
+
+        if($cantidad!=null){
+           $resultado=$modelComics->findAll(array('condition'=>'NoComentarios <= '.$cantidad.' order by  NoComentarios desc','limit'=>5));
+        }else{
+           $resultado=null;
+        }
+
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   }
 
