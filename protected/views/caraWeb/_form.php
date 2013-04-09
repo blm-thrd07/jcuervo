@@ -5,7 +5,7 @@
 
 <style type="text/css">
 	.espacio_camara{
-		background-color: white;	height: auto;
+		background-color: orange;	height: auto;
 	}
 	input{
 		display: inline-block; width: 110px;
@@ -18,7 +18,7 @@
 	<div class="grid_3 espacio_camara alpha"></div>
 
 	<div>
-		<input type="button" value="Parámetros" onClick="webcam.configure()" > <br>
+		<input style="background-color: 'white';" type="button" value="Parámetros" onClick="webcam.configure()" > <br>
 		<input type="button" value="Tomar foto" onClick="webcam.freeze()" > <br>
 		<input type="button" value="Guardar" onClick="do_upload()" > <br>
 		<input type="button" value="Otra vez" onClick="webcam.reset()" > 
