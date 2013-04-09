@@ -90,6 +90,8 @@ public function actionLogin(){
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
          }else{
+
+
             $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
 
           //$this->render('login',array('loginUrl'=>$loginUrl));
@@ -110,6 +112,8 @@ public function actionLogin(){
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
+   $user =$facebook->getUser();
+
 
    $logoutUrl=null;
    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
@@ -118,6 +122,7 @@ public function actionLogin(){
    $comics=$modelComics->getMyComics();
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    $my_access_token=$facebook->getAccessToken();
+   
    $friends = $facebook->api('/me/friends',array('access_token'=>$my_access_token));
    print_r($friends);
 
