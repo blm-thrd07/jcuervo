@@ -49,6 +49,7 @@
 </div><!-- form -->
   
  <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+<script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 
 
 <script language="JavaScript">
