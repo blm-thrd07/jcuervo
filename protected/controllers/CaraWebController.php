@@ -57,8 +57,7 @@ class CaraWebController extends Controller
 
 	public function actionSaveFoto(){
         if(isset($_GET['NoExpediente'])){
-    		print_r("entre");
-        		/* 
+        		
 
         		 $filename = date('YmdHis') . '.jpg';
                  $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
@@ -72,27 +71,7 @@ class CaraWebController extends Controller
                
                 if($result){
 
-                $url = Yii::app()->baseUrl. '/AvatarCaras/' . $filename;
-                echo $url;  
-        		    
-        		     $model=new CaraWeb;
-                     $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
-
-                     if(count($Existe_foto)>0){
-                     	if(file_exists($filepath.$Existe_foto->foto)){
-	                        unlink($filepath.$Existe_foto->foto);
-                        }
-                        $model=$this->loadModel(Yii::app()->session['usuario_id']);
-                        $model->url=$filename;
-                        $model->save();
-                        $this->redirect('/Avatars/update/');
-
-                     }else if($Existe_foto==0){
-                        $model->avatar_id=Yii::app()->session['usuario_id'];
-        		        $model->url=$filename;
-        		        $model->save();
-                        $this->redirect('/Avatars/update/');
-                     }
+             		print_r("expression");
                 } 
 
         		if (!$result) {
@@ -100,7 +79,7 @@ class CaraWebController extends Controller
                      exit();
                 }  
 
-                */  
+                
                 
        
         }else{
