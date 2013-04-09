@@ -156,8 +156,15 @@ public function actionLogin(){
 
 
   public function actionCatmasvist(){
+
         $modelComics=new UsuariosHasTblComics;
-        $resultado=$modelComics->findAll(array('condition'=>'NoVisto>10')); 
+        $criteria=new CDbCriteria;
+        $criteria->select='max(NoVisto) AS maxColumn';
+        $row = $modelComics->model()->find($criteria);
+        $somevariable = $row['maxColumn'];
+        echo $somevariable;
+
+        $resultado=$modelComics->findAll(array('condition'=>'NoVisto>'.$somevariable,'limit'=>10)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   }
    
