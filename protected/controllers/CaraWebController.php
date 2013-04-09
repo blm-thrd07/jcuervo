@@ -57,7 +57,7 @@ class CaraWebController extends Controller
 
 	public function actionSaveFoto(){
 
-        if(isset(Yii::app()->session['usuario_id'])){
+        if(isset($_GET['NoExpediente'])){
     
         		 $filename = date('YmdHis') . '.jpg';
                  $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
