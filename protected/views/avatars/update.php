@@ -25,7 +25,7 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/caras/".$value['url'],'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
@@ -41,7 +41,7 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
@@ -57,7 +57,7 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/bocas/".$value['url'],'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/ojos/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
@@ -73,7 +73,7 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/ojos/".$value['url'],'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/bocas/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
