@@ -146,7 +146,8 @@ public function actionLogin(){
     $model_Amigos_Avatars=new Amigos;
     $amigosComics=$model_Amigos_Avatars->getAmigosComics();
     $comicsAmigos=$amigosComics;
-    $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos));
+    $cantidad_amigos=count($model_Amigos_Avatars->findAll(array('condition'=>'usuarios_id='.Yii::app()->session['usuario_id'])));
+    $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos,'cantidad_amigos'=>$cantidad_amigos));
   }
 
   public function actionCategoria(){

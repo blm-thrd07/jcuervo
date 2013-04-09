@@ -2,7 +2,7 @@
         <h2>Memes de mis amigos</h2>
         <div class="tabs"><a id="mismemes" href="#" class="menu">Mis Memes</a><a  id="misamigos"  class="selectedTab menu" href="">De mis amigos</a><a id="categoria" class="menu" href="">Por categoría</a></div>
         <div class="memeThumbs">
-          <? if(count($comicsAmigos)==0){?>
+          <? if(count($cantidad_amigos)==0){?>
               <article id="noFriends">
                 <div id='fb-root'>
                 <h3>:(</h3>
