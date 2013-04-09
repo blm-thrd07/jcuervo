@@ -36,7 +36,7 @@
             data:"UsuariosHasTblComics[tbl_comics_id]="+comicid,
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosHasTblComics/UpdateViews",
             success: function(data){
-                alert(data);
+            
             }
           });
   });
