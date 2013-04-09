@@ -85,7 +85,8 @@ class UsuariosComicsComentarios extends CActiveRecord
 
 
     public function getComentarios($id){
- 
+    
+
     $model_comic= new Comics;
     $comic=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
     $cantidad_comentarios=count($comic->Coments);

@@ -97,11 +97,9 @@ public function actionLogin(){
 }
 
 
-public function actionLogout(){
-  Yii::app()->user->logout();
-}
-
-
+  public function actionLogout(){
+    Yii::app()->user->logout();
+  }
 
   public function actionProfile($id)
   {
@@ -114,15 +112,12 @@ public function actionLogout(){
         ));
 
    $logoutUrl=null;
-  
    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    $avatarImg=$response->Avatar->avatar_img;
-
    $modelComics= new UsuariosHasTblComics;
    $comics=$modelComics->getMyComics();
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
-
   }
 
   public function actionDetalle($id){
@@ -260,11 +255,6 @@ public function actionLogout(){
       return $friends;
 
   }
-
-  
-
-
-  
 
   
 }
