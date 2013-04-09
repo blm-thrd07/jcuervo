@@ -159,11 +159,9 @@ public function actionLogin(){
 
         $modelComics=new UsuariosHasTblComics;
         $criteria=new CDbCriteria;
-        $criteria->select='max(NoVisto) AS maxColumn';
+        $criteria->select='max(NoVisto)';
         $row = $modelComics->model()->find($criteria);
-        $somevariable = $row['maxColumn'];
-        echo $somevariable;
-
+       print_r($row);
         $resultado=$modelComics->findAll(array('condition'=>'NoVisto>'.$somevariable,'limit'=>10)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   }
