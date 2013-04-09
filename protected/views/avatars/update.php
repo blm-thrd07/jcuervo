@@ -16,20 +16,20 @@
             <li><a href="#tab5">Accesorios</a></li>
           </ul>
           <div id="tab1" class="memeThumbs">
-              <? 
+             <? 
                 $bandera=false;
-                  if(is_array($json['catalogos']['caras'])){
+                  if(is_array($json['catalogos']['accesorios'])){
                     echo '<ul class="js-slides-1 bx-slides">';
-                    foreach ($json['catalogos']['caras'] as $key => $value) {  
+                    foreach ($json['catalogos']['accesorios'] as $key => $value) {  
                       if($key%12==0) {
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/accesorios/".$value['url'])).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
-              ?>   
+              ?> 
           </div>
           <div id="tab2" class="memeThumbs">
                <? 
@@ -258,11 +258,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
     console.log(img);
     if(aux!=="cara_web")
-      image.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+      image.src="'.Yii::app()->request->baseUrl.'/images/"+img;
     else{
       alert(img); 
       image.src = "data:image/png;base64," + img + "";
-      //image.src=img; 
     }
     obj.on("mouseover", function() {
       this.setStroke("980d2e");
@@ -313,7 +312,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
-      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/images/accesorios/"+img;
       accesorio.on("mouseover", function() {
         this.setStroke("980d2e");
         this.setStrokeWidth(1);
