@@ -67,18 +67,41 @@ class CaraWebController extends Controller
                        throw new Exception ("Null filepath!");
         	    
         	    $contents = file_get_contents('php://input');
+        	    print_r("expression");
+        		/*
         		$result = file_put_contents( $filepathname, $contents);
                
                 if($result){
 
-             		print_r("expression");
+                $url = Yii::app()->baseUrl. '/AvatarCaras/' . $filename;
+                echo $url;  
+        		    
+        		     $model=new CaraWeb;
+                     $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
+
+                     if(count($Existe_foto)>0){
+                     	if(file_exists($filepath.$Existe_foto->foto)){
+	                        unlink($filepath.$Existe_foto->foto);
+                        }
+                        $model=$this->loadModel(Yii::app()->session['usuario_id']);
+                        $model->url=$filename;
+                        $model->save();
+                        $this->redirect('/Avatars/update/');
+
+                     }else if($Existe_foto==0){
+                        $model->avatar_id=Yii::app()->session['usuario_id'];
+        		        $model->url=$filename;
+        		        $model->save();
+                        $this->redirect('/Avatars/update/');
+                     }
+
                 } 
 
         		if (!$result) {
                      print "ERROR: Failed to write data to $filename, check permissions\n";
                      exit();
                 }  
-
+				*/
                 
                 
        
