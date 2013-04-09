@@ -59,16 +59,16 @@ class CaraWebController extends Controller
         if(isset($_GET['NoExpediente'])){
         		
 
-        		 $filename = date('YmdHis') . '.jpg';
-                 $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
+        		 $filename = date('Ymd:His') . '.jpg';
+                 print_r("expression");
+                 /*$filepath=Yii::app()->baseUrl.'/AvatarCaras/';
 				 $filepathname =  $filepath.$filename;
         		
         		if($filepath == null)
                        throw new Exception ("Null filepath!");
-        	            	    print_r("expression");
+        	    
+        	    $contents = file_get_contents('php://input');
 
-//        	    $contents = file_get_contents('php://input');
-        		/*
         		$result = file_put_contents( $filepathname, $contents);
                
                 if($result){
