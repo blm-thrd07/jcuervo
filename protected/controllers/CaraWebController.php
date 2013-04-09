@@ -65,9 +65,9 @@ class CaraWebController extends Controller
         		
         		if($filepath == null)
                        throw new Exception ("Null filepath!");
-        	    
-        	    $contents = file_get_contents('php://input');
-        	    print_r("expression");
+        	            	    print_r("expression");
+
+//        	    $contents = file_get_contents('php://input');
         		/*
         		$result = file_put_contents( $filepathname, $contents);
                
