@@ -21,7 +21,7 @@
   $cs = Yii::app()->getClientScript();
   //$cs->registerScriptFile($baseUrl.'/js/webcam.js');
   $cs->registerScript(
-  'configuration-script_webcam','
+  'configuration-script_webcam',' alert("conf");
   		webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
 		webcam.set_quality( 90 ); // JPEG quality (1 -100)
 		webcam.set_shutter_sound( true ); // play shutter click sound',
@@ -33,7 +33,7 @@
   		var  visible=0; alert("before");
 		$(".espacio_camara").before(webcam.get_html(320, 250));
 	',
-  CClientScript::POS_READY
+  CClientScript::POS_END
 );
 ?>
 
