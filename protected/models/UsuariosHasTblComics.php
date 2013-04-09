@@ -76,6 +76,29 @@ class UsuariosHasTblComics extends CActiveRecord
 		);
 	}
 
+
+
+   public function getMyComics(){
+    $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+    $numero_comics=count($response);
+    $comics=array();
+    $comics['comics']=null;
+   
+   for($count=0;$count<$numero_comics;$count++){
+   
+      $comics['comics'][$count]=array(
+       'id'=> $response[$count]->Comic->id,
+       'imagen'=>$response[$count]->Comic->imagen,
+       'NoComentarios'=>$response[$count]->NoComentarios,
+       'NoVisto'=>$response[$count]->NoVisto,
+       'destacado'=>$response[$count]->destacado,
+       'idFb'=>$response[$count]->Usuario->id_facebook);
+
+   }
+
+   return $comics;
+
+   }
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

@@ -113,105 +113,13 @@ public function actionLogout(){
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
 
-   $modelcom = Usuarios::model()->with('Comics')->findAll();
-   $modelc= new UsuariosHasTblComics;
-   $comic=$modelc->with('Comic.Coments')->findAll(array('condition'=>' t.tbl_usuarios_id=:id ','params'=>array(':id'=>1)));
    $logoutUrl=null;
-
-
-   $response= Usuarios::model()->with('Avatar.AvatarP.AvatarImg','Comics.Comic.Coments')->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+   $response= Usuarios::model()->findAll(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+   $modelComics= new UsuariosHasTblComics;
+   $comics=$modelComics->getMyComics();
    
-   $model_PiezaAvatar=new CatalogoPiezas;
-   $model_Accesorios=new Accesorios;
-   $model_Amigos_Avatars=new Amigos;
-
-   
-   $catalogo_caras=$model_PiezaAvatar->getCatalogoCaras();
-   $catalogo_cuerpos=$model_PiezaAvatar->getCatalogoCuerpos();
-   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
-   $amigosAvatars=$model_Amigos_Avatars->getAmigosAvatars();
-   $amigosComics=$model_Amigos_Avatars->getAmigosComics();
-
-   
-   $numero_comics=count($response[0]->Comics);
-   $comics=array();
-   for($count=0;$count<$numero_comics;$count++){
-   
-      $comics[$count]=array(
-       'id'=> $response[0]->Comics[$count]->Comic->id,
-       'imagen'=>$response[0]->Comics[$count]->Comic->imagen,
-       'NoComentarios'=>$response[0]->Comics[$count]->NoComentarios,
-       'NoVisto'=>$response[0]->Comics[$count]->NoVisto,
-       'destacado'=>$response[0]->Comics[$count]->destacado);
-  
-
-        $countComentarios=count($response[0]->Comics[$count]->Comic->Coments);
-           for($com=0;$com<$countComentarios;$com++){
-               $comics[$count]['comentarios'][$com]=array(
-                  'id'=>$response[0]->Comics[$count]->Comic->Coments[$com]->id,
-                  'mensaje'=>$response[0]->Comics[$count]->Comic->Coments[$com]->comment,
-                  'date'=>$response[0]->Comics[$count]->Comic->Coments[$com]->date,
-                  'nombreUsuario'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->nombre,
-                  'idFb'=>$response[0]->Comics[$count]->Comic->Coments[$com]->Usuarios->id_facebook
-              );
-       }
-
-   }
-
-    $cantidad=count($response[0]->Avatar->AvatarP);
-    if(count($cantidad)==0){
-      $json['edit']="0"; } 
-    else{ $json['edit']="1"; }
-
-    $datosAvatar=array();
-    for($count=0;$count<$cantidad;$count++){
-      $datosAvatar[$count]=array(
-        'piezaid'=>$response[0]->Avatar->AvatarP[$count]->pieza_avatar_id,
-        'tipo_pieza_id'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->AvatarTipo->id,
-        'descripcion'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->AvatarTipo->descripcion,
-        'AvatarImg'=>$response[0]->Avatar->AvatarP[$count]->AvatarImg->url,
-        'scalex'=>$response[0]->Avatar->AvatarP[$count]->scalex,
-        'scaley'=>$response[0]->Avatar->AvatarP[$count]->scaley,
-        'posx'=>$response[0]->Avatar->AvatarP[$count]->posx,
-        'posy'=>$response[0]->Avatar->AvatarP[$count]->posy,
-        'zindex'=>$response[0]->Avatar->AvatarP[$count]->zindex,
-        'rotation'=>$response[0]->Avatar->AvatarP[$count]->rotation
-        );
-    }
-    $AvatarAccesorios=array();
-    $cantidad=count($response[0]->Avatar->AvatarA);
-    for ($count=0; $count < $cantidad; $count++) { 
-      $AvatarAccesorios[$count]=array(
-        'accesorios_id'=>$response[0]->Avatar->AvatarA[$count]->accesorios_id,
-        'posx'=>$response[0]->Avatar->AvatarA[$count]->posx,
-        'posy'=>$response[0]->Avatar->AvatarA[$count]->posy,
-        //'zindex'=>$response[0]->Avatar->AvatarA[$count]->zindex,
-        'rotation'=>$response[0]->Avatar->AvatarA[$count]->rotation,
-        'accesorioImg'=>$response[0]->Avatar->AvatarA[$count]->Accesorios->url
-      );
-    }
-
-    $AvatarCaraWeb=array();
-    $cantidad=count($response[0]->Avatar->CaraWeb);
-    if($cantidad==1){
-      $AvatarCaraWeb=array(
-        'url'=>$response[0]->Avatar->CaraWeb->url,
-      );
-    }
-
-    $json['catalogos']=array('caras'=>$catalogo_caras,'cuerpos'=>$catalogo_cuerpos,'accesorios'=>$catalogo_accesorios);
-    $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
-    $json['avatar']=array('avataid'=>$response[0]->Avatar->id,'avatarImg'=>$response[0]->Avatar->avatar_img,'datecreated'=>$response[0]->Avatar->date_created,
-    'avatarPiezas'=>$datosAvatar,'amigosAvatars'=>$amigosAvatars,'comicsAmigos'=>$amigosComics); 
-    $json['avatar']['comics']=$comics;
-    $json['avatar']['cara_web']=$AvatarCaraWeb;
-    $json['avatar']['accesorios']=$AvatarAccesorios;
-    
-    $amigos=new Amigos;
-    $amigosApp=$facebook->api(array('method' => 'friends.getAppUsers'));
-    $amigos->insertAmigosApp($amigosApp);    
-    
-    $this->render('profile',array('json'=>$json, 'logoutUrl'=>$logoutUrl));
+   $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo);
+   $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
 
   }
 
@@ -230,26 +138,9 @@ public function actionLogout(){
   
   public function actionMisMemes(){
   
-   $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
-   $numero_comics=count($response);
-   $comics=array();
-
-
-$comics['comics']=null;
-   
-   for($count=0;$count<$numero_comics;$count++){
-   
-      $comics['comics'][$count]=array(
-       'id'=> $response[$count]->Comic->id,
-       'imagen'=>$response[$count]->Comic->imagen,
-       'NoComentarios'=>$response[$count]->NoComentarios,
-       'NoVisto'=>$response[$count]->NoVisto,
-       'destacado'=>$response[$count]->destacado,
-       'idFb'=>$response[$count]->Usuario->id_facebook);
-
-   }
-
-    $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
+   $modelComics= new UsuariosHasTblComics;
+   $comics=$modelComics->getMyComics();
+   $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
 
   }
 
