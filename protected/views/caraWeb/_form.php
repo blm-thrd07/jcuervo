@@ -46,7 +46,7 @@
   $baseUrl = Yii::app()->baseUrl; 
   $cs = Yii::app()->getClientScript();
   $cs->registerScriptFile($baseUrl.'/js/webcam.js');
-  $cs->registerScriptFile($baseUrl.'/js/webcam.swf');
+ // $cs->registerScriptFile($baseUrl.'/js/webcam.swf');
   $cs->registerScript(
   'configuration-script_webcam',
   'webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
