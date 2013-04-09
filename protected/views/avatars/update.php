@@ -88,7 +88,7 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/accesorios/".$value['url'],'class'=>'lazy')).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/accesorios/".$value['url'])).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
