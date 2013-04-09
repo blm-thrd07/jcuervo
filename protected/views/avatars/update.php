@@ -64,7 +64,7 @@
               ?> 
           </div>
           <div id="tab4" class="memeThumbs">
-           <? 
+          <? 
                 $bandera=false;
                   if(is_array($json['catalogos']['ojos'])){
                     echo '<ul class="js-slides-1 bx-slides">';
@@ -73,27 +73,27 @@
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/ojos/".$value['url'])).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/ojos/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
-              ?>   
+              ?> 
           </div>
           <div id="tab5" class="memeThumbs">
-            <? 
+              <? 
                 $bandera=false;
-                  if(is_array($json['catalogos']['ojos'])){
+                  if(is_array($json['catalogos']['accesorios'])){
                     echo '<ul class="js-slides-1 bx-slides">';
-                    foreach ($json['catalogos']['ojos'] as $key => $value) {  
+                    foreach ($json['catalogos']['accesorios'] as $key => $value) {  
                       if($key%12==0) {
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/ojos/".$value['url'])).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/accesorios/".$value['url'],'class'=>'lazy')).'</div>'; 
                     }
                     echo "</li></ul>";
                   }
-              ?>   
+              ?> 
           </div>
         </div>
       </section>
