@@ -56,10 +56,10 @@ class CaraWebController extends Controller
 	}
 
 	public function actionSaveFoto(){
-
-        if(isset($_GET['NoExpediente'])){
+		print_r("hola");
+        /*if(isset($_GET['NoExpediente'])){
     		print_r("entre");
-        		 /*$filename = date('YmdHis') . '.jpg';
+        		 $filename = date('YmdHis') . '.jpg';
                  $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
 				 $filepathname =  $filepath.$filename;
         		
@@ -98,11 +98,11 @@ class CaraWebController extends Controller
                      print "ERROR: Failed to write data to $filename, check permissions\n";
                      exit();
                 }    
-                */
+                
        
         }else{
        	    throw new CHttpException(404,'The specified post cannot be found.');
-       }   
+       }*/   
         
    }
 
