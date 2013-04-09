@@ -122,13 +122,15 @@ public function actionLogin(){
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    
    $my_access_token=$facebook->getAccessToken();
-    $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
-print_r($friends);
-
+   $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
    
- 
-
+   if(count($friends)!=null){
+       $model_amigos=new Amigos;
+       $model_amigos->insertAmigosApp($friends);
+   }
+  
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
+  
   }
 
   public function actionDetalle($id){
