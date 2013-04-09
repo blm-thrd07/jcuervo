@@ -158,9 +158,7 @@ public function actionLogin(){
   public function actionCatmasvist(){
 
         $modelComics=new UsuariosHasTblComics;
-        $criteria=new CDbCriteria;
-        $criteria->select='max(NoVisto)';
-        $row = $modelComics->model()->find($criteria);
+        $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
        print_r($row);
         /*
         $resultado=$modelComics->findAll(array('condition'=>'NoVisto>'.$somevariable,'limit'=>10)); 
