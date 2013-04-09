@@ -98,7 +98,6 @@
 </div>
 </div>
  
-<!--<a href="www.webstutorial.com/jquery-page-loading-popup/jquery" id="link">Click Here</a>-->
 <style type="text/css">
 #wrapper{
     width:1002px;

@@ -23,23 +23,4 @@
 
 
 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.colorbox.js"></script>
-
-<?php
-
-Yii::app()->getClientScript()->registerScript('jquery', 
-"   
-$('.ajax').colorbox({
- iframe:true, innerWidth:500, innerHeight:630,onClosed:function(){
-    $.ajax({
-      url: 'url.php',
-      
-    }).done(function ( data ) {
-        document.getElementById('imagen-perfil').innerHTML =' <img src=\"page.html\" width=\'112\'  height=\'112\' /> ';
-    });
- }
-}); 
- ",
-  CClientScript::POS_READY
-);
-?>
+<a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
