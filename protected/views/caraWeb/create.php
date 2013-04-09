@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
   </head>
 
-  <body class="lb" style="background:'white'; ">
+  <body class="lb">
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
 
 	<h1>Tomar  Fotografia</h1>
 
-	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+	<?php //echo $this->renderPartial('_form', array('model'=>$model));
+	 ?>
+
+<script>
+alert('hoae');
+</script>
 
 
+<button>bpblblbll</button>
 <?php  
   Yii::app()->clientScript->registerCoreScript('jquery');
   $baseUrl = Yii::app()->baseUrl; 
