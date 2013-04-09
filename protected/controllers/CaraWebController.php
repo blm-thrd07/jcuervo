@@ -68,7 +68,7 @@ class CaraWebController extends Controller
 
         	   
         	    $contents = file_get_contents('php://input');
-        	    print_r("expression");
+        	    print_r($contents);
         	    /*
         		$result = file_put_contents( $filepathname, $contents);
                
