@@ -26,7 +26,7 @@
 
 </style>
 
-	<div class="grid_3 espacio_camara alpha"></div>
+	<div class="grid_3 espacio_camara alpha">espacio camara</div>
 
 	<div>
 		<input type="button" value="Parámetros" onClick="webcam.configure()" > <br>
@@ -83,13 +83,6 @@
 		else alert("PHP Error: " + msg);
 	}
 </script>
-
-<script>
-alert('hoae');
-</script>
-
-
-<button>bpblblbll</button>
 <?php  
   Yii::app()->clientScript->registerCoreScript('jquery');
   $baseUrl = Yii::app()->baseUrl; 
