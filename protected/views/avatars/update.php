@@ -441,18 +441,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-
-  $(function() {
-    $(".lazy").lazyload({
-      effect: "fadeIn"
-    });
-    return setTimeout((function() {
-      $(window).trigger("scroll");
-      console.log(":)");
-      return layerPersonaje.draw();
-    }), 100);
-  });
-
   $(document).ready(function() {
     $(".js-tabEngine").easytabs({
       animate: false,
