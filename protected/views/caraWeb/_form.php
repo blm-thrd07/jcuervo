@@ -5,7 +5,7 @@
 
 <style type="text/css">
 	.espacio_camara{
-		background-color: orange;	height: auto;
+		background-color: white;	height: auto;
 	}
 	input{
 		display: inline-block; width: 110px;
