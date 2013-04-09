@@ -27,7 +27,7 @@
     <div id="upload_results"></div>
 
 
-<div class="form" style="background:'white'; ">
+<div class="form">
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 

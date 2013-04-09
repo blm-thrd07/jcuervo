@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
   </head>
 
-  <body class="lb">
+  <body class="lb" style="background:'white'; ">
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
 
 	<h1>Tomar  Fotografia</h1>
