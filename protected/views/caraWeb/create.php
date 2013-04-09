@@ -16,7 +16,6 @@
 
 
 <?php  
-  //Yii::app()->clientScript->registerCoreScript('jquery');
   $baseUrl = Yii::app()->baseUrl; 
   $cs = Yii::app()->getClientScript();
   //$cs->registerScriptFile($baseUrl.'/js/webcam.js');
