@@ -23,7 +23,7 @@
   $cs->registerScriptFile($baseUrl.'/js/webcam.swf');
   $cs->registerScript(
   'configuration-script_webcam',
-  'webcam.set_api_url("/noosbit_pf/index.php/foto/SaveFoto");
+  'webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
 		webcam.set_quality( 90 ); // JPEG quality (1 -100)
 		webcam.set_shutter_sound( true ); // play shutter click sound',
   CClientScript::POS_HEAD
