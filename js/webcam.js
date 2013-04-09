@@ -24,8 +24,8 @@ window.webcam = {
 	ie: !!navigator.userAgent.match(/MSIE/),
 	protocol: location.protocol.match(/https/i) ? 'https' : 'http',
 	callback: null, // user callback for completed uploads
-	swf_url: 'http://localhost/noosbit_pf/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
-	shutter_url: 'http://localhost/noosbit_pf/js/shutter.mp3', // URI to shutter.mp3 sound
+	swf_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
+	shutter_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3', // URI to shutter.mp3 sound
 	NoExpediente:'',
 	api_url: '', // URL to upload script
 	loaded: false, // true when webcam movie finishes loading
