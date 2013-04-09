@@ -180,7 +180,7 @@ public function actionLogin(){
         $modelComics=new UsuariosHasTblComics;
         $row= Yii::app()->db->createCommand('select max(NoComentarios) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
-        $resultado=$modelComics->findAll(array('condition'=>'NoComentarios <= '.$cantidad.' order by  NoVisto DESC ','limit'=>5));
+        $resultado=$modelComics->findAll(array('condition'=>'NoComentarios <= '.$cantidad.' order by  NoVisto ASC ','limit'=>5));
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
   }
 
