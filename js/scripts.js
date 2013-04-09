@@ -40,8 +40,7 @@
             data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
-               alert(data);
-               $(".comics").html(data);
+               $("#comics").html(data);
             }
           });
 
