@@ -1,3 +1,8 @@
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'cara-web-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+
 <style type="text/css">
 	.espacio_camara{
 		background-color: orange;	height: auto;
@@ -23,11 +28,6 @@
 
 
 <div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'cara-web-form',
-	'enableAjaxValidation'=>false,
-)); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
