@@ -26,8 +26,7 @@ window.webcam = {
 	callback: null, // user callback for completed uploads
 	swf_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
 	shutter_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3', // URI to shutter.mp3 sound
-	NoExpediente:'',
-	api_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/CaraWeb/SaveFoto', // URL to upload script
+	api_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/SaveFoto', // URL to upload script
 	loaded: false, // true when webcam movie finishes loading
 	quality: 90, // JPEG quality (1 - 100)
 	shutter_sound: true, // shutter sound effect on/off
@@ -65,12 +64,6 @@ window.webcam = {
 			return true;
 		}
 		return false; // no hook defined
-	},
-	set_NoExpediente: function(NExpediente){
-       this.NoExpediente=NExpediente;
-	},
-	get_NoExpediente: function(){
-		return this.NoExpediente;
 	},
 	set_api_url: function(url) {
 		// set location of upload API script
