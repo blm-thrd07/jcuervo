@@ -4,14 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
-    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
+    <!--<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">-->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
   </head>
 
   <body class="lb">
-   	<div style='margin-left:-100px; margin-top:-80px'>
-             <a href="/jcuervo/index.php/elemento/menu"><img src="<?php echo Yii::app()->baseUrl."/images/back.png"; ?>" style='cursor:pointer;'></a>
-    </div>
      
 	<h1>Tomar  Fotografia</h1>
 
@@ -23,7 +20,6 @@
   $baseUrl = Yii::app()->baseUrl; 
   $cs = Yii::app()->getClientScript();
   //$cs->registerScriptFile($baseUrl.'/js/webcam.js');
-  //$cs->registerScriptFile($baseUrl.'/js/webcam.swf');
   $cs->registerScript(
   'configuration-script_webcam',
   'webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
