@@ -12,13 +12,15 @@
 		float: right;
 		margin-top: -250px;
 		margin-right: 530px;
+		color: white;
+		background-color: white;
 	}
 </style>
 
 	<div class="grid_3 espacio_camara alpha"></div>
 
 	<div>
-		<input style="background-color: 'white';" type="button" value="Parámetros" onClick="webcam.configure()" > <br>
+		<input type="button" value="Parámetros" onClick="webcam.configure()" > <br>
 		<input type="button" value="Tomar foto" onClick="webcam.freeze()" > <br>
 		<input type="button" value="Guardar" onClick="do_upload()" > <br>
 		<input type="button" value="Otra vez" onClick="webcam.reset()" > 
