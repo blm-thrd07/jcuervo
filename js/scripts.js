@@ -29,6 +29,12 @@
         return false;
   });
 
+  $(".cdetail").live('click',function(){
+
+     alert('hola');
+
+  });
+
 
   $(".com").live('click',function(){
          
