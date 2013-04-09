@@ -1,6 +1,5 @@
 <?php
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
-echo $loginUrl;
 echo "<a href='".$loginUrl."'>looogin</a>";
 ?>
 
