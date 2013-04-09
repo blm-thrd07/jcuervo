@@ -85,7 +85,7 @@ class UsuariosComicsComentariosController extends Controller
 			        if($modelUsuariosComics->save(false)){
 
                           $model_comic= new UsuariosComicsComentarios;
-                          $json=$model_comic->getComentarios($id);
+                          $json=$model_comic->getComentarios($model->tbl_comics_id);
                           $this->renderPartial('//app/_comment',array('json'=>$json));
 
 			        }        
