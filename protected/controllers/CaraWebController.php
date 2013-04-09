@@ -123,10 +123,12 @@ class CaraWebController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->avatar_id));
 		}
+	
+	    $this->renderPartial('//CaraWeb/create',array('model'=>$model));
 
-		$this->render('create',array(
+		/*$this->render('create',array(
 			'model'=>$model,
-		));
+		));*/
 	}
 
 	/**
