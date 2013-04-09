@@ -162,8 +162,10 @@ public function actionLogin(){
         $criteria->select='max(NoVisto)';
         $row = $modelComics->model()->find($criteria);
        print_r($row);
+        /*
         $resultado=$modelComics->findAll(array('condition'=>'NoVisto>'.$somevariable,'limit'=>10)); 
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
+  */
   }
    
   public function actionCatmascomp(){
