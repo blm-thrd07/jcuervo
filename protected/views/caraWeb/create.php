@@ -28,7 +28,7 @@
   'webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
 		webcam.set_quality( 90 ); // JPEG quality (1 -100)
 		webcam.set_shutter_sound( true ); // play shutter click sound',
-  CClientScript::POS_HEAD
+  CClientScript::POS_END
 );
 
   $cs->registerScript(
