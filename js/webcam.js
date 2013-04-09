@@ -95,7 +95,7 @@ window.webcam = {
 			'&width=' + width + 
 			'&height=' + height + 
 			'&server_width=' + server_width + 
-			'&server_height=' + server_height+"&NoExpediente="+this.get_NoExpediente();
+			'&server_height=' + server_height;
 		
 		if (this.ie) {
 			html += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="'+this.protocol+'://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="'+width+'" height="'+height+'" id="webcam_movie" align="middle"><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="false" /><param name="movie" value="'+this.swf_url+'" /><param name="loop" value="false" /><param name="menu" value="false" /><param name="quality" value="best" /><param name="bgcolor" value="#ffffff" /><param name="flashvars" value="'+flashvars+'"/></object>';
