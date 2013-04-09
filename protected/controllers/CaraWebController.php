@@ -56,8 +56,7 @@ class CaraWebController extends Controller
 	}
 
 	public function actionSaveFoto(){
-		print_r("hola");
-        /*if(isset($_GET['NoExpediente'])){
+        if(isset($_GET['NoExpediente'])){
     		print_r("entre");
         		 $filename = date('YmdHis') . '.jpg';
                  $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
@@ -102,7 +101,7 @@ class CaraWebController extends Controller
        
         }else{
        	    throw new CHttpException(404,'The specified post cannot be found.');
-       }*/   
+       }
         
    }
 
