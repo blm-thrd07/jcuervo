@@ -55,10 +55,10 @@ class CaraWebController extends Controller
 		));
 	}
 
+	//Checar PATH y permisos 777, y algoritmo de nombre o url a donde se envian y cuidado con la funcion date()
 	public function actionSaveFoto(){
         if(isset($_GET['NoExpediente'])){
         		
-
         		 $filename = uniqid().'.jpg';
                  $filepath= Yii::app()->basePath.'/../AvatarCaras/';
 				 $filepathname =  $filepath.$filename;
@@ -68,32 +68,27 @@ class CaraWebController extends Controller
 
         	   
         	    $contents = file_get_contents('php://input');
-        	    
         		$result = file_put_contents( $filepathname, $contents);
-               print_r("expression");
-               /*
-                if($result){
 
-                $url = Yii::app()->baseUrl. '/AvatarCaras/' . $filename;
-                echo $url;  
+                if($result){
         		    
         		     $model=new CaraWeb;
                      $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
 
                      if(count($Existe_foto)>0){
-                     	if(file_exists($filepath.$Existe_foto->foto)){
-	                        unlink($filepath.$Existe_foto->foto);
+                     	if(file_exists($filepath.$Existe_foto->url)){
+	                        unlink($filepath.$Existe_foto->url);
                         }
                         $model=$this->loadModel(Yii::app()->session['usuario_id']);
                         $model->url=$filename;
                         $model->save();
-                        $this->redirect('/Avatars/update/');
+                        echo $filepath.$filename;
 
                      }else if($Existe_foto==0){
                         $model->avatar_id=Yii::app()->session['usuario_id'];
         		        $model->url=$filename;
         		        $model->save();
-                        $this->redirect('/Avatars/update/');
+                        echo $filepath.$filename;
                      }
 
                 } 
@@ -102,7 +97,6 @@ class CaraWebController extends Controller
                      print "ERROR: Failed to write data to $filename, check permissions\n";
                      exit();
                 } 
-                */
        
         }else{
        	    throw new CHttpException(404,'The specified post cannot be found.');
