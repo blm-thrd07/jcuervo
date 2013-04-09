@@ -37,15 +37,13 @@ class UsuariosHasTblComicsController extends Controller
   }
 
     public function  actionIndex(){
-echo "hola";
     
     }
 
 	public function actionUpdateViews(){
 
 
-echo "hola";
-     /*
+     
       if(isset($_POST['UsuariosHasTblComics'])){
          $id=$_POST['UsuariosHasTblComics']['tbl_comics_id'];
          $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
@@ -60,6 +58,6 @@ echo "hola";
 			        }  
          }
 
-         */
+         
 	}
 }
