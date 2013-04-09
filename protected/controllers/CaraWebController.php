@@ -59,7 +59,7 @@ class CaraWebController extends Controller
         if(isset($_GET['NoExpediente'])){
         		
 
-        		 $filename = date('Ymd:His') . '.jpg';
+        		 $filename = uniqid().'.jpg';
                  print_r("expression");
                  /*$filepath=Yii::app()->baseUrl.'/AvatarCaras/';
 				 $filepathname =  $filepath.$filename;
