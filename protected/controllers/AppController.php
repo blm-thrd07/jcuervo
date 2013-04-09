@@ -117,9 +117,10 @@ public function actionLogout(){
   
    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    $avatarImg=$response->Avatar->avatar_img;
+
    $modelComics= new UsuariosHasTblComics;
    $comics=$modelComics->getMyComics();
-   $json['usuario']=array('nombre'=>$response[0]->nombre,'idFb'=>$response[0]->id_facebook,'sexo'=>$response[0]->sexo,'avatar_img'=>$avatarImg);
+   $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
 
   }
