@@ -7,14 +7,7 @@
 	.espacio_camara{
 		background-color: orange;	height: auto;
 	}
-	input{
-		display: inline-block; width: 110px;
-		float: right;
-		margin-top: -250px;
-		margin-right: 530px;
-		color: white;
-		background-color: white;
-	}
+
 </style>
 
 	<div class="grid_3 espacio_camara alpha"></div>
