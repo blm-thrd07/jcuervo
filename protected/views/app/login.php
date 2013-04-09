@@ -1,6 +1,5 @@
 <?php
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
-echo "<a href='".$loginUrl."'>looogin</a>";
 ?>
 
 <html>
@@ -10,7 +9,7 @@ echo "<a href='".$loginUrl."'>looogin</a>";
 </head>
 <body>
 <div id="splash">
-      <h1>Memeespecial<br>Generator</h1><a id="login" href="#" class="btn">Genera tu personaje</a>
+      <h1>Memeespecial<br>Generator</h1><a id="" href="<? echo $loginUrl; ?>" class="btn">Genera tu personaje</a>
       <div class="memeThumbsSlash">
         <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
           <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
