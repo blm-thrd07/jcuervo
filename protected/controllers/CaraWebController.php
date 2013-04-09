@@ -60,15 +60,13 @@ class CaraWebController extends Controller
         		
 
         		 $filename = uniqid().'.jpg';
-                 print_r("expression");
-                 /*$filepath=Yii::app()->baseUrl.'/AvatarCaras/';
+                 $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
 				 $filepathname =  $filepath.$filename;
         		
         		if($filepath == null)
                        throw new Exception ("Null filepath!");
         	    
         	    $contents = file_get_contents('php://input');
-
         		$result = file_put_contents( $filepathname, $contents);
                
                 if($result){
@@ -100,10 +98,7 @@ class CaraWebController extends Controller
         		if (!$result) {
                      print "ERROR: Failed to write data to $filename, check permissions\n";
                      exit();
-                }  
-				*/
-                
-                
+                } 
        
         }else{
        	    throw new CHttpException(404,'The specified post cannot be found.');
