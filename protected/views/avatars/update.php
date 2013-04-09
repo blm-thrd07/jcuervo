@@ -83,13 +83,15 @@
             <? 
                 $bandera=false;
                   if(is_array($json['catalogos']['accesorios'])){
-                    echo '<ul class="js-slides-1 bx-slides">';
+                    echo '<ul class="js-slides-1 bx-slides"><li>';
                     foreach ($json['catalogos']['accesorios'] as $key => $value) {  
-                      if($key%12==0) {
+                              echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/accesorios/".$value['url'])).'</div>'; 
+                      /*if($key%12==0) {
                         if($bandera) echo '</li>'; else $bandera=true;
                         echo "<li>";
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/placeholder.png","accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'],'data-original'=>Yii::app()->request->baseUrl."/images/accesorios/".$value['url'])).'</div>'; 
+                      */
                     }
                     echo "</li></ul>";
                   }
