@@ -29,10 +29,10 @@
 );
 
   $cs->registerScript(
-  'jquery',
-  ' var  visible=0;
+  'jquery',' 
+  		var  visible=0;
 		$(".espacio_camara").before(webcam.get_html(320, 250));
-	;       ',
+	',
   CClientScript::POS_READY
 );
 ?>
