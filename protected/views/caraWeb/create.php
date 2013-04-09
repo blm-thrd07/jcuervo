@@ -23,14 +23,9 @@
 	.espacio_camara{
 		background-color: orange;	height: auto;
 	}
-	input{
-		display: inline-block; width: 110px;
-		float: right;
-		margin-top: -250px;
-		margin-right: 530px;
-	}
+
 </style>
-x
+
 	<div class="grid_3 espacio_camara alpha"></div>
 
 	<div>
@@ -49,13 +44,12 @@ x
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+	<div >
 		<?php echo $form->labelEx($model,'avatar_id'); ?>
 		<?php echo $form->textField($model,'avatar_id'); ?>
 		<?php echo $form->error($model,'avatar_id'); ?>
 	</div>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'url'); ?>
 		<?php echo $form->textField($model,'url',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'url'); ?>
