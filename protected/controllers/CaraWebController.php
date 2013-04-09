@@ -60,7 +60,7 @@ class CaraWebController extends Controller
         if(isset($_GET['NoExpediente'])){
     
         		 $filename = date('YmdHis') . '.jpg';
-                 $filepath=Yii::app()->basePath.'/../files/';
+                 $filepath=Yii::app()->baseUrl.'/AvatarCaras/';
 				 $filepathname =  $filepath.$filename;
         		
         		if($filepath == null)
@@ -71,26 +71,26 @@ class CaraWebController extends Controller
                
                 if($result){
 
-                $url = 'http://' . $_SERVER['HTTP_HOST'] . '/noosbit_pf/files/' . $filename;
+                $url = Yii::app()->baseUrl. '/AvatarCaras/' . $filename;
                 echo $url;  
         		    
-        		     $model=new Foto;
-                     $Existe_foto=$model->findByPk($_GET['NoExpediente']);
+        		     $model=new CaraWeb;
+                     $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
 
                      if(count($Existe_foto)>0){
                      	if(file_exists($filepath.$Existe_foto->foto)){
 	                        unlink($filepath.$Existe_foto->foto);
                         }
-                        $model=$this->loadModel($_GET['NoExpediente']);
-                        $model->foto=$filename;
+                        $model=$this->loadModel(Yii::app()->session['usuario_id']);
+                        $model->url=$filename;
                         $model->save();
-                        $this->redirect('/elemento/perfil/'.$model->NoEmpleado);
+                        $this->redirect('/Avatars/update/');
 
                      }else if($Existe_foto==0){
-                        $model->NoEmpleado=$_GET['NoExpediente'];
-        		        $model->foto=$filename;
+                        $model->avatar_id=Yii::app()->session['usuario_id'];
+        		        $model->url=$filename;
         		        $model->save();
-                        $this->redirect('/elemento/perfil/'.$model->NoEmpleado); 
+                        $this->redirect('/Avatars/update/');
                      }
                 } 
 
