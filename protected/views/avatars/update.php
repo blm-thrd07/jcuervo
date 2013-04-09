@@ -11,8 +11,8 @@
           <ul>
             <li><a href="#tab1">Cabeza</a></li>
             <li><a href="#tab2">Cuerpo</a></li>
-            <li><a href="#tab3">Ojos</a></li>
-            <li><a href="#tab4">Boca</a></li>
+            <li><a href="#tab3">Boca</a></li>
+            <li><a href="#tab4">Ojos</a></li>
             <li><a href="#tab5">Accesorios</a></li>
           </ul>
           <div id="tab1" class="memeThumbs">
