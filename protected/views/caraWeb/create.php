@@ -40,6 +40,9 @@
   }
   function my_completion_handler(msg) {
     // extract URL out of PHP output
+
+      document.getElementById('upload_results').innerHTML = image_url;       
+
     if (msg.match(/(http\:\/\/\S+)/)) {
       var image_url = RegExp.$1;
       webcam.reset();
