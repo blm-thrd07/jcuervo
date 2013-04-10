@@ -62,7 +62,7 @@
 		}
 		else {
 
-	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" id="cropbox">';
+	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
       
 /*
        $('#cropbox').Jcrop({
