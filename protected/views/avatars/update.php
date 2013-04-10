@@ -19,14 +19,14 @@
             <div class="js-slides">
               <? 
                 $bandera=false;
-                  if(is_array($json['catalogos']['caras'])){
+                  if(is_array($json['catalogos']['bocas'])){
                     echo '<div class="slides_container">';
-                    foreach ($json['catalogos']['caras'] as $key => $value) {  
+                    foreach ($json['catalogos']['bocas'] as $key => $value) {  
                       if($key%12==0) {
                         if($bandera) echo '</div>'; else $bandera=true;
                         echo '<div class="slide">';
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"cabezas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
                     echo '</div></div>';//btns pre <a ....
                   }
@@ -158,7 +158,6 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 echo json_encode($json);
 echo "<br><br>";
 
-echo CHtml::link("cara_web", "#", array('class'=>"btn",'name'=>"url_cara_web_".Yii::app()->session['usuario_id']))." "; 
 
 //pieza//accesorio//cara_web
 Yii::app()->getClientScript()->registerScript('registrar', '
@@ -275,10 +274,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentSelected = this;
     });
 
-    return setTimeout((function() {
-      layerPersonaje.draw();
-      return console.log("ok redraw!");
-    }), 100);
+    layerPersonaje.draw();
   };
 
   function insertarAccesorio(x,y,rotation,pieza_id,tipo_pieza_id,img) {
