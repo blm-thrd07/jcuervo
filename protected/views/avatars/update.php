@@ -441,10 +441,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  (function(){$(function(){return $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1})});$(document).ready(function(){$(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});return $(".js-lightbox").fancybox({maxWidth:810,maxHeight:600,fitToView:!1,width:"100%",height:"80%",autoSize:!1,closeClick:!1,openEffect:"none",closeEffect:"none"})})}).call(this);
-
-
   $(document).on("ready", init);
 ',CClientScript::POS_READY);
 
 ?>
+
+  (function(){$(function(){return $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1})});$(document).ready(function(){$(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});return $(".js-lightbox").fancybox({maxWidth:810,maxHeight:600,fitToView:!1,width:"100%",height:"80%",autoSize:!1,closeClick:!1,openEffect:"none",closeEffect:"none"})})}).call(this);
