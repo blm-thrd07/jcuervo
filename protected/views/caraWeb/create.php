@@ -1,4 +1,7 @@
-<script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
+
+
+<div id="upload_results">
+  <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
 <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
 
@@ -39,8 +42,6 @@
       <input type="hidden" id="h" name="h" />
       <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
     </form>
-
-<div id="upload_results">
 </div>
 
 <!DOCTYPE html>
