@@ -51,7 +51,7 @@
       <input type="hidden" id="w" name="w" />
       <input type="hidden" id="h" name="h" />
       <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
-    </form>
+</form>
 
 
 
