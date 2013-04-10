@@ -230,8 +230,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(obj==="boca"){ aux=obj; obj=boca; }
 
     if(obj) {
-      x=obj.attrs.x;
-      y=obj.attrs.y;
+      conf.x=obj.attrs.x;
+      conf.y=obj.attrs.y;
       obj.remove();
     }
     var image = new Image();
