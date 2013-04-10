@@ -8,14 +8,14 @@
     <title>Memegenerator Jose Cuervo Especial</title>
     <style type="text/css"> .espacio_camara{ background-color: orange; height: auto; }</style>
     <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
-
+    <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
+    <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
   </head>
 
   <body class="lb">
 
 <div id="upload_results">
-<script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
-<link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
+
 
 <script type="text/javascript">
   $(function(){
