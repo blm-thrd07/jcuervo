@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
 <style type="text/css">
 	.espacio_camara{
 		background-color: orange;	height: auto;
@@ -18,7 +17,6 @@
  <div id="upload_results"></div>
   
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
-<script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
 <script language="JavaScript">
  
 //iniciajcrop
@@ -61,9 +59,9 @@
 			webcam.reset();
 		}
 		else {
-
-alert(msg);
-	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
+ 
+         alert(msg);
+	     document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
       
 /*
        $('#cropbox').Jcrop({
