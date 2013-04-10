@@ -242,8 +242,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerPersonaje.add(obj);
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
     console.log(img);
-    if(aux==="cara"){ cara=obj; image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
-    if(aux==="cuerpo"){ cuerpo=obj; image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
+    if(aux==="cara"){ cara=obj; cara.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
+    if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
     if(aux==="ojos"){ ojos=obj; image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
     if(aux==="boca"){ boca=obj; image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
     if(aux==="cara_web"){ /*cara=obj; image.src = "data:image/png;base64," + img + "";*/ }
@@ -407,14 +407,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   sendFront = function() {
-    currentSelected.moveToTop();
+    currentSelected.moveUp();
     currentLayer.draw();
     console.log("front");
     return false;
   };
 
   sendBack = function() {
-    currentSelected.moveToBottom();
+    currentSelected.moveDown();
     layerPersonaje.draw();
     console.log("back");
     return false;
