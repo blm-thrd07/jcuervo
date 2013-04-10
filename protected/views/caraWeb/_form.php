@@ -72,6 +72,10 @@
 			// reset camera for another shot
 			webcam.reset();
 		}
-		else alert("PHP Error: " + msg);
+		else {
+
+	document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" >';
+
+		};
 	}
 </script>

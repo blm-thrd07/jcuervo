@@ -88,7 +88,7 @@ class CaraWebController extends Controller
                         $model->avatar_id=Yii::app()->session['usuario_id'];
         		        $model->url=$filename;
         		        $model->save();
-                        echo $filepath.$filename;
+                        echo 'http://apps.t2omedia.com.mx/php2/AvatarCaras/'.$filename;
                      }
 
                 } 
