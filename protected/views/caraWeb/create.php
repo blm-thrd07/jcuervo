@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
+    <style type="text/css"> .espacio_camara{ background-color: orange; height: auto; }</style>
   </head>
 
   <body class="lb">
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
 
-	<h1>Tomar  Fotografia</h1>
 
-<style type="text/css">
-  .espacio_camara{
-    background-color: orange; height: auto;
-  }
-
-</style>
-
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
+  <h1>Tomar  Fotografia</h1>
   <div class="grid_3 espacio_camara alpha"></div>
 
   <div>
@@ -47,10 +41,8 @@
     // extract URL out of PHP output
     if (msg.match(/(http\:\/\/\S+)/)) {
       var image_url = RegExp.$1;
-      document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';
-      
-      // reset camera for another shot
       webcam.reset();
+      document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
     }
     else { 
           alert("error");
@@ -59,9 +51,6 @@
 </script>
 
 
-    <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
-
+  <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
   </body>
 </html>
