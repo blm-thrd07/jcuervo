@@ -178,11 +178,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
-  confCara = {x: halfx,y: halfy - 170,height: 120,width: 120,image: image,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
-  confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,image: image,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
-  confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,image: image,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
-  confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,image: image,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
-  confAccesorio = {x: halfx,y: halfy - 190,height: 160,width: 160,image: image,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
+  confCara = {x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
+  confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
+  confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
+  confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
+  confAccesorio = {x: halfx,y: halfy - 190,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
 
 
   //se va a editar
@@ -193,19 +193,19 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
       if(avatar.avatarPiezas[k].descripcion==="cara"){ 
-        insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,image: image,draggable: true,offset: [60, 60],startScale: scale });
+        insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale });
       }
       if(avatar.avatarPiezas[k].descripcion==="cuerpo")
       { 
-        insertarPieza("cuerpo",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 320,width: 200,image: image,draggable: true,offset: [100, 160],startScale: scale });
+        insertarPieza("cuerpo",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale });
       }
       if(avatar.avatarPiezas[k].descripcion=="ojos")
       { 
-        insertarPieza("ojos",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,image: image,draggable: true,offset: [47, 11],startScale: scale });
+        insertarPieza("ojos",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
       }
       if(avatar.avatarPiezas[k].descripcion=="boca")
       { 
-        insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 160,width: 160,image: image,draggable: true,offset: [80, 80],startScale: scale });
+        insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale });
       }
     }
   
@@ -236,6 +236,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj.remove();
     }
     var image = new Image();
+    conf.image = image;
     obj = new Kinetic.Image(conf);
     layerPersonaje.add(obj);
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
@@ -272,18 +273,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     if(insertar){
       imageAccesorio = new Image();
-      accesorio = new Kinetic.Image({
-        x: x,
-        y: y,
-        rotation: rotation,
-        height: 200,
-        width: 200,
-        image: imageAccesorio,
-        draggable: true,
-        offset: [100, 100],
-        tipo: tipo_pieza_id,
-        id: pieza_id
-      });
+      accesorio = new Kinetic.Image(confAccesorio);
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
