@@ -41,8 +41,11 @@
     // extract URL out of PHP output
     if (msg.match(/(http\:\/\/\S+)/)) {
       var image_url = RegExp.$1;
-      //webcam.reset();
-      document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
+      webcam.reset();
+
+      if(image_url!=null){
+       document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
+       }
     }
     else { 
           alert("error");
