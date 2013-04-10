@@ -31,6 +31,7 @@
                   echo '</div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
                 }
               ?> 
+              </div>
             </div>
           </div>
           <div id="tab2" class="memeThumbs">
