@@ -18,7 +18,7 @@
  <div id="upload_results"></div>
   
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
-<script src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
+<script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
 <script language="JavaScript">
  
 //iniciajcrop
@@ -63,6 +63,7 @@
 		else {
 
 	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" id="cropbox">';
+      
        $('#cropbox').Jcrop({
             aspectRatio: 1,
              onSelect: updateCoords
