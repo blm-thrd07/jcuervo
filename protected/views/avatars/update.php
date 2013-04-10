@@ -297,10 +297,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
       
-      return setTimeout((function() {
-        layerPersonaje.draw();
-        return console.log("ok redraw!");
-      }), 300);
+      layerPersonaje.draw();
 
       return true;
     }
