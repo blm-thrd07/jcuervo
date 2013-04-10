@@ -19,15 +19,15 @@
               <? 
                 $bandera=false;
                   if(is_array($json['catalogos']['caras'])){
-                    echo '<ul class="js-slides-1 bx-slides">';
+                    echo '<div class="js-slides"><div class="slides_container"><div class="slide">';
                     foreach ($json['catalogos']['caras'] as $key => $value) {  
                       if($key%12==0) {
-                        if($bandera) echo '</li>'; else $bandera=true;
-                        echo "<li>";
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"cabezas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo "</li></ul>";
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
                   }
               ?>   
           </div>
