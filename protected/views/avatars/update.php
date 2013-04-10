@@ -88,31 +88,21 @@
             </div>
           </div>
           <div id="tab5" class="memeThumbs">
-            <div class="js-slides">
-              <div class="slides_container">
-                <div class="slide">
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-1.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-2.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-3.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-4.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-5.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-6.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-7.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-8.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-9.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-10.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-11.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-12.png"></div>
-                </div>
-                <div class="slide">
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-12.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-13.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-14.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-15.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-16.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-17.png"></div>
-                </div>
-              </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
+          <div class="js-slides">
+           <? 
+                $bandera=false;
+                  if(is_array($json['catalogos']['accesorios'])){
+                    echo '<div class="slides_container">';
+                    foreach ($json['catalogos']['accesorios'] as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/accesorios/".$value['url'],"accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    }
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';//btns pre <a ....
+                  }
+              ?>
             </div>
           </div>
         </div>
