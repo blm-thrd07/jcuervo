@@ -28,7 +28,7 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div>';//btns pre <a ....
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';//btns pre <a ....
                   }
               ?>
             </div>
@@ -46,7 +46,7 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div>';//btns pre <a ....
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';//btns pre <a ....
                   }
               ?>
             </div>
@@ -64,7 +64,7 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/ojos/".$value['url'],"ojos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div>';//btns pre <a ....
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';//btns pre <a ....
                   }
               ?>
             </div>
@@ -82,7 +82,7 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div>';//btns pre <a ....
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';//btns pre <a ....
                   }
               ?>
             </div>
@@ -447,10 +447,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(document).ready(function() {
     console.log("ready");
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
-    $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:!1});
-    $(".js-slides2").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:!1});
-    $(".js-slides3").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:!1});
-
+    $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
+   
     setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },4000);
 
   });
