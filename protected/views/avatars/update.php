@@ -294,7 +294,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       accesorio.on("click", function() {
         currentSelected = this;
       });
-      console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
+      console.log("ACCESORIO: id: "+conf.id+"tipo: "+conf.tipo);
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
       
