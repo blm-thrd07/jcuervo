@@ -163,7 +163,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, image, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
   
   currentSelected = null;
   currentLayer = null;
@@ -188,7 +188,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   //se va a editar
   if(edit){
     for(var a in avatar_accesorios){
-      insertarAccesorio(parseInt(avatar_accesorios[a].posx),parseInt(avatar_accesorios[a].posy),parseFloat(avatar_accesorios[a].rotation),parseInt(avatar_accesorios[a].accesorios_id),'.TiposPiezas::ACCESORIO.',avatar_accesorios[a].accesorioImg);
+      insertarAccesorio(avatar_accesorios[a].accesorioImg, { x: parseInt(avatar_accesorios[a].posx), y: parseInt(avatar_accesorios[a].posy), rotation: parseFloat(avatar_accesorios[a].rotation), id: parseInt(avatar_accesorios[a].accesorios_id), tipo: 1 });
     }
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
@@ -218,7 +218,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("ok go");
     $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCara.id = pieza[0]; insertarPieza("cara",$(this).find("img").attr("src"),confCara); });
     $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCuerpo.id = pieza[0]; insertarPieza("cuerpo",$(this).find("img").attr("src"),confCuerpo); });
-    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio(100,$(this).find("img").attr("src")); });
+    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio($(this).find("img").attr("src"),confAccesorio); });
     $("#tab4 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confBoca.id = pieza[0]; insertarPieza("boca",$(this).find("img").attr("src"),confBoca); });
     $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
 
@@ -266,14 +266,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerPersonaje.draw();
   };
 
-  function insertarAccesorio(x,y,rotation,pieza_id,tipo_pieza_id,img) {
+  function insertarAccesorio(img,conf) {
     var insertar=true;
     for(i=0;i<accesorios.length;i++){
       if(accesorios[i].attrs.id == pieza_id) insertar=false;
     }
     if(insertar){
       imageAccesorio = new Image();
-      accesorio = new Kinetic.Image(confAccesorio);
+      conf.image=imageAccesorio;
+      accesorio = new Kinetic.Image(conf);
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
