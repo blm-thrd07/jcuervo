@@ -28,75 +28,75 @@
                     }
                     echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
-                  if($count>12) echo '</div></div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+                  if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
             ?>
           </div>
           <div id="tab2" class="memeThumbs">
             <? 
               $bandera=false;
-              $count=count($json['catalogos']['caras']);
-                if(is_array($json['catalogos']['caras'])){
+              $count=count($json['catalogos']['cuerpos']);
+                if(is_array($json['catalogos']['cuerpos'])){
                   if($count>12) echo '<div class="js-slides"><div class="slides_container">';
-                  foreach ($json['catalogos']['caras'] as $key => $value) {  
+                  foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
                     if($key%12==0 && $count>12) {
                       if($bandera) echo '</div>'; else $bandera=true;
                       echo '<div class="slide">';
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
-                  if($count>12) echo '</div></div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+                  if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
             ?>
           </div>
           <div id="tab3" class="memeThumbs">
             <? 
               $bandera=false;
-              $count=count($json['catalogos']['caras']);
-                if(is_array($json['catalogos']['caras'])){
+              $count=count($json['catalogos']['ojos']);
+                if(is_array($json['catalogos']['ojos'])){
                   if($count>12) echo '<div class="js-slides"><div class="slides_container">';
-                  foreach ($json['catalogos']['caras'] as $key => $value) {  
+                  foreach ($json['catalogos']['ojos'] as $key => $value) {  
                     if($key%12==0 && $count>12) {
                       if($bandera) echo '</div>'; else $bandera=true;
                       echo '<div class="slide">';
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/ojos/".$value['url'],"ojos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
-                  if($count>12) echo '</div></div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+                  if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
             ?>
           </div>
           <div id="tab4" class="memeThumbs">
             <? 
               $bandera=false;
-              $count=count($json['catalogos']['caras']);
-                if(is_array($json['catalogos']['caras'])){
+              $count=count($json['catalogos']['bocas']);
+                if(is_array($json['catalogos']['bocas'])){
                   if($count>12) echo '<div class="js-slides"><div class="slides_container">';
-                  foreach ($json['catalogos']['caras'] as $key => $value) {  
+                  foreach ($json['catalogos']['bocas'] as $key => $value) {  
                     if($key%12==0 && $count>12) {
                       if($bandera) echo '</div>'; else $bandera=true;
                       echo '<div class="slide">';
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
-                  if($count>12) echo '</div></div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+                  if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
             ?>
           </div>
           <div id="tab5" class="memeThumbs">
             <? 
               $bandera=false;
-              $count=count($json['catalogos']['caras']);
-                if(is_array($json['catalogos']['caras'])){
+              $count=count($json['catalogos']['accesorios']);
+                if(is_array($json['catalogos']['accesorios'])){
                   if($count>12) echo '<div class="js-slides"><div class="slides_container">';
-                  foreach ($json['catalogos']['caras'] as $key => $value) {  
+                  foreach ($json['catalogos']['accesorios'] as $key => $value) {  
                     if($key%12==0 && $count>12) {
                       if($bandera) echo '</div>'; else $bandera=true;
                       echo '<div class="slide">';
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/accesorios/".$value['url'],"accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
-                  if($count>12) echo '</div></div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+                  if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
             ?>
           </div>
