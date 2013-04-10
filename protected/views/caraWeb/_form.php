@@ -62,6 +62,7 @@
 		}
 		else {
 
+alert(msg);
 	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
       
 /*
