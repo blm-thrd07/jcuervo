@@ -23,6 +23,11 @@
  
 //iniciajcrop
 
+$('#cropbox').Jcrop({
+              aspectRatio: 1,
+              onSelect: updateCoords
+});
+
   function updateCoords(c)
   {
     $('#x').val(c.x);
@@ -55,13 +60,8 @@
 		// extract URL out of PHP output
 		if (msg.match(/(http\:\/\/\S+)/)) {
 			var image_url = RegExp.$1;
-			// show JPEG image in page
 			document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';
-			$('#cropbox').Jcrop({
-            aspectRatio: 1,
-             onSelect: updateCoords
-             });
-
+			
 			// reset camera for another shot
 			webcam.reset();
 		}
@@ -69,13 +69,7 @@
                alert("error");
 	//document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
       
-/*
-       $('#cropbox').Jcrop({
-            aspectRatio: 1,
-             onSelect: updateCoords
-             });
-		
-		*/
+
 		};
 	}
 
