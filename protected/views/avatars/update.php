@@ -28,7 +28,7 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"cabezas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
+                    echo '</div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';
                   }
               ?>
             </div>
