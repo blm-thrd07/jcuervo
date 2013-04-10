@@ -28,7 +28,7 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"cabezas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
                   }
               ?>
             </div>
@@ -49,7 +49,8 @@
                     echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
                   }
               ?>
-            </div>          </div>
+            </div>          
+          </div>
           <div id="tab3" class="memeThumbs">
            <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
                   <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
