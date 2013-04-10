@@ -28,10 +28,10 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a>';//btns pre <a ....
+                    echo '</div></div>';//btns pre <a ....
                   }
               ?>
-            </div>
+            </div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a>
           </div>
           <div id="tab2" class="memeThumbs">
              <div class="js-slides">
@@ -46,10 +46,10 @@
                       }
                       echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';//btns pre <a ....
+                    echo '</div></div>';//btns pre <a ....
                   }
               ?>
-            </div>
+            </div><a class="prev">pre<i class="icon-chevron-left"></i></a><a class="next">next<i class="icon-chevron-right"></i></a>
           </div>
           <div id="tab3" class="memeThumbs">
             <div class="js-slides">
