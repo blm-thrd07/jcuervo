@@ -34,12 +34,20 @@
             </div>
           </div>
           <div id="tab2" class="memeThumbs">
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-1.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-2.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-3.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-4.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-5.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-6.png"></div>
+            <? 
+                $bandera=false;
+                  if(is_array($json['catalogos']['cuerpos'])){
+                    echo '<div class="slides_container">';
+                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    }
+                    echo '</div></div>';//btns pre <a ....
+                  }
+              ?>
           </div>
           <div id="tab3" class="memeThumbs">
             <div class="itemMeme"><img src="spr/ojos/ojos-1.png"></div>
@@ -464,6 +472,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
 
   
-',CClientScript::POS_READY);
+',CClientScript::POS_END);
 
 ?>
