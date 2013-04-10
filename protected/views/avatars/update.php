@@ -212,13 +212,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarAccesorio(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab4 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("boca",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("ojos",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $(".saveBtn").on("click", listenerStat);
-    $("#js-listenerStat").on("click", saveToImage); 
-    $("#js-rotateLeft").on("click", rotateLeft);
-    $("#js-rotateRight").on("click", rotateRight);
-    $("#js-sendFront").on("click", sendFront);
-    $("#js-removeElement").on("click", removeImage); //
-    $("#js-sendBack").on("click", sendBack);
 
   function insertarPieza(obj,x,y,rotation,pieza_id,tipo_pieza_id,img) {
     var aux;
@@ -370,14 +363,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   newangle = null;
 
   removeImage = function(){
-    //layerPersonaje.remove();
     for(i=0;i<accesorios.length;i++){
       if(accesorios[i].attrs.id == currentSelected.attrs.id){
         o = accesorios.indexOf(currentSelected)
         delete accesorios[o];
         accesorios.splice(o,o+1);
       }
-        //accesorios.remove(currentSelected);
     }
     currentSelected.remove();
     layerPersonaje.draw();
@@ -428,6 +419,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("back");
     return false;
   };
+
+  $(".saveBtn").on("click", listenerStat);
+  $("#js-listenerStat").on("click", saveToImage); 
+  $("#js-rotateLeft").on("click", rotateLeft);
+  $("#js-rotateRight").on("click", rotateRight);
+  $("#js-sendFront").on("click", sendFront);
+  $("#js-removeElement").on("click", removeImage); //
+  $("#js-sendBack").on("click", sendBack);
 
   $(document).ready(function() {
     console.log("ready");
