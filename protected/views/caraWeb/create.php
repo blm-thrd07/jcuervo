@@ -15,13 +15,14 @@
   <body class="lb">
 
    <script type="text/javascript">
+  $(function(){
 
     $('#cropbox').Jcrop({
       aspectRatio: 1,
       onSelect: updateCoords
     });
 
-  
+  });
   function updateCoords(c)
   {
     $('#x').val(c.x);
