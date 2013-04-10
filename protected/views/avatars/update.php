@@ -88,7 +88,7 @@
             </div>
           </div>
           <div id="tab5" class="memeThumbs">
-            <div class="js-slides">
+            <div class="js-slides2">
               <? 
                 $bandera=false;
                   if(is_array($json['catalogos']['accesorios'])){
@@ -446,6 +446,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(document).ready(function() {
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
+    setTimeout(function(){ layerPersonaje.draw(); },2000);
+    $(".js-slides2").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
     setTimeout(function(){ layerPersonaje.draw(); },2000);
   });
 
