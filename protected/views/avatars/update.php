@@ -432,10 +432,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("ready");
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
-    $("#personajeCanvas").trigger("mouseover");
-    setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },1500);
+    //$("#personajeCanvas").trigger("mouseover");
 
   });
+
+  setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },1500);
 
   
 ',CClientScript::POS_END);
