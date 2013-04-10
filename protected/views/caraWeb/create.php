@@ -16,9 +16,13 @@
 
    <script type="text/javascript">
 
-    $('#cropbox').live().Jcrop({
-      aspectRatio: 1,
-      onSelect: updateCoords
+    $('#cropbox').live('click',function(){
+       
+        $(this).Jcrop({
+        aspectRatio: 1,
+         onSelect: updateCoords
+        });
+
     });
 
   
