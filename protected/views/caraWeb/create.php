@@ -41,14 +41,14 @@
   function my_completion_handler(msg) {
     // extract URL out of PHP output
 
-      document.getElementById('upload_results').innerHTML = image_url;       
+      document.getElementById('upload_results').innerHTML = msg;       
 
     if (msg.match(/(http\:\/\/\S+)/)) {
       var image_url = RegExp.$1;
       webcam.reset();
 
       if(image_url!=null){
-       document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
+        //document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
        }
     }
     else { 
