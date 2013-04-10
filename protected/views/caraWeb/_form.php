@@ -10,7 +10,6 @@
 
 </style>
 
-<div id="upload_results">
 	<div class="grid_3 espacio_camara alpha"></div>
 
 	<div>
@@ -20,35 +19,8 @@
 		<input type="button" value="Otra vez" onClick="webcam.reset()" > 
 	</div>
 
-    
+    <div id="upload_results"></div>
 
-<div class="form">
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'avatar_id'); ?>
-		<?php echo $form->textField($model,'avatar_id'); ?>
-		<?php echo $form->error($model,'avatar_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'url'); ?>
-		<?php echo $form->textField($model,'url',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'url'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
-</div>
 
   
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
