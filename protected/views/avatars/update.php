@@ -34,77 +34,92 @@
             </div>
           </div>
           <div id="tab2" class="memeThumbs">
-             <div class="js-slides">
-              <? 
-                $bandera=false;
-                  if(is_array($json['catalogos']['cuerpos'])){
-                    echo '<div class="slides_container">';
-                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
-                      if($key%12==0) {
-                        if($bandera) echo '</div>'; else $bandera=true;
-                        echo '<div class="slide">';
-                      }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
-                    }
-                    echo '</div></div>';
-                  }
-              ?>
-            </div>
+            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-1.png"></div>
+            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-2.png"></div>
+            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-3.png"></div>
+            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-4.png"></div>
+            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-5.png"></div>
+            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-6.png"></div>
           </div>
           <div id="tab3" class="memeThumbs">
-           <div class="js-slides">
-              <? 
-                $bandera=false;
-                  if(is_array($json['catalogos']['ojos'])){
-                    echo '<div class="slides_container">';
-                    foreach ($json['catalogos']['ojos'] as $key => $value) {  
-                      if($key%12==0) {
-                        if($bandera) echo '</div>'; else $bandera=true;
-                        echo '<div class="slide">';
-                      }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/ojos/".$value['url'],"ojos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
-                    }
-                    echo '</div></div>';
-                  }
-              ?>
-            </div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-1.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-2.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-3.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-4.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-5.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-6.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-7.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-8.png"></div>
+            <div class="itemMeme"><img src="spr/ojos/ojos-9.png"></div>
           </div>
           <div id="tab4" class="memeThumbs">
-           <div class="js-slides">
-              <? 
-                $bandera=false;
-                  if(is_array($json['catalogos']['bocas'])){
-                    echo '<div class="slides_container">';
-                    foreach ($json['catalogos']['bocas'] as $key => $value) {  
-                      if($key%12==0) {
-                        if($bandera) echo '</div>'; else $bandera=true;
-                        echo '<div class="slide">';
-                      }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
-                    }
-                    echo '</div></div>';
-                  }
-              ?>
+            <div class="js-slides">
+              <div class="slides_container">
+                <div class="slide">
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-1.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-2.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-3.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-4.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-5.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-6.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-7.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-8.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-9.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-10.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-11.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-12.png"></div>
+                </div>
+                <div class="slide">
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-12.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-13.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-14.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-15.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-16.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-17.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-18.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-19.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-20.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-21.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-22.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-23.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-24.png"></div>
+                </div>
+                <div class="slide">
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-24.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-25.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-26.png"></div>
+                  <div class="itemMeme"><img src="spr/boquitas/boquita-27.png"></div>
+                </div>
+              </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
             </div>
           </div>
           <div id="tab5" class="memeThumbs">
-            <div class="js-slides2">
-              <? 
-                $bandera=false;
-                  if(is_array($json['catalogos']['accesorios'])){
-                    echo '<div class="slides_container">';
-                    foreach ($json['catalogos']['accesorios'] as $key => $value) {  
-                      if($key%12==0) {
-                        if($bandera) echo '</div>'; else $bandera=true;
-                        echo '<div class="slide">';
-                      }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/accesorios/".$value['url'],"accesorios",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
-                    }
-                    echo '</div></div>';
-                  }
-              ?>
+            <div class="js-slides">
+              <div class="slides_container">
+                <div class="slide">
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-1.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-2.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-3.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-4.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-5.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-6.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-7.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-8.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-9.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-10.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-11.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-12.png"></div>
+                </div>
+                <div class="slide">
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-12.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-13.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-14.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-15.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-16.png"></div>
+                  <div class="itemMeme"><img src="spr/accesorios/accesorio-17.png"></div>
+                </div>
+              </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
             </div>
-          </div>
           </div>
         </div>
       </section>
@@ -278,7 +293,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     obj.on("click", function() {
       currentSelected = this;
-      return currentLayer = layerPersonaje;
     });
 
     return setTimeout((function() {
@@ -324,7 +338,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       accesorio.on("click", function() {
         currentSelected = this;
-        return currentLayer = layerPersonaje;
       });
       console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
       layerPersonaje.add(accesorio);
@@ -394,7 +407,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         //accesorios.remove(currentSelected);
     }
     currentSelected.remove();
-    currentLayer.draw();
+    layerPersonaje.draw();
   }
 
   rotateLeft = function() {
@@ -409,7 +422,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return console.log(currentSelected.getRotation());
       }
     });
-    currentLayer.draw();
+    layerPersonaje.draw();
     return false;
   };
 
@@ -425,7 +438,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return console.log(currentSelected.getRotation());
       }
     });
-    currentLayer.draw();
+    layerPersonaje.draw();
     return false;
   };
 
@@ -438,7 +451,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   sendBack = function() {
     currentSelected.moveToBottom();
-    currentLayer.draw();
+    layerPersonaje.draw();
     console.log("back");
     return false;
   };
@@ -447,8 +460,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
     setTimeout(function(){ layerPersonaje.draw(); },2000);
-    $(".js-slides2").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
-    setTimeout(function(){ layerPersonaje.draw(); },2000);
+
   });
 
 
