@@ -1,8 +1,3 @@
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'cara-web-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-
 <style type="text/css">
 	.espacio_camara{
 		background-color: orange;	height: auto;
