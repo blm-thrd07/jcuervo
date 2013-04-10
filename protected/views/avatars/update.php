@@ -441,27 +441,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $(document).ready(function() {
-    $(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: "selected",
-      updateHash: false
-    });
-    $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: "→",
-      prevText: "←",
-    });
-    $("a.bx-prev, a.bx-next").bind("click", function() {
-      return setTimeout((function() {
-        $(window).trigger("scroll");
-        return console.log("yeah");
-      }), 600);
-    });
-    return layerPersonaje.draw();
-  });
+  (function(){$(function(){return $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1})});$(document).ready(function(){$(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});return $(".js-lightbox").fancybox({maxWidth:810,maxHeight:600,fitToView:!1,width:"100%",height:"80%",autoSize:!1,closeClick:!1,openEffect:"none",closeEffect:"none"})})}).call(this);
 
 
   $(document).on("ready", init);
