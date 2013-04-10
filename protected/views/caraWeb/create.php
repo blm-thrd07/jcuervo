@@ -11,6 +11,7 @@
   <body class="lb">
 
 <div id="upload_results">
+</div>
 
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
   <h1>Tomar  Fotografia</h1>
@@ -53,7 +54,7 @@
   }
 </script>
  
- </div>
+ 
   <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
   </body>
 </html>
