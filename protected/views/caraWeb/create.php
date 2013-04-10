@@ -17,12 +17,10 @@
    <script type="text/javascript">
 
     $('#cropbox').live('click',function(){
-       
         $(this).Jcrop({
         aspectRatio: 1,
          onSelect: updateCoords
         });
-
     });
 
   
@@ -46,20 +44,16 @@
 
 
 <div id="upload_results">
-    <!-- This is the image we're attaching Jcrop to -->
-    <img src="http://www.blogcdn.com/www.engadget.com/media/2012/09/400m-ios-devices.jpg" id="cropbox" />
 
-    <!-- This is the form that our event handler fills -->
-    <form action="crop.php" method="post" onsubmit="return checkCoords();">
+</div>
+
+<form action="crop.php" method="post" onsubmit="return checkCoords();">
       <input type="hidden" id="x" name="x" />
       <input type="hidden" id="y" name="y" />
       <input type="hidden" id="w" name="w" />
       <input type="hidden" id="h" name="h" />
       <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
     </form>
-</div>
-
-
 
 
 
@@ -88,15 +82,12 @@
   }
   function my_completion_handler(msg) {
     // extract URL out of PHP output
-
-      document.getElementById('upload_results').innerHTML = msg;       
-
     if (msg.match(/(http\:\/\/\S+)/)) {
       var image_url = RegExp.$1;
       webcam.reset();
 
       if(image_url!=null){
-        //document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
+        document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
        }
     }
     else { 

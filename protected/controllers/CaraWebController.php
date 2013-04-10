@@ -82,15 +82,17 @@ class CaraWebController extends Controller
                         $model=$this->loadModel(Yii::app()->session['usuario_id']);
                         $model->url=$filename;
                         $model->save();
-        		        $this->renderPartial('//caraWeb/index',array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename));
+        		        //$this->renderPartial('//caraWeb/index',array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename));
+        		       echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename
+
 
                      }else if($Existe_foto==0){
                         $model->avatar_id=Yii::app()->session['usuario_id'];
         		        $model->url=$filename;
         		        $model->save();
 
-        		         $this->renderPartial('//caraWeb/index',array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename));
-
+        		        // $this->renderPartial('//caraWeb/index',array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename));
+                        echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename;
                      }
 
                 } 
