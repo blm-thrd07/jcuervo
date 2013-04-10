@@ -456,13 +456,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).ready(function() {
     console.log("ready");
-    setTimeout(function(){ layerPersonaje.draw(); },2000);
+    $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:1});
+    $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
+
+    setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },4000);
 
   });
 
-  $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
-  $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
-
+  
 ',CClientScript::POS_READY);
 
 ?>
