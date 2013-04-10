@@ -344,7 +344,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       return setTimeout((function() {
         layerPersonaje.draw();
         return console.log("ok redraw!");
-      }), 100);
+      }), 300);
 
       return true;
     }
@@ -456,7 +456,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).ready(function() {
     console.log("ready");
-    $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:1});
+    $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
 
     setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },4000);
