@@ -273,6 +273,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     if(insertar){
       imageAccesorio = new Image();
+      confAccesorio.image = imageAccesorio;
       accesorio = new Kinetic.Image(confAccesorio);
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
