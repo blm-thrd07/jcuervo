@@ -228,7 +228,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
 //BOTONES
 
-  init = function() {
     console.log("ok go");
     $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cara",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
     $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
@@ -241,8 +240,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#js-rotateRight").on("click", rotateRight);
     $("#js-sendFront").on("click", sendFront);
     $("#js-removeElement").on("click", removeImage); //
-    return $("#js-sendBack").on("click", sendBack);
-  };
+    $("#js-sendBack").on("click", sendBack);
 
   function insertarPieza(obj,x,y,rotation,pieza_id,tipo_pieza_id,img) {
     var aux;
@@ -457,14 +455,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   $(document).ready(function() {
-    $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
-    $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
+    console.log("ready");
     setTimeout(function(){ layerPersonaje.draw(); },2000);
 
   });
 
+  $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
+  $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
 
-  $(document).on("ready", init);
 ',CClientScript::POS_READY);
 
 ?>
