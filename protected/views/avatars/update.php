@@ -19,14 +19,14 @@
             <div class="js-slides">
               <? 
                 $bandera=false;
-                  if(is_array($json['catalogos']['bocas'])){
+                  if(is_array($json['catalogos']['caras'])){
                     echo '<div class="slides_container">';
-                    foreach ($json['catalogos']['bocas'] as $key => $value) {  
+                    foreach ($json['catalogos']['caras'] as $key => $value) {  
                       if($key%12==0) {
                         if($bandera) echo '</div>'; else $bandera=true;
                         echo '<div class="slide">';
                       }
-                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"caras",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
                     echo '</div></div>';//btns pre <a ....
                   }
@@ -34,6 +34,7 @@
             </div>
           </div>
           <div id="tab2" class="memeThumbs">
+             <div class="js-slides">
             <? 
                 $bandera=false;
                   if(is_array($json['catalogos']['cuerpos'])){
@@ -48,19 +49,28 @@
                     echo '</div></div>';//btns pre <a ....
                   }
               ?>
+            </div>
           </div>
           <div id="tab3" class="memeThumbs">
-            <div class="itemMeme"><img src="spr/ojos/ojos-1.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-2.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-3.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-4.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-5.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-6.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-7.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-8.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-9.png"></div>
+            <div class="js-slides">
+            <? 
+                $bandera=false;
+                  if(is_array($json['catalogos']['ojos'])){
+                    echo '<div class="slides_container">';
+                    foreach ($json['catalogos']['ojos'] as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/ojos/".$value['url'],"ojos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    }
+                    echo '</div></div>';//btns pre <a ....
+                  }
+              ?>
+            </div>
           </div>
           <div id="tab4" class="memeThumbs">
+            <div class="js-slides">
            <? 
                 $bandera=false;
                   if(is_array($json['catalogos']['bocas'])){
@@ -75,6 +85,8 @@
                     echo '</div></div>';//btns pre <a ....
                   }
               ?>
+            </div>
+          </div>
           <div id="tab5" class="memeThumbs">
             <div class="js-slides">
               <div class="slides_container">
@@ -435,7 +447,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(document).ready(function() {
     console.log("ready");
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
-    $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:1});
+    $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:!1});
+    $(".js-slides2").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:!1});
+    $(".js-slides3").slides({preload:!1,slideSpeed:450,generatePagination:1,generateNextPrev:!1});
 
     setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },4000);
 
