@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Live Cropping Demo</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
 <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
@@ -32,8 +27,7 @@
   };
 
 </script>
-</head>
-<body>
+
 		<!-- This is the image we're attaching Jcrop to -->
 		<img src="<? echo $url;?>" id="cropbox" />
 
@@ -46,7 +40,3 @@
 			<input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
 		</form>
 
-
-	</body>
-
-</html>
