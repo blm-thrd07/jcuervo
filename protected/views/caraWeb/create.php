@@ -70,9 +70,36 @@
     <input type="button" value="Otra vez" onClick="webcam.reset()" > 
   </div>
 
-  
-<script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
+  <script language="JavaScript">
+  var  visible=0; 
+  $(".espacio_camara").before(webcam.get_html(320, 250));
+  //webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
+  //webcam.set_quality( 90 ); // JPEG quality (1 -100)
+  //webcam.set_shutter_sound( true ); // play shutter click sound
+  webcam.set_hook( 'onComplete', 'my_completion_handler' );
+  function do_upload() {
+    // upload to server
+    document.getElementById('upload_results').innerHTML = '<h1>Guardando foto...</h1>';
+    webcam.upload();
+  }
+  function my_completion_handler(msg) {
+    // extract URL out of PHP output
 
+      document.getElementById('upload_results').innerHTML = msg;       
+
+    if (msg.match(/(http\:\/\/\S+)/)) {
+      var image_url = RegExp.$1;
+      webcam.reset();
+
+      if(image_url!=null){
+        //document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
+       }
+    }
+    else { 
+          alert("error");
+    };
+  }
+</script>
  
  
   </body>
