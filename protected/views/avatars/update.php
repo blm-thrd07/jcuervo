@@ -185,7 +185,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje;
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
   
   currentSelected = null;
   currentLayer = null;
