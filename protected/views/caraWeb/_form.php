@@ -1,3 +1,4 @@
+<div id="upload_results">
 <style type="text/css">
 	.espacio_camara{
 		background-color: orange;	height: auto;
@@ -14,33 +15,11 @@
 		<input type="button" value="Otra vez" onClick="webcam.reset()" > 
 	</div>
 
- <div id="upload_results"></div>
+ 
   
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script language="JavaScript">
  
-//iniciajcrop
-
-$('#cropbox').Jcrop({
-              aspectRatio: 1,
-              onSelect: updateCoords
-});
-
-  function updateCoords(c)
-  {
-    $('#x').val(c.x);
-    $('#y').val(c.y);
-    $('#w').val(c.w);
-    $('#h').val(c.h);
-  };
-
-  function checkCoords()
-  {
-    if (parseInt($('#w').val())) return true;
-    alert('Please select a crop region then press submit.');
-    return false;
-  };
-
 /////termina jcrops
 
 	var  visible=0; 
@@ -72,3 +51,4 @@ $('#cropbox').Jcrop({
 	}
 
 </script>
+</div>
