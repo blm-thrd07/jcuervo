@@ -56,5 +56,20 @@
 
   <body class="lb">
 
+<div id="upload_results">
+</div>
+
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
+  <h1>Tomar  Fotografia</h1>
+  <div class="grid_3 espacio_camara alpha"></div>
+
+  <div>
+    <input type="button" value="Parámetros" onClick="webcam.configure()" > <br>
+    <input type="button" value="Tomar foto" onClick="webcam.freeze()" > <br>
+    <input type="button" value="Guardar" onClick="do_upload()" > <br>
+    <input type="button" value="Otra vez" onClick="webcam.reset()" > 
+  </div>
+
+  
   </body>
 </html>
