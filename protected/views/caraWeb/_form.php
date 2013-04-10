@@ -19,23 +19,6 @@
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script language="JavaScript">
  
-//iniciajcrop
-
-  function updateCoords(c)
-  {
-    $('#x').val(c.x);
-    $('#y').val(c.y);
-    $('#w').val(c.w);
-    $('#h').val(c.h);
-  };
-
-  function checkCoords()
-  {
-    if (parseInt($('#w').val())) return true;
-    alert('Please select a crop region then press submit.');
-    return false;
-  };
-
 /////termina jcrops
 
 	var  visible=0; 
@@ -54,14 +37,14 @@
 		if (msg.match(/(http\:\/\/\S+)/)) {
 			var image_url = RegExp.$1;
 			// show JPEG image in page
-			//document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" >';
+			document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" >';
 			// reset camera for another shot
 			webcam.reset();
 		}
 		else {
  
-         alert(msg);
-	     document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
+        // alert(msg);
+	     //document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" >';
       
 /*
        $('#cropbox').Jcrop({
