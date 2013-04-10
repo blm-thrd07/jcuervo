@@ -82,13 +82,13 @@ class CaraWebController extends Controller
                         $model=$this->loadModel(Yii::app()->session['usuario_id']);
                         $model->url=$filename;
                         $model->save();
-                        echo 'http://apps.t2omedia.com.mx/php2/AvatarCaras/'.$filename;
+                        echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename;
 
                      }else if($Existe_foto==0){
                         $model->avatar_id=Yii::app()->session['usuario_id'];
         		        $model->url=$filename;
         		        $model->save();
-                        echo 'http://apps.t2omedia.com.mx/php2/AvatarCaras/'.$filename;
+                        echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename;
                      }
 
                 } 
