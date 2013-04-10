@@ -23,9 +23,12 @@
  
 //iniciajcrop
 
-$('#cropbox').Jcrop({
+$('#cropbox').live('click',function(){
+alert("entro");
+     $(this).Jcrop({
               aspectRatio: 1,
               onSelect: updateCoords
+      });
 });
 
   function updateCoords(c)
