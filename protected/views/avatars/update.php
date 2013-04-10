@@ -269,7 +269,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   function insertarAccesorio(img,conf) {
     var insertar=true;
     for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == pieza_id) insertar=false;
+      if(accesorios[i].attrs.id == conf.id) insertar=false;
     }
     if(insertar){
       imageAccesorio = new Image();
