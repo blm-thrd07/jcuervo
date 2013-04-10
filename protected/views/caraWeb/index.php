@@ -26,7 +26,7 @@
 </script>
 
 		<!-- This is the image we're attaching Jcrop to -->
-		<img src="http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/5165ea4219a28.jpg" id="cropbox" />
+		<img src="http://www.blogcdn.com/www.engadget.com/media/2012/09/400m-ios-devices.jpg" id="cropbox" />
 
 		<!-- This is the form that our event handler fills -->
 		<form action="crop.php" method="post" onsubmit="return checkCoords();">
