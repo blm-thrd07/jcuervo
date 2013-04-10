@@ -14,10 +14,7 @@
 
   <body class="lb">
 
-<div id="upload_results">
-
-
-<script type="text/javascript">
+   <script type="text/javascript">
   $(function(){
 
     $('#cropbox').Jcrop({
@@ -41,8 +38,11 @@
     return false;
   };
 
-</script>
+</script> 
 
+
+
+<div id="upload_results">
     <!-- This is the image we're attaching Jcrop to -->
     <img src="http://www.blogcdn.com/www.engadget.com/media/2012/09/400m-ios-devices.jpg" id="cropbox" />
 
