@@ -163,7 +163,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, image, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
   
   currentSelected = null;
   currentLayer = null;
@@ -183,7 +183,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
   confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
   confAccesorio = {x: halfx,y: halfy - 190,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
-
 
   //se va a editar
   if(edit){
@@ -269,12 +268,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   function insertarAccesorio(img,conf) {
     var insertar=true;
     for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == pieza_id) insertar=false;
+      if(accesorios[i].attrs.id == conf.id) insertar=false;
     }
     if(insertar){
       imageAccesorio = new Image();
-      confAccesorio.image = imageAccesorio;
-      accesorio = new Kinetic.Image(confAccesorio);
+      conf.image = imageAccesorio;
+      accesorio = new Kinetic.Image(conf);
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
@@ -294,7 +293,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       accesorio.on("click", function() {
         currentSelected = this;
       });
-      console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
+      console.log("ACCESORIO: id: "+conf.id+"tipo: "+conf.tipo);
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
       
