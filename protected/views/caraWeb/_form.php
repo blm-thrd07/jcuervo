@@ -73,7 +73,6 @@
 			webcam.reset();
 		}
 		else {
-
 	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="200" heigth="200" >';
 
 		};
