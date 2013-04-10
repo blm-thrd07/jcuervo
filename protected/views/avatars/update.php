@@ -173,8 +173,17 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     width: 258,
     height: 460,
   });
-
   layerPersonaje = new Kinetic.Layer();
+  
+  halfx = stagePersonaje.getWidth() / 2;
+  halfy = stagePersonaje.getHeight() / 2;
+  scale = 1;
+  confCara = {x: halfx,y: halfy - 170,height: 120,width: 120,image: image,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
+  confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,image: image,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
+  confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,image: image,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
+  confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,image: image,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
+  confAccesorio = {x: halfx,y: halfy - 190,height: 160,width: 160,image: image,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
+
 
   //se va a editar
   if(edit){
@@ -184,19 +193,19 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
       if(avatar.avatarPiezas[k].descripcion==="cara"){ 
-        insertarPieza("cara",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),parseFloat(avatar.avatarPiezas[k].rotation),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
+        insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,image: image,draggable: true,offset: [60, 60],startScale: scale });
       }
       if(avatar.avatarPiezas[k].descripcion==="cuerpo")
       { 
-        insertarPieza("cuerpo",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),parseFloat(avatar.avatarPiezas[k].rotation),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
+        insertarPieza("cuerpo",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 320,width: 200,image: image,draggable: true,offset: [100, 160],startScale: scale });
       }
       if(avatar.avatarPiezas[k].descripcion=="ojos")
       { 
-        insertarPieza("ojos",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),parseFloat(avatar.avatarPiezas[k].rotation),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
+        insertarPieza("ojos",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,image: image,draggable: true,offset: [47, 11],startScale: scale });
       }
       if(avatar.avatarPiezas[k].descripcion=="boca")
       { 
-        insertarPieza("boca",parseInt(avatar.avatarPiezas[k].posx),parseInt(avatar.avatarPiezas[k].posy),parseFloat(avatar.avatarPiezas[k].rotation),avatar.avatarPiezas[k].piezaid,avatar.avatarPiezas[k].tipo_pieza_id,avatar.avatarPiezas[k].AvatarImg);
+        insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 160,width: 160,image: image,draggable: true,offset: [80, 80],startScale: scale });
       }
     }
   
@@ -207,13 +216,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 //BOTONES
 
     console.log("ok go");
-    $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cara",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("cuerpo",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarAccesorio(100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab4 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("boca",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
-    $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); insertarPieza("ojos",100,100,0,pieza[0],pieza[1],$(this).find("img").attr("src")) });
+    $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCara.id = pieza[0]; insertarPieza("cara",$(this).find("img").attr("src"),confCara); });
+    $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCuerpo.id = pieza[0]; insertarPieza("cuerpo",$(this).find("img").attr("src"),confCuerpo); });
+    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio(100,$(this).find("img").attr("src")); });
+    $("#tab4 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confBoca.id = pieza[0]; insertarPieza("boca",$(this).find("img").attr("src"),confBoca); });
+    $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
 
-  function insertarPieza(obj,x,y,rotation,pieza_id,tipo_pieza_id,img) {
+  function insertarPieza(obj,img,conf) {
     var aux;
     if(obj==="cara"){ aux=obj; obj=cara; if(cara_web) cara_web.remove(); } 
     if(obj==="cara_web"){ aux=obj; obj=cara_web; if(cara) cara.remove(); } 
@@ -227,18 +236,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj.remove();
     }
     var image = new Image();
-    obj = new Kinetic.Image({
-      x: x,
-      y: y,
-      rotation: rotation,
-      height: 200,
-      width: 200,
-      image: image,
-      draggable: true,
-      offset: [100, 100],
-      tipo: tipo_pieza_id,
-      id: pieza_id
-    });
+    obj = new Kinetic.Image(conf);
     layerPersonaje.add(obj);
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
     console.log(img);
