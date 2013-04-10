@@ -1,3 +1,17 @@
+
+
+		<!-- This is the image we're attaching Jcrop to -->
+		<img src="<? echo $url;?>" id="cropbox" />
+
+		<!-- This is the form that our event handler fills -->
+		<form action="crop.php" method="post" onsubmit="return checkCoords();">
+			<input type="hidden" id="x" name="x" />
+			<input type="hidden" id="y" name="y" />
+			<input type="hidden" id="w" name="w" />
+			<input type="hidden" id="h" name="h" />
+			<input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+		</form>
+
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
 <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
@@ -27,16 +41,4 @@
   };
 
 </script>
-
-		<!-- This is the image we're attaching Jcrop to -->
-		<img src="<? echo $url;?>" id="cropbox" />
-
-		<!-- This is the form that our event handler fills -->
-		<form action="crop.php" method="post" onsubmit="return checkCoords();">
-			<input type="hidden" id="x" name="x" />
-			<input type="hidden" id="y" name="y" />
-			<input type="hidden" id="w" name="w" />
-			<input type="hidden" id="h" name="h" />
-			<input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
-		</form>
 
