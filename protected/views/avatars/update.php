@@ -61,46 +61,20 @@
             <div class="itemMeme"><img src="spr/ojos/ojos-9.png"></div>
           </div>
           <div id="tab4" class="memeThumbs">
-            <div class="js-slides">
-              <div class="slides_container">
-                <div class="slide">
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-1.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-2.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-3.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-4.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-5.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-6.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-7.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-8.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-9.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-10.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-11.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-12.png"></div>
-                </div>
-                <div class="slide">
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-12.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-13.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-14.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-15.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-16.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-17.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-18.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-19.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-20.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-21.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-22.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-23.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-24.png"></div>
-                </div>
-                <div class="slide">
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-24.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-25.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-26.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-27.png"></div>
-                </div>
-              </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
-            </div>
-          </div>
+           <? 
+                $bandera=false;
+                  if(is_array($json['catalogos']['bocas'])){
+                    echo '<div class="slides_container">';
+                    foreach ($json['catalogos']['bocas'] as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    }
+                    echo '</div></div>';//btns pre <a ....
+                  }
+              ?>
           <div id="tab5" class="memeThumbs">
             <div class="js-slides">
               <div class="slides_container">
