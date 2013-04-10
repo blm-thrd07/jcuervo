@@ -14,9 +14,7 @@
 		<input type="button" value="Otra vez" onClick="webcam.reset()" > 
 	</div>
 
-    <div id="upload_results"></div>
-
-
+ <div id="upload_results"></div>
   
 <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
 <script language="JavaScript">
