@@ -18,21 +18,19 @@
           <div id="tab1" class="memeThumbs">
             <div class="js-slides">
               <? 
-              $bandera=false;
-                if(is_array($json['catalogos']['caras'])){
-                  echo '<div class="slides_container"><div class="slide">';
-                  foreach ($json['catalogos']['caras'] as $key => $value) {  
-                    if($key%12==0) {
-                      if($bandera) echo '</div>'; else $bandera=true;
-                      echo '<div class="slide">';
+                $bandera=false;
+                  if(is_array($json['catalogos']['caras'])){
+                    echo '<div class="slides_container">';
+                    foreach ($json['catalogos']['caras'] as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"cabezas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cabezas/".$value['url'],"cabezas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
                   }
-                  echo '</div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
-                }
-              ?> 
-              </div>
-            </div>
+              ?>
           </div>
           <div id="tab2" class="memeThumbs">
               <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
