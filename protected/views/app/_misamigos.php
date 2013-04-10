@@ -5,8 +5,7 @@
 
 
           <? 
-           echo $cantidad_amigos;
-          if(count($cantidad_amigos)==0){?>
+          if($cantidad_amigos==0){?>
               <article id="noFriends">
                 <div id='fb-root'>
                 <h3>:(</h3>
