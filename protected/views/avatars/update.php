@@ -104,7 +104,7 @@
       </section>
     </div>
 
-<a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/"  class="js-lightbox">cam web</a>
+<a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
 
 <div id="wrapper">
 <div style="display: none;" id="overlay"></div>
@@ -163,7 +163,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle, image, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
   
   currentSelected = null;
   currentLayer = null;
@@ -188,7 +188,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   //se va a editar
   if(edit){
     for(var a in avatar_accesorios){
-      insertarAccesorio(avatar_accesorios[a].accesorioImg, { x: parseInt(avatar_accesorios[a].posx), y: parseInt(avatar_accesorios[a].posy), rotation: parseFloat(avatar_accesorios[a].rotation), id: parseInt(avatar_accesorios[a].accesorios_id), tipo: 1 });
+      insertarAccesorio(parseInt(avatar_accesorios[a].posx),parseInt(avatar_accesorios[a].posy),parseFloat(avatar_accesorios[a].rotation),parseInt(avatar_accesorios[a].accesorios_id),'.TiposPiezas::ACCESORIO.',avatar_accesorios[a].accesorioImg);
     }
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
@@ -218,7 +218,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("ok go");
     $("#tab1 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCara.id = pieza[0]; insertarPieza("cara",$(this).find("img").attr("src"),confCara); });
     $("#tab2 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCuerpo.id = pieza[0]; insertarPieza("cuerpo",$(this).find("img").attr("src"),confCuerpo); });
-    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio($(this).find("img").attr("src"),confAccesorio); });
+    $("#tab5 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio(100,$(this).find("img").attr("src")); });
     $("#tab4 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confBoca.id = pieza[0]; insertarPieza("boca",$(this).find("img").attr("src"),confBoca); });
     $("#tab3 div.itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
 
@@ -266,15 +266,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerPersonaje.draw();
   };
 
-  function insertarAccesorio(img,conf) {
+  function insertarAccesorio(x,y,rotation,pieza_id,tipo_pieza_id,img) {
     var insertar=true;
     for(i=0;i<accesorios.length;i++){
-      if(accesorios[i].attrs.id == conf.id) insertar=false;
+      if(accesorios[i].attrs.id == pieza_id) insertar=false;
     }
     if(insertar){
       imageAccesorio = new Image();
-      conf.image=imageAccesorio;
-      accesorio = new Kinetic.Image(conf);
+      accesorio = new Kinetic.Image(confAccesorio);
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
@@ -294,7 +293,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       accesorio.on("click", function() {
         currentSelected = this;
       });
-      console.log("ACCESORIO: id: "+conf.id+"tipo: "+conf.tipo);
+      console.log("ACCESORIO: id: "+pieza_id+"tipo: "+tipo_pieza_id);
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
       
