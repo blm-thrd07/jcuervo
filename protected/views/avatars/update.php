@@ -35,42 +35,20 @@
           </div>
           <div id="tab2" class="memeThumbs">
              <div class="js-slides">
-              <div class="slides_container">
-                <div class="slide">
- <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                </div>
-                <div class="slide">
- <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                </div>
-                <div class="slide">
- <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
-           </div>
-              </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
+              <? 
+                $bandera=false;
+                  if(is_array($json['catalogos']['cuerpos'])){
+                    echo '<div class="slides_container">';
+                    foreach ($json['catalogos']['cuerpos'] as $key => $value) {  
+                      if($key%12==0) {
+                        if($bandera) echo '</div>'; else $bandera=true;
+                        echo '<div class="slide">';
+                      }
+                      echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/cuerpos/".$value['url'],"cuerpos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    }
+                    echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>';
+                  }
+              ?>
             </div>
           </div>
           <div id="tab3" class="memeThumbs">
