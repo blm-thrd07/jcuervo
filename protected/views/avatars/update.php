@@ -146,6 +146,7 @@
 $baseUrl = Yii::app()->baseUrl; 
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/html5-webcam-build.js'); 
+$cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
 $cs->registerCssFile($baseUrl.'/css/html5-webcam.css');
 
 echo json_encode($json);
