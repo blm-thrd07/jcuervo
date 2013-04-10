@@ -433,7 +433,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
    
-    setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },4000);
+    setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },1500);
 
   });
 
