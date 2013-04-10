@@ -22,14 +22,7 @@
 <script language="JavaScript">
  
 //iniciajcrop
-  $(function(){
 
-    $('#cropbox').Jcrop({
-      aspectRatio: 1,
-      onSelect: updateCoords
-    });
-
-  });
   function updateCoords(c)
   {
     $('#x').val(c.x);
@@ -68,8 +61,13 @@
 			webcam.reset();
 		}
 		else {
-	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" id="cropbox">';
 
+	document.getElementById('upload_results').innerHTML = '<img src="' + msg + '" width="300" heigth="300" id="cropbox">';
+       $('#cropbox').Jcrop({
+            aspectRatio: 1,
+             onSelect: updateCoords
+             });
+		
 		};
 	}
 </script>
