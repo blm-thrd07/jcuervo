@@ -22,13 +22,10 @@
  
 //iniciajcrop
 
-$('#cropbox').live('click',function(){
-alert("entro");
-     $(this).Jcrop({
+$('#cropbox').Jcrop({
               aspectRatio: 1,
               onSelect: updateCoords
       });
-});
 
   function updateCoords(c)
   {
