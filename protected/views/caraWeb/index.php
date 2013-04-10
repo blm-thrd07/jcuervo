@@ -1,17 +1,55 @@
-<?php
-$this->breadcrumbs=array(
-	'Cara Webs',
-);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Live Cropping Demo</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
+<link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
 
-$this->menu=array(
-	array('label'=>'Create CaraWeb', 'url'=>array('create')),
-	array('label'=>'Manage CaraWeb', 'url'=>array('admin')),
-);
-?>
+<script type="text/javascript">
+  $(function(){
 
-<h1>Cara Webs</h1>
+    $('#cropbox').Jcrop({
+      aspectRatio: 1,
+      onSelect: updateCoords
+    });
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+  });
+  function updateCoords(c)
+  {
+    $('#x').val(c.x);
+    $('#y').val(c.y);
+    $('#w').val(c.w);
+    $('#h').val(c.h);
+  };
+
+  function checkCoords()
+  {
+    if (parseInt($('#w').val())) return true;
+    alert('Please select a crop region then press submit.');
+    return false;
+  };
+
+</script>
+</head>
+<body>
+
+
+
+		<!-- This is the image we're attaching Jcrop to -->
+		<img src="<? echo $url;?>" id="cropbox" />
+
+		<!-- This is the form that our event handler fills -->
+		<form action="crop.php" method="post" onsubmit="return checkCoords();">
+			<input type="hidden" id="x" name="x" />
+			<input type="hidden" id="y" name="y" />
+			<input type="hidden" id="w" name="w" />
+			<input type="hidden" id="h" name="h" />
+			<input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+		</form>
+
+
+	</body>
+
+</html>

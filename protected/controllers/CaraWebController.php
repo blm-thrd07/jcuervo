@@ -178,10 +178,8 @@ class CaraWebController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CaraWeb');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		
+      $this->renderPartial('index', array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/5165ddf9a459d.jpg'));
 	}
 
 	/**
