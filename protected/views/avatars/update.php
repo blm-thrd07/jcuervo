@@ -19,89 +19,96 @@
             <div class="js-slides">
               <div class="slides_container">
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-1.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-2.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-3.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-4.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-5.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-6.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-7.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-8.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-9.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-10.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-11.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-12.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
                 </div>
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-12.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-13.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-14.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-15.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-16.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-17.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-18.png"></div>
-                  <div class="itemMeme"><img src="spr/cabezas/cabeza-19.png"></div>
-                </div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                 </div>
               </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
             </div>
           </div>
           <div id="tab2" class="memeThumbs">
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-1.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-2.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-3.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-4.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-5.png"></div>
-            <div class="itemMeme"><img src="spr/cuerpos/cuerpo-6.png"></div>
+              <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
           </div>
           <div id="tab3" class="memeThumbs">
-            <div class="itemMeme"><img src="spr/ojos/ojos-1.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-2.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-3.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-4.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-5.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-6.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-7.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-8.png"></div>
-            <div class="itemMeme"><img src="spr/ojos/ojos-9.png"></div>
+           <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
           </div>
           <div id="tab4" class="memeThumbs">
             <div class="js-slides">
               <div class="slides_container">
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-1.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-2.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-3.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-4.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-5.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-6.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-7.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-8.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-9.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-10.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-11.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-12.png"></div>
+ <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
                 </div>
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-12.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-13.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-14.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-15.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-16.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-17.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-18.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-19.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-20.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-21.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-22.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-23.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-24.png"></div>
+ <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
                 </div>
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-24.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-25.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-26.png"></div>
-                  <div class="itemMeme"><img src="spr/boquitas/boquita-27.png"></div>
-                </div>
+ <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+           </div>
               </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
             </div>
           </div>
@@ -109,26 +116,25 @@
             <div class="js-slides">
               <div class="slides_container">
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-1.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-2.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-3.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-4.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-5.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-6.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-7.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-8.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-9.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-10.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-11.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-12.png"></div>
+   <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
                 </div>
                 <div class="slide">
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-12.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-13.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-14.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-15.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-16.png"></div>
-                  <div class="itemMeme"><img src="spr/accesorios/accesorio-17.png"></div>
+ <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
+                  <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/cabezas/cabeza1.png"></div>
                 </div>
               </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
             </div>
