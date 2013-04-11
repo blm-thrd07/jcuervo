@@ -45,7 +45,9 @@ $('#spic').live('click',function(){
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
-               alert(data);
+
+              $('#upload_results').html('<img src="' + data + '"id="cropbox" >');
+
             }
           });
 
@@ -57,10 +59,6 @@ $('#spic').live('click',function(){
 <div id="upload_results">
 
 </div>
-
-
-<button id="spic" >Save!!</button>
-
 
 
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
@@ -93,7 +91,8 @@ $('#spic').live('click',function(){
       webcam.reset();
 
       if(image_url!=null){
-        document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '"  id="cropbox" >';       
+        document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '"id="cropbox" > <button id="spic" >Save!!</button>
+';       
        }
     }
     else { 
