@@ -69,6 +69,11 @@
     </div>
   </section>
 </div>
+<?php
+$baseUrl = Yii::app()->baseUrl; 
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
+?>
 <div id="wrapper">
 <div style="display: none;" id="overlay"></div>
 <div style="display: none;" id="popup">
