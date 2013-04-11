@@ -325,6 +325,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           data: avatarJson,
           success: function(url){
               //window.location=url;
+            $("#overlay").css("display","none"); 
+            $("#popup").css("display","none"); 
           },
           error: function(data) { 
             alert("Vuelve a intentarlo");
