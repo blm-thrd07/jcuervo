@@ -13,7 +13,7 @@
   <body>
   
   <div id="container">
-    <? print_r($_SERVER);?>
+    <? print($_SERVER['PATH_INFO']);?>
     <?php echo $content; ?>
   </div>
 
