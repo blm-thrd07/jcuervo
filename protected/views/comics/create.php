@@ -118,7 +118,7 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
-  var angle,cuerpos,init,rotation,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle,cuerpos,init,rotation,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
   currentSelected = null; init=null;
   var amigos=[], objetos=[];
   console.log("tabs engine");
@@ -155,7 +155,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   iniciar = function(){
     console.log("iniciar");
-    stagePersonaje = new Kinetic.Stage({
+    stageComic = new Kinetic.Stage({
       container: "comicCanvas",
       width: 392,
       height: 294,
@@ -163,8 +163,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     
     layerFondo = new Kinetic.Layer();
     layerComic = new Kinetic.Layer();
-    stagePersonaje.add(layerFondo);
-    stagePersonaje.add(layerComic);
+    stageComic.add(layerFondo);
+    stageComic.add(layerComic);
 
     imageBackground = new Image();
     fondo = new Kinetic.Image({
@@ -207,7 +207,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#popup").css("display","block"); 
     $("#popup").fadeIn("slow");
 
-    stagePersonaje.toDataURL({
+    stageComic.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
         var data = { img: dataUrl };
