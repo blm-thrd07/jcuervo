@@ -242,30 +242,32 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       console.log(conf);
+
+      if(aux==="cara"){ cara=obj; cara.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
+      if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
+      if(aux==="ojos"){ ojos=obj; image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
+      if(aux==="boca"){ boca=obj; image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
+      if(aux==="cara_web"){ /*cara=obj; image.src = "data:image/png;base64," + img + "";*/ }
+        
+      obj.on("mouseover", function() {
+        this.setStroke("980d2e");
+        this.setStrokeWidth(1);
+        return layerPersonaje.draw();
+      });
+
+      obj.on("mouseout", function() {
+        this.setStroke(null);
+        this.setStrokeWidth(0);
+        return layerPersonaje.draw();
+      });
+
+      obj.on("click", function() {
+        currentSelected = this;
+      });
+
+      layerPersonaje.draw();
     };
-    if(aux==="cara"){ cara=obj; cara.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
-    if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
-    if(aux==="ojos"){ ojos=obj; image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
-    if(aux==="boca"){ boca=obj; image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
-    if(aux==="cara_web"){ /*cara=obj; image.src = "data:image/png;base64," + img + "";*/ }
-      
-    obj.on("mouseover", function() {
-      this.setStroke("980d2e");
-      this.setStrokeWidth(1);
-      return layerPersonaje.draw();
-    });
-
-    obj.on("mouseout", function() {
-      this.setStroke(null);
-      this.setStrokeWidth(0);
-      return layerPersonaje.draw();
-    });
-
-    obj.on("click", function() {
-      currentSelected = this;
-    });
-
-    layerPersonaje.draw();
+    
   };
 
   function insertarAccesorio(img,conf) {
