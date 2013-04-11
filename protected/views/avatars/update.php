@@ -242,7 +242,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); } 
       if(aux==="ojos"){ ojos=obj; } 
       if(aux==="boca"){ boca=obj; } 
-      if(aux==="cara_web"){ cara=obj; }
+      if(aux==="cara_web"){ cara_web=obj; cara_web.moveToBottom(); }
         
       obj.on("mouseover", function() {
         this.setStroke("980d2e");
@@ -283,7 +283,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       conf.image = imageAccesorio;
       imageAccesorio.onload = function(){
         accesorio = new Kinetic.Image(conf);
-        img=img.replace(/^.*\/(?=[^\/]*$)/, "");
         console.log(img);
         accesorio.on("mouseover", function() {
           this.setStroke("980d2e");
@@ -305,8 +304,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
         layerPersonaje.draw();
       }
+      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       imageAccesorio.src="'.Yii::app()->request->baseUrl.'/images/accesorios/"+img;
-
 
       return true;
     }
