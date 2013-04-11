@@ -243,11 +243,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(img);
       console.log(conf);
 
-      if(aux==="cara"){ cara=obj; cara.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
-      if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
-      if(aux==="ojos"){ ojos=obj; image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
-      if(aux==="boca"){ boca=obj; image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
-      if(aux==="cara_web"){ /*cara=obj; image.src = "data:image/png;base64," + img + "";*/ }
+      if(aux==="cara"){ cara=obj; cara.moveToBottom(); } 
+      if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); } 
+      if(aux==="ojos"){ ojos=obj; } 
+      if(aux==="boca"){ boca=obj; } 
+      if(aux==="cara_web"){ }
         
       obj.on("mouseover", function() {
         this.setStroke("980d2e");
@@ -267,6 +267,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       layerPersonaje.draw();
     };
+
+    if(aux==="cara"){ image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
+    if(aux==="cuerpo"){ image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
+    if(aux==="ojos"){ image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
+    if(aux==="boca"){ image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
+    if(aux==="cara_web"){ /*cara=obj; image.src = "data:image/png;base64," + img + "";*/ }
+ 
     
   };
 
