@@ -153,7 +153,7 @@ $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
 
-//echo json_encode($json);
+echo json_encode($json);
 
 Yii::app()->getClientScript()->registerScript('registrar', '
   var edit='.$json['edit'].';
@@ -187,6 +187,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   if(edit){
     for(var a in avatar_accesorios){
       insertarAccesorio(avatar_accesorios[a].accesorioImg, { x: parseInt(avatar_accesorios[a].posx), y: parseInt(avatar_accesorios[a].posy), rotation: parseFloat(avatar_accesorios[a].rotation), id: parseInt(avatar_accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
+    }
+    for(var a in avatar_cara_web){
+      //insertarAccesorio(avatar_cara_web[a].accesorioImg, { x: parseInt(avatar_accesorios[a].posx), y: parseInt(avatar_accesorios[a].posy), rotation: parseFloat(avatar_accesorios[a].rotation), id: parseInt(avatar_accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
     }
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
