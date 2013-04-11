@@ -9,7 +9,7 @@
           type: "GET",
           url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
           success: function(data){
-            $("#panelContent",parent.document.body).html(data);
+            $("#panelContent").html(data);
           }
         });
       return false;
@@ -113,8 +113,7 @@ $('#spic').live('click',function(){
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
-alert("listo");
-              $('#caraweb').html('<img src="' + data + '" id="cropbox" />');
+              $('#caraweb',parent.document.body).html('<img src="' + data + '" id="cropbox" />');
 
             }
           });
