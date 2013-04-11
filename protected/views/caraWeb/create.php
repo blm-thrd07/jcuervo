@@ -20,7 +20,6 @@
 </div>
 
 
-<a onclick="parent.alerta();" href="#" >Call Me </a>
 
 
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
