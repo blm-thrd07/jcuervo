@@ -507,6 +507,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   
     
-",CClientScript::POS_END);
+',CClientScript::POS_END);
 
 ?>
