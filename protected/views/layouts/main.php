@@ -15,8 +15,12 @@
   <div id="container">
     <? 
     $ca = split('/', $_SERVER['PATH_INFO']);
-    print_r($ca);
-
+    echo count($ca); 
+    if(count($ca)==4){
+       if($ca[2]=='Profile'){
+             echo $ca[3];
+        }     
+     }
     ?>
     <?php echo $content; ?>
   </div>
