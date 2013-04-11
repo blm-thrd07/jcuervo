@@ -13,6 +13,7 @@
   </head>
   <body>
   <div id="container">
+    <? print_r($_SERVER);?>
     <?php echo $content; ?>
   </div>
     <?php
