@@ -97,13 +97,11 @@ class UsuariosComicsComentarios extends CActiveRecord
     
 
     for($i=0;$i<$cantidad_comentarios;$i++){
-      
-               echo $comic->Coments[$i]->tbl_usuarios_id.' - '.Yii::app()->session['usuario_id']."<br>";
 
       if(((int)$comic->Coments[$i]->tbl_usuarios_id) == ((int)Yii::app()->session['usuario_id'])){
          $deletec=true;
       }else{
-      	         $deletec=false;
+      	 $deletec=false;
       }
 
       $comentarios[$i]=array('id'=>$comic->Coments[$i]->id,
