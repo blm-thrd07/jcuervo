@@ -242,7 +242,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); } 
       if(aux==="ojos"){ ojos=obj; } 
       if(aux==="boca"){ boca=obj; } 
-      if(aux==="cara_web"){ }
+      if(aux==="cara_web"){ cara=obj; }
         
       obj.on("mouseover", function() {
         this.setStroke("980d2e");
@@ -268,7 +268,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(aux==="cuerpo"){ image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
     if(aux==="ojos"){ image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
     if(aux==="boca"){ image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
-    if(aux==="cara_web"){ /*cara=obj; image.src = "data:image/png;base64," + img + "";*/ }
+    if(aux==="cara_web"){ image.src="'.Yii::app()->request->baseUrl.'/AvatarCaras/"+img; }
  
     
   };
