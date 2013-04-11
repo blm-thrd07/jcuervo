@@ -125,6 +125,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
+  var conf = {
+        x: halfx,
+        y: halfy,
+        height: 100,
+        width: 70,
+        draggable: true,
+        offset: [50, 50],
+      };
+
   /*$(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
@@ -181,17 +190,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("fondo agregado");
 
     imageMiAvatar = new Image();
-    MiAvatar = new Kinetic.Image({
-        x: halfx,
-        y: halfy,
-        height: 100,
-        width: 70,
-        image: imageMiAvatar,
-        draggable: true,
-        offset: [50, 50],
-        tipo: "MiAvatar",
-        id: 1
-      });
+    conf.image=imageMiAvatar;
+    conf.id="MiAvatar";
+    MiAvatar = new Kinetic.Image(conf);
     imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
     layerComic.add(MiAvatar);
     layerComic.moveToTop();
@@ -327,18 +328,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     if(insertar){
       imageObj = new Image();
-      obj = new Kinetic.Image({
-        x: 0,
-        y: 0,
-        rotation: 0,
-        height: 300,
-        width: 300,
-        image: imageObj,
-        draggable: true,
-        offset: [100, 100],
-        tipo: aux,
-        id: pieza_id
-      });
+      conf.image = imageObj;
+      obj = new Kinetic.Image(conf);
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
