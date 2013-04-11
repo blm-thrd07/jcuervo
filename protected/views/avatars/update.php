@@ -122,7 +122,7 @@
   }
 
   #overlay {
-    background: #000000;
+    background: black;
     opacity:0.5;
     bottom: 0;
     left: 0;
@@ -133,7 +133,7 @@
   }
   
   #popup {
-    background: none repeat scroll 0 0 #FFFFFF;
+    background: none repeat scroll 0 0 white;
     border: 20px solid #DDDDDD;
     left: 31%;
     padding: 50px;
