@@ -239,9 +239,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     image.onload = function(){
       obj = new Kinetic.Image(conf);
       layerPersonaje.add(obj);
-      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-      console.log(img);
-      console.log(conf);
 
       if(aux==="cara"){ cara=obj; cara.moveToBottom(); } 
       if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); } 
@@ -267,7 +264,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       layerPersonaje.draw();
     };
-
+    img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+    console.log(img);
     if(aux==="cara"){ image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
     if(aux==="cuerpo"){ image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
     if(aux==="ojos"){ image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
