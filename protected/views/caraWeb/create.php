@@ -20,12 +20,14 @@
          onSelect: updateCoords
         });
     });
-
+  var x,y,w,h;
   
   function updateCoords(c)
   {
-  
-     alert(c.x +c.y+c.w+c.h);
+     x=c.x;
+     y=c.y;
+     w=c.w;
+     h=c.h;
     return false;
   };
 
@@ -37,7 +39,8 @@
   };
 
 $('#spic').live('click',function(){
-     alert(c.x +c.y+c.w+c.h);
+     
+     alert(x+y+w+h);
 
   });
 </script> 
@@ -49,7 +52,7 @@ $('#spic').live('click',function(){
 </div>
 
 
-<button id="spic">Save!!</button>
+<button id="spic" >Save!!</button>
 
 
 
