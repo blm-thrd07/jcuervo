@@ -78,25 +78,8 @@ $(".share").live('click',function(){
 
 }).call(this);
 
-$(".js-lightbox").fancybox({
-      maxWidth: 810,
-      maxHeight: 600,
-      fitToView: false,
-      width: "70%",
-      height: "70%",
-      autoSize: false,
-      closeClick: false,
-      openEffect: "none",
-      closeEffect: "none"
-    });
 
-FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
-  function FacebookInviteFriends()
-  { 
-      FB.ui({method: 'apprequests', message: 'Generador de Memes Jose Cuervo'});
-      return false;
-  }
 
  $('#cropbox').live('click',function(){
         $(this).Jcrop({
@@ -138,6 +121,28 @@ $('#spic').live('click',function(){
       }
 
   });
+
+
+$(".js-lightbox").fancybox({
+      maxWidth: 810,
+      maxHeight: 600,
+      fitToView: false,
+      width: "70%",
+      height: "70%",
+      autoSize: false,
+      closeClick: false,
+      openEffect: "none",
+      closeEffect: "none"
+    });
+
+FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
+
+  function FacebookInviteFriends()
+  { 
+      FB.ui({method: 'apprequests', message: 'Generador de Memes Jose Cuervo'});
+      return false;
+  }
+
 
 
 
