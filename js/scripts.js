@@ -113,8 +113,8 @@ $('#spic').live('click',function(){
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
-
-              $('#caraweb').html('<img src="' + data + '"id="cropbox" >');
+alert("listo");
+              $('#caraweb').html('<img src="' + data + '" id="cropbox" />');
 
             }
           });
