@@ -7,7 +7,7 @@
       var url=$(this).attr("id");
       $.ajax({
           type: "GET",
-          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url+'/'+iU,
           success: function(data){
             $("#panelContent").html(data);
           }
