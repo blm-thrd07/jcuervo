@@ -40,7 +40,7 @@
 
 $('#spic').live('click',function(){
      
-     alert(x+y+w+h);
+     alert(parseInt(x)+parseInt(y)+parseInt(w)+parseInt(h));
 
   });
 </script> 
