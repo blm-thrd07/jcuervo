@@ -364,6 +364,7 @@ class AvatarsController extends Controller
 	    	$m = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
 	    	if(count($m)==0){
 	    		$m = new CaraWeb;
+	    		$m->avatar_id=Yii::app()->session['usuario_id'];
 	    		$m->url = $pieza_id;
 	    		//$m->posx=$posx;
 	    		//$m->posy=$posy;
