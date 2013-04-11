@@ -176,6 +176,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
+  confCaraWeb = { x: halfx,y: halfy - 170,height: 80,width: 80,draggable: true,offset: [60, 60],startScale: scale,tipo: 2};
   confCara = { x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
   confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
   confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
