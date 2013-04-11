@@ -135,6 +135,7 @@ class UsuariosComicsComentariosController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id)
+
 	{
 		if($this->loadModel($id)->delete()){
             echo "Eliminado";
