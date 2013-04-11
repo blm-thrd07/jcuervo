@@ -28,6 +28,8 @@
     $('#y').val(c.y);
     $('#w').val(c.w);
     $('#h').val(c.h);
+
+    return false;
   };
 
   function checkCoords()
