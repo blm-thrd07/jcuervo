@@ -93,7 +93,7 @@ $('#spic').live('click',function(){
       webcam.reset();
 
       if(image_url!=null){
-        document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '" width="200" heigth="200" id="cropbox" >';       
+        document.getElementById('upload_results').innerHTML = '<img src="' + image_url + '"  id="cropbox" >';       
        }
     }
     else { 
