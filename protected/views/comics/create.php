@@ -151,10 +151,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
 
   iniciar = function(){
+    console.log("iniciar");
     stagePersonaje = new Kinetic.Stage({
-      container: "personajeCanvas",
-      width: 258,
-      height: 460,
+      container: "comicCanvas",
+      width: 392,
+      height: 294,
     });
     
     layerFondo = new Kinetic.Layer();
@@ -167,8 +168,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         x: 0,
         y: 0,
         rotation: 0,
-        height: 258,
-        width: 460,
+        height: 392,
+        width: 294,
         image: imageBackground,
         offset: [100, 100],
         tipo: "fondo",
