@@ -305,7 +305,7 @@ class AvatarsController extends Controller
     	$rotation=$pieza['attrs']['rotation'];
 
     	//print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
-    	if($tipo==TiposPiezas::CUERPO || $tipo==TiposPiezas::CARA){
+    	if($tipo==TiposPiezas::CARA || $tipo>=TiposPiezas::CUERPO ){
 	    	//echo " pieza ";
 	    	$m = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>$tipo,)));
 
