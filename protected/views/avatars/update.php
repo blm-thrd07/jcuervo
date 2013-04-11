@@ -315,6 +315,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
+  alerta = function(){
+    alert("alerta");
+  }
+
   saveToImage = function() {
    var json = JSON.parse(layerPersonaje.toJSON()); 
     console.log(json.children);
