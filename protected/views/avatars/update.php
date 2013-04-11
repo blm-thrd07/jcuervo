@@ -324,7 +324,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           url: "'.CController::CreateUrl("avatars/UpdatePieza").'",
           data: avatarJson,
           success: function(url){
-              window.location=url;
+              //window.location=url;
           },
           error: function(data) { 
             alert("Vuelve a intentarlo");
@@ -393,7 +393,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   sendFront = function() {
     currentSelected.moveUp();
-    currentLayer.draw();
+    layerPersonaje.draw();
     console.log("front");
     return false;
   };
