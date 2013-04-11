@@ -66,10 +66,10 @@ $('#spic').live('click',function(){
   <div class="grid_3 espacio_camara alpha"></div>
 
   <div>
-    <input type="button" value="Parámetros" onClick="webcam.configure()" > <br>
-    <input type="button" value="Tomar foto" onClick="webcam.freeze()" > <br>
-    <input type="button" value="Guardar" onClick="do_upload()" > <br>
-    <input type="button" value="Otra vez" onClick="webcam.reset()" > 
+    <input class=".btn" type="button" value="Parámetros" onClick="webcam.configure()" > 
+    <input class=".btn" type="button" value="Tomar foto" onClick="webcam.freeze()" > 
+    <input class=".btn" type="button" value="Guardar" onClick="do_upload()" > 
+    <input class=".btn" type="button" value="Otra vez" onClick="webcam.reset()" > 
   </div>
 
   <script language="JavaScript">
