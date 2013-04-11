@@ -66,7 +66,7 @@
           
           var comicid=$(this).attr('id');
           $.ajax({
-            type: "POST",
+            type: "GET",
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
             success: function(data){
                  alert(data);
@@ -75,7 +75,22 @@
 
      }
 
+  });
 
+  $(".delcom").live('click',function(){
+
+    if (confirm('Realmete deseas eliminar este comentario')) {
+          
+          var comenid=$(this).attr('id');
+          $.ajax({
+            type: "GET",
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
+            success: function(data){
+                 alert(data);
+            }
+          });
+
+     }
 
   });
 

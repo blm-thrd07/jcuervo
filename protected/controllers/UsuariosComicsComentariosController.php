@@ -136,11 +136,14 @@ class UsuariosComicsComentariosController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		if($this->loadModel($id)->delete()){
+            echo "Eliminado";
+		}else{
+             echo "No se pudo eliminar";
 
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	
 	}
 
 	/**

@@ -91,12 +91,23 @@ class UsuariosComicsComentarios extends CActiveRecord
     $cantidad_comentarios=count($comic->Coments);
     $comentarios=null;
     $delete=false;
+    $deletec=false;
+
+
+    
+
     for($i=0;$i<$cantidad_comentarios;$i++){
+      
+      if($comic->Coments[$i]->tbl_usuarios_id==Yii::app()->session['usuario_id']){
+         $deletec=true;
+      }
       $comentarios[$i]=array('id'=>$comic->Coments[$i]->id,
                              'comment'=>$comic->Coments[$i]->comment,
                              'date'=>$comic->Coments[$i]->date,
                              'idFb'=>$comic->Coments[$i]->Usuarios->id_facebook,
-                             'nombre'=>$comic->Coments[$i]->Usuarios->nombre);
+                             'nombre'=>$comic->Coments[$i]->Usuarios->nombre,
+                             'delete'=>$deletec);
+
        }
 
 

@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.css">
   </head>
   <body>
-  
   <div id="container">
     <?php echo $content; ?>
   </div>
-
     <?php
        $baseUrl = Yii::app()->baseUrl; 
        $cs = Yii::app()->getClientScript();
