@@ -161,10 +161,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje,removeImage;
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
   
   currentSelected = null;
   currentLayer = null;
+  scale = 1;
+  scaleUpFactor: 1.05;
+  trans = null;
 
   stagePersonaje = new Kinetic.Stage({
     container: "personajeCanvas",
@@ -265,6 +268,31 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj.on("click", function() {
         currentSelected = this;
       });
+      
+      obj.on("dragstart", function() {
+        if (trans) {
+          trans.stop();
+        }
+        return this.setAttrs({
+          scale: {
+            x: this.attrs.startScale * scaleUpFactor,
+            y: this.attrs.startScale * scaleUpFactor
+          }
+        });
+      });
+
+      obj.on("dragend", function() {
+        trans = this.transitionTo({
+          duration: 0.5,
+          easing: "elastic-ease-out",
+          scale: {
+            x: this.attrs.startScale,
+            y: this.attrs.startScale
+          }
+        });
+      });
+
+
 
       layerPersonaje.draw();
     };
@@ -361,7 +389,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  angle = 0.174532925;
+  angle = 0.34906585;
 
   newangle = null;
 
@@ -383,7 +411,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log(angle);
     currentSelected.transitionTo({
       rotation: newangle,
-      duration: 0.5,
+      duration: 0.2,
       easing: "ease-out",
       callback: function() {
         return console.log(currentSelected.getRotation());
@@ -399,7 +427,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log(angle);
     currentSelected.transitionTo({
       rotation: newangle,
-      duration: 0.5,
+      duration: 0.2,
       easing: "ease-out",
       callback: function() {
         return console.log(currentSelected.getRotation());
