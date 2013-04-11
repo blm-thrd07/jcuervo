@@ -12,7 +12,7 @@
       <div id="pic">
         <? echo CHtml::image(Yii::app()->request->baseUrl."/Comics/".$json['comic']['comic']['imagen']); ?>
           <? if($json['comic']['comic']['eliminar']){ ?>
-             <a href="#" class="delc" id="<? echo $json['comic']['comic']['id']; ?>" class="btn"><i class="icon-trash"></i> Eliminar</a>
+             <a href="#" class="btn delc" id="<? echo $json['comic']['comic']['id']; ?>"><i class="icon-trash"></i> Eliminar</a>
          <? } ?>     
         <div><span><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" id="<? echo $json['comic']['comic']['id'];  ?>" class="btn share"><i class="icon-share"></i> Compartir</a></div>
       </div>
