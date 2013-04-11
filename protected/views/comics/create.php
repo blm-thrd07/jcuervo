@@ -187,7 +187,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         x: halfx,
         y: halfy,
         height: 100,
-        width: 100,
+        width: 70,
         image: imageMiAvatar,
         draggable: true,
         offset: [50, 50],
@@ -344,7 +344,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
-      imageObj.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+      imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
       obj.on("mouseover", function() {
         this.setStroke("980d2e");
         this.setStrokeWidth(1);
