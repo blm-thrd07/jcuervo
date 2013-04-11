@@ -1,96 +1,70 @@
-<section id="panelPersonaje">
-        <h1>Nombre del Usuario</h1>
-        <div id="personajeCanvas"></div>
-        <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-reset" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
-      </section>
-      <section id="panelContent">
-        <h2>Crea tu Meme</h2>
-        <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
-        <div class="js-tabEngine itemSelector">
-          <ul>
-            <li><a href="#tab1">Fondos</a></li>
-            <li><a href="#tab2">Objetos</a></li>
-            <li><a href="#tab3">Avatars de mis amigos</a></li>
-          </ul>
-          <div id="tab1" class="memeThumbs">
-            <ul class="js-slides-1 bx-slides">
-              <li>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-              </li>
-              <li>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-              </li>
-            </ul>
-          </div>
-          <div id="tab2" class="memeThumbs">
-            <ul class="js-slides-2 bx-slides">
-              <li>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>              </li>
-              <li>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>              </li>
-              </li>
-            </ul>
-          </div>
-          <div id="tab3" class="memeThumbs">
-                <div class="itemMeme"><img id="1" src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>
-                <div class="itemMeme"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/placeholder.png" data-original="<?php echo Yii::app()->request->baseUrl; ?>/img/cabeza-1.png" class="lazy"></div>          </div>
-        
+<div id="container">
+  <section id="panelComic">
+    <h1>Crea tu Meme</h1>
+    <div id="insertText"><a href="#" id="js-createText" class="btn"><i class="icon-font"></i></a>
+      <input type="text" id="textinput" class="inputClose"><a href="#" id="js-insertText" class="btn"><i class="icon-hand-down"></i></a><a href="#" class="btn"><i class="icon-comment"></i></a>
+    </div>
+    <div id="comicCanvas"></div>
+    <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
+  </section>
+  <section id="panelContentComic">
+    <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
+    <div class="js-tabEngine itemSelector">
+      <ul>
+        <li><a href="#tab1">Fondos</a></li>
+        <li><a href="#tab2">Objetos</a></li>
+        <li><a href="#tab3">Amigos</a></li>
+      </ul>
+      <div id="tab1" class="comicThumbs">
+        <div class="js-slides-comic">
+          <div class="slides_container">
+            <div class="slide">
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-1.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-2.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-3.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-4.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-5.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-6.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-7.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-8.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-9.png"></div>
+            </div>
+            <div class="slide">
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-10.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-11.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-12.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-13.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-14.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-15.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-16.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-17.png"></div>
+              <div class="itemMeme"><img src="spr/cabezas/cabeza-18.png"></div>
+            </div>
+          </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
         </div>
-      </section>
+      </div>
+      <div id="tab2" class="comicThumbs">
+        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-1.png"></div>
+        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-2.png"></div>
+        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-3.png"></div>
+        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-4.png"></div>
+        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-5.png"></div>
+        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-6.png"></div>
+      </div>
+      <div id="tab3" class="comicThumbs">
+        <div class="itemMeme"><img src="spr/ojos/ojos-1.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-2.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-3.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-4.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-5.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-6.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-7.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-8.png"></div>
+        <div class="itemMeme"><img src="spr/ojos/ojos-9.png"></div>
+      </div>
+    </div>
+  </section>
+</div>
 <div id="wrapper">
 <div style="display: none;" id="overlay"></div>
 <div style="display: none;" id="popup">
@@ -131,7 +105,7 @@
 </style>
 
 
-<?php //echo $this->renderPartial('_form', array('model'=>$model)); 
+<?php //echo $this->renderPartial("_form', array('model'=>$model)); 
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
@@ -164,9 +138,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
 
     console.log("onclick");
-    $("#tab1 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
-    $("#tab2 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
-    $("#tab3 div.itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
+    $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
+    $("#tab2 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
+    $("#tab3 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
     $(".itemSelector a").on("click", function() {
       console.log("you hace clicked a tab btn");
       setTimeout(function(){
@@ -407,6 +381,122 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-removeElement").on("click", removeImage);
   $("#js-sendBack").on("click", sendBack);
 
+  $("#js-resetRotation").on("click", resetRotation);
+  $("#js-insertText").on("click", insertText);
+  $("#js-createText").on("click", createText);
+
+  initialText = "Inserta Texto";
+
+  createText = function() {
+    var texto;
+    texto = new Kinetic.Text({
+      x: 0,
+      y: 0,
+      text: initialText,
+      fontSize: 18,
+      fontFamily: "aldosemibold",
+      fill: "#0000 00",
+      width: 300,
+      padding: 5,
+      align: "left",
+      draggable: true
+    });
+    layerComic.add(texto);
+    layerComic.draw();
+    $("#textinput").attr("class", "inputOpen");
+    $("#textinput").focus();
+    $("#textinput").val(initialText);
+    $("#textinput").select();
+    currentText = texto;
+    texto.on("mouseover", function() {
+      this.setStroke("980d2e");
+      this.setStrokeWidth(1);
+      return layerComic.draw();
+    });
+    texto.on("mouseout", function() {
+      this.setStroke(null);
+      this.setStrokeWidth(0);
+      return layerComic.draw();
+    });
+    texto.on("click", function() {
+      $("#textinput").attr("class", "inputOpen");
+      $("#textinput").focus();
+      currentText = this;
+      return $("#textinput").val(this.getText());
+    });
+    return false;
+  };
+
+  insertText = function() {
+    currentText.setText($("#textinput").val());
+    $("#textinput").val("");
+    $("#textinput").attr("class", "inputClose");
+    layerComic.draw();
+    return false;
+  };
+
+  angle = 0.34906585;
+
+  newangle = null;
+
+  rotateLeft = function() {
+    newangle = currentSelected.getRotation() - angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.2,
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    layerComic.draw();
+    return false;
+  };
+
+  rotateRight = function() {
+    newangle = currentSelected.getRotation() + angle;
+    console.log(newangle);
+    console.log(angle);
+    currentSelected.transitionTo({
+      rotation: newangle,
+      duration: 0.2,
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    layerComic.draw();
+    return false;
+  };
+
+  sendFront = function() {
+    currentSelected.moveToTop();
+    layerComic.draw();
+    console.log("front");
+    return false;
+  };
+
+  sendBack = function() {
+    currentSelected.moveToBottom();
+    layerComic.draw();
+    console.log("back");
+    return false;
+  };
+
+  resetRotation = function() {
+    currentSelected.transitionTo({
+      rotation: 0,
+      duration: 0.3,
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    layerComic.draw();
+    return false;
+  };
+
+//
+
   $(document).ready(function() {
     console.log("ready");
     iniciar();
@@ -417,6 +507,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   
     
-',CClientScript::POS_END);
+",CClientScript::POS_END);
 
 ?>

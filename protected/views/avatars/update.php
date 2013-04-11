@@ -321,6 +321,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   saveToImage = function() {
    var json = JSON.parse(layerPersonaje.toJSON()); 
+   for(var i in json){
+    console.log(json[i]);
+   }
     console.log(json.children);
     $("#overlay").css("display","block"); 
     $("#popup").css("display","block"); 
