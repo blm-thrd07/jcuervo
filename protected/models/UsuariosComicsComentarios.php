@@ -115,7 +115,7 @@ class UsuariosComicsComentarios extends CActiveRecord
                                          'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
                                          'destacado'=>$comic->UsuariosComics[0]->destacado,
                                          'comments'=>$comentarios,
-                                         'elminar'=>$delete
+                                         'eliminar'=>$delete
                                          ));                
 
 
