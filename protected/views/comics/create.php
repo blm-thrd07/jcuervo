@@ -304,10 +304,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   function insertarFondo(img) {
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-    imageBackground.src="'.Yii::app()->request->baseUrl.'/img/"+img;
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/"+img;
     layerFondo.draw();
     layerComic.moveToTop();
-
   };
 
   function insertar(obj,pieza_id,img) {
