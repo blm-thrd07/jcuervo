@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memegenerator Jose Cuervo Especial</title>
+    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
     <style type="text/css"> .espacio_camara{ background-color: orange; height: auto; }</style>
     <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
