@@ -122,7 +122,7 @@ alert("listo");
 
   });
 
-
+$('#caraweb').html("<h1>hgolaaa</h1>");
 
 
 $(".js-lightbox").fancybox({
