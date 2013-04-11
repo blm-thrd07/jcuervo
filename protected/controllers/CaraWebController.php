@@ -127,8 +127,8 @@ class CaraWebController extends Controller
 	                    $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
 
                        imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
-                       $data=imagejpeg($dst_r,null,$jpeg_quality);
-                       $success = file_put_contents($src, $data);
+                       imagejpeg($dst_r,$src,$jpeg_quality);
+                       //$success = file_put_contents($src, $data);
                        if($success){
                           echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$Existe_foto->url;
                         }
