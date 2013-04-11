@@ -118,15 +118,12 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 
 Yii::app()->getClientScript()->registerScript('registrar', '
  
-  var angle,cuerpos,init,rotation,imageBackground, currentSelected, init, insertCabeza, insertCuerpo, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
+  var angle,cuerpos,init,rotation,imageBackground,halfx,halfy, currentSelected, init, insertCabeza, insertCuerpo, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
   currentSelected = null; init=null;
   var amigos=[], objetos=[];
   console.log("tabs engine");
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
-
-  halfx = stageComic.getWidth() / 2;
-  halfy = stageComic.getHeight() / 2;
 
   /*$(function() {
     $(".lazy").lazyload({
@@ -160,7 +157,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       width: 392,
       height: 294,
     });
-    
+    halfx = stageComic.getWidth() / 2;
+    halfy = stageComic.getHeight() / 2;
     layerFondo = new Kinetic.Layer();
     layerComic = new Kinetic.Layer();
     stageComic.add(layerFondo);
