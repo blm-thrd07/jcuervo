@@ -112,7 +112,33 @@ class CaraWebController extends Controller
    public function actionEdit(){
 
    	  if(isset($_POST)){
-   	    	print_r($_POST['x']);
+
+           $model=new CaraWeb;
+           $filepath= Yii::app()->basePath.'/../AvatarCaras/';
+           $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
+
+                if(count($Existe_foto)>0){
+                 	if(file_exists($filepath.$Existe_foto->url)){
+
+                        $targ_w = $targ_h = 150;
+	                    $jpeg_quality = 90;
+	                    $src = $filepath.$Existe_foto->url;
+	                    $img_r = imagecreatefromjpeg($src);
+	                    $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+
+                       imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
+                       $data=imagejpeg($dst_r,null,$jpeg_quality);
+                       $success = file_put_contents($src, $data);
+                       echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename;
+                       
+                        }        		    
+                     }else if($Existe_foto==0){
+                        
+                        echo "no existe pic";
+                     }
+
+
+
    	   }
    }
 
