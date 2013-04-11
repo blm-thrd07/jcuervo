@@ -147,21 +147,30 @@ public function actionLogin(){
          $this->renderPartial('//app/_destacados',array('resultado'=>$resultado));
       }
   
-  public function actionMisMemes(){
-  
-   $modelComics= new UsuariosHasTblComics;
-   $comics=$modelComics->getMyComics();
-   $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
+  public function actionMisMemes($id){
+
+
+   $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+   
+   if(count($response)!= 0){
+      $modelComics= new UsuariosHasTblComics;
+      $comics=$modelComics->getMyComics($response->id);
+      $this->renderPartial('//app/_mismemes',array('comics'=>$comics));
+   } 
 
   }
 
-  public function actionMisAmigos(){
-
+  public function actionMisAmigos($id){
+    
     $model_Amigos_Avatars=new Amigos;
-    $amigosComics=$model_Amigos_Avatars->getAmigosComics();
+    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+   
+   if(count($response)!= 0){
+    $amigosComics=$model_Amigos_Avatars->getAmigosComics($response->id);
     $comicsAmigos=$amigosComics;
     $cantidad_amigos=count($model_Amigos_Avatars->findAll(array('condition'=>'usuarios_id='.Yii::app()->session['usuario_id'])));
     $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos,'cantidad_amigos'=>$cantidad_amigos));
+    }
   }
 
   public function actionCategoria(){
