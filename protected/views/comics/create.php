@@ -117,20 +117,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentSelected = null; init=null;
   var amigos=[], objetos=[];
   console.log("tabs engine");
-  $(".js-tabEngine").easytabs({
-      animate: false,
-      tabActiveClass: "selected",
-      updateHash: false
-  });
-  $(".js-slides-1, .js-slides-2, .js-slides-3, .js-slides-4, .js-slides-5, .js-slides-6").bxSlider({
-      startingSlide: 1,
-      pager: false,
-      controls: true,
-      nextText: "→",
-      prevText: "←"
-  });
+  $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
+  $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
-  $(function() {
+  /*$(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
     });
@@ -139,20 +129,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(":)");
       //return layerPersonaje.draw();
     }), 100);
+  });*/
+
+  console.log("onclick");
+  $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
+  $("#tab2 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
+  $("#tab3 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
+  $(".itemSelector a").on("click", function() {
+    console.log("you hace clicked a tab btn");
+    setTimeout(function(){
+      console.log("cargado");
+
+      //$(".bx-viewport").width
+    },3000);
   });
-
-    console.log("onclick");
-    $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
-    $("#tab2 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
-    $("#tab3 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
-    $(".itemSelector a").on("click", function() {
-      console.log("you hace clicked a tab btn");
-      setTimeout(function(){
-        console.log("cargado");
-
-        //$(".bx-viewport").width
-      },3000);
-    });
 
 
   iniciar = function(){
@@ -179,7 +169,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         tipo: "fondo",
         id: 1
       });
-    imageBackground.src="'.Yii::app()->request->baseUrl.'/Comics/comic1.jpg";
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/images/Backgrounds/default.png";
     layerFondo.add(fondo);
     console.log("fondo agregado");
 
@@ -455,8 +445,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("ready");
     iniciar();
     setTimeout(function(){ layerFondo.draw(); layerPersonaje.draw(); },3000);
-
-
 
   });
   

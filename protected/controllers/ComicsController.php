@@ -102,7 +102,6 @@ class ComicsController extends Controller
 		$amigos = new Amigos;
 		$objetos = CatalogoObjetos::model()->findAll();
 		$backgrounds = Backgrounds::model()->findAll();
-		print_r($backgrounds);
 		//print_r($avatar->avatar_img);
 		//print_r($amigos->getAmigosAvatars());
 		$this->render('create',array(
