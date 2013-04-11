@@ -105,7 +105,7 @@
     </div>
 
 <a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
-
+<div id="caraweb"></div>
 <div id="wrapper">
 <div style="display: none;" id="overlay"></div>
 <div style="display: none;" id="popup">
@@ -429,7 +429,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
   });
 
-  setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },2000);
+  setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },1000);
 
   
 ',CClientScript::POS_END);
