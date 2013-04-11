@@ -39,8 +39,15 @@
   };
 
 $('#spic').live('click',function(){
-     
-     alert(parseInt(x)+parseInt(y)+parseInt(w)+parseInt(h));
+
+      $.ajax({
+            type: "POST",
+            data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
+            success: function(data){
+               alert(data);
+            }
+          });
 
   });
 </script> 

@@ -31,7 +31,7 @@ class CaraWebController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','SaveFoto'),
+				'actions'=>array('create','update','SaveFoto','Edit'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -106,6 +106,14 @@ class CaraWebController extends Controller
        	    throw new CHttpException(404,'The specified post cannot be found.');
        }
         
+   }
+
+
+   public function actionEdit(){
+
+   	  if(isset($_POST)){
+   	    	print_r($_POST['x']);
+   	   }
    }
 
 	/**
