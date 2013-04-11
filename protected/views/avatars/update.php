@@ -152,11 +152,8 @@ $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
 
-echo json_encode($json);
-echo "<br><br>";
+//echo json_encode($json);
 
-
-//pieza//accesorio//cara_web
 Yii::app()->getClientScript()->registerScript('registrar', '
   var edit='.$json['edit'].';
   var avatar = '.CJSON::encode($json['avatar']).';
