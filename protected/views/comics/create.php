@@ -16,51 +16,55 @@
         <li><a href="#tab3">Amigos</a></li>
       </ul>
       <div id="tab1" class="comicThumbs">
-        <div class="js-slides-comic">
-          <div class="slides_container">
-            <div class="slide">
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-1.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-2.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-3.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-4.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-5.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-6.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-7.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-8.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-9.png"></div>
-            </div>
-            <div class="slide">
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-10.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-11.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-12.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-13.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-14.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-15.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-16.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-17.png"></div>
-              <div class="itemMeme"><img src="spr/cabezas/cabeza-18.png"></div>
-            </div>
-          </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
-        </div>
+       <? 
+        $bandera=false;
+        $count=count($fondos);
+          if(is_array($fondos)){
+            if($count>12) echo '<div class="js-slides"><div class="slides_container">';
+            foreach ($fondos as $key => $value) {  
+              if($key%12==0 && $count>12) {
+                if($bandera) echo '</div>'; else $bandera=true;
+                echo '<div class="slide">';
+              }
+              echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/backgrounds/".$value['url'],"backgrounds",array('id'=>$value['id_background'])).'</div>'; 
+            }
+            if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+          }
+      ?>
       </div>
       <div id="tab2" class="comicThumbs">
-        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-1.png"></div>
-        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-2.png"></div>
-        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-3.png"></div>
-        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-4.png"></div>
-        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-5.png"></div>
-        <div class="itemMeme"><img src="spr/cuerpos/cuerpo-6.png"></div>
+        <? 
+          $bandera=false;
+          $count=count($objetos);
+            if(is_array($objetos)){
+              if($count>12) echo '<div class="js-slides"><div class="slides_container">';
+              foreach ($objetos as $key => $value) {  
+                if($key%12==0 && $count>12) {
+                  if($bandera) echo '</div>'; else $bandera=true;
+                  echo '<div class="slide">';
+                }
+                echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/objetos/".$value['url'],"objetos",array('id'=>$value['id'])).'</div>'; 
+              }
+              if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+            }
+        ?>
       </div>
       <div id="tab3" class="comicThumbs">
-        <div class="itemMeme"><img src="spr/ojos/ojos-1.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-2.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-3.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-4.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-5.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-6.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-7.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-8.png"></div>
-        <div class="itemMeme"><img src="spr/ojos/ojos-9.png"></div>
+        <? 
+          $bandera=false;
+          $count=count($amigos_avatars);
+            if(is_array($amigos_avatars)){
+              if($count>12) echo '<div class="js-slides"><div class="slides_container">';
+              foreach ($amigos_avatars as $key => $value) {  
+                if($key%12==0 && $count>12) {
+                  if($bandera) echo '</div>'; else $bandera=true;
+                  echo '<div class="slide">';
+                }
+                echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'</div>'; 
+              }
+              if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+            }
+        ?>
       </div>
     </div>
   </section>
