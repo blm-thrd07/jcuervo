@@ -48,7 +48,6 @@ public function actionLogin(){
 
         //YII::app()->params['facebook']=$facebook;
         $user =$facebook->getUser();
-        $my_access_token= $facebook->getAccessToken();
 
         if ($user) {
            try {
@@ -86,7 +85,8 @@ public function actionLogin(){
             $model=new Login;
             $model->username=$response[0]->id;
             $model->login();
-            Yii::app()->session['usuario_id']=$response[0]->id; 
+            Yii::app()->session['usuario_id']=$response[0]->id;
+            Yii::app()->session['access_token']=$facebook->getAccessToken();
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
          }else{
@@ -117,26 +117,19 @@ public function actionLogin(){
    
   header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
  
-  $facebook = new facebook(array(
+   $facebook = new facebook(array(
         'appId'  => '342733185828640',
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
   
-      $user =$facebook->getUser();
       
-      if($user){
-         $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
+      $facebook->setAccessToken(Yii::app()->session['access_token']);
+      $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
          
          if(count($friends)!=null){
              $model_amigos=new Amigos;
              $model_amigos->insertAmigosApp($friends);
           }
-      
-      }else{
-
-      $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
-
-      }
    
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
   
