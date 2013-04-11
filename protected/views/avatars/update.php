@@ -189,8 +189,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       insertarAccesorio(avatar_accesorios[a].accesorioImg, { x: parseInt(avatar_accesorios[a].posx), y: parseInt(avatar_accesorios[a].posy), rotation: parseFloat(avatar_accesorios[a].rotation), id: parseInt(avatar_accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
     }
     for(var a in avatar.cara_web){
-      confCaraWeb.id=avatar.cara_web[k].url;
-      insertarPieza("cara_web",avatar.cara_web[k].url,confCaraWeb);
+      confCaraWeb.id=avatar.cara_web[a].url;
+      insertarPieza("cara_web",avatar.cara_web[a].url,confCaraWeb);
     }
 
     for(var k=0; k < avatar.avatarPiezas.length; k++){
