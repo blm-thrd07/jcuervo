@@ -106,14 +106,6 @@ public function actionLogin(){
   public function actionProfile($id)
   {
 
-  header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
- 
-   $facebook = new facebook(array(
-        'appId'  => '342733185828640',
-        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-        ));
-
-
    $logoutUrl=null;
    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    $avatarImg=$response->Avatar->avatar_img;
@@ -121,14 +113,31 @@ public function actionLogin(){
    $comics=$modelComics->getMyComics();
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    
-   $my_access_token=$facebook->getAccessToken();
-   $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
    
-   if(count($friends)!=null){
-       $model_amigos=new Amigos;
-       $model_amigos->insertAmigosApp($friends);
-   }
+   
+  header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+ 
+  $facebook = new facebook(array(
+        'appId'  => '342733185828640',
+        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+        ));
   
+      $user =$facebook->getUser();
+      
+      if($user){
+         $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
+         
+         if(count($friends)!=null){
+             $model_amigos=new Amigos;
+             $model_amigos->insertAmigosApp($friends);
+          }
+      
+      }else{
+
+      $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+
+      }
+   
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
   
   }
