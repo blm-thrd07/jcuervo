@@ -178,7 +178,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
-  confCara = {x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
+  confCara = { x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
   confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
   confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
   confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
@@ -240,6 +240,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerPersonaje.add(obj);
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
     console.log(img);
+    console.log(conf);
     if(aux==="cara"){ cara=obj; cara.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
     if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
     if(aux==="ojos"){ ojos=obj; image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
@@ -274,7 +275,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageAccesorio = new Image();
       conf.image = imageAccesorio;
       accesorio = new Kinetic.Image(conf);
-      console.log(img);
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       imageAccesorio.src="'.Yii::app()->request->baseUrl.'/images/accesorios/"+img;
@@ -293,7 +293,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       accesorio.on("click", function() {
         currentSelected = this;
       });
-      console.log("ACCESORIO: id: "+conf.id+"tipo: "+conf.tipo);
       layerPersonaje.add(accesorio);
       accesorios.push(accesorio);
       
