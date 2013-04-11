@@ -93,7 +93,7 @@ $('#spic').live('click',function(){
 
       if(image_url!=null){
 
-document.getElementById('upload_results').innerHTML = '<img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
+document.getElementById('upload_results').innerHTML = '<h1>Delimita tu rostro dando click!</h1><br><img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
        }
     }
     else { 
