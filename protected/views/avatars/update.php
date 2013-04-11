@@ -285,29 +285,32 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(insertar){
       imageAccesorio = new Image();
       conf.image = imageAccesorio;
-      accesorio = new Kinetic.Image(conf);
-      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-      console.log(img);
+      imageAccesorio.onload = function(){
+        accesorio = new Kinetic.Image(conf);
+        img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+        console.log(img);
+        accesorio.on("mouseover", function() {
+          this.setStroke("980d2e");
+          this.setStrokeWidth(1);
+          return layerPersonaje.draw();
+        });
+
+        accesorio.on("mouseout", function() {
+          this.setStroke(null);
+          this.setStrokeWidth(0);
+          return layerPersonaje.draw();
+        });
+
+        accesorio.on("click", function() {
+          currentSelected = this;
+        });
+        layerPersonaje.add(accesorio);
+        accesorios.push(accesorio);
+        
+        layerPersonaje.draw();
+      }
       imageAccesorio.src="'.Yii::app()->request->baseUrl.'/images/accesorios/"+img;
-      accesorio.on("mouseover", function() {
-        this.setStroke("980d2e");
-        this.setStrokeWidth(1);
-        return layerPersonaje.draw();
-      });
 
-      accesorio.on("mouseout", function() {
-        this.setStroke(null);
-        this.setStrokeWidth(0);
-        return layerPersonaje.draw();
-      });
-
-      accesorio.on("click", function() {
-        currentSelected = this;
-      });
-      layerPersonaje.add(accesorio);
-      accesorios.push(accesorio);
-      
-      layerPersonaje.draw();
 
       return true;
     }
