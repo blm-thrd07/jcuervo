@@ -110,7 +110,7 @@ class ComicsController extends Controller
 			'avatar'=>$avatar,
 			'amigos_avatars'=>$amigos->getAmigosAvatars(),
 			'objetos'=>$objetos,
-			'fondos'=>array(),
+			'fondos'=>$backgrounds,
 		));
 	}
 
