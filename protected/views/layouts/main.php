@@ -13,7 +13,11 @@
   <body>
   
   <div id="container">
-    <? print($_SERVER['PATH_INFO']);?>
+    <? 
+    $ca = split('/', $_SERVER['PATH_INFO']);
+    print_r($ca);
+
+    ?>
     <?php echo $content; ?>
   </div>
 
