@@ -175,7 +175,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         tipo: "fondo",
         id: 1
       });
-    imageBackground.src="'.Yii::app()->request->baseUrl.'/images/Backgrounds/default.png";
+    imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
     layerFondo.add(fondo);
     console.log("fondo agregado");
 
