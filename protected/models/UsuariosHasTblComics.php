@@ -78,8 +78,8 @@ class UsuariosHasTblComics extends CActiveRecord
 
 
 
-   public function getMyComics(){
-    $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+   public function getMyComics($id){
+    $response= UsuariosHasTblComics::model()->findAll(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>$id)));   
     $numero_comics=count($response);
     $comics=array();
     $comics['comics']=null;

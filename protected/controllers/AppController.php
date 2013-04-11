@@ -110,7 +110,7 @@ public function actionLogin(){
    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
    $avatarImg=$response->Avatar->avatar_img;
    $modelComics= new UsuariosHasTblComics;
-   $comics=$modelComics->getMyComics();
+   $comics=$modelComics->getMyComics($response->id);
    $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    
    
