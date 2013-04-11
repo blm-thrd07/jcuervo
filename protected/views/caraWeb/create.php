@@ -19,9 +19,6 @@
 
 </div>
 
-
-
-
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
   <h1>Tomar  Fotografia</h1>
   <div class="grid_3 espacio_camara alpha"></div>
