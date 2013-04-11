@@ -190,6 +190,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     for(var a in avatar.cara_web){
       confCaraWeb.id=avatar.cara_web[a].url;
+      alert(avatar.cara_web[a].url);
       insertarPieza("cara_web",avatar.cara_web[a].url,confCaraWeb);
     }
 
