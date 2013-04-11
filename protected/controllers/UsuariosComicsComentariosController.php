@@ -15,7 +15,7 @@ class UsuariosComicsComentariosController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			//'postOnly + delete', // we only allow deletion via POST request
+			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -135,15 +135,14 @@ class UsuariosComicsComentariosController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 
-	public function actionDelete()
+	public function actionDelete($id)
 	{
-		echo "entre";
-		/*if($this->loadModel($id)->delete()){
+		if($this->loadModel($id)->delete()){
 
 			echo "Comentario eliminado";
 		}else{
 			 echo "No se pudo eliminar";
-		}*/
+		}
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		/*
 		if(!isset($_GET['ajax']))

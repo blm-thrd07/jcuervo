@@ -83,7 +83,7 @@
           
           var comenid=$(this).attr('id');
           $.ajax({
-            type: "GET",
+            type: "POST",
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
             success: function(data){
                  alert(data);
