@@ -106,23 +106,18 @@ $(".share").live('click',function(){
   };
 
 $('#spic').live('click',function(){
-  
   if(parseInt(w)){
       $.ajax({
             type: "POST",
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
-              //$('#caraweb',parent.document.body).html('<img src="' + data + '" id="cropbox" />');
                parent.insertarPieza('cara_web',data,parent.confCaraWeb);
             }
           });
       }
 
   });
-
-$('#caraweb').html("<h1>hgolaaa</h1>");
-
 
 $(".js-lightbox").fancybox({
       maxWidth: 810,
