@@ -236,11 +236,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     var image = new Image();
     conf.image = image;
-    obj = new Kinetic.Image(conf);
-    layerPersonaje.add(obj);
-    img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-    console.log(img);
-    console.log(conf);
+    image.onload = function(){
+      obj = new Kinetic.Image(conf);
+      layerPersonaje.add(obj);
+      img=img.replace(/^.*\/(?=[^\/]*$)/, "");
+      console.log(img);
+      console.log(conf);
+    };
     if(aux==="cara"){ cara=obj; cara.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
     if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
     if(aux==="ojos"){ ojos=obj; image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
