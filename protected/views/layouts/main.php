@@ -13,6 +13,7 @@
   <body>
   
   <div id="container">
+    <?echo $_SERVER['SERVER_ADDR'];?>
     <?php echo $content; ?>
   </div>
 
