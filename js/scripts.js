@@ -114,13 +114,15 @@ $('#spic').live('click',function(){
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
 
-              $('#upload_results').html('<img src="' + data + '"id="cropbox" >');
+              $('#caraweb').html('<img src="' + data + '"id="cropbox" >');
 
             }
           });
       }
 
   });
+
+
 
 
 $(".js-lightbox").fancybox({
