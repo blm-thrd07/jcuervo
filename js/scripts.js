@@ -98,3 +98,48 @@ FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
       return false;
   }
 
+ $('#cropbox').live('click',function(){
+        $(this).Jcrop({
+        aspectRatio: 1,
+         onSelect: updateCoords
+        });
+    });
+  var x,y,w,h;
+  
+  function updateCoords(c)
+  {
+     x=c.x;
+     y=c.y;
+     w=c.w;
+     h=c.h;
+    return false;
+  };
+
+  function checkCoords()
+  {
+    if (parseInt($('#w').val())) return true;
+    alert('Please select a crop region then press submit.');
+    return false;
+  };
+
+$('#spic').live('click',function(){
+  
+  if(parseInt(w)){
+      $.ajax({
+            type: "POST",
+            data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
+            success: function(data){
+
+              $('#upload_results').html('<img src="' + data + '"id="cropbox" >');
+
+            }
+          });
+      }
+
+  });
+
+
+
+
+
