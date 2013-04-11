@@ -40,7 +40,8 @@
   };
 
 $('#spic').live('click',function(){
-
+  
+  if(parseInt(w)){
       $.ajax({
             type: "POST",
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
@@ -51,6 +52,7 @@ $('#spic').live('click',function(){
 
             }
           });
+      }
 
   });
 </script> 
