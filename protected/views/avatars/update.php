@@ -204,7 +204,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
       if(avatar.avatarPiezas[k].descripcion=="boca")
       { 
-        insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale });
+        insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
       }
     }
   
