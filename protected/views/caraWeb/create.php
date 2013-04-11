@@ -92,8 +92,7 @@ $('#spic').live('click',function(){
 
       if(image_url!=null){
 
-document.getElementById('upload_results').innerHTML = '<img src="'+image_url+'"  id="cropbox" > <button id="spic" >Save!!</button>
-';       
+document.getElementById('upload_results').innerHTML = '<img src="'+image_url+'" id="cropbox">'+'<button id="spic" >Save!!</button>';       
        }
     }
     else { 
