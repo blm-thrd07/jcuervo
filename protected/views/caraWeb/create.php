@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
     <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
 
   </head>
 
