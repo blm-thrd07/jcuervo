@@ -25,6 +25,8 @@
         
         <div id="comics">
        <? 
+
+       print_r($json['comic']['comic']['comments']);
            if(is_array($json['comic']['comic']['comments'])){
                 foreach ($json['comic']['comic']['comments'] as $key => $value) {
         ?>        
@@ -32,7 +34,7 @@
           <h3><?echo $value['nombre']; ?></h3>
 
           <? 
-              echo $value['delete']."<br>";
+            
            if($value['delete']){ ?>
              <a href="#" class="btn delcom" id="<? echo $value['id']; ?>"><i class="icon-trash"></i> Eliminar</a>
           <? } ?>
