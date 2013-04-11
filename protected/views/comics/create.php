@@ -377,19 +377,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $("#js-toImage").on("click", saveToImage);
-  $("#js-listenerStat").on("click", listenerStat);
-  $("#js-rotateLeft").on("click", rotateLeft);
-  $("#js-rotateRight").on("click", rotateRight);
-  $("#js-sendFront").on("click", sendFront);
-  $("#js-removeElement").on("click", removeImage);
-  $("#js-sendBack").on("click", sendBack);
-
-  $("#js-resetRotation").on("click", resetRotation);
-  $("#js-insertText").on("click", insertText);
-  $("#js-createText").on("click", createText);
-
-  initialText = "Inserta Texto";
+    initialText = "Inserta Texto";
 
   createText = function() {
     var texto;
@@ -438,55 +426,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.draw();
     return false;
   };
-
-  angle = 0.34906585;
-
-  newangle = null;
-
-  rotateLeft = function() {
-    newangle = currentSelected.getRotation() - angle;
-    console.log(newangle);
-    console.log(angle);
-    currentSelected.transitionTo({
-      rotation: newangle,
-      duration: 0.2,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
-    layerComic.draw();
-    return false;
-  };
-
-  rotateRight = function() {
-    newangle = currentSelected.getRotation() + angle;
-    console.log(newangle);
-    console.log(angle);
-    currentSelected.transitionTo({
-      rotation: newangle,
-      duration: 0.2,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
-    layerComic.draw();
-    return false;
-  };
-
-  sendFront = function() {
-    currentSelected.moveToTop();
-    layerComic.draw();
-    console.log("front");
-    return false;
-  };
-
-  sendBack = function() {
-    currentSelected.moveToBottom();
-    layerComic.draw();
-    console.log("back");
-    return false;
-  };
-
+  
   resetRotation = function() {
     currentSelected.transitionTo({
       rotation: 0,
@@ -499,7 +439,17 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-//
+  $("#js-toImage").on("click", saveToImage);
+  $("#js-listenerStat").on("click", listenerStat);
+  $("#js-rotateLeft").on("click", rotateLeft);
+  $("#js-rotateRight").on("click", rotateRight);
+  $("#js-sendFront").on("click", sendFront);
+  $("#js-removeElement").on("click", removeImage);
+  $("#js-sendBack").on("click", sendBack);
+
+  $("#js-resetRotation").on("click", resetRotation);
+  $("#js-insertText").on("click", insertText);
+  $("#js-createText").on("click", createText);
 
   $(document).ready(function() {
     console.log("ready");
