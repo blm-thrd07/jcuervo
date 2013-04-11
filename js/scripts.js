@@ -66,7 +66,7 @@
           
           var comicid=$(this).attr('id');
           $.ajax({
-            type: "GET",
+            type: "POST",
             url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
             success: function(data){
                  alert(data);
