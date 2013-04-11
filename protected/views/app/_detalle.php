@@ -31,7 +31,7 @@
          <article>
           <h3><?echo $value['nombre']; ?></h3>
 
-          <? if($value['delete']==true){ ?>
+          <? if($value['delete']){ ?>
              <a href="#" class="btn delcom" id="<? echo $value['id']; ?>"><i class="icon-trash"></i> Eliminar</a>
           <? } ?>
 
