@@ -121,7 +121,7 @@ class CaraWebController extends Controller
                  	if(file_exists($filepath.$Existe_foto->url)){
 
                         $targ_w = $targ_h = 150;
-	                    $jpeg_quality = 90;
+	                    $jpeg_quality = 100;
 	                    $src = $filepath.$Existe_foto->url;
 	                    $img_r = imagecreatefromjpeg($src);
 	                    $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
