@@ -136,7 +136,6 @@ public function actionLogin(){
   }
 
   public function actionDetalle($id){
-   
     $model_comic= new UsuariosComicsComentarios;
     $json=$model_comic->getComentarios($id);
     $this->renderPartial('//app/_detalle',array('json'=>$json));

@@ -90,6 +90,7 @@ class UsuariosComicsComentarios extends CActiveRecord
     $comic=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
     $cantidad_comentarios=count($comic->Coments);
     $comentarios=null;
+    $delete=false;
     for($i=0;$i<$cantidad_comentarios;$i++){
       $comentarios[$i]=array('id'=>$comic->Coments[$i]->id,
                              'comment'=>$comic->Coments[$i]->comment,
@@ -97,6 +98,13 @@ class UsuariosComicsComentarios extends CActiveRecord
                              'idFb'=>$comic->Coments[$i]->Usuarios->id_facebook,
                              'nombre'=>$comic->Coments[$i]->Usuarios->nombre);
        }
+
+
+
+    if($comic->UsuariosComics[0]->Usuario->id==Yii::app()->session['usuario_id']){
+       $delete=true;
+    }   
+
 
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->id,
@@ -106,7 +114,8 @@ class UsuariosComicsComentarios extends CActiveRecord
                                          'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
                                          'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
                                          'destacado'=>$comic->UsuariosComics[0]->destacado,
-                                         'comments'=>$comentarios
+                                         'comments'=>$comentarios,
+                                         'elminar'=>$delete
                                          ));                
 
 

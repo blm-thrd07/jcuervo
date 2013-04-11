@@ -9,7 +9,9 @@
 
   <body class="lb">
     <div id="detalle">
+    <? if($json['comic']['comic']['delete']){ ?>
       <div id="pic"><? echo CHtml::image(Yii::app()->request->baseUrl."/Comics/".$json['comic']['comic']['imagen']); ?><a href="#" class="btn"><i class="icon-trash"></i> Eliminar</a>
+    <? } ?>     
         <div><span><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" id="<? echo $json['comic']['comic']['id'];  ?>" class="btn share"><i class="icon-share"></i> Compartir</a></div>
       </div>
       <div id="comentarios">
