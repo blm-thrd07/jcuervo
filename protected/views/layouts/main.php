@@ -13,7 +13,7 @@
   <body>
   
   <div id="container">
-    <?echo $_SERVER['QUERY_STRING'];?>
+    <? print_r($_SERVER);?>
     <?php echo $content; ?>
   </div>
 
