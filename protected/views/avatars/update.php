@@ -153,7 +153,7 @@ $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
 
-echo json_encode($json);
+//echo json_encode($json);
 
 Yii::app()->getClientScript()->registerScript('registrar', '
   var edit='.$json['edit'].';
