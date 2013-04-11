@@ -24,7 +24,7 @@
   </div>
   <script language="JavaScript">
   var  visible=0; 
-  $(".espacio_camara").before(webcam.get_html(320, 250));
+  $(".espacio_camara").before(webcam.get_html(80, 100));
   //webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
   //webcam.set_quality( 90 ); // JPEG quality (1 -100)
   //webcam.set_shutter_sound( true ); // play shutter click sound
