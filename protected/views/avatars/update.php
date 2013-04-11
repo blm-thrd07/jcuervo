@@ -222,8 +222,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   function insertarPieza(obj,img,conf) {
     var aux;
+    img=img.replace(/^.*\/(?=[^\/]*$)/, "");
     if(obj==="cara"){ aux=obj; obj=cara; if(cara_web) cara_web.remove(); } 
-    if(obj==="cara_web"){ aux=obj; obj=cara_web; if(cara) cara.remove(); } 
+    if(obj==="cara_web"){ aux=obj; obj=cara_web; conf.id=img; if(cara) cara.remove(); } 
     if(obj==="cuerpo"){ aux=obj; obj=cuerpo; }
     if(obj==="ojos"){ aux=obj; obj=ojos; }
     if(obj==="boca"){ aux=obj; obj=boca; }
@@ -263,7 +264,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       layerPersonaje.draw();
     };
-    img=img.replace(/^.*\/(?=[^\/]*$)/, "");
     console.log(img);
     if(aux==="cara"){ image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
     if(aux==="cuerpo"){ image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
