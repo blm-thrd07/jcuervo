@@ -47,6 +47,7 @@
          var comicid= $(this).attr('id');  
          var comentario= $("#com").val();
 
+
           $.ajax({
             type: "POST",
             data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
@@ -55,6 +56,25 @@
                $("#comics").html(data);
             }
           });
+
+
+  });
+
+  $(".delc").live('click',function(){
+
+    if (confirm('Realmete deseas eliminar este Meme')) {
+          
+          var comicid=$(this).attr('id');
+          $.ajax({
+            type: "POST",
+            url: "http://apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
+            success: function(data){
+                 alert(data);
+            }
+          });
+
+     }
+
 
 
   });
