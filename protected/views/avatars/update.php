@@ -502,6 +502,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     currentSelected.remove();
     layerPersonaje.draw();
+    return false;
   }
 
   rotateLeft = function() {
