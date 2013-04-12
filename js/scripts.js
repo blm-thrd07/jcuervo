@@ -1,1 +1,188 @@
-var _0xf869=["\x63\x61\x6C\x6C","\x64\x69\x73\x61\x62\x6C\x65\x53\x65\x6C\x65\x63\x74\x69\x6F\x6E","\x66\x6E","\x73\x65\x6C\x65\x63\x74\x73\x74\x61\x72\x74","\x6F\x6E","\x75\x73\x65\x72\x2D\x73\x65\x6C\x65\x63\x74","\x6E\x6F\x6E\x65","\x63\x73\x73","\x75\x6E\x73\x65\x6C\x65\x63\x74\x61\x62\x6C\x65","\x61\x74\x74\x72","\x63\x6C\x69\x63\x6B","\x69\x64","\x47\x45\x54","\x70\x72\x6F\x74\x6F\x63\x6F\x6C","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x41\x70\x70\x2F","\x68\x74\x6D\x6C","\x23\x70\x61\x6E\x65\x6C\x43\x6F\x6E\x74\x65\x6E\x74","\x61\x6A\x61\x78","\x6C\x69\x76\x65","\x2E\x6D\x65\x6E\x75","\x2E\x72\x65\x73\x70\x6F\x6E\x73\x65","\x2E\x73\x75\x62\x63\x61\x74","\x50\x4F\x53\x54","\x55\x73\x75\x61\x72\x69\x6F\x73\x48\x61\x73\x54\x62\x6C\x43\x6F\x6D\x69\x63\x73\x5B\x74\x62\x6C\x5F\x63\x6F\x6D\x69\x63\x73\x5F\x69\x64\x5D\x3D","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x55\x73\x75\x61\x72\x69\x6F\x73\x48\x61\x73\x54\x62\x6C\x43\x6F\x6D\x69\x63\x73\x2F\x55\x70\x64\x61\x74\x65\x56\x69\x65\x77\x73","\x2E\x63\x64\x65\x74\x61\x69\x6C","\x76\x61\x6C","\x23\x63\x6F\x6D","\x6C\x65\x6E\x67\x74\x68","\x55\x73\x75\x61\x72\x69\x6F\x73\x43\x6F\x6D\x69\x63\x73\x43\x6F\x6D\x65\x6E\x74\x61\x72\x69\x6F\x73\x5B\x74\x62\x6C\x5F\x63\x6F\x6D\x69\x63\x73\x5F\x69\x64\x5D\x3D","\x26\x55\x73\x75\x61\x72\x69\x6F\x73\x43\x6F\x6D\x69\x63\x73\x43\x6F\x6D\x65\x6E\x74\x61\x72\x69\x6F\x73\x5B\x63\x6F\x6D\x6D\x65\x6E\x74\x5D\x3D","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x55\x73\x75\x61\x72\x69\x6F\x73\x43\x6F\x6D\x69\x63\x73\x43\x6F\x6D\x65\x6E\x74\x61\x72\x69\x6F\x73\x2F\x63\x72\x65\x61\x74\x65","\x23\x63\x6F\x6D\x69\x63\x73","","\x2E\x63\x6F\x6D","\x52\x65\x61\x6C\x6D\x65\x74\x65\x20\x64\x65\x73\x65\x61\x73\x20\x65\x6C\x69\x6D\x69\x6E\x61\x72\x20\x65\x73\x74\x65\x20\x4D\x65\x6D\x65","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x43\x6F\x6D\x69\x63\x73\x2F\x64\x65\x6C\x65\x74\x65\x2F","\x64\x6F\x63\x75\x6D\x65\x6E\x74","\x70\x61\x72\x65\x6E\x74","\x63\x6C\x6F\x73\x65","\x66\x61\x6E\x63\x79\x62\x6F\x78","\x24","\x2E\x64\x65\x6C\x63","\x52\x65\x61\x6C\x6D\x65\x74\x65\x20\x64\x65\x73\x65\x61\x73\x20\x65\x6C\x69\x6D\x69\x6E\x61\x72\x20\x65\x73\x74\x65\x20\x63\x6F\x6D\x65\x6E\x74\x61\x72\x69\x6F","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x55\x73\x75\x61\x72\x69\x6F\x73\x43\x6F\x6D\x69\x63\x73\x43\x6F\x6D\x65\x6E\x74\x61\x72\x69\x6F\x73\x2F\x64\x65\x6C\x65\x74\x65\x2F","\x72\x65\x6D\x6F\x76\x65","\x23\x63\x6F\x6D\x65\x6E\x74\x61\x72\x69\x6F","\x2E\x64\x65\x6C\x63\x6F\x6D","\x69\x64\x3D","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x63\x6F\x6D\x69\x63\x73\x2F\x73\x68\x61\x72\x65\x2F","\x68\x6F\x6C\x73","\x2E\x73\x68\x61\x72\x65","\x23\x63\x72\x6F\x70\x62\x6F\x78","\x78","\x79","\x77","\x68","\x23\x77","\x50\x6C\x65\x61\x73\x65\x20\x73\x65\x6C\x65\x63\x74\x20\x61\x20\x63\x72\x6F\x70\x20\x72\x65\x67\x69\x6F\x6E\x20\x74\x68\x65\x6E\x20\x70\x72\x65\x73\x73\x20\x73\x75\x62\x6D\x69\x74\x2E","\x78\x3D","\x26\x79\x3D","\x26\x77\x3D","\x26\x68\x3D","\x61\x70\x70\x73\x2E\x74\x32\x6F\x6D\x65\x64\x69\x61\x2E\x63\x6F\x6D\x2E\x6D\x78\x2F\x70\x68\x70\x32\x2F\x6A\x63\x75\x65\x72\x76\x6F\x2F\x69\x6E\x64\x65\x78\x2E\x70\x68\x70\x2F\x43\x61\x72\x61\x57\x65\x62\x2F\x45\x64\x69\x74","\x63\x61\x72\x61\x5F\x77\x65\x62","\x63\x6F\x6E\x66\x43\x61\x72\x61\x57\x65\x62","\x69\x6E\x73\x65\x72\x74\x61\x72\x50\x69\x65\x7A\x61","\x23\x73\x70\x69\x63","\x37\x30\x25","\x2E\x6A\x73\x2D\x6C\x69\x67\x68\x74\x62\x6F\x78","\x33\x34\x32\x37\x33\x33\x31\x38\x35\x38\x32\x38\x36\x34\x30","\x69\x6E\x69\x74","\x61\x70\x70\x72\x65\x71\x75\x65\x73\x74\x73","\x47\x65\x6E\x65\x72\x61\x64\x6F\x72\x20\x64\x65\x20\x4D\x65\x6D\x65\x73\x20\x4A\x6F\x73\x65\x20\x43\x75\x65\x72\x76\x6F","\x75\x69"];(function (){$[_0xf869[2]][_0xf869[1]]=function (){return this[_0xf869[9]](_0xf869[8],_0xf869[4])[_0xf869[7]](_0xf869[5],_0xf869[6])[_0xf869[4]](_0xf869[3],false);} ;$(_0xf869[19])[_0xf869[18]](_0xf869[10],function (){var _0x46d3x1=$(this)[_0xf869[9]](_0xf869[11]);$[_0xf869[17]]({type:_0xf869[12],url:window[_0xf869[13]]+_0xf869[14]+_0x46d3x1,success:function (_0x46d3x2){$(_0xf869[16])[_0xf869[15]](_0x46d3x2);} });return false;} );$(_0xf869[21])[_0xf869[18]](_0xf869[10],function (){var _0x46d3x1=$(this)[_0xf869[9]](_0xf869[11]);$[_0xf869[17]]({type:_0xf869[12],url:window[_0xf869[13]]+_0xf869[14]+_0x46d3x1,success:function (_0x46d3x2){$(_0xf869[20])[_0xf869[15]](_0x46d3x2);} });return false;} );$(_0xf869[25])[_0xf869[18]](_0xf869[10],function (){var _0x46d3x3=$(this)[_0xf869[9]](_0xf869[11]);$[_0xf869[17]]({type:_0xf869[22],data:_0xf869[23]+_0x46d3x3,url:window[_0xf869[13]]+_0xf869[24],success:function (_0x46d3x2){} });} );$(_0xf869[34])[_0xf869[18]](_0xf869[10],function (){var _0x46d3x3=$(this)[_0xf869[9]](_0xf869[11]);var _0x46d3x4=$(_0xf869[27])[_0xf869[26]]();if(_0x46d3x4[_0xf869[28]]!=0&&_0x46d3x4!=false){$[_0xf869[17]]({type:_0xf869[22],data:_0xf869[29]+_0x46d3x3+_0xf869[30]+_0x46d3x4,url:window[_0xf869[13]]+_0xf869[31],success:function (_0x46d3x2){$(_0xf869[32])[_0xf869[15]](_0x46d3x2);$(_0xf869[27])[_0xf869[26]](_0xf869[33]);} });} ;} );$(_0xf869[42])[_0xf869[18]](_0xf869[10],function (){if(confirm(_0xf869[35])){var _0x46d3x3=$(this)[_0xf869[9]](_0xf869[11]);$[_0xf869[17]]({type:_0xf869[22],url:window[_0xf869[13]]+_0xf869[36]+_0x46d3x3,success:function (_0x46d3x2){$(_0xf869[16],window[_0xf869[38]][_0xf869[37]])[_0xf869[15]](_0x46d3x2);parent[_0xf869[41]][_0xf869[40]][_0xf869[39]]();} });} ;} );$(_0xf869[47])[_0xf869[18]](_0xf869[10],function (){if(confirm(_0xf869[43])){var _0x46d3x5=$(this)[_0xf869[9]](_0xf869[11]);$[_0xf869[17]]({type:_0xf869[22],url:window[_0xf869[13]]+_0xf869[44]+_0x46d3x5,success:function (_0x46d3x2){$(_0xf869[46]+_0x46d3x5)[_0xf869[45]]();} });} ;} );$(_0xf869[51])[_0xf869[18]](_0xf869[10],function (){var _0x46d3x3=$(this)[_0xf869[9]](_0xf869[11]);$[_0xf869[17]]({type:_0xf869[22],data:_0xf869[48]+_0x46d3x3,url:window[_0xf869[13]]+_0xf869[49]+_0x46d3x3,success:function (_0x46d3x2){alert(_0x46d3x2+_0xf869[50]);} });} );} )[_0xf869[0]](this);$(_0xf869[52])[_0xf869[18]](_0xf869[10],function (){$(this).Jcrop({aspectRatio:1,onSelect:updateCoords});} );var x,y,w,h;function updateCoords(_0x46d3xb){x=_0x46d3xb[_0xf869[53]];y=_0x46d3xb[_0xf869[54]];w=_0x46d3xb[_0xf869[55]];h=_0x46d3xb[_0xf869[56]];return false;} ;function checkCoords(){if(parseInt($(_0xf869[57])[_0xf869[26]]())){return true;} ;alert(_0xf869[58]);return false;} ;$(_0xf869[67])[_0xf869[18]](_0xf869[10],function (){if(parseInt(w)){$[_0xf869[17]]({type:_0xf869[22],data:_0xf869[59]+parseInt(x)+_0xf869[60]+parseInt(y)+_0xf869[61]+parseInt(w)+_0xf869[62]+parseInt(h),url:window[_0xf869[13]]+_0xf869[63],success:function (_0x46d3x2){parent[_0xf869[66]](_0xf869[64],_0x46d3x2,parent[_0xf869[65]]);} });} ;} );$(_0xf869[69])[_0xf869[40]]({maxWidth:810,maxHeight:600,fitToView:false,width:_0xf869[68],height:_0xf869[68],autoSize:false,closeClick:false,openEffect:_0xf869[6],closeEffect:_0xf869[6]});FB[_0xf869[71]]({appId:_0xf869[70],cookie:true,status:true,xfbml:true});function FacebookInviteFriends(){FB[_0xf869[74]]({method:_0xf869[72],message:_0xf869[73]});return false;} ;
+
+(function() {
+
+
+ $.fn.disableSelection = function() {
+        return this
+                 .attr('unselectable', 'on')
+                 .css('user-select', 'none')
+                 .on('selectstart', false);
+    };
+    
+//navigation menu
+  $(".menu").live("click",function(){
+      var url=$(this).attr("id");
+      $.ajax({
+          type: "GET",
+          url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          success: function(data){
+            $("#panelContent").html(data);
+          }
+        });
+      return false;
+  })
+
+  //submenu categorias
+  $(".subcat").live("click",function(){
+      var url=$(this).attr("id");
+      //$(this).attr("class","itemAction selectedTab subcat"); 
+      $.ajax({
+            type: "GET",
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+            success: function(data){
+               $(".response").html(data);
+            }
+          });
+        return false;
+  });
+
+  $(".cdetail").live('click',function(){
+     var comicid=$(this).attr('id');
+        $.ajax({
+            type: "POST",
+            data:"UsuariosHasTblComics[tbl_comics_id]="+comicid,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosHasTblComics/UpdateViews",
+            success: function(data){
+            
+            }
+          });
+  });
+
+
+  $(".com").live('click',function(){
+         
+         var comicid= $(this).attr('id');  
+         var comentario= $("#com").val();
+            
+        if(comentario.length != 0 && comentario != false){
+          $.ajax({
+            type: "POST",
+            data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
+            success: function(data){
+               $("#comics").html(data);
+               $('#com').val('');
+            
+            }
+          });
+        }
+
+  });
+
+  $(".delc").live('click',function(){
+    if (confirm('Realmete deseas eliminar este Meme')) {
+          
+          var comicid=$(this).attr('id');
+          $.ajax({
+            type: "POST",
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
+            success: function(data){
+               $("#panelContent",window.parent.document).html(data);
+               parent.$.fancybox.close();
+            }
+          });
+
+     }
+
+  });
+
+  $(".delcom").live('click',function(){
+    if (confirm('Realmete deseas eliminar este comentario')) {
+          var comenid=$(this).attr('id');
+          $.ajax({
+            type: "POST",
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
+            success: function(data){
+                 $('#comentario'+comenid).remove();
+            }
+         });
+     }
+
+  });
+
+$(".share").live('click',function(){
+    var comicid= $(this).attr('id');
+    
+    $.ajax({
+            type: "POST",
+            data:"id="+comicid,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/comics/share/"+comicid,
+            success: function(data){
+               alert(data+'hols');
+            }
+          });
+
+});
+
+
+
+
+}).call(this);
+
+
+
+
+ $('#cropbox').live('click',function(){
+        $(this).Jcrop({
+        aspectRatio: 1,
+         onSelect: updateCoords
+        });
+    });
+  var x,y,w,h;
+  
+  function updateCoords(c)
+  {
+     x=c.x;
+     y=c.y;
+     w=c.w;
+     h=c.h;
+    return false;
+  };
+
+  function checkCoords()
+  {
+    if (parseInt($('#w').val())) return true;
+    alert('Please select a crop region then press submit.');
+    return false;
+  };
+
+$('#spic').live('click',function(){
+  if(parseInt(w)){
+      $.ajax({
+            type: "POST",
+            data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
+            success: function(data){
+
+               parent.insertarPieza('cara_web',data,parent.confCaraWeb);
+               //parent.$.fancybox.close();
+            }
+          });
+      }
+  });
+
+$(".js-lightbox").fancybox({
+      maxWidth: 810,
+      maxHeight: 600,
+      fitToView: false,
+      width: "70%",
+      height: "70%",
+      autoSize: false,
+      closeClick: false,
+      openEffect: "none",
+      closeEffect: "none"
+    });
+
+FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
+
+  function FacebookInviteFriends()
+  { 
+      FB.ui({method: 'apprequests', message: 'Generador de Memes Jose Cuervo'});
+      return false;
+  }
+
+
+
+
+
+
