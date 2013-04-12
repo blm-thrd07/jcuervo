@@ -276,14 +276,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("click", function() {
+        console.log("click");
         if(currentSelected){
           currentSelected.setStroke(null);
           currentSelected.setStrokeWidth(0);
           layerPersonaje.draw();
         }
         currentSelected = this;
-        this.setStroke("980d2e");
-        this.setStrokeWidth(1);
+        currentSelected.setStroke("980d2e");
+        currentSelected.setStrokeWidth(1);
       });
       
       obj.on("dragstart", function() {
