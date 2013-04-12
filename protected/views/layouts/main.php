@@ -9,13 +9,9 @@
         $protocol="http://"; if(isset($_SERVER['HTTPS'])){ $protocol="https://"; }else{ $protocol="http://"; }
     ?>
     <script> 
-<<<<<<< HEAD
              var iU="<? echo Yii::app()->session['nidFb']; ?>"; 
              window.protocol="<? echo $protocol; ?>"; 
-=======
-             var window.iU="<? echo Yii::app()->session['nidFb']; ?>"; 
-             var window.protocol="<? echo $protocol; ?>"; 
->>>>>>> otro
+
     </script> 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
