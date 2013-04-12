@@ -10,6 +10,47 @@
     <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
     <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
+    <script>
+
+ $('#cropbox').live('click',function(){
+        $(this).Jcrop({
+        aspectRatio: 1,
+         onSelect: updateCoords
+        });
+    });
+  var x,y,w,h;
+  
+  function updateCoords(c)
+  {
+     x=c.x;
+     y=c.y;
+     w=c.w;
+     h=c.h;
+    return false;
+  };
+
+  function checkCoords()
+  {
+    if (parseInt($('#w').val())) return true;
+    alert('Please select a crop region then press submit.');
+    return false;
+  };
+
+$('#spic').live('click',function(){
+  if(parseInt(w)){
+      $.ajax({
+            type: "POST",
+            data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
+            success: function(data){
+               parent.insertarPieza('cara_web',data,parent.confCaraWeb);
+               parent.$.fancybox.close();
+            }
+          });
+      }
+  });
+
+    </script>
   </head>
   <body class="lb">
   
