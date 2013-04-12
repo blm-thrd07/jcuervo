@@ -166,23 +166,19 @@ class AvatarsController extends Controller
        $photo_url=$link;
        $photo_caption=$message;
        $graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"
-      //. "url=" . urlencode($photo_url)
+      . "url=" . urlencode($photo_url)
       . "&message=" . urlencode($photo_caption)
       . "&method=POST"
       . "&access_token=" .$my_access_token;
       // echo '<html><body>';
-$args = array(
-   'message' => urlencode($message),
-   'url' => urlencode($link),
-);
+
 //$args[basename($file)] = '@' . realpath($link);
 $ch = curl_init();
-$url = 'http://graph.facebook.com/100004850712781_1073741825/photos?access_token='.$my_access_token;
-curl_setopt($ch, CURLOPT_URL, $url);
+//$url = 'https://graph.facebook.com/100004850712781_1073741825/photos?access_token='.$my_access_token."&message=".urlencode($message)."&method=POST"."&url=" . urlencode($link);
+curl_setopt($ch, CURLOPT_URL, $graph_url);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 $data = curl_exec($ch);
         //AvatarsController::file_get_contents_curl($graph_url);
 
