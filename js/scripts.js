@@ -147,6 +147,8 @@ $(".share").live('click',function(){
   };
 
 $('#spic').live('click',function(){
+
+  alert(window.protocol);
   if(parseInt(w)){
       $.ajax({
             type: "POST",

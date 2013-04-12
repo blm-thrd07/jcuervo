@@ -128,7 +128,8 @@ class CaraWebController extends Controller
 
                        imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
                        if(imagejpeg($dst_r,$src,$jpeg_quality)){
-                          echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$Existe_foto->url;
+                          
+                           echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$Existe_foto->url;
                         }
                         }        		    
                      }else if($Existe_foto==0){
