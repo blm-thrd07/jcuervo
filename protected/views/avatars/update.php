@@ -278,12 +278,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStrokeWidth(0);
           layerPersonaje.draw();
         }
+        currentSelected = this;
         this.setStroke("980d2e");
         this.setStrokeWidth(1);
-        currentSelected = this;
       });
       
       obj.on("dragstart", function() {
+        console.log(this.getZIndex());
         if (trans) {
           trans.stop();
         }
@@ -296,6 +297,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("dragend", function() {
+        console.log(this.getZIndex());
         trans = this.transitionTo({
           duration: 0.5,
           easing: "elastic-ease-out",
@@ -305,9 +307,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
         });
       });
-
-
-
       layerPersonaje.draw();
     };
     console.log(img);
