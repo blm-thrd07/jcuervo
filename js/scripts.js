@@ -94,7 +94,6 @@
             type: "POST",
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
             success: function(data){
-                 alert(data);
                  $('#comentario'+comenid).remove();
             }
          });
