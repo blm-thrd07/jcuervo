@@ -73,6 +73,7 @@
             success: function(data){
                parent.$.fancybox.close();  
                $("#panelContent",window.parent.document).html(data);
+               alert(data);
             }
           });
 
