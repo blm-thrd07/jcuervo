@@ -166,12 +166,22 @@ class AvatarsController extends Controller
        $photo_url=$link;
        $photo_caption=$message;
        $graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"
-      . "url=" . urlencode($photo_url)
+      //. "url=" . urlencode($photo_url)
       . "&message=" . urlencode($photo_caption)
       . "&method=POST"
       . "&access_token=" .$my_access_token;
       // echo '<html><body>';
-       AvatarsController::file_get_contents_curl($graph_url);
+		$file_handler = fopen($photo_url, 'w');
+		$curl = curl_init($graph_url);
+		curl_setopt($curl, CURLOPT_FILE, $file_handler);
+		curl_setopt($curl, CURLOPT_HEADER, false);
+		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+		curl_exec($curl);
+		curl_close($curl);
+		fclose($file_handler);
+       
+        //AvatarsController::file_get_contents_curl($graph_url);
+
        //echo '</body></html>';
     }
 
