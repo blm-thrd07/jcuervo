@@ -162,27 +162,13 @@ class AvatarsController extends Controller
 
 
 	public function ShareMemeLink($my_access_token,$link,$message){
-
-       $photo_url=$link;
-       $photo_caption=$message;
-       $graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"
-      . "url=" . urlencode($photo_url)
-      . "&message=" . urlencode($photo_caption)
-      . "&method=POST"
-      . "&access_token=" .$my_access_token;
-      // echo '<html><body>';
-
-//$args[basename($file)] = '@' . realpath($link);
-$ch = curl_init();
-//$url = 'https://graph.facebook.com/100004850712781_1073741825/photos?access_token='.$my_access_token."&message=".urlencode($message)."&method=POST"."&url=" . urlencode($link);
-curl_setopt($ch, CURLOPT_URL, $graph_url);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-$data = curl_exec($ch);
-        //AvatarsController::file_get_contents_curl($graph_url);
-
-       //echo '</body></html>';
+        $graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $graph_url);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		$data = curl_exec($ch);
     }
 
     public static function file_get_contents_curl($url) {
