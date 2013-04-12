@@ -173,7 +173,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     height: 460,
   });
   layerPersonaje = new Kinetic.Layer();
-  
+  layer.on("click", function() {
+        alert("You clicked on the layer!");
+      });
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
@@ -249,15 +251,19 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(aux==="cara_web"){ cara_web=obj; cara_web.moveToBottom(); }
         
       obj.on("mouseover", function() {
-        this.setStroke("980d2e");
-        this.setStrokeWidth(1);
-        return layerPersonaje.draw();
+        if(!currentSelected){
+          this.setStroke("980d2e");
+          this.setStrokeWidth(1);
+          return layerPersonaje.draw();
+        }
       });
 
       obj.on("mouseout", function() {
-        /*this.setStroke(null);
-        this.setStrokeWidth(0);
-        return layerPersonaje.draw();*/
+        if(!currentSelected){
+          this.setStroke(null);
+          this.setStrokeWidth(0);
+          return layerPersonaje.draw();
+        }
       });
 
       obj.on("click", function() {
