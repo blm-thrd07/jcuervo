@@ -173,7 +173,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     height: 460,
   });
   layerPersonaje = new Kinetic.Layer();
-  stagePersonaje.getContainer().addEventListener("click", function(evt) { alert("click "); });
+  stagePersonaje.getContainer().addEventListener("click", function(evt) { 
+    currentSelected.setStroke(null);
+    currentSelected.setStrokeWidth(0);
+    layerPersonaje.draw(); 
+  });
 
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
@@ -266,6 +270,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("click", function() {
+        if(currentSelected){
+          currentSelected.setStroke(null);
+          currentSelected.setStrokeWidth(0);
+          layerPersonaje.draw();
+        }
         this.setStroke("980d2e");
         this.setStrokeWidth(1);
         currentSelected = this;
