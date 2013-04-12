@@ -10,14 +10,10 @@
     <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
     <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
-    
     <?  $idFb = split('/', $_SERVER['PATH_INFO']); if(count($idFb)==4){ if($idFb[2]=='Profile'){ Yii::app()->session['nidFb']=$idFb[3]; } } 
         $protocol="http://"; if(isset($_SERVER['HTTPS'])){ $protocol="https://"; }else{ $protocol="http://"; }
     ?>
-    <script> 
-             var iU="<? echo Yii::app()->session['nidFb']; ?>"; 
-             window.protocol="<? echo $protocol; ?>"; 
-    </script> 
+    <script>  window.protocol="<? echo $protocol; ?>"; </script> 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
   </head>
   <body class="lb">
