@@ -160,7 +160,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
+  var angle,zindexSelected, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
   
   currentSelected = null;
   scale = 1;
@@ -259,6 +259,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
       obj.on("mouseover", function() {
         console.log("mouseover");
+        zindexSelected=this.getZIndex();
         console.log(this.getZIndex());
         if(!currentSelected){
           this.setStroke("980d2e");
@@ -269,6 +270,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       obj.on("mouseout", function() {
         console.log("mouseout");
+        this.setZIndex(zindexSelected);
         console.log(this.getZIndex());
         if(!currentSelected){
           this.setStroke(null);
