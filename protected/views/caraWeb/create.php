@@ -52,6 +52,9 @@
       webcam.reset();
 
       if(image_url!=null){
+
+         $(".espacio_camara").hide();
+
          document.getElementById('upload_results').innerHTML = '<h1>Delimita tu rostro dando click!</h1><br><img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
        }
     }
