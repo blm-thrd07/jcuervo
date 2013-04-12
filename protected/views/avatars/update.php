@@ -165,7 +165,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentSelected = null;
   currentLayer = null;
   scale = 1;
-  scaleUpFactor: 1.05;
+  scaleUpFactor= 1.05;
   trans = null;
 
   stagePersonaje = new Kinetic.Stage({
@@ -397,7 +397,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         accesorios.splice(o,o+1);
       }
     }
-    if(conf.attrs.tipo == 2){
+    if(currentSelected.attrs.tipo == 2){
       $.ajax({
         type: "POST",
         url: "'.CController::CreateUrl("CaraWeb/delete").'",
