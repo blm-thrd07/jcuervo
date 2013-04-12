@@ -275,8 +275,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         if(!currentSelected){
           this.setStroke(null);
           this.setStrokeWidth(0);
-          return layerPersonaje.draw();
         }
+        return layerPersonaje.draw();
       });
 
       obj.on("click", function() {
