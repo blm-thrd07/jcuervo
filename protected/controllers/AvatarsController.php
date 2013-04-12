@@ -110,9 +110,6 @@ class AvatarsController extends Controller
 	   $catalogo_accesorios=$model_Accesorios->getCatalogoAccesorios();
 
 	    $cantidad=count($response[0]->Avatar->AvatarP);
-	    if(count($cantidad)==0){
-	      $json['edit']="0"; } 
-	    else{ $json['edit']="1"; }
 
 	    $datosAvatar=array();
 	    for($count=0;$count<$cantidad;$count++){
@@ -262,13 +259,11 @@ class AvatarsController extends Controller
     $user =$facebook->getUser();
     $my_access_token= $facebook->getAccessToken();
 
-    $edit=$_POST['edit'];
     //borra todo
-    if($edit==1){
-    	$m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-    	$mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-    	$maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-    }
+    $m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+    $mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+    $maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+    
     $avatar = $_POST['avatar'];
     if(isset($_POST['img'])){
 		$model=$this->loadModel(Yii::app()->session['usuario_id']);         
