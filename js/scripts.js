@@ -2,6 +2,13 @@
 (function() {
 
 
+ $.fn.disableSelection = function() {
+        return this
+                 .attr('unselectable', 'on')
+                 .css('user-select', 'none')
+                 .on('selectstart', false);
+    };
+    
 //navigation menu
   $(".menu").live("click",function(){
       var url=$(this).attr("id");
@@ -63,7 +70,6 @@
   });
 
   $(".delc").live('click',function(){
-
     if (confirm('Realmete deseas eliminar este Meme')) {
           
           var comicid=$(this).attr('id');
