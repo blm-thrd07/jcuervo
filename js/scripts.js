@@ -55,7 +55,6 @@
             success: function(data){
                $("#comics").html(data);
                $('#com').val('');
-              parent.$.fancybox.close();            
             
             }
           });
@@ -72,7 +71,8 @@
             type: "POST",
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
             success: function(data){
-                 alert(data);
+               parent.$.fancybox.close();  
+               $("#panelContent").html(data);
             }
           });
 
