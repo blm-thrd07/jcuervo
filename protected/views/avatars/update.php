@@ -8,7 +8,7 @@
       </section>
       <section id="panelContent">
         <h2>Crea tu Personje</h2>
-        <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
+        <div class="saveBtn"><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
         <div class="js-tabEngine itemSelector">
           <ul>
             <li><a href="#tab1">Cabeza</a></li>
