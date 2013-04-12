@@ -151,7 +151,7 @@ public function actionLogin(){
   public function actionMisMemes($id){
 
 
-   $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+   $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
    if(count($response)!= 0){
       $modelComics= new UsuariosHasTblComics;
