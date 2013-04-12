@@ -475,12 +475,25 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
+  resetRotation = function() {
+    currentSelected.transitionTo({
+      rotation: 0,
+      duration: 0.3,
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
+    layerPersonaje.draw();
+    return false;
+  };
+
   $(".saveBtn").on("click", listenerStat);
   $("#js-listenerStat").on("click", saveToImage); 
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
   $("#js-sendFront").on("click", sendFront);
-  $("#js-removeElement").on("click", removeImage); //
+  $("#js-removeElement").on("click", removeImage);
+  $("#js-resetRotation").on("click", resetRotation);
   $("#js-sendBack").on("click", sendBack);
 
   $(document).ready(function() {
