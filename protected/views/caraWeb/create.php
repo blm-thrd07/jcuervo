@@ -45,7 +45,6 @@
     // upload to server
     document.getElementById('upload_results').innerHTML = '<h1>Guardando foto...</h1>';
     webcam.upload();
-    $('#otro').css('display','none');
   }
   function my_completion_handler(msg) {
     // extract URL out of PHP output
