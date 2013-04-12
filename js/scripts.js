@@ -147,8 +147,6 @@ $(".share").live('click',function(){
   };
 
 $('#spic').live('click',function(){
-
-  alert(window.protocol);
   if(parseInt(w)){
       $.ajax({
             type: "POST",
@@ -156,6 +154,7 @@ $('#spic').live('click',function(){
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
                parent.insertarPieza('cara_web',data,parent.confCaraWeb);
+               parent.$.fancybox.close();
             }
           });
       }
