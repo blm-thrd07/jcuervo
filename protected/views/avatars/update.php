@@ -156,7 +156,6 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 //echo json_encode($json);
 
 Yii::app()->getClientScript()->registerScript('registrar', '
-  var edit='.$json['edit'].';
   var avatar = '.CJSON::encode($json['avatar']).';
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
@@ -187,35 +186,32 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confAccesorio = {x: halfx,y: halfy - 190,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
 
   //se va a editar
-  if(edit){
-    for(var a in avatar.accesorios){
-      insertarAccesorio(avatar.accesorios[a].accesorioImg, { x: parseInt(avatar.accesorios[a].posx), y: parseInt(avatar.accesorios[a].posy), rotation: parseFloat(avatar.accesorios[a].rotation), id: parseInt(avatar.accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
-    }
-    if(avatar.cara_web.url){
-      confCaraWeb.id=avatar.cara_web.url;
-      insertarPieza("cara_web",avatar.cara_web.url,confCaraWeb);
-    }
-
-    for(var k=0; k < avatar.avatarPiezas.length; k++){
-      if(avatar.avatarPiezas[k].descripcion==="cara"){ 
-        insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale });
-      }
-      if(avatar.avatarPiezas[k].descripcion==="cuerpo")
-      { 
-        insertarPieza("cuerpo",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale });
-      }
-      if(avatar.avatarPiezas[k].descripcion=="ojos")
-      { 
-        insertarPieza("ojos",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
-      }
-      if(avatar.avatarPiezas[k].descripcion=="boca")
-      { 
-        insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
-      }
-    }
-  
+  for(var a in avatar.accesorios){
+    insertarAccesorio(avatar.accesorios[a].accesorioImg, { x: parseInt(avatar.accesorios[a].posx), y: parseInt(avatar.accesorios[a].posy), rotation: parseFloat(avatar.accesorios[a].rotation), id: parseInt(avatar.accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
+  }
+  if(avatar.cara_web.url){
+    confCaraWeb.id=avatar.cara_web.url;
+    insertarPieza("cara_web",avatar.cara_web.url,confCaraWeb);
   }
 
+  for(var k=0; k < avatar.avatarPiezas.length; k++){
+    if(avatar.avatarPiezas[k].descripcion==="cara"){ 
+      insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale });
+    }
+    if(avatar.avatarPiezas[k].descripcion==="cuerpo")
+    { 
+      insertarPieza("cuerpo",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale });
+    }
+    if(avatar.avatarPiezas[k].descripcion=="ojos")
+    { 
+      insertarPieza("ojos",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
+    }
+    if(avatar.avatarPiezas[k].descripcion=="boca")
+    { 
+      insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
+    }
+  }
+  
   stagePersonaje.add(layerPersonaje);
 
 //BOTONES
@@ -400,6 +396,18 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         delete accesorios[o];
         accesorios.splice(o,o+1);
       }
+    }
+    if(conf.attrs.tipo == 2){
+      $.ajax({
+        type: "POST",
+        url: "'.CController::CreateUrl("CaraWeb/delete").'",
+        success: function(data){
+         alert("eliminado");
+        },
+        error: function(data) { 
+          alert("No se elimino correctamente");
+        },
+      });
     }
     currentSelected.remove();
     layerPersonaje.draw();

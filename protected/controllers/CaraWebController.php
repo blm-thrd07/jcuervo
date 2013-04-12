@@ -31,7 +31,7 @@ class CaraWebController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','SaveFoto','Edit'),
+				'actions'=>array('create','update','SaveFoto','Edit','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -195,16 +195,10 @@ class CaraWebController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete()
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if(Yii::app()->session['usuario_id']){
+			$this->loadModel(Yii::app()->session['usuario_id'])->delete();
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
