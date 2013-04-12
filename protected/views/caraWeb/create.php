@@ -27,8 +27,11 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
     <h1>Tomar  Fotografia</h1>
 
-    <div id="otro"> balba</div>
+    <div id="otro"> 
+
     <div class="grid_3 espacio_camara alpha"></div>
+    
+   </div>
   <div>
     <input class="btn" type="button" value="Parámetros" onClick="webcam.configure()" > 
     <input class="btn" type="button" value="Tomar foto" onClick="webcam.freeze()" > 
