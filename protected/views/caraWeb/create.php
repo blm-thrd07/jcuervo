@@ -14,7 +14,7 @@
     ?>
     <script> 
              var iU="<? echo Yii::app()->session['nidFb']; ?>"; 
-             window.protocol="<? echo $protocol; ?>"; 
+             var protocol="<? echo $protocol; ?>"; 
 
     </script> 
 
