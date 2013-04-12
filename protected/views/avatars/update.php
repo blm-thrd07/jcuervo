@@ -248,6 +248,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var image = new Image();
     conf.image = image;
     image.onload = function(){
+      conf.width=this.width;
+      conf.height=this.height;
       obj = new Kinetic.Image(conf);
       layerPersonaje.add(obj);
 
@@ -259,7 +261,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
       obj.on("mouseover", function() {
         console.log("mouseover");
-        //zindexSelected=this.getZIndex();
         console.log(this.getZIndex());
         if(!currentSelected){
           this.setStroke("980d2e");
@@ -313,7 +314,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("dragend", function() {
-        //this.setZIndex(zindexSelected);
         if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
           currentSelected.moveToBottom();
         }
@@ -350,23 +350,82 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageAccesorio = new Image();
       conf.image = imageAccesorio;
       imageAccesorio.onload = function(){
+        conf.width=this.width;
+        conf.height=this.height;
         accesorio = new Kinetic.Image(conf);
         console.log(img);
+        
         accesorio.on("mouseover", function() {
-          this.setStroke("980d2e");
-          this.setStrokeWidth(1);
-          return layerPersonaje.draw();
+          console.log("mouseover");
+          console.log(this.getZIndex());
+          if(!currentSelected){
+            this.setStroke("980d2e");
+            this.setStrokeWidth(1);
+            return layerPersonaje.draw();
+          }
         });
 
         accesorio.on("mouseout", function() {
-          this.setStroke(null);
-          this.setStrokeWidth(0);
+          console.log("mouseout");
+          if(!currentSelected){
+            this.setStroke(null);
+            this.setStrokeWidth(0);
+          }
           return layerPersonaje.draw();
         });
 
         accesorio.on("click", function() {
+          console.log("click");
+          if(currentSelected){
+            currentSelected.setStroke(null);
+            currentSelected.setStrokeWidth(0);
+          }
           currentSelected = this;
+          currentSelected.setStroke("980d2e");
+          currentSelected.setStrokeWidth(1);
+          if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+            currentSelected.moveToBottom();
+          }
+          layerPersonaje.draw();
         });
+        
+        accesorio.on("dragstart", function() {
+          if(currentSelected){
+            currentSelected.setStroke(null);
+            currentSelected.setStrokeWidth(0);
+          }
+          currentSelected = this;
+          currentSelected.setStroke("980d2e");
+          currentSelected.setStrokeWidth(1);
+          layerPersonaje.draw();
+          if (trans) {
+            trans.stop();
+          }
+          return this.setAttrs({
+            scale: {
+              x: this.attrs.startScale * scaleUpFactor,
+              y: this.attrs.startScale * scaleUpFactor
+            }
+          });
+        });
+
+        accesorio.on("dragend", function() {
+          if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+            currentSelected.moveToBottom();
+          }
+          console.log(this.getZIndex());
+          trans = this.transitionTo({
+            duration: 0.5,
+            easing: "elastic-ease-out",
+            scale: {
+              x: this.attrs.startScale,
+              y: this.attrs.startScale
+            }
+          });
+          layerPersonaje.draw();
+        });
+
+
         layerPersonaje.add(accesorio);
         accesorios.push(accesorio);
         
