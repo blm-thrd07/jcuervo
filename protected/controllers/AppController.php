@@ -146,7 +146,7 @@ public function actionLogin(){
          $this->renderPartial('//app/_destacados',array('resultado'=>$resultado));
       }
   
-  public function actionMisMemes($id){
+  public function actionMisMemes(){
 
 
    $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
@@ -159,7 +159,7 @@ public function actionLogin(){
 
   }
 
-  public function actionMisAmigos($id){
+  public function actionMisAmigos(){
 
     $model_Amigos_Avatars=new Amigos;
     $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
