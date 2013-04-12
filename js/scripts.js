@@ -55,8 +55,8 @@
             success: function(data){
                $("#comics").html(data);
                $('#com').val('');
-               $('.fancybox-item fancybox-close').click();
-               //return javascript:;
+              // $('.fancybox-item fancybox-close').click();
+               return javascript:;
             }
           });
         }
