@@ -12,7 +12,7 @@
     ?>
     <script> 
              var iU="<? echo Yii::app()->session['nidFb']; ?>"; 
-             var window.protocol="<? echo $protocol; ?>"; 
+             window.protocol="<? echo $protocol; ?>"; 
     </script> 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
