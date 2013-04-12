@@ -163,7 +163,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
   
   currentSelected = null;
-  currentLayer = null;
   scale = 1;
   scaleUpFactor= 1.05;
   trans = null;
@@ -262,6 +261,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("click", function() {
+        this.setStroke("980d2e");
+        this.setStrokeWidth(1);
         currentSelected = this;
       });
       
