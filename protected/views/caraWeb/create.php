@@ -23,7 +23,7 @@
   <body class="lb">
   
   <div id="upload_results"></div>
-  <div id="otro"> 
+  <div id="camaradiv"> 
     <h1>Tomar  Fotografia</h1>
     <div class="grid_3 espacio_camara alpha"></div>
       <div>
@@ -53,7 +53,7 @@
       //webcam.reset();
 
       if(image_url!=null){
-        $('#otro').css('display','none');
+        $('#camaradiv').css('display','none');
         document.getElementById('upload_results').innerHTML = '<h1>Delimita tu rostro dando click!</h1><br><img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
        }
     }
