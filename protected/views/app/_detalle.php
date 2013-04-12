@@ -50,9 +50,7 @@
         </div>
       </div>
     </div>
-    
-
-     
+      
     <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/kinetic-v4.3.3.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.lazyload.min.js"></script>

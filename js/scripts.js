@@ -46,17 +46,18 @@
          
          var comicid= $(this).attr('id');  
          var comentario= $("#com").val();
-
-
+            
+        if(comentario!=null){
           $.ajax({
             type: "POST",
             data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
                $("#comics").html(data);
+               $('#com').val('');
             }
           });
-
+        }
 
   });
 
