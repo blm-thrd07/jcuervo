@@ -369,7 +369,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             $("#popup").css("display","none"); 
           },
           error: function(data) { 
-            alert("Vuelve a intentarlo");
+            console.log("hubo un error al guardar :(");
             $("#overlay").css("display","none"); 
             $("#popup").css("display","none"); 
           },
@@ -401,11 +401,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       $.ajax({
         type: "POST",
         url: "'.CController::CreateUrl("CaraWeb/delete").'",
-        success: function(data){
-         alert("eliminado");
-        },
+        success: function(data){ console.log("eliminado"); },
         error: function(data) { 
-          alert("No se elimino correctamente");
+          console.log("no eliminado");
         },
       });
     }

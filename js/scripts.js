@@ -7,7 +7,7 @@
       var url=$(this).attr("id");
       $.ajax({
           type: "GET",
-          url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url+'/'+iU,
+          url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url+'/'+iU,
           success: function(data){
             $("#panelContent").html(data);
           }
@@ -21,7 +21,7 @@
       //$(this).attr("class","itemAction selectedTab subcat"); 
       $.ajax({
             type: "GET",
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
             success: function(data){
                $(".response").html(data);
             }
@@ -34,7 +34,7 @@
         $.ajax({
             type: "POST",
             data:"UsuariosHasTblComics[tbl_comics_id]="+comicid,
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosHasTblComics/UpdateViews",
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosHasTblComics/UpdateViews",
             success: function(data){
             
             }
@@ -51,7 +51,7 @@
           $.ajax({
             type: "POST",
             data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
                $("#comics").html(data);
             }
@@ -67,7 +67,7 @@
           var comicid=$(this).attr('id');
           $.ajax({
             type: "POST",
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
             success: function(data){
                  alert(data);
             }
@@ -84,7 +84,7 @@
           var comenid=$(this).attr('id');
           $.ajax({
             type: "POST",
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
             success: function(data){
                  alert(data);
             }
@@ -100,7 +100,7 @@ $(".share").live('click',function(){
     $.ajax({
             type: "POST",
             data:"id="+comicid,
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/comics/share/"+comicid,
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/comics/share/"+comicid,
             success: function(data){
                alert(data+'hols');
             }
@@ -145,7 +145,7 @@ $('#spic').live('click',function(){
       $.ajax({
             type: "POST",
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
-            url: protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
+            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
                parent.insertarPieza('cara_web',data,parent.confCaraWeb);
             }
