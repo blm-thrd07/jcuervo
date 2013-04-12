@@ -10,7 +10,6 @@
     <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
     <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
   </head>
   <body class="lb">
   
