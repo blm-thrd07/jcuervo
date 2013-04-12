@@ -362,14 +362,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   saveToImage = function() {
-   var json = JSON.parse(layerPersonaje.toJSON()); 
-   for(var i in json){
-    console.log(json[i]);
-   }
+    var json = JSON.parse(layerPersonaje.toJSON()); 
+    for(var i in json){
+      console.log(json[i]);
+    }
+    //quitar cuadro rojo
+    if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
     console.log(json.children);
-    $("#overlay").css("display","block"); 
-    $("#popup").css("display","block"); 
-    $("#popup").fadeIn("slow");
+    //loading.gif
+    $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
     
     stagePersonaje.toDataURL({
       mimeType: "image/png",
@@ -394,12 +395,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
       }
     });
-    return false;
-  };
-
-  listenerStat = function() {
-    var json = JSON.parse(layerPersonaje.toJSON()); 
-    console.log(json.children);    
     return false;
   };
 
@@ -487,7 +482,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $(".saveBtn").on("click", listenerStat);
   $("#js-listenerStat").on("click", saveToImage); 
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
