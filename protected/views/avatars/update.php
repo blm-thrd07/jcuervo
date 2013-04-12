@@ -259,7 +259,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
       obj.on("mouseover", function() {
         console.log("mouseover");
-        zindexSelected=this.getZIndex();
+        //zindexSelected=this.getZIndex();
         console.log(this.getZIndex());
         if(!currentSelected){
           this.setStroke("980d2e");
@@ -302,7 +302,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("dragend", function() {
-        this.setZIndex(zindexSelected);
+        //this.setZIndex(zindexSelected);
+        if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+          currentSelected.moveToBottom();
+        }
         console.log(this.getZIndex());
         trans = this.transitionTo({
           duration: 0.5,
