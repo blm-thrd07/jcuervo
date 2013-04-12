@@ -255,9 +255,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("mouseout", function() {
-        this.setStroke(null);
+        /*this.setStroke(null);
         this.setStrokeWidth(0);
-        return layerPersonaje.draw();
+        return layerPersonaje.draw();*/
       });
 
       obj.on("click", function() {
