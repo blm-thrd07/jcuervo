@@ -55,7 +55,8 @@
             success: function(data){
                $("#comics").html(data);
                $('#com').val('');
-               $(".js-lightbox").fancybox().close();
+              parent.$.fancybox.close();            
+            
             }
           });
         }
