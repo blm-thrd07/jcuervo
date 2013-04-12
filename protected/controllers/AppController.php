@@ -110,7 +110,7 @@ public function actionLogin(){
    $avatarImg=$response->Avatar->avatar_img;
    $modelComics= new UsuariosHasTblComics;
    $comics=$modelComics->getMyComics($response->id);
-   $json['usuario']=array('nombre'=>$response->nombre,'idFb'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
+   $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
    
    
    
