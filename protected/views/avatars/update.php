@@ -286,6 +286,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
+        if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+          currentSelected.moveToBottom();
+        }
         layerPersonaje.draw();
       });
       
