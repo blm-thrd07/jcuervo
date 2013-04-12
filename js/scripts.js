@@ -89,16 +89,15 @@
   $(".delcom").live('click',function(){
 
     if (confirm('Realmete deseas eliminar este comentario')) {
-          
           var comenid=$(this).attr('id');
           $.ajax({
             type: "POST",
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
             success: function(data){
                  alert(data);
+                 $('#comentario'+comenid).remove();
             }
-          });
-
+         });
      }
 
   });
