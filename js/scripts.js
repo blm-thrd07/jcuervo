@@ -87,7 +87,6 @@
   });
 
   $(".delcom").live('click',function(){
-
     if (confirm('Realmete deseas eliminar este comentario')) {
           var comenid=$(this).attr('id');
           $.ajax({
