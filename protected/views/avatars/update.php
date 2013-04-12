@@ -174,9 +174,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.getContainer().addEventListener("click", function(evt) { 
-    currentSelected.setStroke(null);
-    currentSelected.setStrokeWidth(0);
-    layerPersonaje.draw(); 
+    if(currentSelected){
+      currentSelected.setStroke(null);
+      currentSelected.setStrokeWidth(0);
+      currentSelected=null;
+      layerPersonaje.draw(); 
+    }
   });
 
   halfx = stagePersonaje.getWidth() / 2;
