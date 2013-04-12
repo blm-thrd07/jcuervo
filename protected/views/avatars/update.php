@@ -364,7 +364,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       mimeType: "image/png",
       callback: function(dataUrl) {
         //alert(dataUrl);
-        var avatarJson = { avatar: json.children, edit: edit, img: dataUrl };
+        var avatarJson = { avatar: json.children, img: dataUrl };
 
         $.ajax({
           type: "POST",
