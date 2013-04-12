@@ -94,8 +94,6 @@ public function actionLogin(){
 
 
             $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
-
-          //$this->render('login',array('loginUrl'=>$loginUrl));
        }
 }
 

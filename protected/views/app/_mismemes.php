@@ -1,7 +1,7 @@
         <h2>Mis Memes</h2>
-        <div class="tabs"><a id="mismemes" href="#" class="menu selectedTab">Mis Memes</a><a  id="misamigos"  class="menu" href="">De mis amigos</a><a id="categoria" class="menu" href="">Por categoría</a></div>
+        <div class="tabs"><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/<? echo Yii::app()->session['usuario_id']; ?>" class="selectedTab">Mis Memes</a><a  id="misamigos"  class="menu" href="">De mis amigos</a><a id="categoria" class="menu" href="">Por categoría</a></div>
         <div class="memeThumbs">
-        <div class="itemMeme"><a href="#c" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
+        <div class="itemMeme"><a href="<?php echo CController::CreateUrl('Comics/create'); ?>" class="itemAction"><i class="icon-plus-sign"></i>Crea Nuevo Meme</a></div>
         <? 
         if(is_array($comics['comics'])){
          if(count($comics['comics'])!=0){
@@ -18,3 +18,5 @@ echo '<div class="itemMeme"><a data-fancybox-type="iframe" href="http://apps.t2o
     
          <? //print_r(json_encode($comics)); 
          ?>
+
+
