@@ -270,8 +270,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       obj.on("mouseout", function() {
         console.log("mouseout");
-        this.setZIndex(zindexSelected);
-        console.log(this.getZIndex());
         if(!currentSelected){
           this.setStroke(null);
           this.setStrokeWidth(0);
@@ -304,6 +302,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("dragend", function() {
+        this.setZIndex(zindexSelected);
+        console.log(this.getZIndex());
         trans = this.transitionTo({
           duration: 0.5,
           easing: "elastic-ease-out",
