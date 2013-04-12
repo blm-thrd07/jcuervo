@@ -171,7 +171,7 @@ class AvatarsController extends Controller
       . "&method=POST"
       . "&access_token=" .$my_access_token;
       // echo '<html><body>';
-       AvatarsController::file_get_contents($graph_url);
+       AvatarsController::file_get_contents_curl($graph_url);
        //echo '</body></html>';
     }
 
