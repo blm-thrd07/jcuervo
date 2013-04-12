@@ -191,7 +191,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
   confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
   confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
-  confAccesorio = {x: halfx,y: halfy - 190,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
+  confAccesorio = {x: halfx,y: halfy - 100,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
 
   //se va a editar
   for(var a in avatar.accesorios){
