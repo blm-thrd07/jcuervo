@@ -194,7 +194,6 @@ class ComicsController extends Controller
 	{
 		if($this->loadModel($id)->delete()){
 
-        if($this->loadModel($id)->delete()){
             $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
              if(count($response)!= 0){
                      $modelComics= new UsuariosHasTblComics;
