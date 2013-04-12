@@ -153,15 +153,15 @@ $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
 
-//echo json_encode($json);
+echo json_encode($json);
 
 Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar = '.CJSON::encode($json['avatar']).';
   var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
   var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
   var accesorios=[]; var piezas=[];
-  var angle,zindexSelected, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
-  
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
+  caraWebInsert=true;
   currentSelected = null;
   scale = 1;
   scaleUpFactor= 1.05;
@@ -194,17 +194,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confAccesorio = {x: halfx,y: halfy - 100,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
 
   //se va a editar
-  for(var a in avatar.accesorios){
-    insertarAccesorio(avatar.accesorios[a].accesorioImg, { x: parseInt(avatar.accesorios[a].posx), y: parseInt(avatar.accesorios[a].posy), rotation: parseFloat(avatar.accesorios[a].rotation), id: parseInt(avatar.accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
-  }
-  if(avatar.cara_web.url){
-    confCaraWeb.id=avatar.cara_web.url;
-    insertarPieza("cara_web",avatar.cara_web.url,confCaraWeb);
-  }
 
   for(var k=0; k < avatar.avatarPiezas.length; k++){
     if(avatar.avatarPiezas[k].descripcion==="cara"){ 
       insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale });
+      caraWebInsert=false;
     }
     if(avatar.avatarPiezas[k].descripcion==="cuerpo")
     { 
@@ -218,6 +212,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     { 
       insertarPieza("boca",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale });
     }
+  }
+  if(avatar.cara_web.url && caraWebInsert){
+    confCaraWeb.id=avatar.cara_web.url;
+    insertarPieza("cara_web",avatar.cara_web.url,confCaraWeb);
+  }
+  for(var a in avatar.accesorios){
+    insertarAccesorio(avatar.accesorios[a].accesorioImg, { x: parseInt(avatar.accesorios[a].posx), y: parseInt(avatar.accesorios[a].posy), rotation: parseFloat(avatar.accesorios[a].rotation), id: parseInt(avatar.accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
   }
   
   stagePersonaje.add(layerPersonaje);
@@ -234,7 +235,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   function insertarPieza(obj,img,conf) {
     var aux;
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-    if(obj==="cara"){ aux=obj; obj=cara; if(cara_web) cara_web.remove(); } 
+    if(obj==="cara"){ aux=obj; obj=cara; if(cara_web) { cara_web.remove(); removeCaraWeb(); } } 
     if(obj==="cara_web"){ aux=obj; obj=cara_web; conf.id=img; if(cara) cara.remove(); } 
     if(obj==="cuerpo"){ aux=obj; obj=cuerpo; }
     if(obj==="ojos"){ aux=obj; obj=ojos; }
@@ -482,6 +483,17 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   newangle = null;
 
+  removeCaraWeb = function(){
+    $.ajax({
+      type: "POST",
+      url: "'.CController::CreateUrl("CaraWeb/delete").'",
+      success: function(data){ console.log("eliminado"); },
+      error: function(data) { 
+        console.log("no eliminado");
+      },
+    });
+  }
+
   removeImage = function(){
     for(i=0;i<accesorios.length;i++){
       if(accesorios[i].attrs.id == currentSelected.attrs.id){
@@ -491,14 +503,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
     }
     if(currentSelected.attrs.tipo == 2){
-      $.ajax({
-        type: "POST",
-        url: "'.CController::CreateUrl("CaraWeb/delete").'",
-        success: function(data){ console.log("eliminado"); },
-        error: function(data) { 
-          console.log("no eliminado");
-        },
-      });
+      removeCaraWeb();
     }
     currentSelected.remove();
     layerPersonaje.draw();
