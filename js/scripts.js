@@ -56,7 +56,7 @@
                $("#comics").html(data);
                $('#com').val('');
               // $('.fancybox-item fancybox-close').click();
-               return javascript:;
+               return null;
             }
           });
         }
