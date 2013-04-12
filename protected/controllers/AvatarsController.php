@@ -172,8 +172,8 @@ class AvatarsController extends Controller
       . "&access_token=" .$my_access_token;
       // echo '<html><body>';
 $args = array(
-   'message' => $message,
-   'url' => $link,
+   'message' => urlencode($message),
+   'url' => urlencode($link),
 );
 //$args[basename($file)] = '@' . realpath($link);
 $ch = curl_init();
