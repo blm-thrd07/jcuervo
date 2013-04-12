@@ -74,8 +74,7 @@ class UsuariosComicsComentariosController extends Controller
 			$model->attributes=$_POST['UsuariosComicsComentarios'];
             $model->tbl_usuarios_id=Yii::app()->session['usuario_id'];
             $model->date="NOW()";
-
-
+            $model->comment=strip_tags($model->comment);
          
 			if($model->save()){
                     $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
