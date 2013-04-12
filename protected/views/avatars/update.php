@@ -174,6 +174,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.getContainer().addEventListener("click", function(evt) { 
+    console.log("stage");
     if(currentSelected){
       currentSelected.setStroke(null);
       currentSelected.setStrokeWidth(0);
@@ -257,6 +258,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(aux==="cara_web"){ cara_web=obj; cara_web.moveToBottom(); }
         
       obj.on("mouseover", function() {
+        console.log("mouseover");
         if(!currentSelected){
           this.setStroke("980d2e");
           this.setStrokeWidth(1);
@@ -265,6 +267,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("mouseout", function() {
+        console.log("mouseout");
         if(!currentSelected){
           this.setStroke(null);
           this.setStrokeWidth(0);
