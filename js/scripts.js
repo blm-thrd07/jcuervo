@@ -151,7 +151,7 @@ $('#spic').live('click',function(){
             success: function(data){
 
                parent.insertarPieza('cara_web',data,parent.confCaraWeb);
-               //parent.$.fancybox.close();
+               parent.$.fancybox.close();
             }
           });
       }
