@@ -425,10 +425,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           layerPersonaje.draw();
         });
 
-
         layerPersonaje.add(accesorio);
         accesorios.push(accesorio);
-        
+        accesorio.fire("click");
+
         layerPersonaje.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
