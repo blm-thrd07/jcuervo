@@ -229,7 +229,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#tab2 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCuerpo.id = pieza[0]; insertarPieza("cuerpo",$(this).find("img").attr("src"),confCuerpo); });
     $("#tab5 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio($(this).find("img").attr("src"),confAccesorio); });
     $("#tab4 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confBoca.id = pieza[0]; insertarPieza("boca",$(this).find("img").attr("src"),confBoca); });
-    $("#tab3 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
+    $("#tab3 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-");  confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
 
   function insertarPieza(obj,img,conf) {
     var aux;
@@ -328,7 +328,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
         layerPersonaje.draw();
       });
-
+      obj.fire("click");
       layerPersonaje.draw();
     };
     console.log(img);
