@@ -172,7 +172,7 @@ class AvatarsController extends Controller
       . "&access_token=" .$my_access_token;
       // echo '<html><body>';
 $args = array(
-   'message' => 'Photo from application',
+   'message' => $message,
    'url' => $link,
 );
 //$args[basename($file)] = '@' . realpath($link);
@@ -184,7 +184,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
 $data = curl_exec($ch);
-       echo $data;
         //AvatarsController::file_get_contents_curl($graph_url);
 
        //echo '</body></html>';
