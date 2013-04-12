@@ -173,7 +173,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     height: 460,
   });
   layerPersonaje = new Kinetic.Layer();
-  layerPersonaje.on("click", function() {
+  stagePersonaje.on("click", function() {
         alert("You clicked on the layer!");
       });
   halfx = stagePersonaje.getWidth() / 2;
