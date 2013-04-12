@@ -56,7 +56,7 @@
                $("#comics").html(data);
                $('#com').val('');
                  
-                 parent.$.fn.fancybox.close();              
+                parent.jQuery.fn.fancybox.close();
             }
           });
         }
