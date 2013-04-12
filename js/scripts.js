@@ -47,7 +47,7 @@
          var comicid= $(this).attr('id');  
          var comentario= $("#com").val();
             
-        if(comentario!=null){
+        if(comentario.length != 0){
           $.ajax({
             type: "POST",
             data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
