@@ -26,6 +26,8 @@
     <div id="upload_results"></div>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
     <h1>Tomar  Fotografia</h1>
+
+    <div id="otro"> balba</div>
     <div class="grid_3 espacio_camara alpha"></div>
   <div>
     <input class="btn" type="button" value="Parámetros" onClick="webcam.configure()" > 
@@ -49,14 +51,13 @@
     // extract URL out of PHP output
     if (msg.match(/(http\:\/\/\S+)/)) {
       var image_url = RegExp.$1;
-      webcam.reset();
+      //webcam.reset();
 
       if(image_url!=null){
 
-        $(".espacio_camara").css("visibility", "false");
-
-
-        // document.getElementById('upload_results').innerHTML = '<h1>Delimita tu rostro dando click!</h1><br><img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
+        $('#otro').css('display','none');
+        $(".espacio_camara").css("display", "none");
+        document.getElementById('upload_results').innerHTML = '<h1>Delimita tu rostro dando click!</h1><br><img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
        }
     }
     else { 
