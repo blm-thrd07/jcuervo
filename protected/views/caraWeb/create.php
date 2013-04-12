@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
     <script type="text/javascript" src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <script type="text/javascript" src="/php2/jcuervo/js/jquery.Jcrop.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
     <link rel="stylesheet" href="/php2/jcuervo/css/jquery.Jcrop.css" type="text/css" />
     
     <?  $idFb = split('/', $_SERVER['PATH_INFO']); if(count($idFb)==4){ if($idFb[2]=='Profile'){ Yii::app()->session['nidFb']=$idFb[3]; } } 
@@ -16,28 +17,23 @@
     <script> 
              var iU="<? echo Yii::app()->session['nidFb']; ?>"; 
              window.protocol="<? echo $protocol; ?>"; 
-
     </script> 
-
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
-
   </head>
   <body class="lb">
-    <div id="upload_results"></div>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/webcam.js"></script>
+  
+  <div id="upload_results"></div>
+  <div id="otro"> 
     <h1>Tomar  Fotografia</h1>
-
-    <div id="otro"> 
-
     <div class="grid_3 espacio_camara alpha"></div>
-    
+      <div>
+        <input class="btn" type="button" value="Parámetros" onClick="webcam.configure()" > 
+        <input class="btn" type="button" value="Tomar foto" onClick="webcam.freeze()" > 
+        <input class="btn" type="button" value="Guardar" onClick="do_upload()" > 
+        <input class="btn" type="button" value="Otra vez" onClick="webcam.reset()" > 
+      </div>
    </div>
-  <div>
-    <input class="btn" type="button" value="Parámetros" onClick="webcam.configure()" > 
-    <input class="btn" type="button" value="Tomar foto" onClick="webcam.freeze()" > 
-    <input class="btn" type="button" value="Guardar" onClick="do_upload()" > 
-    <input class="btn" type="button" value="Otra vez" onClick="webcam.reset()" > 
-  </div>
+  
   <script language="JavaScript">
   var  visible=0; 
   $(".espacio_camara").before(webcam.get_html(310, 250));
@@ -57,9 +53,7 @@
       //webcam.reset();
 
       if(image_url!=null){
-
         $('#otro').css('display','none');
-        $(".espacio_camara").css("display", "none");
         document.getElementById('upload_results').innerHTML = '<h1>Delimita tu rostro dando click!</h1><br><img src="'+image_url+'" id="cropbox">'+'<button id="spic" class="btn" >Save!!</button>';       
        }
     }
