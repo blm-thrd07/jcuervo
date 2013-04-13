@@ -8,7 +8,7 @@
     <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
   </section>
   <section id="panelContentComic">
-    <div class="saveBtn"><a href="#" id="js-toImage" class="btn"><i class="icon-picture"></i></a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
+    <div class="saveBtn"><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
     <div class="js-tabEngine itemSelector">
       <ul>
         <li><a href="#tab1">Fondos</a></li>
@@ -119,9 +119,9 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 Yii::app()->getClientScript()->registerScript('registrar', '
  
   var angle,cuerpos,init,rotation,imageBackground,conf,halfx,halfy, currentSelected, init, insertCabeza, insertCuerpo, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
-  currentSelected = null; init=null;
+  currentSelected = null;
+  currentText = null;
   var amigos=[], objetos=[];
-  console.log("tabs engine");
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
@@ -144,14 +144,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     console.log("you hace clicked a tab btn");
     setTimeout(function(){
       console.log("cargado");
-
-      //$(".bx-viewport").width
     },3000);
   });
 
 
   iniciar = function(){
-    console.log("iniciar");
     stageComic = new Kinetic.Stage({
       container: "comicCanvas",
       width: 392,
@@ -186,7 +183,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
     imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
     layerFondo.add(fondo);
-    console.log("fondo agregado");
 
     imageMiAvatar = new Image();
     conf.image=imageMiAvatar;
@@ -252,6 +248,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         amigos.splice(o,o+1);
       }
     }
+
     currentSelected.remove();
     layerComic.draw();
   }
@@ -332,20 +329,71 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
+      
       obj.on("mouseover", function() {
-        this.setStroke("980d2e");
-        this.setStrokeWidth(1);
-        return layerComic.draw();
+        if(!currentSelected){
+          this.setStroke("980d2e");
+          this.setStrokeWidth(1);
+          return layerPersonaje.draw();
+        }
       });
 
       obj.on("mouseout", function() {
-        this.setStroke(null);
-        this.setStrokeWidth(0);
-        layerComic.draw();
+        if(!currentSelected){
+          this.setStroke(null);
+          this.setStrokeWidth(0);
+        }
+        return layerPersonaje.draw();
       });
 
       obj.on("click", function() {
+        if(currentSelected){
+          currentSelected.setStroke(null);
+          currentSelected.setStrokeWidth(0);
+        }
         currentSelected = this;
+        currentSelected.setStroke("980d2e");
+        currentSelected.setStrokeWidth(1);
+        if(currentSelected.attrs.tipo==1 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+          currentSelected.moveToBottom();
+        }
+        layerPersonaje.draw();
+      });
+      
+      obj.on("dragstart", function() {
+        if(currentSelected){
+          currentSelected.setStroke(null);
+          currentSelected.setStrokeWidth(0);
+        }
+        currentSelected = this;
+        currentSelected.setStroke("980d2e");
+        currentSelected.setStrokeWidth(1);
+        layerPersonaje.draw();
+        if (trans) {
+          trans.stop();
+        }
+        return this.setAttrs({
+          scale: {
+            x: this.attrs.startScale * scaleUpFactor,
+            y: this.attrs.startScale * scaleUpFactor
+          }
+        });
+      });
+
+      obj.on("dragend", function() {
+        if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+          currentSelected.moveToBottom();
+        }
+        console.log(this.getZIndex());
+        trans = this.transitionTo({
+          duration: 0.5,
+          easing: "elastic-ease-out",
+          scale: {
+            x: this.attrs.startScale,
+            y: this.attrs.startScale
+          }
+        });
+        layerPersonaje.draw();
       });
       layerComic.add(obj);
       if(aux==="objeto"){ 
@@ -424,14 +472,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $("#js-toImage").on("click", saveToImage);
-  $("#js-listenerStat").on("click", listenerStat);
+  $("#js-listenerStat").on("click", saveToImage);
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
   $("#js-sendFront").on("click", sendFront);
   $("#js-removeElement").on("click", removeImage);
   $("#js-sendBack").on("click", sendBack);
-
   $("#js-resetRotation").on("click", resetRotation);
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
