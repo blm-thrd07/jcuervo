@@ -260,7 +260,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         amigos.splice(o,o+1);
       }
     }
-    layerComic.remove(currentText);
+    currentText.remove();
     currentSelected.remove();
     layerComic.draw();
   }
@@ -456,6 +456,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText = this;
       return $("#textinput").val(this.getText());
     });
+console.log(currentText);
+console.log(layerComic);
     return false;
   };
 
