@@ -195,7 +195,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
     layerFondo.add(fondo);
 
-
+    confAvatar.id=2; //quit
     confAvatar.name="MiAvatar";
     insertar("MiAvatar","'.$avatar['avatar_img'].'",confAvatar)
   }
@@ -339,7 +339,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         if(!currentSelected){
           this.setStroke("980d2e");
           this.setStrokeWidth(1);
-          return layerPersonaje.draw();
+          return layerComic.draw();
         }
       });
 
@@ -348,7 +348,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           this.setStroke(null);
           this.setStrokeWidth(0);
         }
-        return layerPersonaje.draw();
+        return layerComic.draw();
       });
 
       obj.on("click", function() {
@@ -359,7 +359,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
-        layerPersonaje.draw();
+        layerComic.draw();
       });
       
       obj.on("dragstart", function() {
@@ -370,7 +370,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
-        layerPersonaje.draw();
+        layerComic.draw();
         if (trans) {
           trans.stop();
         }
@@ -392,7 +392,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             y: this.attrs.startScale
           }
         });
-        layerPersonaje.draw();
+        layerComic.draw();
       });
       layerComic.add(obj);
       if(aux==="objeto"){ 
