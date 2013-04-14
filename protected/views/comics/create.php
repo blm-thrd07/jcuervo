@@ -218,6 +218,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#overlay").css("display","block"); 
     $("#popup").css("display","block"); 
     $("#popup").fadeIn("slow");
+    if(currentSelected){
+      currentSelected.setStroke(null);
+      currentSelected.setStrokeWidth(0);
+    }
+    if(currentText){
+      currentText.setStroke(null);
+      currentText.setStrokeWidth(0);
+    }
 
     stageComic.toDataURL({
       mimeType: "image/png",
