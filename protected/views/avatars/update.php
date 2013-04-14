@@ -578,6 +578,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
   });
 
+  $(document).keypress(function(e) {
+    if(e.which == 13) {
+        console.log("ale");
+    }
+  });
+
   setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },1000);
 
   
