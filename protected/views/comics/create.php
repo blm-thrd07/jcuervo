@@ -346,7 +346,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("mouseout", function() {
-        if(!currentSelected !currentText){
+        if(!currentSelected && !currentText){
           this.setStroke(null);
           this.setStrokeWidth(0);
         }
