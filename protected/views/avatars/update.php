@@ -430,7 +430,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         $.ajax({
           type: "POST",
-          url: BaseUrl+"index.php/avatars/UpdatePieza",
+          url: BaseUrl+"/index.php/avatars/UpdatePieza",
           data: avatarJson,
           success: function(url){
             window.location=url;
