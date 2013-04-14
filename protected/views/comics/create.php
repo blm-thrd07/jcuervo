@@ -329,12 +329,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(typeof conf.id==="undefined") { insertar=false; console.log("undefined"); } 
     if(obj==="objeto"){ 
       for(i=0;i<objetos.length;i++){
-        if(objetos[i].attrs.id == pieza_id) insertar=false;
+        if(objetos[i].attrs.id == conf.id) insertar=false;
       }
     }
     if(obj==="amigo"){ 
       for(i=0;i<amigos.length;i++){
-        if(amigos[i].attrs.id == pieza_id) insertar=false;
+        if(amigos[i].attrs.id == conf.id) insertar=false;
       }
     }
 
