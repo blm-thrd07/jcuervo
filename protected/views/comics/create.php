@@ -457,6 +457,38 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
       return $("#textinput").val(this.getText());
     });
+
+    texto.on("dragstart", function() {
+      if(currentSelected){
+        currentSelected.setStroke(null);
+        currentSelected.setStrokeWidth(0);
+        currentSelected = null;
+      }
+      currentText = this;
+      currentText.setStroke("980d2e");
+      currentText.setStrokeWidth(1);
+      layerComic.draw();
+      if (trans) {
+        trans.stop();
+      }
+      return this.setAttrs({
+        scale: {
+          x: this.attrs.startScale * scaleUpFactor,
+          y: this.attrs.startScale * scaleUpFactor
+        }
+      });
+    });
+
+    texto.on("dragend", function() {
+      trans = this.transitionTo({
+        duration: 0.5,
+        easing: "elastic-ease-out",
+        scale: {
+          x: this.attrs.startScale,
+          y: this.attrs.startScale
+        }
+      });
+
     return false;
   };
 
