@@ -418,19 +418,18 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           layerComic.draw();
         });
         layerComic.add(obj);
+        if(aux==="objeto"){ 
+          objetos.push(obj);
+        }
+        if(aux==="amigo"){ 
+          amigos.push(obj);
+        }
         layerComic.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
 
-      if(aux==="objeto"){ 
-        objetos.push(obj);
-      }
-      if(aux==="amigo"){ 
-        amigos.push(obj);
-      }
-      layerComic.draw();
       return true;
     }
     
