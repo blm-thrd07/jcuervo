@@ -117,6 +117,7 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 <?php //echo $this->renderPartial("_form', array('model'=>$model)); 
 
 Yii::app()->getClientScript()->registerScript('registrar', '
+  var url_miavatar = "'.$avatar['avatar_img'].'";
   var BaseUrl = "/php2/jcuervo";
   var angle,rotation,imageBackground,conf,halfx,halfy, currentSelected, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
   currentSelected = null;
@@ -128,7 +129,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
-  $(function() {
+  /*$(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
     });
@@ -137,7 +138,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(":)");
       //return layerComic.draw();
     }), 100);
-  });
+  });*/
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
     width: 392,
@@ -203,7 +204,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     fondo = new Kinetic.Image(confBackground);
     layerFondo.add(fondo);
   }
-  imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
+  imageBackground.src=BaseUrl+"/images/backgrounds/default.png";
 
   console.log("onclick");
   $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
@@ -236,7 +237,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         var data = { img: dataUrl };
         $.ajax({
          type: "POST",
-          url: "'.Yii::app()->createAbsoluteUrl("comics/create").'",
+          url: BaseUrl+"index.php/comics/create",
           data:data,
           success:function(url){
             window.location=url;
@@ -325,7 +326,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   function insertarFondo(img) {
     img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-    imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/"+img;
+    imageBackground.src=BaseUrl+"/images/backgrounds/"+img;
     layerFondo.draw();
     layerComic.moveToTop();
   };
@@ -431,7 +432,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
-      imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
+      imageObj.src=BaseUrl+"/Avatar/"+img;
 
       return true;
     }
@@ -468,7 +469,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     layerComic.draw();
 
-    //eventos
     texto.on("mouseover", function() {
       if(!currentSelected && !currentText){
         this.setStroke("980d2e");
@@ -535,15 +535,16 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resetRotation").on("click", resetRotation);
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
-  /*$("#textinput").on("change",function(){
+  $("#textinput").on("change",function(){
+    console.log("hola");
     currentText.setText($(this).val());
     layerComic.draw();
     return false;
-  });*/
+  });
 
-  confAvatar.id=2; //quit
+  confAvatar.id=2; 
   confAvatar.name="MiAvatar";
-  insertar("MiAvatar","'.$avatar['avatar_img'].'",confAvatar)
+  insertar("MiAvatar",url_miavatar,confAvatar)
 
   $(document).ready(function() {
     console.log("ready");
