@@ -254,8 +254,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj = new Kinetic.Image(conf);
       layerPersonaje.add(obj);
 
-      if(aux==="cara"){ cara=obj; //cara.moveToBottom(); } 
-      if(aux==="cuerpo"){ cuerpo=obj; //cuerpo.moveToBottom(); } 
+      if(aux==="cara"){ cara=obj; /*cara.moveToBottom();*/ } 
+      if(aux==="cuerpo"){ cuerpo=obj; /*cuerpo.moveToBottom();*/ } 
       if(aux==="ojos"){ ojos=obj; } 
       if(aux==="boca"){ boca=obj; } 
       if(aux==="cara_web"){ cara_web=obj; cara_web.moveToBottom(); }
