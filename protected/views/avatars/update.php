@@ -157,21 +157,12 @@ echo json_encode($json);
 
 Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar = '.CJSON::encode($json['avatar']).';
-  var avatar_accesorios = '.CJSON::encode($json['avatar']['accesorios']).';
-  var avatar_cara_web = '.CJSON::encode($json['avatar']['cara_web']).';
+  var BaseUrl = /php2/jcuervo; //Yii::app()->request->baseUrl
   var accesorios=[]; var piezas=[];
-  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, imageCabeza, imageCuerpo, imageOjos, imageBoca, init, insertCabeza, insertCuerpo, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
-  caraWebInsert=true;
-  currentSelected = null;
-  scale = 1;
-  scaleUpFactor= 1.05;
-  trans = null;
+  var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
+  caraWebInsert=true; currentSelected = null; scale = 1; scaleUpFactor= 1.05; trans = null;
 
-  stagePersonaje = new Kinetic.Stage({
-    container: "personajeCanvas",
-    width: 258,
-    height: 460,
-  });
+  stagePersonaje = new Kinetic.Stage({container: "personajeCanvas",width: 258,height: 460});
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.getContainer().addEventListener("click", function(evt) { 
     if(currentSelected){
@@ -324,11 +315,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       layerPersonaje.draw();
     };
     console.log(img);
-    if(aux==="cara"){ image.src="'.Yii::app()->request->baseUrl.'/images/cabezas/"+img; } 
-    if(aux==="cuerpo"){ image.src="'.Yii::app()->request->baseUrl.'/images/cuerpos/"+img; } 
-    if(aux==="ojos"){ image.src="'.Yii::app()->request->baseUrl.'/images/ojos/"+img; } 
-    if(aux==="boca"){ image.src="'.Yii::app()->request->baseUrl.'/images/bocas/"+img; } 
-    if(aux==="cara_web"){ image.src="'.Yii::app()->request->baseUrl.'/AvatarCaras/"+img; }
+    if(aux==="cara"){ image.src=BaseUrl+"/images/cabezas/"+img; } 
+    if(aux==="cuerpo"){ image.src=BaseUrl+"/images/cuerpos/"+img; } 
+    if(aux==="ojos"){ image.src=BaseUrl+"/images/ojos/"+img; } 
+    if(aux==="boca"){ image.src=BaseUrl+"/images/bocas/"+img; } 
+    if(aux==="cara_web"){ image.src=BaseUrl+"/AvatarCaras/"+img; }
  
     
   };
@@ -418,7 +409,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         layerPersonaje.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-      imageAccesorio.src="'.Yii::app()->request->baseUrl.'/images/accesorios/"+img;
+      imageAccesorio.src=BaseUrl+"/images/accesorios/"+img;
 
       return true;
     }
@@ -441,7 +432,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         $.ajax({
           type: "POST",
-          url: "'.CController::CreateUrl("avatars/UpdatePieza").'",
+          url: BaseUrl+"index.php/avatars/UpdatePieza",
           data: avatarJson,
           success: function(url){
             window.location=url;
@@ -466,7 +457,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   removeCaraWeb = function(){
     $.ajax({
       type: "POST",
-      url: "'.CController::CreateUrl("CaraWeb/delete").'",
+      url: BaseUrl+"index.php/CaraWeb/delete",
       success: function(data){ },
       error: function(data) { 
         console.log("no eliminado");
