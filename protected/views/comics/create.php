@@ -260,7 +260,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         amigos.splice(o,o+1);
       }
     }
-    currentText.remove();
+    layerComic.remove(currentText);
     currentSelected.remove();
     layerComic.draw();
   }
@@ -421,8 +421,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     initialText = "Inserta Texto";
 
   createText = function() {
-    var texto;
-    texto = new Kinetic.Text({
+    var texto = new Kinetic.Text({
       x: 0,
       y: 0,
       text: initialText,
