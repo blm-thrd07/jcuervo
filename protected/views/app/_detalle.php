@@ -62,6 +62,13 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/all.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
+    <script type="text/javascript">
+        $(document).live("keypress",function(e) {
+          if(e.which == 13) {
+              console.log("e");
+          }
+        });
+    </script>
 
   </body>
 </html>
