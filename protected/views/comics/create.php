@@ -144,14 +144,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     height: 294,
   });
   stageComic.getContainer().addEventListener("click", function(evt) { 
-      console.log("stage");
-      if(currentSelected){
-        currentSelected.setStroke(null);
-        currentSelected.setStrokeWidth(0);
-        currentSelected=null;
-        layerComic.draw(); 
-      }
-    });
+    console.log("stage");
+    if(currentSelected){
+      currentSelected.setStroke(null);
+      currentSelected.setStrokeWidth(0);
+      currentSelected=null;
+      layerComic.draw(); 
+    }
+    if(currentText){
+      currentText.setStroke(null);
+      currentText.setStrokeWidth(0);
+      currentText=null;
+      layerComic.draw(); 
+    }
+  });
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
   confAvatar = {
