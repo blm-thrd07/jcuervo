@@ -157,7 +157,7 @@ echo json_encode($json);
 
 Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar = '.CJSON::encode($json['avatar']).';
-  var BaseUrl = /php2/jcuervo; //Yii::app()->request->baseUrl
+  var BaseUrl = "/php2/jcuervo"; //Yii::app()->request->baseUrl
   var accesorios=[]; var piezas=[];
   var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
   caraWebInsert=true; currentSelected = null; scale = 1; scaleUpFactor= 1.05; trans = null;
