@@ -405,6 +405,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(aux==="amigo"){ 
         amigos.push(obj);
       }
+      console.log(obj.toJSON());
       layerComic.draw();
       return true;
     }
