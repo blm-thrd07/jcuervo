@@ -250,8 +250,8 @@ class AvatarsController extends Controller
        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
      ));
    
-    //$user =$facebook->getUser();
-    //$my_access_token= $facebook->getAccessToken();
+    $user =$facebook->getUser();
+    $my_access_token= $facebook->getAccessToken();
 
     //borra todo
     $m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
@@ -280,7 +280,7 @@ class AvatarsController extends Controller
        $model->avatar_img=$filename;
        
        if($model->save()){
-       	 $this->ShareMemeLink($Yii::app()->session['access_token'],'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
      	
     }
