@@ -186,12 +186,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
-  confCaraWeb = { x: halfx,y: halfy - 170,height: 100,width: 100,draggable: true, dragOnTop: false, offset: [60, 60],startScale: scale,tipo: 2};
-  confCara = { x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,dragOnTop: false,offset: [60, 60],startScale: scale,tipo: 3};
-  confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,dragOnTop: false,offset: [100, 160],startScale: scale, tipo: 4};
-  confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,dragOnTop: false,offset: [47, 11],startScale: scale, tipo: 5};
-  confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,draggable: true,dragOnTop: false,offset: [47, 11],startScale: scale, tipo: 6};
-  confAccesorio = {x: halfx,y: halfy - 100,height: 160,width: 160,draggable: true,dragOnTop: false,offset: [80, 80],startScale: scale,tipo: 1};
+  confCaraWeb = { x: halfx,y: halfy - 170,height: 100,width: 100,draggable: true,offset: [60, 60],startScale: scale,tipo: 2};
+  confCara = { x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
+  confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
+  confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
+  confBoca = {x: halfx,y: halfy - 140,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 6};
+  confAccesorio = {x: halfx,y: halfy - 100,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
 
   //se va a editar
 
@@ -254,8 +254,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj = new Kinetic.Image(conf);
       layerPersonaje.add(obj);
 
-      if(aux==="cara"){ cara=obj; /*cara.moveToBottom();*/ } 
-      if(aux==="cuerpo"){ cuerpo=obj; /*cuerpo.moveToBottom();*/ } 
+      if(aux==="cara"){ cara=obj; cara.moveToBottom(); } 
+      if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); } 
       if(aux==="ojos"){ ojos=obj; } 
       if(aux==="boca"){ boca=obj; } 
       if(aux==="cara_web"){ cara_web=obj; cara_web.moveToBottom(); }
@@ -285,7 +285,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
         if(currentSelected.attrs.tipo==1 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
-          //currentSelected.moveToBottom();
+          currentSelected.moveToBottom();
         }
         layerPersonaje.draw();
       });
@@ -312,7 +312,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
       obj.on("dragend", function() {
         if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
-          //currentSelected.moveToBottom();
+          currentSelected.moveToBottom();
         }
         console.log(this.getZIndex());
         trans = this.transitionTo({
