@@ -246,22 +246,24 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   newangle = null;
 
   removeImage = function(){
-    for(i=0;i<objetos.length;i++){
-      if(objetos[i].attrs.id == currentSelected.attrs.id){
-        o = objetos.indexOf(currentSelected)
-        delete objetos[o];
-        objetos.splice(o,o+1);
+    if(currentSelected) { 
+      for(i=0;i<objetos.length;i++){
+        if(objetos[i].attrs.id == currentSelected.attrs.id){
+          o = objetos.indexOf(currentSelected)
+          delete objetos[o];
+          objetos.splice(o,o+1);
+        }
       }
-    }
-    for(i=0;i<amigos.length;i++){
-      if(amigos[i].attrs.id == currentSelected.attrs.id){
-        o = amigos.indexOf(currentSelected)
-        delete amigos[o];
-        amigos.splice(o,o+1);
+      for(i=0;i<amigos.length;i++){
+        if(amigos[i].attrs.id == currentSelected.attrs.id){
+          o = amigos.indexOf(currentSelected)
+          delete amigos[o];
+          amigos.splice(o,o+1);
+        }
       }
+      currentSelected.remove();
     }
-    currentText.remove();
-    currentSelected.remove();
+    if(currentText) currentText.remove();
     layerComic.draw();
   }
 
@@ -365,6 +367,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStrokeWidth(0);
         }
         currentSelected = this;
+        currentText = null;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
         layerComic.draw();
@@ -376,6 +379,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStrokeWidth(0);
         }
         currentSelected = this;
+        currentText = null;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
         layerComic.draw();
@@ -440,6 +444,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#textinput").val(initialText);
     $("#textinput").select();
     currentText = texto;
+    currentSelected = null;
     texto.on("mouseover", function() {
       this.setStroke("980d2e");
       this.setStrokeWidth(1);
@@ -454,6 +459,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       $("#textinput").attr("class", "inputOpen");
       $("#textinput").focus();
       currentText = this;
+      currentSelected = null;
       return $("#textinput").val(this.getText());
     });
 console.log(currentText);
