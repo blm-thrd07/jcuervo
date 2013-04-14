@@ -518,7 +518,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resetRotation").on("click", resetRotation);
   //$("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
-  $("#textinput").change(function(){
+  $("#textinput").on("change",function(){
     currentText.setText($("#textinput").val());
     layerComic.draw();
     return false;
