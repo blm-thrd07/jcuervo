@@ -488,6 +488,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           y: this.attrs.startScale
         }
       });
+      layerPersonaje.draw();
+    });
 
     return false;
   };
