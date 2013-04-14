@@ -201,9 +201,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confBackground.image = imageBackground;
   imageBackground.onload = function(){
     fondo = new Kinetic.Image(confBackground);
+    layerFondo.add(fondo);
   }
   imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
-  layerFondo.add(fondo);
 
   console.log("onclick");
   $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
