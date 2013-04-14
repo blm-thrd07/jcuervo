@@ -226,7 +226,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText.setStroke(null);
       currentText.setStrokeWidth(0);
     }
-
+    layerComic.draw();
     stageComic.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
