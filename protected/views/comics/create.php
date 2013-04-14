@@ -449,12 +449,19 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     texto.on("click", function() {
       $("#textinput").attr("class", "inputOpen");
       $("#textinput").focus();
-      currentText = this;
       if(currentSelected){  
         currentSelected.setStroke(null);
         currentSelected.setStrokeWidth(0);
         currentSelected = null;
       }
+      if(currentText){
+        currentText.setStroke(null);
+        currentText.setStrokeWidth(0);
+        currentText = null;
+      }
+      this.setStroke("980d2e");
+      this.setStrokeWidth(1);
+      currentText = this;
       return $("#textinput").val(this.getText());
     });
 
