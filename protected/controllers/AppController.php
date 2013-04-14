@@ -120,6 +120,22 @@ public function actionLogin(){
     ));
     
     $user =$facebook->getUser(); //added by oscar
+    if ($user) {
+       try {
+          // Proceed knowing you have a logged in user who's authenticated.
+          $user_profile =  $facebook->api('/me');
+        } catch (FacebookApiException $e) {
+           error_log($e);
+           $user = null;
+         }
+     }
+
+    if ($user) {
+        $logoutUrl = $facebook->getLogoutUrl();
+    } else {
+        $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
+    }
+
     $facebook->setAccessToken(Yii::app()->session['access_token']);
     $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
          
