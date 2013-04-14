@@ -516,13 +516,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-removeElement").on("click", removeImage);
   $("#js-sendBack").on("click", sendBack);
   $("#js-resetRotation").on("click", resetRotation);
-  //$("#js-insertText").on("click", insertText);
+  $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
-  $("#textinput").on("change",function(){
-    currentText.setText($("#textinput").val());
+  /*$("#textinput").on("change",function(){
+    currentText.setText($(this).val());
     layerComic.draw();
     return false;
-  });
+  });*/
 
   confAvatar.id=2; //quit
   confAvatar.name="MiAvatar";
