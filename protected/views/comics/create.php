@@ -161,6 +161,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       width: 140,
       draggable: true,
       offset: [100, 70],
+      startScale: scale,
       name: "amigo"
     };
   confObjeto = {
@@ -170,6 +171,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       width: 100,
       draggable: true,
       offset: [50, 50],
+      startScale: scale,
       name: "objeto"
     };
   confBackground = {
@@ -180,6 +182,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       width: 294,
       image: imageBackground,
       offset: [196, 147],
+      startScale: scale,
       name: "fondo",
       id: 1
     };
