@@ -171,21 +171,6 @@ class AvatarsController extends Controller
 		$data = curl_exec($ch);
     }
 
-    public static function file_get_contents_curl($url) {
-	    $ch = curl_init();
-
-	    curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
-	    curl_setopt($ch, CURLOPT_HEADER, 0);
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	    curl_setopt($ch, CURLOPT_URL, $url);
-	    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);       
-
-	    $data = curl_exec($ch);
-	    curl_close($ch);
-
-	    return $data;
-	}
-
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -259,16 +244,14 @@ class AvatarsController extends Controller
 	}
 
   public function actionUpdatePieza(){
-    //$pieza_id = $_POST['pieza_id']; 
-    //$accion = $_POST['accion'];
 
     $facebook = new facebook(array(
        'appId'  => '342733185828640',
        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
      ));
    
-    $user =$facebook->getUser();
-    $my_access_token= $facebook->getAccessToken();
+    //$user =$facebook->getUser();
+    //$my_access_token= $facebook->getAccessToken();
 
     //borra todo
     $m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
@@ -297,7 +280,7 @@ class AvatarsController extends Controller
        $model->avatar_img=$filename;
        
        if($model->save()){
-       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+       	 $this->ShareMemeLink($Yii::app()->session['access_token'],'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
      	
     }
