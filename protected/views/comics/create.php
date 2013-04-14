@@ -337,78 +337,83 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(insertar){
       imageObj = new Image();
       conf.image = imageObj;
-      obj = new Kinetic.Image(conf);
-      console.log(img);
+      imageObj.onload = function(){ 
+        conf.width=this.width;
+        conf.height=this.height;
+
+        obj = new Kinetic.Image(conf);
+        
+        obj.on("mouseover", function() {
+          if(!currentSelected && !currentText){
+            this.setStroke("980d2e");
+            this.setStrokeWidth(1);
+            return layerComic.draw();
+          }
+        });
+
+        obj.on("mouseout", function() {
+          if(!currentSelected && !currentText){
+            this.setStroke(null);
+            this.setStrokeWidth(0);
+          }
+          return layerComic.draw();
+        });
+
+        obj.on("click", function() {
+          if(currentSelected){
+            currentSelected.setStroke(null);
+            currentSelected.setStrokeWidth(0);
+          }
+          if(currentText){
+            currentText.setStroke(null);
+            currentText.setStrokeWidth(0);
+          }
+          currentSelected = this;
+          currentText = null;
+          currentSelected.setStroke("980d2e");
+          currentSelected.setStrokeWidth(1);
+          layerComic.draw();
+        });
+        
+        obj.on("dragstart", function() {
+          if(currentSelected){
+            currentSelected.setStroke(null);
+            currentSelected.setStrokeWidth(0);
+          }
+          currentSelected = this;
+          currentText = null;
+          currentSelected.setStroke("980d2e");
+          currentSelected.setStrokeWidth(1);
+          layerComic.draw();
+          if (trans) {
+            trans.stop();
+          }
+          return this.setAttrs({
+            scale: {
+              x: this.attrs.startScale * scaleUpFactor,
+              y: this.attrs.startScale * scaleUpFactor
+            }
+          });
+        });
+
+        obj.on("dragend", function() {
+          console.log(this.getZIndex());
+          trans = this.transitionTo({
+            duration: 0.5,
+            easing: "elastic-ease-out",
+            scale: {
+              x: this.attrs.startScale,
+              y: this.attrs.startScale
+            }
+          });
+          layerComic.draw();
+        });
+        layerComic.add(obj);
+      }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
-      
-      obj.on("mouseover", function() {
-        if(!currentSelected && !currentText){
-          this.setStroke("980d2e");
-          this.setStrokeWidth(1);
-          return layerComic.draw();
-        }
-      });
-
-      obj.on("mouseout", function() {
-        if(!currentSelected && !currentText){
-          this.setStroke(null);
-          this.setStrokeWidth(0);
-        }
-        return layerComic.draw();
-      });
-
-      obj.on("click", function() {
-        if(currentSelected){
-          currentSelected.setStroke(null);
-          currentSelected.setStrokeWidth(0);
-        }
-        if(currentText){
-          currentText.setStroke(null);
-          currentText.setStrokeWidth(0);
-        }
-        currentSelected = this;
-        currentText = null;
-        currentSelected.setStroke("980d2e");
-        currentSelected.setStrokeWidth(1);
-        layerComic.draw();
-      });
-      
-      obj.on("dragstart", function() {
-        if(currentSelected){
-          currentSelected.setStroke(null);
-          currentSelected.setStrokeWidth(0);
-        }
-        currentSelected = this;
-        currentText = null;
-        currentSelected.setStroke("980d2e");
-        currentSelected.setStrokeWidth(1);
-        layerComic.draw();
-        if (trans) {
-          trans.stop();
-        }
-        return this.setAttrs({
-          scale: {
-            x: this.attrs.startScale * scaleUpFactor,
-            y: this.attrs.startScale * scaleUpFactor
-          }
-        });
-      });
-
-      obj.on("dragend", function() {
-        console.log(this.getZIndex());
-        trans = this.transitionTo({
-          duration: 0.5,
-          easing: "elastic-ease-out",
-          scale: {
-            x: this.attrs.startScale,
-            y: this.attrs.startScale
-          }
-        });
-        layerComic.draw();
-      });
-      layerComic.add(obj);
+        
       if(aux==="objeto"){ 
         objetos.push(obj);
       }
