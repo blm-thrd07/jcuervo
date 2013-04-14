@@ -235,13 +235,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     
   };
 
-  listenerStat = function() {
-    var json = JSON.parse(layerComic.toJSON()); 
-    var json2 = JSON.parse(layerFondo.toJSON()); 
-    console.log(json.children);
-    console.log(json2.children);
-  };
-
   angle = 0.174532925;
   newangle = null;
 
@@ -350,7 +343,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           this.setStrokeWidth(1);
           return layerComic.draw();
         }
-        console.log(this.toJSON());
       });
 
       obj.on("mouseout", function() {
@@ -413,7 +405,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       if(aux==="amigo"){ 
         amigos.push(obj);
       }
-      console.log(obj.toJSON());
       layerComic.draw();
       return true;
     }
@@ -459,11 +450,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       $("#textinput").attr("class", "inputOpen");
       $("#textinput").focus();
       currentText = this;
-      currentSelected = null;
+      if(currentSelected){  
+        currentSelected.setStroke(null);
+        currentSelected.setStrokeWidth(0);
+        currentSelected = null;
+      }
       return $("#textinput").val(this.getText());
     });
-console.log(currentText);
-console.log(layerComic);
     return false;
   };
 
