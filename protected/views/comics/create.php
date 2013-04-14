@@ -535,8 +535,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resetRotation").on("click", resetRotation);
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
-  $("#textinput").on("change",function(){
-    console.log("hola");
+  $("#textinput").on("keypress",function(){
     currentText.setText($(this).val());
     layerComic.draw();
     return false;
@@ -548,8 +547,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   $(document).ready(function() {
     console.log("ready");
-    setTimeout(function(){ layerFondo.draw(); layerComic.draw(); },3000);
-
   });
   
     
