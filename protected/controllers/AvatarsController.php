@@ -355,14 +355,17 @@ class AvatarsController extends Controller
 	    		$m = new CaraWeb;
 	    		$m->avatar_id=Yii::app()->session['usuario_id'];
 	    		$m->url = $pieza_id;
-	    		//$m->posx=$posx;
-	    		//$m->posy=$posy;
-	    		//$m->rotation=$rotation;
+	    		$m->posx=$posx;
+	    		$m->posy=$posy;
+	    		$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
 	    	//actualizar
 	    	else{
 	    		$m->url = $pieza_id;
+	    		$m->posx=$posx;
+	    		$m->posy=$posy;
+	    		$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
 	    	$mcaras = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>TiposPiezas::CARA,)));
