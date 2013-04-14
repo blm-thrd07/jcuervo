@@ -105,30 +105,28 @@ public function actionLogin(){
   public function actionProfile($id)
   {
 
-   $logoutUrl=null;
-   $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
-   $avatarImg=$response->Avatar->avatar_img;
-   $modelComics= new UsuariosHasTblComics;
-   $comics=$modelComics->getMyComics($response->id);
-   $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
-   
-   
-   
-  header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+    $logoutUrl=null;
+    $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+    $avatarImg=$response->Avatar->avatar_img;
+    $modelComics= new UsuariosHasTblComics;
+    $comics=$modelComics->getMyComics($response->id);
+    $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
+
+    header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
  
-   $facebook = new facebook(array(
-        'appId'  => '342733185828640',
-        'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-        ));
-  
-      
-      $facebook->setAccessToken(Yii::app()->session['access_token']);
-      $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
+    $facebook = new facebook(array(
+      'appId'  => '342733185828640',
+      'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+    ));
+    
+    $user =$facebook->getUser();
+    $facebook->setAccessToken(Yii::app()->session['access_token']);
+    $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
          
-         if(count($friends)!=null){
-             $model_amigos=new Amigos;
-             $model_amigos->insertAmigosApp($friends);
-          }
+    if(count($friends)!=null){
+      $model_amigos=new Amigos;
+      $model_amigos->insertAmigosApp($friends);
+    }
    
    $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
   
