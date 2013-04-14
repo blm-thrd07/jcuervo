@@ -443,14 +443,18 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     //eventos
     texto.on("mouseover", function() {
-      this.setStroke("980d2e");
-      this.setStrokeWidth(1);
-      return layerComic.draw();
+      if(!currentSelected && !currentText){
+        this.setStroke("980d2e");
+        this.setStrokeWidth(1);
+        return layerComic.draw();
+      }
     });
     texto.on("mouseout", function() {
-      this.setStroke(null);
-      this.setStrokeWidth(0);
-      return layerComic.draw();
+      if(!currentSelected && !currentText){
+        this.setStroke(null);
+        this.setStrokeWidth(0);
+        return layerComic.draw();
+      }
     });
     texto.on("click", function() {
       $("#textinput").attr("class", "inputOpen");
