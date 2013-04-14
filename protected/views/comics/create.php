@@ -117,8 +117,8 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 <?php //echo $this->renderPartial("_form', array('model'=>$model)); 
 
 Yii::app()->getClientScript()->registerScript('registrar', '
- 
-  var angle,cuerpos,init,rotation,imageBackground,conf,halfx,halfy, currentSelected, init, insertCabeza, insertCuerpo, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
+  var BaseUrl = "/php2/jcuervo";
+  var angle,rotation,imageBackground,conf,halfx,halfy, currentSelected, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
   currentSelected = null;
   currentText = null;
   var amigos=[], objetos=[];
@@ -128,7 +128,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
-  /*$(function() {
+  $(function() {
     $(".lazy").lazyload({
       effect: "fadeIn"
     });
@@ -137,7 +137,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log(":)");
       //return layerComic.draw();
     }), 100);
-  });*/
+  });
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
     width: 392,
