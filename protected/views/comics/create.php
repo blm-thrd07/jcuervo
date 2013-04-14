@@ -337,6 +337,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
     }
     if(obj==="amigo"){ 
+      console.log(amigos);
       for(i=0;i<amigos.length;i++){
         if(amigos[i].attrs.id == conf.id) insertar=false;
       }
