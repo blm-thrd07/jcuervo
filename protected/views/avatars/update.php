@@ -244,6 +244,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(obj) {
       conf.x=obj.attrs.x;
       conf.y=obj.attrs.y;
+      conf.dragOnTop= false;
       obj.remove();
     }
     var image = new Image();
@@ -254,15 +255,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj = new Kinetic.Image(conf);
       layerPersonaje.add(obj);
 
-      if(aux==="cara"){ cara=obj; cara.moveToBottom(); } 
-      if(aux==="cuerpo"){ cuerpo=obj; cuerpo.moveToBottom(); } 
+      if(aux==="cara"){ cara=obj; //cara.moveToBottom(); } 
+      if(aux==="cuerpo"){ cuerpo=obj; //cuerpo.moveToBottom(); } 
       if(aux==="ojos"){ ojos=obj; } 
       if(aux==="boca"){ boca=obj; } 
       if(aux==="cara_web"){ cara_web=obj; cara_web.moveToBottom(); }
         
       obj.on("mouseover", function() {
-        console.log("mouseover");
-        console.log(this.getZIndex());
         if(!currentSelected){
           this.setStroke("980d2e");
           this.setStrokeWidth(1);
@@ -271,7 +270,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("mouseout", function() {
-        console.log("mouseout");
         if(!currentSelected){
           this.setStroke(null);
           this.setStrokeWidth(0);
@@ -280,7 +278,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("click", function() {
-        console.log("click");
         if(currentSelected){
           currentSelected.setStroke(null);
           currentSelected.setStrokeWidth(0);
