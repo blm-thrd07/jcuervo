@@ -198,7 +198,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stageComic.add(layerComic);
 
   imageBackground = new Image();
-  fondo = new Kinetic.Image(confBackground);
+  confBackground.image = imageBackground;
+  imageBackground.onload = function(){
+    fondo = new Kinetic.Image(confBackground);
+  }
   imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
   layerFondo.add(fondo);
 
