@@ -119,7 +119,7 @@ public function actionLogin(){
       'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
     ));
     
-    $user =$facebook->getUser();
+    $user =$facebook->getUser(); //added by oscar
     $facebook->setAccessToken(Yii::app()->session['access_token']);
     $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
          
