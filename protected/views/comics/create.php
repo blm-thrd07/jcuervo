@@ -163,7 +163,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStroke(null);
           currentSelected.setStrokeWidth(0);
           currentSelected=null;
-          layerPersonaje.draw(); 
+          layerComic.draw(); 
         }
       });
     halfx = stageComic.getWidth() / 2;
