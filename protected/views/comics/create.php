@@ -138,8 +138,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   console.log("onclick");
   $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
-  $("#tab2 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("objeto",id,$(this).find("img").attr("src")) });
-  $("#tab3 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertar("amigo",id,$(this).find("img").attr("src")) });
+  $("#tab2 .itemMeme").on("click", function(e){ confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
+  $("#tab3 .itemMeme").on("click", function(e){ confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
   $(".itemSelector a").on("click", function() {
     console.log("you hace clicked a tab btn");
     setTimeout(function(){
@@ -156,13 +156,34 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
     halfx = stageComic.getWidth() / 2;
     halfy = stageComic.getHeight() / 2;
-    conf = {
+    confAvatar = {
+        x: halfx,
+        y: halfy,
+        height: 200,
+        width: 140,
+        draggable: true,
+        offset: [100, 70],
+        name: "amigo"
+      };
+    confObjeto = {
         x: halfx,
         y: halfy,
         height: 100,
-        width: 70,
+        width: 100,
         draggable: true,
         offset: [50, 50],
+        name: "objeto"
+      };
+    confBackground = {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        height: 392,
+        width: 294,
+        image: imageBackground,
+        offset: [196, 147],
+        name: "fondo",
+        id: 1
       };
     layerFondo = new Kinetic.Layer();
     layerComic = new Kinetic.Layer();
@@ -170,29 +191,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     stageComic.add(layerComic);
 
     imageBackground = new Image();
-    fondo = new Kinetic.Image({
-        x: 0,
-        y: 0,
-        rotation: 0,
-        height: 392,
-        width: 294,
-        image: imageBackground,
-        offset: [100, 100],
-        tipo: "fondo",
-        id: 1
-      });
+    fondo = new Kinetic.Image(confBackground);
     imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
     layerFondo.add(fondo);
 
-    imageMiAvatar = new Image();
-    conf.image=imageMiAvatar;
-    conf.id="MiAvatar";
-    MiAvatar = new Kinetic.Image(conf);
-    imageMiAvatar.src="'.Yii::app()->request->baseUrl.'/Avatar/'.$avatar['avatar_img'].'";
-    layerComic.add(MiAvatar);
-    layerComic.moveToTop();
-    //layerComic.draw();
-    currentSelected=MiAvatar;
+
+    confAvatar.name="MiAvatar";
+    insertar("MiAvatar","'.$avatar['avatar_img'].'",confAvatar)
   }
 
   saveToImage = function() {
@@ -248,7 +253,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         amigos.splice(o,o+1);
       }
     }
-
+    currentText.remove();
     currentSelected.remove();
     layerComic.draw();
   }
@@ -306,10 +311,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.moveToTop();
   };
 
-  function insertar(obj,pieza_id,img) {
+  function insertar(obj,img,conf) {
     var aux, insertar=true;
     aux=obj;
-    if(typeof pieza_id==="undefined") { insertar=false; alert("undefined"); } 
+    if(typeof conf.id==="undefined") { insertar=false; console.log("undefined"); } 
     if(obj==="objeto"){ 
       for(i=0;i<objetos.length;i++){
         if(objetos[i].attrs.id == pieza_id) insertar=false;
@@ -354,9 +359,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
-        if(currentSelected.attrs.tipo==1 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
-          currentSelected.moveToBottom();
-        }
         layerPersonaje.draw();
       });
       
@@ -381,9 +383,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("dragend", function() {
-        if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
-          currentSelected.moveToBottom();
-        }
         console.log(this.getZIndex());
         trans = this.transitionTo({
           duration: 0.5,
