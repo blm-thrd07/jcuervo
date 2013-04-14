@@ -138,6 +138,60 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       //return layerComic.draw();
     }), 100);
   });*/
+  stageComic = new Kinetic.Stage({
+    container: "comicCanvas",
+    width: 392,
+    height: 294,
+  });
+  stageComic.getContainer().addEventListener("click", function(evt) { 
+      console.log("stage");
+      if(currentSelected){
+        currentSelected.setStroke(null);
+        currentSelected.setStrokeWidth(0);
+        currentSelected=null;
+        layerComic.draw(); 
+      }
+    });
+  halfx = stageComic.getWidth() / 2;
+  halfy = stageComic.getHeight() / 2;
+  confAvatar = {
+      x: halfx,
+      y: halfy,
+      height: 200,
+      width: 140,
+      draggable: true,
+      offset: [100, 70],
+      name: "amigo"
+    };
+  confObjeto = {
+      x: halfx,
+      y: halfy,
+      height: 100,
+      width: 100,
+      draggable: true,
+      offset: [50, 50],
+      name: "objeto"
+    };
+  confBackground = {
+      x: 0,
+      y: 0,
+      rotation: 0,
+      height: 392,
+      width: 294,
+      image: imageBackground,
+      offset: [196, 147],
+      name: "fondo",
+      id: 1
+    };
+  layerFondo = new Kinetic.Layer();
+  layerComic = new Kinetic.Layer();
+  stageComic.add(layerFondo);
+  stageComic.add(layerComic);
+
+  imageBackground = new Image();
+  fondo = new Kinetic.Image(confBackground);
+  imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
+  layerFondo.add(fondo);
 
   console.log("onclick");
   $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
@@ -149,68 +203,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       console.log("cargado");
     },3000);
   });
-
-
-  iniciar = function(){
-    stageComic = new Kinetic.Stage({
-      container: "comicCanvas",
-      width: 392,
-      height: 294,
-    });
-    stageComic.getContainer().addEventListener("click", function(evt) { 
-        console.log("stage");
-        if(currentSelected){
-          currentSelected.setStroke(null);
-          currentSelected.setStrokeWidth(0);
-          currentSelected=null;
-          layerComic.draw(); 
-        }
-      });
-    halfx = stageComic.getWidth() / 2;
-    halfy = stageComic.getHeight() / 2;
-    confAvatar = {
-        x: halfx,
-        y: halfy,
-        height: 200,
-        width: 140,
-        draggable: true,
-        offset: [100, 70],
-        name: "amigo"
-      };
-    confObjeto = {
-        x: halfx,
-        y: halfy,
-        height: 100,
-        width: 100,
-        draggable: true,
-        offset: [50, 50],
-        name: "objeto"
-      };
-    confBackground = {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        height: 392,
-        width: 294,
-        image: imageBackground,
-        offset: [196, 147],
-        name: "fondo",
-        id: 1
-      };
-    layerFondo = new Kinetic.Layer();
-    layerComic = new Kinetic.Layer();
-    stageComic.add(layerFondo);
-    stageComic.add(layerComic);
-
-    imageBackground = new Image();
-    fondo = new Kinetic.Image(confBackground);
-    imageBackground.src="'.Yii::app()->request->baseUrl.'/images/backgrounds/default.png";
-    layerFondo.add(fondo);
-
-    confAvatar.id=2; //quit
-    confAvatar.name="MiAvatar";
-    insertar("MiAvatar","'.$avatar['avatar_img'].'",confAvatar)
-  }
 
   saveToImage = function() {
     console.log("save");
@@ -493,9 +485,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
 
+  confAvatar.id=2; //quit
+  confAvatar.name="MiAvatar";
+  insertar("MiAvatar","'.$avatar['avatar_img'].'",confAvatar)
+
   $(document).ready(function() {
     console.log("ready");
-    iniciar();
     setTimeout(function(){ layerFondo.draw(); layerComic.draw(); },3000);
 
   });
