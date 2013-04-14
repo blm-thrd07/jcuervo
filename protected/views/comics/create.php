@@ -536,6 +536,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
   $("#textinput").on("keypress",function(){
+    console.log("press");
     currentText.setText($(this).val());
     layerComic.draw();
     return false;
