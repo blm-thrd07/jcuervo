@@ -364,6 +364,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStroke(null);
           currentSelected.setStrokeWidth(0);
         }
+        if(currentText){
+          currentText.setStroke(null);
+          currentText.setStrokeWidth(0);
+        }
         currentSelected = this;
         currentText = null;
         currentSelected.setStroke("980d2e");
