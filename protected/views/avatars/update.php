@@ -579,8 +579,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
 
   $(document).keypress(function(e) {
-    if(e.which == 13) {
-        console.log("ale");
+    if(e.which == 8) {
+        removeImage();
     }
   });
 
