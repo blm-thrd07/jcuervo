@@ -136,16 +136,21 @@ public function actionLogin(){
         $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
     }
 
-    $facebook->setAccessToken(Yii::app()->session['access_token']);
-    $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
-         
-    if(count($friends)!=null){
-      $model_amigos=new Amigos;
-      $model_amigos->insertAmigosApp($friends);
+    if($user){
+      $facebook->setAccessToken(Yii::app()->session['access_token']);
+      $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
+           
+      if(count($friends)!=null){
+        $model_amigos=new Amigos;
+        $model_amigos->insertAmigosApp($friends);
+      }
+     $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
+
+    }else{
+       $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
     }
-   
-   $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
-  
+
+      
   }
 
   public function actionDetalle($id){
