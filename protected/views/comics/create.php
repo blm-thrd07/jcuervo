@@ -435,7 +435,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#textinput").val(initialText);
     $("#textinput").select();
     currentText = texto;
-    currentSelected = null;
+    if(currentSelected){  
+      currentSelected.setStroke(null);
+      currentSelected.setStrokeWidth(0);
+      currentSelected = null;
+    }
+
+    //eventos
     texto.on("mouseover", function() {
       this.setStroke("980d2e");
       this.setStrokeWidth(1);
