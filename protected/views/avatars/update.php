@@ -174,7 +174,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.getContainer().addEventListener("click", function(evt) { 
-    console.log("stage");
     if(currentSelected){
       currentSelected.setStroke(null);
       currentSelected.setStrokeWidth(0);
@@ -194,7 +193,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confAccesorio = {x: halfx,y: halfy - 100,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale,tipo: 1};
 
   //se va a editar
-
   for(var k=0; k < avatar.avatarPiezas.length; k++){
     if(avatar.avatarPiezas[k].descripcion==="cara"){ 
       insertarPieza("cara",avatar.avatarPiezas[k].AvatarImg,{ x: parseInt(avatar.avatarPiezas[k].posx), y: parseInt(avatar.avatarPiezas[k].posy), rotation: parseFloat(avatar.avatarPiezas[k].rotation), id: avatar.avatarPiezas[k].piezaid, tipo: avatar.avatarPiezas[k].tipo_pieza_id, height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale });
@@ -223,14 +221,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   
   stagePersonaje.add(layerPersonaje);
 
-//BOTONES
-
-    console.log("ok go");
-    $("#tab1 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCara.id = pieza[0]; insertarPieza("cara",$(this).find("img").attr("src"),confCara); });
-    $("#tab2 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCuerpo.id = pieza[0]; insertarPieza("cuerpo",$(this).find("img").attr("src"),confCuerpo); });
-    $("#tab5 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio($(this).find("img").attr("src"),confAccesorio); });
-    $("#tab4 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confBoca.id = pieza[0]; insertarPieza("boca",$(this).find("img").attr("src"),confBoca); });
-    $("#tab3 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-");  confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
+  $("#tab1 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCara.id = pieza[0]; insertarPieza("cara",$(this).find("img").attr("src"),confCara); });
+  $("#tab2 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confCuerpo.id = pieza[0]; insertarPieza("cuerpo",$(this).find("img").attr("src"),confCuerpo); });
+  $("#tab5 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confAccesorio.id = pieza[0]; insertarAccesorio($(this).find("img").attr("src"),confAccesorio); });
+  $("#tab4 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-"); confBoca.id = pieza[0]; insertarPieza("boca",$(this).find("img").attr("src"),confBoca); });
+  $("#tab3 .itemMeme").on("click", function(e){ var pieza = $(this).find("img").attr("id").split("-");  confOjos.id = pieza[0]; insertarPieza("ojos",$(this).find("img").attr("src"),confOjos); });
 
   function insertarPieza(obj,img,conf) {
     var aux;
@@ -350,11 +345,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         conf.width=this.width;
         conf.height=this.height;
         accesorio = new Kinetic.Image(conf);
-        console.log(img);
         
         accesorio.on("mouseover", function() {
-          console.log("mouseover");
-          console.log(this.getZIndex());
           if(!currentSelected){
             this.setStroke("980d2e");
             this.setStrokeWidth(1);
@@ -363,7 +355,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         accesorio.on("mouseout", function() {
-          console.log("mouseout");
           if(!currentSelected){
             this.setStroke(null);
             this.setStrokeWidth(0);
@@ -372,7 +363,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         accesorio.on("click", function() {
-          console.log("click");
           if(currentSelected){
             currentSelected.setStroke(null);
             currentSelected.setStrokeWidth(0);
@@ -410,7 +400,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
             currentSelected.moveToBottom();
           }
-          console.log(this.getZIndex());
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
@@ -440,19 +429,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   saveToImage = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
-    for(var i in json){
-      console.log(json[i]);
-    }
     //quitar cuadro rojo
     if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
     console.log(json.children);
-    //loading.gif
     $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
     
     stagePersonaje.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
-        //alert(dataUrl);
         var avatarJson = { avatar: json.children, img: dataUrl };
 
         $.ajax({
@@ -483,7 +467,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $.ajax({
       type: "POST",
       url: "'.CController::CreateUrl("CaraWeb/delete").'",
-      success: function(data){ console.log("eliminado"); },
+      success: function(data){ },
       error: function(data) { 
         console.log("no eliminado");
       },
@@ -513,10 +497,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     currentSelected.transitionTo({
       rotation: newangle,
       duration: 0.2,
-      easing: "ease-out",
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
+      easing: "ease-out"
     });
     layerPersonaje.draw();
     return false;
@@ -530,9 +511,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       rotation: newangle,
       duration: 0.2,
       easing: "ease-out",
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
     });
     layerPersonaje.draw();
     return false;
@@ -541,14 +519,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   sendFront = function() {
     currentSelected.moveUp();
     layerPersonaje.draw();
-    console.log("front");
     return false;
   };
 
   sendBack = function() {
     currentSelected.moveDown();
     layerPersonaje.draw();
-    console.log("back");
     return false;
   };
 
@@ -556,9 +532,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     currentSelected.transitionTo({
       rotation: 0,
       duration: 0.3,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
     });
     layerPersonaje.draw();
     return false;
@@ -573,19 +546,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-sendBack").on("click", sendBack);
 
   $(document).ready(function() {
-    console.log("ready");
     $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
     $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
   });
-
-  $(document).keypress(function(e) {
-    if(e.which == 8) {
-        removeImage();
-    }
-  });
-
-  setTimeout(function(){ layerPersonaje.draw(); console.log("cargado"); },1000);
-
   
 ',CClientScript::POS_END);
 
