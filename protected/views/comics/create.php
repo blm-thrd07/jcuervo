@@ -345,6 +345,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           this.setStrokeWidth(1);
           return layerComic.draw();
         }
+        console.log(this.toJSON());
       });
 
       obj.on("mouseout", function() {
