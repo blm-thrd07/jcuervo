@@ -338,8 +338,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageObj = new Image();
       conf.image = imageObj;
       imageObj.onload = function(){ 
-        conf.width=this.width;
-        conf.height=this.height;
+        //conf.width=this.width;
+        //conf.height=this.height;
 
         obj = new Kinetic.Image(conf);
         
@@ -413,7 +413,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
-        
+
       if(aux==="objeto"){ 
         objetos.push(obj);
       }
