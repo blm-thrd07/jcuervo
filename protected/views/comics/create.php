@@ -122,6 +122,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentSelected = null;
   currentText = null;
   var amigos=[], objetos=[];
+  var scale = 1;
+  var scaleUpFactor= 1.05;
+  var trans = null;
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
@@ -154,6 +157,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       width: 392,
       height: 294,
     });
+    stageComic.getContainer().addEventListener("click", function(evt) { 
+        console.log("stage");
+        if(currentSelected){
+          currentSelected.setStroke(null);
+          currentSelected.setStrokeWidth(0);
+          currentSelected=null;
+          layerPersonaje.draw(); 
+        }
+      });
     halfx = stageComic.getWidth() / 2;
     halfy = stageComic.getHeight() / 2;
     confAvatar = {
