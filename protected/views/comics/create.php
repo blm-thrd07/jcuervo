@@ -338,7 +338,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageObj.src="'.Yii::app()->request->baseUrl.'/Avatar/"+img;
       
       obj.on("mouseover", function() {
-        if(!currentSelected){
+        if(!currentSelected && !currentText){
           this.setStroke("980d2e");
           this.setStrokeWidth(1);
           return layerComic.draw();
@@ -346,7 +346,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("mouseout", function() {
-        if(!currentSelected){
+        if(!currentSelected !currentText){
           this.setStroke(null);
           this.setStrokeWidth(0);
         }
@@ -468,6 +468,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       this.setStroke("980d2e");
       this.setStrokeWidth(1);
       currentText = this;
+      layerComic.draw();
       return $("#textinput").val(this.getText());
     });
 
