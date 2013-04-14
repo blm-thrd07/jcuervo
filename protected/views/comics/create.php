@@ -418,6 +418,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           layerComic.draw();
         });
         layerComic.add(obj);
+        layerComic.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
