@@ -429,7 +429,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       draggable: true
     });
     layerComic.add(texto);
-    layerComic.draw();
     $("#textinput").attr("class", "inputOpen");
     $("#textinput").focus();
     $("#textinput").val(initialText);
@@ -440,6 +439,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentSelected.setStrokeWidth(0);
       currentSelected = null;
     }
+    layerComic.draw();
 
     //eventos
     texto.on("mouseover", function() {
