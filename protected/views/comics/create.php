@@ -162,38 +162,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
-  confAvatar = {
-      x: halfx,
-      y: halfy,
-      height: 200,
-      width: 140,
-      draggable: true,
-      offset: [100, 70],
-      startScale: scale,
-      name: "amigo"
-    };
-  confObjeto = {
-      x: halfx,
-      y: halfy,
-      height: 100,
-      width: 100,
-      draggable: true,
-      offset: [50, 50],
-      startScale: scale,
-      name: "objeto"
-    };
-  confBackground = {
-      x: 0,
-      y: 0,
-      rotation: 0,
-      height: 392,
-      width: 294,
-      image: imageBackground,
-      offset: [196, 147],
-      startScale: scale,
-      name: "fondo",
-      id: 1
-    };
+  confAvatar = { x: halfx,y: halfy,height: 200,width: 140,draggable: true,offset: [100, 70],startScale: scale,name: "amigo"};
+  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto"};
+  confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
   stageComic.add(layerFondo);
@@ -209,7 +180,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.png";
 
-  console.log("onclick");
   $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
   $("#tab2 .itemMeme").on("click", function(e){ confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
@@ -221,7 +191,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
 
   saveToImage = function() {
-    console.log("save");
     $("#overlay").css("display","block"); 
     $("#popup").css("display","block"); 
     $("#popup").fadeIn("slow");
@@ -246,7 +215,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             window.location=url;
           },
           error: function(data) { 
-            alert("Vuelve a intentarlo");
+            console.log("Vuelve a intentarlo");
             $("#overlay").css("display","none"); 
             $("#popup").css("display","none"); 
           },
@@ -404,6 +373,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           if (trans) {
             trans.stop();
           }
+          this.attrs.startScale = this.attrs.scale.x;
           return this.setAttrs({
             scale: {
               x: this.attrs.scale.x * scaleUpFactor,
@@ -418,8 +388,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             duration: 0.5,
             easing: "elastic-ease-out",
             scale: {
-              x: this.attrs.scale.x,
-              y: this.attrs.scale.y
+              x: this.attrs.startScale,
+              y: this.attrs.startScale
             }
           });
           layerComic.draw();
