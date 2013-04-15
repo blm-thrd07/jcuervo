@@ -65,7 +65,7 @@
                   if($bandera) echo '</div>'; else $bandera=true;
                   echo '<div class="slide">';
                 }
-                echo '<div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div><div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'</div>'; 
+                echo '<div><div class="itemMeme"><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'</div>'; 
               }
               if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
             }
