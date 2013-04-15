@@ -104,16 +104,14 @@
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.rating-ck.js",
       "fileType" : 64
     },
-    "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_flat_0_aaaaaa_40x100.png" : {
+    "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.selectable.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
-      "initialSize" : 86,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.selectable.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/styles.sass" : {
       "ignoreWasSetByUser" : 0,
@@ -136,15 +134,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.selectable.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.selectable.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/protected\/views\/caraWeb\/_form.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -153,6 +142,17 @@
       "inputAbbreviatedPath" : "\/protected\/views\/caraWeb\/_form.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_flat_0_aaaaaa_40x100.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
+      "initialSize" : 86,
+      "fileType" : 8192
     },
     "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.dialog.css" : {
       "ignoreWasSetByUser" : 0,
@@ -437,15 +437,6 @@
       "initialSize" : 317,
       "fileType" : 8192
     },
-    "\/protected\/views\/layouts\/column2.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/views\/layouts\/column2.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/assets\/83461195\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -456,6 +447,15 @@
       "outputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png",
       "initialSize" : 3800,
       "fileType" : 8192
+    },
+    "\/protected\/views\/layouts\/column2.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/views\/layouts\/column2.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/assets\/b1b13145\/jui\/css\/base\/jquery.ui.dialog.css" : {
       "ignoreWasSetByUser" : 0,
@@ -515,6 +515,17 @@
       "outputAbbreviatedPath" : "\/assets\/b1b13145\/jquery.treeview.edit-ck.js",
       "fileType" : 64
     },
+    "\/assets\/c824d7da\/js\/fancybox\/jquery.fancybox-1.3.1.pack.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/jquery.fancybox-1.3.1.pack.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/jquery.fancybox-1.3.1.pack-ck.js",
+      "fileType" : 64
+    },
     "\/assets\/83461195\/jquery.cookie.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -536,17 +547,6 @@
       "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_454545_256x240.png",
       "initialSize" : 3800,
       "fileType" : 8192
-    },
-    "\/assets\/c824d7da\/js\/fancybox\/jquery.fancybox-1.3.1.pack.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/jquery.fancybox-1.3.1.pack.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/jquery.fancybox-1.3.1.pack-ck.js",
-      "fileType" : 64
     },
     "\/protected\/controllers\/ComicsController.php" : {
       "ignoreWasSetByUser" : 0,
@@ -630,17 +630,6 @@
       "initialSize" : 310,
       "fileType" : 8192
     },
-    "\/assets\/83461195\/jquery.maskedinput.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/83461195\/jquery.maskedinput.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/83461195\/jquery.maskedinput.min-ck.js",
-      "fileType" : 64
-    },
     "\/assets\/b1b13145\/jquery.yiitab.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -650,6 +639,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/b1b13145\/jquery.yiitab-ck.js",
+      "fileType" : 64
+    },
+    "\/assets\/83461195\/jquery.maskedinput.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/83461195\/jquery.maskedinput.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/83461195\/jquery.maskedinput.min-ck.js",
       "fileType" : 64
     },
     "\/assets\/b1b13145\/jui\/css\/base\/jquery.ui.all.css" : {
@@ -856,17 +856,6 @@
       "fileType" : 2,
       "debugStyle" : 0
     },
-    "\/Comics\/comic1.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Comics\/comic1.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/Comics\/comic1.jpg",
-      "initialSize" : 47709,
-      "fileType" : 4096
-    },
     "\/assets\/b1b13145\/jui\/css\/base\/images\/ui-icons_454545_256x240.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -876,6 +865,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/assets\/b1b13145\/jui\/css\/base\/images\/ui-icons_454545_256x240.png",
       "initialSize" : 3800,
+      "fileType" : 8192
+    },
+    "\/assets\/4c80c133\/js\/fancybox\/fancybox-x.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-x.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-x.png",
+      "initialSize" : 159,
       "fileType" : 8192
     },
     "\/protected\/views\/usuariosComicsComentarios\/_form.php" : {
@@ -896,15 +896,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/4c80c133\/js\/fancybox\/fancybox-x.png" : {
+    "\/assets\/c824d7da\/js\/fancybox\/fancy_title_right.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-x.png",
+      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_title_right.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-x.png",
-      "initialSize" : 159,
+      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_title_right.png",
+      "initialSize" : 495,
       "fileType" : 8192
     },
     "\/js\/jquery.easytabs.min.js" : {
@@ -918,15 +918,15 @@
       "outputAbbreviatedPath" : "\/js\/jquery.easytabs.min-ck.js",
       "fileType" : 64
     },
-    "\/assets\/c824d7da\/js\/fancybox\/fancybox-y.png" : {
+    "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-bg_glass_65_ffffff_1x400.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancybox-y.png",
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-bg_glass_65_ffffff_1x400.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancybox-y.png",
-      "initialSize" : 128,
+      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-bg_glass_65_ffffff_1x400.png",
+      "initialSize" : 99,
       "fileType" : 8192
     },
     "\/protected\/models\/Usuarios.php" : {
@@ -938,27 +938,27 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/c824d7da\/js\/fancybox\/fancy_title_right.png" : {
+    "\/assets\/c824d7da\/js\/fancybox\/fancybox-y.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_title_right.png",
+      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancybox-y.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_title_right.png",
-      "initialSize" : 495,
+      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancybox-y.png",
+      "initialSize" : 128,
       "fileType" : 8192
     },
-    "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-bg_glass_65_ffffff_1x400.png" : {
+    "\/Comics\/comic1.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-bg_glass_65_ffffff_1x400.png",
+      "inputAbbreviatedPath" : "\/Comics\/comic1.jpg",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-bg_glass_65_ffffff_1x400.png",
-      "initialSize" : 99,
-      "fileType" : 8192
+      "outputAbbreviatedPath" : "\/Comics\/comic1.jpg",
+      "initialSize" : 47709,
+      "fileType" : 4096
     },
     "\/assets\/1da7d4d9\/js\/fancybox\/fancybox-x.png" : {
       "ignoreWasSetByUser" : 0,
@@ -982,17 +982,6 @@
       "initialSize" : 1401,
       "fileType" : 8192
     },
-    "\/assets\/1da7d4d9\/js\/main.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/main.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/main-ck.js",
-      "fileType" : 64
-    },
     "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_e.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1003,6 +992,17 @@
       "outputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_e.png",
       "initialSize" : 107,
       "fileType" : 8192
+    },
+    "\/assets\/1da7d4d9\/js\/main.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/main.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/main-ck.js",
+      "fileType" : 64
     },
     "\/assets\/b1b13145\/jui\/css\/base\/images\/ui-bg_flat_75_ffffff_40x100.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1104,15 +1104,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/protected\/views\/comics\/view.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/views\/comics\/view.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/assets\/83461195\/jquery.maskedinput.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1123,6 +1114,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/83461195\/jquery.maskedinput-ck.js",
       "fileType" : 64
+    },
+    "\/protected\/views\/comics\/view.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/views\/comics\/view.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/assets\/1ae312b1\/gridview\/jquery.yiigridview.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1277,21 +1277,21 @@
       "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jquery.treeview-ck.js",
       "fileType" : 64
     },
-    "\/assets\/83461195\/jui\/css\/base\/jquery.ui.accordion.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/jquery.ui.accordion.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/assets\/11f59b72\/yiitab\/jquery.yiitab.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/assets\/11f59b72\/yiitab\/jquery.yiitab.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/assets\/83461195\/jui\/css\/base\/jquery.ui.accordion.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/jquery.ui.accordion.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
@@ -1306,6 +1306,15 @@
       "outputAbbreviatedPath" : "\/assets\/b1b13145\/jquery.bgiframe-ck.js",
       "fileType" : 64
     },
+    "\/protected\/views\/comics\/admin.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/views\/comics\/admin.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/assets\/1ae312b1\/listview\/jquery.yiilistview.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1316,15 +1325,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/1ae312b1\/listview\/jquery.yiilistview-ck.js",
       "fileType" : 64
-    },
-    "\/protected\/views\/comics\/admin.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/views\/comics\/admin.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/assets\/4c80c133\/js\/fancybox\/fancy_shadow_s.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1337,17 +1337,6 @@
       "initialSize" : 107,
       "fileType" : 8192
     },
-    "\/assets\/83461195\/jquery.treeview.edit.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/83461195\/jquery.treeview.edit.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/83461195\/jquery.treeview.edit-ck.js",
-      "fileType" : 64
-    },
     "\/assets\/b1b13145\/jquery.yii.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1359,6 +1348,17 @@
       "outputAbbreviatedPath" : "\/assets\/b1b13145\/jquery.yii-ck.js",
       "fileType" : 64
     },
+    "\/assets\/83461195\/jquery.treeview.edit.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/83461195\/jquery.treeview.edit.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/83461195\/jquery.treeview.edit-ck.js",
+      "fileType" : 64
+    },
     "\/protected\/models\/PiezaAvatar.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1367,6 +1367,15 @@
       "inputAbbreviatedPath" : "\/protected\/models\/PiezaAvatar.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/assets\/83461195\/autocomplete\/jquery.autocomplete.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/83461195\/autocomplete\/jquery.autocomplete.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/js\/jquery.bxslider.min.js" : {
       "ignoreWasSetByUser" : 1,
@@ -1378,15 +1387,6 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/jquery.bxslider.min-ck.js",
       "fileType" : 64
-    },
-    "\/assets\/83461195\/autocomplete\/jquery.autocomplete.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/83461195\/autocomplete\/jquery.autocomplete.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/protected\/views\/comics\/update.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1655,15 +1655,6 @@
       "outputAbbreviatedPath" : "\/assets\/83461195\/jquery.treeview.async-ck.js",
       "fileType" : 64
     },
-    "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.spinner.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.spinner.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/css\/form.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1683,6 +1674,15 @@
       "outputAbbreviatedPath" : "\/assets\/1ae312b1\/gridview\/view.png",
       "initialSize" : 803,
       "fileType" : 8192
+    },
+    "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.spinner.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.spinner.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/protected\/components\/UserIdentity.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1720,17 +1720,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/c824d7da\/js\/fancybox\/fancy_shadow_s.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_shadow_s.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_shadow_s.png",
-      "initialSize" : 107,
-      "fileType" : 8192
-    },
     "\/assets\/11f59b72\/jui\/js\/jquery-ui.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1741,6 +1730,17 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/js\/jquery-ui.min-ck.js",
       "fileType" : 64
+    },
+    "\/assets\/c824d7da\/js\/fancybox\/fancy_shadow_s.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_shadow_s.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/fancybox\/fancy_shadow_s.png",
+      "initialSize" : 107,
+      "fileType" : 8192
     },
     "\/fancybox\/jquery.fancybox.pack.js" : {
       "ignoreWasSetByUser" : 1,
@@ -1820,17 +1820,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/11f59b72\/jquery.maskedinput.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.maskedinput.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.maskedinput-ck.js",
-      "fileType" : 64
-    },
     "\/assets\/b1b13145\/jquery.multifile.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1851,6 +1840,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/js\/jquery-ui-i18n.min-ck.js",
+      "fileType" : 64
+    },
+    "\/assets\/11f59b72\/jquery.maskedinput.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.maskedinput.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.maskedinput-ck.js",
       "fileType" : 64
     },
     "\/protected\/views\/layouts\/main.php" : {
@@ -1913,17 +1913,6 @@
       "outputAbbreviatedPath" : "\/js\/jquery-1.9.0.min-ck.js",
       "fileType" : 64
     },
-    "\/Avatar\/515858c33e7f6.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Avatar\/515858c33e7f6.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/Avatar\/515858c33e7f6.png",
-      "initialSize" : 18237,
-      "fileType" : 8192
-    },
     "\/assets\/7d15a6c4\/gridview\/view.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1933,6 +1922,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/assets\/7d15a6c4\/gridview\/view.png",
       "initialSize" : 803,
+      "fileType" : 8192
+    },
+    "\/Avatar\/515858c33e7f6.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Avatar\/515858c33e7f6.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/Avatar\/515858c33e7f6.png",
+      "initialSize" : 18237,
       "fileType" : 8192
     },
     "\/protected\/views\/usuariosComicsComentarios\/_view.php" : {
@@ -2374,15 +2374,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/protected\/models\/Amigos.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/models\/Amigos.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/assets\/11f59b72\/jquery.yiiactiveform.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2393,6 +2384,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.yiiactiveform-ck.js",
       "fileType" : 64
+    },
+    "\/protected\/models\/Amigos.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/models\/Amigos.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/protected\/views\/app\/_mismemes.php" : {
       "ignoreWasSetByUser" : 0,
@@ -2412,6 +2412,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/assets\/11f59b72\/jquery.yiitab.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.yiitab.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.yiitab-ck.js",
+      "fileType" : 64
+    },
     "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.resizable.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2420,17 +2431,6 @@
       "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.resizable.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/img\/cabeza-3.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/cabeza-3.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/cabeza-3.png",
-      "initialSize" : 19048,
-      "fileType" : 8192
     },
     "\/fancybox\/helpers\/jquery.fancybox-buttons.js" : {
       "ignoreWasSetByUser" : 1,
@@ -2443,16 +2443,16 @@
       "outputAbbreviatedPath" : "\/fancybox\/helpers\/jquery.fancybox-buttons-ck.js",
       "fileType" : 64
     },
-    "\/assets\/11f59b72\/jquery.yiitab.js" : {
+    "\/img\/cabeza-3.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.yiitab.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.yiitab-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/img\/cabeza-3.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/cabeza-3.png",
+      "initialSize" : 19048,
+      "fileType" : 8192
     },
     "\/assets\/11f59b72\/jquery.ajaxqueue.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2465,14 +2465,16 @@
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.ajaxqueue-ck.js",
       "fileType" : 64
     },
-    "\/css\/styles.css" : {
+    "\/assets\/11f59b72\/jquery.multifile.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.multifile.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.multifile-ck.js",
+      "fileType" : 64
     },
     "\/protected\/config\/main.php" : {
       "ignoreWasSetByUser" : 0,
@@ -2493,17 +2495,6 @@
       "outputAbbreviatedPath" : "\/assets\/7d15a6c4\/gridview\/update.png",
       "initialSize" : 713,
       "fileType" : 8192
-    },
-    "\/assets\/11f59b72\/jquery.multifile.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.multifile.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.multifile-ck.js",
-      "fileType" : 64
     },
     "\/assets\/e9958da0\/listview\/jquery.yiilistview.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2849,17 +2840,6 @@
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.cookie-ck.js",
       "fileType" : 64
     },
-    "\/assets\/4c80c133\/js\/fancybox\/fancy_title_left.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancy_title_left.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancy_title_left.png",
-      "initialSize" : 496,
-      "fileType" : 8192
-    },
     "\/assets\/ec6b0e90\/jquery.yiitab.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2870,6 +2850,17 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jquery.yiitab-ck.js",
       "fileType" : 64
+    },
+    "\/assets\/4c80c133\/js\/fancybox\/fancy_title_left.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancy_title_left.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancy_title_left.png",
+      "initialSize" : 496,
+      "fileType" : 8192
     },
     "\/assets\/ec6b0e90\/jui\/css\/base\/jquery.ui.autocomplete.css" : {
       "ignoreWasSetByUser" : 0,
@@ -2909,15 +2900,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/1b432de5\/gridview\/update.png" : {
+    "\/assets\/4c80c133\/js\/fancybox\/fancybox-y.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/1b432de5\/gridview\/update.png",
+      "inputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-y.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/1b432de5\/gridview\/update.png",
-      "initialSize" : 713,
+      "outputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-y.png",
+      "initialSize" : 128,
       "fileType" : 8192
     },
     "\/assets\/1b432de5\/gridview\/jquery.yiigridview.js" : {
@@ -2931,15 +2922,15 @@
       "outputAbbreviatedPath" : "\/assets\/1b432de5\/gridview\/jquery.yiigridview-ck.js",
       "fileType" : 64
     },
-    "\/assets\/4c80c133\/js\/fancybox\/fancybox-y.png" : {
+    "\/assets\/1b432de5\/gridview\/update.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-y.png",
+      "inputAbbreviatedPath" : "\/assets\/1b432de5\/gridview\/update.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/4c80c133\/js\/fancybox\/fancybox-y.png",
-      "initialSize" : 128,
+      "outputAbbreviatedPath" : "\/assets\/1b432de5\/gridview\/update.png",
+      "initialSize" : 713,
       "fileType" : 8192
     },
     "\/protected\/models\/Avatars.php" : {
@@ -3312,6 +3303,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/protected\/views\/comics\/_view.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/views\/comics\/_view.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_75_dadada_1x400.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -3322,15 +3322,6 @@
       "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_75_dadada_1x400.png",
       "initialSize" : 142,
       "fileType" : 8192
-    },
-    "\/protected\/views\/comics\/_view.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/views\/comics\/_view.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/Avatar\/515887f9e8d51.png" : {
       "ignoreWasSetByUser" : 0,
@@ -3458,17 +3449,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_95_fef1ec_1x400.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_95_fef1ec_1x400.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_95_fef1ec_1x400.png",
-      "initialSize" : 140,
-      "fileType" : 8192
-    },
     "\/assets\/c824d7da\/js\/jquery.tooltip-1.2.6.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -3480,24 +3460,15 @@
       "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/jquery.tooltip-1.2.6.min-ck.js",
       "fileType" : 64
     },
-    "\/protected\/tests\/WebTestCase.php" : {
+    "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_95_fef1ec_1x400.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/tests\/WebTestCase.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-icons_454545_256x240.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-icons_454545_256x240.png",
+      "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_95_fef1ec_1x400.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-icons_454545_256x240.png",
-      "initialSize" : 3800,
+      "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-bg_glass_95_fef1ec_1x400.png",
+      "initialSize" : 140,
       "fileType" : 8192
     },
     "\/assets\/11f59b72\/jquery.min.js" : {
@@ -3510,6 +3481,26 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.min-ck.js",
       "fileType" : 64
+    },
+    "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-icons_454545_256x240.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-icons_454545_256x240.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/images\/ui-icons_454545_256x240.png",
+      "initialSize" : 3800,
+      "fileType" : 8192
+    },
+    "\/protected\/tests\/WebTestCase.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/tests\/WebTestCase.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/protected\/views\/usuariosComicsComentarios\/view.php" : {
       "ignoreWasSetByUser" : 0,
@@ -3662,17 +3653,6 @@
       "initialSize" : 3800,
       "fileType" : 8192
     },
-    "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_se.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_se.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_se.png",
-      "initialSize" : 330,
-      "fileType" : 8192
-    },
     "\/assets\/4c80c133\/js\/fancybox\/jquery.fancybox-1.3.1.pack.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -3695,14 +3675,27 @@
       "outputAbbreviatedPath" : "\/assets\/c824d7da\/js\/main-ck.js",
       "fileType" : 64
     },
-    "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.resizable.css" : {
+    "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_se.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.resizable.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_se.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/1da7d4d9\/js\/fancybox\/fancy_shadow_se.png",
+      "initialSize" : 330,
+      "fileType" : 8192
+    },
+    "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png",
+      "initialSize" : 3800,
+      "fileType" : 8192
     },
     "\/assets\/c824d7da\/js\/fancybox\/fancy_title_over.png" : {
       "ignoreWasSetByUser" : 0,
@@ -3724,16 +3717,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png" : {
+    "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.resizable.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/ec6b0e90\/jui\/css\/base\/images\/ui-icons_2e83ff_256x240.png",
-      "initialSize" : 3800,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/assets\/11f59b72\/jui\/css\/base\/jquery.ui.resizable.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/js\/jquery.hashchange.min.js" : {
       "ignoreWasSetByUser" : 1,
@@ -3766,24 +3757,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/protected\/views\/app\/_detalle.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/views\/app\/_detalle.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/protected\/views\/app\/index.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/protected\/views\/app\/index.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/assets\/c824d7da\/css\/screen.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -3792,6 +3765,15 @@
       "inputAbbreviatedPath" : "\/assets\/c824d7da\/css\/screen.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
+    },
+    "\/protected\/views\/app\/_detalle.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/views\/app\/_detalle.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/assets\/83461195\/jui\/css\/base\/images\/ui-icons_cd0a0a_256x240.png" : {
       "ignoreWasSetByUser" : 0,
@@ -3803,6 +3785,15 @@
       "outputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-icons_cd0a0a_256x240.png",
       "initialSize" : 3800,
       "fileType" : 8192
+    },
+    "\/protected\/views\/app\/index.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/protected\/views\/app\/index.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/Avatar\/5159533fe3f19.png" : {
       "ignoreWasSetByUser" : 0,
@@ -4066,6 +4057,15 @@
       "initialSize" : 8132,
       "fileType" : 8192
     },
+    "\/config.rb" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
+    },
     "\/assets\/11f59b72\/jquery.maskedinput.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -4076,15 +4076,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/assets\/11f59b72\/jquery.maskedinput.min-ck.js",
       "fileType" : 64
-    },
-    "\/config.rb" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
     },
     "\/assets\/ec6b0e90\/rating\/jquery.rating.css" : {
       "ignoreWasSetByUser" : 0,
@@ -4402,6 +4393,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
+      "initialSize" : 86,
+      "fileType" : 8192
+    },
     "\/assets\/11f59b72\/punycode.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -4432,17 +4434,6 @@
       "inputAbbreviatedPath" : "\/assets\/c824d7da\/css\/ie.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/83461195\/jui\/css\/base\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
-      "initialSize" : 86,
-      "fileType" : 8192
     },
     "\/protected\/runtime\/gii-1.1.10\/ModelCode.php" : {
       "ignoreWasSetByUser" : 0,
