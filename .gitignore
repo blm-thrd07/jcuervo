@@ -5,6 +5,8 @@
 
 *.png
 
+.sassc
+
 
 # OS generated files #
 ######################
