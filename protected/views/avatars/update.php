@@ -17,10 +17,10 @@
         <h2>Crea tu Personaje</h2>
 
         <div class="saveBtn">
-          <a href="#" class="btn"><i class="icon-chevron-left"></i> Volver</a>
+          <a href="#" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
           <a href="#" id="js-saveCanvas" class="btn"><i class="icon-save"></i> Guardar</a> 
         </div>
-        
+
         <div class="js-tabEngine itemSelector">
           <ul>
             <li><a href="#tab1">Cabeza</a></li>
