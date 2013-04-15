@@ -533,8 +533,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentSelected){
       currentSelected.setAttrs({
         scale: {
-          x: this.attrs.x * scaleUpFactor,
-          y: this.attrs.y * scaleUpFactor
+          x: currentSelected.attrs.x * scaleUpFactor,
+          y: currentSelected.attrs.y * scaleUpFactor
         }
       });
       currentSelected.draw();
