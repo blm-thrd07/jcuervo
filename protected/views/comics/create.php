@@ -2,7 +2,7 @@
   <section id="panelComic">
     <h1>Crea tu Meme</h1>
     <div id="insertText"><a href="#" id="js-createText" class="btn"><i class="icon-font"></i></a>
-      <input type="text" id="textinput" class="inputClose"><a href="#" id="js-insertText" class="btn"><i class="icon-hand-down"></i></a><a href="#" class="btn"><i class="icon-comment"></i></a>
+      <input type="text" id="textinput" class="inputClose">
     </div>
     <div id="comicCanvas"></div>
     <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
