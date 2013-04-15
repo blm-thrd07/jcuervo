@@ -406,8 +406,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
           return this.setAttrs({
             scale: {
-              x: this.attrs.startScale * scaleUpFactor,
-              y: this.attrs.startScale * scaleUpFactor
+              x: this.attrs.scale.x * scaleUpFactor,
+              y: this.attrs.scale.y * scaleUpFactor
             }
           });
         });
@@ -529,6 +529,24 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
+  resizeDown = function(){
+    if(currentSelected){
+      currentSelected.setAttrs({
+        scale: {
+          x: this.attrs.x * scaleUpFactor,
+          y: this.attrs.y * scaleUpFactor
+        }
+      currentSelected.draw();
+    }
+    if(currentText){
+
+    }
+  }
+
+  resizeUp = function(){
+
+  }
+
   $("#js-listenerStat").on("click", saveToImage);
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
@@ -538,6 +556,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resetRotation").on("click", resetRotation);
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
+  $("#js-resizeDown").on("click", resizeDown);
+  $("#js-resizeUp").on("click", resizeUp);
   $("#textinput").keyup(function(e){
     currentText.setText($(this).val());
     layerComic.draw();
