@@ -158,6 +158,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText=null;
       layerComic.draw(); 
     }
+    $("#textinput").attr("class", "inputClose");
   });
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
