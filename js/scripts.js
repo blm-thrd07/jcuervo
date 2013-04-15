@@ -21,12 +21,13 @@
   //submenu categorias
   $(".subcat").live("click",function(){
       var url=$(this).attr("id");
-      //$(this).attr("class","itemAction selectedTab subcat"); 
       $.ajax({
             type: "GET",
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
             success: function(data){
                $(".response").html(data);
+              $(this).attr("class","itemAction selectedTab subcat"); 
+
             }
           });
         return false;
@@ -109,9 +110,6 @@ $(".share").live('click',function(){
           });
 
 });
-
-
-
 
 }).call(this);
 
