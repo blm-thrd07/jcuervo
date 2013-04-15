@@ -418,8 +418,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             duration: 0.5,
             easing: "elastic-ease-out",
             scale: {
-              x: this.attrs.startScale,
-              y: this.attrs.startScale
+              x: this.attrs.scale.x,
+              y: this.attrs.scale.y
             }
           });
           layerComic.draw();
