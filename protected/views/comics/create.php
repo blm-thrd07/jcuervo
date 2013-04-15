@@ -209,7 +209,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         var data = { img: dataUrl };
         $.ajax({
          type: "POST",
-          url: BaseUrl+"index.php/comics/create",
+          url: BaseUrl+"/index.php/comics/create",
           data:data,
           success:function(url){
             window.location=url;
