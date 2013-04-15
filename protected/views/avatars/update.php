@@ -18,7 +18,7 @@
 
         <div class="saveBtn">
           <a href="#" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
-          <a href="#" id="js-saveCanvas" class="btn"><i class="icon-save"></i> Guardar</a> 
+          <a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar</a> 
         </div>
 
         <div class="js-tabEngine itemSelector">
@@ -506,7 +506,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $("#js-saveCanvas").on("click", saveToImage); 
+  $("#js-listenerStat").on("click", saveToImage); 
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
   $("#js-sendFront").on("click", sendFront);
