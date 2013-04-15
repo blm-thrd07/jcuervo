@@ -160,7 +160,7 @@ class ComicsController extends Controller
               $numeroTotal+=1;
 			  $modelUsuariosComics->NoCompartido=$numeroTotal;
 			  if($modelUsuariosComics->save(false)){
-			     echo $response;
+			     echo $numeroTotal;
 			  }
 
             } catch (FacebookApiException $e) {

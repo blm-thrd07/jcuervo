@@ -21,7 +21,7 @@
           <? if($json['comic']['comic']['eliminar']){ ?>
              <a href="#" class="btn delc" id="<? echo $json['comic']['comic']['id']; ?>"><i class="icon-trash"></i> Eliminar</a>
          <? } ?>     
-        <div><span><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" id="<? echo $json['comic']['comic']['id'];  ?>" class="btn share"><i class="icon-share"></i> Compartir</a></div>
+        <div><span id="NoCompartido"><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" id="<? echo $json['comic']['comic']['id'];  ?>" class="btn share"><i class="icon-share"></i> Compartir</a></div>
       </div>
       <div id="comentarios">
         <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo $json['comic']['usuario']['nombre']; ?></span></div>
