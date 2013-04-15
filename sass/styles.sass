@@ -1,0 +1,518 @@
+@import compass/css3
+@import compass/typography
+@import compass/reset
+@import grid
+@import init
+@import font-awesome
+
+
+
+// mixins
+@mixin genericTitle
+	font-size: 2em
+
+
+
+body
+	font-family: Helvetica, Arial, sans-serif
+	font-size: 16px
+	background-color: $fondo
+	background: url('img/noise-yellow.png')
+	+aldo
+
+	input[type="text"], input[type="password"]
+		+fx
+		background-color: transparent
+		border: 1px solid $primario
+		padding: 6px
+		vertical-align: bottom
+		font-size: 1.2em
+		margin: 0
+		+aldo
+
+		&:focus
+			outline-offset: 0
+			outline: none
+
+
+
+//icons
+i
+	font-size: 14px
+
+
+#personajeCanvas, #comicCanvas
+	+cf
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2O8O4HLh4EIwAhSqFzwbQshtaMK8YYQ0cEDAASpJc5/1r+xAAAAAElFTkSuQmCC')
+
+#crearPersonaje
+	+container
+	outline: 3px solid $primario
+	h1
+		+g12
+		text-align: center
+
+	h2
+		+g12
+		text-align: center
+
+
+	
+
+	.controllers
+		+g12
+		text-align: center
+		margin-bottom: $spacer
+
+
+#insertText
+	a:last-of-type
+		margin-left: $spacer
+
+	input
+		margin: 0 $spacer 0 $spacer
+
+canvas
+
+
+.item
+	
+	+g2
+	height: 124px
+	margin-bottom: 10px
+	text-align: center
+	img
+		max-width: 124px
+		max-height: 124px
+
+
+@mixin btn
+	padding: 10px
+	color: $fondo
+	background-color: $primario
+	background: url('img/noise-red.png')
+	text-align: center
+	display: inline-block
+	//margin-right: 10px
+	+box-shadow(rgba(black,0.5) 0px 1px 1px)
+
+	&:hover
+		color: white
+
+	&:active
+		+box-shadow(rgba(black,0.5) 0px 1px 1px inset)
+
+
+.btn
+	+btn
+
+
+
+#splash
+	+container
+	margin-top: $spacer
+	text-align: center
+
+	h1
+		text-transform: uppercase
+		margin-bottom: 1.5em
+
+	a.btn
+		font-size: 3em
+		margin-bottom: 1.5em
+
+
+
+
+#container
+	+container
+	margin-top: $spacer
+
+
+
+#panelPersonaje
+	+g4
+
+	h1
+		+genericTitle
+		margin-bottom: $spacer
+		+text-shadow(rgba(white,0.5) 0px -1px 0)
+
+	// personaje
+	>div:nth-of-type(1)
+		+out
+		margin-bottom: $spacer
+		img
+			width: 100%
+
+
+#actions
+	a
+		margin-right: 13px
+
+	a:last-of-type
+		margin-right: 0
+
+#panelContent
+	+g8
+
+	h2
+		+g5
+		+alpha
+		
+		+genericTitle
+		margin-bottom: $spacer
+		+text-shadow(rgba(white,0.5) 0px -1px 0)
+
+	div.saveBtn
+		+g3
+		+omega
+		text-align: right
+
+		a:last-of-type
+			margin-left: 10px
+
+
+
+
+
+
+#panelComic
+	+g6
+
+	h1
+		+genericTitle
+		margin-bottom: $spacer
+		+text-shadow(rgba(white,0.5) 0px -1px 0)
+
+	// personaje
+	>div:nth-of-type(1)
+		+out
+		margin-bottom: $spacer
+		img
+			width: 100%
+
+
+
+#panelContentComic
+	+g6
+
+	div.saveBtn
+		
+		+omega
+		text-align: right
+
+		a:last-of-type
+			margin-left: 10px
+
+
+.memeThumbs
+	+cf
+	min-height: 426px
+	// normal, sin incepton de engine de slides
+	>div:nth-of-type(4n+1)
+		+alpha
+
+	>div:nth-of-type(4n+4)
+		+omega
+
+.comicThumbs
+	+cf
+	min-height: 426px
+	// normal, sin incepton de engine de slides
+	>div:nth-of-type(3n+1)
+		+alpha
+
+	>div:nth-of-type(3n+3)
+		+omega
+
+.itemMeme
+	+g2
+	
+	position: relative
+	margin-bottom: 10px
+	max-height: 124px
+	min-height: 93px
+	text-align: center
+
+	>a
+
+	img
+
+		max-height: 124px
+		max-width: 124px
+		vertical-align: bottom
+	&:hover
+		+box-shadow(rgba(black,0.2) 0px 2px 10px)
+		cursor: pointer
+
+	// fb avatar
+	div
+		position: absolute
+		top: 0
+		+box-shadow(rgba(black,0.2) 0px 2px 3px)
+
+		
+		a
+			display: block
+
+			img
+				display: block
+
+
+a.itemAction
+	+out
+	width: 100%
+	min-height: 93px
+	display: block
+	text-align: center
+	color: black
+
+	i
+		display: block
+		font-size: 3em
+		padding: 5px 0 5px 0
+
+	&:hover
+		color: $primario
+
+
+.bx-controls-direction
+	text-align: right	
+	a
+		+btn
+
+	a:last-of-type
+		margin-left: 10px
+
+
+
+@mixin tab
+	padding: 10px 0 10px 0
+	outline: 1px dotted $primario
+	text-align: center
+	display: block
+	color: black
+	
+
+	&:hover
+		color: $primario
+
+
+@mixin selectedTab
+	color: $fondo
+	background: url('img/noise-red.png')
+	background-color: $primario
+	outline: none
+
+	&:hover
+		color: white
+
+.tabs
+	+cf
+	margin-bottom: $spacer
+	>a
+		+tab
+		+g2
+
+	>a:first-of-type
+		+alpha
+
+	>a:last-of-type
+		+omega
+
+
+.itemSelector
+	// el controlador de tabs
+	+cf
+	>ul
+		+cf
+		margin-bottom: $spacer
+
+		>li
+			display: block
+			float: left
+			width: 18.48%
+			margin-right: 10px
+
+			a
+				+tab
+
+			a.selected
+				+selectedTab
+
+
+		>li:last-of-type
+			margin-right: 0
+
+
+
+a.selectedTab
+	+selectedTab
+	
+
+
+
+#noFriends
+	+cf
+	text-align: center
+	width: 350px
+	margin: 0 auto
+	
+	h3
+		padding: 30px 0 30px 0
+		font-size: 10em
+	p		
+		display: block
+		font-size: 1.3em
+		margin-bottom: $spacer*3
+
+
+
+
+#detalle
+	+container
+	margin-top: $spacer
+
+	
+
+#pic
+	+g6
+	img
+		width: 100%
+		margin-bottom: $spacer
+
+	>a
+		float: left
+
+	div
+		float: right
+
+		span
+			padding: 8px
+			text-align: center
+			border: 1px solid $fondo
+			color: $fondo
+
+		a
+			margin-left: $spacer/2
+
+
+
+#comentarios
+	+g6
+
+	div
+		margin-bottom: $spacer
+		img
+			margin-right: $spacer/2
+		span
+			font-size: 2em
+
+	form
+		margin-bottom: $spacer*2
+
+		textarea
+			background: white
+			display: block
+			font-family: inherit
+			font-size: inherit
+			height: 50px
+			margin: 0
+			padding: $spacer/2
+			width: 97%
+			margin-bottom: $spacer
+
+		button
+			display: block
+			margin-left: auto
+
+
+	article
+		margin-bottom: $spacer*2
+		h3
+			color: $fondo
+
+			&:after
+				content: ':'
+		p
+			+sans
+			font-size: 0.75em
+
+
+
+.lb
+	background: none
+	color: white
+
+
+.js-slides
+
+	.slides_container
+		
+
+		.slide
+			margin-bottom: $spacer
+			width: 526px
+			height: 418px
+
+			>div.itemMeme:nth-of-type(4n+1)
+				+alpha
+
+			>div.itemMeme:nth-of-type(4n+4)
+				+omega
+
+	>a
+		+btn
+		margin-top: $spacer
+
+	>a:first-of-type
+		margin-left: 455px
+
+	>a:last-of-type
+		margin-left: $spacer
+
+
+
+.js-slides-comic
+
+	.slides_container
+		
+
+		.slide
+			margin-bottom: $spacer
+			width: 392px
+			height: 418px
+
+			>div.itemMeme:nth-of-type(3n+1)
+				+alpha
+
+			>div.itemMeme:nth-of-type(3n+3)
+				+omega
+
+	>a
+		+btn
+		margin-top: $spacer
+
+	>a:first-of-type
+		margin-left: 324px
+
+	>a:last-of-type
+		margin-left: $spacer
+
+
+
+.inputClose
+	opacity: 0
+	visibility: none
+	width: 0
+
+.inputOpen
+	opacity: 1
+	visibility: visible
+	width: 246px
+
+	
+
+
+
