@@ -26,7 +26,7 @@
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
             success: function(data){
                $(".response").html(data);
-               $("#"+id).addClass('itemAction subcat selectedTab'); 
+               $("#"+url).addClass('itemAction subcat selectedTab'); 
                alert($(this).attr("class"));
 
             }
