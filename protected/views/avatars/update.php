@@ -4,11 +4,23 @@
       <section id="panelPersonaje">
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div id="personajeCanvas"></div>
-        <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
+        <div id="actions">
+          <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a>
+          <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a>
+          <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a>
+          <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a>
+          <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a>
+          <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
       </section>
+
       <section id="panelContent">
         <h2>Crea tu Personaje</h2>
-        <div class="saveBtn"><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
+
+        <div class="saveBtn">
+          <a href="#" class="btn"><i class="icon-chevron-left"></i> Volver</a>
+          <a href="#" id="js-saveCanvas" class="btn"><i class="icon-save"></i> Guardar</a> 
+        </div>
+        
         <div class="js-tabEngine itemSelector">
           <ul>
             <li><a href="#tab1">Cabeza</a></li>
@@ -113,38 +125,6 @@
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/loading.gif" />
 </div>
 </div>
- 
-<style type="text/css">
-#wrapper{
-    width:1002px;
-    margin:10px auto;
-    text-align:center;
-  }
-
-  #overlay {
-    background: black;
-    opacity:0.5;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 10000;
-  }
-  
-  #popup {
-    background: none repeat scroll 0 0 white;
-    border: 20px solid #DDDDDD;
-    left: 31%;
-    padding: 50px;
-    position: fixed;
-    text-align: center;
-    top: 28%;
-    width: 380px;
-    z-index: 20000;
-    -moz-border-radius:30px 0;
-  }
-</style>
 
 
 <?php
@@ -526,7 +506,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  $("#js-listenerStat").on("click", saveToImage); 
+  $("#js-saveCanvas").on("click", saveToImage); 
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
   $("#js-sendFront").on("click", sendFront);

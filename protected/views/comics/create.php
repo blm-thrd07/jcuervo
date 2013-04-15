@@ -8,7 +8,12 @@
     <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
   </section>
   <section id="panelContentComic">
-    <div class="saveBtn"><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
+
+    <div class="saveBtn">
+      <a href="#" class="btn"><i class="icon-chevron-left"></i> Volver</a>
+      <a href="#" id="js-saveCanvas" class="btn"><i class="icon-save"></i> Guardar</a> 
+    </div>
+    
     <div class="js-tabEngine itemSelector">
       <ul class="comicItemSelector">
         <li><a href="#tab1">Fondos</a></li>
