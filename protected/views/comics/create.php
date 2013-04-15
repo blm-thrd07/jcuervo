@@ -204,6 +204,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   imageBackground.onload = function(){
     fondo = new Kinetic.Image(confBackground);
     layerFondo.add(fondo);
+    layerFondo.draw();
+    layerComic.moveToTop();
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.png";
 
