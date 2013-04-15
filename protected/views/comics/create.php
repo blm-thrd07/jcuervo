@@ -537,7 +537,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           y: currentSelected.attrs.y * scaleUpFactor
         }
       });
-      currentSelected.draw();
+      layerComic.draw();
 
     }
     if(currentText){
