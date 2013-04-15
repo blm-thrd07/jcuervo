@@ -128,7 +128,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
-  confAvatar = {x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo"};
+  confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto"};
   confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
   layerFondo = new Kinetic.Layer();
@@ -224,7 +224,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       rotation: newangle,
       duration: 0.5,
       easing: "ease-out",
-      
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
     });
     layerComic.draw();
     return false;
@@ -238,7 +240,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       rotation: newangle,
       duration: 0.5,
       easing: "ease-out",
-      
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
     });
     layerComic.draw();
     return false;
@@ -376,7 +380,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  initialText = "Inserta Texto";
+    initialText = "Inserta Texto";
 
   createText = function() {
     var texto = new Kinetic.Text({
@@ -460,7 +464,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     currentSelected.transitionTo({
       rotation: 0,
       duration: 0.3,
-      
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
     });
 
     layerComic.draw();
@@ -469,7 +475,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   resizeDown = function(){
     if(currentSelected){
-      currentSelected.transitionTo({
+      currentSelected.setAttrs({
         scale: {
           x: currentSelected.attrs.scale.x * scaleDownFactor,
           y: currentSelected.attrs.scale.y * scaleDownFactor
@@ -485,7 +491,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   resizeUp = function(){
     if(currentSelected){
-      currentSelected.transitionTo({
+      currentSelected.setAttrs({
         scale: {
           x: currentSelected.attrs.scale.x * scaleUpFactor,
           y: currentSelected.attrs.scale.y * scaleUpFactor
