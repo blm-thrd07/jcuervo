@@ -124,7 +124,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   currentText = null;
   var amigos=[], objetos=[];
   var scale = 1;
-  var scaleUpFactor= 1.05;
+  var scaleUpFactor= 1.05, scaleDownFactor=0.95;
   var trans = null;
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
@@ -503,8 +503,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentSelected){
       currentSelected.setAttrs({
         scale: {
-          x: currentSelected.attrs.scale.x * scaleUpFactor,
-          y: currentSelected.attrs.scale.y * scaleUpFactor
+          x: currentSelected.attrs.scale.x * scaleDownFactor,
+          y: currentSelected.attrs.scale.y * scaleDownFactor
         }
       });
       layerComic.draw();
@@ -516,7 +516,19 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
 
   resizeUp = function(){
+    if(currentSelected){
+      currentSelected.setAttrs({
+        scale: {
+          x: currentSelected.attrs.scale.x * scaleUpFactor,
+          y: currentSelected.attrs.scale.y * scaleUpFactor
+        }
+      });
+      layerComic.draw();
 
+    }
+    if(currentText){
+
+    }
   }
 
   $("#js-listenerStat").on("click", saveToImage);
