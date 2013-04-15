@@ -87,6 +87,9 @@ class UsuariosComicsComentariosController extends Controller
                           $json=$model_comic->getComentarios($model->tbl_comics_id);
                           $this->renderPartial('//app/_comment',array('json'=>$json));
 
+
+                          
+
 			        }        
 			}else{
 
