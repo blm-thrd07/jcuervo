@@ -20,14 +20,17 @@
 
   //submenu categorias
   $(".subcat").live("click",function(){
+
+    $(".subcat").removeClass('selectedTab');
+    
       var url=$(this).attr("id");
       $.ajax({
             type: "GET",
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
             success: function(data){
                $(".response").html(data);
+
                $("#"+url).addClass('itemAction subcat selectedTab'); 
-               alert($(this).attr("class"));
 
             }
           });
