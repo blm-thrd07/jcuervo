@@ -10,7 +10,7 @@
   <section id="panelContentComic">
     <div class="saveBtn"><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
     <div class="js-tabEngine itemSelector">
-      <ul>
+      <ul class="comicItemSelector">
         <li><a href="#tab1">Fondos</a></li>
         <li><a href="#tab2">Objetos</a></li>
         <li><a href="#tab3">Amigos</a></li>
@@ -129,21 +129,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
 
-  /*$(function() {
-    $(".lazy").lazyload({
-      effect: "fadeIn"
-    });
-    return setTimeout((function() {
-      $(window).trigger("scroll");
-      console.log(":)");
-      //return layerComic.draw();
-    }), 100);
-  });*/
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
     width: 392,
     height: 294,
   });
+
   stageComic.getContainer().addEventListener("click", function(evt) { 
     console.log("stage");
     if(currentSelected){
@@ -160,8 +151,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     $("#textinput").attr("class", "inputClose");
   });
+
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
+
   confAvatar = { x: halfx,y: halfy,height: 200,width: 140,draggable: true,offset: [100, 70],startScale: scale,name: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto"};
   confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
@@ -410,7 +403,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       return true;
     }
     
-    console.log("NO SE INSERTO");
+    console.log("No se insertó");
     return false;
   };
 
@@ -429,12 +422,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       align: "left",
       draggable: true
     });
+
     layerComic.add(texto);
+
     $("#textinput").attr("class", "inputOpen");
     $("#textinput").focus();
     $("#textinput").val(initialText);
     $("#textinput").select();
     currentText = texto;
+
     if(currentSelected){  
       currentSelected.setStroke(null);
       currentSelected.setStrokeWidth(0);
@@ -449,6 +445,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return layerComic.draw();
       }
     });
+
     texto.on("mouseout", function() {
       if(!currentSelected && !currentText){
         this.setStroke(null);
@@ -456,6 +453,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return layerComic.draw();
       }
     });
+
     texto.on("click", function() {
       $("#textinput").attr("class", "inputOpen");
       $("#textinput").focus();
@@ -464,11 +462,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected.setStrokeWidth(0);
         currentSelected = null;
       }
+
       if(currentText){
         currentText.setStroke(null);
         currentText.setStrokeWidth(0);
         currentText = null;
       }
+
       this.setStroke("980d2e");
       this.setStrokeWidth(1);
       currentText = this;
@@ -495,6 +495,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return console.log(currentSelected.getRotation());
       }
     });
+
     layerComic.draw();
     return false;
   };

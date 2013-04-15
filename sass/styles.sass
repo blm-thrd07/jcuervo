@@ -66,11 +66,9 @@ i
 
 
 #insertText
-	a:last-of-type
-		margin-left: $spacer
 
 	input
-		margin: 0 $spacer 0 $spacer
+		margin-left: $spacer
 
 canvas
 
@@ -168,6 +166,7 @@ canvas
 		+g3
 		+omega
 		text-align: right
+		margin-bottom: 6px
 
 		a:last-of-type
 			margin-left: 10px
@@ -342,8 +341,13 @@ a.itemAction
 				+selectedTab
 
 
+
 		>li:last-of-type
 			margin-right: 0
+
+	>ul.comicItemSelector
+		>li
+			width: 31.60%
 
 
 
@@ -510,7 +514,7 @@ a.selectedTab
 .inputOpen
 	opacity: 1
 	visibility: visible
-	width: 246px
+	width: 332px
 
 	
 
