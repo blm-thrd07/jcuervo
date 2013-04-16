@@ -9,30 +9,23 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 </head>
 <body>
 <div id="splash">
-      <h1>Memeespecial<br>Generator</h1><a id="login" href="<? echo $loginUrl; ?>" class="btn">Genera tu personaje</a>
-      <div class="memeThumbsSlash">
-        <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
+      <h1>Memeespecial<br><span>Generator</span></h1><a href="crear-personaje.html" class="btn">Genera tu meme</a>
+      <div>
+        <div class="itemThumbnail"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
+          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
         </div>
-        <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
+        <div class="itemThumbnail"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
+          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
         </div>
-        <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
+        <div class="itemThumbnail"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
+          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
         </div>
-        <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
-        </div>
-        <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
-        </div>
-        <div class="itemMeme"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/32x32.png"></a></div>
+        <div class="itemThumbnail"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
+          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
         </div>
       </div>
     </div>
-
-    <script>
+<script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
   oauth_url += '&redirect_uri=' + encodeURIComponent('http://www.facebook.com/Lnx1337?sk=app_342733185828640');
