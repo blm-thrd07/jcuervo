@@ -175,7 +175,7 @@ $('#spic').live('click',function(){
     });
   
 
-FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
+FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true,channelUrl : '//apps.t2omedia.com.mx/php2/jcuervo/index.php'});
 
   function FacebookInviteFriends()
   { 
