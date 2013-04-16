@@ -162,17 +162,18 @@ $('#spic').live('click',function(){
       tabActiveClass: 'selected',
       updateHash: false
     });
-    return $(".js-lightbox").fancybox({
-      padding: 0,
-      margin: 0,
-      closeBtn: false,
-      fitToView: false,
-      autoSize: false,
-      closeClick: false,
-      openEffect: "none",
-      closeEffect: "none",
-      scrolling: false
-    });
+ 
+  $(".js-lightbox").fancybox({
+    padding: 0,
+    margin: 0,
+    closeBtn: false,
+    fitToView: false,
+    autoSize: false,
+    closeClick: false,
+    openEffect: "none",
+    closeEffect: "none",
+    scrolling: false
+  });
   
 
 FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
