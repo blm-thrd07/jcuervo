@@ -39,7 +39,7 @@
   </div>
   
   <script language="JavaScript">
-  //document.domain = "/php2/jcuervo/index.php/app/profile/100001421156741";
+  document.domain = "facebook.com";
   var  visible=0; 
   $(".espacio_camara").before(webcam.get_html(310, 250));
   //webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
