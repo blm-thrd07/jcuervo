@@ -39,7 +39,6 @@
   </div>
   
   <script language="JavaScript">
-  document.domain = "facebook.com";
   var  visible=0; 
   $(".espacio_camara").before(webcam.get_html(310, 250));
   //webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
