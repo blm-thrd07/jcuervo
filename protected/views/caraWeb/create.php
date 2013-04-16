@@ -25,7 +25,7 @@
 
 
   <body class="lb">
-  
+  <div id="fb-root"></div>
   <div id="upload_results"></div>
   <div id="camaradiv"> 
     <h1>Tomar  Fotografia</h1>
