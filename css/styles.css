@@ -54,7 +54,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.grid-settings, #crearPersonaje h1, #crearPersonaje h2, #crearPersonaje .controllers, .item, #panelPersonaje, #panelContent, #panelContent h2, #panelContent div.saveBtn, #panelComic, #panelContentComic, .itemMeme, .tabs > a, #pic, #comentarios {
+.grid-settings, #crearPersonaje h1, #crearPersonaje h2, #crearPersonaje .controllers, .item, #panelPersonaje, #panelContent, #panelContent h2, #panelContent div.saveBtn, #panelComic, #panelContentComic, .itemMeme, .tabs > a, #comentarios, #pic {
   display: inline;
   float: left;
   margin-left: 5px;
@@ -1371,11 +1371,16 @@ ul.icons li [class*=" icon-"] {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica;
   font-size: 16px;
   background-color: #ebc101;
-  background: url("img/noise-yellow.png");
+  background-image: -webkit-gradient(radial, 300px 300px, 0, 300px 300px, 800, color-stop(0%, #fef200), color-stop(100%, #efca00));
+  background-image: -webkit-radial-gradient(300px 300px, #fef200 0px, #efca00 800px);
+  background-image: -moz-radial-gradient(300px 300px, #fef200 0px, #efca00 800px);
+  background-image: -o-radial-gradient(300px 300px, #fef200 0px, #efca00 800px);
+  background-image: radial-gradient(300px 300px, #fef200 0px, #efca00 800px);
   font-family: "aldosemibold";
+  text-transform: uppercase;
 }
 body input[type="text"], body input[type="password"] {
   -webkit-transition: 0.3s;
@@ -1456,8 +1461,11 @@ i {
 .btn {
   padding: 10px;
   color: #ebc101;
-  background-color: #980d2e;
-  background: url("img/noise-red.png");
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #870a28), color-stop(50%, #870a28), color-stop(51%, #980d2e), color-stop(100%, #980d2e));
+  background-image: -webkit-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -moz-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -o-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
   text-align: center;
   display: inline-block;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
@@ -1477,7 +1485,7 @@ i {
   margin: 0 auto;
   width: 810px;
   clear: both;
-  margin-top: 10px;
+  margin-top: 50px;
   text-align: center;
 }
 #splash:after, #splash:before {
@@ -1488,8 +1496,12 @@ i {
   clear: both;
 }
 #splash h1 {
-  text-transform: uppercase;
   margin-bottom: 1.5em;
+  color: #980d2e;
+}
+#splash h1 span {
+  color: #030303;
+  font-size: 3em;
 }
 #splash a.btn {
   font-size: 3em;
@@ -1519,6 +1531,7 @@ i {
   text-shadow: rgba(255, 255, 255, 0.5) 0px -1px 0;
 }
 #panelPersonaje > div:nth-of-type(1) {
+  outline: 1px dotted black;
   margin-bottom: 10px;
 }
 #panelPersonaje > div:nth-of-type(1) img {
@@ -1526,7 +1539,7 @@ i {
 }
 
 #actions a {
-  margin-right: 10px;
+  margin-right: 13px;
 }
 #actions a:last-of-type {
   margin-right: 0;
@@ -1560,6 +1573,7 @@ i {
   text-shadow: rgba(255, 255, 255, 0.5) 0px -1px 0;
 }
 #panelComic > div:nth-of-type(1) {
+  outline: 1px dotted black;
   margin-bottom: 10px;
 }
 #panelComic > div:nth-of-type(1) img {
@@ -1645,11 +1659,10 @@ i {
 }
 .itemMeme div a img {
   display: block;
-  height: 30px;
-  width: 30px;
 }
 
 a.itemAction {
+  outline: 1px dotted black;
   width: 100%;
   min-height: 93px;
   display: block;
@@ -1671,8 +1684,11 @@ a.itemAction:hover {
 .bx-controls-direction a {
   padding: 10px;
   color: #ebc101;
-  background-color: #980d2e;
-  background: url("img/noise-red.png");
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #870a28), color-stop(50%, #870a28), color-stop(51%, #980d2e), color-stop(100%, #980d2e));
+  background-image: -webkit-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -moz-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -o-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
   text-align: center;
   display: inline-block;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
@@ -1703,11 +1719,18 @@ a.itemAction:hover {
   clear: both;
 }
 .tabs > a {
-  padding: 10px 0 10px 0;
-  outline: 1px dotted #980d2e;
+  padding: 15px 0 15px 0;
   text-align: center;
   display: block;
-  color: black;
+  color: #980d2e;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff301), color-stop(50%, #fff301), color-stop(51%, #ffdd00), color-stop(100%, #ffdd00));
+  background-image: -webkit-linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  background-image: -moz-linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  background-image: -o-linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  background-image: linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;
   width: 124px;
   width: 168px;
 }
@@ -1749,19 +1772,30 @@ a.itemAction:hover {
   margin-right: 10px;
 }
 .itemSelector > ul > li a {
-  padding: 10px 0 10px 0;
-  outline: 1px dotted #980d2e;
+  padding: 15px 0 15px 0;
   text-align: center;
   display: block;
-  color: black;
+  color: #980d2e;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff301), color-stop(50%, #fff301), color-stop(51%, #ffdd00), color-stop(100%, #ffdd00));
+  background-image: -webkit-linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  background-image: -moz-linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  background-image: -o-linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  background-image: linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;
 }
 .itemSelector > ul > li a:hover {
   color: #980d2e;
 }
 .itemSelector > ul > li a.selected {
-  color: #ebc101;
-  background: url("img/noise-red.png");
-  background-color: #980d2e;
+  color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(51%, #252525), color-stop(100%, #252525));
+  background-image: -webkit-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: -moz-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: -o-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-color: white;
   outline: none;
 }
 .itemSelector > ul > li a.selected:hover {
@@ -1775,9 +1809,13 @@ a.itemAction:hover {
 }
 
 a.selectedTab {
-  color: #ebc101;
-  background: url("img/noise-red.png");
-  background-color: #980d2e;
+  color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(51%, #252525), color-stop(100%, #252525));
+  background-image: -webkit-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: -moz-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: -o-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-color: white;
   outline: none;
 }
 a.selectedTab:hover {
@@ -1821,29 +1859,6 @@ a.selectedTab:hover {
   clear: both;
 }
 
-#pic {
-  width: 392px;
-}
-#pic img {
-  width: 100%;
-  margin-bottom: 10px;
-}
-#pic > a {
-  float: left;
-}
-#pic div {
-  float: right;
-}
-#pic div span {
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #ebc101;
-  color: #ebc101;
-}
-#pic div a {
-  margin-left: 5px;
-}
-
 #comentarios {
   width: 392px;
 }
@@ -1854,7 +1869,7 @@ a.selectedTab:hover {
   margin-right: 5px;
 }
 #comentarios div span {
-  font-size: 2.2em;
+  font-size: 2.5em;
   color: #ebc101;
 }
 #comentarios form {
@@ -1887,6 +1902,30 @@ a.selectedTab:hover {
 #comentarios article p {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.75em;
+  text-transform: none;
+}
+
+#pic {
+  width: 392px;
+}
+#pic img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#pic > a {
+  float: left;
+}
+#pic div {
+  float: right;
+}
+#pic div span {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ebc101;
+  color: #ebc101;
+}
+#pic div a {
+  margin-left: 5px;
 }
 
 .lb {
@@ -1908,8 +1947,11 @@ a.selectedTab:hover {
 .js-slides > a {
   padding: 10px;
   color: #ebc101;
-  background-color: #980d2e;
-  background: url("img/noise-red.png");
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #870a28), color-stop(50%, #870a28), color-stop(51%, #980d2e), color-stop(100%, #980d2e));
+  background-image: -webkit-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -moz-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -o-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
   text-align: center;
   display: inline-block;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
@@ -1946,8 +1988,11 @@ a.selectedTab:hover {
 .js-slides-comic > a {
   padding: 10px;
   color: #ebc101;
-  background-color: #980d2e;
-  background: url("img/noise-red.png");
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #870a28), color-stop(50%, #870a28), color-stop(51%, #980d2e), color-stop(100%, #980d2e));
+  background-image: -webkit-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -moz-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -o-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
   text-align: center;
   display: inline-block;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
