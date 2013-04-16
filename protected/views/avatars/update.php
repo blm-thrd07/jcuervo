@@ -118,7 +118,7 @@
       </section>
     </div>
 
-<a data-fancybox-type="iframe" href="<?php echo Yii::app()->session['protocol']; ?>apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
+<a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
 
 
 <div id="wrapper">
