@@ -156,11 +156,10 @@ $('#spic').live('click',function(){
   });
 
 $(".js-lightbox").fancybox({
-      maxWidth: 810,
-      maxHeight: 600,
+      padding: 0,
+      margin: 0,
+      closeBtn: false,
       fitToView: false,
-      width: "100%",
-      height: "100%",
       autoSize: false,
       closeClick: false,
       openEffect: "none",
