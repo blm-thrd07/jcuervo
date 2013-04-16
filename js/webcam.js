@@ -24,9 +24,9 @@ window.webcam = {
 	ie: !!navigator.userAgent.match(/MSIE/),
 	protocol: location.protocol.match(/https/i) ? 'https' : 'http',
 	callback: null, // user callback for completed uploads
-	swf_url: window.protocol+'apps.t2omedia.com.mx/php2/jcuervo/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
-	shutter_url: window.protocol+'apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3', // URI to shutter.mp3 sound
-	api_url: window.protocol+'apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/SaveFoto', // URL to upload script
+	swf_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
+	shutter_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3', // URI to shutter.mp3 sound
+	api_url: 'http://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/SaveFoto', // URL to upload script
 	loaded: false, // true when webcam movie finishes loading
 	quality: 100, // JPEG quality (1 - 100)
 	shutter_sound: true, // shutter sound effect on/off
@@ -162,7 +162,7 @@ window.webcam = {
 		// enable or disable the shutter sound effect
 		// defaults to enabled
 		this.shutter_sound = enabled;
-		this.shutter_url = url ? url : window.protocol+'apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3';
+		this.shutter_url = url ? url : 'http://apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3';
 	},
 	
 	flash_notify: function(type, msg) {
