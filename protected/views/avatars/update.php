@@ -17,7 +17,7 @@
         <h2>Crea tu Personaje</h2>
 
         <div class="saveBtn">
-          <a href="#" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
+          <a href="/php2/jcuervo/index.php" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
           <a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar</a> 
         </div>
 
