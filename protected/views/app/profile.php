@@ -28,7 +28,11 @@
         if(is_array($comics['comics'])){
          if(count($comics['comics'])!=0){
            foreach ($comics['comics'] as $key => $value) {
-                 echo ' <div class="itemThumbnail"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'</a></div>';        
+                 
+                   
+
+
+                 echo ' <div class="itemThumbnail"><a data-fancybox-type="iframe" href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div>';        
              } 
            }
 
