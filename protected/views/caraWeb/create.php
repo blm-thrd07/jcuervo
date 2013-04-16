@@ -39,7 +39,7 @@
   </div>
   
   <script language="JavaScript">
-  document.domain = "apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/100001421156741";
+  document.domain = "/php2/jcuervo/index.php/App/Profile/100001421156741";
   var  visible=0; 
   $(".espacio_camara").before(webcam.get_html(310, 250));
   //webcam.set_api_url("/jcuervo/index.php/CaraWeb/SaveFoto");
