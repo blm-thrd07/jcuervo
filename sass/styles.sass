@@ -13,12 +13,16 @@
 
 
 
+
 body
-	font-family: Helvetica, Arial, sans-serif
+	font-family: Helvetica
 	font-size: 16px
 	background-color: $fondo
-	background: url('img/noise-yellow.png')
+
+	//background: url('img/noise-yellow.png')
+	+background-image(radial-gradient(300px 300px, #fef200 0px, #efca00 800px))
 	+aldo
+	text-transform: uppercase
 
 	input[type="text"], input[type="password"]
 		+fx
@@ -87,12 +91,12 @@ canvas
 @mixin btn
 	padding: 10px
 	color: $fondo
-	background-color: $primario
-	background: url('img/noise-red.png')
+	+background-image(linear-gradient(#870a28, #870a28 50%, $primario 51%, $primario))
 	text-align: center
 	display: inline-block
 	//margin-right: 10px
 	+box-shadow(rgba(black,0.5) 0px 1px 1px)
+	
 
 	&:hover
 		color: white
@@ -108,16 +112,22 @@ canvas
 
 #splash
 	+container
-	margin-top: $spacer
+	margin-top: $spacer*5
 	text-align: center
 
 	h1
-		text-transform: uppercase
+		
 		margin-bottom: 1.5em
+		color: $primario
+
+		span
+			color: $texto
+			font-size: 3em
 
 	a.btn
 		font-size: 3em
 		margin-bottom: 1.5em
+		
 
 
 
@@ -138,7 +148,7 @@ canvas
 
 	// personaje
 	>div:nth-of-type(1)
-		
+		+out
 		margin-bottom: $spacer
 		img
 			width: 100%
@@ -146,7 +156,7 @@ canvas
 
 #actions
 	a
-		margin-right: 10px
+		margin-right: 13px
 
 	a:last-of-type
 		margin-right: 0
@@ -166,7 +176,6 @@ canvas
 		+g3
 		+omega
 		text-align: right
-		
 
 		a:last-of-type
 			margin-left: 10px
@@ -186,6 +195,7 @@ canvas
 
 	// personaje
 	>div:nth-of-type(1)
+		+out
 		margin-bottom: $spacer
 		img
 			width: 100%
@@ -233,11 +243,9 @@ canvas
 	max-height: 124px
 	min-height: 93px
 	text-align: center
-
 	>a
 
 	img
-
 		max-height: 124px
 		max-width: 124px
 		vertical-align: bottom
@@ -251,17 +259,16 @@ canvas
 		top: 0
 		+box-shadow(rgba(black,0.2) 0px 2px 3px)
 
+		
 		a
 			display: block
 
 			img
 				display: block
-				height: 30px
-				width: 30px
 
 
 a.itemAction
-	
+	+out
 	width: 100%
 	min-height: 93px
 	display: block
@@ -288,21 +295,22 @@ a.itemAction
 
 
 @mixin tab
-	padding: 10px 0 10px 0
-	outline: 1px dotted $primario
+	padding: 15px 0 15px 0
 	text-align: center
 	display: block
-	color: black
-	
+	color: $primario
+	+background-image(linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00))
+	+box-shadow(rgba(black,0.3) 0px 2px 3px)
+
 
 	&:hover
 		color: $primario
 
 
 @mixin selectedTab
-	color: $fondo
-	background: url('img/noise-red.png')
-	background-color: $primario
+	color: white
+	+background-image(linear-gradient(black, black 50%, #252525 51%, #252525))
+	background-color: white
 	outline: none
 
 	&:hover
@@ -343,7 +351,6 @@ a.itemAction
 				+selectedTab
 
 
-
 		>li:last-of-type
 			margin-right: 0
 
@@ -382,27 +389,6 @@ a.selectedTab
 
 	
 
-#pic
-	+g6
-	img
-		width: 100%
-		margin-bottom: $spacer
-
-	>a
-		float: left
-
-	div
-		float: right
-
-		span
-			padding: 8px
-			text-align: center
-			border: 1px solid $fondo
-			color: $fondo
-
-		a
-			margin-left: $spacer/2
-
 
 
 #comentarios
@@ -413,7 +399,7 @@ a.selectedTab
 		img
 			margin-right: $spacer/2
 		span
-			font-size: 2.2em
+			font-size: 2.5em
 			color: $fondo
 
 	form
@@ -445,6 +431,28 @@ a.selectedTab
 		p
 			+sans
 			font-size: 0.75em
+			text-transform: none
+
+#pic
+	+g6
+	img
+		width: 100%
+		margin-bottom: $spacer
+
+	>a
+		float: left
+
+	div
+		float: right
+
+		span
+			padding: 8px
+			text-align: center
+			border: 1px solid $fondo
+			color: $fondo
+
+		a
+			margin-left: $spacer/2
 
 
 
@@ -521,6 +529,7 @@ a.selectedTab
 
 	
 
+
 #wraper
 	margin: 10px auto
 	text-align: center
@@ -547,24 +556,3 @@ a.selectedTab
 	top: 28%
 	width: 380px
 	z-index: 200
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
