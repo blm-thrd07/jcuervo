@@ -17,6 +17,7 @@
   <body class="lb">
 
     <div id="detalle">
+      <a href="#" onclick="parent.$.fancybox.close();console.log(&quot;pressed&quot;);return false" class="btn"><i class="icon-remove"></i> Cerrar</a>
 
       
 
