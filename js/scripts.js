@@ -155,7 +155,14 @@ $('#spic').live('click',function(){
       }
   });
 
-$(".js-lightbox").fancybox({
+
+ $(".js-tabEngine").easytabs({
+      animate: true,
+      animationSpeed: 150,
+      tabActiveClass: 'selected',
+      updateHash: false
+    });
+    return $(".js-lightbox").fancybox({
       padding: 0,
       margin: 0,
       closeBtn: false,
@@ -163,8 +170,10 @@ $(".js-lightbox").fancybox({
       autoSize: false,
       closeClick: false,
       openEffect: "none",
-      closeEffect: "none"
+      closeEffect: "none",
+      scrolling: false
     });
+  
 
 FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
