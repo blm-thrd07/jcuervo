@@ -49,6 +49,10 @@ return array(
 				''=>'app/login'
 			),
 		),
+		'errorHandler' => array(
+            // use 'site/error' action to display errors
+            'errorAction' => 'app/error',
+        ),
 		
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
