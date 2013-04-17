@@ -1,21 +1,28 @@
 <div id="container">
+
   <section id="panelComic">
+
     <h1>Crea tu Meme</h1>
-    <div id="insertText"><a href="#" id="js-createText" class="btn"><i class="icon-font"></i>
-            <div>Agregar texto</div></a>
-          <input type="text" id="textinput" class="inputClose">
+
+    <div id="insertText">
+      <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
+      <input type="text" id="textinput" class="inputClose">
     </div>
+
     <div id="comicCanvas"></div>
-    <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i>
-            <div>Rotar a la izquierda</div></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i>
-            <div>Rotar a la derecha</div></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i>
-            <div>Reducir tamaño</div></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i>
-            <div>Aumentar tamaño</div></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i>
-            <div>Mandar enfrente</div></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i>
-            <div>Mandar atrás</div></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i>
-            <div>Reestablecer</div></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i>
-            <div>Eliminar</div></a></div>
+
+    <div id="actions">
+      <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
+      <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
+      <a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i><div>Reducir tamaño</div></a>
+      <a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i><div>Aumentar tamaño</div></a>
+      <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
+      <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
+      <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
+      <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
+    </div>
   </section>
+
   <section id="panelContentComic">
 
     <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/Profile',array('id'=>$avatar->Usuario->id_facebook)); ?>"; class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
@@ -71,7 +78,7 @@
                   if($bandera) echo '</div>'; else $bandera=true;
                   echo '<div class="slide itemThumbs">';
                 }
-                echo '<div class="itemThumbnail">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'],'width'=>60,'height'=>120)).'<div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div></div>'; 
+                echo '<div class="itemThumbnail">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'<div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div></div>'; 
               }
               if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
             }
