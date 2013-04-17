@@ -31,10 +31,12 @@
         <h2>Tomar  Fotografía</h2>
         <div class="espacio_camara"></div>
           <div id="camControls">
-            <button type="button" onClick="webcam.configure()" class="btn"><i class="icon-cogs"></i> Configurar</button>
-            <button type="button" onClick="webcam.freeze()" class="btn"><i class="icon-camera"></i> Tomar Foto</button>
+            <div>
+              <button type="button" onClick="webcam.freeze()" class="btn"><i class="icon-camera"></i> Tomar Foto</button>
+              <button type="button" onClick="do_upload()" class="btn"><i class="icon-save"></i> Guardar</button>
+            </div>
             <button type="button" onClick="webcam.reset()" class="btn"><i class="icon-refresh"></i> Tomar de Nuevo</button>
-            <button type="button" onClick="do_upload()" class="btn"><i class="icon-save"></i> Guardar</button>
+            <div><a src="#" onClick="webcam.configure();return false"><i class="icon-cogs"></i> Configurar</a></div>
           </div>
        </div>
     </div>
@@ -63,7 +65,7 @@
 
       visible = 0;
 
-      $(".espacio_camara").before(webcam.get_html(640, 480));
+      $(".espacio_camara").before(webcam.get_html(320, 240));
 
       webcam.set_hook("onComplete", "my_completion_handler");
     </script>

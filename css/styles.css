@@ -2158,7 +2158,6 @@ a.selectedTab:hover {
 }
 
 .lb {
-  background: rgba(0, 0, 0, 0.5);
   color: white;
 }
 .lb > a:nth-of-type(1) {
@@ -2365,8 +2364,20 @@ a.selectedTab:hover {
 #cam {
   width: 420px;
   margin: 0 auto;
+  text-align: center;
 }
 
+#camControls {
+  margin-top: 10px;
+}
+#camControls a {
+  padding-top: 10px;
+  display: block;
+}
+
+#upload_results {
+  text-align: center;
+}
 #upload_results p {
   font-size: 0.9em;
   color: #ebc101;
@@ -2374,6 +2385,7 @@ a.selectedTab:hover {
 }
 #upload_results img {
   display: block;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
 

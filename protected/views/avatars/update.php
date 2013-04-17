@@ -4,13 +4,20 @@
       <section id="panelPersonaje">
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div id="personajeCanvas"></div>
+
+        <div id="camAction">
+          <a data-fancybox-type="iframe" href="<?php echo Yii::app()->session['protocol']; ?>apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/" class="btn js-lightbox">
+            <i class="icon-camera"></i> Tómate una Foto
+          </a>
+        </div>
+        
         <div id="actions">
-          <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a>
-          <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a>
-          <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a>
-          <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a>
-          <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a>
-          <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
+          <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
+          <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
+          <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
+          <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
+          <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
+          <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a><div>Eliminar</div></div>
       </section>
 
       <section id="panelContent">
@@ -74,7 +81,7 @@
                       if($bandera) echo '</div>'; else $bandera=true;
                       echo '<div class="slide">';
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/ojos/".$value['url'],"ojos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '<div class="itemMeme rounded">'.CHtml::image(Yii::app()->request->baseUrl."/images/ojos/".$value['url'],"ojos",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
                   if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
@@ -91,7 +98,7 @@
                       if($bandera) echo '</div>'; else $bandera=true;
                       echo '<div class="slide">';
                     }
-                    echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
+                    echo '<div class="itemMeme rounded">'.CHtml::image(Yii::app()->request->baseUrl."/images/bocas/".$value['url'],"bocas",array('id'=>$value['id']."-".$value['tipo_pieza_id'])).'</div>'; 
                   }
                   if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
                 }
@@ -118,7 +125,7 @@
       </section>
     </div>
 
-<a data-fancybox-type="iframe" href="<?php echo Yii::app()->session['protocol']; ?>apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/"  class="js-lightbox">cam web</a>
+
 
 
 <div id="wrapper">
