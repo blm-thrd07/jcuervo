@@ -104,6 +104,9 @@ public function actionLogin(){
 
   public function actionProfile($id)
   {
+    if($id==null) 
+      throw new Exception("Error Processing Request", 1);
+      
 
     $logoutUrl=null;
     $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
