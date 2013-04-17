@@ -323,5 +323,11 @@ public function actionLogin(){
 
   }
 
+  public function actionError()
+  {
+      if($error=Yii::app()->errorHandler->error)
+          $this->render('error', $error);
+  }
+
   
 }
