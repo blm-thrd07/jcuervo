@@ -204,7 +204,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   removeImage = function(){
     if(currentSelected) { 
-      if(currentSelected.attrs.name == "objeto"){
+      console.log(currentSelected.attrs.name)
+      if(currentSelected.attrs.name === "objeto"){
         for(i=0;i<objetos.length;i++){
           if(objetos[i].attrs.id == currentSelected.attrs.id){
             o = objetos.indexOf(currentSelected)
@@ -213,7 +214,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
         }
       }
-      if(currentSelected.attrs.name == "amigo"){
+      if(currentSelected.attrs.name === "amigo"){
         for(i=0;i<amigos.length;i++){
           if(amigos[i].attrs.id == currentSelected.attrs.id){
             o = amigos.indexOf(currentSelected)
@@ -228,6 +229,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText) currentText.remove();
     $("#textinput").attr("class", "inputClose");
     layerComic.draw();
+    return false;
   }
 
   rotateLeft = function() {
@@ -475,15 +477,18 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
   
   resetRotation = function() {
-    currentSelected.transitionTo({
-      rotation: 0,
-      duration: 0.3,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      }
-    });
+    if(currentSelected){
+      currentSelected.transitionTo({
+        rotation: 0,
+        duration: 0.3,
+        callback: function() {
+          return console.log(currentSelected.getRotation());
+        }
+      });
 
-    layerComic.draw();
+      layerComic.draw();
+    }
+    
     return false;
   };
 
@@ -501,6 +506,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText){
 
     }
+    return false;
   }
 
   resizeUp = function(){
@@ -517,6 +523,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText){
 
     }
+    return false;
   }
 
   $("#js-listenerStat").on("click", saveToImage);
