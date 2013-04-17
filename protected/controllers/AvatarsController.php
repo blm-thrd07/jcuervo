@@ -282,21 +282,7 @@ class AvatarsController extends Controller
        if($model->save()){
        	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
-     	
-     	$cara_web = CaraWeb::model()->findByPk(Yii::app()->session['usuario_id']);
-     	if(count($cara_web)>0){
-     		echo "url ".$cara_web->url;
-     	}
-     	echo " k ";
-     	//echo "cara ".$model->CaraWeb->url." ";
-     	/*if(file_exists(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)){
-	        if (!copy("http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/".$model->CaraWeb->url,"http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/".$model->CaraWeb->url)) {
-			    echo "failed to copy $file...\n";
-			}
-            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url);
-        }*/
-       
-     	
+
     }
     foreach ($avatar as $p => $pieza) {
 
@@ -382,8 +368,16 @@ class AvatarsController extends Controller
 	    		$m->rotation=$rotation;
 	    		$m->save(false);
 	    	}
+
+	     	//echo "cara ".$model->CaraWeb->url." ";
+	     	if(file_exists(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)){
+		        if (!copy("http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/".$model->CaraWeb->url,"http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/".$model->CaraWeb->url)) {
+				    echo "failed to copy $file...\n";
+				}
+	            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url);
+	        }
+
 	    	$mcaras = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>TiposPiezas::CARA,)));
-	    	
 	    	if(count($mcaras)==0){
 	    		
 	    	}
