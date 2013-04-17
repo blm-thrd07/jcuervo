@@ -109,8 +109,9 @@ public function actionLogin(){
       
     $logoutUrl=null;
     $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
-    if($response==null)
+    if($response==null){
       throw new CHttpException(404,'The requested page does not exist.');
+    }
     $avatarImg=$response->Avatar->avatar_img;
     $modelComics= new UsuariosHasTblComics;
     $comics=$modelComics->getMyComics($response->id);
