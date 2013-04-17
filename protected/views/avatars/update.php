@@ -307,7 +307,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(aux==="cuerpo"){ image.src=BaseUrl+"/images/cuerpos/"+img; } 
     if(aux==="ojos"){ image.src=BaseUrl+"/images/ojos/"+img; } 
     if(aux==="boca"){ image.src=BaseUrl+"/images/bocas/"+img; } 
-    if(aux==="cara_web"){ if(isFirst) { tmp=""; isFirst=false; } else tmp="/tmp/"; id image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
+    if(aux==="cara_web"){ if(isFirst) { tmp=""; isFirst=false; } else tmp="/tmp/"; image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
  
     
   };
