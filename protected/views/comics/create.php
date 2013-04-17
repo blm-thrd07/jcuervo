@@ -232,6 +232,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText) currentText.remove();
     $("#textinput").attr("class", "inputClose");
     layerComic.draw();
+    return false;
   }
 
   rotateLeft = function() {
