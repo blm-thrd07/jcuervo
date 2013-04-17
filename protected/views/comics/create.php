@@ -204,19 +204,24 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   removeImage = function(){
     console.log(currentSelected.attrs.tipo);
+
     if(currentSelected) { 
-      for(i=0;i<objetos.length;i++){
-        if(objetos[i].attrs.id == currentSelected.attrs.id){
-          o = objetos.indexOf(currentSelected)
-          delete objetos[o];
-          objetos.splice(o,o+1);
+      if(currentSelected.attrs.tipo === "objeto"){
+        for(i=0;i<objetos.length;i++){
+          if(objetos[i].attrs.id == currentSelected.attrs.id){
+            o = objetos.indexOf(currentSelected)
+            delete objetos[o];
+            objetos.splice(o,o+1);
+          }
         }
       }
-      for(i=0;i<amigos.length;i++){
-        if(amigos[i].attrs.id == currentSelected.attrs.id){
-          o = amigos.indexOf(currentSelected)
-          delete amigos[o];
-          amigos.splice(o,o+1);
+      if(currentSelected.attrs.tipo === "amigo"){
+        for(i=0;i<amigos.length;i++){
+          if(amigos[i].attrs.id == currentSelected.attrs.id){
+            o = amigos.indexOf(currentSelected)
+            delete amigos[o];
+            amigos.splice(o,o+1);
+          }
         }
       }
       currentSelected.remove();
@@ -534,6 +539,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   confAvatar.id=2; 
   confAvatar.name="MiAvatar";
+  confAvatar.tipo = "MiAvatar";
   insertar("MiAvatar",url_miavatar,confAvatar)
 
   $(document).ready(function() {
