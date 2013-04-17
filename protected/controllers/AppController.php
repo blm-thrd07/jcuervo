@@ -107,9 +107,11 @@ public function actionLogin(){
     if($id==null) 
       throw new Exception("Error Processing Request", 1);
       
-
+    print_r("id : ".$id);
     $logoutUrl=null;
     $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
+    if($response==null)
+      throw new CHttpException(404,'The requested page does not exist.');
     $avatarImg=$response->Avatar->avatar_img;
     $modelComics= new UsuariosHasTblComics;
     $comics=$modelComics->getMyComics($response->id);
