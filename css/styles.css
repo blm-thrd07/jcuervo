@@ -1761,6 +1761,34 @@ i {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
   cursor: pointer;
 }
+.itemMeme div {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.itemMeme div a {
+  display: block;
+}
+.itemMeme div a img {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  display: block;
+  width: 35px;
+  height: 35px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
+}
+.itemMeme div:hover img {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
 
 .itemThumbnail {
   width: 124px;
