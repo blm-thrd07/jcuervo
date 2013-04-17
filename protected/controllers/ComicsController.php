@@ -192,7 +192,7 @@ class ComicsController extends Controller
 		if($this->loadModel($id)->delete()){
 
             $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
-            $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
+            $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo);
 
              if(count($response)!= 0){
                      $modelComics= new UsuariosHasTblComics;
