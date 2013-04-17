@@ -18,7 +18,7 @@
   </section>
   <section id="panelContentComic">
 
-    <div class="saveBtn"><a href="<?php echo CController::CreateUrl('app/profile'); ?>"; class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
+    <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/Profile',array('id'=>$avatar->Usuario->id_facebook)); ?>"; class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
 
     <div class="js-tabEngine itemSelector">
       <ul class="comicItemSelector">
