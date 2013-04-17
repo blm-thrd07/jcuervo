@@ -6,8 +6,11 @@ $primario: #980d2e
 
 $spacer: 10px
 
+$fx-duration: 0.3s
+
 +font-face("aldosemibold", font-files("aldo_pc-webfont.ttf", "aldo_pc-webfont.eot", "aldo_pc-webfont.woff", "aldo_pc-webfont.svg"))
 
+	
 
 @mixin aldo
 	font-family: 'aldosemibold'
@@ -16,7 +19,13 @@ $spacer: 10px
 	font-family: Helvetica, Arial, sans-serif
 
 @mixin fx
-	+transition(0.3s)
+	//+transition(color $fx-duration, background-color $fx-duration, opacity $fx-duration, -webkit-filter $fx-duration, text-indent $fx-duration)
+	+transition(all $fx-duration)
+
+
+
+@mixin remove-focus
+	outline: none
 
 @mixin out
 	outline: 1px dotted black
@@ -25,6 +34,7 @@ $spacer: 10px
 	text-indent: 100%
 	white-space: nowrap
 	overflow: hidden
+
 
 
 a:link, a:hover, a:active, a:visited
@@ -39,7 +49,7 @@ h1
 h2
 	font-size: 2em
 
-button, button[type="button"]
+button, button[type="button"], input[type="button"]
 	border: 0
 	font-family: inherit
 	font-size: inherit

@@ -11,6 +11,30 @@
 @mixin genericTitle
 	font-size: 2em
 
+@mixin tab
+	padding: 15px 0 15px 0
+	text-align: center
+	display: block
+	color: $primario
+	+background-image(linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00))
+	+box-shadow(rgba(black,0.3) 0px 2px 3px)
+
+
+	&:hover
+		color: $primario
+
+	&:active
+		+box-shadow(rgba(black,0.6) 0px 2px 3px inset)
+
+
+@mixin selectedTab
+	color: white
+	+background-image(linear-gradient(black, black 50%, #252525 51%, #252525))
+	background-color: white
+	outline: none
+
+	&:hover
+		color: white
 
 
 
@@ -35,8 +59,7 @@ body
 		+aldo
 
 		&:focus
-			outline-offset: 0
-			outline: none
+			+remove-focus
 
 
 
@@ -89,24 +112,63 @@ canvas
 
 
 @mixin btn
+
 	padding: 10px
+	position: relative
 	color: $fondo
 	+background-image(linear-gradient(#870a28, #870a28 50%, $primario 51%, $primario))
 	text-align: center
 	display: inline-block
 	//margin-right: 10px
 	+box-shadow(rgba(black,0.5) 0px 1px 1px)
+	+border-radius(3px)
 	
 
 	&:hover
+		+fx
 		color: white
 
+		>div
+			color: $fondo
+			visibility: visible
+			opacity: 1
+
+			
+
+
 	&:active
-		+box-shadow(rgba(black,0.5) 0px 1px 1px inset)
+		+box-shadow(rgba(black,0.6) 0px 2px 3px inset)
+
+	// tooltip
+	>div
+		+fx
+		position: absolute
+		bottom: -35px
+		left: 0
+		+background-image(linear-gradient(black, black 50%, #252525 51%, #252525))
+		z-index: 100
+		padding: 3px
+		text-align: center
+		width: 110px
+		font-size: 0.85em
+		visibility: hidden
+		opacity: 0
+
+		&::after
+			content: ''
+			position: absolute
+			border-style: solid
+			border-width: 13px 12px 0 12px
+			left: 0
+			top: -13px
+			border-color: transparent transparent transparent $texto
+			z-index: 101
+
 
 
 .btn
 	+btn
+
 
 
 
@@ -127,6 +189,11 @@ canvas
 	a.btn
 		font-size: 3em
 		margin-bottom: 1.5em
+
+	>div
+		margin: 0 auto
+		width: 715px
+		+cf
 		
 
 
@@ -155,11 +222,19 @@ canvas
 
 
 #actions
+	
 	a
 		margin-right: 13px
 
 	a:last-of-type
 		margin-right: 0
+
+
+#camAction
+	margin-bottom: $spacer
+	a
+		display: block
+
 
 #panelContent
 	+g8
@@ -171,6 +246,14 @@ canvas
 		+genericTitle
 		margin-bottom: $spacer
 		+text-shadow(rgba(white,0.5) 0px -1px 0)
+	
+	// crear nuevo
+	>a
+		+tab
+		display: block
+		+cf
+		font-size: 2em
+		margin-bottom: $spacer
 
 	div.saveBtn
 		+g3
@@ -195,7 +278,7 @@ canvas
 
 	// personaje
 	>div:nth-of-type(1)
-		+out
+		
 		margin-bottom: $spacer
 		img
 			width: 100%
@@ -217,12 +300,22 @@ canvas
 
 .memeThumbs
 	+cf
-	min-height: 426px
+	// checar si sí o sí no
+	//min-height: 426px
 	// normal, sin incepton de engine de slides
 	>div:nth-of-type(4n+1)
 		+alpha
 
 	>div:nth-of-type(4n+4)
+		+omega
+
+
+.itemThumbs
+	+cf
+	>div:nth-of-type(3n+1)
+		+alpha
+
+	>div:nth-of-type(3n+3)
 		+omega
 
 .comicThumbs
@@ -237,7 +330,7 @@ canvas
 
 .itemMeme
 	+g2
-	
+	+fx
 	position: relative
 	margin-bottom: 10px
 	max-height: 124px
@@ -253,18 +346,44 @@ canvas
 		+box-shadow(rgba(black,0.2) 0px 2px 10px)
 		cursor: pointer
 
+
+.itemThumbnail
+	+g2
+	width: 168px
+	position: relative
+	margin-bottom: 10px
+
+	text-align: center
+	>a
+
+	img
+		width: 100%
+		vertical-align: bottom
+	&:hover
+		+box-shadow(rgba(black,0.2) 0px 2px 10px)
+		cursor: pointer
+
 	// fb avatar
 	div
 		position: absolute
-		top: 0
-		+box-shadow(rgba(black,0.2) 0px 2px 3px)
-
+		top: 5px
+		left: 5px
 		
 		a
 			display: block
 
 			img
+				+fx
 				display: block
+				width: 35px
+				height: 35px
+				+border-radius(40px)
+				+box-shadow(rgba(black,0.2) 0px 2px 3px)
+
+		&:hover
+			img
+				+border-radius(0px)
+
 
 
 a.itemAction
@@ -294,27 +413,7 @@ a.itemAction
 
 
 
-@mixin tab
-	padding: 15px 0 15px 0
-	text-align: center
-	display: block
-	color: $primario
-	+background-image(linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00))
-	+box-shadow(rgba(black,0.3) 0px 2px 3px)
 
-
-	&:hover
-		color: $primario
-
-
-@mixin selectedTab
-	color: white
-	+background-image(linear-gradient(black, black 50%, #252525 51%, #252525))
-	background-color: white
-	outline: none
-
-	&:hover
-		color: white
 
 .tabs
 	+cf
@@ -393,6 +492,8 @@ a.selectedTab
 
 #comentarios
 	+g6
+	
+
 
 	div
 		margin-bottom: $spacer
@@ -401,6 +502,10 @@ a.selectedTab
 		span
 			font-size: 2.5em
 			color: $fondo
+
+	h2
+		font-size: 1em
+		color: $fondo
 
 	form
 		margin-bottom: $spacer*2
@@ -415,6 +520,8 @@ a.selectedTab
 			padding: $spacer/2
 			width: 97%
 			margin-bottom: $spacer
+			resize: none
+			+remove-focus
 
 		button
 			display: block
@@ -422,7 +529,8 @@ a.selectedTab
 
 
 	article
-		margin-bottom: $spacer*2
+		margin-bottom: $spacer*3
+		+cf
 		h3
 			color: $fondo
 
@@ -432,17 +540,28 @@ a.selectedTab
 			+sans
 			font-size: 0.75em
 			text-transform: none
+			float: left
+			width: 360px
+
+		a.btn
+			float: right
 
 #pic
 	+g6
-	img
-		width: 100%
-		margin-bottom: $spacer
+	margin-top: $spacer*8
 
-	>a
-		float: left
+	// contenedor de la pic
+	div:nth-of-type(1)
+		+background-image(radial-gradient(300px 300px, #fef200 0px, #efca00 500px))
+		margin-bottom: $spacer*2
+		img
+			width: 100%
+			vertical-align: bottom
+			+border-radius(3px)
 
-	div
+
+	// controles de la pic
+	div:nth-of-type(2)
 		float: right
 
 		span
@@ -457,8 +576,12 @@ a.selectedTab
 
 
 .lb
-	background: none
+	background: gray
 	color: white
+
+	// cerrar
+	>a:nth-of-type(1)
+		margin-bottom: $spacer*2
 
 
 .js-slides
@@ -516,6 +639,21 @@ a.selectedTab
 		margin-left: $spacer
 
 
+// no sé si debería hacer ésto
+
+.rounded
+	background: $texto
+	+border-radius(500px)
+	height: 124px
+	position: relative
+
+	img
+		position: absolute
+		left: 50%
+		margin-left: -48px
+		top: 50px
+
+
 
 .inputClose
 	opacity: 0
@@ -527,7 +665,24 @@ a.selectedTab
 	visibility: visible
 	width: 332px
 
-	
+
+
+// todo el bussine de la cámara
+#cam
+	width: 420px
+	margin: 0 auto
+
+#upload_results
+
+	p
+		font-size: 0.9em
+		color: $fondo
+		margin-bottom: $spacer
+
+	img
+		display: block
+		margin-bottom: $spacer
+
 
 
 #wraper
