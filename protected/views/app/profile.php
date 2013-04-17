@@ -16,15 +16,10 @@
     
 <div class="tabs">
   <? if(Yii::app()->session['id_facebook']==$json['usuario']['id_facebook']){ ?>
-
   <a  href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/<? echo Yii::app()->session['id_facebook']; ?>"  class="selectedTab">Mis Memes</a>
       <? } else {?>
   <a  href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/<? echo Yii::app()->session['id_facebook']; ?>">Mis Memes</a>
-
-
-      <? } ?>
-
-
+  <? } ?>
   <a  id="misamigos"  class="menu" href="#">De mis amigos</a><a id="categoria" class="menu" href="#">Por categoría</a></div>
 
 <div class="js-slides">

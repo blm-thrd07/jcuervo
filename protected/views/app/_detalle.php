@@ -16,21 +16,21 @@
 
   <body class="lb">
 
-    <div id="detalle">
       <a href="#" onclick="parent.$.fancybox.close();console.log(&quot;pressed&quot;);return false" class="btn"><i class="icon-remove"></i> Cerrar</a>
 
-      
-
+    <div id="detalle">
       <div id="comentarios">
+
+
         <div><?echo CHtml::image('https://graph.facebook.com/'.$json['comic']['usuario']['idFb'].'/picture')?><span><? echo $json['comic']['usuario']['nombre']; ?></span></div>
+        
+        <h2>Agrega un comentario:</h2>
+
         <form>
           <textarea id="com"></textarea>
           <button type="button" class="btn com" id="<? echo $json['comic']['comic']['id'];  ?>"><i class="icon-comment"></i> Comentar</button>
         </form>
         
-        <div id="comics">
-       
-
           <?
             if(is_array($json['comic']['comic']['comments'])){
               foreach ($json['comic']['comic']['comments'] as $key => $value) {
@@ -49,19 +49,18 @@
           }
           ?>
       
-        </div>
-      </div>
-
+  
+   </div>
 
       <div id="pic">
         <? echo CHtml::image(Yii::app()->request->baseUrl."/Comics/".$json['comic']['comic']['imagen']); ?>
           <? if($json['comic']['comic']['eliminar']){ ?>
-             <a href="#" class="btn delc" id="<? echo $json['comic']['comic']['id']; ?>"><i class="icon-trash"></i> Eliminar</a>
+             <a href="#" class="btn delc" id="<? echo $json['comic']['comic']['id']; ?>"><i class="icon-trash"></i> Eliminar Meme</a>
          <? } ?>     
         <div><span id="NoCompartido"><? echo $json['comic']['comic']['NoCompartido']; ?></span><a href="#" id="<? echo $json['comic']['comic']['id'];  ?>" class="btn share"><i class="icon-share"></i> Compartir</a></div>
       </div>
 
-    </div>
+  </div>
       
     <script src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/kinetic-v4.3.3.min.js"></script>
