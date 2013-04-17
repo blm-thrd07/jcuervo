@@ -287,6 +287,7 @@ class AvatarsController extends Controller
      	if(count($cara_web)>0){
      		echo "url ".$cara_web->url;
      	}
+     	echo " k ";
      	//echo "cara ".$model->CaraWeb->url." ";
      	/*if(file_exists(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)){
 	        if (!copy("http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/".$model->CaraWeb->url,"http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/".$model->CaraWeb->url)) {
