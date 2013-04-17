@@ -204,20 +204,25 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   removeImage = function(){
     if(currentSelected) { 
-      for(i=0;i<objetos.length;i++){
-        if(objetos[i].attrs.id == currentSelected.attrs.id){
-          o = objetos.indexOf(currentSelected)
-          delete objetos[o];
-          objetos.splice(o,o+1);
+      if(currentSelected.attrs.name == "objeto"){
+        for(i=0;i<objetos.length;i++){
+          if(objetos[i].attrs.id == currentSelected.attrs.id){
+            o = objetos.indexOf(currentSelected)
+            delete objetos[o];
+            objetos.splice(o,o+1);
+          }
         }
       }
-      for(i=0;i<amigos.length;i++){
-        if(amigos[i].attrs.id == currentSelected.attrs.id){
-          o = amigos.indexOf(currentSelected)
-          delete amigos[o];
-          amigos.splice(o,o+1);
+      if(currentSelected.attrs.name == "amigo"){
+        for(i=0;i<amigos.length;i++){
+          if(amigos[i].attrs.id == currentSelected.attrs.id){
+            o = amigos.indexOf(currentSelected)
+            delete amigos[o];
+            amigos.splice(o,o+1);
+          }
         }
       }
+      if(currentSelected.attrs.name != "MiAvatar")
       currentSelected.remove();
     }
     if(currentText) currentText.remove();
