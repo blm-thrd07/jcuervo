@@ -284,7 +284,7 @@ class AvatarsController extends Controller
        }
      	
      	$cara_web = CaraWeb::model()->findByPk(Yii::app()->session['usuario_id']);
-     	if($cara_web!=null){
+     	if(count($cara_web)>0){
      		echo "url ".$cara_web->url;
      	}
      	//echo "cara ".$model->CaraWeb->url." ";
