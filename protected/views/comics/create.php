@@ -213,6 +213,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentSelected.remove();
     }
     if(currentText) currentText.remove();
+    $("#textinput").attr("class", "inputClose");
     layerComic.draw();
   }
 
