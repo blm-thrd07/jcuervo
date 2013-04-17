@@ -51,7 +51,7 @@ return array(
 		),
 		'errorHandler' => array(
             // use 'site/error' action to display errors
-            'errorAction' => 'app/error',
+            'errorAction' => 'App/Error',
         ),
 		
 		/*'db'=>array(
