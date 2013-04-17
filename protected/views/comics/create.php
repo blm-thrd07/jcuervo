@@ -18,10 +18,7 @@
   </section>
   <section id="panelContentComic">
 
-    <div class="saveBtn">
-      <a href="/php2/jcuervo/index.php" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
-      <a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar</a> 
-    </div>
+    <div class="saveBtn"><a href="mismemes.html" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
 
     <div class="js-tabEngine itemSelector">
       <ul class="comicItemSelector">
@@ -74,7 +71,9 @@
                   if($bandera) echo '</div>'; else $bandera=true;
                   echo '<div class="slide">';
                 }
-                echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'<div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div></div>'; 
+                echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'<div class="itemThumbnail"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
+                <div><a href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['idFb'].'">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div>
+              </div> </div>'; 
               }
               if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
             }
@@ -88,6 +87,8 @@ $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js'); 
 ?>
+
+
 <div id="wrapper">
 <div style="display: none;" id="overlay"></div>
 <div style="display: none;" id="popup">
