@@ -408,6 +408,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     
     stagePersonaje.toDataURL({
       mimeType: "image/png",
+      quality: 0.8,
       callback: function(dataUrl) {
         var avatarJson = { avatar: json.children, img: dataUrl };
 
