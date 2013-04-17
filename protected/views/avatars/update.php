@@ -251,7 +251,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentSelected = this;
         currentSelected.setStroke("980d2e");
         currentSelected.setStrokeWidth(1);
-        if(currentSelected.attrs.tipo==1 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+        if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
           currentSelected.moveToBottom();
         }
         layerPersonaje.draw();
@@ -278,7 +278,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       });
 
       obj.on("dragend", function() {
-        if(currentSelected.attrs.tipo==1 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
+        if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
           currentSelected.moveToBottom();
         }
         console.log(this.getZIndex());
@@ -342,9 +342,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected = this;
           currentSelected.setStroke("980d2e");
           currentSelected.setStrokeWidth(1);
-          if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
-            currentSelected.moveToBottom();
-          }
           layerPersonaje.draw();
         });
         
@@ -369,9 +366,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         accesorio.on("dragend", function() {
-          if(currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
-            currentSelected.moveToBottom();
-          }
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
