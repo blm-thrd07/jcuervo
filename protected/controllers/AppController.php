@@ -107,7 +107,6 @@ public function actionLogin(){
     if($id==null) 
       throw new Exception("Error Processing Request", 1);
       
-    print_r("id : ".$id);
     $logoutUrl=null;
     $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
     if($response==null)
@@ -330,8 +329,8 @@ public function actionLogin(){
 
   public function actionError()
   {
-      if($error=Yii::app()->errorHandler->error)
-          $this->render('error', $error);
+      //if($error=Yii::app()->errorHandler->error)
+          $this->render('error');
   }
 
   
