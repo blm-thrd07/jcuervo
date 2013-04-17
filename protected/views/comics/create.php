@@ -139,6 +139,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
   confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
+  confMiAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "MiAvatar",tipo: "MiAvatar", id:2,};
+
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
   stageComic.add(layerFondo);
@@ -536,11 +538,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.draw();
     return false;
   });
-  var cnf = confAvatar;
-  cnf.id=2; 
-  cnf.name="MiAvatar";
-  cnf.tipo = "MiAvatar";
-  insertar("MiAvatar",url_miavatar,cnf)
+  
+  insertar("MiAvatar",url_miavatar,confMiAvatar);
 
   $(document).ready(function() {
     console.log("ready");
