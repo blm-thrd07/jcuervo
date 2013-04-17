@@ -136,9 +136,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
-  confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,tipo: "amigo"};
-  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,tipo: "objeto"};
-  confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,tipo: "fondo",id: 1};
+  confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo"};
+  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto"};
+  confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
   stageComic.add(layerFondo);
@@ -204,32 +204,25 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   removeImage = function(){
     if(currentSelected) { 
-      console.log(currentSelected.attrs.tipo)
-      if(currentSelected.attrs.tipo === "objeto"){
-        for(i=0;i<objetos.length;i++){
-          if(objetos[i].attrs.id == currentSelected.attrs.id){
-            o = objetos.indexOf(currentSelected)
-            delete objetos[o];
-            objetos.splice(o,o+1);
-          }
+      for(i=0;i<objetos.length;i++){
+        if(objetos[i].attrs.id == currentSelected.attrs.id){
+          o = objetos.indexOf(currentSelected)
+          delete objetos[o];
+          objetos.splice(o,o+1);
         }
       }
-      if(currentSelected.attrs.tipo === "amigo"){
-        for(i=0;i<amigos.length;i++){
-          if(amigos[i].attrs.id == currentSelected.attrs.id){
-            o = amigos.indexOf(currentSelected)
-            delete amigos[o];
-            amigos.splice(o,o+1);
-          }
+      for(i=0;i<amigos.length;i++){
+        if(amigos[i].attrs.id == currentSelected.attrs.id){
+          o = amigos.indexOf(currentSelected)
+          delete amigos[o];
+          amigos.splice(o,o+1);
         }
       }
-      if(currentSelected.attrs.tipo != "MiAvatar")
       currentSelected.remove();
     }
     if(currentText) currentText.remove();
     $("#textinput").attr("class", "inputClose");
     layerComic.draw();
-    return false;
   }
 
   rotateLeft = function() {
@@ -477,18 +470,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
   
   resetRotation = function() {
-    if(currentSelected){
-      currentSelected.transitionTo({
-        rotation: 0,
-        duration: 0.3,
-        callback: function() {
-          return console.log(currentSelected.getRotation());
-        }
-      });
+    currentSelected.transitionTo({
+      rotation: 0,
+      duration: 0.3,
+      callback: function() {
+        return console.log(currentSelected.getRotation());
+      }
+    });
 
-      layerComic.draw();
-    }
-    
+    layerComic.draw();
     return false;
   };
 
@@ -506,7 +496,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText){
 
     }
-    return false;
   }
 
   resizeUp = function(){
@@ -523,7 +512,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText){
 
     }
-    return false;
   }
 
   $("#js-listenerStat").on("click", saveToImage);
@@ -544,7 +532,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
 
   confAvatar.id=2; 
-  confAvatar.tipo="MiAvatar";
+  confAvatar.name="MiAvatar";
   insertar("MiAvatar",url_miavatar,confAvatar)
 
   $(document).ready(function() {
