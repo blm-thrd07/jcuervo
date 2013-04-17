@@ -203,6 +203,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   newangle = null;
 
   removeImage = function(){
+    console.log(currentSelected.attrs.name);
     if(currentSelected) { 
       for(i=0;i<objetos.length;i++){
         if(objetos[i].attrs.id == currentSelected.attrs.id){
