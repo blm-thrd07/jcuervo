@@ -2158,7 +2158,7 @@ a.selectedTab:hover {
 }
 
 .lb {
-  background: gray;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
 }
 .lb > a:nth-of-type(1) {

@@ -24,17 +24,17 @@
 
 
   <body class="lb">
-    <a href="#" onclick="parent.$.fancybox.close();console.log(&quot;pressed&quot;);return false" class="btn"><i class="icon-remove"></i> Cerrar</a>
+    <a href="#" onclick="parent.$.fancybox.close();return false;" class="btn"><i class="icon-remove"></i> Cerrar</a>
     <div id="cam">
       <div id="upload_results"></div>
       <div id="camaradiv">
-        <h1>Tomar  Fotografia</h1>
+        <h2>Tomar  Fotografía</h2>
         <div class="espacio_camara"></div>
           <div id="camControls">
             <button type="button" onClick="webcam.configure()" class="btn"><i class="icon-cogs"></i> Configurar</button>
             <button type="button" onClick="webcam.freeze()" class="btn"><i class="icon-camera"></i> Tomar Foto</button>
-            <button type="button" onClick="do_upload()" class="btn"><i class="icon-save"></i> Guardar</button>
             <button type="button" onClick="webcam.reset()" class="btn"><i class="icon-refresh"></i> Tomar de Nuevo</button>
+            <button type="button" onClick="do_upload()" class="btn"><i class="icon-save"></i> Guardar</button>
           </div>
        </div>
     </div>
@@ -63,7 +63,7 @@
 
       visible = 0;
 
-      $(".espacio_camara").before(webcam.get_html(310, 250));
+      $(".espacio_camara").before(webcam.get_html(640, 480));
 
       webcam.set_hook("onComplete", "my_completion_handler");
     </script>
