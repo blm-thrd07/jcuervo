@@ -48,8 +48,6 @@
             }
           }
           ?>
-      
-  
    </div>
 
       <div id="pic"><div>
