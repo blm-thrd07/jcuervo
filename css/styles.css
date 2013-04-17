@@ -2158,6 +2158,7 @@ a.selectedTab:hover {
 }
 
 .lb {
+  background: none;
   color: white;
 }
 .lb > a:nth-of-type(1) {
@@ -2419,4 +2420,9 @@ a.selectedTab:hover {
   top: 28%;
   width: 380px;
   z-index: 200;
+}
+
+.jcrop-holder {
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
