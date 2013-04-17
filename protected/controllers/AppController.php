@@ -175,7 +175,7 @@ public function actionLogin(){
       $modelComics= new UsuariosHasTblComics;
       $comics=$modelComics->getMyComics($response->id);
       $this->renderPartial('//app/_mismemes',array('comics'=>$comics,'json'=>$json));
-   } 
+    } 
 
   }
 
