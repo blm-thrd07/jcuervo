@@ -1,8 +1,9 @@
 <div id="container">
   <section id="panelComic">
     <h1>Crea tu Meme</h1>
-    <div id="insertText"><a href="#" id="js-createText" class="btn"><i class="icon-font"></i></a>
-      <input type="text" id="textinput" class="inputClose">
+    <div id="insertText"><a href="#" id="js-createText" class="btn"><i class="icon-font"></i>
+            <div>Agregar texto</div></a>
+          <input type="text" id="textinput" class="inputClose">
     </div>
     <div id="comicCanvas"></div>
     <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i>
