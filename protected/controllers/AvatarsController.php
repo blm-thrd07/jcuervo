@@ -283,12 +283,13 @@ class AvatarsController extends Controller
        	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
      	
-     	if(file_exists(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)){
+     	echo $model->CaraWeb->url;
+     	/*if(file_exists(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)){
 	        if (!copy("http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/".$model->CaraWeb->url,"http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/".$model->CaraWeb->url)) {
 			    echo "failed to copy $file...\n";
 			}
             unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url);
-        }
+        }*/
        
      	
     }
