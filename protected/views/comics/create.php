@@ -536,11 +536,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.draw();
     return false;
   });
-
-  confAvatar.id=2; 
-  confAvatar.name="MiAvatar";
-  confAvatar.tipo = "MiAvatar";
-  insertar("MiAvatar",url_miavatar,confAvatar)
+  var cnf = confAvatar;
+  cnf.id=2; 
+  cnf.name="MiAvatar";
+  cnf.tipo = "MiAvatar";
+  insertar("MiAvatar",url_miavatar,cnf)
 
   $(document).ready(function() {
     console.log("ready");
