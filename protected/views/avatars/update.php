@@ -150,7 +150,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var accesorios=[]; var piezas=[];
   var angle, cara, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
   caraWebInsert=true; currentSelected = null; scale = 1; scaleUpFactor= 1.05; trans = null;
-
+  var isFirst=true;
+  
   stagePersonaje = new Kinetic.Stage({container: "personajeCanvas",width: 258,height: 460});
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.getContainer().addEventListener("click", function(evt) { 
@@ -288,7 +289,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
           currentSelected.moveToBottom();
         }
-        console.log(this.getZIndex());
         trans = this.transitionTo({
           duration: 0.5,
           easing: "elastic-ease-out",
@@ -307,7 +307,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(aux==="cuerpo"){ image.src=BaseUrl+"/images/cuerpos/"+img; } 
     if(aux==="ojos"){ image.src=BaseUrl+"/images/ojos/"+img; } 
     if(aux==="boca"){ image.src=BaseUrl+"/images/bocas/"+img; } 
-    if(aux==="cara_web"){ image.src=BaseUrl+"/AvatarCaras/"+img; }
+    if(aux==="cara_web"){ if(isFirst) { tmp=""; isFirst=false; } else tmp="/tmp/"; id image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
  
     
   };

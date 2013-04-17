@@ -60,7 +60,7 @@ class CaraWebController extends Controller
         if(isset($_GET['NoExpediente'])){
         		
         		 $filename = uniqid().'.jpg';
-                 $filepath= Yii::app()->basePath.'/../AvatarCaras/';
+                 $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
 				 $filepathname =  $filepath.$filename;
 				
         		if($filepath == null)
@@ -82,8 +82,6 @@ class CaraWebController extends Controller
                         $model=$this->loadModel(Yii::app()->session['usuario_id']);
                         $model->url=$filename;
                         $model->save();
-        		        //$this->renderPartial('//caraWeb/index',array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename));
-        		       echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename;
 
 
                      }else if($Existe_foto==0){
@@ -91,9 +89,9 @@ class CaraWebController extends Controller
         		        $model->url=$filename;
         		        $model->save();
 
-        		        // $this->renderPartial('//caraWeb/index',array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename));
-                        echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$filename;
                      }
+        		      
+        		     echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$filename;
 
                 } 
 
@@ -114,7 +112,7 @@ class CaraWebController extends Controller
    	  if(isset($_POST)){
 
            $model=new CaraWeb;
-           $filepath= Yii::app()->basePath.'/../AvatarCaras/';
+           $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
            $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
 
                 if(count($Existe_foto)>0){
@@ -129,7 +127,7 @@ class CaraWebController extends Controller
                        imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
                        if(imagejpeg($dst_r,$src,$jpeg_quality)){
                           
-                           echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/'.$Existe_foto->url;
+                           echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$Existe_foto->url;
                         }
                         }        		    
                      }else if($Existe_foto==0){
