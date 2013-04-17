@@ -24,7 +24,7 @@ window.webcam = {
 	ie: !!navigator.userAgent.match(/MSIE/),
 	//protocol: location.protocol.match(/https/i) ? 'https' : 'http',
 	callback: null, // user callback for completed uploads
-	swf_url: location.protocol.match(/https/i) ? 'https' : 'http' + '://apps.t2omedia.com.mx/php2/jcuervo/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
+	swf_url: 'https://apps.t2omedia.com.mx/php2/jcuervo/js/webcam.swf', // URI to webcam.swf movie (defaults to cwd)
 	shutter_url: location.protocol.match(/https/i) ? 'https' : 'http' + '://apps.t2omedia.com.mx/php2/jcuervo/js/shutter.mp3', // URI to shutter.mp3 sound
 	api_url: location.protocol.match(/https/i) ? 'https' : 'http' + '://apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/SaveFoto', // URL to upload script
 	loaded: false, // true when webcam movie finishes loading
