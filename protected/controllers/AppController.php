@@ -193,10 +193,7 @@ public function actionLogin(){
   }
 
   public function actionCategoria(){
-    
-    $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
-    $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo);
-    $this->renderPartial('//app/_categoria',array('json' =>$json));
+     $this->renderPartial('//app/_categoria');
 
   }
 
