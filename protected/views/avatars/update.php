@@ -194,6 +194,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   if(avatar.cara_web.url && caraWebInsert){
     confCaraWeb.id=avatar.cara_web.url;
     insertarPieza("cara_web",avatar.cara_web.url,confCaraWeb);
+    tmp="";
   }
   for(var a in avatar.accesorios){
     insertarAccesorio(avatar.accesorios[a].accesorioImg, { x: parseInt(avatar.accesorios[a].posx), y: parseInt(avatar.accesorios[a].posy), rotation: parseFloat(avatar.accesorios[a].rotation), id: parseInt(avatar.accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});
@@ -307,7 +308,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(aux==="cuerpo"){ image.src=BaseUrl+"/images/cuerpos/"+img; } 
     if(aux==="ojos"){ image.src=BaseUrl+"/images/ojos/"+img; } 
     if(aux==="boca"){ image.src=BaseUrl+"/images/bocas/"+img; } 
-    if(aux==="cara_web"){ if(isFirst) { tmp=""; isFirst=false; } else { tmp="/tmp/"; } image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
+    if(aux==="cara_web"){ image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
  
     
   };

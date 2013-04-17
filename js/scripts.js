@@ -147,9 +147,9 @@ $('#spic').live('click',function(){
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
-
-               parent.insertarPieza('cara_web',data,parent.confCaraWeb);
-               parent.$.fancybox.close();
+              parent.tmp="/tmp/";
+              parent.insertarPieza('cara_web',data,parent.confCaraWeb);
+              parent.$.fancybox.close();
             }
           });
       }
