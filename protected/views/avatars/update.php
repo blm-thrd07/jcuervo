@@ -17,7 +17,7 @@
           <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
           <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
           <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
-          <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a><div>Eliminar</div></div>
+          <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
       </section>
 
       <section id="panelContent">
