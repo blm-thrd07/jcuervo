@@ -5,7 +5,15 @@
       <input type="text" id="textinput" class="inputClose">
     </div>
     <div id="comicCanvas"></div>
-    <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i></a></div>
+    <div id="actions"><a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i>
+            <div>Rotar a la izquierda</div></a><a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i>
+            <div>Rotar a la derecha</div></a><a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i>
+            <div>Reducir tamaño</div></a><a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i>
+            <div>Aumentar tamaño</div></a><a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i>
+            <div>Mandar enfrente</div></a><a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i>
+            <div>Mandar atrás</div></a><a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i>
+            <div>Reestablecer</div></a><a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i>
+            <div>Eliminar</div></a></div>
   </section>
   <section id="panelContentComic">
 
