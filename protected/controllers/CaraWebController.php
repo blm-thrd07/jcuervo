@@ -130,7 +130,7 @@ class CaraWebController extends Controller
 	               echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
 	            }
 	        }        		    
-	        }else {
+	        else {
 	            echo "no existe pic";
 	        }
 	  	}
