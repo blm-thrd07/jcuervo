@@ -262,7 +262,7 @@ class AvatarsController extends Controller
     if(isset($_POST['img'])){
 		$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
-        if($model->avatar_img != null){
+        if($model->avatar_img != null && $model->avatar_img != "default.png"){
            if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
                unlink(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img);
            }
