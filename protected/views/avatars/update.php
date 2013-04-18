@@ -166,7 +166,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
-  confCaraWeb = { x: halfx,y: halfy - 170,height: 100,width: 100,draggable: true,offset: [60, 60],startScale: scale,tipo: 2};
+  confCaraWeb = { x: halfx,y: halfy - 170,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,tipo: 2};
   confCara = { x: halfx,y: halfy - 170,height: 120,width: 120,draggable: true,offset: [60, 60],startScale: scale,tipo: 3};
   confCuerpo = {x: halfx,y: halfy + 50,height: 320,width: 200,draggable: true,offset: [100, 160],startScale: scale, tipo: 4};
   confOjos = {x: halfx,y: halfy - 160,height: 22,width: 95,draggable: true,offset: [47, 11],startScale: scale, tipo: 5};
@@ -194,7 +194,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   if(avatar.cara_web.url && caraWebInsert){
     confCaraWeb.id=avatar.cara_web.url;
     tmp="";
-    insertarPieza("cara_web",avatar.cara_web.url,confCaraWeb);
+    insertarPieza("cara_web",avatar.cara_web.url, { x: parseInt(avatar.cara_web.posx),y: parseInt(avatar.cara_web.posy),height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,tipo: 1});
   }
   for(var a in avatar.accesorios){
     insertarAccesorio(avatar.accesorios[a].accesorioImg, { x: parseInt(avatar.accesorios[a].posx), y: parseInt(avatar.accesorios[a].posy), rotation: parseFloat(avatar.accesorios[a].rotation), id: parseInt(avatar.accesorios[a].accesorios_id), tipo: 1,height: 160,width: 160,draggable: true,offset: [80, 80],startScale: scale});

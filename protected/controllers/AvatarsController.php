@@ -144,6 +144,9 @@ class AvatarsController extends Controller
 	    if($cantidad==1){
 	      $AvatarCaraWeb=array(
 	        'url'=>$response[0]->Avatar->CaraWeb->url,
+	        'posx'=>$response[0]->Avatar->CaraWeb->posx,
+	        'posy'=>$response[0]->Avatar->CaraWeb->posy,
+	        'rotation'=>$response[0]->Avatar->CaraWeb->rotation,
 	      );
 	    }
 
