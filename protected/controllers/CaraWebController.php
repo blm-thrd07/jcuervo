@@ -133,6 +133,7 @@ class CaraWebController extends Controller
          }else if($Existe_foto==0){
             echo "no existe pic";
          }
+     }
    }
 
 	/**
