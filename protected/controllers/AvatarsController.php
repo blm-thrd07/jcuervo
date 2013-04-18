@@ -369,9 +369,10 @@ class AvatarsController extends Controller
 	    		$m->save(false);
 	    	}
 	     	//echo "cara ".$model->CaraWeb->url." ";
-	     	if(file_exists(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)){
-		        if (!copy(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url,Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url)) {
-				    echo "failed to copy $file...\n";
+	     	$f = Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url;
+	     	if(file_exists($f)){
+		        if (!copy($f,Yii::app()->basePath.'/../AvatarCaras/'.$model->CaraWeb->url)) {
+				    echo "failed to copy ".Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url." ...";
 				}
 	            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url);
 	        }
