@@ -56,7 +56,9 @@
           image_url = RegExp.$1;
           if (image_url != null) {
             $('#camaradiv').css("display", "none");
-            return $('#upload_results').html('<p>Haz click y arrastra el recuadro para recortar tu rostro</p><img src="' + image_url + '" id="cropbox">' + '<button type="button" onClick="do_upload()" id="spic" class="btn"><i class="icon-save"></i> Guardar</button>');
+            $('#upload_results').html('<p>Haz click y arrastra el recuadro para recortar tu rostro</p><img src="' + image_url + '" id="cropbox">' + '<button type="button" onClick="do_upload()" id="spic" class="btn"><i class="icon-save"></i> Guardar</button>');
+            $('#cropbox').click();
+            return false;
           }
         } else {
           return alert('error');
