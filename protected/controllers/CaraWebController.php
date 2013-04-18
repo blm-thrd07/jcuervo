@@ -142,7 +142,7 @@ class CaraWebController extends Controller
 	 */
 	public function actionCreate()
 	{
-		/*$model=new CaraWeb;
+		$model=new CaraWeb;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -155,11 +155,7 @@ class CaraWebController extends Controller
 		}
 	
 	    $this->renderPartial('//caraWeb/create',array('model'=>$model));
-		*/
-		echo "hola";
-		/*$this->render('create',array(
-			'model'=>$model,
-		));*/
+
 	}
 
 	/**
