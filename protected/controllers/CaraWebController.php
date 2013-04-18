@@ -59,46 +59,48 @@ class CaraWebController extends Controller
 	public function actionSaveFoto(){
         if(isset($_GET['NoExpediente'])){
         		
-        		 $filename = uniqid().'.jpg';
-                 $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
-				 $filepathname =  $filepath.$filename;
-				
-        		if($filepath == null)
-                       throw new Exception ("Null filepath!");
+    		 $filename =Yii::app()->session['usuario_id'].'1337.jpg';
+             $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
+			 $filepathname =  $filepath.$filename;
+			
+    		if($filepath == null)
+                   throw new Exception ("Null filepath!");
 
-        	   
-        	    $contents = file_get_contents('php://input');
-        		$result = file_put_contents( $filepathname, $contents);
+    	   
+    	    $contents = file_get_contents('php://input');
+    		$result = file_put_contents( $filepathname, $contents);
 
-                if($result){
-        		    
-        		     $model=new CaraWeb;
-                     $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
+            /*if($result){
+    		    
+    		     $model=new CaraWeb;
+                 $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
 
-                     if(count($Existe_foto)>0){
-                     	if(file_exists($filepath.$Existe_foto->url)){
-	                        unlink($filepath.$Existe_foto->url);
-                        }
-                        $model=$this->loadModel(Yii::app()->session['usuario_id']);
-                        $model->url=$filename;
-                        $model->save();
+                 if(count($Existe_foto)>0){
+                 	if(file_exists($filepath.$Existe_foto->url)){
+                        unlink($filepath.$Existe_foto->url);
+                    }
+                    $model=$this->loadModel(Yii::app()->session['usuario_id']);
+                    $model->url=$filename;
+                    $model->save();
 
 
-                     }else if($Existe_foto==0){
-                        $model->avatar_id=Yii::app()->session['usuario_id'];
-        		        $model->url=$filename;
-        		        $model->save();
+                 }else if($Existe_foto==0){
+                    $model->avatar_id=Yii::app()->session['usuario_id'];
+    		        $model->url=$filename;
+    		        $model->save();
 
-                     }
-        		      
-        		     echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$filename;
+                 }
+    		      
+    		     echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$filename;
 
-                } 
+            } */
+    		
+    		echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$filename;
 
-        		if (!$result) {
-                     print "ERROR: Failed to write data to $filename, check permissions\n";
-                     exit();
-                } 
+    		if (!$result) {
+                 print "ERROR: Failed to write data to $filename, check permissions\n";
+                 exit();
+            } 
        
         }else{
        	    throw new CHttpException(404,'The specified post cannot be found.');
@@ -111,33 +113,26 @@ class CaraWebController extends Controller
 
    	  if(isset($_POST)){
 
-           $model=new CaraWeb;
-           $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
-           $Existe_foto=$model->findByPk(Yii::app()->session['usuario_id']);
+       $model=new CaraWeb;
+       $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
 
-                if(count($Existe_foto)>0){
-                 	if(file_exists($filepath.$Existe_foto->url)){
+     	if(file_exists($filepath.Yii::app()->session['usuario_id']."1337.jpg")){
 
-                        $targ_w = $targ_h = 150;
-	                    $jpeg_quality = 100;
-	                    $src = $filepath.$Existe_foto->url;
-	                    $img_r = imagecreatefromjpeg($src);
-	                    $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+            $targ_w = $targ_h = 150;
+            $jpeg_quality = 100;
+            $src = $filepath.Yii::app()->session['usuario_id']."1337.jpg");
+            $img_r = imagecreatefromjpeg($src);
+            $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
 
-                       imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
-                       if(imagejpeg($dst_r,$src,$jpeg_quality)){
-                          
-                           echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$Existe_foto->url;
-                        }
-                        }        		    
-                     }else if($Existe_foto==0){
-                        
-                        echo "no existe pic";
-                     }
-
-
-
-   	   }
+           imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
+           if(imagejpeg($dst_r,$src,$jpeg_quality)){
+              
+               echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
+            }
+            }        		    
+         }else if($Existe_foto==0){
+            echo "no existe pic";
+         }
    }
 
 	/**

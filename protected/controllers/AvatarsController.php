@@ -369,12 +369,12 @@ class AvatarsController extends Controller
 	    		$m->save(false);
 	    	}
 	     	//echo "cara ".$model->CaraWeb->url." ";
-	     	$f = Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url;
+	     	$f = Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
 	     	if(file_exists($f)){
-		        if (!copy($f,Yii::app()->basePath.'/../AvatarCaras/'.$model->CaraWeb->url)) {
-				    echo "failed to copy ".Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url." ...";
+		        if (!copy($f,Yii::app()->basePath.'/../AvatarCaras/'.Yii::app()->session['usuario_id']."1337.jpg")) {
+				    echo "failed to copy ".Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg "." ...";
 				}
-	            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.$model->CaraWeb->url);
+	            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg");
 	        }
 
 	    	$mcaras = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>TiposPiezas::CARA,)));
