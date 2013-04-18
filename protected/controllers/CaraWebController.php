@@ -113,14 +113,13 @@ class CaraWebController extends Controller
 
    	  	if(isset($_POST)){
 
-	        $model=new CaraWeb;
 	        $filepath= Yii::app()->basePath.'/../AvatarCaras/tmp/';
 
 	     	if(file_exists($filepath.Yii::app()->session['usuario_id']."1337.jpg")){
 
 	            $targ_w = $targ_h = 150;
 	            $jpeg_quality = 100;
-	            $src = $filepath.$Existe_foto->url;
+	            $src = $filepath.Yii::app()->session['usuario_id']."1337.jpg";
 	            $img_r = imagecreatefromjpeg($src);
 	            $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
 
