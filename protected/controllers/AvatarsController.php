@@ -282,7 +282,6 @@ class AvatarsController extends Controller
        if($model->save()){
        	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
-
     }
     foreach ($avatar as $p => $pieza) {
 
@@ -354,20 +353,15 @@ class AvatarsController extends Controller
 	    	if(count($m)==0){
 	    		$m = new CaraWeb;
 	    		$m->avatar_id=Yii::app()->session['usuario_id'];
-	    		$m->url = $pieza_id;
-	    		$m->posx=$posx;
-	    		$m->posy=$posy;
-	    		$m->rotation=$rotation;
-	    		$m->save(false);
+	    		
 	    	}
-	    	//actualizar
-	    	else{
-	    		$m->url = $pieza_id;
-	    		$m->posx=$posx;
-	    		$m->posy=$posy;
-	    		$m->rotation=$rotation;
-	    		$m->save(false);
-	    	}
+	    	
+	    	$m->url = $pieza_id;
+	    	$m->posx=$posx;
+	    	$m->posy=$posy;
+	    	$m->rotation=$rotation;
+	    	$m->save(false);
+
 	     	//echo "cara ".$model->CaraWeb->url." ";
 	     	$f = Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
 	     	if(file_exists($f)){
