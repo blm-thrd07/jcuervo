@@ -261,7 +261,7 @@ class AvatarsController extends Controller
     $mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     $maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     
-    if(isset($_POST['img']) && isset($_POST['avatar'])){
+    if(isset($_POST['img']) && isset($_POST['avatar'] && isset(Yii::app()->session['usuario_id']))){
     	$avatar = $_POST['avatar'];
 		$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
