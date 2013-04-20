@@ -212,8 +212,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   newangle = null;
 
   removeImage = function(){
-    console.log(currentSelected.attrs.tipo);
-
     if(currentSelected) { 
       if(currentSelected.attrs.tipo === "objeto"){
         for(i=0;i<objetos.length;i++){
@@ -244,8 +242,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   rotateLeft = function() {
     newangle = currentSelected.getRotation() - angle;
-    console.log(newangle);
-    console.log(angle);
     currentSelected.transitionTo({
       rotation: newangle,
       duration: 0.5,
@@ -260,8 +256,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   rotateRight = function() {
     newangle = currentSelected.getRotation() + angle;
-    console.log(newangle);
-    console.log(angle);
     currentSelected.transitionTo({
       rotation: newangle,
       duration: 0.5,
@@ -277,14 +271,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   sendFront = function() {
     currentSelected.moveToTop();
     layerComic.draw();
-    console.log("front");
     return false;
   };
 
   sendBack = function() {
     currentSelected.moveToBottom();
     layerComic.draw();
-    console.log("back");
     return false;
   };
 
@@ -305,7 +297,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
     }
     if(obj==="amigo"){ 
-      console.log(amigos);
       for(i=0;i<amigos.length;i++){
         if(amigos[i].attrs.id == conf.id) insertar=false;
       }
