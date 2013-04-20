@@ -286,7 +286,7 @@ class AvatarsController extends Controller
        	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
     } else{
-    	throw new Exception("Error Processing Request", 1);    	
+		throw new CHttpException(404,'The requested page does not exist.');
     }
     foreach ($avatar as $p => $pieza) {
 
