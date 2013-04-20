@@ -256,14 +256,16 @@ class AvatarsController extends Controller
     $user =$facebook->getUser();
     $my_access_token= $facebook->getAccessToken();
 
-    //borra todo
-    $m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-    $mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-    $maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-
 	$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
     if(isset($_POST['img']) && isset($_POST['avatar']) && count($model)>0 ){
+
+    	//borra todo
+	    $m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+	    $mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+	    $maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+
+
     	$avatar = $_POST['avatar'];
 
         if($model->avatar_img != null && $model->avatar_img != "default.png"){
@@ -284,111 +286,117 @@ class AvatarsController extends Controller
        $model->avatar_img=$filename;
        
        if($model->save()){
-       	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+
        }
+
+       foreach ($avatar as $p => $pieza) {
+	    	$tipo = $pieza['attrs']['tipo'];
+	    	$pieza_id = $pieza['attrs']['id'];
+	    	$posx=$pieza['attrs']['x'];
+	    	$posy=$pieza['attrs']['y'];
+	    	//$zindex=$pieza['attrs'][]
+	    	$rotation=$pieza['attrs']['rotation'];
+
+	    	//print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
+	    	if($tipo==TiposPiezas::CARA || $tipo>=TiposPiezas::CUERPO ){
+		    	//echo " pieza ";
+		    	$m = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>$tipo,)));
+
+		    	//si es cara borra cara_web
+		    	if($tipo==TiposPiezas::CARA){ 
+		    		$mcaras = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+			    	if(!count($mcaras)==0){ $mcaras->delete(); /*echo " --borrar cara web-- ";*/ } 
+			    	else{ 
+			    		//echo " --no borrar cara web-- "; 
+			    	}
+		    	}
+
+		    	//insertar
+		    	if(count($m)==0){
+		    		$m=new AvatarsPiezas;
+		    		$m->avatar_id=Yii::app()->session['usuario_id'];
+		    		$m->pieza_avatar_id=$pieza_id;
+		    		$m->tipo_pieza_id=$tipo;
+		    		$m->posx=$posx;
+		    		$m->posy=$posy;
+		    		$m->rotation=$rotation;
+		    		$m->save(false);
+		    	}
+		    	//actualizar
+		    	else{
+		    		$m->pieza_avatar_id=$pieza_id;
+		    		$m->posx=$posx;
+		    		$m->posy=$posy;
+		    		$m->rotation=$rotation;
+		    		$m->save(false);
+		    	}
+		    	
+		    } else if($tipo==TiposPiezas::ACCESORIO){
+		    	//echo "accesorio";
+		    	$m = AvatarHasAccesorios::model()->find(array('condition'=>'avatar_id=:avatar_id AND accesorios_id=:accesorios_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':accesorios_id'=>$pieza_id,)));
+		    	//insertar
+		    	if(count($m)==0){
+		    		$m=new AvatarHasAccesorios;
+		    		$m->avatar_id=Yii::app()->session['usuario_id'];
+		    		$m->accesorios_id=$pieza_id;
+		    		$m->posx=$posx;
+		    		$m->posy=$posy;
+		    		$m->rotation=$rotation;
+		    		$m->save(false);
+		    	}
+		    	//actualizar
+		    	else{
+		    		$m->posx=$posx;
+		    		$m->posy=$posy;
+		    		$m->rotation=$rotation;
+		    		$m->save(false);
+		    	}
+		    } else if($tipo==TiposPiezas::CARA_WEB){
+		    	//echo "cara_web"; //
+		    	
+		    	$m = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
+		    	if(count($m)==0){
+		    		$m = new CaraWeb;
+		    		$m->avatar_id=Yii::app()->session['usuario_id'];
+		    		
+		    	}
+		    	
+		    	$m->url = $pieza_id;
+		    	$m->posx=$posx;
+		    	$m->posy=$posy;
+		    	$m->rotation=$rotation;
+		    	$m->save(false);
+
+		     	//echo "cara ".$model->CaraWeb->url." ";
+		     	$f = Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
+		     	if(file_exists($f)){
+			        if (!copy($f,Yii::app()->basePath.'/../AvatarCaras/'.Yii::app()->session['usuario_id']."1337.jpg")) {
+					    echo "failed to copy ".Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg "." ...";
+					}
+		            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg");
+		        }
+
+		    	$mcaras = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>TiposPiezas::CARA,)));
+		    	if(count($mcaras)==0){
+		    		
+		    	}
+		    	//elimina la pieza cara si existe
+		    	else{
+		    		$mcaras->delete();
+		    	}
+		    }
+	    }
+       	
+       	$this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+
+        echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
+
+
     } else{
 		throw new CHttpException(404,'The requested page does not exist.');
     }
-    foreach ($avatar as $p => $pieza) {
+    
 
-    	$tipo = $pieza['attrs']['tipo'];
-    	$pieza_id = $pieza['attrs']['id'];
-    	$posx=$pieza['attrs']['x'];
-    	$posy=$pieza['attrs']['y'];
-    	//$zindex=$pieza['attrs'][]
-    	$rotation=$pieza['attrs']['rotation'];
-
-    	//print_r("user_id: ".Yii::app()->session['usuario_id']."  tipo:".$tipo." pieza:".$pieza_id." - ");
-    	if($tipo==TiposPiezas::CARA || $tipo>=TiposPiezas::CUERPO ){
-	    	//echo " pieza ";
-	    	$m = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>$tipo,)));
-
-	    	//si es cara borra cara_web
-	    	if($tipo==TiposPiezas::CARA){ 
-	    		$mcaras = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-		    	if(!count($mcaras)==0){ $mcaras->delete(); /*echo " --borrar cara web-- ";*/ } 
-		    	else{ 
-		    		//echo " --no borrar cara web-- "; 
-		    	}
-	    	}
-
-	    	//insertar
-	    	if(count($m)==0){
-	    		$m=new AvatarsPiezas;
-	    		$m->avatar_id=Yii::app()->session['usuario_id'];
-	    		$m->pieza_avatar_id=$pieza_id;
-	    		$m->tipo_pieza_id=$tipo;
-	    		$m->posx=$posx;
-	    		$m->posy=$posy;
-	    		$m->rotation=$rotation;
-	    		$m->save(false);
-	    	}
-	    	//actualizar
-	    	else{
-	    		$m->pieza_avatar_id=$pieza_id;
-	    		$m->posx=$posx;
-	    		$m->posy=$posy;
-	    		$m->rotation=$rotation;
-	    		$m->save(false);
-	    	}
-	    	
-	    } else if($tipo==TiposPiezas::ACCESORIO){
-	    	//echo "accesorio";
-	    	$m = AvatarHasAccesorios::model()->find(array('condition'=>'avatar_id=:avatar_id AND accesorios_id=:accesorios_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':accesorios_id'=>$pieza_id,)));
-	    	//insertar
-	    	if(count($m)==0){
-	    		$m=new AvatarHasAccesorios;
-	    		$m->avatar_id=Yii::app()->session['usuario_id'];
-	    		$m->accesorios_id=$pieza_id;
-	    		$m->posx=$posx;
-	    		$m->posy=$posy;
-	    		$m->rotation=$rotation;
-	    		$m->save(false);
-	    	}
-	    	//actualizar
-	    	else{
-	    		$m->posx=$posx;
-	    		$m->posy=$posy;
-	    		$m->rotation=$rotation;
-	    		$m->save(false);
-	    	}
-	    } else if($tipo==TiposPiezas::CARA_WEB){
-	    	//echo "cara_web"; //
-	    	
-	    	$m = CaraWeb::model()->find(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-	    	if(count($m)==0){
-	    		$m = new CaraWeb;
-	    		$m->avatar_id=Yii::app()->session['usuario_id'];
-	    		
-	    	}
-	    	
-	    	$m->url = $pieza_id;
-	    	$m->posx=$posx;
-	    	$m->posy=$posy;
-	    	$m->rotation=$rotation;
-	    	$m->save(false);
-
-	     	//echo "cara ".$model->CaraWeb->url." ";
-	     	$f = Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
-	     	if(file_exists($f)){
-		        if (!copy($f,Yii::app()->basePath.'/../AvatarCaras/'.Yii::app()->session['usuario_id']."1337.jpg")) {
-				    echo "failed to copy ".Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg "." ...";
-				}
-	            unlink(Yii::app()->basePath.'/../AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg");
-	        }
-
-	    	$mcaras = AvatarsPiezas::model()->find(array('condition'=>'avatar_id=:avatar_id AND tipo_pieza_id=:tipo_pieza_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],':tipo_pieza_id'=>TiposPiezas::CARA,)));
-	    	if(count($mcaras)==0){
-	    		
-	    	}
-	    	//elimina la pieza cara si existe
-	    	else{
-	    		$mcaras->delete();
-	    	}
-	    }
-    }
-
-    echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
     
   }
 
