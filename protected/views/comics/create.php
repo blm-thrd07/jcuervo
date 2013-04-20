@@ -494,6 +494,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         return console.log(currentSelected.getRotation());
       }
     });
+    currentSelected.attrs.scale.x = startScale;
+    currentSelected.attrs.scale.y = startScale;
+
 
     layerComic.draw();
     return false;
