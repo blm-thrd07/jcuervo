@@ -261,8 +261,8 @@ class AvatarsController extends Controller
     $mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     $maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     
-    $avatar = $_POST['avatar'];
-    if(isset($_POST['img'])){
+    if(isset($_POST['img']) && isset($_POST['avatar'])){
+    	$avatar = $_POST['avatar'];
 		$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
         if($model->avatar_img != null && $model->avatar_img != "default.png"){
@@ -285,6 +285,8 @@ class AvatarsController extends Controller
        if($model->save()){
        	 $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
        }
+    } else{
+    	throw new Exception("Error Processing Request", 1);    	
     }
     foreach ($avatar as $p => $pieza) {
 
