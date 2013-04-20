@@ -260,10 +260,11 @@ class AvatarsController extends Controller
     $m = AvatarsPiezas::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     $mcaras = CaraWeb::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
     $maccesorios = AvatarHasAccesorios::model()->deleteAll(array('condition'=>'avatar_id=:avatar_id','params'=>array(':avatar_id'=>Yii::app()->session['usuario_id'],)));
-    
-    if(isset($_POST['img']) && isset($_POST['avatar'] && isset(Yii::app()->session['usuario_id']))){
+
+	$model=$this->loadModel(Yii::app()->session['usuario_id']);         
+
+    if(isset($_POST['img']) && isset($_POST['avatar'] && count($model)>0 )){
     	$avatar = $_POST['avatar'];
-		$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
         if($model->avatar_img != null && $model->avatar_img != "default.png"){
            if(file_exists(Yii::app()->basePath.'/../Avatar/'.$model->avatar_img)){
