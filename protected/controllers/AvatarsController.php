@@ -263,7 +263,7 @@ class AvatarsController extends Controller
 
 	$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
-    if(isset($_POST['img']) && isset($_POST['avatar'] && count($model)>0 )){
+    if(isset($_POST['img']) && isset($_POST['avatar']) && count($model)>0 ){
     	$avatar = $_POST['avatar'];
 
         if($model->avatar_img != null && $model->avatar_img != "default.png"){
