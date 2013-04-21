@@ -495,12 +495,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   resizeDown = function(){
     if(currentSelected){
-      currentSelected.setAttrs({
+      trans = this.transitionTo({
+        duration: 0.5,
+        easing: "elastic-ease-out",
         scale: {
           x: currentSelected.attrs.scale.x * scaleDownFactor,
           y: currentSelected.attrs.scale.y * scaleDownFactor
         }
       });
+      /*currentSelected.setAttrs({
+        scale: {
+          x: currentSelected.attrs.scale.x * scaleDownFactor,
+          y: currentSelected.attrs.scale.y * scaleDownFactor
+        }
+      });*/
       layerComic.draw();
 
     }
@@ -511,12 +519,20 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   resizeUp = function(){
     if(currentSelected){
-      currentSelected.setAttrs({
+      trans = this.transitionTo({
+        duration: 0.5,
+        easing: "elastic-ease-out",
         scale: {
           x: currentSelected.attrs.scale.x * scaleUpFactor,
           y: currentSelected.attrs.scale.y * scaleUpFactor
         }
       });
+      /*currentSelected.setAttrs({
+        scale: {
+          x: currentSelected.attrs.scale.x * scaleUpFactor,
+          y: currentSelected.attrs.scale.y * scaleUpFactor
+        }
+      });*/
       layerComic.draw();
 
     }
