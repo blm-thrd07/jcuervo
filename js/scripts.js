@@ -100,6 +100,7 @@
 $(".share").live('click',function(){
     var comicid= $(this).attr('id');
     var img = $("#pic").find("img").attr("src");
+    console.log("imagen"+img);
     var obj = {
       method: 'feed',
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
