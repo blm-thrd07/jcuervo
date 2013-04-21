@@ -375,7 +375,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
               y: this.attrs.startScale
             }
           });
-          layerComic.draw();
         });
         layerComic.add(obj);
         if(aux==="objeto"){ 
@@ -486,15 +485,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       },
       easing: "elastic-ease-out",
       scale: {
-        x: currentSelected.attrs.scale.x * scaleDownFactor,
-        y: currentSelected.attrs.scale.y * scaleDownFactor
+        x: 1,
+        y: 1
       }
     });
-    //currentSelected.attrs.scale.x = 1;
-    //currentSelected.attrs.scale.y = 1;
-
-
-    layerComic.draw();
     return false;
   };
 
@@ -525,8 +519,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           y: currentSelected.attrs.scale.y * scaleUpFactor
         }
       });
-     
-      layerComic.draw();
 
     }
     if(currentText){
