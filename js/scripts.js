@@ -100,19 +100,22 @@
 $(".share").live('click',function(){
     var comicid= $(this).attr('id');
     Console.log("entre");
-    FB.ui(
-       {
-         method: 'feed',
-         message: 'Facebook Dialogs are easy!'
-       },
-       function(response) {
-         if (response && response.post_id) {
-           alert('Post was published.');
-         } else {
-           alert('Post was not published.');
-         }
-       }
-     );
+    var obj = {
+      method: 'feed',
+      redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
+      link: 'https://developers.facebook.com/docs/reference/dialogs/',
+      picture: 'http://fbrell.com/f8.jpg',
+      name: 'Facebook Dialogs',
+      caption: 'Reference Documentation',
+      description: 'Using Dialogs to interact with users.'
+    };
+
+    function callback(response) {
+      //document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+      Console.log("post");
+    }
+
+    FB.ui(obj, callback);
 
     $.ajax({
             type: "POST",
