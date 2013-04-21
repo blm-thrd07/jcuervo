@@ -100,6 +100,20 @@
 $(".share").live('click',function(){
     var comicid= $(this).attr('id');
     
+    FB.ui(
+       {
+         method: 'feed',
+         message: 'Facebook Dialogs are easy!'
+       },
+       function(response) {
+         if (response && response.post_id) {
+           alert('Post was published.');
+         } else {
+           alert('Post was not published.');
+         }
+       }
+     );
+    
     $.ajax({
             type: "POST",
             data:"id="+comicid,
