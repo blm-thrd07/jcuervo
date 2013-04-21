@@ -495,7 +495,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   resizeDown = function(){
     if(currentSelected){
-      trans = this.transitionTo({
+      trans = currentSelected.transitionTo({
         duration: 0.5,
         easing: "elastic-ease-out",
         scale: {
@@ -519,7 +519,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   resizeUp = function(){
     if(currentSelected){
-      trans = this.transitionTo({
+      trans = currentSelected.transitionTo({
         duration: 0.5,
         easing: "elastic-ease-out",
         scale: {
