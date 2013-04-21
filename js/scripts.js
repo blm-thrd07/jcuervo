@@ -99,14 +99,15 @@
 
 $(".share").live('click',function(){
     var comicid= $(this).attr('id');
+    var img = $("#pic").find("img").attr("src");
     var obj = {
       method: 'feed',
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
       link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/login",
-      picture: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/Avatar/default.png",
-      name: 'Facebook Dialogs',
-      caption: 'Reference Documentation',
-      description: 'Using Dialogs to interact with users.'
+      picture: window.protocol+"apps.t2omedia.com.mx/"+img,
+      name: 'Generador de Memes Jose Cuervo',
+      caption: 'Crea tu meme',
+      description: 'Comienza creando tu avatar en Jose Cuervo'
     };
 
     function callback(response) {
