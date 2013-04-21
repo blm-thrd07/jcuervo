@@ -99,7 +99,6 @@
 
 $(".share").live('click',function(){
     var comicid= $(this).attr('id');
-    Console.log("entre");
     var obj = {
       method: 'feed',
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
@@ -112,7 +111,6 @@ $(".share").live('click',function(){
 
     function callback(response) {
       //document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-      Console.log("post");
     }
 
     FB.ui(obj, callback);
