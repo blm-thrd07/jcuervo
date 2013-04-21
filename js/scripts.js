@@ -102,8 +102,8 @@ $(".share").live('click',function(){
     var obj = {
       method: 'feed',
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
-      link: 'https://developers.facebook.com/docs/reference/dialogs/',
-      picture: 'http://fbrell.com/f8.jpg',
+      link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/login",
+      picture: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/Avatar/default.png",
       name: 'Facebook Dialogs',
       caption: 'Reference Documentation',
       description: 'Using Dialogs to interact with users.'
