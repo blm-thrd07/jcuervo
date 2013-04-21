@@ -507,6 +507,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText){
 
     }
+    return false;
   }
 
   resizeUp = function(){
@@ -524,6 +525,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentText){
 
     }
+    return false;
   }
 
   $("#js-listenerStat").on("click", saveToImage);
