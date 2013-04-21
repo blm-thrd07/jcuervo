@@ -480,9 +480,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     currentSelected.transitionTo({
       rotation: 0,
       duration: 0.3,
-      callback: function() {
-        return console.log(currentSelected.getRotation());
-      },
       easing: "elastic-ease-out",
       scale: {
         x: 1,
