@@ -99,7 +99,7 @@
 
 $(".share").live('click',function(){
     var comicid= $(this).attr('id');
-    
+    Console.log("entre");
     FB.ui(
        {
          method: 'feed',
@@ -113,7 +113,7 @@ $(".share").live('click',function(){
          }
        }
      );
-    
+
     $.ajax({
             type: "POST",
             data:"id="+comicid,
