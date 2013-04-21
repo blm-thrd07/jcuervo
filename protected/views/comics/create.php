@@ -483,10 +483,15 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       duration: 0.3,
       callback: function() {
         return console.log(currentSelected.getRotation());
+      },
+      easing: "elastic-ease-out",
+      scale: {
+        x: currentSelected.attrs.scale.x * scaleDownFactor,
+        y: currentSelected.attrs.scale.y * scaleDownFactor
       }
     });
-    currentSelected.attrs.scale.x = 1;
-    currentSelected.attrs.scale.y = 1;
+    //currentSelected.attrs.scale.x = 1;
+    //currentSelected.attrs.scale.y = 1;
 
 
     layerComic.draw();
@@ -503,14 +508,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           y: currentSelected.attrs.scale.y * scaleDownFactor
         }
       });
-      /*currentSelected.setAttrs({
-        scale: {
-          x: currentSelected.attrs.scale.x * scaleDownFactor,
-          y: currentSelected.attrs.scale.y * scaleDownFactor
-        }
-      });*/
-      layerComic.draw();
-
+      
     }
     if(currentText){
 
@@ -527,12 +525,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           y: currentSelected.attrs.scale.y * scaleUpFactor
         }
       });
-      /*currentSelected.setAttrs({
-        scale: {
-          x: currentSelected.attrs.scale.x * scaleUpFactor,
-          y: currentSelected.attrs.scale.y * scaleUpFactor
-        }
-      });*/
+     
       layerComic.draw();
 
     }
