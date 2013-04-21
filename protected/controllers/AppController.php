@@ -105,7 +105,7 @@ public function actionLogin(){
   public function actionProfile($id)
   {
     if($id==null) 
-      throw new Exception("Error Processing Request", 1);
+      throw new CHttpException(404,'The requested page does not exist.');
       
     $logoutUrl=null;
     $response= Usuarios::model()->find(array('condition'=>'id_facebook=:fbid','params'=>array(':fbid'=>$id)));   
@@ -123,38 +123,18 @@ public function actionLogin(){
       'appId'  => '342733185828640',
       'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
     ));
-    
-    $user =$facebook->getUser(); //added by oscar
-    if ($user) {
-       try {
-          // Proceed knowing you have a logged in user who's authenticated.
-          $user_profile =  $facebook->api('/me');
-        } catch (FacebookApiException $e) {
-           error_log($e);
-           $user = null;
-         }
-     }
-
-    if ($user) {
-        $logoutUrl = $facebook->getLogoutUrl();
-    } else {
-        $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
-    }
-
-    if($user){
-      $facebook->setAccessToken(Yii::app()->session['access_token']);
+   
+    try {
       $friends= $facebook->api(array('method' => 'friends.getAppUsers'));
-           
       if(count($friends)!=null){
         $model_amigos=new Amigos;
         $model_amigos->insertAmigosApp($friends);
       }
-     $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
-
-    }else{
-       $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+      $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
+    } catch (FacebookApiException $e) {
+      $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
+      $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
     }
-
       
   }
 
