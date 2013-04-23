@@ -69,13 +69,11 @@ public function actionLogin(){
 
        if($user){
 
-        echo "priena".$user;
 
-
-        /*
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
 
+/*
         if(count($response)==0){
 
           $model->correo=$user_profile['email'];
@@ -98,7 +96,9 @@ public function actionLogin(){
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
 
-         */
+*/
+
+        
          
          }else{
 
