@@ -38,7 +38,11 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 document.getElementById("login").onclick = function() {
 
       //window.top.location = "<?echo $loginUrl; ?>";
+      
+alert(oauth_url);
       window.top.location=oauth_url;
+
+
 
   return false;
   }
