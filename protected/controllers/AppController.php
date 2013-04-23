@@ -101,10 +101,6 @@ public function actionLogin(){
             $this->redirect(array('App/Profile/'.$user_profile['id']));
             
          }
-
-
-
-        
          
          }else{
 
