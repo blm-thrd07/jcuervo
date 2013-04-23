@@ -39,7 +39,6 @@ document.getElementById("login").onclick = function() {
 
       //window.top.location = "<?echo $loginUrl; ?>";
       
-alert(oauth_url);
       window.top.location=oauth_url;
 
 
