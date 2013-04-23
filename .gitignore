@@ -1,4 +1,10 @@
 
 *.png
 
+<<<<<<< HEAD
 codekit-config.json
+=======
+img/.DS_Store
+
+.DS_Store
+>>>>>>> cambio
