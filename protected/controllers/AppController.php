@@ -98,8 +98,7 @@ public function actionLogin(){
             Yii::app()->session['id_facebook']=$response[0]->id_facebook;
             Yii::app()->session['access_token']=$facebook->getAccessToken();
 
-            echo "entro";
-            //$this->redirect(array('App/Profile/'.$user_profile['id']));
+            $this->redirect(array('App/Profile/'.$user_profile['id']));
             
          }
 
@@ -108,7 +107,6 @@ public function actionLogin(){
         
          
          }else{
-
 
             $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
        }
