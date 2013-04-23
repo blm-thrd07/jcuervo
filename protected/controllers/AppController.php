@@ -110,7 +110,7 @@ public function actionLogin(){
          }else{
 
 
-            //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
        }
 
       
