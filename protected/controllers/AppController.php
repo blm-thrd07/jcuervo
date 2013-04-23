@@ -88,16 +88,16 @@ public function actionLogin(){
              
              }
          }else{  
-          echo "existo"; 
-          /*
+          
             $model=new Login;
             $model->username=$response[0]->id;
             $model->login();
             Yii::app()->session['usuario_id']=$response[0]->id;
             Yii::app()->session['id_facebook']=$response[0]->id_facebook;
             Yii::app()->session['access_token']=$facebook->getAccessToken();
-            $this->redirect(array('App/Profile/'.$user_profile['id']));
-            */ 
+            
+            //$this->redirect(array('App/Profile/'.$user_profile['id']));
+            
          }
 
 
