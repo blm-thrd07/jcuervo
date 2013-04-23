@@ -5,6 +5,10 @@
 @import init
 @import font-awesome
 
+@import "spr/*.png"
+@include all-spr-sprites
+
+$experimental-support-for-svg: true
 
 
 // mixins
@@ -73,21 +77,19 @@ i
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2O8O4HLh4EIwAhSqFzwbQshtaMK8YYQ0cEDAASpJc5/1r+xAAAAAElFTkSuQmCC')
 
 #crearPersonaje
-	+container
+	@extend %container
 	outline: 3px solid $primario
 	h1
-		+g12
+		
 		text-align: center
 
 	h2
-		+g12
+		@extend %g12
 		text-align: center
-
-
 	
 
 	.controllers
-		+g12
+		@extend %g12
 		text-align: center
 		margin-bottom: $spacer
 
@@ -97,12 +99,11 @@ i
 	input
 		margin-left: $spacer
 
-canvas
 
 
 .item
 	
-	+g2
+	@extend %g2
 	height: 124px
 	margin-bottom: 10px
 	text-align: center
@@ -173,7 +174,7 @@ canvas
 
 
 #splash
-	+container
+	@extend %container
 	margin-top: $spacer*5
 	text-align: center
 
@@ -200,25 +201,104 @@ canvas
 
 
 #container
-	+container
-	margin-top: $spacer
+	@extend %container
+	margin-top: $spacer*5
+	margin-bottom: $spacer
 
 
 
 #panelPersonaje
-	+g4
+	@extend %g4
 
 	h1
 		+genericTitle
 		margin-bottom: $spacer
 		+text-shadow(rgba(white,0.5) 0px -1px 0)
+		text-align: center
+		color: $primario
+		font-size: 1.5em
 
 	// personaje
-	>div:nth-of-type(1)
-		+out
+	>div:nth-of-type(2)
+		//+out
 		margin-bottom: $spacer
 		img
 			width: 100%
+
+#memeGeneratorLogo
+	text-align: center
+	margin-bottom: $spacer*2
+	span
+		display: block
+
+	span:nth-of-type(1)
+		color: $primario
+		font-size: 1.2em
+
+	span:nth-of-type(2)
+		color: $texto
+		font-size: 3.5em
+
+
+%menuPersonajeSettings
+	display: block
+	margin: 0 auto
+	width: 76px
+	height: 76px
+
+
+.menuPersonaje
+	li:nth-of-type(1)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cabeza-on')
+
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cabeza')
+
+	li:nth-of-type(2)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cuerpo-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cuerpo')
+
+
+	li:nth-of-type(3)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('ojos-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('ojos')
+
+	li:nth-of-type(4)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('boca-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('boca')
+
+	li:nth-of-type(5)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('accesorios-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('accesorios')
 
 
 #actions
@@ -237,11 +317,11 @@ canvas
 
 
 #panelContent
-	+g8
+	@extend %g8
 
 	h2
-		+g5
-		+alpha
+		@extend %g5
+		@extend %alpha
 		
 		+genericTitle
 		margin-bottom: $spacer
@@ -256,8 +336,8 @@ canvas
 		margin-bottom: $spacer
 
 	div.saveBtn
-		+g3
-		+omega
+		@extend %g3
+		@extend %omega
 		text-align: right
 
 		a:last-of-type
@@ -269,7 +349,7 @@ canvas
 
 
 #panelComic
-	+g6
+	@extend %g6
 
 	h1
 		+genericTitle
@@ -286,11 +366,11 @@ canvas
 
 
 #panelContentComic
-	+g6
+	@extend %g6
 
 	div.saveBtn
 		
-		+omega
+		@extend %omega
 		text-align: right
 		margin-bottom: 6px
 
@@ -304,32 +384,32 @@ canvas
 	//min-height: 426px
 	// normal, sin incepton de engine de slides
 	>div:nth-of-type(4n+1)
-		+alpha
+		@extend %alpha
 
 	>div:nth-of-type(4n+4)
-		+omega
+		@extend %omega
 
 
 .itemThumbs
 	+cf
 	>div:nth-of-type(3n+1)
-		+alpha
+		@extend %alpha
 
 	>div:nth-of-type(3n+3)
-		+omega
+		@extend %omega
 
 .comicThumbs
 	+cf
 	min-height: 426px
 	// normal, sin incepton de engine de slides
 	>div:nth-of-type(3n+1)
-		+alpha
+		@extend %alpha
 
 	>div:nth-of-type(3n+3)
-		+omega
+		@extend %omega
 
 .itemMeme
-	+g2
+	@extend %g2
 	+fx
 	position: relative
 	margin-bottom: 10px
@@ -369,42 +449,44 @@ canvas
 
 
 .itemThumbnail
-	+g2
+	@extend %g2
 	width: 168px
 	position: relative
 	margin-bottom: 10px
-
 	text-align: center
-	>a
-
-	img
-		width: 100%
-		vertical-align: bottom
 
 	&:hover
 		+box-shadow(rgba(black,0.2) 0px 2px 10px)
 		cursor: pointer
 
-	// fb avatar
-	div
-		position: absolute
-		top: 5px
-		left: 5px
-		
-		a
-			display: block
+	// capsula
+	>div
+		border: 5px solid black
 
-			img
-				+fx
+		img
+			width: 100%
+			vertical-align: bottom
+
+		// fb avatar
+		div
+			position: absolute
+			top: 10px
+			left: 10px
+			
+			a
 				display: block
-				width: 35px
-				height: 35px
-				+border-radius(40px)
-				+box-shadow(rgba(black,0.2) 0px 2px 3px)
 
-		&:hover
-			img
-				+border-radius(0px)
+				img
+					+fx
+					display: block
+					width: 35px
+					height: 35px
+					+border-radius(40px)
+					+box-shadow(rgba(black,0.2) 0px 2px 3px)
+
+			&:hover
+				img
+					+border-radius(0px)
 
 
 
@@ -442,14 +524,14 @@ a.itemAction
 	margin-bottom: $spacer
 	>a
 		+tab
-		+g2
+		@extend %g2
 		width: 168px
 
 	>a:first-of-type
-		+alpha
+		@extend %alpha
 
 	>a:last-of-type
-		+omega
+		@extend %omega
 
 
 .itemSelector
@@ -505,7 +587,7 @@ a.selectedTab
 
 
 #detalle
-	+container
+	@extend %container
 	margin-top: $spacer
 
 	
@@ -513,7 +595,7 @@ a.selectedTab
 
 
 #comentarios
-	+g6
+	@extend %g6
 	
 
 
@@ -569,7 +651,7 @@ a.selectedTab
 			float: right
 
 #pic
-	+g6
+	@extend %g6
 	margin-top: $spacer*8
 
 	// contenedor de la pic
@@ -617,10 +699,10 @@ a.selectedTab
 			height: 418px
 
 			>div.itemMeme:nth-of-type(4n+1)
-				+alpha
+				@extend %alpha
 
 			>div.itemMeme:nth-of-type(4n+4)
-				+omega
+				@extend %omega
 
 	>a
 		+btn
@@ -645,10 +727,10 @@ a.selectedTab
 			height: 418px
 
 			>div.itemMeme:nth-of-type(3n+1)
-				+alpha
+				@extend %alpha
 
 			>div.itemMeme:nth-of-type(3n+3)
-				+omega
+				@extend %omega
 
 	>a
 		+btn

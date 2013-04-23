@@ -1,4 +1,5 @@
  <section id="panelPersonaje">
+        <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div><? echo "<img src='https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/".$json['usuario']['avatar_img']."' />"; ?></div>
         <? if(Yii::app()->session['id_facebook']==$json['usuario']['id_facebook']){ ?>
@@ -28,7 +29,7 @@
          <? if(is_array($comics['comics'])){
          if(count($comics['comics'])!=0){
            foreach ($comics['comics'] as $key => $value) {
-                 echo ' <div class="itemThumbnail"><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div>';        
+                 echo ' <div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
              } 
            }
          }  
