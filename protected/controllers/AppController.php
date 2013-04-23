@@ -149,8 +149,10 @@ public function actionLogin(){
       }
       $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
     } catch (FacebookApiException $e) {
-     // $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
+      //$loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
       //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+       $this->render('profile',array('json'=>$json,'comics'=>$comics, 'logoutUrl'=>$logoutUrl));
+
     }
       
   }
