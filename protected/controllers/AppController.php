@@ -65,12 +65,12 @@ public function actionLogin(){
         }
 
 
-//echo "<a href='".$loginUrl."'> entra </a>";
-
-print_r($user_profile);
+echo $user;
 
 
        if($user){
+
+        /*
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
 
@@ -95,6 +95,9 @@ print_r($user_profile);
             Yii::app()->session['access_token']=$facebook->getAccessToken();
             $this->redirect(array('App/Profile/'.$user_profile['id'])); 
          }
+
+         */
+         
          }else{
 
 
