@@ -73,6 +73,7 @@ public function actionLogin(){
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
 
+print_r($response);
 /*
         if(count($response)==0){
 
