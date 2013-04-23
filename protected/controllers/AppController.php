@@ -69,7 +69,7 @@ public function actionLogin(){
 
 print_r($user_profile);
 
-/*
+
        if($user){
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
@@ -98,10 +98,10 @@ print_r($user_profile);
          }else{
 
 
-            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+            //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
        }
 
-       */
+      
 }
 
 
