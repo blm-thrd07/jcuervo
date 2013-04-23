@@ -65,7 +65,7 @@ public function actionLogin(){
         }
 
 
-echo "<a href='".$loginUrl."'> entra </a>";
+//echo "<a href='".$loginUrl."'> entra </a>";
 
 print_r($user);
 
