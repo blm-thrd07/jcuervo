@@ -25,6 +25,8 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
         </div>
       </div>
     </div>
+
+    <a  href="<? echo $loginUrl; ?>" class="btn">Genera tu meme</a>
 <script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
