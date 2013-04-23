@@ -64,6 +64,12 @@ public function actionLogin(){
             $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
         }
 
+
+echo "<a href='".$loginUrl."'> entra </a>";
+
+print_r($user);
+
+/*
        if($user){
          $model = new Usuarios;
          $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
@@ -94,6 +100,8 @@ public function actionLogin(){
 
             $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
        }
+
+       */
 }
 
 
