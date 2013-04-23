@@ -65,10 +65,12 @@ public function actionLogin(){
         }
 
 
-echo $user;
 
 
        if($user){
+
+        echo "priena".$user;
+
 
         /*
          $model = new Usuarios;
