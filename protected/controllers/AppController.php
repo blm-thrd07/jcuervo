@@ -45,8 +45,9 @@ public function actionLogin(){
         'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
         ));
        
-       print_r($user);
         $user =$facebook->getUser();
+               print_r($user);
+
 
         if ($user) {
            try {
