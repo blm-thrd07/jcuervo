@@ -46,7 +46,6 @@ public function actionLogin(){
         ));
        
         $user =$facebook->getUser();
-               print_r($user);
 
 
         if ($user) {
@@ -57,6 +56,8 @@ public function actionLogin(){
                $user = null;
              }
          }
+
+               print_r($user);
 
         if ($user) {
             $logoutUrl = $facebook->getLogoutUrl();
