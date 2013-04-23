@@ -9,7 +9,7 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 </head>
 <body>
 <div id="splash">
-      <h1>Memeespecial<br><span>Generator</span></h1><a id="login" href="<? echo $loginUrl; ?>" class="btn">Genera tu meme</a>
+      <h1>Memeespecial<br><span>Generator</span></h1><a id="login"  class="btn">Genera tu meme</a>
       <div>
         <div class="itemThumbnail"><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
           <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
@@ -26,7 +26,6 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
       </div>
     </div>
 
-    <a  href="<? echo $loginUrl; ?>" class="btn">Genera tu meme</a>
 <script>
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
