@@ -404,7 +404,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   saveToImage = function() {
     var json = JSON.parse(layerPersonaje.toJSON()); 
     if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
-    console.log(json.children);
     $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
     
     stagePersonaje.toDataURL({
@@ -466,8 +465,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   rotateLeft = function() {
     newangle = currentSelected.getRotation() - angle;
-    console.log(newangle);
-    console.log(angle);
     currentSelected.transitionTo({
       rotation: newangle,
       duration: 0.2,
@@ -479,8 +476,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   rotateRight = function() {
     newangle = currentSelected.getRotation() + angle;
-    console.log(newangle);
-    console.log(angle);
     currentSelected.transitionTo({
       rotation: newangle,
       duration: 0.2,
