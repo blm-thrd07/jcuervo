@@ -116,7 +116,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var trans = null;
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
-  var position = $("#comicCanvas").position();
+  var position = $("#comicCanvas").offset();
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
     width: 392,
