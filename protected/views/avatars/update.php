@@ -165,7 +165,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       layerPersonaje.draw(); 
     }
   });
-  var rect = stageComic.getContainer().getBoundingClientRect();
+  var rect = stagePersonaje.getContainer().getBoundingClientRect();
   halfx = stagePersonaje.getWidth() / 2;
   halfy = stagePersonaje.getHeight() / 2;
   scale = 1;
@@ -302,7 +302,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
         });
 
-        if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
+        if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stagePersonaje.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stagePersonaje.getHeight() )
           removeImage();
         layerPersonaje.draw();
       });
@@ -388,7 +388,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
               y: this.attrs.startScale
             }
           });
-          if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
+          if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stagePersonaje.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stagePersonaje.getHeight() )
             removeImage();
           layerPersonaje.draw();
         });
