@@ -145,7 +145,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   console.log("stage width: "+stageComic.getWidth());
   console.log("stage height: "+stageComic.getHeight());
-
+  console.log("stage user " + stageComic.getUserPosition());
   confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
   confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
@@ -374,7 +374,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           //console.log("p.offset.left: "+stageComic.getContainer().offsetLeft+ " p.top: "+stageComic.getContainer().offsetTop); 
           //console.log("p.offset.right: "+stageComic.getContainer().Right+ " p.bottom: "+stageComic.getContainer().Bottom); 
           console.log("e.x" + e.clientX +" e.y: "+e.clientY);
-          console.log("e.left" +rect.left +" e.top: "+rect.top+" e.right: "+rect.right);
+          console.log("e.left" +rect.left +" e.top: "+rect.top+" e.right: "+rect.Right);
           console.log("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top));
           console.log("x: "+this.getX() + " y: "+this.getY());
 
