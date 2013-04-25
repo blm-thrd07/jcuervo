@@ -6,9 +6,12 @@
         <div id="personajeCanvas"></div>
 
         <div id="camAction">
-          <a data-fancybox-type="iframe" href="<?php echo Yii::app()->session['protocol']; ?>apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/" class="btn js-lightbox">
+          <?
+        /* <!-- <a data-fancybox-type="iframe" href="<?php echo Yii::app()->session['protocol']; ?>apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/create/" class="btn js-lightbox">
             <i class="icon-camera"></i> Tómate una Foto
           </a>
+        -->
+        */?>
         </div>
         
         <div id="actions">
