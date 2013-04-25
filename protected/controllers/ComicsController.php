@@ -154,7 +154,6 @@ class ComicsController extends Controller
            try {
               // Proceed knowing you have a logged in user who's authenticated.
               $user_profile =  $facebook->api('/me');
-              $response=$this->ShareComic($my_access_token,'http://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$model->imagen,'Comic');
               $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
 			  $numeroTotal=$modelUsuariosComics->NoCompartido;
               $numeroTotal+=1;
