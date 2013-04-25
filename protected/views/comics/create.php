@@ -298,7 +298,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         if(amigos[i].attrs.id == conf.id) insertar=false;
       }
     }
-    console.log(conf);
     if(insertar){
       imageObj = new Image();
       conf.image = imageObj;

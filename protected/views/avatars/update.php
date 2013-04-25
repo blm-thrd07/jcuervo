@@ -379,7 +379,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           });
         });
 
-        accesorio.on("dragend", function() {
+        accesorio.on("dragend", function(e) {
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
