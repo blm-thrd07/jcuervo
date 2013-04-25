@@ -1,5 +1,5 @@
  <section id="panelPersonaje">
-        <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
+        <div id="memeGeneratorLogo"><span>Memespecial</span><span>Generator</span></div>
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div><? echo "<img src='https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/".$json['usuario']['avatar_img']."' />"; ?></div>
         <? if(Yii::app()->session['id_facebook']==$json['usuario']['id_facebook']){ ?>
