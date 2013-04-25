@@ -14,7 +14,10 @@
           <div class="slides_container">
           <div class="slide itemThumbs response">
 
-              
+              <?
+                          $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
+
+              ?>
 
 
             </div>

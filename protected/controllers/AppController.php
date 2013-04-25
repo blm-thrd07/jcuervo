@@ -193,7 +193,17 @@ public function actionLogin(){
   }
 
   public function actionCategoria(){
-     $this->renderPartial('//app/_categoria');
+
+    $modelComics=new UsuariosHasTblComics;
+        $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
+        $cantidad=$row[0]['max'];
+        if($cantidad!=null){
+            $resultado=$modelComics->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 order by NoVisto desc ' ,'limit'=>5)); 
+        }else{
+            $resultado=null;
+        }
+
+     $this->renderPartial('//app/_categoria',array('resultado'=>$resultado));
 
   }
 
