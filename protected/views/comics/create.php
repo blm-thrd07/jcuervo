@@ -375,7 +375,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             }
           });
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
+          { alert("remove");
             removeImage();
+          }
         });
         layerComic.add(obj);
         if(aux==="objeto"){ 
