@@ -143,10 +143,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
-  console.log("stage width: "+stageComic.getWidth());
-  console.log("stage height: "+stageComic.getHeight());
-  console.log("stage: " + stageComic.getX() +" "+stageComic.getY());
-
   confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
   confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
@@ -285,6 +281,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.moveToTop();
   };
 
+  console.log("stage width: "+stageComic.getWidth());
+  console.log("stage height: "+stageComic.getHeight());
+  console.log("stage: " + stageComic.getX() +" "+stageComic.getY());
+
   function insertar(obj,img,conf) {
     var aux, insertar=true;
     aux=obj;
@@ -364,15 +364,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("dragend", function(e) {
-          //console.log("e.x: "+obj.getPosition().x+" e.y: "+obj.getPosition().y);
-          //console.log("p.x: "+e.x+ " p.y: "+e.y); 
-          //console.log("p.offset.left: "+stageComic.getContainer().offsetLeft+ " p.top: "+stageComic.getContainer().offsetTop); 
-          //console.log("p.offset.right: "+stageComic.getContainer().Right+ " p.bottom: "+stageComic.getContainer().Bottom); 
-          //console.log("e.x" + e.clientX +" e.y: "+e.clientY);
           alert("e.left" +rect.left +" e.top: "+rect.top+" e.right: "+rect.right + " rect.bottom: "+rect.bottom);
           alert("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top) + " "+e.y+" "+rect.top+" "+e.pageY+" "+e.screenY);
-          //console.log("x: "+this.getX() + " y: "+this.getY());
-
+          
+          if( (e.clientX-rect.left) < 0 || (e.clientX-rect.right) < 0 || (e.clientY-rect.top) < 0 || (e.clientY-rect.bottom) < 0 )
+            alert("afuera");
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
