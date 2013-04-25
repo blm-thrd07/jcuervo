@@ -398,10 +398,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     initialText = "Inserta Texto";
 
   createText = function() {
-    var texto = new Kinetic.LabelRect({
+    var texto = new Kinetic.Rect({
       x: 0,
       y: 0,
       text: initialText,
+      fillText: initialText,
       fontSize: 18,
       fontFamily: "aldosemibold",
       fill: "#0000 00",
