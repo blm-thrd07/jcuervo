@@ -145,6 +145,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   console.log("stage width: "+stageComic.getWidth());
   console.log("stage height: "+stageComic.getHeight());
+  console.log("abs pos: "+stageComic.getContainer().getAbsolutePosition().x);
 
   confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
