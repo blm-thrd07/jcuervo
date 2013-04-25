@@ -366,9 +366,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("dragend", function(e) {
           console.log("e.x: "+obj.getPosition().x+" e.y: "+obj.getPosition().y);
-          console.log("p.height: "+stageComic.getHeight()+ " p.width: "+stageComic.getWidth()); 
+          //console.log("p.height: "+stageComic.getHeight()+ " p.width: "+stageComic.getWidth()); 
           console.log("p.x: "+e.x+ " p.y: "+e.y); 
-          console.log("p.offset.x: "+stageComic.Left+ " p.y: "+stageComic.Top); 
+          console.log("p.offset.left: "+stageComic.getContainer().offsetLeft+ " p.top: "+stageComic.getContainer().offsetTop); 
 
           
           trans = this.transitionTo({
