@@ -364,11 +364,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("dragend", function(e) {
-          alert("e.left" +rect.left +" e.top: "+rect.top+" e.right: "+rect.right + " rect.bottom: "+rect.bottom);
-          alert("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top) + " "+e.y+" "+rect.top+" "+e.pageY+" "+e.screenY);
+          //alert("e.left" +rect.left +" e.top: "+rect.top+" e.right: "+rect.right + " rect.bottom: "+rect.bottom);
+          alert("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top) + " " + (e.clientX-rect.right));
           
-          if( (e.clientX-rect.left) < 0 || (e.clientX-rect.right) < 0 || (e.clientY-rect.top) < 0 || (e.clientY-rect.bottom) < 0 )
-            alert("afuera");
+          //if( (e.clientX-rect.left) < 0 || (e.clientX-rect.right) < 0 || (e.clientY-rect.top) < 0 || (e.clientY-rect.bottom) < 0 )
+            //alert("afuera");
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
