@@ -368,7 +368,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           console.log("e.x: "+obj.getPosition().x+" e.y: "+obj.getPosition().y);
           console.log("p.height: "+stageComic.getHeight()+ " p.width: "+stageComic.getWidth()); 
           console.log("p.x: "+e.x+ " p.y: "+e.y); 
-          console.log("p.offset.x: "+$("#comicCanvas").offsetLeft+ " p.y: "+$("#comicCanvas").offsetTop); 
+          console.log("p.offset.x: "+$("#comicCanvas").position().Left+ " p.y: "+$("#comicCanvas").position.Top); 
 
           
           trans = this.transitionTo({
