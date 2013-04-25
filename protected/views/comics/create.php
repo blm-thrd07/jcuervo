@@ -120,7 +120,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     container: "comicCanvas",
     width: 392,
     height: 294,
-    offset: [196, 147]
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
