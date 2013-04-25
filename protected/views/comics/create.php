@@ -116,7 +116,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var trans = null;
   $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
-
+  var position = $("#comicCanvas").position();
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
     width: 392,
@@ -367,8 +367,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("dragend", function(e) {
           console.log("e.x: "+obj.getPosition().x+" e.y: "+obj.getPosition().y);
-          console.log(JSON.parse(stageComic.toJSON())); 
-          console.log("stage.top: "+stageComic.getContainer().getX()); 
+          console.log("p.left: "+position.left+ " p.top: "+position.top); 
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
