@@ -365,8 +365,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           });
         });
 
-        obj.on("dragend", function() {
-          console.log(this.getZIndex());
+        obj.on("dragend", function(e) {
+          console.log("e.x: "+e.X+" e.y: "+e.Y);
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
