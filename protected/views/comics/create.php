@@ -302,6 +302,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageObj = new Image();
       conf.image = imageObj;
       imageObj.onload = function(){ 
+        if(obj==="amigo"){
+          conf.width=this.width;
+          conf.height=this.height;
+          conf.offset = { x: this.width/2, y:this.height/2 };
+        }
         obj = new Kinetic.Image(conf);
         
         obj.on("mouseover", function() {
