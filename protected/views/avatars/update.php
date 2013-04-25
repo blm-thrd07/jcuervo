@@ -230,6 +230,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     image.onload = function(){
       conf.width=this.width;
       conf.height=this.height;
+      conf.offset = { x: this.width/2, y:this.height/2 };
       obj = new Kinetic.Image(conf);
       layerPersonaje.add(obj);
 
@@ -330,6 +331,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageAccesorio.onload = function(){
         conf.width=this.width;
         conf.height=this.height;
+        conf.offset = { x: this.width/2, y:this.height/2 };
         accesorio = new Kinetic.Image(conf);
         
         accesorio.on("mouseover", function() {
