@@ -368,7 +368,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           //alert("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top) + " " + (rect.right-e.clientX));
           
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
-            alert("afuera");
+            removeImage();
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
