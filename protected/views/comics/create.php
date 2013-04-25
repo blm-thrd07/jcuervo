@@ -366,9 +366,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         obj.on("dragend", function(e) {
           //alert("e.left" +rect.left +" e.top: "+rect.top+" e.right: "+rect.right + " rect.bottom: "+rect.bottom);
           //alert("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top) + " " + (rect.right-e.clientX));
-          
-          if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
-            removeImage();
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
@@ -377,6 +374,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
               y: this.attrs.startScale
             }
           });
+          if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
+            removeImage();
         });
         layerComic.add(obj);
         if(aux==="objeto"){ 
