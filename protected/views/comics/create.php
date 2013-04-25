@@ -398,18 +398,17 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     initialText = "Inserta Texto";
 
   createText = function() {
-    var texto = new Kinetic.LabelRect ({
+    var texto = new Kinetic.Text({
       x: 0,
       y: 0,
       text: initialText,
       fontSize: 18,
       fontFamily: "aldosemibold",
-      fill: "#000000",
+      fill: "#0000 00",
       width: 300,
       padding: 5,
       align: "left",
-      draggable: true,
-      cornerRadius: 2
+      draggable: true
     });
 
     layerComic.add(texto);
