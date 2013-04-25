@@ -120,6 +120,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     container: "comicCanvas",
     width: 392,
     height: 294,
+    offset: [196, 147]
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
@@ -369,8 +370,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           //console.log("p.x: "+e.x+ " p.y: "+e.y); 
           //console.log("p.offset.left: "+stageComic.getContainer().offsetLeft+ " p.top: "+stageComic.getContainer().offsetTop); 
           //console.log("p.offset.right: "+stageComic.getContainer().Right+ " p.bottom: "+stageComic.getContainer().Bottom); 
-          console.log("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.top));
-          rect.left
+          console.log("x: "+(e.clientX-rect.left) + " y: "+(e.clientY-rect.bottom));
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
