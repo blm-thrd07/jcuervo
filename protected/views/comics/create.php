@@ -146,6 +146,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   console.log("stage width: "+stageComic.getWidth());
   console.log("stage height: "+stageComic.getHeight());
   console.log("stage: " + stageComic.getX() +" "+stageComic.getY());
+  var context = stageComic.getContainer().getContext("2d");
+  context.clearRect(0, 0, stageComic.getContainer().width, stageComic.getContainer().height);
 
   confAvatar = { x: halfx,y: halfy,height: 230,width: 129,draggable: true,offset: [115, 65],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
@@ -170,12 +172,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
   $("#tab2 .itemMeme").on("click", function(e){ confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
-  $(".itemSelector a").on("click", function() {
-    console.log("you hace clicked a tab btn");
-    setTimeout(function(){
-      console.log("cargado");
-    },3000);
-  });
 
   saveToImage = function() {
     $("#overlay").css("display","block"); 
