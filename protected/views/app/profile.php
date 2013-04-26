@@ -23,7 +23,7 @@
   <? } ?>
   <a  id="misamigos"  class="menu" href="#">De mis amigos</a><a id="categoria" class="menu" href="#">Por categoría</a></div>
 <? if(Yii::app()->session['id_facebook']!=$json['usuario']['id_facebook']){ ?>
-              <h2>Memes de <? echo $json['usuario']['nombre'] ?></h2><a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
+              <h2>Memes de <? echo $json['usuario']['nombre'] ?></h2>
      <? }?>
 
 <div class="js-slides">
