@@ -166,7 +166,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
 
-  document.onclick=function(){
+  document.onclick=function(e){
     $("#textinput").attr("class", "inputClose");
   }
 
@@ -534,6 +534,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   }
 
+  $(".btn").on("click"),function(){ $("#textinput").attr("class", "inputClose"); });
   $("#js-listenerStat").on("click", saveToImage);
   $("#js-rotateLeft").on("click", rotateLeft);
   $("#js-rotateRight").on("click", rotateRight);
