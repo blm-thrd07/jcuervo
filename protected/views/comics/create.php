@@ -398,7 +398,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     initialText = "Inserta Texto";
 
   createText = function() {
-    var texto = new Kinetic.Label({
+    var texto = new Kinetic.Text({
       x: 0,
       y: 0,
       text: initialText,
