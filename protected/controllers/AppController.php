@@ -345,8 +345,9 @@ public function actionLogin(){
   }
 
   public function parse_signed_request($signed_request) {
+    echo "entre";
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
-
+    echo "-".$encoded_sig-"-";
     $sig = base64_url_decode($encoded_sig);
     $data = json_decode(base64_url_decode($payload), true);
     echo "data: ";
