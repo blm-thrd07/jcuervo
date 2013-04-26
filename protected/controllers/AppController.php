@@ -13,7 +13,7 @@ class AppController extends Controller
     );
   }
 
-    public function accessRules()
+  public function accessRules()
   {
     return array(
       array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -63,7 +63,7 @@ public function actionLogin(){
         } else {
             $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
         }
-
+        echo "request: ";
         if ($_REQUEST) {
           $signed_request = $_REQUEST['signed_request'];
         } else {
