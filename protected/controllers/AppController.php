@@ -66,6 +66,7 @@ public function actionLogin(){
 
         if ($_REQUEST) {
           $signed_request = $_REQUEST['signed_request'];
+          echo $signed_request;
         } else {
           echo '$_REQUEST is empty';
         }
