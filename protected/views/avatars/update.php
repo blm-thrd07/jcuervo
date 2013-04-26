@@ -468,8 +468,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentSelected.attrs.tipo == 2){
       removeCaraWeb();
     }
-    currentSelected.remove();
-    layerPersonaje.draw();
+    if(currentSelected.attrs.tipo != 3 && currentSelected.attrs.tipo != 4){
+      currentSelected.remove();
+      layerPersonaje.draw();
+    }
     return false;
   }
 
