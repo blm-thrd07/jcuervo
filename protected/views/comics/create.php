@@ -142,7 +142,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
-  confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [115, 64],startScale: scale,name: "amigo",tipo: "amigo"};
+  confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [halfx/2, halfy/2],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
   confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [115, 64],startScale: scale,name: "MiAvatar",tipo: "MiAvatar", id:2,};
