@@ -9,11 +9,8 @@
 
 <section id="panelContent">
      
-     <? if(Yii::app()->session['id_facebook']==$json['usuario']['id_facebook']){ ?>
-        <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
-     <? } ?>
-     
-    
+ <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
+         
 <div class="tabs">
   <? if(Yii::app()->session['id_facebook']==$json['usuario']['id_facebook']){ ?>
   <a  href="<? echo Yii::app()->session['protocol']; ?>apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/<? echo Yii::app()->session['id_facebook']; ?>"  class="selectedTab">Mis Memes</a>
