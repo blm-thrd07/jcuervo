@@ -302,7 +302,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageObj = new Image();
       conf.image = imageObj;
       imageObj.onload = function(){ 
-        if(obj==="amigo"){
+        if(obj==="objeto"){
           conf.width=this.width;
           conf.height=this.height;
           conf.offset = { x: this.width/2, y:this.height/2 };
