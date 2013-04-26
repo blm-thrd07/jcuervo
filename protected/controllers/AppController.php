@@ -123,6 +123,12 @@ public function actionLogin(){
 
   public function actionProfile($id)
   {
+    if ($_REQUEST) {
+        $signed_request = $_REQUEST['signed_request'];
+        echo $signed_request;
+      } else {
+        echo '$_REQUEST is empty';
+      }
     if($id==null) 
       throw new CHttpException(404,'The requested page does not exist.');
       
