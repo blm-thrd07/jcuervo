@@ -63,10 +63,8 @@ public function actionLogin(){
         } else {
             $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
         }
-        echo "request: ";
         if ($_REQUEST) {
           $signed_request = $_REQUEST['signed_request'];
-          echo $signed_request;
         } else {
           echo '$_REQUEST is empty';
         }
@@ -345,14 +343,10 @@ public function actionLogin(){
   }
 
   public function parse_signed_request($signed_request) {
-    echo "entre";
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
-    echo "-".$encoded_sig-"-";
     $sig = base64_url_decode($encoded_sig);
     $data = json_decode(base64_url_decode($payload), true);
-    echo "data: ";
-    print_r($data);
-    //if($data['registration']['like']) echo "like";
+    if($data['registration']['like']) echo "like";
     return $data;
   }
 
