@@ -330,6 +330,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("click", function() {
+          $("#textinput").attr("class", "inputClose");
           if(currentSelected){
             currentSelected.setStroke(null);
             currentSelected.setStrokeWidth(0);
@@ -346,6 +347,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
         
         obj.on("dragstart", function() {
+          $("#textinput").attr("class", "inputClose");
           if(currentSelected){
             currentSelected.setStroke(null);
             currentSelected.setStrokeWidth(0);
