@@ -162,9 +162,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.png";
 
-  $("#tab1 .itemMeme").on("click", function(e){ var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
-  $("#tab2 .itemMeme").on("click", function(e){ confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
-  $("#tab3 .itemMeme").on("click", function(e){ confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
+  $("#tab1 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
+  $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
+  $("#tab3 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
 
   saveToImage = function() {
     $("#overlay").css("display","block"); 
