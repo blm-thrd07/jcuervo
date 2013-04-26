@@ -104,13 +104,13 @@ public function actionLogin(){
             Yii::app()->session['id_facebook']=$response[0]->id_facebook;
             Yii::app()->session['access_token']=$facebook->getAccessToken();
 
-            $this->redirect(array('App/Profile/'.$user_profile['id']));
+            //$this->redirect(array('App/Profile/'.$user_profile['id']));
             
          }
          
          }else{
 
-            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+            //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
        }
 
       
@@ -123,12 +123,6 @@ public function actionLogin(){
 
   public function actionProfile($id)
   {
-    if ($_REQUEST) {
-        $signed_request = $_REQUEST['signed_request'];
-        echo $signed_request;
-      } else {
-        echo '$_REQUEST is empty';
-      }
     if($id==null) 
       throw new CHttpException(404,'The requested page does not exist.');
       
