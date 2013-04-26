@@ -68,8 +68,8 @@ public function actionLogin(){
         } else {
           echo '$_REQUEST is empty';
         }
-        $this->parse_signed_request($signed_request);
-
+        $data = $this->parse_signed_request($signed_request);
+        print_r($data);
        if($user){
 
 
@@ -343,11 +343,12 @@ public function actionLogin(){
   }
 
   public function parse_signed_request($signed_request) {
+
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
     $sig = base64_url_decode($encoded_sig);
     $data = json_decode(base64_url_decode($payload), true);
-    print_r($data);
-    if($data['registration']['like']) echo "like";
+    echo " . ".$sig;
+    echo " . ".$data;
     return $data;
   }
 
