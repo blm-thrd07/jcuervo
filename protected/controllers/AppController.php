@@ -343,12 +343,14 @@ public function actionLogin(){
   }
 
   public function parse_signed_request($signed_request) {
-
+    echo "signed: ".$signed_request;
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
+    echo " . ";
     $sig = base64_url_decode($encoded_sig);
+    echo " . ";
     $data = json_decode(base64_url_decode($payload), true);
-    echo " . ".$sig;
-    echo " . ".$data;
+    echo " sig: ".$sig;
+    echo " data: ".$data;
     return $data;
   }
 
