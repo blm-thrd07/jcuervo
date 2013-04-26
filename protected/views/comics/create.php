@@ -166,6 +166,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confObjeto.id = $(this).find("img").attr("id"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
 
+  document.onclick=function(){
+    $("#textinput").attr("class", "inputClose");
+  }
+
   saveToImage = function() {
     $("#overlay").css("display","block"); 
     $("#popup").css("display","block"); 
