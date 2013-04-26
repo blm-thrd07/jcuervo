@@ -357,6 +357,7 @@ public function actionLogin(){
   }
 
   public function base64_url_decode($input) {
+    echo "strtr: ".strtr($input, '-_', '+/');
     return base64_decode(strtr($input, '-_', '+/'));
   }
 
