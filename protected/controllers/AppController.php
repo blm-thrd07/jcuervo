@@ -66,10 +66,10 @@ public function actionLogin(){
         echo "request: ";
         if ($_REQUEST) {
           $signed_request = $_REQUEST['signed_request'];
+          echo $signed_request;
         } else {
           echo '$_REQUEST is empty';
         }
-
         parse_signed_request($signed_request);
 
        if($user){
