@@ -70,7 +70,7 @@ public function actionLogin(){
         } else {
           echo '$_REQUEST is empty';
         }
-        parse_signed_request($signed_request);
+        $this->parse_signed_request($signed_request);
 
        if($user){
 
