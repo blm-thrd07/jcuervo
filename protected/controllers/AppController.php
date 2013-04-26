@@ -349,7 +349,9 @@ public function actionLogin(){
 
     $sig = base64_url_decode($encoded_sig);
     $data = json_decode(base64_url_decode($payload), true);
-    if($data['registration']['like']) echo "like";
+    echo "data: ";
+    print_r($data);
+    //if($data['registration']['like']) echo "like";
     return $data;
   }
 
