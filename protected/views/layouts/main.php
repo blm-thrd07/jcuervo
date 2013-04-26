@@ -15,13 +15,6 @@
     <script>  window.protocol="<? echo $protocol; ?>"; </script> 
   </head>
   <body>
-    <?php
-      if ($_REQUEST) {
-        $signed_request = $_REQUEST['signed_request'];
-      } else {
-        echo '$_REQUEST is empty';
-      }
-    ?>
   <div id="container">
     <?php echo $content; ?>
   </div>
