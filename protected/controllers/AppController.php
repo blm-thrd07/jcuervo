@@ -346,6 +346,7 @@ public function actionLogin(){
     echo "signed: ".$signed_request;
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
     echo " . ";
+    echo "encoded : ".$encoded_sig;
     $sig = base64_url_decode($encoded_sig);
     echo " . ";
     $data = json_decode(base64_url_decode($payload), true);
