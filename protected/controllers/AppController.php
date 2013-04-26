@@ -349,6 +349,7 @@ public function actionLogin(){
     echo "encoded : ".$encoded_sig;
     $sig = base64_url_decode($encoded_sig);
     echo "sig: ".$sig;
+    print_r($sig);
     $data = json_decode(base64_url_decode($payload), true);
     echo " sig: ".$sig;
     echo " data: ".$data;
