@@ -395,7 +395,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-    initialText = "Inserta Texto";
+    initialText = "INSERTA TEXTO";
 
   createText = function() {
     var texto = new Kinetic.Text({
@@ -542,7 +542,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resizeDown").on("click", resizeDown);
   $("#js-resizeUp").on("click", resizeUp);
   $("#textinput").keyup(function(e){
-    currentText.setText($(this).val());
+    this.value = this.value.toUpperCase();
+    currentText.setText(this.value);
     layerComic.draw();
     return false;
   });
