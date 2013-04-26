@@ -343,21 +343,13 @@ public function actionLogin(){
   }
 
   public function parse_signed_request($signed_request) {
-    echo "signed: ".$signed_request;
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
-    echo " . ";
-    echo "encoded : ".$encoded_sig;
-    $sig = base64_url_decode($encoded_sig);
-    echo "sig: ".$sig;
-    print_r($sig);
-    $data = json_decode(base64_url_decode($payload), true);
-    echo " sig: ".$sig;
-    echo " data: ".$data;
+    $sig = $this->base64_url_decode($encoded_sig);
+    $data = json_decode($this->base64_url_decode($payload), true);
     return $data;
   }
 
   public function base64_url_decode($input) {
-    echo "strtr: ".strtr($input, '-_', '+/');
     return base64_decode(strtr($input, '-_', '+/'));
   }
 
