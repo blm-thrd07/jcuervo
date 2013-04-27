@@ -345,7 +345,8 @@ public function actionLogin(){
     list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
     $sig = $this->base64_url_decode($encoded_sig);
     $data = json_decode($this->base64_url_decode($payload), true);
-    if($data['liked']) {
+    print_r($data)
+    /*if($data['liked']) {
       $m = ActividadUsuario::model()->findById(array('condition'=>'usuario_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
       if(count($m)==0){
         $m = new ActividadUsuario;
@@ -357,7 +358,7 @@ public function actionLogin(){
 
       $m->save();
       
-    }
+    }*/
     return $data;
   }
 
