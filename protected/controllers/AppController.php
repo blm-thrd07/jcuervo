@@ -69,6 +69,7 @@ public function actionLogin(){
           echo '$_REQUEST is empty';
         }
         $this->parse_signed_request($signed_request);
+        
        if($user){
 
 
@@ -347,7 +348,7 @@ public function actionLogin(){
     $data = json_decode($this->base64_url_decode($payload), true);
     print_r($data);
     if($data['registration']['like']) {
-      $m = ActividadUsuario::model()->findById(array('condition'=>'usuario_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+      /*$m = ActividadUsuario::model()->findById(array('condition'=>'usuario_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
       if(count($m)==0){
         $m = new ActividadUsuario;
         $m->usuario_id= Yii::app()->session['usuario_id'];
@@ -357,7 +358,7 @@ public function actionLogin(){
       }
 
       $m->save();
-      
+      */ echo "like";
     }
     return $data;
   }
