@@ -351,8 +351,8 @@ public function actionLogin(){
       $m = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
       if(count($m)==0){
         $m = new ActividadUsuario;
-        $m->usuario_id= Yii::app()->session['usuario_id'];
-        $m->actividad_id=1;
+        $m->tbl_usuarios_id = Yii::app()->session['usuario_id'];
+        $m->tbl_actividad_actividad_id = 1;
       } else{
         $m->actividad_id=1;
       }
