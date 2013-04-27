@@ -347,18 +347,29 @@ public function actionLogin(){
     $data = json_decode($this->base64_url_decode($payload), true);
     print_r($data);
     //Array ( [algorithm] => HMAC-SHA256 [expires] => 1367028000 [issued_at] => 1367022760 [oauth_token] => BAAE3tsnLRyABAMvDEnYZCpAZBbZAO2TwDS6Na5pAgBSCm5fZB6J0M7LZAxERlAqCCm52biNXkA8K6u73PPrXzMfv9tMNZAOvZAY7hfCCoBF7B0PVtlUWnIkBpnvkZCiFZADwTrjRXldKQo77SqwZCfzkD2oAzq3V5yHodkPndCpfqwv5FWowrmHHbywTlBX2HvqTQbdG2yMiHSBnuPLajhwXkhuLcR7GOIQw2i9cCBF6bBqgZDZD [page] => Array ( [id] => 573988472620627 [liked] => 1 [admin] => ) [user] => Array ( [country] => mx [locale] => es_LA [age] => Array ( [min] => 21 ) ) [user_id] => 100001421156741 )
+    $m = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+    
     if($data['page']['liked']) {
-      $m = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
       if(count($m)==0){
         $m = new ActividadUsuario;
         $m->tbl_usuarios_id = Yii::app()->session['usuario_id'];
         $m->tbl_actividad_actividad_id = 1;
       } else{
-        $m->actividad_id=1;
+        $m->tbl_actividad_actividad_id=1;
       }
 
       $m->save();
       
+    } else{
+      if(count($m)==0){
+        $m = new ActividadUsuario;
+        $m->tbl_usuarios_id = Yii::app()->session['usuario_id'];
+        $m->tbl_actividad_actividad_id = 0;
+      } else{
+        $m->tbl_actividad_actividad_id=0;
+      }
+
+      $m->save();
     }
     return $data;
   }
