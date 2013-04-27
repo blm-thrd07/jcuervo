@@ -348,7 +348,7 @@ public function actionLogin(){
     print_r($data);
     //Array ( [algorithm] => HMAC-SHA256 [expires] => 1367028000 [issued_at] => 1367022760 [oauth_token] => BAAE3tsnLRyABAMvDEnYZCpAZBbZAO2TwDS6Na5pAgBSCm5fZB6J0M7LZAxERlAqCCm52biNXkA8K6u73PPrXzMfv9tMNZAOvZAY7hfCCoBF7B0PVtlUWnIkBpnvkZCiFZADwTrjRXldKQo77SqwZCfzkD2oAzq3V5yHodkPndCpfqwv5FWowrmHHbywTlBX2HvqTQbdG2yMiHSBnuPLajhwXkhuLcR7GOIQw2i9cCBF6bBqgZDZD [page] => Array ( [id] => 573988472620627 [liked] => 1 [admin] => ) [user] => Array ( [country] => mx [locale] => es_LA [age] => Array ( [min] => 21 ) ) [user_id] => 100001421156741 )
     if($data['page']['liked']) {
-      $m = ActividadUsuario::model()->findById(array('condition'=>'usuario_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+      $m = ActividadUsuario::model()->find(array('condition'=>'usuario_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
       if(count($m)==0){
         $m = new ActividadUsuario;
         $m->usuario_id= Yii::app()->session['usuario_id'];
