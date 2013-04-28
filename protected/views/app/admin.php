@@ -86,7 +86,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         	$.ajax({
 		      type: "POST",
 		      url: BaseUrl+"index.php/Comics/hidden",
-		      success: function(data){ },
+		      success: function(data){ alert(data); },
 		      error: function(data) { 
 		        console.log("no eliminado");
 		      }
