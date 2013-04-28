@@ -17,7 +17,7 @@ class AppController extends Controller
   {
     return array(
       array('allow',  // allow all users to perform 'index' and 'view' actions
-        'actions'=>array('view','Logout','login','Dest','error'),
+        'actions'=>array('view','Logout','login','Dest','error','admin'),
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -34,11 +34,15 @@ class AppController extends Controller
     );
   }
 
+  public function actionAdmin(){
+    $this->render('admin');
+    Yii::app()->end();
+  }
+
 public function actionLogin($admin=null){
 
   if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
-    $this->render('admin');
-    Yii::app()->end();
+    $this->redirect(array('App/admin'));
   }
     
   //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');

@@ -32,7 +32,7 @@ if(isset($_GET['Comics']))
 	        'name'=>'isHidden',
 	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id))',
 	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5,'class'=>"hidden"),
+	        'htmlOptions'=>array('width'=>5),
 	        //'visible'=>false,
         ),
         array(
@@ -40,7 +40,7 @@ if(isset($_GET['Comics']))
 	        'name'=>'isSpecial',
 	        'value'=>'CHtml::checkBox("cb_special",$data->isSpecial,array("value"=>$data->id))',
 	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5,"class"=>"special"),
+	        'htmlOptions'=>array('width'=>5),
 	        //'visible'=>false,
         ),
 		/*array(
@@ -77,12 +77,20 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 
 <script type="text/javascript">
+	var BaseUrl = "/php2/jcuervo"; 
 	$('input[type="checkbox"]').change(function () {
         var id = $(this).val();
         var check = $(this).attr('checked');
         var tipo = $(this).attr('name');
         if(tipo==="cb_hidden"){
-        	alert("hid "+id);
+        	$.ajax({
+		      type: "POST",
+		      url: BaseUrl+"index.php/Comics/hidden",
+		      success: function(data){ },
+		      error: function(data) { 
+		        console.log("no eliminado");
+		      }
+		    });
         }
         if(tipo==="cb_special"){
         	alert("es "+id);
