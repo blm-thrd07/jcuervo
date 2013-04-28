@@ -116,6 +116,7 @@ public function actionLogin(){
                 $this->redirect(array('App/Profile/'.$user_profile['id'])); 
               }
             }else{  
+                Yii::app()->session['usuario_id']=$response->id;
                 //si no es fan y ahora lo es
                 if(!$response->isFan && $data['page']['liked']) 
                 {
