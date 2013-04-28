@@ -28,10 +28,12 @@ if(isset($_GET['Comics']))
             'value' => '($data->isHidden == 0) ? "No" : "Si"'
         ),
         array(
-        'name'=>'','value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id,"id"=>"cid_".$data->id))',
-        'type'=>'raw',
-        'htmlOptions'=>array('width'=>5),
-        //'visible'=>false,
+            'header' => 'esta oculto?',
+	        'name'=>'isHidden',
+	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id,"id"=>"cid_".$data->id))',
+	        'type'=>'raw',
+	        'htmlOptions'=>array('width'=>5),
+	        //'visible'=>false,
         ),
 		/*array(
 			'class'=>'CButtonColumn',
@@ -64,3 +66,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		),*/
 	),
 )); ?>
+
+
+<script type="text/javascript">
+	var item = $("form input:checkbox:checked");
+	if(item.length==0) {
+		alert('Plese select checkbox!');
+		return false;
+	}
+</script>
