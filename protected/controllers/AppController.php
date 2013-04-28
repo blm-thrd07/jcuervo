@@ -36,8 +36,8 @@ class AppController extends Controller
 
 public function actionLogin($admin=null){
 
-  if(isset($_REQUEST['admin']))
-    $this->render('admin');
+  if(isset($_REQUEST)) print_r($_REQUEST);
+    //$this->render('admin');
   //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
    header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 
@@ -74,33 +74,8 @@ public function actionLogin($admin=null){
           echo '$_REQUEST is empty';
         }
         
-        
         //print_r($data);
         //Array ( [algorithm] => HMAC-SHA256 [expires] => 1367028000 [issued_at] => 1367022760 [oauth_token] => BAAE3tsnLRyABAMvDEnYZCpAZBbZAO2TwDS6Na5pAgBSCm5fZB6J0M7LZAxERlAqCCm52biNXkA8K6u73PPrXzMfv9tMNZAOvZAY7hfCCoBF7B0PVtlUWnIkBpnvkZCiFZADwTrjRXldKQo77SqwZCfzkD2oAzq3V5yHodkPndCpfqwv5FWowrmHHbywTlBX2HvqTQbdG2yMiHSBnuPLajhwXkhuLcR7GOIQw2i9cCBF6bBqgZDZD [page] => Array ( [id] => 573988472620627 [liked] => 1 [admin] => ) [user] => Array ( [country] => mx [locale] => es_LA [age] => Array ( [min] => 21 ) ) [user_id] => 100001421156741 )
-        //$m = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
-        
-        /*if($data['page']['liked']) {
-          if(count($m)==0){
-            $m = new ActividadUsuario;
-            $m->tbl_usuarios_id = Yii::app()->session['usuario_id'];
-            $m->tbl_actividad_actividad_id = 1;
-          } else{
-            $m->tbl_actividad_actividad_id=1;
-          }
-
-          $m->save();
-          
-        } else{
-          if(count($m)==0){
-            $m = new ActividadUsuario;
-            $m->tbl_usuarios_id = Yii::app()->session['usuario_id'];
-            $m->tbl_actividad_actividad_id = 0;
-          } else{
-            $m->tbl_actividad_actividad_id=0;
-          }
-
-          $m->save();
-        }*/
 
         if($user){
             $response= Usuarios::model()->find(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
@@ -121,34 +96,36 @@ public function actionLogin($admin=null){
                 Yii::app()->session['usuario_id']=$response->id;
                 Yii::app()->session['id_facebook']=$response->id_facebook;
                 Yii::app()->session['access_token']=$facebook->getAccessToken();
-                //si no es fan y ahora lo es
-                if(!$response->isFan && isset($data) && $data['page']['liked']) 
-                {
-                  $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
-                  $response->isFan = true;
-                  if(count($act_user) == 0){
-                    $act_user = new ActividadUsuario;
-                    $act_user->tbl_usuarios_id = Yii::app()->session['usuario_id'];
-                    $act_user->tbl_actividad_actividad_id = 1;
-                    $act_user->save(false);
-                  } 
-                  $response->save(false);
-                }
-                //si ya no quiere serlo
-                if(!$data['page']['liked']) 
-                {
-                  $response->isFan = false;
-                  $response->save(false);
+                if(isset($data)){
+                  //si no es fan y ahora lo es
+                  if(!$response->isFan && $data['page']['liked']) 
+                  {
+                    $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+                    $response->isFan = true;
+                    if(count($act_user) == 0){
+                      $act_user = new ActividadUsuario;
+                      $act_user->tbl_usuarios_id = Yii::app()->session['usuario_id'];
+                      $act_user->tbl_actividad_actividad_id = 1;
+                      $act_user->save(false);
+                    } 
+                    $response->save(false);
+                  }
+                  //si ya no quiere serlo
+                  if(!$data['page']['liked']) 
+                  {
+                    $response->isFan = false;
+                    $response->save(false);
+                  }
                 }
                 
                 $m=new Login;
                 $m->username=$response->id;
                 $m->login();
-                $this->redirect(array('App/Profile/'.$user_profile['id']));
+                //$this->redirect(array('App/Profile/'.$user_profile['id']));
                 
             }
         }else{
-          $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+          //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
         }
 
       
