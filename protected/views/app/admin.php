@@ -30,17 +30,17 @@ if(isset($_GET['Comics']))
         array(
             'header' => 'esta oculto?',
 	        'name'=>'isHidden',
-	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>,$data->isHidden,"id"=>"cb_hiddden_".$data->id, "class"=>"hidden"))',
+	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>,$data->isHidden,"id"=>"cb_hiddden_".$data->id))',
 	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5),
+	        'htmlOptions'=>array('width'=>5,"class"=>"hidden"),
 	        //'visible'=>false,
         ),
         array(
             'header' => 'es Especial?',
 	        'name'=>'isSpecial',
-	        'value'=>'CHtml::checkBox("cb_hidden",$data->isSpecial,array("value"=>,$data->isSpecial,"id"=>"cb_special_".$data->id,"class"=>"special"))',
+	        'value'=>'CHtml::checkBox("cb_hidden",$data->isSpecial,array("value"=>,$data->isSpecial,"id"=>"cb_special_".$data->id))',
 	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5),
+	        'htmlOptions'=>array('width'=>5,"class"=>"special"),
 	        //'visible'=>false,
         ),
 		/*array(
