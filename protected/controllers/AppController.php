@@ -67,7 +67,7 @@ public function actionLogin($admin=null){
         }
 
         //REQUEST IS FAN
-        if ($_REQUEST) {
+        if ($_REQUEST && isset($_REQUEST['signed_request'])) {
           $signed_request = $_REQUEST['signed_request'];
           $data = $this->parse_signed_request($signed_request);
         } else {
@@ -122,7 +122,7 @@ public function actionLogin($admin=null){
                 Yii::app()->session['id_facebook']=$response->id_facebook;
                 Yii::app()->session['access_token']=$facebook->getAccessToken();
                 //si no es fan y ahora lo es
-                if(!$response->isFan && $data['page']['liked']) 
+                if(!$response->isFan && isset($data) && $data['page']['liked']) 
                 {
                   $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
                   $response->isFan = true;
