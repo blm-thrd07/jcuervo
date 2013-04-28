@@ -116,7 +116,11 @@ public function actionLogin(){
                 $this->redirect(array('App/Profile/'.$user_profile['id'])); 
               }
             }else{  
-                if($data['page']['liked']) $response->isFan = true; else $response->isFan = false;
+                if($data['page']['liked']) 
+                  $response->isFan = true; 
+                else 
+                  $response->isFan = false;
+                
                 if($response->save(false)){
                   $m=new Login;
                   $m->username=$response[0]->id;
