@@ -30,7 +30,7 @@ if(isset($_GET['Comics']))
         array(
             'header' => 'esta oculto?',
 	        'name'=>'isHidden',
-	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id,"id"=>"cid_".$data->id))',
+	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>,$data->isHidden,"id"=>"cb_hiddden_".$data->id, "class"=>"hidden"))',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
 	        //'visible'=>false,
@@ -38,7 +38,7 @@ if(isset($_GET['Comics']))
         array(
             'header' => 'es Especial?',
 	        'name'=>'isSpecial',
-	        'value'=>'CHtml::checkBox("cb_hidden",$data->isSpecial,array("value"=>$data->id,"id"=>"cid_".$data->id))',
+	        'value'=>'CHtml::checkBox("cb_hidden",$data->isSpecial,array("value"=>,$data->isSpecial,"id"=>"cb_special_".$data->id,"class"=>"special"))',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
 	        //'visible'=>false,
@@ -77,6 +77,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 
 <script type="text/javascript">
+	$(".hidden").on("checked",function(){
+		alert("s");
+	});
+
 	$("#admin-comic-grid input:checkbox").on("checked",function(){
 		alert("chec");
 	});
