@@ -15,7 +15,7 @@ if(isset($_GET['Comics']))
 ?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'admin-usuarios-grid',
+	'id'=>'admin-comic-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
@@ -27,12 +27,12 @@ if(isset($_GET['Comics']))
             'name' => 'isHidden',
             'value' => '($data->isHidden == 0) ? "No" : "Si"'
         ),
-        array(
+        /*array(
         'name'=>'','value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id,"id"=>"cid_".$data->id))',
         'type'=>'raw',
         'htmlOptions'=>array('width'=>5),
         //'visible'=>false,
-        ),
+        ),*/
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
