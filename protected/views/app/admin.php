@@ -35,6 +35,14 @@ if(isset($_GET['Comics']))
 	        'htmlOptions'=>array('width'=>5),
 	        //'visible'=>false,
         ),
+        array(
+            'header' => 'es Especial?',
+	        'name'=>'isSpecial',
+	        'value'=>'CHtml::checkBox("cb_hidden",$data->isSpecial,array("value"=>$data->id,"id"=>"cid_".$data->id))',
+	        'type'=>'raw',
+	        'htmlOptions'=>array('width'=>5),
+	        //'visible'=>false,
+        ),
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
@@ -69,9 +77,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 
 <script type="text/javascript">
-	var item = $("form input:checkbox:checked");
+	$("form input:checkbox").on("checked",function(){
+		alert("chec");
+	});
+	/*var item = $("form input:checkbox:checked");
 	if(item.length==0) {
 		alert('Plese select checkbox!');
 		return false;
-	}
+	}*/
 </script>
