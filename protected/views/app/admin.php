@@ -21,11 +21,11 @@ if(isset($_GET['Usuarios']))
 		'id',
 		'correo',
 		'nombre',
-		'isFan',
+		//'isFan',
 		array(
             'header' => 'es Fan?',
             'name' => 'isFan',
-            'value' => '($data->isFan == 0) ? "Si" : "No"'
+            'value' => '($data->isFan == 0) ? "No" : "Si"'
         ),
 		array(
 			'class'=>'CButtonColumn',
