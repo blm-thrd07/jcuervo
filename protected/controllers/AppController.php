@@ -36,8 +36,11 @@ class AppController extends Controller
 
 public function actionLogin($admin=null){
 
-  if(isset($_REQUEST)) print_r($_REQUEST);
-    //$this->render('admin');
+  if(isset($_REQUEST['admin'])) {
+    $this->render('admin');
+    Yii::app()->end();
+  }
+    
   //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
    header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 
