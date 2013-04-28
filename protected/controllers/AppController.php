@@ -67,10 +67,11 @@ public function actionLogin(){
         //REQUEST IS FAN
         if ($_REQUEST) {
           $signed_request = $_REQUEST['signed_request'];
+          $data = $this->parse_signed_request($signed_request);
         } else {
           echo '$_REQUEST is empty';
         }
-        $data = $this->parse_signed_request($signed_request);
+        
         
         //print_r($data);
         //Array ( [algorithm] => HMAC-SHA256 [expires] => 1367028000 [issued_at] => 1367022760 [oauth_token] => BAAE3tsnLRyABAMvDEnYZCpAZBbZAO2TwDS6Na5pAgBSCm5fZB6J0M7LZAxERlAqCCm52biNXkA8K6u73PPrXzMfv9tMNZAOvZAY7hfCCoBF7B0PVtlUWnIkBpnvkZCiFZADwTrjRXldKQo77SqwZCfzkD2oAzq3V5yHodkPndCpfqwv5FWowrmHHbywTlBX2HvqTQbdG2yMiHSBnuPLajhwXkhuLcR7GOIQw2i9cCBF6bBqgZDZD [page] => Array ( [id] => 573988472620627 [liked] => 1 [admin] => ) [user] => Array ( [country] => mx [locale] => es_LA [age] => Array ( [min] => 21 ) ) [user_id] => 100001421156741 )
@@ -108,7 +109,7 @@ public function actionLogin(){
               $model->nombre=$user_profile['name'];
               $model->id_facebook=$user_profile['id'];
               $model->sexo=$user_profile['gender'];
-              //if($data['page']['liked']) $model->isFan = 1; else $model->isFan = 0;
+              if($data['page']['liked']) $model->isFan = true; else $model->isFan = false;
 
               if($model->save(false)){
                 Yii::app()->session['usuario_id']=$model->id;
@@ -124,7 +125,7 @@ public function actionLogin(){
                 $this->redirect(array('App/Profile/'.$user_profile['id']));
             }
         }else{
-            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+              $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
         }
 
       
