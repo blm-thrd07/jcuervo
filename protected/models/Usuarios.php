@@ -19,8 +19,8 @@
  */
 class Usuarios extends CActiveRecord
 {
-	const ADMIN_USER ="oscarlnx";
-	const ADMIN_PASSWORD = "oscarlnx";
+	const ADMIN_USER ="oscar";
+	const ADMIN_PASSWORD = "oscar";
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
