@@ -1,4 +1,4 @@
-        <h2>Memes por categoría</h2><a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
+        <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
      
 
         <div class="tabs"><a   href="http://apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/<? echo Yii::app()->session['id_facebook']; ?>" >Mis Memes</a> <a  id="misamigos"  class="menu" href="">De mis amigos</a><a id="categoria" class="selectedTab menu" href="">Por categoría</a></div>

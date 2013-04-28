@@ -416,7 +416,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
     $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
     console.log(json);
-    /*stagePersonaje.toDataURL({
+    stagePersonaje.toDataURL({
       mimeType: "image/png",
       quality: 0.8,
       callback: function(dataUrl) {
@@ -438,7 +438,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
         });
       }
-    });*/
+    });
     return false;
   };
 

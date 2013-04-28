@@ -34,8 +34,10 @@ class AppController extends Controller
     );
   }
 
-public function actionLogin(){
+public function actionLogin($admin=null){
 
+  if($admin != null && $admin ==="admin" )
+    $this->render('admin');
   //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
    header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 
