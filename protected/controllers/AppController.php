@@ -116,20 +116,33 @@ public function actionLogin(){
                 $this->redirect(array('App/Profile/'.$user_profile['id'])); 
               }
             }else{  
-                if($data['page']['liked']) 
-                  $response->isFan = true; 
-                else 
-                  $response->isFan = false;
-
-                if($response->save(false)){
-                  $m=new Login;
-                  $m->username=$response->id;
-                  $m->login();
-                  Yii::app()->session['usuario_id']=$response->id;
-                  Yii::app()->session['id_facebook']=$response->id_facebook;
-                  Yii::app()->session['access_token']=$facebook->getAccessToken();
-                  $this->redirect(array('App/Profile/'.$user_profile['id']));
+                //si no es fan y ahora lo es
+                if(!$response->isFan && $data['page']['liked']) 
+                {
+                  $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+                  $response->isFan = true;
+                  if(count($act_user) == 0){
+                    $act_user = new ActividadUsuario;
+                    $act_user->tbl_usuarios_id = Yii::app()->session['usuario_id'];
+                    $act_user->tbl_actividad_actividad_id = 1;
+                  } 
+                  $response->save(false);
                 }
+                //si ya no quiere serlo
+                if(!$data['page']['liked']) 
+                {
+                  $response->isFan = false;
+                  $response->save(false);
+                }
+                
+                $m=new Login;
+                $m->username=$response->id;
+                $m->login();
+                Yii::app()->session['usuario_id']=$response->id;
+                Yii::app()->session['id_facebook']=$response->id_facebook;
+                Yii::app()->session['access_token']=$facebook->getAccessToken();
+                $this->redirect(array('App/Profile/'.$user_profile['id']));
+                
             }
         }else{
           $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
