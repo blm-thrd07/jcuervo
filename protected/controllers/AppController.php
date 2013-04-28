@@ -36,7 +36,7 @@ class AppController extends Controller
 
   public function actionAdmin(){
     if(isset($_POST['admin_user']) && isset($_POST['admin_password']) ){
-      if(Usuarios::user_admin === $_POST['admin_user'] && Usuarios::user_password === $_POST['admin_password']){
+      if(Usuarios::ADMIN_USER === $_POST['admin_user'] && Usuarios::ADMIN_PASSWORD === $_POST['admin_password']){
         $this->render("admin");
         Yii::app()->end();
       }
