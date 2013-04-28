@@ -36,7 +36,7 @@ class AppController extends Controller
 
 public function actionLogin($admin=null){
 
-  if(isset($_REQUEST['admin'])) {
+  if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
     $this->render('admin');
     Yii::app()->end();
   }
@@ -124,11 +124,11 @@ public function actionLogin($admin=null){
                 $m=new Login;
                 $m->username=$response->id;
                 $m->login();
-                //$this->redirect(array('App/Profile/'.$user_profile['id']));
+                $this->redirect(array('App/Profile/'.$user_profile['id']));
                 
             }
         }else{
-          //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+          $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
         }
 
       

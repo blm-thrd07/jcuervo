@@ -15,11 +15,13 @@ $model = Usuarios::model()->findAll();
 	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	/*'columns'=>array(
-		'avatar_id',
-		'url',
+	'columns'=>array(
+		'id',
+		'correo',
+		'nombre',
+		'isFan',
 		array(
 			'class'=>'CButtonColumn',
 		),
-	),*/
+	),
 )); ?>
