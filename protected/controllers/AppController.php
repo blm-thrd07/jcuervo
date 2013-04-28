@@ -101,18 +101,18 @@ public function actionLogin(){
         }*/
 
         if($user){
-            $model = new Usuarios;
-            $response= $model->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
+            $response= Usuarios::model()->findAll(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
 
             if(count($response)==0){
-              $model->correo=$user_profile['email'];
-              $model->nombre=$user_profile['name'];
-              $model->id_facebook=$user_profile['id'];
-              $model->sexo=$user_profile['gender'];
-              if($data['page']['liked']) $model->isFan = true; else $model->isFan = false;
+              $response = new Usuarios;
+              $response->correo=$user_profile['email'];
+              $response->nombre=$user_profile['name'];
+              $response->id_facebook=$user_profile['id'];
+              $response->sexo=$user_profile['gender'];
+              if($data['page']['liked']) $response->isFan = true; else $response->isFan = false;
 
-              if($model->save(false)){
-                Yii::app()->session['usuario_id']=$model->id;
+              if($response->save(false)){
+                Yii::app()->session['usuario_id']=$response->id;
                 $this->redirect(array('App/Profile/'.$user_profile['id'])); 
               }
             }else{  
