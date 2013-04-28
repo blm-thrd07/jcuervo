@@ -85,6 +85,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         if(tipo==="cb_hidden"){
         	$.ajax({
 		      type: "POST",
+		      data: { id_comic: id }
 		      url: BaseUrl+"/index.php/Comics/hidden",
 		      success: function(data){ alert(data); },
 		      error: function(data) { 
@@ -93,7 +94,15 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		    });
         }
         if(tipo==="cb_special"){
-        	alert("es "+id);
+        	$.ajax({
+		      type: "POST",
+		      data: { id_comic: id }
+		      url: BaseUrl+"/index.php/Comics/special",
+		      success: function(data){ alert(data); },
+		      error: function(data) { 
+		        console.log("no eliminado");
+		      }
+		    });
         }
     });
 
