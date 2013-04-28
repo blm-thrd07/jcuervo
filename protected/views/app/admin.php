@@ -7,8 +7,10 @@
 	'model'=>$model,
 ));*/ 
 
-
-$model = Usuarios::model()->findAll();
+$model = new Usuarios('search');
+$model->unsetAttributes();
+if(isset($_GET['Usuarios']))
+	$model->attributes=$_GET['Usuarios'];
 
 ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
