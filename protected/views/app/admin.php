@@ -7,13 +7,46 @@
 	'model'=>$model,
 ));*/ 
 
+$model = new Comics('search');
+$model->unsetAttributes();
+if(isset($_GET['Comics']))
+	$model->attributes=$_GET['Comics'];
+
+?>
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'admin-usuarios-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		'id',
+		'imagen',
+		'date',
+		array(
+            'header' => 'esta oculto?',
+            'name' => 'isHidden',
+            'value' => '($data->isHidden == 0) ? "No" : "Si"'
+        ),
+        array(
+        'name'=>'','value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id,"id"=>"cid_".$data->id))',
+        'type'=>'raw',
+        'htmlOptions'=>array('width'=>5),
+        //'visible'=>false,
+        ),
+		/*array(
+			'class'=>'CButtonColumn',
+		),*/
+	),
+)); 
+
+echo "<br></br><br></br>";
+
 $model = new Usuarios('search');
 $model->unsetAttributes();
 if(isset($_GET['Usuarios']))
 	$model->attributes=$_GET['Usuarios'];
 
-?>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -21,14 +54,13 @@ if(isset($_GET['Usuarios']))
 		'id',
 		'correo',
 		'nombre',
-		//'isFan',
 		array(
             'header' => 'es Fan?',
             'name' => 'isFan',
             'value' => '($data->isFan == 0) ? "No" : "Si"'
         ),
-		array(
+		/*array(
 			'class'=>'CButtonColumn',
-		),
+		),*/
 	),
 )); ?>
