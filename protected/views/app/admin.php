@@ -23,6 +23,11 @@ if(isset($_GET['Usuarios']))
 		'nombre',
 		'isFan',
 		array(
+            'header' => 'es Fan?',
+            'name' => 'isFan',
+            'value' => '($data->isFan == 0) ? "Si" : "No"'
+        ),
+		array(
 			'class'=>'CButtonColumn',
 		),
 	),
