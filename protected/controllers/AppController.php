@@ -117,6 +117,8 @@ public function actionLogin(){
               }
             }else{  
                 Yii::app()->session['usuario_id']=$response->id;
+                Yii::app()->session['id_facebook']=$response->id_facebook;
+                Yii::app()->session['access_token']=$facebook->getAccessToken();
                 //si no es fan y ahora lo es
                 if(!$response->isFan && $data['page']['liked']) 
                 {
@@ -126,6 +128,7 @@ public function actionLogin(){
                     $act_user = new ActividadUsuario;
                     $act_user->tbl_usuarios_id = Yii::app()->session['usuario_id'];
                     $act_user->tbl_actividad_actividad_id = 1;
+                    $act_user->save(false);
                   } 
                   $response->save(false);
                 }
@@ -139,9 +142,6 @@ public function actionLogin(){
                 $m=new Login;
                 $m->username=$response->id;
                 $m->login();
-                Yii::app()->session['usuario_id']=$response->id;
-                Yii::app()->session['id_facebook']=$response->id_facebook;
-                Yii::app()->session['access_token']=$facebook->getAccessToken();
                 $this->redirect(array('App/Profile/'.$user_profile['id']));
                 
             }
