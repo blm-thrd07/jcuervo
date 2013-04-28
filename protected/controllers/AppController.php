@@ -116,16 +116,19 @@ public function actionLogin(){
                 $this->redirect(array('App/Profile/'.$user_profile['id'])); 
               }
             }else{  
-                $model=new Login;
-                $model->username=$response[0]->id;
-                $model->login();
-                Yii::app()->session['usuario_id']=$response[0]->id;
-                Yii::app()->session['id_facebook']=$response[0]->id_facebook;
-                Yii::app()->session['access_token']=$facebook->getAccessToken();
-                $this->redirect(array('App/Profile/'.$user_profile['id']));
+                if($data['page']['liked']) $model->isFan = true; else $model->isFan = false;
+                if($model->save(false)){
+                  $m=new Login;
+                  $m->username=$response[0]->id;
+                  $m->login();
+                  Yii::app()->session['usuario_id']=$response[0]->id;
+                  Yii::app()->session['id_facebook']=$response[0]->id_facebook;
+                  Yii::app()->session['access_token']=$facebook->getAccessToken();
+                  $this->redirect(array('App/Profile/'.$user_profile['id']));
+                }
             }
         }else{
-              $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+          $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
         }
 
       
