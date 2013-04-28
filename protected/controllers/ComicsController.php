@@ -220,6 +220,15 @@ class ComicsController extends Controller
 		));
 	}
 
+	public function actionHidden(){
+		if(isset(Yii::app()->session['admin_jcuervo']) && Yii::app()->session['admin_jcuervo']==="admjcuervoesp"){
+			$comic = $this->loadModel($_POST['id_comic']);
+			$comic->isHidden = !$comic->isHidden;
+			$comic->save(false);
+			echo "eliminado";
+		}
+	}
+
 	/**
 	 * Manages all models.
 	 */
