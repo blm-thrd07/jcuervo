@@ -77,7 +77,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 
 <script type="text/javascript">
-	$("form input:checkbox").on("checked",function(){
+	$("#admin-comic-grid input:checkbox").on("checked",function(){
 		alert("chec");
 	});
 	/*var item = $("form input:checkbox:checked");
