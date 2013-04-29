@@ -134,9 +134,8 @@ class AppController extends Controller
             if(isset($data)){
               //si no es fan y ahora lo es
 
-
               echo $response->isFan."  ".$data['page']['liked'];
-              if($response->isFan && $data['page']['liked']) 
+              if(!$response->isFan && $data['page']['liked']) 
               {
                 $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
                 $response->isFan = true;
@@ -147,13 +146,6 @@ class AppController extends Controller
                   $act_user->save(false);
                 } 
                 $response->save(false);
-               
-               /*
-                 $m=new Login;
-                 $m->username=$response->id;
-                 $m->login();
-                 $this->redirect(array('App/Profile/'.$user_profile['id']));
-                 */
 
               }
               //si ya no quiere serlo
@@ -163,10 +155,13 @@ class AppController extends Controller
                 $response->save(false);
               }
             }
-            
+
             /*
-            
-            */
+                 $m=new Login;
+                 $m->username=$response->id;
+                 $m->login();
+                 $this->redirect(array('App/Profile/'.$user_profile['id']));
+                 */
             
         }
     }else{
