@@ -93,7 +93,6 @@ class AppController extends Controller
     
     } 
     
-    print_r($data);
     //Array ( [algorithm] => HMAC-SHA256 [expires] => 1367028000 [issued_at] => 1367022760 [oauth_token] => BAAE3tsnLRyABAMvDEnYZCpAZBbZAO2TwDS6Na5pAgBSCm5fZB6J0M7LZAxERlAqCCm52biNXkA8K6u73PPrXzMfv9tMNZAOvZAY7hfCCoBF7B0PVtlUWnIkBpnvkZCiFZADwTrjRXldKQo77SqwZCfzkD2oAzq3V5yHodkPndCpfqwv5FWowrmHHbywTlBX2HvqTQbdG2yMiHSBnuPLajhwXkhuLcR7GOIQw2i9cCBF6bBqgZDZD [page] => Array ( [id] => 573988472620627 [liked] => 1 [admin] => ) [user] => Array ( [country] => mx [locale] => es_LA [age] => Array ( [min] => 21 ) ) [user_id] => 100001421156741 )
 
     if($user){
@@ -105,19 +104,36 @@ class AppController extends Controller
           $response->nombre=$user_profile['name'];
           $response->id_facebook=$user_profile['id'];
           $response->sexo=$user_profile['gender'];
-          if($data['page']['liked']) $response->isFan = true; else $response->isFan = false;
+          
+          if($data['page']['liked']) 
+            { 
+               $response->isFan = true;
+            }else{
+               $response->isFan = false;
+            }
 
           if($response->save(false)){
-            Yii::app()->session['usuario_id']=$response->id;
-            $this->redirect(array('App/Profile/'.$user_profile['id'])); 
+            
           }
+        
+           if($response->isFan){
+            Yii::app()->session['usuario_id']=$response->id;
+            $this->redirect(array('App/Profile/'.$user_profile['id']));
+
+           }else{
+               
+                $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+
+           }
+
         }else{  
+          
             Yii::app()->session['usuario_id']=$response->id;
             Yii::app()->session['id_facebook']=$response->id_facebook;
             Yii::app()->session['access_token']=$facebook->getAccessToken();
             if(isset($data)){
               //si no es fan y ahora lo es
-              if(!$response->isFan && $data['page']['liked']) 
+              if($response->isFan && $data['page']['liked']) 
               {
                 $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
                 $response->isFan = true;
@@ -128,23 +144,30 @@ class AppController extends Controller
                   $act_user->save(false);
                 } 
                 $response->save(false);
-              }
+              
+               $m=new Login;
+               $m->username=$response->id;
+               $m->login();
+               $this->redirect(array('App/Profile/'.$user_profile['id']));
+              
+            }
               //si ya no quiere serlo
               if(!$data['page']['liked']) 
               {
                 $response->isFan = false;
                 $response->save(false);
+                $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+
               }
+            
+
             }
             
-            $m=new Login;
-            $m->username=$response->id;
-            $m->login();
-          //  $this->redirect(array('App/Profile/'.$user_profile['id']));
+            
             
         }
     }else{
-      //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+       $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
     }
   }
 
