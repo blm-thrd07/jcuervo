@@ -22,9 +22,6 @@
               <h2>Memes de <? echo $json['usuario']['nombre'] ?></h2>
      <? } ?>
 
-
-       <div class="slide itemThumbs"> 
-
         <? if(is_array($comics)){
           $bandera=false;
           $count = count($comics);
@@ -32,7 +29,7 @@
 
           if($count != 0){
             foreach ($comics as $key => $value) {
-              echo '<div class="itemMeme"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
+              echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
             } 
           }
           if($count>9) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
@@ -40,9 +37,7 @@
          }  
         ?>
 
-       </div>
 
-      </div>
 </div>
 
 
