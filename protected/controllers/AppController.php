@@ -194,7 +194,7 @@ class AppController extends Controller
  }
 
   public function actionDest(){
-     $resultado=UsuariosHasTblComics::model()->with('Comics')->findAll(array('condition'=>'destacado=1  AND isHidden=0'));
+     $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'destacado=1  AND isHidden=0'));
      $this->renderPartial('//app/_destacados',array('resultado'=>$resultado));
   }
   
@@ -231,7 +231,7 @@ class AppController extends Controller
     $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
     $cantidad=$row[0]['max'];
     if($cantidad!=null){
-        $resultado=$modelComics->with('Comics')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0 order by NoVisto desc ' ,'limit'=>5)); 
+        $resultado=$modelComics->with('Comic')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0 order by NoVisto desc ' ,'limit'=>5)); 
     }else{
         $resultado=null;
     }
@@ -247,7 +247,7 @@ class AppController extends Controller
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
         if($cantidad!=null){
-            $resultado=$modelComics->with('Comics')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0 order by NoVisto desc ' ,'limit'=>5)); 
+            $resultado=$modelComics->with('Comic')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0 order by NoVisto desc ' ,'limit'=>5)); 
         }else{
             $resultado=null;
         }
@@ -262,7 +262,7 @@ class AppController extends Controller
           $row= Yii::app()->db->createCommand('select max(NoCompartido) as max from tbl_usuarios_has_tbl_comics')->queryAll();
           $cantidad=$row[0]['max'];
           if($cantidad!=null){
-                  $resultado=$modelComics->with('Comics')->findAll(array('condition'=>'NoCompartido<='.$cantidad.' and NoCompartido !=0 AND isHidden=0 order by NoCompartido desc ','limit'=>5));
+                  $resultado=$modelComics->with('Comic')->findAll(array('condition'=>'NoCompartido<='.$cantidad.' and NoCompartido !=0 AND isHidden=0 order by NoCompartido desc ','limit'=>5));
           }else{
             $resultado=null;
           }
@@ -276,7 +276,7 @@ class AppController extends Controller
         $cantidad=$row[0]['max'];
 
         if($cantidad!=null){
-           $resultado=$modelComics->with('Comics')->findAll(array('condition'=>'NoComentarios <= '.$cantidad.' and NoComentarios !=0 AND isHidden=0 order by  NoComentarios desc','limit'=>5));
+           $resultado=$modelComics->with('Comic')->findAll(array('condition'=>'NoComentarios <= '.$cantidad.' and NoComentarios !=0 AND isHidden=0 order by  NoComentarios desc','limit'=>5));
         }else{
            $resultado=null;
         }

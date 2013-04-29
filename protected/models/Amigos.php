@@ -104,8 +104,7 @@ class Amigos extends CActiveRecord
  }
 public function getAmigosComics($id){
   
-  	  
-   $json= Yii::app()->db->createCommand('select u.id_facebook, u.nombre, uc.tbl_usuarios_id, uc.tbl_comics_id , c.imagen ,c.id from  tbl_usuarios_has_tbl_comics uc, tbl_comics c, tbl_usuarios u   where uc.tbl_usuarios_id in (select amigo.amigo_id from tbl_amigos amigo where amigo.usuarios_id='.$id.') and c.id=uc.tbl_comics_id and u.id=uc.tbl_usuarios_id;')->queryAll();
+   $json= Yii::app()->db->createCommand('select u.id_facebook, u.nombre, uc.tbl_usuarios_id, uc.tbl_comics_id , c.imagen ,c.id from  tbl_usuarios_has_tbl_comics uc, tbl_comics c, tbl_usuarios u   where c.isHidden=0 uc.tbl_usuarios_id in (select amigo.amigo_id from tbl_amigos amigo where amigo.usuarios_id='.$id.') and c.id=uc.tbl_comics_id and u.id=uc.tbl_usuarios_id;')->queryAll();
    return $json;
 }
 
