@@ -20,18 +20,23 @@
   <a  id="misamigos"  class="menu" href="#">De mis amigos</a><a id="categoria" class="menu" href="#">Por categoría</a></div>
 <? if(Yii::app()->session['id_facebook']!=$json['usuario']['id_facebook']){ ?>
               <h2>Memes de <? echo $json['usuario']['nombre'] ?></h2>
-     <? }?>
+     <? } ?>
 
-<div class="js-slides">
-    <div class="slides_container">        
+
        <div class="slide itemThumbs"> 
 
-         <? if(is_array($comics)){
-         if(count($comics)!=0){
-           foreach ($comics as $key => $value) {
-                 echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
-             } 
-           }
+        <? if(is_array($comics)){
+          $bandera=false;
+          $count = count($comics);
+          if($count>12) echo '<div class="js-slides"><div class="slides_container">';
+
+          if($count != 0){
+            foreach ($comics as $key => $value) {
+              echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
+            } 
+          }
+          if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+
          }  
         ?>
 
