@@ -244,7 +244,7 @@ class AppController extends Controller
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
         if($cantidad!=null){
-            $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0','order'=>'NoVisto desc' ,'limit'=>5)); 
+            $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0' ,'limit'=>5)); 
         }else{
             $resultado=null;
         }
