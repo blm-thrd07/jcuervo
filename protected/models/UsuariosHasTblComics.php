@@ -82,11 +82,10 @@ class UsuariosHasTblComics extends CActiveRecord
     $response= UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'tbl_usuarios_id=:uid AND isHidden=0','params'=>array(':uid'=>$id)));   
     $numero_comics=count($response);
     $comics=array();
-    $comics['comics']=null;
    
    for($count=0;$count<$numero_comics;$count++){
    
-      $comics['comics'][$count]=array(
+      $comics[$count]=array(
        'id'=> $response[$count]->Comic->id,
        'imagen'=>$response[$count]->Comic->imagen,
        'NoComentarios'=>$response[$count]->NoComentarios,
