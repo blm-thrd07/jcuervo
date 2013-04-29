@@ -19,22 +19,18 @@
   });
 
 
-  $('.mismemes').live("click",function(){
-
+  $('.mismemesmenu').live("click",function(){
+  
   var href= $(this).attr('href');
-
-  alert(href);
-  /*
- $.ajax({
+   
+   $.ajax({
           type: "GET",
-          url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          url: href,
           success: function(data){
             $("#container").html(data);
           }
         });
       return false;
-      */
-
     
   });
 
