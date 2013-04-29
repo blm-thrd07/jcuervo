@@ -1,3 +1,6 @@
+<div id="container">
+
+
 <? if(Yii::app()->session['id_facebook']==$json['usuario']['id_facebook']){ ?>
         <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
      <? } else {?>
@@ -26,4 +29,6 @@
        </div>
 
       </div>
+</div>
+
 </div>
