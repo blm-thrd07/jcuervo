@@ -78,10 +78,12 @@ i
 #personajeCanvas, #comicCanvas
 	+cf
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2O8O4HLh4EIwAhSqFzwbQshtaMK8YYQ0cEDAASpJc5/1r+xAAAAAElFTkSuQmCC')
+	outline: 5px solid $primario
+	margin-bottom: 10px
 
 #crearPersonaje
 	@extend %container
-	outline: 3px solid $primario
+	outline: 5px solid $primario
 	h1
 		
 		text-align: center
@@ -218,7 +220,7 @@ i
 
 	h1
 		+genericTitle
-		margin-bottom: $spacer
+		margin-bottom: $spacer*2.3
 		+text-shadow(rgba(white,0.5) 0px -1px 0)
 		text-align: center
 		color: $primario
@@ -311,7 +313,7 @@ i
 	text-align: center
 
 	a
-		margin-right: 10px
+		margin-right: 5px
 
 	a:last-of-type
 		margin-right: 0
