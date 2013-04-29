@@ -23,6 +23,8 @@
   
   var href= $(this).attr('href');
    
+   alert('click mis memes ajax');
+  
    $.ajax({
           type: "GET",
           url: href,
@@ -30,6 +32,7 @@
             $("#container").html(data);
           }
         });
+   
       return false;
     
   });
