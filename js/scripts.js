@@ -21,6 +21,10 @@
 
   $('.mismemes').live("click",function(){
 
+  var href= $(this).attr('href');
+
+  alert(href);
+  /*
  $.ajax({
           type: "GET",
           url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
@@ -29,6 +33,7 @@
           }
         });
       return false;
+      */
 
     
   });
