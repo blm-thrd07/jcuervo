@@ -20,12 +20,7 @@
   });
 
 
-  $('.mismemesmenu').live("click",function(){
-  
-  var href= $(this).attr('href');
-   
-   alert('click mis memes ajax');
-  
+  $('.mismemesmenu').live("click",function(){   
    $.ajax({
           type: "GET",
           url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes",
