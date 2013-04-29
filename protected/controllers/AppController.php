@@ -52,6 +52,7 @@ class AppController extends Controller
 
   public function actionLogin(){
 
+
     if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
       $this->redirect(array('App/admin'));
     }
@@ -86,11 +87,13 @@ class AppController extends Controller
 
     //REQUEST IS FAN
     if ($_REQUEST && isset($_REQUEST['signed_request'])) {
+     
       $signed_request = $_REQUEST['signed_request'];
       $data = $this->parse_signed_request($signed_request);
+    
     } 
     
-    //print_r($data);
+    print_r($data);
     //Array ( [algorithm] => HMAC-SHA256 [expires] => 1367028000 [issued_at] => 1367022760 [oauth_token] => BAAE3tsnLRyABAMvDEnYZCpAZBbZAO2TwDS6Na5pAgBSCm5fZB6J0M7LZAxERlAqCCm52biNXkA8K6u73PPrXzMfv9tMNZAOvZAY7hfCCoBF7B0PVtlUWnIkBpnvkZCiFZADwTrjRXldKQo77SqwZCfzkD2oAzq3V5yHodkPndCpfqwv5FWowrmHHbywTlBX2HvqTQbdG2yMiHSBnuPLajhwXkhuLcR7GOIQw2i9cCBF6bBqgZDZD [page] => Array ( [id] => 573988472620627 [liked] => 1 [admin] => ) [user] => Array ( [country] => mx [locale] => es_LA [age] => Array ( [min] => 21 ) ) [user_id] => 100001421156741 )
 
     if($user){
@@ -137,11 +140,11 @@ class AppController extends Controller
             $m=new Login;
             $m->username=$response->id;
             $m->login();
-            $this->redirect(array('App/Profile/'.$user_profile['id']));
+          //  $this->redirect(array('App/Profile/'.$user_profile['id']));
             
         }
     }else{
-      $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+      //$this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
     }
   }
 
