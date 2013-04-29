@@ -72,7 +72,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         array(
             'header' => 'comics creados',
 	        //'name'=>'comics',
-	        'value'=>' count( UsuariosHasTblComics::getMyComics($data->id) ); ',
+	        'value'=>' print_r( UsuariosHasTblComics::getMyComics($data->id) ) ',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
 	        //'visible'=>false,
