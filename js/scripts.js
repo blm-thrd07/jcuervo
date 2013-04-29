@@ -8,7 +8,7 @@
 //navigation menu
   $(".menu").live("click",function(){
       var url=$(this).attr("id");
-      /*
+      
       $.ajax({
           type: "GET",
           url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
@@ -16,9 +16,7 @@
             $("#panelContent").html(data);
           }
         });
-*/
       return false;
-
   });
 
 
@@ -27,7 +25,7 @@
   var href= $(this).attr('href');
    
    alert('click mis memes ajax');
-  
+  /*
    $.ajax({
           type: "GET",
           url: href,
@@ -35,7 +33,7 @@
             $("#container").html(data);
           }
         });
-   
+   */
       return false;
     
   });
