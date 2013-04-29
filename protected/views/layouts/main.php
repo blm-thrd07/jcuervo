@@ -15,9 +15,7 @@
     <script>  window.protocol="<? echo $protocol; ?>"; </script> 
   </head>
   <body>
-  <div id="container">
     <?php echo $content; ?>
-  </div>
     <?php
        $baseUrl = Yii::app()->baseUrl; 
        $cs = Yii::app()->getClientScript();
