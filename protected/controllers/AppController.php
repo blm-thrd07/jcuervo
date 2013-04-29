@@ -207,8 +207,7 @@ class AppController extends Controller
    $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo);
 
    if(count($response)!= 0){
-      $modelComics= new UsuariosHasTblComics;
-      $comics=$modelComics->getMyComics($response->id);
+      $comics=UsuariosHasTblComics::getMyComics($response->id);
       $this->renderPartial('//app/_mismemes',array('comics'=>$comics,'json'=>$json));
     } 
 

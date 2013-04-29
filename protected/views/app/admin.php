@@ -69,6 +69,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'name' => 'isFan',
             'value' => '($data->isFan == 0) ? "No" : "Si"'
         ),
+        array(
+            'header' => 'comics creados',
+	        //'name'=>'comics',
+	        'value'=>'print_r(UsuariosHasTblComics::getMyComics($data->id)); ',
+	        'type'=>'raw',
+	        'htmlOptions'=>array('width'=>5),
+	        //'visible'=>false,
+        ),
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
