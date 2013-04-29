@@ -46,6 +46,9 @@ body
 	font-family: Helvetica
 	font-size: 16px
 	background-color: $fondo
+	padding: 10px
+
+	border: 8px solid $primario
 
 	//background: url('img/noise-yellow.png')
 	+background-image(radial-gradient(300px 300px, #fef200 0px, #efca00 800px))
@@ -193,8 +196,11 @@ i
 
 	>div
 		margin: 0 auto
-		width: 715px
+		width: 750px
 		+cf
+
+		.itemThumbnail
+			width: 23.5%
 		
 
 
@@ -202,7 +208,7 @@ i
 
 #container
 	@extend %container
-	margin-top: $spacer*5
+	margin-top: $spacer*7
 	margin-bottom: $spacer
 
 
@@ -302,7 +308,8 @@ i
 
 
 #actions
-	
+	text-align: center
+
 	a
 		margin-right: 10px
 
@@ -450,7 +457,7 @@ i
 
 .itemThumbnail
 	@extend %g2
-	width: 168px
+	width: 32%
 	position: relative
 	margin-bottom: 10px
 	text-align: center
@@ -525,7 +532,7 @@ a.itemAction
 	>a
 		+tab
 		@extend %g2
-		width: 168px
+		width: 32%
 
 	>a:first-of-type
 		@extend %alpha
@@ -544,7 +551,7 @@ a.itemAction
 		>li
 			display: block
 			float: left
-			width: 18.48%
+			width: 18.42%
 			margin-right: 10px
 
 			a
@@ -559,7 +566,7 @@ a.itemAction
 
 	>ul.comicItemSelector
 		>li
-			width: 31.60%
+			width: 31.58%
 
 
 
@@ -595,16 +602,15 @@ a.selectedTab
 
 
 #comentarios
-	@extend %g6
+	@extend %g5
+	margin-left: 25px
 	
-
-
 	div
 		margin-bottom: $spacer
 		img
 			margin-right: $spacer/2
 		span
-			font-size: 2.5em
+			font-size: 2em
 			color: $fondo
 
 	h2
@@ -622,7 +628,7 @@ a.selectedTab
 			height: 50px
 			margin: 0
 			padding: $spacer/2
-			width: 97%
+			width: 96%
 			margin-bottom: $spacer
 			resize: none
 			+remove-focus
@@ -645,7 +651,7 @@ a.selectedTab
 			font-size: 0.75em
 			text-transform: none
 			float: left
-			width: 360px
+			width: 280px
 
 		a.btn
 			float: right
@@ -695,7 +701,7 @@ a.selectedTab
 
 		.slide
 			margin-bottom: $spacer
-			width: 526px
+			width: 510px
 			height: 418px
 
 			>div.itemMeme:nth-of-type(4n+1)
@@ -709,7 +715,7 @@ a.selectedTab
 		margin-top: $spacer
 
 	>a:first-of-type
-		margin-left: 455px
+		margin-left: 442px
 
 	>a:last-of-type
 		margin-left: $spacer
@@ -737,7 +743,7 @@ a.selectedTab
 		margin-top: $spacer
 
 	>a:first-of-type
-		margin-left: 324px
+		margin-left: 312px
 
 	>a:last-of-type
 		margin-left: $spacer
@@ -767,7 +773,7 @@ a.selectedTab
 .inputOpen
 	opacity: 1
 	visibility: visible
-	width: 332px
+	width: 320px
 
 
 
@@ -818,7 +824,7 @@ a.selectedTab
 	z-index: 100
 
 #popup
-	+border-radius(30px)
+	+border-radius(10px)
 	background: none repeat scroll 0 0 white
 	border: 20px solid #ddd
 	left: 31%
