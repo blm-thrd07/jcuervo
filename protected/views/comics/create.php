@@ -144,7 +144,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
-  confBackground = {x: 0,y: 0,rotation: 0,height: 392,width: 294,image: imageBackground,offset: [196, 147],startScale: scale,name: "fondo",id: 1};
+  confBackground = {x: 50,y: 50,rotation: 0,height: 380,width: 285,image: imageBackground,offset: [190, 140],startScale: scale,name: "fondo",id: 1};
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "MiAvatar", id:2,};
 
   layerFondo = new Kinetic.Layer();
