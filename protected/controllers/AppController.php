@@ -134,8 +134,8 @@ class AppController extends Controller
             if(isset($data)){
               //si no es fan y ahora lo es
 
-               echo $response->isFan;
-              if(!$response->isFan && $data['page']['liked']) 
+               echo $data['page']['liked'];
+              if($response->isFan && $data['page']['liked']) 
               {
                 $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
                 $response->isFan = true;
