@@ -54,11 +54,60 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.grid-settings {
+#crearPersonaje, #splash, #container, #detalle {
+  margin: 0 auto;
+  width: 780px;
+  clear: both;
+}
+#crearPersonaje:after, #splash:after, #container:after, #detalle:after, #crearPersonaje:before, #splash:before, #container:before, #detalle:before {
+  content: "";
+  display: table;
+}
+#crearPersonaje:after, #splash:after, #container:after, #detalle:after {
+  clear: both;
+}
+
+.item, .itemMeme, .itemThumbnail, .tabs > a, #panelContent div.saveBtn, #panelPersonaje, #panelContent h2, #comentarios, #panelComic, #panelContentComic, #pic, #panelContent, #crearPersonaje h2, #crearPersonaje .controllers {
   display: inline;
   float: left;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.item, .itemMeme, .itemThumbnail, .tabs > a {
+  width: 120px;
+}
+
+#panelContent div.saveBtn {
+  width: 185px;
+}
+
+#panelPersonaje {
+  width: 250px;
+}
+
+#panelContent h2, #comentarios {
+  width: 315px;
+}
+
+#panelComic, #panelContentComic, #pic {
+  width: 380px;
+}
+
+#panelContent {
+  width: 510px;
+}
+
+#crearPersonaje h2, #crearPersonaje .controllers {
+  width: 770px;
+}
+
+#panelContent h2, .memeThumbs > div:nth-of-type(4n+1), .itemThumbs > div:nth-of-type(3n+1), .comicThumbs > div:nth-of-type(3n+1), .tabs > a:first-of-type, .js-slides .slides_container .slide > div.itemMeme:nth-of-type(4n+1), .js-slides-comic .slides_container .slide > div.itemMeme:nth-of-type(3n+1) {
+  margin-left: 0;
+}
+
+#panelContent div.saveBtn, #panelContentComic div.saveBtn, .memeThumbs > div:nth-of-type(4n+4), .itemThumbs > div:nth-of-type(3n+3), .comicThumbs > div:nth-of-type(3n+3), .tabs > a:last-of-type, .js-slides .slides_container .slide > div.itemMeme:nth-of-type(4n+4), .js-slides-comic .slides_container .slide > div.itemMeme:nth-of-type(3n+3) {
+  margin-right: 0;
 }
 
 @font-face {
@@ -1456,7 +1505,7 @@ i {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2O8O4HLh4EIwAhSqFzwbQshtaMK8YYQ0cEDAASpJc5/1r+xAAAAAElFTkSuQmCC");
 }
 #personajeCanvas:after, #personajeCanvas:before, #comicCanvas:after, #comicCanvas:before {
-  content: " ";
+  content: "";
   display: table;
 }
 #personajeCanvas:after, #comicCanvas:after {
@@ -1584,7 +1633,7 @@ i {
   clear: both;
 }
 #splash > div:after, #splash > div:before {
-  content: " ";
+  content: "";
   display: table;
 }
 #splash > div:after {
@@ -1719,7 +1768,7 @@ i {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
 }
 #panelContent > a:after, #panelContent > a:before {
-  content: " ";
+  content: "";
   display: table;
 }
 #panelContent > a:after {
@@ -1756,7 +1805,7 @@ i {
   clear: both;
 }
 .memeThumbs:after, .memeThumbs:before {
-  content: " ";
+  content: "";
   display: table;
 }
 .memeThumbs:after {
@@ -1767,7 +1816,7 @@ i {
   clear: both;
 }
 .itemThumbs:after, .itemThumbs:before {
-  content: " ";
+  content: "";
   display: table;
 }
 .itemThumbs:after {
@@ -1779,7 +1828,7 @@ i {
   min-height: 426px;
 }
 .comicThumbs:after, .comicThumbs:before {
-  content: " ";
+  content: "";
   display: table;
 }
 .comicThumbs:after {
@@ -1984,7 +2033,7 @@ a.itemAction:hover {
   margin-bottom: 10px;
 }
 .tabs:after, .tabs:before {
-  content: " ";
+  content: "";
   display: table;
 }
 .tabs:after {
@@ -2020,7 +2069,7 @@ a.itemAction:hover {
   clear: both;
 }
 .itemSelector:after, .itemSelector:before {
-  content: " ";
+  content: "";
   display: table;
 }
 .itemSelector:after {
@@ -2031,7 +2080,7 @@ a.itemAction:hover {
   margin-bottom: 10px;
 }
 .itemSelector > ul:after, .itemSelector > ul:before {
-  content: " ";
+  content: "";
   display: table;
 }
 .itemSelector > ul:after {
@@ -2112,7 +2161,7 @@ a.selectedTab:hover {
   margin: 0 auto;
 }
 #noFriends:after, #noFriends:before {
-  content: " ";
+  content: "";
   display: table;
 }
 #noFriends:after {
@@ -2174,7 +2223,7 @@ a.selectedTab:hover {
   clear: both;
 }
 #comentarios article:after, #comentarios article:before {
-  content: " ";
+  content: "";
   display: table;
 }
 #comentarios article:after {
