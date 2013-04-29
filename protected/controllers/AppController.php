@@ -132,9 +132,9 @@ class AppController extends Controller
             Yii::app()->session['id_facebook']=$response->id_facebook;
             Yii::app()->session['access_token']=$facebook->getAccessToken();
             if(isset($data)){
-              //si no es fan y ahora lo es
 
-              echo $response->isFan."  ".$data['page']['liked'];
+
+              //si no es fan y ahora lo es
               if(!$response->isFan && $data['page']['liked']) 
               {
                 $act_user = ActividadUsuario::model()->find(array('condition'=>'tbl_usuarios_id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
@@ -146,8 +146,8 @@ class AppController extends Controller
                   $act_user->save(false);
                 } 
                 $response->save(false);
-
               }
+
               //si ya no quiere serlo
               if(!$data['page']['liked']) 
               {
@@ -155,13 +155,15 @@ class AppController extends Controller
                 $response->save(false);
               }
             }
-
-            /*
-                 $m=new Login;
-                 $m->username=$response->id;
-                 $m->login();
-                 $this->redirect(array('App/Profile/'.$user_profile['id']));
-                 */
+            
+            if($response->isFan){
+              $m=new Login;
+              $m->username=$response->id;
+              $m->login();
+              $this->redirect(array('App/Profile/'.$user_profile['id']));
+            }else{
+               $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+            }
             
         }
     }else{
