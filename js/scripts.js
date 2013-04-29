@@ -25,15 +25,15 @@
   var href= $(this).attr('href');
    
    alert('click mis memes ajax');
-  /*
+  
    $.ajax({
           type: "GET",
-          url: href,
+          url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes",
           success: function(data){
             $("#container").html(data);
           }
         });
-   */
+   
       return false;
     
   });
