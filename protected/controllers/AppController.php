@@ -161,8 +161,7 @@ class AppController extends Controller
       throw new CHttpException(404,'The requested page does not exist.');
     }
     $avatarImg=$response->Avatar->avatar_img;
-    $modelComics= new UsuariosHasTblComics;
-    $comics=$modelComics->getMyComics($response->id);
+    $comics=UsuariosHasTblComics::getMyComics($response->id);
     $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
 
     header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
