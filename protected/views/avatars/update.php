@@ -155,7 +155,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   caraWebInsert=true; currentSelected = null; scale = 1; scaleUpFactor= 1.05; trans = null;
   var isFirst=true;
   
-  stagePersonaje = new Kinetic.Stage({container: "personajeCanvas",width: 258,height: 460});
+  stagePersonaje = new Kinetic.Stage({container: "personajeCanvas",width: 250,height: 444});
   layerPersonaje = new Kinetic.Layer();
   stagePersonaje.getContainer().addEventListener("click", function(evt) { 
     if(currentSelected){

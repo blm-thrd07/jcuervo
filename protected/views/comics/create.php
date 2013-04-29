@@ -118,8 +118,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
-    width: 392,
-    height: 294,
+    width: 380,
+    height: 285,
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
