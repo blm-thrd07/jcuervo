@@ -67,7 +67,7 @@ class AppController extends Controller
     ));
    
     $user =$facebook->getUser();
-
+    $loginUrl=null;
 
     if ($user) {
        try {
