@@ -52,7 +52,7 @@ class AppController extends Controller
 
   public function actionLogin(){
 
-
+$loginUrl=null;
     if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
       $this->redirect(array('App/admin'));
     }
