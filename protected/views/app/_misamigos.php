@@ -29,7 +29,7 @@
             
 
           <?
-              $count=0;
+              $count=1;
            if(count($comicsAmigos)!=0){
              foreach ($comicsAmigos as $key => $value) {    
                ?>    
