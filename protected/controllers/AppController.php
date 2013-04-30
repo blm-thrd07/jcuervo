@@ -35,8 +35,10 @@ class AppController extends Controller
   }
 
   public function actionAdmin(){
+    print_r($_POST);
     if(isset($_POST['admin']) && $_POST['admin']==="usuarios"){
       $this->render("usuariosadmin");
+      Yii::app()->end();
     }
 
     if(Yii::app()->session['admin_jcuervo']){
