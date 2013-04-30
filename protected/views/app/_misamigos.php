@@ -36,7 +36,7 @@
                   
                   <?
 
-                  if($count==0){
+                  if($count==1){
 
                     ?>
                      <div class="slide itemThumbs">
@@ -51,15 +51,19 @@
                   
 
                   <? 
-                 if($count==0){ 
+                 if($count==3){ 
 
                     ?>
                   </div>
                  
                  <?  
-                 } 
-                 
+                   } 
+                   $count++;
                  ?>
+
+                <? if($count==3){
+                  $count=1;
+                }?>
 
                 <?
                          //      $count++;
