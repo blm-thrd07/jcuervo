@@ -1,7 +1,8 @@
 
 <h2> Administrador </h2>
 
-<?php /*echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php 
+/*echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -11,6 +12,19 @@ $model = new Comics('search');
 $model->unsetAttributes();
 if(isset($_GET['Comics']))
 	$model->attributes=$_GET['Comics'];
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$.fn.yiiGridView.update('cara-web-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 
 ?>
 
@@ -118,9 +132,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
         }
     });
 
-	/*var item = $("form input:checkbox:checked");
-	if(item.length==0) {
-		alert('Plese select checkbox!');
-		return false;
-	}*/
 </script>
