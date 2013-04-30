@@ -214,6 +214,14 @@ FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
       return false;
   }
 
+ $(function() {
+    return $('.js-slides, .js-slides-comic').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
 
 
 
