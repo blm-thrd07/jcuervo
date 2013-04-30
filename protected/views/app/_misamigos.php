@@ -27,100 +27,26 @@
        <div class="js-slides">
           <div class="slides_container">
             
-       
 
-         <div class="slide itemThumbs">
+          <?
 
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-            </div>
-            <div class="slide itemThumbs">
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
-              
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
+           if(count($comicsAmigos)!=0){
+             foreach ($comicsAmigos as $key => $value) { 
+                   
+               ?>    
+                  <div class="slide itemThumbs">
 
-        </div>
+                  <?  echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'"  id="'.$value["id"].'"  class="js-lightbox cdetail">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['id_facebook'].'">'.CHtml::image('https://graph.facebook.com/'.$value['id_facebook'].'/picture').'</a></div></div></div>'; ?>
+                  
+                   </div>
+
+
+                <?
+              }
+            }  
+               
+          ?>
+
 
         </div>
         <a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
