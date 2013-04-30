@@ -46,7 +46,7 @@
                   <? if($count==9){ ?>
                        </div>
                  
-                 <?   $count=1;   } ?>
+                 <?   $count=0;   } ?>
 
                 <?
                $count++;
