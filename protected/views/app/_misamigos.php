@@ -34,42 +34,26 @@
              foreach ($comicsAmigos as $key => $value) {    
                ?>    
                   
-                  <?
-
-                  if($count==1){
-
-                    ?>
-                     <div class="slide itemThumbs">
-                    <? 
-                  } 
-
-                  ?>
+                  <? if($count==1){ ?>
+                    <div class="slide itemThumbs">
+                  
+                  <?  }  ?>
                   
                   <?
                     echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'"  id="'.$value["id"].'"  class="js-lightbox cdetail">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['id_facebook'].'">'.CHtml::image('https://graph.facebook.com/'.$value['id_facebook'].'/picture').'</a></div></div></div>'; 
                   ?>
                   
 
-                  <? 
-                 if($count==9){ 
-                     //$count=1;
-
-                    ?>
+                  <? if($count==9){  ?>
+                  
                   </div>
                  
-                 <?
-
-  
-                   }else{
-                        $count++;
-                   } 
-                 ?>
+                 <? }  ?>
 
                 
 
                 <?
-                         //      $count++;
-
+                  $count++;       
               }
             }  
                
