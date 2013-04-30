@@ -31,10 +31,6 @@
 
          <div class="slide itemThumbs">
 
-              <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
-                  <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
-                </div>
-              </div>
               <div class="itemThumbnail">
                 <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a>
                   <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div>
