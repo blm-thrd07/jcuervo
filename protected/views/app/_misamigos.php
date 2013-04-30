@@ -43,10 +43,10 @@
                   ?>
                   
 
-                  <? if($count==12){ ?>
+                  <? if($count==9){ ?>
                        </div>
                  
-                 <?   $count=0;   } ?>
+                 <?   $count=1;   } ?>
 
                 <?
                $count++;
