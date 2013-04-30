@@ -51,13 +51,13 @@
                   
 
                   <? 
-                  if($count==12){ 
+                  if($count==3){ 
 
                     ?>
                        </div>
                  
                  <?  
-                  $count=0;   } 
+                 $count=0;   } 
 
                   ?>
 
