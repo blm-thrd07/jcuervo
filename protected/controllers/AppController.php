@@ -35,12 +35,12 @@ class AppController extends Controller
   }
 
   public function actionAdmin(){
+    if($_POST['admin']==="usuarios"){
+      $this->render("usuariosadmin");
+    }
+
     if(Yii::app()->session['admin_jcuervo']){
-      $model = new Comics('search');
-      $model->unsetAttributes();
-      if(isset($_GET['Comics']))
-        $model->attributes=$_GET['Comics'];
-      $this->render("admin",array('model'=>$model));
+      $this->render("admin");
       Yii::app()->end();
     }
 

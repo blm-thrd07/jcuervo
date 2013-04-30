@@ -1,6 +1,9 @@
 
 <h2> Administrador </h2>
 
+<a href="echo CController::createUrl('app/admin',array('admin/usuariosadmin'));"/>
+
+
 <?php 
 
 /*echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
@@ -9,7 +12,10 @@
 	'model'=>$model,
 ));*/
 
-
+$model = new Comics('search');
+$model->unsetAttributes();
+if(isset($_GET['Comics']))
+	$model->attributes=$_GET['Comics'];
 
 Yii::app()->clientScript->registerScript('search', "
 
@@ -65,6 +71,8 @@ $('#admin-usuarios-grid').submit(function(){
 		),*/
 	),
 )); 
+
+
 
 ?>
 <script type="text/javascript">
