@@ -29,22 +29,25 @@
             
 
           <?
-
+             $count=1;
            if(count($comicsAmigos)!=0){
              foreach ($comicsAmigos as $key => $value) { 
-                   
+               
                ?>    
-                  
+                  <? if($count==9){?>
                   <div class="slide itemThumbs">
-
+                   <?} ?>
                 
-                  <?  //echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'"  id="'.$value["id"].'"  class="js-lightbox cdetail">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['id_facebook'].'">'.CHtml::image('https://graph.facebook.com/'.$value['id_facebook'].'/picture').'</a></div></div></div>'; ?>
+                  <?  echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'"  id="'.$value["id"].'"  class="js-lightbox cdetail">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a><div><a href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/Profile/'.$value['id_facebook'].'">'.CHtml::image('https://graph.facebook.com/'.$value['id_facebook'].'/picture').'</a></div></div></div>'; ?>
                   
-                  
+                <? if($count==9){?>
                  </div>
+
+                <?} ?>
 
 
                 <?
+                $count++;
               }
             }  
                
@@ -52,7 +55,9 @@
 
 
         </div>
-        <a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
+         <? if($count==9){?>
+         <a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
         
+        <? $count=0; } ?>
       </div>
 
