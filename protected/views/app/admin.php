@@ -87,7 +87,7 @@ $('#admin-usuarios-grid').submit(function(){
 		      type: "POST",
 		      data: { id_comic: id },
 		      url: BaseUrl+"/index.php/Comics/hidden",
-		      success: function(data){ /*alert(data);*/ },
+		      success: function(data){ alert(data); },
 		      error: function(data) { 
 		        console.log("no eliminado");
 		      }
@@ -98,7 +98,7 @@ $('#admin-usuarios-grid').submit(function(){
 		      type: "POST",
 		      data: { id_comic: id },
 		      url: BaseUrl+"/index.php/Comics/special",
-		      success: function(data){ /*alert(data);*/ },
+		      success: function(data){ alert(data); },
 		      error: function(data) { 
 		        console.log("no eliminado");
 		      }
