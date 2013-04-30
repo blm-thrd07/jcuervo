@@ -40,7 +40,7 @@ class AppController extends Controller
       $model->unsetAttributes();
       if(isset($_GET['Comics']))
         $model->attributes=$_GET['Comics'];
-      $this->render("admin");
+      $this->render("admin",array('model'=>$model));
       Yii::app()->end();
     }
 
@@ -50,7 +50,7 @@ class AppController extends Controller
         $model->unsetAttributes();
         if(isset($_GET['Comics']))
           $model->attributes=$_GET['Comics'];
-        $this->render("admin");
+        $this->render("admin",array('model'=>$model));
         Yii::app()->end();
       }
     }
