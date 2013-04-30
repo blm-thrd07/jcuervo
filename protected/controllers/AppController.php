@@ -35,7 +35,7 @@ class AppController extends Controller
   }
 
   public function actionAdmin(){
-    if($_POST['admin']==="usuarios"){
+    if(isset($_POST['admin']) && $_POST['admin']==="usuarios"){
       $this->render("usuariosadmin");
     }
 
