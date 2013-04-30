@@ -63,15 +63,15 @@ $('#admin-comic-grid').submit(function(){
 
 echo "<br></br><br></br>";
 
-$model = new Usuarios('search');
-$model->unsetAttributes();
+$modelUsuarios = new Usuarios('search');
+$modelUsuarios->unsetAttributes();
 if(isset($_GET['Usuarios']))
-	$model->attributes=$_GET['Usuarios'];
+	$modelUsuarios->attributes=$_GET['Usuarios'];
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'dataProvider'=>$modelUsuarios->search(),
+	'filter'=>$modelUsuarios,
 	'columns'=>array(
 		'id',
 		'correo',
