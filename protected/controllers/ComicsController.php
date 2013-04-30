@@ -220,7 +220,7 @@ class ComicsController extends Controller
 	}
 
 	public function actionHidden(){
-		if(isset(Yii::app()->session['admin_jcuervo']) && Yii::app()->session['admin_jcuervo']==="admjcuervoesp"){
+		if(isset(Yii::app()->session['admin_jcuervo']) && Yii::app()->session['admin_jcuervo']==="userlogged"){
 			$comic = $this->loadModel($_POST['id_comic']);
 			$comic->isHidden = !$comic->isHidden;
 			$comic->save(false);
@@ -229,7 +229,7 @@ class ComicsController extends Controller
 	}
 
 	public function actionSpecial(){
-		if(isset(Yii::app()->session['admin_jcuervo']) && Yii::app()->session['admin_jcuervo']==="admjcuervoesp"){
+		if(isset(Yii::app()->session['admin_jcuervo']) && Yii::app()->session['admin_jcuervo']==="userlogged"){
 			$comic = $this->loadModel($_POST['id_comic']);
 			$comic->isSpecial = !$comic->isSpecial;
 			$comic->save(false);
