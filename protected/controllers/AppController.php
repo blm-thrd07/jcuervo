@@ -36,6 +36,10 @@ class AppController extends Controller
 
   public function actionAdmin(){
     if(Yii::app()->session['admin_jcuervo']){
+      $model = new Comics('search');
+      $model->unsetAttributes();
+      if(isset($_GET['Comics']))
+        $model->attributes=$_GET['Comics'];
       $this->render("admin");
       Yii::app()->end();
     }
@@ -43,6 +47,9 @@ class AppController extends Controller
     if(isset($_POST['admin_user']) && isset($_POST['admin_password']) ){
       if(Usuarios::ADMIN_USER === $_POST['admin_user'] && Usuarios::ADMIN_PASSWORD === $_POST['admin_password']){
         Yii::app()->session['admin_jcuervo']="admjcuervoesp";
+        $model->unsetAttributes();
+        if(isset($_GET['Comics']))
+          $model->attributes=$_GET['Comics'];
         $this->render("admin");
         Yii::app()->end();
       }

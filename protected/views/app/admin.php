@@ -9,10 +9,7 @@
 	'model'=>$model,
 ));*/
 
-$model = new Comics('search');
-$model->unsetAttributes();
-if(isset($_GET['Comics']))
-	$model->attributes=$_GET['Comics'];
+
 
 Yii::app()->clientScript->registerScript('search', "
 
