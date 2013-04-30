@@ -30,6 +30,7 @@ $('#admin-comic-grid').submit(function(){
 	'id'=>'admin-comic-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'ajaxUpdate' => true,
 	'columns'=>array(
 		'id',
 		'imagen',
@@ -72,6 +73,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$modelUsuarios->search(),
 	'filter'=>$modelUsuarios,
+	'ajaxUpdate' => true,
 	'columns'=>array(
 		'id',
 		'correo',
