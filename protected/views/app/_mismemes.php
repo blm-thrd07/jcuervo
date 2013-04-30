@@ -25,68 +25,8 @@
 <div class="js-slides">
     <div class="slides_container">        
        <div class="slide itemThumbs"> 
-<div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-            </div>
-            <div class="slide itemThumbs">
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-              <div class="itemThumbnail">
-                <div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://ima.gs/transparent/000000/A2A2A2/640x480.png"></a></div>
-              </div>
-            </div>
-          </div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
-        </div>
-         <?
 
-         /*
+         
 
          <? if(is_array($comics)){
          if(count($comics)!=0){
@@ -96,8 +36,9 @@
            }
          }  
         ?>
-        */
-        ?>
 
-   
+       </div>
+
+      </div>
+</div>
 </section>
