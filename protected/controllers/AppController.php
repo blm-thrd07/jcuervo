@@ -35,11 +35,6 @@ class AppController extends Controller
   }
 
   public function actionAdmin(){
-
-    if(isset($_GET['admin'] && $_GET['admin']==="salir" && Yii::app()->session['admin_jcuervo']){
-      //destroy yii session
-    }
-
     if(isset($_GET['admin']) && $_GET['admin']==="usuarios" && Yii::app()->session['admin_jcuervo']){
       $this->render("usuariosadmin");
       Yii::app()->end();
