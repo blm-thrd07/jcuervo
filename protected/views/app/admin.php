@@ -15,11 +15,8 @@ if(isset($_GET['Comics']))
 	$model->attributes=$_GET['Comics'];
 
 Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form-comic').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
+
+$('#admin-comic-grid').submit(function(){
 	$.fn.yiiGridView.update('admin-comic-grid', {
 		data: $(this).serialize()
 	});
