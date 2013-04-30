@@ -1,5 +1,5 @@
 
-<h2> Administrador </h2>
+<h2> Administrador Comics</h2>
 
 <a href="<?php echo CController::createUrl('app/admin').'/admin/usuarios'; ?>">Usuarios Admin</a>
 

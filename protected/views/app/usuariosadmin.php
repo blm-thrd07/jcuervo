@@ -1,5 +1,9 @@
+
+<h2> Administrador Usuarios</h2>
+
+<a href="<?php echo CController::createUrl('app/admin'); ?>">Usuarios Admin</a>
+
 <?php
-echo "<br></br><br></br>";
 
 $modelUsuarios = new Usuarios('search');
 $modelUsuarios->unsetAttributes();
