@@ -99,8 +99,5 @@
         */
         ?>
 
-       </div>
-
-      </div>
-</div>
+   
 </section>
