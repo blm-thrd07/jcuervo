@@ -35,18 +35,24 @@ class AppController extends Controller
   }
 
   public function actionAdmin(){
-    if(isset($_GET['admin']) && $_GET['admin']==="usuarios" && Yii::app()->session['admin_jcuervo']){
+
+    if(isset($_GET['admin'] && $_GET['admin']==="salir" && Yii::app()->session['admin_jcuervo']==="adminjcuervousuarioscomic"){
+      Yii::app()->session['admin_jcuervo']="";
+    }
+
+    if(isset($_GET['admin']) && $_GET['admin']==="usuarios" && Yii::app()->session['admin_jcuervo']==="adminjcuervousuarioscomic"){
       $this->render("usuariosadmin");
       Yii::app()->end();
     }
 
-    if(Yii::app()->session['admin_jcuervo']){
+    if(Yii::app()->session['admin_jcuervo']==="adminjcuervousuarioscomic"){
       $this->render("admin");
       Yii::app()->end();
     }
 
     if(isset($_POST['admin_user']) && isset($_POST['admin_password']) ){
       if(Usuarios::ADMIN_USER === $_POST['admin_user'] && Usuarios::ADMIN_PASSWORD === $_POST['admin_password']){
+        Yii::app()->session['admin_jcuervo']="adminjcuervousuarioscomic";
         $this->render("admin");
         Yii::app()->end();
       }

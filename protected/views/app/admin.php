@@ -2,6 +2,7 @@
 <h2> Administrador Comics</h2>
 
 <a href="<?php echo CController::createUrl('app/admin').'/admin/usuarios'; ?>">Usuarios Admin</a>
+<a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>">Salir</a>
 
 
 <?php 
