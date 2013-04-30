@@ -52,12 +52,13 @@
 
                   <? 
                  if($count==3){ 
-                     $count=1;
+                     //$count=1;
                     ?>
                   </div>
                  
                  <?  
                    }else{
+                    exit;
                         $count++;
                    } 
                  ?>
