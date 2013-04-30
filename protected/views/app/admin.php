@@ -19,6 +19,13 @@ $('#admin-comic-grid').submit(function(){
 	});
 	return false;
 });
+
+$('#admin-usuarios-grid').submit(function(){
+	$.fn.yiiGridView.update('admin-usuarios-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
 ");
 
 ?>
