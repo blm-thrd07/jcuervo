@@ -53,12 +53,14 @@
                   <? 
                  if($count==3){ 
                      //$count=1;
+
                     ?>
                   </div>
                  
-                 <?  
+                 <?
+                                                       exit;
+  
                    }else{
-                    exit;
                         $count++;
                    } 
                  ?>
