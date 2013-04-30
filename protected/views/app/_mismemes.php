@@ -26,7 +26,6 @@
     <div class="slides_container">        
        <div class="slide itemThumbs"> 
 
-         
 
          <? if(is_array($comics)){
          if(count($comics)!=0){
