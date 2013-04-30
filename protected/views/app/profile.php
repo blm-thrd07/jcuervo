@@ -37,20 +37,34 @@
 
 <div class="js-slides">
     <div class="slides_container">        
-       <div class="slide itemThumbs"> 
-
-         <? if(is_array($comics)){
-         if(count($comics)!=0){
-           foreach ($comics as $key => $value) {
+       
+  <?
+              $count=1;
+           if(count($comics)!=0){
+             foreach ($comics as $key => $value) {    
+               ?>    
+                  <? if($count==1){ ?>
+                    <div class="slide itemThumbs">
+                  <?  }  ?>
+                  
+                  <? if($count<10)
                  echo '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
-             } 
-           }
-         }  
-        ?>
+                  ?>
+                <? if($count==9){  ?>
+                  </div>
+                 <? $count=0; }  ?>
+                <?
+                  $count++;       
+              }
+            }     
+          ?>
 
-       </div>
+
+
 
       </div>
 </div>
+    <? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
+
 </section>
 </div>
