@@ -29,19 +29,19 @@
             
 
           <?
-              $count=1;
+              $count=0;
            if(count($comicsAmigos)!=0){
              foreach ($comicsAmigos as $key => $value) {    
                ?>    
                   
                   <?
 
-                  //if($count==1){
+                  if($count==0){
 
                     ?>
-                  <div class="slide itemThumbs">
-                  <? 
-                  //} 
+                     <div class="slide itemThumbs">
+                    <? 
+                  } 
 
                   ?>
                   
@@ -51,16 +51,15 @@
                   
 
                   <? 
-                  //if($count==4){ 
+                 if($count==0){ 
 
                     ?>
-                       </div>
+                  </div>
                  
                  <?  
-                 //$count=1;   
-              // } 
-
-                  ?>
+                 } 
+                 
+                 ?>
 
                 <?
                          //      $count++;
