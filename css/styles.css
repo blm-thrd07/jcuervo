@@ -1503,7 +1503,6 @@ i {
 #personajeCanvas, #comicCanvas {
   clear: both;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2O8O4HLh4EIwAhSqFzwbQshtaMK8YYQ0cEDAASpJc5/1r+xAAAAAElFTkSuQmCC");
-  outline: 5px solid #980d2e;
   margin-bottom: 10px;
 }
 #personajeCanvas:after, #personajeCanvas:before, #comicCanvas:after, #comicCanvas:before {
@@ -1512,6 +1511,10 @@ i {
 }
 #personajeCanvas:after, #comicCanvas:after {
   clear: both;
+}
+
+#personajeCanvas {
+  outline: 5px solid #980d2e;
 }
 
 #crearPersonaje {
