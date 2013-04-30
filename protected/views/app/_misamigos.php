@@ -51,14 +51,14 @@
                   
 
                   <? 
-                 if($count==3){ 
+                 if($count==9){ 
                      //$count=1;
 
                     ?>
                   </div>
                  
                  <?
-                                                       exit;
+
   
                    }else{
                         $count++;
