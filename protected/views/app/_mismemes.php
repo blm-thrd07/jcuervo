@@ -1,3 +1,13 @@
+<script>
+ $(function() {
+    return $('.js-slides, .js-slides-comic').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
+</script> 
 <section id="panelPersonaje">
         <div id="memeGeneratorLogo"><span>Memespecial</span><span>Generator</span></div>
         <h1><?echo $json['usuario']['nombre']; ?></h1>

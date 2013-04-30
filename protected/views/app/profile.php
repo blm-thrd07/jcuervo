@@ -1,3 +1,13 @@
+<script>
+ $(function() {
+    return $('.js-slides, .js-slides-comic').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
+</script> 
 <div id="container">
 
 <section id="panelPersonaje">
@@ -42,9 +52,5 @@
 
       </div>
 </div>
-
-
-
-
 </section>
 </div>
