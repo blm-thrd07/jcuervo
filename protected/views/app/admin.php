@@ -111,7 +111,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		      type: "POST",
 		      data: { id_comic: id },
 		      url: BaseUrl+"/index.php/Comics/hidden",
-		      success: function(data){ alert(data); },
+		      success: function(data){ /*alert(data);*/ },
 		      error: function(data) { 
 		        console.log("no eliminado");
 		      }
@@ -122,7 +122,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		      type: "POST",
 		      data: { id_comic: id },
 		      url: BaseUrl+"/index.php/Comics/special",
-		      success: function(data){ alert(data); },
+		      success: function(data){ /*alert(data);*/ },
 		      error: function(data) { 
 		        console.log("no eliminado");
 		      }
