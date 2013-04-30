@@ -46,7 +46,7 @@
                   <? if($count==9){ ?>
                        </div>
                  
-                 <?   $count=0;   } ?>
+                 <?   $count=1;   } ?>
 
                 <?
                $count++;
@@ -59,6 +59,5 @@
 
         </div>
         <a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>
-        
       </div>
 
