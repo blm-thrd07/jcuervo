@@ -78,7 +78,7 @@ $('#admin-usuarios-grid').submit(function(){
 ?>
 <script type="text/javascript">
 	var BaseUrl = "/php2/jcuervo"; 
-	$('input[type="checkbox"]').change(function () {
+	$('input[type="checkbox"]').live("change",function () {
         var id = $(this).val();
         var check = $(this).attr('checked');
         var tipo = $(this).attr('name');
