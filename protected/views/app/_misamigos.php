@@ -41,7 +41,7 @@
                     ?>
                   <div class="slide itemThumbs">
                   <? 
-                  } 
+                  //} 
 
                   ?>
                   
