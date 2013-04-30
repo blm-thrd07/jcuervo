@@ -1900,9 +1900,6 @@ i {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
   cursor: pointer;
 }
-.itemThumbnail > div {
-  border: 5px solid black;
-}
 .itemThumbnail > div img {
   width: 100%;
   vertical-align: bottom;
