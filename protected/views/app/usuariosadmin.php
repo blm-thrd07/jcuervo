@@ -2,7 +2,7 @@
 <h2> Administrador Usuarios</h2>
 
 <a href="<?php echo CController::createUrl('app/admin'); ?>">Regresar</a>
-
+<div id="myerrordiv"></div>
 <?php
 
 
@@ -10,8 +10,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$modelUsuarios->search(),
 	'filter'=>$modelUsuarios,
-	//'ajaxUpdate' => true,
-	//'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
+	'ajaxUpdate' => true,
+	'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
 	'columns'=>array(
 		'id',
 		'correo',
