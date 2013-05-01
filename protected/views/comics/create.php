@@ -383,16 +383,18 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
         layerComic.add(obj);
         if(aux==="objeto"){ 
+          url_img="/Avatar/objetos/";
           objetos.push(obj);
         }
         if(aux==="amigo"){ 
+          url_img="/Avatar/";
           amigos.push(obj);
         }
         layerComic.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
-      imageObj.src=BaseUrl+"/Avatar/"+img;
+      imageObj.src=BaseUrl+url_img+img;
 
       return true;
     }
