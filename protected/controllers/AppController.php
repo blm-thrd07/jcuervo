@@ -35,14 +35,14 @@ class AppController extends Controller
   }
 
   public function actionAdminUsuarios(){
-    if(Yii::app()->session['admin_jcuervo']==="userlogged"){ 
+    //if(Yii::app()->session['admin_jcuervo']==="userlogged"){ 
       $modelUsuarios = new Usuarios('search');
       $modelUsuarios->unsetAttributes();
       if(isset($_GET['Usuarios']))
         $modelUsuarios->attributes=$_GET['Usuarios'];
       $this->render("usuariosadmin",array('modelUsuarios'=>$modelUsuarios));
-    } else{
-      $this->redirect(array('App/usuariosadmin'));
+    if(true){}} else{
+      $this->redirect(array('App/admin'));
     }
   }
 
@@ -54,7 +54,7 @@ class AppController extends Controller
         $model->attributes=$_GET['Comics'];
       $this->render("comicsadmin",array('model'=>$model));
     } else{
-      $this->redirect(array('App/comicsadmin'));
+      $this->redirect(array('App/admin'));
     }
   }
 
