@@ -74,13 +74,14 @@
             if(is_array($amigos_avatars)){
               if($count>12) echo '<div class="js-slides"><div class="slides_container">';
               foreach ($amigos_avatars as $key => $value) {  
+                if(!$bandera) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>uniqid())).'<div></div></div>'; 
                 if($key%12==0 && $count>12) {
                   if($bandera) echo '</div>'; else $bandera=true;
                   echo '<div class="slide itemThumbs">';
                 }
                 echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'<div><a href="#">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div></div>'; 
               }
-              if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+              if($count>12) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';
             }
         ?>
       </div>
@@ -228,8 +229,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
         }
       }
-      if(currentSelected.attrs.tipo != "MiAvatar")
-        currentSelected.remove();
+      currentSelected.remove();
     }
     if(currentText) currentText.remove();
     $("#textinput").attr("class", "inputClose");
