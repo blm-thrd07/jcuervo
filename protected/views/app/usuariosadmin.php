@@ -12,7 +12,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'filter'=>$modelUsuarios,
 	'ajaxUpdate' => 'admin-usuarios-grid',
 	'ajaxUrl'=>Yii::app()->createUrl('App/adminusuarios'),
-	'ajaxUpdateError'=>'function(xhr,ts,et,err){ $.fn.yiiGridView.update("admin-usuarios-grid",{data: err.substring(11,er.end)} ) }',
+	'ajaxUpdateError'=>'function(xhr,ts,et,err){ $.fn.yiiGridView.update("admin-usuarios-grid",{data: err.substring(11,err.length)} ) }',
 	'columns'=>array(
 		'id',
 		'correo',
