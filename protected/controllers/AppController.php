@@ -66,7 +66,8 @@ class AppController extends Controller
 
 $loginUrl=null;
     if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
-      $this->redirect(array('App/admin'));
+      echo "hola";
+      //$this->redirect(array('App/admin'));
     }
       
     //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');

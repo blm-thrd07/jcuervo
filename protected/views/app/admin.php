@@ -1,17 +1,15 @@
 
 <h2> Administrador Comics</h2>
 
-<a href="<?php echo CController::createUrl('app/admin').'/admin/usuarios'; ?>">Usuarios Admin</a>
-<a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>" style="float:'right'">Salir</a>
+<div style="float:'left';">
+	<a href="<?php echo CController::createUrl('app/admin').'/admin/usuarios'; ?>">Usuarios Admin</a>
+</div>
+<div style="float:'right';">
+	<a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>">Salir</a>
+</div>
 
 
 <?php 
-
-/*echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form-comic" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-));*/
 
 $model = new Comics('search');
 $model->unsetAttributes();
