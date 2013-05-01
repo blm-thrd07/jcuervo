@@ -15,6 +15,7 @@
             'header' => 'Imagen', 
 	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
 	        'type'=>'raw',
+	       	'htmlOptions'=>array('width'=>30),
         ),
 		'imagen',
 		'date',
@@ -29,7 +30,6 @@
 	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id))',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
-	        //'visible'=>false,
         ),
         array(
             'header' => 'es Especial?',
@@ -37,7 +37,6 @@
 	        'value'=>'CHtml::checkBox("cb_special",$data->isSpecial,array("value"=>$data->id))',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
-	        //'visible'=>false,
         ),
 		/*array(
 			'class'=>'CButtonColumn',
