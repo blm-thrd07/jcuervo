@@ -17,7 +17,7 @@ class AppController extends Controller
   {
     return array(
       array('allow',  // allow all users to perform 'index' and 'view' actions
-        'actions'=>array('view','Logout','login','Dest','error','admin'),
+        'actions'=>array('view','Logout','login','Dest','error','admin','AdminUsuarios','AdminComics'),
         'users'=>array('*'),
       ),
       array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -34,6 +34,30 @@ class AppController extends Controller
     );
   }
 
+  public function actionAdminUsuarios(){
+    if(Yii::app()->session['admin_jcuervo']==="userlogged"){ 
+      $modelUsuarios = new Usuarios('search');
+      $modelUsuarios->unsetAttributes();
+      if(isset($_GET['Usuarios']))
+        $modelUsuarios->attributes=$_GET['Usuarios'];
+      $this->render("usuariosadmin");
+    } else{
+      $this->redirect(array('App/admin'));
+    }
+  }
+
+  public function actionAdminComics(){
+    if(Yii::app()->session['admin_jcuervo']==="userlogged"){
+      $model = new Comics('search');
+      $model->unsetAttributes();
+      if(isset($_GET['Comics']))
+        $model->attributes=$_GET['Comics'];
+      $this->render("comicsadmin");
+    } else{
+      $this->redirect(array('App/admin'));
+    }
+  }
+
   public function actionAdmin(){
 
     if(isset($_GET['admin']) && $_GET['admin']==="salir" && Yii::app()->session['admin_jcuervo']==="userlogged"){
@@ -42,20 +66,15 @@ class AppController extends Controller
       Yii::app()->end();
     }
 
-    if(isset($_GET['admin']) && $_GET['admin']==="usuarios" && Yii::app()->session['admin_jcuervo']==="userlogged"){
-      $this->render("usuariosadmin");
-      Yii::app()->end();
-    }
-
     if(Yii::app()->session['admin_jcuervo']==="userlogged"){
       $this->render("admin");
       Yii::app()->end();
     }
-
+    
     if(isset($_POST['admin_user']) && isset($_POST['admin_password']) ){
       if(Usuarios::ADMIN_USER === $_POST['admin_user'] && Usuarios::ADMIN_PASSWORD === $_POST['admin_password']){
         Yii::app()->session['admin_jcuervo']="userlogged";
-        $this->render("admin");
+        $this->redirect(array('App/admin'));
         Yii::app()->end();
       }
     }
@@ -64,11 +83,10 @@ class AppController extends Controller
 
   public function actionLogin(){
 
-$loginUrl=null;
-    if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
-      echo "hola";
+    $loginUrl=null;
+    //if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
       //$this->redirect(array('App/admin'));
-    }
+    //}
       
     //header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
    header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');

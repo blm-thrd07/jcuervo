@@ -1,14 +1,10 @@
 
 <h2> Administrador Usuarios</h2>
 
-<a href="<?php echo CController::createUrl('app/admin'); ?>">Comics Admin</a>
+<a href="<?php echo CController::createUrl('app/admin'); ?>">Regresar</a>
 
 <?php
 
-$modelUsuarios = new Usuarios('search');
-$modelUsuarios->unsetAttributes();
-if(isset($_GET['Usuarios']))
-	$modelUsuarios->attributes=$_GET['Usuarios'];
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',

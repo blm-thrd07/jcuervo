@@ -68,4 +68,5 @@ class Login extends CActiveRecord
 			return false;
 	}
 
+
 }
