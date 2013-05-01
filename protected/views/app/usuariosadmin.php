@@ -21,19 +21,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'header' => 'es Fan?',
             'name' => 'isFan',
             'value' => '($data->isFan == 0) ? "No" : "Si"'
-        ),/*
-        array(
-            'header' => 'comics creados',
-	        'value'=>' echo UsuariosHasTblComics::model()->count("tbl_usuarios_id=:uid",array(":uid"=>$data->id)) ',
-	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5),
         ),
         array(
             'header' => 'comics creados',
 	        'value'=>' count( UsuariosHasTblComics::getMyComics($data->id) ) ',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
-        ),*/
+        ),
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
