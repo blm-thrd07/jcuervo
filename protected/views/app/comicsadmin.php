@@ -15,7 +15,7 @@
             'header' => 'Imagen', 
 	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
 	        'type'=>'raw',
-	       	'htmlOptions'=>array('width'=>30),
+	       	'htmlOptions'=>array('width'=>10),
         ),
 		'imagen',
 		'date',
