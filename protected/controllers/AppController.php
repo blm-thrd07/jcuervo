@@ -40,7 +40,7 @@ class AppController extends Controller
       $modelUsuarios->unsetAttributes();
       if(isset($_GET['Usuarios']))
         $modelUsuarios->attributes=$_GET['Usuarios'];
-      $this->render("usuariosadmin"array('modelUsuarios'=>$modelUsuarios));
+      $this->render("usuariosadmin",array('modelUsuarios'=>$modelUsuarios));
     } else{
       $this->redirect(array('App/usuariosadmin'));
     }
