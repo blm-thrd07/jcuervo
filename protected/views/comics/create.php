@@ -71,9 +71,10 @@
         <? 
           $bandera=false;
           $count=count($amigos_avatars);
+          $id_miavatar = uniqid();
             if(is_array($amigos_avatars)){
               if($count>12) echo '<div class="js-slides"><div class="slides_container">';
-              if(!$bandera) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>uniqid())).'<div></div></div>'; 
+              if(!$bandera) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>$id_miavatar)).'<div></div></div>'; 
               foreach ($amigos_avatars as $key => $value) {  
                 if($key%12==0 && $count>12) {
                   if($bandera) echo '</div>'; else $bandera=true;
@@ -561,6 +562,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   });
  
+ insertar("MiAvatar",url_miavatar,confMiAvatar);
+
     
 ',CClientScript::POS_END);
 
