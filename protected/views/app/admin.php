@@ -2,10 +2,10 @@
 <h2> Resumen</h2>
 
 <div style="float:'left';">
-	<a href="<?php echo CController::createUrl('App/usuariosadmin'); ?>">Usuarios Admin</a>
+	<a href="<?php echo CController::createUrl('App/adminusuarios'); ?>">Usuarios Admin</a>
 </div>
 <div style="float:'left';">
-	<a href="<?php echo CController::createUrl('App/comicsadmin'); ?>">Comics Admin</a>
+	<a href="<?php echo CController::createUrl('App/admincomics'); ?>">Comics Admin</a>
 </div>
 <div style="float:'right';">
 	<a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>">Salir</a>
