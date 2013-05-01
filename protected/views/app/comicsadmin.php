@@ -11,7 +11,11 @@
 	'filter'=>$model,
 	'ajaxUpdate' => true,
 	'columns'=>array(
-		'id',
+		array(
+            'header' => 'Imagen', 
+	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen), array("items/viewslug", "slug"=>$data->id_facebook)) ',
+	        'type'=>'raw',
+        ),
 		'imagen',
 		'date',
 		array(

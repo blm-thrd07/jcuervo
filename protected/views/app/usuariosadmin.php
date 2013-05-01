@@ -18,7 +18,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'header' => 'Facebook', 
 	        'value'=>'  CHtml::link(CHtml::image("https://graph.facebook.com/".$data->id_facebook."/picture"), array("items/viewslug", "slug"=>$data->id_facebook)) ',
 	        'type'=>'raw',
-	        //'htmlOptions'=>array('width'=>30),
         ),
 		'correo',
 		'nombre',
