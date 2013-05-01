@@ -4,8 +4,6 @@
 <a href="<?php echo CController::createUrl('app/admin'); ?>">Regresar</a>
 <div id="myerrordiv"></div>
 
-
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-comic-grid',
 	'dataProvider'=>$model->search(),
@@ -41,5 +39,4 @@
 		),*/
 	),
 )); 
-
 
