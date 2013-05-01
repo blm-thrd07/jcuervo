@@ -18,22 +18,7 @@ $model->unsetAttributes();
 if(isset($_GET['Comics']))
 	$model->attributes=$_GET['Comics'];
 
-Yii::app()->clientScript->registerScript('search', "
 
-$('#admin-comic-grid').submit(function(){
-	$.fn.yiiGridView.update('admin-comic-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-
-$('#admin-comic-grid').submit(function(){
-	$.fn.yiiGridView.update('admin-comic-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 <br><br>
 <label>Numero de Usuarios: <?php echo Usuarios::model()->count(); ?></label><br>
