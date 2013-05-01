@@ -6,7 +6,7 @@ $primario: #980d2e
 
 $spacer: 10px
 
-$fx-duration: 0.3s
+$fx-duration: 0.1s
 
 +font-face("aldosemibold", font-files("aldo_pc-webfont.ttf", "aldo_pc-webfont.eot", "aldo_pc-webfont.woff", "aldo_pc-webfont.svg"))
 
@@ -22,6 +22,12 @@ $fx-duration: 0.3s
 	//+transition(color $fx-duration, background-color $fx-duration, opacity $fx-duration, -webkit-filter $fx-duration, text-indent $fx-duration)
 	+transition(all $fx-duration)
 
+
+
+@mixin btn-amarillo
+	+background-image(linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00))
+	+box-shadow(rgba(black,0.3) 0px 2px 3px)
+	+border-radius(3px)
 
 
 @mixin remove-focus

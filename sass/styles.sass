@@ -20,8 +20,7 @@ $experimental-support-for-svg: true
 	text-align: center
 	display: block
 	color: $primario
-	+background-image(linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00))
-	+box-shadow(rgba(black,0.3) 0px 2px 3px)
+	+btn-amarillo
 
 
 	&:hover
@@ -46,7 +45,7 @@ body
 	font-family: Helvetica
 	font-size: 16px
 	background-color: $fondo
-	padding: 30px 0 30px 0
+	height: 784px
 
 	border: 8px solid $primario
 
@@ -336,23 +335,25 @@ i
 	h2
 		@extend %g5
 		@extend %alpha
+		+cf
 		
 		+genericTitle
 		margin-bottom: $spacer
 		+text-shadow(rgba(white,0.5) 0px -1px 0)
 	
-	// crear nuevo
+	// btn crear nuevo
 	>a
 		+tab
 		display: block
 		+cf
 		font-size: 2em
-		margin-bottom: $spacer
+		margin-bottom: $spacer*3
 
 	div.saveBtn
 		@extend %g3
 		@extend %omega
 		text-align: right
+
 
 		a:last-of-type
 			margin-left: 10px
@@ -386,7 +387,7 @@ i
 		
 		@extend %omega
 		text-align: right
-		margin-bottom: 6px
+		margin-bottom: $spacer*5
 
 		a:last-of-type
 			margin-left: 10px
@@ -505,12 +506,13 @@ i
 
 
 a.itemAction
-	+out
+	
 	width: 100%
 	min-height: 93px
 	display: block
 	text-align: center
 	color: black
+	+btn-amarillo
 
 	i
 		display: block
@@ -610,7 +612,7 @@ a.selectedTab
 
 #comentarios
 	@extend %g5
-	margin-left: 25px
+	margin-left: 35px
 	
 	div
 		margin-bottom: $spacer
@@ -695,6 +697,7 @@ a.selectedTab
 .lb
 	background: none
 	color: white
+	border: none
 
 	// cerrar
 	>a:nth-of-type(1)
@@ -702,6 +705,7 @@ a.selectedTab
 
 
 .js-slides
+	+cf
 
 	.slides_container
 		
