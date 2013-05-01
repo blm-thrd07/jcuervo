@@ -11,6 +11,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$modelUsuarios->search(),
 	'filter'=>$modelUsuarios,
 	'ajaxUpdate' => true,
+	'ajaxUrl'=>Yii::app()->createUrl('App/UsuariosAdmin'),
 	'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
 	'columns'=>array(
 		'id',
