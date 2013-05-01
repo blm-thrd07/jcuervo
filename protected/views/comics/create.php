@@ -562,7 +562,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   });
  
- confMiAvatar.attrs.id='.$id_miavatar.';
+ confMiAvatar.attrs.id="'.$id_miavatar.'";
  insertar("amigo",url_miavatar,confMiAvatar);
 
     
