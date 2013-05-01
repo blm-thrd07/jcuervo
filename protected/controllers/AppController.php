@@ -40,7 +40,7 @@ class AppController extends Controller
       $modelUsuarios->unsetAttributes();
       if(isset($_GET['Usuarios']))
         $modelUsuarios->attributes=$_GET['Usuarios'];
-      $this->render("usuariosadmin");
+      $this->render("usuariosadmin"array('modelUsuarios'=>$modelUsuarios));
     } else{
       $this->redirect(array('App/usuariosadmin'));
     }
@@ -52,7 +52,7 @@ class AppController extends Controller
       $model->unsetAttributes();
       if(isset($_GET['Comics']))
         $model->attributes=$_GET['Comics'];
-      $this->render("comicsadmin");
+      $this->render("comicsadmin",array('model'=>$model));
     } else{
       $this->redirect(array('App/comicsadmin'));
     }
