@@ -383,17 +383,21 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
         layerComic.add(obj);
         if(aux==="objeto"){ 
-          url_img="/Avatar/objetos/";
           objetos.push(obj);
         }
         if(aux==="amigo"){ 
-          url_img="/Avatar/";
           amigos.push(obj);
         }
         layerComic.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
+      if(aux==="objeto"){ 
+        url_img="/Avatar/objetos/";
+      }
+      if(aux==="amigo"){ 
+        url_img="/Avatar/";
+      }
       imageObj.src=BaseUrl+url_img+img;
 
       return true;
@@ -556,11 +560,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.draw();
     return false;
   });
-  
-  $(document).ready(function() {
-    console.log("ready");
-  });
-  
+ 
     
 ',CClientScript::POS_END);
 
