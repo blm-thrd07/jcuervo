@@ -42,7 +42,7 @@ class AppController extends Controller
         $modelUsuarios->attributes=$_GET['Usuarios'];
       $this->render("usuariosadmin");
     } else{
-      $this->redirect(array('App/admin'));
+      $this->redirect(array('App/usuariosadmin'));
     }
   }
 
@@ -54,7 +54,7 @@ class AppController extends Controller
         $model->attributes=$_GET['Comics'];
       $this->render("comicsadmin");
     } else{
-      $this->redirect(array('App/admin'));
+      $this->redirect(array('App/comicsadmin'));
     }
   }
 
