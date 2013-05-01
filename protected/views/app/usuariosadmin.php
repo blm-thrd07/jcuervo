@@ -12,8 +12,8 @@ if(isset($_GET['Usuarios']))
 
 Yii::app()->clientScript->registerScript('search_usuarios', "
 
-$('#admin-comic-grid').submit(function(){
-	$.fn.yiiGridView.update('admin-comic-grid', {
+$('#admin-usuarios-grid').submit(function(){
+	$.fn.yiiGridView.update('admin-usuarios-grid', {
 		data: $(this).serialize()
 	});
 	return false;
