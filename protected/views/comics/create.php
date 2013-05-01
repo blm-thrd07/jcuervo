@@ -393,7 +393,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
       if(aux==="objeto"){ 
-        url_img="/Avatar/objetos/";
+        url_img="/images/objetos/";
       }
       if(aux==="amigo"){ 
         url_img="/Avatar/";
