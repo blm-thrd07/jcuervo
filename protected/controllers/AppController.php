@@ -37,8 +37,8 @@ class AppController extends Controller
   public function actionAdmin(){
 
     if(isset($_GET['admin']) && $_GET['admin']==="salir" && Yii::app()->session['admin_jcuervo']==="userlogged"){
-        Yii::app()->session['admin_jcuervo']="usernologged";
-      $this->render("adminlogin");
+      Yii::app()->session['admin_jcuervo']="usernologged";
+      $this->redirect(array('App/admin'));
       Yii::app()->end();
     }
 

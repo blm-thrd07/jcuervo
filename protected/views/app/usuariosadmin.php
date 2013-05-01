@@ -10,7 +10,7 @@ $modelUsuarios->unsetAttributes();
 if(isset($_GET['Usuarios']))
 	$modelUsuarios->attributes=$_GET['Usuarios'];
 
-Yii::app()->clientScript->registerScript('search_usuarios', "
+Yii::app()->clientScript->registerScript('search', "
 
 $('#admin-usuarios-grid').submit(function(){
 	$.fn.yiiGridView.update('admin-usuarios-grid', {
