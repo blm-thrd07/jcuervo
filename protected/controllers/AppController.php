@@ -41,9 +41,7 @@ class AppController extends Controller
       if(isset($_GET['Usuarios']))
         $modelUsuarios->attributes=$_GET['Usuarios'];
       $this->render("usuariosadmin",array('modelUsuarios'=>$modelUsuarios));
-    if(true){}} else{
-      $this->redirect(array('App/admin'));
-    }
+    
   }
 
   public function actionAdminComics(){
