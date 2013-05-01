@@ -34,8 +34,12 @@ $('#admin-usuarios-grid').submit(function(){
 	return false;
 });
 ");
-
 ?>
+
+<label>Numero de Usuarios: <?php echo Usuarios::model()->count(); ?></label>
+<label>Numero de Nuevos Usuarios: <?php echo ActividadUsuario::model()->count(); ?></label>
+<label>Numero de Comics: <?php echo Comics::model()->count(); ?></label>
+
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-comic-grid',

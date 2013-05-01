@@ -410,7 +410,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       text: initialText,
       fontSize: 18,
       fontFamily: "aldosemibold",
-      fill: "#0000 00",
+      fill: "#000000",
       width: 300,
       padding: 5,
       align: "left",
