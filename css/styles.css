@@ -2307,6 +2307,7 @@ a.selectedTab:hover {
   background: none;
   color: white;
   border: none;
+  height: auto !important;
 }
 .lb > a:nth-of-type(1) {
   margin-bottom: 20px;
