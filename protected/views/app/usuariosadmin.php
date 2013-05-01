@@ -22,7 +22,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ),
 		'correo',
 		'nombre',
-		'idFb',
 		array(
             'header' => 'es Fan?',
             'name' => 'isFan',
