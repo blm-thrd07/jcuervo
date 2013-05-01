@@ -10,7 +10,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$modelUsuarios->search(),
 	'filter'=>$modelUsuarios,
-	'ajaxUpdate' => true,
+	//'ajaxUpdate' => true,
+	//'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
 	'columns'=>array(
 		'id',
 		'correo',
