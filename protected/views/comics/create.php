@@ -289,7 +289,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   console.log("stage: " + stageComic.getX() +" "+stageComic.getY());
 
   function insertar(obj,img,conf) {
-    var aux, insertar=true;
+    var aux, insertar=true,url_img;
     aux=obj;
     if(typeof conf.id==="undefined") { insertar=false; console.log("undefined"); } 
     if(obj==="objeto"){ 
