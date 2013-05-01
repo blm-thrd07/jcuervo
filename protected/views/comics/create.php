@@ -562,7 +562,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   });
  
- insertar("MiAvatar",url_miavatar,confMiAvatar);
+ insertar("amigo",url_miavatar,confMiAvatar);
 
     
 ',CClientScript::POS_END);
