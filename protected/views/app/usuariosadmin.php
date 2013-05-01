@@ -3,40 +3,41 @@
 
 <a href="<?php echo CController::createUrl('app/admin'); ?>">Regresar</a>
 <div id="myerrordiv"></div>
+<?php
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'admin-comic-grid',
+
+$this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'ajaxUpdate' => true,
+	//'ajaxUpdate' => 'admin-usuarios-grid',
+	//'ajaxUrl'=>Yii::app()->createUrl('App/adminusuarios'),
+	//'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
 	'columns'=>array(
 		'id',
-		'imagen',
-		'date',
-		array(
-            'header' => 'esta oculto?',
-            'name' => 'isHidden',
-            'value' => '($data->isHidden == 0) ? "No" : "Si"'
+		'correo',
+		'nombre',
+		/*array(
+            'header' => 'es Fan?',
+            'name' => 'isFan',
+            'value' => '($data->isFan == 0) ? "No" : "Si"'
         ),
         array(
-            'header' => 'esta oculto?',
-	        'name'=>'isHidden',
-	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id))',
+            'header' => 'comics creados',
+	        'value'=>' echo UsuariosHasTblComics::model()->count("tbl_usuarios_id=:uid",array(":uid"=>$data->id)) ',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
-	        //'visible'=>false,
         ),
         array(
-            'header' => 'es Especial?',
-	        'name'=>'isSpecial',
-	        'value'=>'CHtml::checkBox("cb_special",$data->isSpecial,array("value"=>$data->id))',
+            'header' => 'comics creados',
+	        'value'=>' count( UsuariosHasTblComics::getMyComics($data->id) ) ',
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
-	        //'visible'=>false,
-        ),
+        ),*/
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
 	),
-)); 
+)); ?>
+
 

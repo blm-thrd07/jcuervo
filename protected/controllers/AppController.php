@@ -36,7 +36,7 @@ class AppController extends Controller
 
   public function actionAdminUsuarios(){
     if(Yii::app()->session['admin_jcuervo']==="userlogged"){ 
-      $model = new Comics('search');
+      $model = new Usuarios('search');
       $model->unsetAttributes();
       if(isset($_GET['Usuarios']))
         $model->attributes=$_GET['Usuarios'];
