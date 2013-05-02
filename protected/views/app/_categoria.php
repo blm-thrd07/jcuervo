@@ -1,3 +1,13 @@
+<script>
+ $(function() {
+    return $('.js-slides, .js-slides-comic').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
+</script> 
         <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
      
 
@@ -12,14 +22,10 @@
 
           <div class="js-slides">
           <div class="slides_container">
-          <div class="slide itemThumbs response">
 
-              <?
-                          $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
-
-              ?>
+              <?  $this->renderPartial('//app/_filtros',array('resultado'=>$resultado)); ?>
 
 
-            </div>
            </div>
         </div>
+       <? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
