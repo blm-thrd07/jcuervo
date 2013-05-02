@@ -271,19 +271,25 @@ class AppController extends Controller
 
   public function actionMisAmigos(){
 
-    $model_Amigos_Avatars=new Amigos;
-    $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
+   $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+   $avatarImg=$response->Avatar->avatar_img;
+   $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
+   $model_Amigos_Avatars=new Amigos;
+   $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));   
    
    if(count($response)!= 0){
     $amigosComics=$model_Amigos_Avatars->getAmigosComics($response->id);
     $comicsAmigos=$amigosComics;
     $cantidad_amigos=count($model_Amigos_Avatars->findAll(array('condition'=>'usuarios_id='.Yii::app()->session['usuario_id'])));
-    $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos,'cantidad_amigos'=>$cantidad_amigos));
+    $this->renderPartial('//app/_misamigos',array('comicsAmigos'=>$comicsAmigos,'cantidad_amigos'=>$cantidad_amigos,'json'=>$json));
     }
   }
 
   public function actionCategoria(){
 
+    $response= Usuarios::model()->find(array('condition'=>'id=:uid','params'=>array(':uid'=>Yii::app()->session['usuario_id'])));
+    $avatarImg=$response->Avatar->avatar_img;
+    $json['usuario']=array('nombre'=>$response->nombre,'id_facebook'=>$response->id_facebook,'sexo'=>$response->sexo,'avatar_img'=>$avatarImg);
     $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
     $cantidad=$row[0]['max'];
     if($cantidad!=null){
@@ -292,7 +298,7 @@ class AppController extends Controller
         $resultado=null;
     }
 
-     $this->renderPartial('//app/_categoria',array('resultado'=>$resultado));
+     $this->renderPartial('//app/_categoria',array('resultado'=>$resultado,'json'=>$json));
 
   }
 
