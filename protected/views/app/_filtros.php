@@ -1,5 +1,18 @@
-<?
+<script>
+ $(function() {
+    return $('.js-slides, .js-slides-comic').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
+</script> 
 
+<div class="js-slides">
+<div class="slides_container">
+
+<?
 $cantidad_resultados=count($resultado);
 $count=1;
 
@@ -31,3 +44,7 @@ if($count<10){
 
 }
 ?>
+
+</div>
+</div>
+<? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
