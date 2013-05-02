@@ -21,7 +21,7 @@
 
 
           <div class="js-slides">
-          <div class="slides_container">
+          <div class="slides_container response">
 
               <?  $this->renderPartial('//app/_filtros',array('resultado'=>$resultado)); ?>
 

@@ -1,4 +1,3 @@
-
 <?
 
 $cantidad_resultados=count($resultado);
@@ -7,7 +6,7 @@ $count=1;
 for($i=0;$i<$cantidad_resultados;$i++){
 
 if($count==1){ 
-        echo   '<div class="slide itemThumbs response">';
+        echo   '<div class="slide itemThumbs">';
 }
 
 
