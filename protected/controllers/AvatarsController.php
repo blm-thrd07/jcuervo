@@ -273,7 +273,7 @@ class AvatarsController extends Controller
        $img = str_replace(' ', '+', $img);
        $data = base64_decode($img);
        $filename=uniqid().'.png';
-       $file = UPLOAD_DIR .$filename;
+       $file = UPLOAD_DIR.$filename;
        $success = file_put_contents($file, $data);
        $model->avatar_img=$filename;
        
@@ -378,9 +378,7 @@ class AvatarsController extends Controller
 		    	}
 		    }
 	    }
-       	
-        echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
-
+       
 
     } else{
 		throw new CHttpException(404,'The requested page does not exist.');
@@ -411,7 +409,10 @@ class AvatarsController extends Controller
 
 	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	    unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
-  }
+	    echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
+  	} else{
+		throw new CHttpException(404,'The requested page does not exist.');
+    }
   
   
 }
