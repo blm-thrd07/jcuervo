@@ -3,7 +3,7 @@
 
   $('.js-slides, .js-slides-comic').live('load'function(){
 
-   return $(this).slides({
+    $(this).slides({
         preload: false,
        slideSpeed: 450,
        generatePagination: false,
