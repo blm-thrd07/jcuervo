@@ -32,7 +32,7 @@
               <article id="noFriends">
                 <div id='fb-root'></div>
                 <h3>:(</h3>
-                <p>No tienes amigos compartiendo memes aún. Pero puedes invitar a que se unan.</p>
+                <p>Tus amigos no usan meme generador</p>
                 <a href="#" class="btn" onclick="FacebookInviteFriends();" ><i class="icon-group"></i> Invitar Amigos</a>
               </article>
           <? } ?>

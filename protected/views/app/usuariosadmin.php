@@ -12,11 +12,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-usuarios-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'enableSorting' => false,
 	'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
 	'columns'=>array(
 		array(
             'header' => 'Facebook', 
-	        'value'=>'  CHtml::link(CHtml::image("https://graph.facebook.com/".$data->id_facebook."/picture"), array("items/viewslug", "slug"=>$data->id_facebook)) ',
+	        'value'=>'  CHtml::link(CHtml::image("https://graph.facebook.com/".$data->id_facebook."/picture"), "https://www.facebook.com/".$data->id_facebook) ',
 	        'type'=>'raw',
         ),
 		'correo',
@@ -37,5 +38,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		),*/
 	),
 )); ?>
+
+<br><br>
 
 
