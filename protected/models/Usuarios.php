@@ -112,6 +112,6 @@ class Usuarios extends CActiveRecord
 	}
 
 	public static function isFan($id){
-		echo CHtml::encode(($data->isFan == 0) ? "No" : "Si");
+		echo CHtml::encode(($id == 0) ? "No" : "Si");
 	}
 }
