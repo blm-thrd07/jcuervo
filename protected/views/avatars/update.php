@@ -442,7 +442,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var layerfondo = new Kinetic.Layer();
     imageFondo = new Image();
     imageFondo.onload = function(){
-      fondo = new Kinetic.Image({ x: 0,y: 0,height: 444,width: 250, image=imageFondo });
+      fondo = new Kinetic.Image({ x: 0,y: 0,height: 444,width: 250, image:imageFondo });
     }
     imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar.jpg";
     stagePersonaje.add(layerfondo);
