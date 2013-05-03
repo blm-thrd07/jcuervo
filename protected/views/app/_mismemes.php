@@ -13,7 +13,7 @@
    
 
   });
-       $('.js-slides, .js-slides-comic').click();
+       //$('.js-slides, .js-slides-comic').click();
   });
 </script> 
 
