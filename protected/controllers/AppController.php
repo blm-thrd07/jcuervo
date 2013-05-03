@@ -193,7 +193,7 @@ class AppController extends Controller
               $m->login();
               $this->redirect(array('App/Profile/'.$user_profile['id']));
             }else{
-               $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+               $this->renderPartial('//app/nofan',array('loginUrl'=>$loginUrl));
             }
             
         }
