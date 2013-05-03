@@ -277,4 +277,8 @@ class ComicsController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public static function isFan($id){
+		echo ($data->isFan == 0) ? "No" : "Si";
+	}
 }
