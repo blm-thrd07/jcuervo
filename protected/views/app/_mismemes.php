@@ -1,18 +1,12 @@
 <script>
  $(function() {
 
-  $('.js-slides, .js-slides-comic').live('load'function(){
-
-    $(this).slides({
+  $('.js-slides, .js-slides-comic').slides({
         preload: false,
        slideSpeed: 450,
        generatePagination: false,
        generateNextPrev: false
     });
-
-   
-
-  });
        //$('.js-slides, .js-slides-comic').click();
   });
 </script> 
