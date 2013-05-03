@@ -399,7 +399,7 @@ class AvatarsController extends Controller
 
     
   }
-
+  
   
   
 }

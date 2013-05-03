@@ -278,7 +278,4 @@ class ComicsController extends Controller
 		}
 	}
 
-	public static function isFan($id){
-		echo CHtml::encode(($data->isFan == 0) ? "No" : "Si");
-	}
 }

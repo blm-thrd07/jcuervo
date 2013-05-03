@@ -26,7 +26,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'header' => 'es Fan?',
             'name' => 'isFan',
             //'value' => '($data->isFan == 0) ? "No" : "Si"'
-            'value'=>' Comics::isFan($data->id); '
+            'value'=>' Usuarios::isFan($data->id); '
         ),
         array(
             'header' => 'comics creados',

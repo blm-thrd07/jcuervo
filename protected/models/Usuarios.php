@@ -110,4 +110,8 @@ class Usuarios extends CActiveRecord
 			'pagination' => array('pageSize' => 9),
 		));
 	}
+
+	public static function isFan($id){
+		echo CHtml::encode(($data->isFan == 0) ? "No" : "Si");
+	}
 }
