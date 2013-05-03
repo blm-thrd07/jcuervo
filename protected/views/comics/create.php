@@ -44,7 +44,7 @@
             }
         ?>
       </div>
-      <div id="tab3" class="comicThumbs">
+      <div id="tab3" class="comicThumbs" data="<? print_r(count($amigos_avatars)); ?>">
         <? 
           $bandera=false;
           $count=count($amigos_avatars);
