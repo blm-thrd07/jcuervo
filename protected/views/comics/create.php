@@ -46,19 +46,21 @@
       </div>
       <div id="tab3" class="comicThumbs" data="<? print_r(count($amigos_avatars)); ?>">
         <? 
-          $bandera=false;
+          $bandera=false,$b=false;
           $count=count($amigos_avatars);
           $id_miavatar = uniqid();
             if(is_array($amigos_avatars)){
               if($count>5) echo '<div class="js-slides"><div class="slides_container">';
-              if(!$bandera) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>$id_miavatar)).'<div></div></div>'; 
+              
               foreach ($amigos_avatars as $key => $value) {  
                 if($key%5==0 && $count>5) {
-                  if($bandera) echo '</div>'; else $bandera=true;
+                  if($bandera) { echo '</div>'; $b=true; }else $bandera=true;
                   echo '<div class="slide itemThumbs">';
+                  if(!$b) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>$id_miavatar)).'<div></div></div>'; 
                 }
                 echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'<div><a href="#">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div></div>'; 
               }
+
               if($count>5) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';
             }
         ?>
