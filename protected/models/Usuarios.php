@@ -113,6 +113,12 @@ class Usuarios extends CActiveRecord
 
 	public static function isFan($id){
 		//echo CHtml::encode(($id == 0) ? "No" : "Si");
-		echo CHtml::encode($id);
+		$u = ActividadUsuario::model()->find('tbl_usuarios_id=:id',array(":id"=>$id));
+		if(count($u)==0){
+			echo CHtml::encode("viejo");
+		} else{
+			echo CHtml::encode("Nuevo");
+		}
+		
 	}
 }
