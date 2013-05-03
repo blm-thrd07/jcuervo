@@ -8,6 +8,7 @@
 </section>       
 
 <section id="panelContent">
+  <div>
 
         <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
      
@@ -25,4 +26,5 @@
               <?  $this->renderPartial('//app/_filtros',array('resultado'=>$resultado)); ?>
 
            </div>
+</div>
 </section>
