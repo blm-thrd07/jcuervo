@@ -25,7 +25,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		array(
             'header' => 'es Fan?',
             'name' => 'isFan',
-            //'value' => '($data->isFan == 0) ? "No" : "Si"'
             'value'=>' Usuarios::isFan($data->id,$data->isFan); '
         ),
         array(
@@ -34,6 +33,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
         ),
+        array(
+            'header' => 'No Compartidos totales',
+            'name' => 'isFan',
+            'value'=>' Comics::NoCompartidosTotalUsuario($data->id); '
+        ),
+        
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
