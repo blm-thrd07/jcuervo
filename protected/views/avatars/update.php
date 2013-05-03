@@ -438,7 +438,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var layerfondo = new Kinetic.Layer()
     imageFondo = new Image();
     imageFondo.onload = function(){
-      var fondo = new Kinetic.Image({ x: 190,y: 141,height: 448,width: 250, image:imageFondo, rotation: 0, offset: [190, 140] })
+      var fondo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageFondo, rotation: 0, offset: [190, 140] })
       layerfondo.add(fondo);
       layerfondo.draw();
       layerPersonaje.moveToTop();
