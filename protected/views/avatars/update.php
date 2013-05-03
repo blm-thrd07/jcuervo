@@ -427,7 +427,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           url: BaseUrl+"/index.php/avatars/UpdatePieza",
           data: avatarJson,
           success: function(url){
-            window.location=url;
+            //window.location=url;
             $("#overlay").css("display","none"); 
             $("#popup").css("display","none"); 
           },
