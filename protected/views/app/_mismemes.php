@@ -58,7 +58,8 @@
           ?>
       </div>
 </div>
+           
 
-    <? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
+    <?  if(count($comics)!=0){ echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; } ?> 
 
 </section>
