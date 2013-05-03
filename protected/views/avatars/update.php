@@ -16,23 +16,23 @@
         </div>
         
         <div id="actions">
-          <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
-          <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
-          <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
-          <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
-          <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
-          <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
-      </section>
+          
 
+
+<a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
+<a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
+<a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
+<a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
+<a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
+<a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
+<div class="saveBtn"><a href="/php2/jcuervo/index.php" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
+<a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar</a></div>
+       
+        </div>
+       </section>
+       
       <section id="panelContent">
         <div>
-        <h2>Crea tu Personaje</h2>
-
-        <div class="saveBtn">
-          <a href="/php2/jcuervo/index.php" class="btn"><i class="icon-chevron-left"></i> Regresar</a>
-          <a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar</a> 
-        </div>
-
         <div class="js-tabEngine itemSelector">
          <ul class="menuPersonaje">
             <li><a href="#tab1"><span></span>Cabeza</a></li>
