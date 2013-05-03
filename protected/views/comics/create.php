@@ -32,7 +32,7 @@
           $bandera=false;
           $count=count($objetos);
             if(is_array($objetos)){
-              if($count>6) echo '<div class="js-slides"><div class="slides_container">';
+              if($count>6) echo '<div class="js-slides-comic"><div class="slides_container">';
               foreach ($objetos as $key => $value) {  
                 if($key%6==0 && $count>6) {
                   if($bandera) echo '</div>'; else $bandera=true;
