@@ -89,7 +89,7 @@
             type: "POST",
             url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
             success: function(data){
-               $("#panelContent",window.parent.document).html(data);
+               $("#container",window.parent.document).html(data);
                $.fancybox.close();
             }
           });
