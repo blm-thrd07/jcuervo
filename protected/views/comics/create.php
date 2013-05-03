@@ -240,7 +240,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     newangle = currentSelected.getRotation() - angle;
     currentSelected.transitionTo({
       rotation: newangle,
-      duration: 0.5,
+      duration: 0.2,
       easing: "ease-out",
       callback: function() {
         return console.log(currentSelected.getRotation());
@@ -254,7 +254,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     newangle = currentSelected.getRotation() + angle;
     currentSelected.transitionTo({
       rotation: newangle,
-      duration: 0.5,
+      duration: 0.2,
       easing: "ease-out",
       callback: function() {
         return console.log(currentSelected.getRotation());
