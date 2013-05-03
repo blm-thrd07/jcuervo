@@ -15,15 +15,15 @@
         $bandera=false;
         $count=count($fondos);
           if(is_array($fondos)){
-            if($count>8) echo '<div class="js-slides"><div class="slides_container">';
+            if($count>6) echo '<div class="js-slides"><div class="slides_container">';
             foreach ($fondos as $key => $value) {  
-              if($key%8==0 && $count>8) {
+              if($key%6==0 && $count>6) {
                 if($bandera) echo '</div>'; else $bandera=true;
                 echo '<div class="slide">';
               }
               echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/backgrounds/".$value['url'],"backgrounds",array('id'=>$value['id_background'])).'</div>'; 
             }
-            if($count>8) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+            if($count>6) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
           }
       ?>
       </div>
@@ -32,15 +32,15 @@
           $bandera=false;
           $count=count($objetos);
             if(is_array($objetos)){
-              if($count>8) echo '<div class="js-slides"><div class="slides_container">';
+              if($count>6) echo '<div class="js-slides"><div class="slides_container">';
               foreach ($objetos as $key => $value) {  
-                if($key%8==0 && $count>8) {
+                if($key%6==0 && $count>6) {
                   if($bandera) echo '</div>'; else $bandera=true;
                   echo '<div class="slide">';
                 }
                 echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/images/objetos/".$value['url'],"objetos",array('id'=>$value['id'])).'</div>'; 
               }
-              if($count>8) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
+              if($count>6) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';//btns pre <a ....
             }
         ?>
       </div>
@@ -50,16 +50,16 @@
           $count=count($amigos_avatars);
           $id_miavatar = uniqid();
             if(is_array($amigos_avatars)){
-              if($count>8) echo '<div class="js-slides"><div class="slides_container">';
+              if($count>6) echo '<div class="js-slides"><div class="slides_container">';
               if(!$bandera) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>$id_miavatar)).'<div></div></div>'; 
               foreach ($amigos_avatars as $key => $value) {  
-                if($key%8==0 && $count>8) {
+                if($key%6==0 && $count>6) {
                   if($bandera) echo '</div>'; else $bandera=true;
                   echo '<div class="slide itemThumbs">';
                 }
                 echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$value['avatar_img'],"amigos_avatars",array('id'=>$value['usuario_id'])).'<div><a href="#">'.CHtml::image('https://graph.facebook.com/'.$value['idFb'].'/picture').'</a></div></div>'; 
               }
-              if($count>8) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';
+              if($count>6) echo '</div></div><a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a></div>';
             }
         ?>
       </div>
