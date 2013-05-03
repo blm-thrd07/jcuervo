@@ -15,7 +15,7 @@
         $bandera=false;
         $count=count($fondos);
           if(is_array($fondos)){
-            if($count>6) echo '<div class="js-slides"><div class="slides_container">';
+            if($count>6) echo '<div class="js-slides-comic"><div class="slides_container">';
             foreach ($fondos as $key => $value) {  
               if($key%6==0 && $count>6) {
                 if($bandera) echo '</div>'; else $bandera=true;
@@ -32,7 +32,7 @@
           $bandera=false;
           $count=count($objetos);
             if(is_array($objetos)){
-              if($count>6) echo '<div class="js-slides"><div class="slides_container">';
+              if($count>6) echo '<div class="js-slides-comic"><div class="slides_container">';
               foreach ($objetos as $key => $value) {  
                 if($key%6==0 && $count>6) {
                   if($bandera) echo '</div>'; else $bandera=true;
@@ -50,7 +50,7 @@
           $count=count($amigos_avatars);
           $id_miavatar = uniqid();
             if(is_array($amigos_avatars)){
-              if($count>5) echo '<div class="js-slides"><div class="slides_container">';
+              if($count>5) echo '<div class="js-slides-comic"><div class="slides_container">';
               
               foreach ($amigos_avatars as $key => $value) {  
                 if($key%5==0 && $count>5) {
