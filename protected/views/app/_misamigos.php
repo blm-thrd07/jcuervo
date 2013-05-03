@@ -20,7 +20,7 @@
 
 <section id="panelContent">
 
-
+<div>
 
         <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
     
@@ -65,4 +65,4 @@
 
     <? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
 
-</section>
+</div></section>

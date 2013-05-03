@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   clear: both;
 }
 
-.item, .itemMeme, .itemThumbnail, .tabs > a, #panelContent div.saveBtn, #panelPersonaje, #panelContent h2, #comentarios, #panelComic, #panelContentComic, #pic, #panelContent, #crearPersonaje h2, #crearPersonaje .controllers {
+.item, .itemMeme, .itemThumbnail, .tabs > a, #panelPersonaje, #panelContentComic, #panelContent h2, #comentarios, #pic, #panelContent, #panelComic, #crearPersonaje h2, #crearPersonaje .controllers {
   display: inline;
   float: left;
   margin-left: 5px;
@@ -78,11 +78,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 120px;
 }
 
-#panelContent div.saveBtn {
-  width: 185px;
-}
-
-#panelPersonaje {
+#panelPersonaje, #panelContentComic {
   width: 250px;
 }
 
@@ -90,11 +86,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 315px;
 }
 
-#panelComic, #panelContentComic, #pic {
+#pic {
   width: 380px;
 }
 
-#panelContent {
+#panelContent, #panelComic {
   width: 510px;
 }
 
@@ -102,11 +98,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 770px;
 }
 
-#panelContent h2, .memeThumbs > div:nth-of-type(4n+1), .itemThumbs > div:nth-of-type(3n+1), .comicThumbs > div:nth-of-type(3n+1), .tabs > a:first-of-type, .js-slides .slides_container .slide > div.itemMeme:nth-of-type(4n+1), .js-slides-comic .slides_container .slide > div.itemMeme:nth-of-type(3n+1) {
+#panelContent h2, .memeThumbs > div:nth-of-type(4n+1), .itemThumbs > div:nth-of-type(3n+1), .comicThumbs > div:nth-of-type(2n+1), .tabs > a:first-of-type, .js-slides .slides_container .slide > div.itemMeme:nth-of-type(4n+1), .js-slides-comic .slides_container .slide > div.itemMeme:nth-of-type(2n+1) {
   margin-left: 0;
 }
 
-#panelContent div.saveBtn, #panelContentComic div.saveBtn, .memeThumbs > div:nth-of-type(4n+4), .itemThumbs > div:nth-of-type(3n+3), .comicThumbs > div:nth-of-type(3n+3), .tabs > a:last-of-type, .js-slides .slides_container .slide > div.itemMeme:nth-of-type(4n+4), .js-slides-comic .slides_container .slide > div.itemMeme:nth-of-type(3n+3) {
+.memeThumbs > div:nth-of-type(4n+4), .itemThumbs > div:nth-of-type(3n+3), .comicThumbs > div:nth-of-type(2n+2), .tabs > a:last-of-type, .js-slides .slides_container .slide > div.itemMeme:nth-of-type(4n+4), .js-slides-comic .slides_container .slide > div.itemMeme:nth-of-type(2n+2) {
   margin-right: 0;
 }
 
@@ -1419,8 +1415,8 @@ ul.icons li [class*=" icon-"] {
   content: "\f115";
 }
 
-.spr-sprite, .spr-accesorios-on, .spr-accesorios, .spr-boca-on, .spr-boca, .spr-cabeza-on, .spr-cabeza, .spr-cuerpo-on, .spr-cuerpo, .spr-ojos-on, .spr-ojos, .menuPersonaje li:nth-of-type(1) a span, .menuPersonaje li:nth-of-type(1) a.selected span, .menuPersonaje li:nth-of-type(2) a span, .menuPersonaje li:nth-of-type(2) a.selected span, .menuPersonaje li:nth-of-type(3) a span, .menuPersonaje li:nth-of-type(3) a.selected span, .menuPersonaje li:nth-of-type(4) a span, .menuPersonaje li:nth-of-type(4) a.selected span, .menuPersonaje li:nth-of-type(5) a span, .menuPersonaje li:nth-of-type(5) a.selected span {
-  background: url('../img/spr-s9a132e519a.png') no-repeat;
+.spr-sprite, .spr-accesorios-on, .spr-accesorios, .spr-boca-on, .spr-boca, .spr-cabeza-on, .spr-cabeza, .spr-cuerpo-on, .spr-cuerpo, .spr-globo1, .spr-globo2, .spr-globo3, .spr-ojos-on, .spr-ojos, .globo1, .globo2, .globo3, .menuPersonaje li:nth-of-type(1) a span, .menuPersonaje li:nth-of-type(1) a.selected span, .menuPersonaje li:nth-of-type(2) a span, .menuPersonaje li:nth-of-type(2) a.selected span, .menuPersonaje li:nth-of-type(3) a span, .menuPersonaje li:nth-of-type(3) a.selected span, .menuPersonaje li:nth-of-type(4) a span, .menuPersonaje li:nth-of-type(4) a.selected span, .menuPersonaje li:nth-of-type(5) a span, .menuPersonaje li:nth-of-type(5) a.selected span {
+  background: url('../img/spr-s199c4f6018.png') no-repeat;
 }
 
 .spr-accesorios-on {
@@ -1453,6 +1449,18 @@ ul.icons li [class*=" icon-"] {
 
 .spr-cuerpo {
   background-position: 0 -304px;
+}
+
+.spr-globo1 {
+  background-position: 0 -773px;
+}
+
+.spr-globo2 {
+  background-position: 0 -760px;
+}
+
+.spr-globo3 {
+  background-position: 0 -786px;
 }
 
 .spr-ojos-on {
@@ -1514,7 +1522,7 @@ i {
 }
 
 #personajeCanvas {
-  outline: 5px solid #980d2e;
+  outline: 1px dotted #980d2e;
 }
 
 #crearPersonaje {
@@ -1531,7 +1539,29 @@ i {
   margin-bottom: 10px;
 }
 
+.globo1, .globo2, .globo3 {
+  display: inline-block;
+  margin: 0 auto;
+  width: 13px;
+  height: 13px;
+}
+
+.globo1 {
+  background-position: 0 -773px;
+}
+
+.globo2 {
+  background-position: 0 -760px;
+}
+
+.globo3 {
+  background-position: 0 -786px;
+}
+
 #insertText input {
+  margin: 0 10px 0 0;
+}
+#insertText a:nth-of-type(n+2) {
   margin-left: 10px;
 }
 
@@ -1648,6 +1678,37 @@ i {
   width: 23.5%;
 }
 
+#nofan {
+  margin-top: 3em;
+}
+#nofan div {
+  font-size: 3em;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#nofan div img {
+  vertical-align: middle;
+}
+#nofan div:nth-of-type(1) {
+  color: #980d2e;
+}
+#nofan div:nth-of-type(2) {
+  font-size: 2em;
+}
+#nofan div:nth-of-type(3) {
+  color: #980d2e;
+}
+#nofan div:nth-of-type(3) span {
+  color: black;
+  display: block;
+  font-size: 2.5em;
+}
+#nofan div:nth-of-type(4) img {
+  width: 100%;
+}
+
 #container {
   margin-top: 70px;
   margin-bottom: 10px;
@@ -1655,17 +1716,11 @@ i {
 
 #panelPersonaje h1 {
   font-size: 2em;
-  margin-bottom: 23px;
   text-shadow: rgba(255, 255, 255, 0.5) 0px -1px 0;
-  text-align: center;
   color: #980d2e;
   font-size: 1.5em;
-}
-#panelPersonaje > div:nth-of-type(2) {
-  margin-bottom: 10px;
-}
-#panelPersonaje > div:nth-of-type(2) img {
-  width: 100%;
+  margin-bottom: 23px;
+  text-align: center;
 }
 
 #memeGeneratorLogo {
@@ -1731,6 +1786,25 @@ i {
 #actions a:last-of-type {
   margin-right: 0;
 }
+#actions .saveBtn {
+  clear: both;
+  margin-top: 20px;
+}
+#actions .saveBtn:after, #actions .saveBtn:before {
+  content: "";
+  display: table;
+}
+#actions .saveBtn:after {
+  clear: both;
+}
+#actions .saveBtn a {
+  float: left;
+  width: 40%;
+  display: block;
+}
+#actions .saveBtn a:first-of-type {
+  margin-right: 10px;
+}
 
 #camAction {
   margin-bottom: 10px;
@@ -1743,7 +1817,8 @@ i {
   clear: both;
   font-size: 2em;
   margin-bottom: 10px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0px -1px 0;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0;
+  color: white;
 }
 #panelContent h2:after, #panelContent h2:before {
   content: "";
@@ -1752,7 +1827,11 @@ i {
 #panelContent h2:after {
   clear: both;
 }
-#panelContent > a {
+#panelContent > div {
+  padding: 10px;
+  background: #980d2e;
+}
+#panelContent > div > a {
   padding: 15px 0 15px 0;
   text-align: center;
   display: block;
@@ -1775,26 +1854,31 @@ i {
   font-size: 2em;
   margin-bottom: 30px;
 }
-#panelContent > a:hover {
+#panelContent > div > a:hover {
   color: #980d2e;
 }
-#panelContent > a:active {
+#panelContent > div > a:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
 }
-#panelContent > a:after, #panelContent > a:before {
+#panelContent > div > a:after, #panelContent > div > a:before {
   content: "";
   display: table;
 }
-#panelContent > a:after {
+#panelContent > div > a:after {
   clear: both;
 }
-#panelContent div.saveBtn {
-  text-align: right;
+
+.tituloCrear {
+  color: #980d2e;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 4em;
 }
-#panelContent div.saveBtn a:last-of-type {
-  margin-left: 10px;
+
+.logoComic {
+  margin-top: 40px !important;
 }
 
 #panelComic h1 {
@@ -1808,17 +1892,29 @@ i {
 #panelComic > div:nth-of-type(1) img {
   width: 100%;
 }
-
-#panelContentComic div.saveBtn {
-  text-align: right;
-  margin-bottom: 50px;
+#panelComic .saveBtn {
+  clear: both;
+  margin-top: 20px;
 }
-#panelContentComic div.saveBtn a:last-of-type {
-  margin-left: 10px;
+#panelComic .saveBtn:after, #panelComic .saveBtn:before {
+  content: "";
+  display: table;
+}
+#panelComic .saveBtn:after {
+  clear: both;
+}
+#panelComic .saveBtn a {
+  float: left;
+  width: 45%;
+  display: block;
+}
+#panelComic .saveBtn a:first-of-type {
+  margin-right: 10px;
 }
 
 .memeThumbs {
   clear: both;
+  background: #fef200;
 }
 .memeThumbs:after, .memeThumbs:before {
   content: "";
@@ -1826,6 +1922,10 @@ i {
 }
 .memeThumbs:after {
   clear: both;
+}
+
+.noSlide {
+  padding: 5px;
 }
 
 .itemThumbs {
@@ -1841,7 +1941,7 @@ i {
 
 .comicThumbs {
   clear: both;
-  min-height: 426px;
+  padding: 5px;
 }
 .comicThumbs:after, .comicThumbs:before {
   content: "";
@@ -1852,19 +1952,19 @@ i {
 }
 
 .itemMeme {
+  width: 112px;
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   -o-transition: all 0.1s;
   transition: all 0.1s;
   position: relative;
   margin-bottom: 10px;
-  max-height: 124px;
   min-height: 93px;
   text-align: center;
 }
 .itemMeme img {
-  max-height: 124px;
-  max-width: 124px;
+  max-height: 112px;
+  max-width: 112px;
   vertical-align: bottom;
 }
 .itemMeme:hover {
@@ -1903,7 +2003,7 @@ i {
 }
 
 .itemThumbnail {
-  width: 32%;
+  width: 31.95%;
   position: relative;
   margin-bottom: 10px;
   text-align: center;
@@ -2082,7 +2182,7 @@ a.itemAction:hover {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  width: 32%;
+  width: 31.95%;
 }
 .tabs > a:hover {
   color: #980d2e;
@@ -2117,7 +2217,7 @@ a.itemAction:hover {
 .itemSelector > ul > li {
   display: block;
   float: left;
-  width: 18.42%;
+  width: 18.37%;
   margin-right: 10px;
 }
 .itemSelector > ul > li a {
@@ -2166,7 +2266,7 @@ a.itemAction:hover {
   margin-right: 0;
 }
 .itemSelector > ul.comicItemSelector > li {
-  width: 31.58%;
+  width: 30.58%;
 }
 
 a.selectedTab {
@@ -2205,6 +2305,9 @@ a.selectedTab:hover {
 #noFriends p {
   display: block;
   font-size: 1.3em;
+  margin-bottom: 30px;
+}
+#noFriends a {
   margin-bottom: 30px;
 }
 
@@ -2315,6 +2418,7 @@ a.selectedTab:hover {
 
 .js-slides {
   clear: both;
+  position: relative;
 }
 .js-slides:after, .js-slides:before {
   content: "";
@@ -2325,8 +2429,10 @@ a.selectedTab:hover {
 }
 .js-slides .slides_container .slide {
   margin-bottom: 10px;
-  width: 510px;
-  height: 418px;
+  width: 481px;
+  height: 366px;
+  background: #fef200;
+  padding: 5px;
 }
 .js-slides > a {
   padding: 10px;
@@ -2348,6 +2454,9 @@ a.selectedTab:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-top: 10px;
+  position: absolute;
+  bottom: -60px;
+  cursor: pointer;
 }
 .js-slides > a:hover {
   -webkit-transition: all 0.1s;
@@ -2400,16 +2509,19 @@ a.selectedTab:hover {
   z-index: 101;
 }
 .js-slides > a:first-of-type {
-  margin-left: 442px;
+  right: 30px;
 }
 .js-slides > a:last-of-type {
-  margin-left: 10px;
+  right: -10px;
 }
 
+.js-slides-comic {
+  position: relative;
+}
 .js-slides-comic .slides_container .slide {
   margin-bottom: 10px;
-  width: 392px;
-  height: 418px;
+  width: 250px;
+  height: 380px;
 }
 .js-slides-comic > a {
   padding: 10px;
@@ -2431,6 +2543,7 @@ a.selectedTab:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-top: 10px;
+  position: absolute;
 }
 .js-slides-comic > a:hover {
   -webkit-transition: all 0.1s;
@@ -2483,10 +2596,10 @@ a.selectedTab:hover {
   z-index: 101;
 }
 .js-slides-comic > a:first-of-type {
-  margin-left: 312px;
+  right: 35px;
 }
 .js-slides-comic > a:last-of-type {
-  margin-left: 10px;
+  right: 0;
 }
 
 .rounded {
@@ -2494,7 +2607,7 @@ a.selectedTab:hover {
   -webkit-border-radius: 500px;
   -moz-border-radius: 500px;
   border-radius: 500px;
-  height: 124px;
+  height: 112px;
   position: relative;
 }
 .rounded img {
