@@ -2,6 +2,7 @@
     <div id="caraweb"></div>
 
       <section id="panelPersonaje">
+        <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div id="personajeCanvas"></div>
 
