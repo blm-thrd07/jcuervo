@@ -1,28 +1,8 @@
-<div id="container">
+<div id="container" class="logoComic">
 
-  <section id="panelComic">
-
-    <h1>Crea tu Meme</h1>
-
-    <div id="insertText">
-      <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose">
-    </div>
-
-    <div id="comicCanvas"></div>
-
-    <div id="actions">
-      <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
-      <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
-      <a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i><div>Reducir tamaño</div></a>
-      <a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i><div>Aumentar tamaño</div></a>
-      <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
-      <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
-      <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
-      <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
-    </div>
-  </section>
-
+ <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
+ <h1 class="tituloCrear">Crea Tu Meme</h1>
+    
   <section id="panelContentComic">
 
     <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/Profile',array('id'=>$avatar->Usuario->id_facebook)); ?>"; class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
@@ -86,6 +66,27 @@
             }
         ?>
       </div>
+    </div>
+  </section>
+
+  <section id="panelComic">
+    <div id="insertText">
+      <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
+      <input type="text" id="textinput" class="inputClose">
+    </div>
+
+    <div id="comicCanvas"></div>
+
+    <div id="actions">
+      <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
+      <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
+      <a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i><div>Reducir tamaño</div></a>
+      <a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i><div>Aumentar tamaño</div></a>
+      <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
+      <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
+      <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
+      <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
+      <div class="saveBtn"><a href="mismemes.html" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar </a></div>
     </div>
   </section>
 </div>
