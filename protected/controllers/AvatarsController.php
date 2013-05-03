@@ -27,7 +27,7 @@ class AvatarsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','UpdatePieza'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -411,10 +411,8 @@ class AvatarsController extends Controller
 
 	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	    unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
- 		echo CController::CreateUrl("App/Profile",array("id"=>Yii::app()->session['id_facebook']));
-  	} else{
-		throw new CHttpException(404,'The requested page does not exist.');
-    }
+  }
+  
   
 }
 
