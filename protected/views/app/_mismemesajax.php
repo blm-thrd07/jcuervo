@@ -11,18 +11,6 @@
 <? if(Yii::app()->session['id_facebook']!=$json['usuario']['id_facebook']){ ?>
               <h2>Memes de <? echo $json['usuario']['nombre'] ?></h2>
      <? }?>
-<script>
- $(function() {
-
-  $('.js-slides, .js-slides-comic').slides({
-        preload: false,
-       slideSpeed: 450,
-       generatePagination: false,
-       generateNextPrev: false
-    });
-       //$('.js-slides, .js-slides-comic').click();
-  });
-</script> 
 <div class="js-slides">
     <div class="slides_container">        
        <?
