@@ -386,8 +386,6 @@ class AvatarsController extends Controller
 		throw new CHttpException(404,'The requested page does not exist.');
     }
     
-
-    
   }
 
   public function actionUpdateImg(){
@@ -412,8 +410,9 @@ class AvatarsController extends Controller
 	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
 	    unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
 	    echo CController::CreateUrl("App/Profile",array("id"=>Yii::app()->session['id_facebook']));
-  } else{
-  	throw new CHttpException(404,'The requested page does not exist.');
+ 	} else{
+  		throw new CHttpException(404,'The requested page does not exist.');
+  	}
   }
   
   
