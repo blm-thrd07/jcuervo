@@ -1,7 +1,7 @@
 <script>
  $(function() {
 
-  $('.js-slides, .js-slides-comic').live(function(){
+  $('.js-slides, .js-slides-comic').live('click'function(){
 
    return $(this).slides({
         preload: false,
@@ -13,8 +13,7 @@
    
 
   });
-
-
+       $('.js-slides, .js-slides-comic').click();
   });
 </script> 
 
