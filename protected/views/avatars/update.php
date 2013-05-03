@@ -442,14 +442,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var layerfondo = new Kinetic.Layer();
     imageFondo = new Image();
     imageFondo.onload = function(){
-      fondo = new Kinetic.Image({ x: 0,y: 0,height: 444,width: 250, image:imageFondo })
+      var fondo = new Kinetic.Image({ x: 0,y: 0,height: 444,width: 250, image:imageFondo, rotation: 0, offset: [190, 140] })
       layerfondo.add(fondo);
+      layerfondo.draw();
+      layerPersonaje.moveToTop();
     }
     imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar.jpg";
     stagePersonaje.add(layerfondo);
-    layerPersonaje.moveToTop();
-    layerPersonaje.draw();
-    layerfondo.draw();
 
     return false;
   };
