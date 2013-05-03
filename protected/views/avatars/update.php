@@ -427,6 +427,34 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           url: BaseUrl+"/index.php/avatars/UpdatePieza",
           data: avatarJson,
           success: function(url){
+            
+          },
+          error: function(data) { 
+            console.log("hubo un error al guardar :(");
+          }
+        });
+      }
+    });
+    var layerfondo = new Kinetic.Layer()
+    imageFondo = new Image();
+    imageFondo.onload = function(){
+      var fondo = new Kinetic.Image({ x: 190,y: 141,height: 448,width: 250, image:imageFondo, rotation: 0, offset: [190, 140] })
+      layerfondo.add(fondo);
+      layerfondo.draw();
+      layerPersonaje.moveToTop();
+    }
+    imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar.jpg";
+    stagePersonaje.add(layerfondo);
+    stagePersonaje.toDataURL({
+      mimeType: "image/png",
+      quality: 0.8,
+      callback: function(dataUrl) {
+        var avatarJson = { img: dataUrl };
+        $.ajax({
+          type: "POST",
+          url: BaseUrl+"/index.php/avatars/UpdateImg",
+          data: avatarJson,
+          success: function(url){
             //window.location=url;
             $("#overlay").css("display","none"); 
             $("#popup").css("display","none"); 
@@ -439,17 +467,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
       }
     });
-    var layerfondo = new Kinetic.Layer()
-    imageFondo = new Image();
-    imageFondo.onload = function(){
-      var fondo = new Kinetic.Image({ x: 190,y: 141,height: 444,width: 250, image:imageFondo, rotation: 0, offset: [190, 140] })
-      layerfondo.add(fondo);
-      layerfondo.draw();
-      layerPersonaje.moveToTop();
-    }
-    imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar.jpg";
-    stagePersonaje.add(layerfondo);
-
     return false;
   };
 

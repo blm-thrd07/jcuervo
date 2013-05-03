@@ -27,11 +27,11 @@ class AvatarsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','UpdatePieza'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','UpdatePieza','updateImg'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -248,14 +248,6 @@ class AvatarsController extends Controller
 
   public function actionUpdatePieza(){
 
-    $facebook = new facebook(array(
-       'appId'  => '342733185828640',
-       'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-     ));
-   
-    $user =$facebook->getUser();
-    $my_access_token= $facebook->getAccessToken();
-
 	$model=$this->loadModel(Yii::app()->session['usuario_id']);         
 
     if(isset($_POST['img']) && isset($_POST['avatar']) && count($model)>0 ){
@@ -387,8 +379,6 @@ class AvatarsController extends Controller
 		    }
 	    }
        	
-       	$this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
-
         echo CController::CreateUrl("App/Profile",array("id"=>$model->Usuario->id_facebook));
 
 
@@ -399,7 +389,29 @@ class AvatarsController extends Controller
 
     
   }
-  
+
+  public function actionUpdateImg(){
+  	if(isset($_POST['img']) && Yii::app()->session['usuario_id'] )
+	  	$facebook = new facebook(array(
+	       'appId'  => '342733185828640',
+	       'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
+	     ));
+	   
+	    $user =$facebook->getUser();
+	    $my_access_token= $facebook->getAccessToken();
+
+        define('UPLOAD_DIR', Yii::app()->basePath.'/../Avatar/');
+        $img = $_POST['img'];
+        $img = str_replace('data:image/png;base64,', '', $img);
+        $img = str_replace(' ', '+', $img);
+        $data = base64_decode($img);
+        $filename=uniqid().'.png';
+        $file = UPLOAD_DIR .$filename;
+        $success = file_put_contents($file, $data);
+
+	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
+	    unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
+  }
   
   
 }
