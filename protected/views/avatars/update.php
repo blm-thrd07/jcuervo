@@ -445,6 +445,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       fondo = new Kinetic.Image({ x: 0,y: 0,height: 444,width: 250, image:imageFondo });
     }
     imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar.jpg";
+    layerfondo.add(imageFondo);
     stagePersonaje.add(layerfondo);
     layerPersonaje.moveToTop();
     layerPersonaje.draw();
