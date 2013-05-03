@@ -1,4 +1,13 @@
-
+<script>
+ $(function() {
+    return $('.js-slides, .js-slides-comic').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
+</script> 
  <a href="<?php echo CController::CreateUrl('Comics/create'); ?>">Crea un meme nuevo</a>
          
 <div class="tabs">
