@@ -195,7 +195,7 @@ class ComicsController extends Controller
 
              if(count($response)!= 0){
                 $comics=UsuariosHasTblComics::getMyComics($response->id);
-                $this->renderPartial('//app/_mismemes',array('comics'=>$comics,'json'=>$json));
+                $this->renderPartial('//app/_mismemesajax',array('comics'=>$comics,'json'=>$json));
               } 
 
 		}else{
