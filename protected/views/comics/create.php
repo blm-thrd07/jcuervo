@@ -15,7 +15,7 @@
         $bandera=false;
         $count=count($fondos);
           if(is_array($fondos)){
-            if($count>6) echo '<div class="js-slides"><div class="slides_container">';
+            if($count>6) echo '<div class="js-slides-comic"><div class="slides_container">';
             foreach ($fondos as $key => $value) {  
               if($key%6==0 && $count>6) {
                 if($bandera) echo '</div>'; else $bandera=true;
@@ -50,7 +50,7 @@
           $count=count($amigos_avatars);
           $id_miavatar = uniqid();
             if(is_array($amigos_avatars)){
-              if($count>6) echo '<div class="js-slides"><div class="slides_container">';
+              if($count>6) echo '<div class="js-slides-comic"><div class="slides_container">';
               if(!$bandera) echo '<div class="itemMeme">'.CHtml::image(Yii::app()->request->baseUrl."/Avatar/".$avatar['avatar_img'],"amigos_avatars",array('id'=>$id_miavatar)).'<div></div></div>'; 
               foreach ($amigos_avatars as $key => $value) {  
                 if($key%6==0 && $count>6) {
@@ -83,7 +83,7 @@
       <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
       <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
       <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
-      <div class="saveBtn"><a href="mismemes.html" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar </a></div>
+      <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/profile',array('id'=>Yii::app()->session['id_facebook'])); ?>" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar </a></div>
     </div>
   </section>
 </div>
