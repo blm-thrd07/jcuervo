@@ -72,7 +72,7 @@
   <section id="panelComic">
     <div id="insertText">
       <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose">
+      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn"><span class="globo1"></span></a><a href="#" class="btn"><span class="globo2"></span></a><a href="#" class="btn"><span class="globo3"></span></a>
     </div>
 
     <div id="comicCanvas"></div>
@@ -121,8 +121,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
-    width: 380,
-    height: 285,
+    width: 510,
+    height: 383,
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
