@@ -24,6 +24,7 @@
       </section>
 
       <section id="panelContent">
+        <div>
         <h2>Crea tu Personaje</h2>
 
         <div class="saveBtn">
@@ -125,6 +126,7 @@
             ?>
           </div>
         </div>
+      </div>
       </section>
     </div>
 
