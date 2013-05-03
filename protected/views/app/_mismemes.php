@@ -1,7 +1,7 @@
 <script>
  $(function() {
 
-  $('.js-slides, .js-slides-comic').live('click',function(){
+  $('.js-slides, .js-slides-comic').live(function(){
 
    return $(this).slides({
         preload: false,
