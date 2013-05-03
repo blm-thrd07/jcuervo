@@ -1,8 +1,29 @@
 <div id="container" class="logoComic">
+  <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
+  <h1 class="tituloCrear">Crea Tu Meme</h1>
 
- <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
- <h1 class="tituloCrear">Crea Tu Meme</h1>
-    
+  <section id="panelComic">
+    <div id="insertText">
+      <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
+      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn"><span class="globo1"></span></a><a href="#" class="btn"><span class="globo2"></span></a><a href="#" class="btn"><span class="globo3"></span></a>
+    </div>
+
+    <div id="comicCanvas"></div>
+
+    <div id="actions">
+      <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
+      <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
+      <a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i><div>Reducir tamaño</div></a>
+      <a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i><div>Aumentar tamaño</div></a>
+      <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
+      <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
+      <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
+      <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
+      <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/profile',array('id'=>Yii::app()->session['id_facebook'])); ?>" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar </a></div>
+    </div>
+  </section>
+
+
   <section id="panelContentComic">
     <div class="js-tabEngine itemSelector">
       <ul class="comicItemSelector">
@@ -68,26 +89,7 @@
     </div>
   </section>
 
-  <section id="panelComic">
-    <div id="insertText">
-      <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn"><span class="globo1"></span></a><a href="#" class="btn"><span class="globo2"></span></a><a href="#" class="btn"><span class="globo3"></span></a>
-    </div>
-
-    <div id="comicCanvas"></div>
-
-    <div id="actions">
-      <a href="#" id="js-rotateLeft" class="btn"><i class="icon-undo"></i><div>Rotar a la izquierda</div></a>
-      <a href="#" id="js-rotateRight" class="btn"><i class="icon-repeat"></i><div>Rotar a la derecha</div></a>
-      <a href="#" id="js-resizeDown" class="btn"><i class="icon-resize-small"></i><div>Reducir tamaño</div></a>
-      <a href="#" id="js-resizeUp" class="btn"><i class="icon-resize-full"></i><div>Aumentar tamaño</div></a>
-      <a href="#" id="js-sendFront" class="btn"><i class="icon-circle-arrow-up"></i><div>Mandar enfrente</div></a>
-      <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
-      <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
-      <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
-      <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/profile',array('id'=>Yii::app()->session['id_facebook'])); ?>" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar </a></div>
-    </div>
-  </section>
+  
 </div>
 <?php
 $baseUrl = Yii::app()->baseUrl; 
