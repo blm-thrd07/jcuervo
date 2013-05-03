@@ -410,7 +410,7 @@ class AvatarsController extends Controller
         $success = file_put_contents($file, $data);
 
 	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Avatar');
-	    unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
+	    //unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
         echo CController::CreateUrl("App/Profile",array("id"=>Yii::app()->session['id_facebook']));
 
 	} else{
