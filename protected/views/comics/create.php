@@ -101,6 +101,17 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 </div>
 </div>
 
+<script>
+ $(function() {
+    return $('.js-slides').slides({
+      preload: false,
+      slideSpeed: 450,
+      generatePagination: false,
+      generateNextPrev: false
+    });
+  });
+</script> 
+
 <?php //echo $this->renderPartial("_form', array('model'=>$model)); 
 
 Yii::app()->getClientScript()->registerScript('registrar', '
