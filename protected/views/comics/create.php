@@ -4,9 +4,6 @@
  <h1 class="tituloCrear">Crea Tu Meme</h1>
     
   <section id="panelContentComic">
-
-    <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/Profile',array('id'=>$avatar->Usuario->id_facebook)); ?>"; class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar       </a></div>
-
     <div class="js-tabEngine itemSelector">
       <ul class="comicItemSelector">
         <li><a href="#tab1">Fondos</a></li>
@@ -147,7 +144,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
-  confBackground = {x: 190,y: 140,rotation: 0,height: 285,width: 380,image: imageBackground,offset: [190, 140],startScale: scale,name: "fondo",id: 1};
+  confBackground = {x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageBackground,offset: [190, 140],startScale: scale,name: "fondo",id: 1};
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "amigo", id:"'.$id_miavatar.'",};
 
   layerFondo = new Kinetic.Layer();
