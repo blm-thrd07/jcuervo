@@ -154,7 +154,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var avatar = '.CJSON::encode($json['avatar']).';
   var BaseUrl = "/php2/jcuervo"; 
   var accesorios=[]; var piezas=[];
-  var angle, cara,tmp, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans;
+  var angle, cara,tmp, cara_web, cuerpo, ojos, boca, currentLayer, currentSelected, layerPersonaje, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stagePersonaje, removeImage, scale, startScale, trans,imageLogo;
   caraWebInsert=true; currentSelected = null; scale = 1; scaleUpFactor= 1.05; trans = null;
   var isFirst=true;
   
@@ -440,7 +440,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
     var layerfondo = new Kinetic.Layer()
     imageFondo = new Image();
-    
     imageFondo.onload = function(){
       imageLogo = new Image();
       var fondo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageFondo })
