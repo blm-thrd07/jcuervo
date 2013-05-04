@@ -165,15 +165,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "amigo", id:"'.$id_miavatar.'", dragBoundFunc: function(pos) {
       var X=pos.x;
       var Y=pos.y;
-      console.log("punto");
-      console.log("c: "+(this.height/2));
-      console.log("c: "+(stageHeight-45));
-      var d = ((stageHeight-45)-(this.attrs.height/2));
+      var dy = ((stageHeight-40)-(this.attrs.height/2));
+      var dy2 = (this.attrs.height/2)+5;
+
       console.log(d);
       if(X<2){X=2}
       if(X>this.width-2){X=this.width-2;}
-      if(Y<2){Y=2;}
-      if(Y>d){Y=d;}
+      if(Y<dy2){Y=dy2;}
+      if(Y>dy){Y=dy;}
       return({x:X, y:Y});
     }};
 
