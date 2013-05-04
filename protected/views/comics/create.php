@@ -135,6 +135,16 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     container: "comicCanvas",
     width: 510,
     height: 383,
+    dragBoundFunc: function(pos) {
+      var X=pos.x;
+      var Y=pos.y;
+      //if(X<this.width){X=minX;}
+      //if(X>maxX){X=maxX;}
+      //if(Y<minY){Y=minY;}
+      if(Y>200){Y=200;}
+      return({x:X, y:Y});
+      
+    }
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
