@@ -382,7 +382,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             easing: "elastic-ease-out",
             scale: {
               x: this.attrs.startScale*this.attrs.mirror,
-              y: this.attrs.startScale
+              y: -1*this.attrs.startScale
             }
           });
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
