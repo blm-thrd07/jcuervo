@@ -533,7 +533,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       
     }
     if(currentText){
-
+      currentText.fontSize(currentText.fontSize()+1);
     }
     return false;
   }
@@ -551,7 +551,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     }
     if(currentText){
-
+      currentText.fontSize(currentText.fontSize()+1);
     }
     return false;
   }
