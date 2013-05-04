@@ -545,7 +545,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           y: currentSelected.attrs.scale.y * scaleUpFactor
         }
       });
-
     }
     if(currentText){
       trans = currentText.transitionTo({
@@ -562,7 +561,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   mirror = function(){
     currentSelected.attrs.mirror=-1*currentSelected.attrs.mirror;
-    currentSelected.setScale(currentSelected.attrs.mirror,1);
+    trans = currentSelected.transitionTo({
+      duration: 0.5,
+      easing: "elastic-ease-out",
+      scale: {
+        x: currentSelected.attrs.scale.x * currentSelected.attrs.mirror,
+        y: currentSelected.attrs.scale.y
+      }
+    });
     layerComic.draw();
     return false;
   }
