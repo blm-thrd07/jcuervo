@@ -163,12 +163,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "amigo", id:"'.$id_miavatar.'", dragBoundFunc: function(pos) {
       var X=pos.x;
       var Y=pos.y;
-      //if(X<this.width){X=minX;}
-      //if(X>maxX){X=maxX;}
-      //if(Y<minY){Y=minY;}
-      if(Y>200){Y=200;}
+      if(X<2){X=2}
+      if(X>this.width-2){X=this.width-2;}
+      if(Y<2){Y=2;}
+      if(Y>205){Y=205;}
       return({x:X, y:Y});
-     
     }};
 
   layerFondo = new Kinetic.Layer();
