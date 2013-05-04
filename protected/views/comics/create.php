@@ -19,6 +19,7 @@
       <a href="#" id="js-sendBack" class="btn"><i class="icon-circle-arrow-down"></i><div>Mandar atrás</div></a>
       <a href="#" id="js-resetRotation" class="btn"><i class="icon-refresh"></i><div>Reestablecer</div></a>
       <a href="#" id="js-removeElement" class="btn"><i class="icon-trash"></i><div>Eliminar</div></a>
+      <a href="#" id="js-mirror" class="btn"><i class="icon-trash"></i><div>Espejo</div></a>
       <div class="saveBtn"><a href="<?php echo CController::CreateUrl('App/profile',array('id'=>Yii::app()->session['id_facebook'])); ?>" class="btn"><i class="icon-chevron-left"></i> Regresar</a><a href="#" id="js-listenerStat" class="btn"><i class="icon-save"></i> Guardar </a></div>
     </div>
   </section>
@@ -125,7 +126,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var angle,rotation,imageBackground,conf,halfx,halfy, currentSelected, layerComic, listenerStat, newangle, rotateLeft, rotateRight, saveToImage, sendBack, sendFront, stageComic,removeImage;
   currentSelected = null;
   currentText = null;
-  var amigos=[], objetos=[];
+  var amigos=[];
   var scale = 1;
   var scaleUpFactor= 1.05, scaleDownFactor=0.95;
   var trans = null;
@@ -225,15 +226,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   removeImage = function(){
     if(currentSelected) { 
-      if(currentSelected.attrs.tipo === "objeto"){
-        for(i=0;i<objetos.length;i++){
-          if(objetos[i].attrs.id == currentSelected.attrs.id){
-            o = objetos.indexOf(currentSelected)
-            delete objetos[o];
-            objetos.splice(o,o+1);
-          }
-        }
-      }
       if(currentSelected.attrs.tipo === "amigo"){
         for(i=0;i<amigos.length;i++){
           if(amigos[i].attrs.id == currentSelected.attrs.id){
@@ -306,11 +298,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var aux, insertar=true,url_img;
     aux=obj;
     if(typeof conf.id==="undefined") { insertar=false; console.log("undefined"); } 
-    if(obj==="objeto"){ 
-      for(i=0;i<objetos.length;i++){
-        if(objetos[i].attrs.id == conf.id) insertar=false;
-      }
-    }
     if(obj==="amigo"){ 
       for(i=0;i<amigos.length;i++){
         if(amigos[i].attrs.id == conf.id) insertar=false;
@@ -396,9 +383,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             removeImage();
         });
         layerComic.add(obj);
-        if(aux==="objeto"){ 
-          objetos.push(obj);
-        }
         if(aux==="amigo"){ 
           amigos.push(obj);
         }
@@ -588,7 +572,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
   $("#js-resizeDown").on("click", resizeDown);
-  $("#js-resizeUp").on("click", mirror);
+  $("#js-resizeUp").on("click", resizeUp);
+  $("#js-mirror").on("click", mirror);
   $("#textinput").keyup(function(e){
     this.value = this.value.toUpperCase();
     currentText.setText(this.value);
