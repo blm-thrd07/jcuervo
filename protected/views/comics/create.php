@@ -5,7 +5,7 @@
   <section id="panelComic">
     <div id="insertText">
       <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn"><span class="globo1"></span></a><a href="#" class="btn"><span class="globo2"></span></a><a href="#" class="btn"><span class="globo3"></span></a>
+      <input type="text" id="textinput" class="inputClose"><a href="#" id="js-globo" data="1" class="btn"><span class="globo1"></span></a><a href="#" id="js-globo" data="2" class="btn"><span class="globo2"></span></a><a href="#" id="js-globo" data="3" class="btn"><span class="globo3"></span></a>
     </div>
 
     <div id="comicCanvas"></div>
@@ -331,6 +331,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("click", function() {
+          if(currentSelected.attrs.tipo==="globo"){
+            currentSelected.moveToBottom();
+          }
           $("#textinput").attr("class", "inputClose");
           if(currentSelected){
             currentSelected.setStroke(null);
@@ -371,6 +374,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("dragend", function(e) {
+          if(currentSelected.attrs.tipo==="globo"){
+            currentSelected.moveToBottom();
+          }
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
@@ -561,6 +567,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   }
 
+  insertGlobo(){
+    alert("data"+$(this).attrs("data"));
+  }
+
   $(".btn").on("click",function(){ $("#textinput").attr("class", "inputClose"); });
   $("#js-listenerStat").on("click", saveToImage);
   $("#js-rotateLeft").on("click", rotateLeft);
@@ -574,6 +584,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resizeDown").on("click", resizeDown);
   $("#js-resizeUp").on("click", resizeUp);
   $("#js-mirror").on("click", mirror);
+  $("#js-globo").on("click", insertGlobo);
   $("#textinput").keyup(function(e){
     this.value = this.value.toUpperCase();
     currentText.setText(this.value);
