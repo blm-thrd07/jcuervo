@@ -442,13 +442,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     imageFondo = new Image();
     imageFondo.onload = function(){
       imageLogo = new Image();
-      var fondo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageFondo })
+      var fondo = new Kinetic.Image({ x: 130,y: 100,height: 446,width: 250, image:imageFondo })
       layerfondo.add(fondo);
       layerfondo.draw();
       
       
       imageLogo.onload = function(){
-        var logo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageLogo })
+        var logo = new Kinetic.Image({ x: 150,y: 30,height: this.height,width: this.width, image:imageLogo })
         layerPersonaje.add(logo);
         logo.moveToTop();
         layerPersonaje.moveToTop();
