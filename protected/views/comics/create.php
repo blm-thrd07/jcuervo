@@ -142,8 +142,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       //if(X>maxX){X=maxX;}
       //if(Y<minY){Y=minY;}
       if(Y>200){Y=200;}
-      return({x:X, y:Y});
-      
+      return({x:X, y:this.getAbsolutePosition().y});
+     
     }
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
