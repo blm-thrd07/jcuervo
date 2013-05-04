@@ -5,7 +5,7 @@
   <section id="panelComic">
     <div id="insertText">
       <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose"><a href="#" id="js-globo" data="1" class="btn"><span class="globo1"></span></a><a href="#" id="js-globo" data="2" class="btn"><span class="globo2"></span></a><a href="#" id="js-globo" data="3" class="btn"><span class="globo3"></span></a>
+      <input type="text" id="textinput" class="inputClose"><a href="#" data="1" class="btn globo"><span class="globo1"></span></a><a href="#" data="2" class="btn globo"><span class="globo2"></span></a><a href="#" data="3" class="btn globo"><span class="globo3"></span></a>
     </div>
 
     <div id="comicCanvas"></div>
@@ -396,7 +396,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
       console.log(img);
-      if(aux==="objeto"){ 
+      if(aux==="objeto") || aux==="globo"{ 
         url_img="/images/objetos/";
       }
       if(aux==="amigo"){ 
@@ -568,7 +568,17 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
 
   insertGlobo = function(){
-    alert("data"+$(this).attr("data"));
+    $("#textinput").attr("class", "inputClose");
+    tipo = $(this).attr("data");
+    if(tipo===1){
+      insertar("globo","globo-normal.jpg",confObjeto);
+    }
+    if(tipo===2){
+      insertar("globo","globo-exclamacion.jpg",confObjeto);
+    }
+    if(tipo===3){
+      insertar("globo","globo-pensamiento.jpg",confObjeto);
+    }
   }
 
   $(".btn").on("click",function(){ $("#textinput").attr("class", "inputClose"); });
