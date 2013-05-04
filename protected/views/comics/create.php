@@ -153,7 +153,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     $("#textinput").attr("class", "inputClose");
   });
-
+  var stageWidth = stageComic.getWidth();
+  var stageHeight = stageComic.getHeight();
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
@@ -163,7 +164,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "amigo", id:"'.$id_miavatar.'", dragBoundFunc: function(pos) {
       var X=pos.x;
       var Y=pos.y;
-      var d = (stageComic.getWidth()-35)-(this.height/2);
+      var d = ((stageHeight-35)-(this.height/2));
       console.log(d);
       if(X<2){X=2}
       if(X>this.width-2){X=this.width-2;}
