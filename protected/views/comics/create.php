@@ -567,7 +567,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   }
 
-  insertGlobo(){
+  insertGlobo = function(){
     alert("data"+$(this).attrs("data"));
   }
 
