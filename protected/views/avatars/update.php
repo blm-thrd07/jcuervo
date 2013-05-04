@@ -2,7 +2,7 @@
     <div id="caraweb"></div>
 
       <section id="panelPersonaje">
-        <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
+        <div id="memeGeneratorLogo"><span>Memespecial</span><span>Generator</span></div>
         <h1><?echo $json['usuario']['nombre']; ?></h1>
         <div id="personajeCanvas"></div>
 
@@ -440,12 +440,21 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     });
     var layerfondo = new Kinetic.Layer()
     imageFondo = new Image();
+    
     imageFondo.onload = function(){
-      var fondo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageFondo, rotation: 0, offset: [190, 140] })
+      imageLogo = new Image();
+      var fondo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageFondo })
       layerfondo.add(fondo);
       layerfondo.draw();
-      layerPersonaje.moveToTop();
-
+      
+      
+      imageLogo.onload = function(){
+        var logo = new Kinetic.Image({ x: 190,y: 139,height: 448,width: 250, image:imageLogo })
+        layerPersonaje.add(logo);
+        logo.moveToTop();
+        layerPersonaje.moveToTop();
+        layerPersonaje.draw();
+      }
       stagePersonaje.toDataURL({
         mimeType: "image/png",
         quality: 0.8,
@@ -469,7 +478,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         }
       });
     }
-    imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar.jpg";
+    imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar_solo.jpg";
+    imageLogo.src=BaseUrl+"/images/backgrounds/logo.jpg"
     stagePersonaje.add(layerfondo);
     
     return false;
