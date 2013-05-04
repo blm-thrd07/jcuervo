@@ -568,7 +568,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
 
   insertGlobo = function(){
-    alert("data"+$(this).attrs("data"));
+    alert("data"+$(this).attr("data"));
   }
 
   $(".btn").on("click",function(){ $("#textinput").attr("class", "inputClose"); });
