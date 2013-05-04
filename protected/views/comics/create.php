@@ -129,22 +129,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   var scale = 1;
   var scaleUpFactor= 1.05, scaleDownFactor=0.95;
   var trans = null;
-  $(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
-  $(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
+  //$(".js-tabEngine").easytabs({animate:!0,animationSpeed:150,tabActiveClass:"selected",updateHash:!1});
+  //$(".js-slides").slides({preload:!1,slideSpeed:450,generatePagination:!1,generateNextPrev:!1});
   stageComic = new Kinetic.Stage({
     container: "comicCanvas",
     width: 510,
     height: 383,
-    dragBoundFunc: function(pos) {
-      var X=pos.x;
-      var Y=pos.y;
-      //if(X<this.width){X=minX;}
-      //if(X>maxX){X=maxX;}
-      //if(Y<minY){Y=minY;}
-      if(Y>200){Y=200;}
-      return({x:X, y:this.getAbsolutePosition().y});
-     
-    }
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
@@ -170,7 +160,16 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: scale,name: "amigo",tipo: "amigo"};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: scale,name: "objeto",tipo: "objeto"};
   confBackground = {x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageBackground,offset: [190, 140],startScale: scale,name: "fondo",id: 1};
-  confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "amigo", id:"'.$id_miavatar.'",};
+  confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: scale,name: "MiAvatar",tipo: "amigo", id:"'.$id_miavatar.'", dragBoundFunc: function(pos) {
+      var X=pos.x;
+      var Y=pos.y;
+      //if(X<this.width){X=minX;}
+      //if(X>maxX){X=maxX;}
+      //if(Y<minY){Y=minY;}
+      if(Y>200){Y=200;}
+      return({x:X, y:this.getAbsolutePosition().y});
+     
+    }};
 
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
