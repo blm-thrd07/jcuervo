@@ -453,32 +453,35 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         logo.moveToTop();
         layerPersonaje.moveToTop();
         layerPersonaje.draw();
+
+        stagePersonaje.toDataURL({
+          mimeType: "image/png",
+          quality: 0.8,
+          callback: function(dataUrl) {
+            var avatarJson = { img: dataUrl };
+            $.ajax({
+              type: "POST",
+              url: BaseUrl+"/index.php/avatars/UpdateImg",
+              data: avatarJson,
+              success: function(url){
+                //window.location=url;
+                $("#overlay").css("display","none"); 
+                $("#popup").css("display","none"); 
+              },
+              error: function(data) { 
+                console.log("hubo un error al guardar :(");
+                $("#overlay").css("display","none"); 
+                $("#popup").css("display","none"); 
+              }
+            });
+          }
+        });
       }
-      stagePersonaje.toDataURL({
-        mimeType: "image/png",
-        quality: 0.8,
-        callback: function(dataUrl) {
-          var avatarJson = { img: dataUrl };
-          $.ajax({
-            type: "POST",
-            url: BaseUrl+"/index.php/avatars/UpdateImg",
-            data: avatarJson,
-            success: function(url){
-              //window.location=url;
-              $("#overlay").css("display","none"); 
-              $("#popup").css("display","none"); 
-            },
-            error: function(data) { 
-              console.log("hubo un error al guardar :(");
-              $("#overlay").css("display","none"); 
-              $("#popup").css("display","none"); 
-            }
-          });
-        }
-      });
+      imageLogo.src=BaseUrl+"/images/backgrounds/logo.jpg"
+
+      
     }
     imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar_solo.jpg";
-    imageLogo.src=BaseUrl+"/images/backgrounds/logo.jpg"
     stagePersonaje.add(layerfondo);
     
     return false;
