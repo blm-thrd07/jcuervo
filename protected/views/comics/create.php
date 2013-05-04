@@ -155,6 +155,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   var stageWidth = stageComic.getWidth();
   var stageHeight = stageComic.getHeight();
+  console.log(stageHeight);
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
@@ -165,6 +166,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       var X=pos.x;
       var Y=pos.y;
       var d = ((stageHeight-35)-(this.height/2));
+      console.log("s: "+stageHeight-35);
       console.log(d);
       if(X<2){X=2}
       if(X>this.width-2){X=this.width-2;}
