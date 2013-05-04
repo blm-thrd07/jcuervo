@@ -381,7 +381,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             duration: 0.5,
             easing: "elastic-ease-out",
             scale: {
-              x: this.attrs.startScale,
+              x: this.attrs.startScale*this.attrs.mirror,
               y: this.attrs.startScale
             }
           });
