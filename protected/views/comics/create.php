@@ -572,6 +572,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   }
 
+  mirror = function(){
+    currentSelected.attrs.scale = -1*currentSelected.attrs.scale;
+    layerComic.draw();
+  }
+
   $(".btn").on("click",function(){ $("#textinput").attr("class", "inputClose"); });
   $("#js-listenerStat").on("click", saveToImage);
   $("#js-rotateLeft").on("click", rotateLeft);
@@ -583,7 +588,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-insertText").on("click", insertText);
   $("#js-createText").on("click", createText);
   $("#js-resizeDown").on("click", resizeDown);
-  $("#js-resizeUp").on("click", resizeUp);
+  $("#js-resizeUp").on("click", mirror);
   $("#textinput").keyup(function(e){
     this.value = this.value.toUpperCase();
     currentText.setText(this.value);
