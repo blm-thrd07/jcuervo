@@ -332,7 +332,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("click", function() {
           if(aux==="globo"){
-            currentSelected.moveToBottom();
+            this.moveToBottom();
           }
           $("#textinput").attr("class", "inputClose");
           if(currentSelected){
@@ -375,7 +375,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("dragend", function(e) {
           if(aux==="globo"){
-            currentSelected.moveToBottom();
+            this.moveToBottom();
           }
           trans = this.transitionTo({
             duration: 0.5,
