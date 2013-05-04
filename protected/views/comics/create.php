@@ -560,12 +560,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
 
   mirror = function(){
-    currentSelected.attrs.mirror=-1*currentSelected.attrs.mirror;
     trans = currentSelected.transitionTo({
       duration: 0.5,
       easing: "elastic-ease-out",
       scale: {
-        x: currentSelected.attrs.scale.x * currentSelected.attrs.mirror,
+        x: -1*currentSelected.attrs.scale.x,
         y: currentSelected.attrs.scale.y
       }
     });
