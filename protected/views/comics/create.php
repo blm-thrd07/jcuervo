@@ -571,14 +571,13 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     $("#textinput").attr("class", "inputClose");
     tipo = $(this).attr("data");
     if(tipo==="1"){
-      console.log("uno");
-      insertar("globo","globo-normal.jpg",confObjeto);
+      insertar("globo","globo_normal.jpg",confObjeto);
     }
     if(tipo==="2"){
-      insertar("globo","globo-exclamacion.jpg",confObjeto);
+      insertar("globo","globo_exclamacion.jpg",confObjeto);
     }
     if(tipo==="3"){
-      insertar("globo","globo-pensamiento.jpg",confObjeto);
+      insertar("globo","globo_pensamiento.jpg",confObjeto);
     }
     return false;
   }
