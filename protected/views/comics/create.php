@@ -579,6 +579,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(tipo===3){
       insertar("globo","globo-pensamiento.jpg",confObjeto);
     }
+    return false;
   }
 
   $(".btn").on("click",function(){ $("#textinput").attr("class", "inputClose"); });
@@ -594,7 +595,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   $("#js-resizeDown").on("click", resizeDown);
   $("#js-resizeUp").on("click", resizeUp);
   $("#js-mirror").on("click", mirror);
-  $("#js-globo").on("click", insertGlobo);
+  $(".globo").on("click", insertGlobo);
   $("#textinput").keyup(function(e){
     this.value = this.value.toUpperCase();
     currentText.setText(this.value);
