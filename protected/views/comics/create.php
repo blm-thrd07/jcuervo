@@ -533,7 +533,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       
     }
     if(currentText){
-      currentText.fontSize(currentText.fontSize()+1);
+      trans = currentText.transitionTo({
+        duration: 0.5,
+        easing: "elastic-ease-out",
+        scale: {
+          x: currentText.attrs.scale.x * scaleDownFactor,
+          y: currentText.attrs.scale.y * scaleDownFactor
+        }
+      });
     }
     return false;
   }
@@ -551,7 +558,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     }
     if(currentText){
-      currentText.fontSize(currentText.fontSize()+1);
+      trans = currentText.transitionTo({
+        duration: 0.5,
+        easing: "elastic-ease-out",
+        scale: {
+          x: currentText.attrs.scale.x * scaleUpFactor,
+          y: currentText.attrs.scale.y * scaleUpFactor
+        }
+      });
     }
     return false;
   }
