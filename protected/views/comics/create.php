@@ -168,7 +168,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       var dy = ((stageHeight-40)-(this.attrs.height/2));
       var dy2 = (this.attrs.height/2)+5;
 
-      console.log(d);
+      console.log("dy: "+dy+" dy2: "+dy2); 
       if(X<2){X=2}
       if(X>this.width-2){X=this.width-2;}
       if(Y<dy2){Y=dy2;}
