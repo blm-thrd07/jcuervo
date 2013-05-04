@@ -573,7 +573,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
 
   mirror = function(){
-    currentSelected.attrs.scale = -1*currentSelected.attrs.scale;
+    currentSelected.scale.x = -1;
     layerComic.draw();
   }
 
