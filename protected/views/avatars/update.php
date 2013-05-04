@@ -448,7 +448,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       
       
       imageLogo.onload = function(){
-        var logo = new Kinetic.Image({ x: 163,y: 10,height: this.height,width: this.width, image:imageLogo })
+        var logo = new Kinetic.Image({ x: 164,y: 10,height: this.height,width: this.width, image:imageLogo })
         layerPersonaje.add(logo);
         logo.moveToTop();
         layerPersonaje.moveToTop();
@@ -464,7 +464,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
               url: BaseUrl+"/index.php/avatars/UpdateImg",
               data: avatarJson,
               success: function(url){
-                //window.location=url;
+                window.location=url;
                 $("#overlay").css("display","none"); 
                 $("#popup").css("display","none"); 
               },
