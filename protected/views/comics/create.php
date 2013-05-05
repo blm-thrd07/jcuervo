@@ -166,7 +166,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(X<dx){X=dx} if(X>dx2){X=dx2;} 
     if(Y<dy2){Y=dy2;} 
     if(Y>dy){Y=dy;} 
-    return({x:X, y:Y}); }
+    return({x:X, y:Y}); 
   };
 
   confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: [1,1],name: "amigo",tipo: "amigo", mirror:1, dragBoundFunc: dragfun };
