@@ -476,7 +476,7 @@ if ($user) {
         }
       }
     }
- /*
+ 
     // if the album is not present, create the album
     if ($album_id == 'blank') {
       $graph_url = "https://graph.facebook.com/me/albums?" . "access_token=". $user;
@@ -488,8 +488,9 @@ if ($user) {
  
       $new_album = $facebook->api("me/albums", 'post', $album_data);
       $album_id = $new_album['id'];
+      echo $album_id;
     }
-    */
+    
   } catch (FacebookApiException $e) {
     error_log($e);
     $user = null;
