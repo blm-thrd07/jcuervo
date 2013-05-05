@@ -239,26 +239,32 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText.setStroke(null);
       currentText.setStrokeWidth(0);
     }
-    layerComic.draw();
-    stageComic.toDataURL({
-      mimeType: "image/png",
-      callback: function(dataUrl) {
-        var data = { img: dataUrl };
-        $.ajax({
-         type: "POST",
-          url: BaseUrl+"/index.php/comics/create",
-          data:data,
-          success:function(url){
-            window.location=url;
-          },
-          error: function(data) { 
-            console.log("Vuelve a intentarlo");
-            $("#overlay").css("display","none"); 
-            $("#popup").css("display","none"); 
-          },
-        });
-      }
-    });
+    marco = new Image();
+    confBackground.image=marco;
+    imageMarco.onload = function(){ 
+      obj = new Kinetic.Image(confBackground);
+      layerComic.draw();
+      stageComic.toDataURL({
+        mimeType: "image/png",
+        callback: function(dataUrl) {
+          var data = { img: dataUrl };
+          $.ajax({
+           type: "POST",
+            url: BaseUrl+"/index.php/comics/create",
+            data:data,
+            success:function(url){
+              window.location=url;
+            },
+            error: function(data) { 
+              console.log("Vuelve a intentarlo");
+              $("#overlay").css("display","none"); 
+              $("#popup").css("display","none"); 
+            },
+          });
+        }
+      });
+    }
+    imageMarco.src = BaseUrl+"/images/backgrounds/marco.jpg";
     
   };
 
