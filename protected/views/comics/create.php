@@ -471,7 +471,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         dy = ((stageHeight-59)-(this.getTextHeight())); 
         dy2 = 6; 
         dx = 8;
-        dx2 = (stageWidth-8); 
+        dx2 = (stageWidth-8-this.getTextWidth()); 
         if(X<dx){X=dx} 
         if(X>dx2){X=dx2;} 
         if(Y<dy2){Y=dy2;} 
