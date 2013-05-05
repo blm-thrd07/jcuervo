@@ -467,7 +467,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       dragBoundFunc: function(pos) { 
         X=pos.x; Y=pos.y; 
         dy = ((stageHeight-59)-(this.getTextHeight()*Math.abs(this.getScale().y))); 
-        dy2 = 6; 
+        dy2 = 8; 
         dx = 8;
         dx2 = (stageWidth-10-(this.getTextWidth()*Math.abs(this.getScale().x))); 
         if(X<dx){X=dx} 
