@@ -58,7 +58,7 @@
                 }
             ?>
           </div>
-          <div id="tab2" class="memeThumbs">
+          <div id="tab2" class="memeThumbs noSlide">
             <? 
               $bandera=false;
               $count=count($json['catalogos']['cuerpos']);
@@ -75,7 +75,7 @@
                 }
             ?>
           </div>
-          <div id="tab3" class="memeThumbs">
+          <div id="tab3" class="memeThumbs noSlide">
             <? 
               $bandera=false;
               $count=count($json['catalogos']['ojos']);
