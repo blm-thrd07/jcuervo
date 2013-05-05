@@ -241,8 +241,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     marco = new Image();
     confBackground.image=marco;
-    imageMarco.onload = function(){ 
+    marco.onload = function(){ 
       obj = new Kinetic.Image(confBackground);
+      layerComic.add(obj);
       layerComic.draw();
       stageComic.toDataURL({
         mimeType: "image/png",
@@ -264,7 +265,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         }
       });
     }
-    imageMarco.src = BaseUrl+"/images/backgrounds/marco.jpg";
+    marco.src = BaseUrl+"/images/backgrounds/marco.jpg";
     
   };
 
