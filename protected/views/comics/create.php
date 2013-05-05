@@ -457,13 +457,14 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   createText = function() {
     var texto = new Kinetic.Text({
-      x: 0,
-      y: 0,
+      x: 20,
+      y: 20,
       text: initialText,
       fontSize: 18,
       fontFamily: "aldosemibold",
       fill: "#000000",
       width: 300,
+      height:30,
       padding: 5,
       align: "left",
       draggable: true,
