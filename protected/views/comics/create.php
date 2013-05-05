@@ -468,11 +468,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       draggable: true,
       dragBoundFunc: function(pos) { 
         X=pos.x; Y=pos.y; 
-        dy = ((stageHeight-53)-((this.getTextHeight())/2)); 
-        dy2 = ((this.getTextHeight())/2)+12; 
-        dx = ((this.getTextWidth())/2)+12; 
-        dx2 = ((stageWidth-12)-((this.getTextWidth())/2)); 
-        if(X<dx){X=dx} if(X>dx2){X=dx2;} 
+        dy = ((stageHeight-59)-((this.getTextHeight())/2)); 
+        dy2 = ((this.getTextHeight())/2); 
+        dx = ((this.getTextWidth())/2); 
+        dx2 = ((stageWidth)-((this.getTextWidth())/2)); 
+        if(X<dx){X=dx} 
+        if(X>dx2){X=dx2;} 
         if(Y<dy2){Y=dy2;} 
         if(Y>dy){Y=dy;} 
         return({x:X, y:Y}); 
