@@ -169,20 +169,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return({x:X, y:Y}); 
   };
 
-  confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: [1,1],name: "amigo",tipo: "amigo", mirror:1, dragBoundFunc: dragfun(pos) };
-  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: [1,1],name: "objeto",tipo: "objeto", mirror:1, id:2, dragBoundFunc: dragfun(pos) };
-  confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: [1,1],name: "MiAvatar",tipo: "amigo", mirror:1, id:"'.$id_miavatar.'", dragBoundFunc: 
-  function(pos) { 
-    X=pos.x; Y=pos.y; 
-    dy = ((stageHeight-53)-((this.attrs.height*this.getScale().x)/2)); 
-    dy2 = ((this.attrs.height*this.getScale().x)/2)+12; 
-    dx = ((this.attrs.width*this.getScale().x)/2)+12; 
-    dx2 = ((stageWidth-12)-((this.attrs.width*this.getScale().x)/2)); 
-    if(X<dx){X=dx} if(X>dx2){X=dx2;} 
-    if(Y<dy2){Y=dy2;} 
-    if(Y>dy){Y=dy;} 
-    return({x:X, y:Y}); }
-  };
+  confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: [1,1],name: "amigo",tipo: "amigo", mirror:1, dragBoundFunc: function(pos) { return dragfun(pos); } };
+  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: [1,1],name: "objeto",tipo: "objeto", mirror:1, id:2, dragBoundFunc: function(pos) { return dragfun(pos); } };
+  confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: [1,1],name: "MiAvatar",tipo: "amigo", mirror:1, id:"'.$id_miavatar.'", dragBoundFunc: function(pos) { return dragfun(pos); } };
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
   stageComic.add(layerFondo);
