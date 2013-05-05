@@ -98,6 +98,8 @@ class AppController extends Controller
     ));
    
     $user =$facebook->getUser();
+    $album_name = 'MIS MEMES ESPECIAL';
+    $album_description = '';
 
 
     if ($user) {
@@ -130,11 +132,37 @@ class AppController extends Controller
         $response= Usuarios::model()->find(array('condition'=>'correo=:correo','params'=>array(':correo'=>$user_profile['email'])));
 
         if(count($response)==0){
+          $user_albums = $facebook->api("/me/albums");
+
+        if ($user_albums) {
+             foreach ($user_albums['data'] as $key => $album) {
+                   if ($album['name'] == $album_name) {
+                        $album_id = $album['id'];
+                         break;
+             }
+              else {
+                    $album_id = 'blank';
+              }
+            }
+        }
+ 
+        if ($album_id == 'blank') {
+              $graph_url = "https://graph.facebook.com/me/albums?" . "access_token=". $user; 
+              $album_data = array(
+                  'name' => $album_name,
+                  'message' => $album_description,
+                  );
+              $new_album = $facebook->api("me/albums", 'post', $album_data);
+              $album_id = $new_album['id'];
+          }
+
           $response = new Usuarios;
           $response->correo=$user_profile['email'];
           $response->nombre=$user_profile['name'];
           $response->id_facebook=$user_profile['id'];
           $response->sexo=$user_profile['gender'];
+          $response->id_album=$album_id;
+          
           
           if($data['page']['liked']) 
             { 
@@ -466,7 +494,6 @@ if ($user) {
     if ($user_albums) {
       foreach ($user_albums['data'] as $key => $album) {
 
-        echo $album['name']."<br>";
         if ($album['name'] == $album_name) {
           $album_id = $album['id'];
           break;
