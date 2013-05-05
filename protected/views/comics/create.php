@@ -464,10 +464,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       fontFamily: "aldosemibold",
       fill: "#000000",
       padding: 5,
-      align: "left",
       draggable: true,
       dragBoundFunc: function(pos) { 
         X=pos.x; Y=pos.y; 
+        console.log("h: "+this.getTextHeight());
+        console.log("w: "+this.getTextWidth());
+
         dy = ((stageHeight-59)-(this.getTextHeight())); 
         dy2 = 6; 
         dx = 8;
