@@ -164,8 +164,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   function(pos) { 
     X=pos.x; Y=pos.y; 
     dy = ((stageHeight-53)-((this.attrs.height*this.getScale().x)/2)); 
-    dy2 = (this.attrs.height/2)+12; dx = (this.attrs.width/2)+12; 
-    dx2 = ((stageWidth-12)-(this.attrs.width/2)); 
+    dy2 = ((this.attrs.height*this.getScale().x)/2)+12; 
+    dx = ((this.attrs.width*this.getScale().x)/2)+12; 
+    dx2 = ((stageWidth-12)-((this.attrs.width*this.getScale().x)/2)); 
     if(X<dx){X=dx} if(X>dx2){X=dx2;} 
     if(Y<dy2){Y=dy2;} 
     if(Y>dy){Y=dy;} 
