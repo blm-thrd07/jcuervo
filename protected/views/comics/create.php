@@ -169,8 +169,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return({x:X, y:Y}); 
   };
 
-  confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: [1,1],name: "amigo",tipo: "amigo", mirror:1, dragBoundFunc: dragfun };
-  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: [1,1],name: "objeto",tipo: "objeto", mirror:1, id:2, dragBoundFunc: dragfun };
+  confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: [1,1],name: "amigo",tipo: "amigo", mirror:1, dragBoundFunc: dragfun(pos) };
+  confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: [1,1],name: "objeto",tipo: "objeto", mirror:1, id:2, dragBoundFunc: dragfun(pos) };
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: [1,1],name: "MiAvatar",tipo: "amigo", mirror:1, id:"'.$id_miavatar.'", dragBoundFunc: 
   function(pos) { 
     X=pos.x; Y=pos.y; 
@@ -183,7 +183,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     if(Y>dy){Y=dy;} 
     return({x:X, y:Y}); }
   };
-//layer.getWidth() * layer.getScale().x
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
   stageComic.add(layerFondo);
