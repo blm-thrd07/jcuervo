@@ -1,6 +1,3 @@
-
-(function() {
-
 if (referrerIsFacebookApp()) {
     top.location = 'http://www.facebook.com/Lnx1337/app_342733185828640';
   }
@@ -18,6 +15,8 @@ function referrerIsFacebookApp() {
   return false;
 }
 
+
+(function() {
  $(document).bind('selectstart dragstart', function(evt)
   { evt.preventDefault(); return false; });
     
