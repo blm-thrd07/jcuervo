@@ -142,7 +142,7 @@ $(".share").live('click',function(){
     var obj = {
       method: 'feed',
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
-      link: window.protocol+"www.facebook.com/Lnx1337/app_342733185828640",
+      link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/login",
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
       name: 'Generador de Memes Jose Cuervo',
       caption: 'Crea tu meme',
