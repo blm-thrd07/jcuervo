@@ -172,7 +172,7 @@ class ComicsController extends Controller
 	 }
 
 	  public function ShareComic($my_access_token,$link,$message){
-		$graph_url= "https://graph.facebook.com/100004850712781_1073741825/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token;
+		$graph_url= "https://graph.facebook.com/153517631486593/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $graph_url);
 		curl_setopt($ch, CURLOPT_HEADER, false);
