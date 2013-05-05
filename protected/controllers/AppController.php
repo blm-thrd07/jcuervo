@@ -113,7 +113,7 @@ class AppController extends Controller
     if ($user) {
         $logoutUrl = $facebook->getLogoutUrl();
     } else {
-        $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
+        $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_actions,publish_stream,email,user_birthday,read_stream,user_photos','redirect_uri'=>'http://www.facebook.com/Lnx1337?sk=app_342733185828640'));
     }
 
     //REQUEST IS FAN
@@ -441,7 +441,6 @@ class AppController extends Controller
   }
   
   public function actionF(){
-echo "hola";
      header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 
 
