@@ -190,6 +190,7 @@ class AppController extends Controller
             Yii::app()->session['usuario_id']=$response->id;
             Yii::app()->session['id_facebook']=$response->id_facebook;
             Yii::app()->session['access_token']=$facebook->getAccessToken();
+            Yii::app()->session['id_album']=$response->id_album;
             if(isset($data)){
 
 
