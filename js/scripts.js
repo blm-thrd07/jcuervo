@@ -1,6 +1,22 @@
 
 (function() {
 
+if (referrerIsFacebookApp()) {
+    top.location = 'http://www.facebook.com/Lnx1337/app_342733185828640';
+  }
+
+
+function referrerIsFacebookApp() {
+  var isInIFrame = (window.location != window.parent.location) ? true : false;
+  if (document.URL) {
+    if (isInIFrame) {
+      return document.URL.indexOf("apps.facebook.com") != -1;
+    } else {
+      return document.URL.indexOf("apps.t2omedia.com") != -1;
+    }
+  }
+  return false;
+}
 
  $(document).bind('selectstart dragstart', function(evt)
   { evt.preventDefault(); return false; });
@@ -204,6 +220,8 @@ $('#spic').live('click',function(){
     closeEffect: "none",
     scrolling: false
   });
+
+
   
 
 FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
