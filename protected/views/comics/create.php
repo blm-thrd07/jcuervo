@@ -466,7 +466,18 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       width: 300,
       padding: 5,
       align: "left",
-      draggable: true
+      draggable: true,
+      dragBoundFunc: function(pos) { 
+        X=pos.x; Y=pos.y; 
+        dy = ((stageHeight-53)-((this.attrs.height*Math.abs(this.getScale().x))/2)); 
+        dy2 = ((this.attrs.height*Math.abs(this.getScale().x))/2)+12; 
+        dx = ((this.attrs.width*Math.abs(this.getScale().x))/2)+12; 
+        dx2 = ((stageWidth-12)-((this.attrs.width*Math.abs(this.getScale().x))/2)); 
+        if(X<dx){X=dx} if(X>dx2){X=dx2;} 
+        if(Y<dy2){Y=dy2;} 
+        if(Y>dy){Y=dy;} 
+        return({x:X, y:Y}); 
+      }
     });
 
     layerComic.add(texto);
