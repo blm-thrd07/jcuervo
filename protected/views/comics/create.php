@@ -196,6 +196,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     obj = new Kinetic.Image(confBackground);
     layerMarco.add(obj);  
     layerMarco.draw();
+    layerMarco.moveToTop();
   }
   marco.src = BaseUrl+"/images/backgrounds/marco.jpg";
 
