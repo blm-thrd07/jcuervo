@@ -178,8 +178,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stageComic.add(layerFondo);
   stageComic.add(layerComic);
   var background = new Kinetic.Rect({
-    x: stage.getWidth() / 2,
-    y: stage.getHeight() / 2,
+    x: 190,
+    y: 140,
     width: 510,
     height: 383,
     fill: "black",
