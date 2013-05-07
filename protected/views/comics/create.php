@@ -190,9 +190,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   imageBackground.src=BaseUrl+"/images/backgrounds/default.jpg";
   */
   imageMarco = new Image();
-  confBackground
   imageMarco.onload = function(){
-    marco = new Kinetic.Image({x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1,drawFunc: 
+    marco = new Kinetic.Image({x: 0,y: 0,rotation: 0,height: 383,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1,drawFunc: 
       function(canvas){
         //canvas.getContext().globalCompositeOperation = "destination-over";
       }
