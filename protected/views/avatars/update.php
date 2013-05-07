@@ -414,30 +414,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     return false;
   };
 
-  saveToImage = function() {
-    var json = JSON.parse(layerPersonaje.toJSON()); 
-    if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
-    $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
-    console.log(json);
-    stagePersonaje.toDataURL({
-      mimeType: "image/png",
-      quality: 0.8,
-      callback: function(dataUrl) {
-        var avatarJson = { avatar: json.children, img: dataUrl };
-
-        $.ajax({
-          type: "POST",
-          url: BaseUrl+"/index.php/avatars/UpdatePieza",
-          data: avatarJson,
-          success: function(url){
-            
-          },
-          error: function(data) { 
-            console.log("hubo un error al guardar :(");
-          }
-        });
-      }
-    });
+  saveFacebook = function() {
     var layerfondo = new Kinetic.Layer()
     imageFondo = new Image();
     imageFondo.onload = function(){
@@ -483,6 +460,33 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     }
     imageFondo.src=BaseUrl+"/images/backgrounds/fondo_avatar_solo.jpg";
     stagePersonaje.add(layerfondo);
+  }
+
+  saveToImage = function() {
+    var json = JSON.parse(layerPersonaje.toJSON()); 
+    if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
+    $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
+    console.log(json);
+    stagePersonaje.toDataURL({
+      mimeType: "image/png",
+      quality: 0.8,
+      callback: function(dataUrl) {
+        var avatarJson = { avatar: json.children, img: dataUrl };
+
+        $.ajax({
+          type: "POST",
+          url: BaseUrl+"/index.php/avatars/UpdatePieza",
+          data: avatarJson,
+          success: function(url){
+            saveFacebook();
+          },
+          error: function(data) { 
+            console.log("hubo un error al guardar :(");
+          }
+        });
+      }
+    });
+    
     
     return false;
   };
