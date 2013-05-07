@@ -1,5 +1,5 @@
 <div id="container" class="logoComic">
-  <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
+  <div id="memeGeneratorLogo"><span>Memespecial</span><span>Generator</span></div>
   <h1 class="tituloCrear">Crea Tu Meme</h1>
 
   <section id="panelComic">
@@ -336,7 +336,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       imageObj = new Image();
       conf.image = imageObj;
       imageObj.onload = function(){ 
-        if(obj==="objeto"){
+        if(obj==="objeto" || obj==="globo"){
           conf.width=this.width;
           conf.height=this.height;
           conf.offset = { x: this.width/2, y:this.height/2 };
