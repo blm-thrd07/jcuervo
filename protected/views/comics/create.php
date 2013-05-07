@@ -171,7 +171,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
   confAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64, 115],startScale: [1,1],name: "amigo",tipo: "amigo", mirror:1};
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: [1,1],name: "objeto",tipo: "objeto", mirror:1, id:2};
-  confBackground = {x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageBackground,offset: [190, 140],startScale: [1,1],name: "fondo",id: 1};
+  confBackground = {x: 190,y: 139,rotation: 0,height: 383,width: 510,image: imageBackground,offset: [190, 140],startScale: [1,1],name: "fondo",id: 1};
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: [1,1],name: "MiAvatar",tipo: "amigo", mirror:1, id:"'.$id_miavatar.'"};
   layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
@@ -201,7 +201,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   
   imageMarco = new Image();
   imageMarco.onload = function(){
-    marco = new Kinetic.Image({x: 188,y: 470,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
+    marco = new Kinetic.Image({x: 188,y: 471,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
     layerComic.add(marco);
     marco.moveToBottom();
     layerComic.draw();
