@@ -307,7 +307,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   };
 
   sendBack = function() {
-    currentSelected.moveToBottom();
+    this.setZIndex(stage.getChildren().length - 1);
     layerComic.draw();
     return false;
   };
@@ -361,7 +361,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("click", function() {
           if(aux==="globo"){
-            //this.moveToBottom();
             this.setZIndex(stage.getChildren().length - 1);
           }
           $("#textinput").attr("class", "inputClose");
