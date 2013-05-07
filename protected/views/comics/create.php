@@ -173,22 +173,21 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   confObjeto = {x: halfx,y: halfy,height: 100,width: 100,draggable: true,offset: [50, 50],startScale: [1,1],name: "objeto",tipo: "objeto", mirror:1, id:2};
   confBackground = {x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageBackground,offset: [190, 140],startScale: [1,1],name: "fondo",id: 1};
   confMiAvatar = { x: halfx,y: halfy,height: 230,width: 128,draggable: true,offset: [64,115],startScale: [1,1],name: "MiAvatar",tipo: "amigo", mirror:1, id:"'.$id_miavatar.'"};
-  layerFondo = new Kinetic.Layer();
+  //layerFondo = new Kinetic.Layer();
   layerComic = new Kinetic.Layer();
-  stageComic.add(layerFondo);
+  //stageComic.add(layerFondo);
   stageComic.add(layerComic);
 
   imageBackground = new Image();
   confBackground.image = imageBackground;
   imageBackground.onload = function(){
     fondo = new Kinetic.Image(confBackground);
-    layerFondo.add(fondo);
-    layerFondo.draw();
-    layerComic.moveToTop();
+    layerComic.add(fondo);
+    layerComic.draw();
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.jpg";
-  layerFondo.draw();
-  layerFondo.getContext().globalCompositeOperation = "destination-over";
+  layerComic.draw();
+  layerComic.getContext().globalCompositeOperation = "destination-over";
   $("#tab1 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
   $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
