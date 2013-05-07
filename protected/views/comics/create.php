@@ -361,7 +361,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("click", function() {
           if(aux==="globo"){
-            this.moveToBottom();
+            //this.moveToBottom();
+            this.setZIndex(stage.getChildren().length - 1);
           }
           $("#textinput").attr("class", "inputClose");
           if(currentSelected){
@@ -405,7 +406,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
         obj.on("dragend", function(e) {
           if(aux==="globo"){
-            this.moveToBottom();
+            //this.moveToBottom();
+            this.setZIndex(stage.getChildren().length - 1);
           }
           trans = this.transitionTo({
             duration: 0.5,
