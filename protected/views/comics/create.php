@@ -196,7 +196,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.draw();
   }
   imageMarco.src = BaseUrl+"/images/backgrounds/marco.png";
-  layerComic.getContext().globalCompositeOperation = "destination-over";
+  //layerComic.getContext().globalCompositeOperation = "destination-over";
   $("#tab1 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
   $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
