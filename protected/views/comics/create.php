@@ -192,7 +192,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   imageMarco = new Image();
   confBackground
   imageMarco.onload = function(){
-    marco = new Kinetic.Image({x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1);
+    marco = new Kinetic.Image({x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
     layerComic.add(marco);
     marco.moveToBottom();
     layerComic.draw();
