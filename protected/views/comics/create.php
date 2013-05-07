@@ -201,7 +201,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   
   imageMarco = new Image();
   imageMarco.onload = function(){
-    marco = new Kinetic.Image({x: 190,y: 470,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
+    marco = new Kinetic.Image({x: 188,y: 470,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
     layerComic.add(marco);
     marco.moveToBottom();
     layerComic.draw();
@@ -229,34 +229,25 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText.setStroke(null);
       currentText.setStrokeWidth(0);
     }
-    marco = new Image();
-    confBackground.image=marco;
-    marco.onload = function(){ 
-      obj = new Kinetic.Image(confBackground);
-      layerComic.add(obj);  
-      layerComic.draw();
-      stageComic.toDataURL({
-        mimeType: "image/png",
-        callback: function(dataUrl) {
-          var data = { img: dataUrl };
-          $.ajax({
-           type: "POST",
-            url: BaseUrl+"/index.php/comics/create",
-            data:data,
-            success:function(url){
-              window.location=url;
-            },
-            error: function(data) { 
-              console.log("Vuelve a intentarlo");
-              $("#overlay").css("display","none"); 
-              $("#popup").css("display","none"); 
-            },
-          });
-        }
-      });
-    }
-    marco.src = BaseUrl+"/images/backgrounds/marco.jpg";
-    
+    stageComic.toDataURL({
+      mimeType: "image/png",
+      callback: function(dataUrl) {
+        var data = { img: dataUrl };
+        $.ajax({
+         type: "POST",
+          url: BaseUrl+"/index.php/comics/create",
+          data:data,
+          success:function(url){
+            window.location=url;
+          },
+          error: function(data) { 
+            console.log("Vuelve a intentarlo");
+            $("#overlay").css("display","none"); 
+            $("#popup").css("display","none"); 
+          },
+        });
+      }
+    });    
   };
 
   angle = 0.174532925;
