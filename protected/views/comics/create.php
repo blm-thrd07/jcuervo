@@ -178,13 +178,12 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   stageComic.add(layerFondo);
   stageComic.add(layerComic);
   var background = new Kinetic.Rect({
-    x: 190,
-    y: 140,
+    x: 0,
+    y: 0,
     width: 510,
     height: 383,
-    fill: "black",
     stroke: "red",
-    strokeWidth: 5,
+    strokeWidth: 8,
   });
   layerComic.add(background);
   layerComic.draw();
@@ -199,16 +198,16 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.jpg";
   */
-  /*
+  
   imageMarco = new Image();
   imageMarco.onload = function(){
-    marco = new Kinetic.Image({x: 190,y: 140,rotation: 0,height: 383,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1,drawFunc: function(canvas){ return canvas.getContext().globalCompositeOperation = "destination-over"; }});
+    marco = new Kinetic.Image({x: 190,y: 210,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1,drawFunc: function(canvas){ return canvas.getContext().globalCompositeOperation = "destination-over"; }});
     layerComic.add(marco);
     marco.moveToBottom();
     layerComic.draw();
   };
-  imageMarco.src = BaseUrl+"/images/backgrounds/marco.png";
-  */
+  imageMarco.src = BaseUrl+"/images/backgrounds/footer.jpg";
+  
   //layerComic.getContext().globalCompositeOperation = "destination-over";
   $("#tab1 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
   $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
