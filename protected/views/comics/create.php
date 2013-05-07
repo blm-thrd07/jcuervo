@@ -193,6 +193,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   imageMarco.onload = function(){
     marco = new Kinetic.Image(confBackground);
     layerComic.add(marco);
+    marco.moveToBottom();
     layerComic.draw();
   }
   imageMarco.src = BaseUrl+"/images/backgrounds/marco.png";
