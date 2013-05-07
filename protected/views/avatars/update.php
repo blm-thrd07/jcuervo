@@ -425,7 +425,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       
       
       imageLogo.onload = function(){
-        var logo = new Kinetic.Image({ x: 164,y: 10,height: this.height,width: this.width, image:imageLogo })
+        var logo = new Kinetic.Image({ x: 164,y: 430,height: this.height,width: this.width, image:imageLogo })
         layerPersonaje.add(logo);
         logo.moveToTop();
         layerPersonaje.moveToTop();
