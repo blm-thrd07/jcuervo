@@ -187,18 +187,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.moveToTop();
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.jpg";
-
-  /*marco = new Image();
-  confBackground.image=marco;
-  marco.onload = function(){ 
-    m = new Kinetic.Image(confBackground);
-   
-  }
-  marco.src = BaseUrl+"/images/backgrounds/marco.jpg";
-  stageComic.getDragLayer().afterDraw(function() {
-    layer.draw();
-  });*/
-  layerComic.getContext().globalCompositeOperation = "destination-over";
+  
+  layerFondo.getContext().globalCompositeOperation = "destination-over";
+  layerFondo.draw();
   $("#tab1 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); var id = $(this).find("img").attr("id"); insertarFondo($(this).find("img").attr("src")); });
   $("#tab2 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); insertar("objeto",$(this).find("img").attr("src"),confObjeto); });
   $("#tab3 .itemMeme").on("click", function(e){ $("#textinput").attr("class", "inputClose"); confAvatar.id = $(this).find("img").attr("id"); insertar("amigo",$(this).find("img").attr("src"),confAvatar); });
