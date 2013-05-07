@@ -80,7 +80,7 @@ i
 	margin-bottom: 10px
 
 #personajeCanvas
-	outline: 5px solid $primario
+	outline: 1px dotted $primario
 
 
 
@@ -103,10 +103,32 @@ i
 		margin-bottom: $spacer
 
 
+%globosIconsSettings
+	display: inline-block
+	margin: 0 auto
+	width: 13px
+	height: 13px
+
+.globo1
+	@extend %globosIconsSettings
+	+spr-sprite('globo1')
+
+.globo2
+	@extend %globosIconsSettings
+	+spr-sprite('globo2')
+
+.globo3
+	@extend %globosIconsSettings
+	+spr-sprite('globo3')
+
 #insertText
 
 	input
-		margin-left: $spacer
+		margin: 0 $spacer 0 0
+
+
+	a:nth-of-type(n+2)
+		margin-left: 10px
 
 
 
@@ -207,8 +229,38 @@ i
 
 		.itemThumbnail
 			width: 23.5%
-		
 
+
+#nofan
+	margin-top: 3em
+	div
+		font-size: 3em
+		width: 700px
+		margin: 0 auto
+		text-align: center
+		margin-bottom: $spacer*3
+		img
+			vertical-align: middle
+
+
+	div:nth-of-type(1)
+		color: $primario
+
+
+	div:nth-of-type(2)
+		font-size: 2em
+
+	div:nth-of-type(3)
+		color: $primario
+		span
+			color: black
+			display: block
+			font-size: 2.5em
+
+
+	div:nth-of-type(4)
+		img
+			width: 100%
 
 
 
@@ -224,18 +276,12 @@ i
 
 	h1
 		+genericTitle
-		margin-bottom: $spacer*2.3
 		+text-shadow(rgba(white,0.5) 0px -1px 0)
-		text-align: center
 		color: $primario
 		font-size: 1.5em
+		margin-bottom: $spacer*2.3
+		text-align: center
 
-	// personaje
-	>div:nth-of-type(2)
-		//+out
-		margin-bottom: $spacer
-		img
-			width: 100%
 
 #memeGeneratorLogo
 	text-align: center
@@ -315,12 +361,29 @@ i
 
 #actions
 	text-align: center
+	
 
 	a
 		margin-right: 5px
 
 	a:last-of-type
 		margin-right: 0
+
+
+	.saveBtn
+		+cf
+		margin-top: $spacer*2
+
+		a
+			float: left
+			width: 40%
+			display: block
+
+		a:first-of-type
+			margin-right: 10px
+
+
+
 
 
 #camAction
@@ -336,35 +399,47 @@ i
 		@extend %g5
 		@extend %alpha
 		+cf
-		
 		+genericTitle
 		margin-bottom: $spacer
-		+text-shadow(rgba(white,0.5) 0px -1px 0)
+		+text-shadow(rgba(black,0.5) 0px -1px 0)
+		color: white
+
+	// cápsula roja
+	>div
+		padding: 10px
+		background: $primario
+		
 	
-	// btn crear nuevo
-	>a
-		+tab
-		display: block
-		+cf
-		font-size: 2em
-		margin-bottom: $spacer*3
+		// btn crear nuevo
+		>a
+			+tab
+			display: block
+			+cf
+			font-size: 2em
+			margin-bottom: $spacer*3
 
-	div.saveBtn
-		@extend %g3
-		@extend %omega
-		text-align: right
+		
 
 
-		a:last-of-type
-			margin-left: 10px
+.tituloCrear
+	color: $primario
+	text-align: center
+	margin-bottom: $spacer*2
+	font-size: 4em
 
 
+#panelContentComic
+	@extend %g4
 
+	
+
+.logoComic
+	margin-top: 40px !important
 
 
 
 #panelComic
-	@extend %g6
+	@extend %g8
 
 	h1
 		+genericTitle
@@ -378,19 +453,18 @@ i
 		img
 			width: 100%
 
+	.saveBtn
+		+cf
+		margin-top: $spacer*2
 
+		a
+			float: left
+			width: 45%
+			display: block
 
-#panelContentComic
-	@extend %g6
+		a:first-of-type
+			margin-right: 10px
 
-	div.saveBtn
-		
-		@extend %omega
-		text-align: right
-		margin-bottom: $spacer*5
-
-		a:last-of-type
-			margin-left: 10px
 
 
 .memeThumbs
@@ -398,12 +472,17 @@ i
 	// checar si sí o sí no
 	//min-height: 426px
 	// normal, sin incepton de engine de slides
+	background: #fef200
+	//padding: 5px
 	>div:nth-of-type(4n+1)
 		@extend %alpha
 
 	>div:nth-of-type(4n+4)
 		@extend %omega
 
+
+.noSlide
+	padding: 5px
 
 .itemThumbs
 	+cf
@@ -415,27 +494,28 @@ i
 
 .comicThumbs
 	+cf
-	min-height: 426px
+	//min-height: 426px
+	padding: 5px
 	// normal, sin incepton de engine de slides
-	>div:nth-of-type(3n+1)
+	>div:nth-of-type(2n+1)
 		@extend %alpha
 
-	>div:nth-of-type(3n+3)
+	>div:nth-of-type(2n+2)
 		@extend %omega
 
 .itemMeme
 	@extend %g2
+	width: 112px
 	+fx
 	position: relative
 	margin-bottom: 10px
-	max-height: 124px
 	min-height: 93px
 	text-align: center
 	>a
 
 	img
-		max-height: 124px
-		max-width: 124px
+		max-height: 112px
+		max-width: 112px
 		vertical-align: bottom
 	&:hover
 		+box-shadow(rgba(black,0.2) 0px 2px 10px)
@@ -465,7 +545,7 @@ i
 
 .itemThumbnail
 	@extend %g2
-	width: 32%
+	width: 31.94%
 	position: relative
 	margin-bottom: 10px
 	text-align: center
@@ -541,7 +621,7 @@ a.itemAction
 	>a
 		+tab
 		@extend %g2
-		width: 32%
+		width: 31.95%
 
 	>a:first-of-type
 		@extend %alpha
@@ -560,7 +640,7 @@ a.itemAction
 		>li
 			display: block
 			float: left
-			width: 18.42%
+			width: 18.36%
 			margin-right: 10px
 
 			a
@@ -575,7 +655,7 @@ a.itemAction
 
 	>ul.comicItemSelector
 		>li
-			width: 31.58%
+			width: 30.58%
 
 
 
@@ -597,6 +677,9 @@ a.selectedTab
 	p		
 		display: block
 		font-size: 1.3em
+		margin-bottom: $spacer*3
+
+	a
 		margin-bottom: $spacer*3
 
 
@@ -707,14 +790,18 @@ a.selectedTab
 
 .js-slides
 	+cf
+	position: relative
 
 	.slides_container
 		
 
 		.slide
 			margin-bottom: $spacer
-			width: 510px
-			height: 418px
+			width: 480px
+			height: 366px
+			background: #fef200
+			padding: 5px
+
 
 			>div.itemMeme:nth-of-type(4n+1)
 				@extend %alpha
@@ -725,40 +812,48 @@ a.selectedTab
 	>a
 		+btn
 		margin-top: $spacer
+		position: absolute
+		bottom: -60px
+		cursor: pointer
+
 
 	>a:first-of-type
-		margin-left: 442px
+		right: 30px
 
 	>a:last-of-type
-		margin-left: $spacer
+		right: -10px
 
 
 
 .js-slides-comic
+	position: relative
 
 	.slides_container
 		
 
 		.slide
 			margin-bottom: $spacer
-			width: 392px
-			height: 418px
+			width: 250px
+			height: 380px
 
-			>div.itemMeme:nth-of-type(3n+1)
+			>div.itemMeme:nth-of-type(2n+1)
 				@extend %alpha
 
-			>div.itemMeme:nth-of-type(3n+3)
+			>div.itemMeme:nth-of-type(2n+2)
 				@extend %omega
 
 	>a
 		+btn
 		margin-top: $spacer
+		position: absolute
+
 
 	>a:first-of-type
-		margin-left: 312px
+		right: 35px
 
 	>a:last-of-type
-		margin-left: $spacer
+		right: 0
+	
 
 
 // no sé si debería hacer ésto
@@ -766,7 +861,7 @@ a.selectedTab
 .rounded
 	background: $texto
 	+border-radius(500px)
-	height: 124px
+	height: 112px
 	position: relative
 
 	img

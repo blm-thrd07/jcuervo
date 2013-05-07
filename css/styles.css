@@ -2003,7 +2003,7 @@ i {
 }
 
 .itemThumbnail {
-  width: 31.95%;
+  width: 31.94%;
   position: relative;
   margin-bottom: 10px;
   text-align: center;
@@ -2217,7 +2217,7 @@ a.itemAction:hover {
 .itemSelector > ul > li {
   display: block;
   float: left;
-  width: 18.37%;
+  width: 18.36%;
   margin-right: 10px;
 }
 .itemSelector > ul > li a {
@@ -2429,7 +2429,7 @@ a.selectedTab:hover {
 }
 .js-slides .slides_container .slide {
   margin-bottom: 10px;
-  width: 481px;
+  width: 480px;
   height: 366px;
   background: #fef200;
   padding: 5px;
