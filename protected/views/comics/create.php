@@ -187,7 +187,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   layerComic.add(background);
   layerComic.draw();
-  /*
+  
   imageBackground = new Image();
   confBackground.image = imageBackground;
   imageBackground.onload = function(){
@@ -197,7 +197,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerComic.moveToTop();
   }
   imageBackground.src=BaseUrl+"/images/backgrounds/default.jpg";
-  */
+  
   
   imageMarco = new Image();
   imageMarco.onload = function(){
