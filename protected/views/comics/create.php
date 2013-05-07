@@ -182,8 +182,8 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     y: 0,
     width: 510,
     height: 383,
-    stroke: "red",
-    strokeWidth: 8,
+    stroke: "980d2e",
+    strokeWidth: 20,
   });
   layerComic.add(background);
   layerComic.draw();
@@ -201,7 +201,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   
   imageMarco = new Image();
   imageMarco.onload = function(){
-    marco = new Kinetic.Image({x: 190,y: 210,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
+    marco = new Kinetic.Image({x: 190,y: 470,rotation: 0,height: 60,width: 510,image: imageMarco,offset: [190, 140],startScale: [1,1],name: "marco",id: 1});
     layerComic.add(marco);
     marco.moveToBottom();
     layerComic.draw();
