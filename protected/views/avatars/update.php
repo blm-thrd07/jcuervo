@@ -134,11 +134,11 @@
 
 
 
-    <div id="wrapper">
-      <div id="overlay" style="display: none;">
-        <div id="popup" style="display: none;"><i class="icon-save icon-2x"></i>
-          <p>Guardando...</p>
-        </div>
+    <div id="wrapper" style="display: none;">
+      <div id="overlay" style="display: none;"></div>
+      <div id="popup">
+        <i class="icon-save icon-2x"></i>
+        <p>Guardando...</p>
       </div>
     </div>
 
