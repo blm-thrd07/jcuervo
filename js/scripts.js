@@ -218,8 +218,8 @@ $('#spic').live('click',function(){
     closeClick: false,
     openEffect: "none",
     closeEffect: "none",
-    scrolling: false,
-    width: 750
+    scrolling: 'no',
+    width: 700
   });
 
 
