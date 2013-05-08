@@ -134,12 +134,13 @@
 
 
 
-<div id="wrapper">
-<div style="display: none;" id="overlay"></div>
-<div style="display: none;" id="popup">
-    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/loading.gif" />
-</div>
-</div>
+    <div id="wrapper">
+      <div id="overlay">
+        <div id="popup"><i class="icon-save icon-2x"></i>
+          <p>Guardando...</p>
+        </div>
+      </div>
+    </div>
 
 
 <?php

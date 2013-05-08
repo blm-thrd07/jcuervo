@@ -1,22 +1,5 @@
-
-*.png
-
-<<<<<<< HEAD
 codekit-config.json
-=======
-img/.DS_Store
-
+*.DS_Store
 .DS_Store
->>>>>>> cambio
-
 *.sassc
-
-.sass-cache/5079350e7bc4d2326ad2af230f5157d92f2568b1/styles.sassc
-
-.sass-cache/5079350e7bc4d2326ad2af230f5157d92f2568b1/styles.sassc
-
-.sass-cache/5079350e7bc4d2326ad2af230f5157d92f2568b1/_init.sassc
-
-*.sassc
-
 *.pngc
