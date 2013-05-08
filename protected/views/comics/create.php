@@ -180,7 +180,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     y: 0,
     width: 510,
     height: 383,
-    stroke: "980d2e",
+    stroke: "#980d2e",
     strokeWidth: 20,
   });
   layerComic.add(background);
