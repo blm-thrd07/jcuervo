@@ -414,7 +414,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             }
           });
           if(this.attrs.tipo==="globo"){
-            this.setZIndex(2);
+            console.log("marco z: "+marco.getZIndex());
+            console.log("this : "+this.getZIndex());
+
+            //this.setZIndex(2);
           }
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
             removeImage();
