@@ -218,9 +218,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   }
 
   saveToImage = function() {
-    $("#overlay").css("display","block"); 
-    $("#popup").css("display","block"); 
-    $("#popup").fadeIn("slow");
     if(currentSelected){
       currentSelected.setStroke(null);
       currentSelected.setStrokeWidth(0);
@@ -229,6 +226,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText.setStroke(null);
       currentText.setStrokeWidth(0);
     }
+    $("#overlay").css("display","block"); 
+    $("#popup").css("display","block"); 
+    $("#popup").fadeIn("slow");
     stageComic.toDataURL({
       mimeType: "image/png",
       callback: function(dataUrl) {
