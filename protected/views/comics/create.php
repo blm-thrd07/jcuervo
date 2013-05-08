@@ -226,6 +226,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       currentText.setStroke(null);
       currentText.setStrokeWidth(0);
     }
+    layerComic.draw();
     $("#overlay").css("display","block"); 
     $("#popup").css("display","block"); 
     $("#popup").fadeIn("slow");
