@@ -105,8 +105,8 @@ $cs->registerScriptFile($baseUrl.'/js/slides.min.jquery.js');
 ?>
 
 
-<div id="wrapper">
-  <div id="overlay">
+<div id="wrapper" style="display: none;">
+  <div id="overlay" style="display: none;">
     <div id="popup"><i class="icon-save icon-2x"></i>
       <p>Guardando...</p>
     </div>
