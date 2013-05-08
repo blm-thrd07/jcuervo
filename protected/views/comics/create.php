@@ -374,7 +374,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStroke("980d2e");
           currentSelected.setStrokeWidth(1);
           if(this.attrs.tipo==="globo"){
-            //this.setZIndex(stageComic.getChildren().length - 1);
+            this.setZIndex(2);
           }
           layerComic.draw();
         });
@@ -414,9 +414,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             }
           });
           if(this.attrs.tipo==="globo"){
-            console.log("marco z: "+marco.getZIndex());
-            console.log("this : "+this.getZIndex());
-
             this.setZIndex(2);
           }
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
