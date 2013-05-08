@@ -360,9 +360,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("click", function() {
-          if(this.attrs.tipo==="globo"){
-            this.setZIndex(stage.getChildren().length - 1);
-          }
           $("#textinput").attr("class", "inputClose");
           if(currentSelected){
             currentSelected.setStroke(null);
@@ -376,6 +373,9 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentText = null;
           currentSelected.setStroke("980d2e");
           currentSelected.setStrokeWidth(1);
+          if(this.attrs.tipo==="globo"){
+            this.setZIndex(stageComic.getChildren().length - 1);
+          }
           layerComic.draw();
         });
         
@@ -414,8 +414,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             }
           });
           if(this.attrs.tipo==="globo"){
-            //this.moveToBottom();
-            this.setZIndex(stage.getChildren().length - 1);
+            this.setZIndex(stageComic.getChildren().length - 1);
           }
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
             removeImage();
