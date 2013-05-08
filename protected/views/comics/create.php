@@ -136,7 +136,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   var rect = stageComic.getContainer().getBoundingClientRect();
   stageComic.getContainer().addEventListener("click", function(evt) { 
-    console.log("stage");
     if(currentSelected){
       currentSelected.setStroke(null);
       currentSelected.setStrokeWidth(0);
@@ -153,7 +152,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   });
   var stageWidth = stageComic.getWidth();
   var stageHeight = stageComic.getHeight();
-  console.log(stageHeight);
   halfx = stageComic.getWidth() / 2;
   halfy = stageComic.getHeight() / 2;
 
@@ -242,7 +240,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             window.location=url;
           },
           error: function(data) { 
-            console.log("Vuelve a intentarlo");
             $("#overlay").css("display","none"); 
             $("#popup").css("display","none"); 
           },
@@ -280,7 +277,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       duration: 0.2,
       easing: "ease-out",
       callback: function() {
-        return console.log(currentSelected.getRotation());
       }
     });
     layerComic.draw();
@@ -294,7 +290,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       duration: 0.2,
       easing: "ease-out",
       callback: function() {
-        return console.log(currentSelected.getRotation());
       }
     });
     layerComic.draw();
@@ -320,14 +315,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     layerFondo.draw();
   };
 
-  console.log("stage width: "+stageComic.getWidth());
-  console.log("stage height: "+stageComic.getHeight());
-  console.log("stage: " + stageComic.getX() +" "+stageComic.getY());
-
   function insertar(obj,img,conf) {
     var aux, insertar=true,url_img;
     aux=obj;
-    if(typeof conf.id==="undefined") { insertar=false; console.log("undefined"); } 
+    if(typeof conf.id==="undefined") { insertar=false; } 
     if(obj==="amigo"){ 
       for(i=0;i<amigos.length;i++){
         if(amigos[i].attrs.id == conf.id) insertar=false;
@@ -427,7 +418,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         layerComic.draw();
       }
       img=img.replace(/^.*\/(?=[^\/]*$)/, "");
-      console.log(img);
       if(aux==="objeto" || aux==="globo"){ 
         url_img="/images/objetos/";
       }
@@ -439,7 +429,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       return true;
     }
     
-    console.log("No se insertó");
     return false;
   };
 

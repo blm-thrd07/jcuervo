@@ -313,12 +313,11 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       obj.fire("click");
       layerPersonaje.draw();
     };
-    console.log(img);
     if(aux==="cara"){ image.src=BaseUrl+"/images/cabezas/"+img; } 
     if(aux==="cuerpo"){ image.src=BaseUrl+"/images/cuerpos/"+img; } 
     if(aux==="ojos"){ image.src=BaseUrl+"/images/ojos/"+img; } 
     if(aux==="boca"){ image.src=BaseUrl+"/images/bocas/"+img; } 
-    if(aux==="cara_web"){ console.log("tmp: "+tmp); image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
+    if(aux==="cara_web"){ image.src=BaseUrl+"/AvatarCaras/"+ tmp + img; }
  
     
   };
@@ -410,7 +409,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       return true;
     }
     
-    console.log("NO SE INSERTO");
     return false;
   };
 
@@ -447,7 +445,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
                 $("#popup").css("display","none"); 
               },
               error: function(data) { 
-                console.log("hubo un error al guardar :(");
                 $("#overlay").css("display","none"); 
                 $("#popup").css("display","none"); 
               }
@@ -467,7 +464,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
     var json = JSON.parse(layerPersonaje.toJSON()); 
     if(currentSelected){ currentSelected.setStroke(null); currentSelected.setStrokeWidth(0); currentSelected=null; layerPersonaje.draw(); }
     $("#overlay").css("display","block"); $("#popup").css("display","block"); $("#popup").fadeIn("slow");
-    console.log(json);
     stagePersonaje.toDataURL({
       mimeType: "image/png",
       quality: 0.8,
@@ -482,7 +478,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             saveFacebook();
           },
           error: function(data) { 
-            console.log("hubo un error al guardar :(");
           }
         });
       }
@@ -502,7 +497,6 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       url: BaseUrl+"index.php/CaraWeb/delete",
       success: function(data){ },
       error: function(data) { 
-        console.log("no eliminado");
       }
     });
   }
