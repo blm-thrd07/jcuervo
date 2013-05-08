@@ -374,7 +374,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStroke("980d2e");
           currentSelected.setStrokeWidth(1);
           if(this.attrs.tipo==="globo"){
-            this.setZIndex(stageComic.getChildren().length - 1);
+            //this.setZIndex(stageComic.getChildren().length - 1);
           }
           layerComic.draw();
         });
