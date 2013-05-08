@@ -185,7 +185,9 @@ i
 		font-size: 0.85em
 		visibility: hidden
 		opacity: 0
+		
 
+		// arrow
 		&::after
 			content: ''
 			position: absolute
@@ -195,6 +197,20 @@ i
 			top: -13px
 			border-color: transparent transparent transparent $texto
 			z-index: 101
+
+	.tooltipGlobo
+		width: 50px
+		height: 40px
+		bottom: -70px
+
+	.globo-normal
+		+spr-sprite('globo-normal')
+
+	.globo-exclamacion
+		+spr-sprite('globo-exclamacion')
+
+	.globo-pensamiento
+		+spr-sprite('globo-pensamiento')
 
 
 
@@ -419,6 +435,14 @@ i
 			margin-bottom: $spacer*3
 
 		
+#panelTitulo
+	+cf
+	div#memeGeneratorLogo
+		float: left
+		width: 50%
+	div.tituloCrear
+		float: right
+		width: 50%
 
 
 .tituloCrear
@@ -426,10 +450,15 @@ i
 	text-align: center
 	margin-bottom: $spacer*2
 	font-size: 4em
+	float: right
+	margin-top: $spacer
 
 
 #panelContentComic
 	@extend %g4
+
+
+
 
 	
 
@@ -665,10 +694,11 @@ a.selectedTab
 
 
 
-#noFriends
+#noFriends, #noMemes
 	+cf
 	text-align: center
-	width: 350px
+	background: #fef200
+	width: 100%
 	margin: 0 auto
 	
 	h3
@@ -681,6 +711,7 @@ a.selectedTab
 
 	a
 		margin-bottom: $spacer*3
+	
 
 
 
@@ -793,6 +824,7 @@ a.selectedTab
 	position: relative
 
 	.slides_container
+		height: 375px
 		
 
 		.slide
@@ -918,7 +950,7 @@ a.selectedTab
 #wraper
 	margin: 10px auto
 	text-align: center
-	width: 1002px
+	width: 100%
 
 #overlay
 	background: black
@@ -931,16 +963,21 @@ a.selectedTab
 	z-index: 100
 
 #popup
-	+border-radius(10px)
-	background: none repeat scroll 0 0 white
-	border: 20px solid #ddd
-	left: 31%
+	background: none repeat scroll 0 0 $fondo
+	border: 10px solid $primario
+	left: 50%
+	margin-left: -100px
 	padding: 50px
 	position: fixed
 	text-align: center
-	top: 28%
-	width: 380px
+	top: 30%
+	width: 100px
 	z-index: 200
+	font-size: 1.2em
+	color: $texto
+
+	p
+		margin-top: $spacer
 
 
 .jcrop-holder

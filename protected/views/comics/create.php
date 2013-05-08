@@ -1,11 +1,17 @@
 <div id="container" class="logoComic">
-  <div id="memeGeneratorLogo"><span>Memespecial</span><span>Generator</span></div>
-  <h1 class="tituloCrear">Crea Tu Meme</h1>
+
+  <section id="panelTitulo">
+    <div id="memeGeneratorLogo"><span>Memeespecial</span><span>Generator</span></div>
+    <h1 class="tituloCrear">Crea Tu Meme</h1>
+  </section>
 
   <section id="panelComic">
     <div id="insertText">
       <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose"><a href="#" data="1" class="btn globo"><span class="globo1"></span></a><a href="#" data="2" class="btn globo"><span class="globo2"></span></a><a href="#" data="3" class="btn globo"><span class="globo3"></span></a>
+      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn" data="1"><span class="globo1"></span>
+        <div class="tooltipGlobo globo-normal"></div></a><a href="#" class="btn" data="2"><span class="globo2"></span>
+        <div class="tooltipGlobo globo-exclamacion"></div></a><a href="#" class="btn" data="3"><span class="globo3"></span>
+        <div class="tooltipGlobo globo-pensamiento"></div></a>
     </div>
 
     <div id="comicCanvas"></div>

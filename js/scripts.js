@@ -213,12 +213,12 @@ $('#spic').live('click',function(){
     padding: 0,
     margin: 0,
     closeBtn: false,
-    fitToView: false,
+    fitToView: true,
     autoSize: false,
     closeClick: false,
     openEffect: "none",
     closeEffect: "none",
-    scrolling: false,
+    scrolling: no,
     width: 750
   });
 

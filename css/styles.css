@@ -1415,8 +1415,8 @@ ul.icons li [class*=" icon-"] {
   content: "\f115";
 }
 
-.spr-sprite, .spr-accesorios-on, .spr-accesorios, .spr-boca-on, .spr-boca, .spr-cabeza-on, .spr-cabeza, .spr-cuerpo-on, .spr-cuerpo, .spr-globo1, .spr-globo2, .spr-globo3, .spr-ojos-on, .spr-ojos, .globo1, .globo2, .globo3, .menuPersonaje li:nth-of-type(1) a span, .menuPersonaje li:nth-of-type(1) a.selected span, .menuPersonaje li:nth-of-type(2) a span, .menuPersonaje li:nth-of-type(2) a.selected span, .menuPersonaje li:nth-of-type(3) a span, .menuPersonaje li:nth-of-type(3) a.selected span, .menuPersonaje li:nth-of-type(4) a span, .menuPersonaje li:nth-of-type(4) a.selected span, .menuPersonaje li:nth-of-type(5) a span, .menuPersonaje li:nth-of-type(5) a.selected span {
-  background: url('../img/spr-s199c4f6018.png') no-repeat;
+.spr-sprite, .spr-accesorios-on, .spr-accesorios, .spr-boca-on, .spr-boca, .spr-cabeza-on, .spr-cabeza, .spr-cuerpo-on, .spr-cuerpo, .spr-globo-exclamacion, .spr-globo-normal, .spr-globo-pensamiento, .spr-globo1, .spr-globo2, .spr-globo3, .spr-ojos-on, .spr-ojos, .globo1, .globo2, .globo3, .btn .globo-normal, .btn .globo-exclamacion, .btn .globo-pensamiento, .menuPersonaje li:nth-of-type(1) a span, .menuPersonaje li:nth-of-type(1) a.selected span, .menuPersonaje li:nth-of-type(2) a span, .menuPersonaje li:nth-of-type(2) a.selected span, .menuPersonaje li:nth-of-type(3) a span, .menuPersonaje li:nth-of-type(3) a.selected span, .menuPersonaje li:nth-of-type(4) a span, .menuPersonaje li:nth-of-type(4) a.selected span, .menuPersonaje li:nth-of-type(5) a span, .menuPersonaje li:nth-of-type(5) a.selected span, .bx-controls-direction a .globo-normal, .bx-controls-direction a .globo-exclamacion, .bx-controls-direction a .globo-pensamiento, .js-slides > a .globo-normal, .js-slides > a .globo-exclamacion, .js-slides > a .globo-pensamiento, .js-slides-comic > a .globo-normal, .js-slides-comic > a .globo-exclamacion, .js-slides-comic > a .globo-pensamiento {
+  background: url('../img/spr-s29057f557b.png') no-repeat;
 }
 
 .spr-accesorios-on {
@@ -1428,15 +1428,15 @@ ul.icons li [class*=" icon-"] {
 }
 
 .spr-boca-on {
-  background-position: 0 -380px;
+  background-position: 0 -430px;
 }
 
 .spr-boca {
-  background-position: 0 -532px;
+  background-position: 0 -582px;
 }
 
 .spr-cabeza-on {
-  background-position: 0 -228px;
+  background-position: 0 -278px;
 }
 
 .spr-cabeza {
@@ -1444,31 +1444,43 @@ ul.icons li [class*=" icon-"] {
 }
 
 .spr-cuerpo-on {
-  background-position: 0 -456px;
+  background-position: 0 -506px;
 }
 
 .spr-cuerpo {
-  background-position: 0 -304px;
+  background-position: 0 -354px;
+}
+
+.spr-globo-exclamacion {
+  background-position: 0 -228px;
+}
+
+.spr-globo-normal {
+  background-position: 0 -860px;
+}
+
+.spr-globo-pensamiento {
+  background-position: 0 -810px;
 }
 
 .spr-globo1 {
-  background-position: 0 -773px;
+  background-position: 0 -923px;
 }
 
 .spr-globo2 {
-  background-position: 0 -760px;
+  background-position: 0 -910px;
 }
 
 .spr-globo3 {
-  background-position: 0 -786px;
+  background-position: 0 -936px;
 }
 
 .spr-ojos-on {
-  background-position: 0 -684px;
+  background-position: 0 -734px;
 }
 
 .spr-ojos {
-  background-position: 0 -608px;
+  background-position: 0 -658px;
 }
 
 body {
@@ -1547,15 +1559,15 @@ i {
 }
 
 .globo1 {
-  background-position: 0 -773px;
+  background-position: 0 -923px;
 }
 
 .globo2 {
-  background-position: 0 -760px;
+  background-position: 0 -910px;
 }
 
 .globo3 {
-  background-position: 0 -786px;
+  background-position: 0 -936px;
 }
 
 #insertText input {
@@ -1644,6 +1656,20 @@ i {
   top: -13px;
   border-color: transparent transparent transparent #030303;
   z-index: 101;
+}
+.btn .tooltipGlobo {
+  width: 50px;
+  height: 40px;
+  bottom: -70px;
+}
+.btn .globo-normal {
+  background-position: 0 -860px;
+}
+.btn .globo-exclamacion {
+  background-position: 0 -228px;
+}
+.btn .globo-pensamiento {
+  background-position: 0 -810px;
 }
 
 #splash {
@@ -1747,28 +1773,28 @@ i {
 }
 
 .menuPersonaje li:nth-of-type(1) a span {
-  background-position: 0 -228px;
+  background-position: 0 -278px;
 }
 .menuPersonaje li:nth-of-type(1) a.selected span {
   background-position: 0 -152px;
 }
 .menuPersonaje li:nth-of-type(2) a span {
-  background-position: 0 -456px;
+  background-position: 0 -506px;
 }
 .menuPersonaje li:nth-of-type(2) a.selected span {
-  background-position: 0 -304px;
+  background-position: 0 -354px;
 }
 .menuPersonaje li:nth-of-type(3) a span {
-  background-position: 0 -684px;
+  background-position: 0 -734px;
 }
 .menuPersonaje li:nth-of-type(3) a.selected span {
-  background-position: 0 -608px;
+  background-position: 0 -658px;
 }
 .menuPersonaje li:nth-of-type(4) a span {
-  background-position: 0 -380px;
+  background-position: 0 -430px;
 }
 .menuPersonaje li:nth-of-type(4) a.selected span {
-  background-position: 0 -532px;
+  background-position: 0 -582px;
 }
 .menuPersonaje li:nth-of-type(5) a span {
   background-position: 0 0;
@@ -1870,11 +1896,32 @@ i {
   clear: both;
 }
 
+#panelTitulo {
+  clear: both;
+}
+#panelTitulo:after, #panelTitulo:before {
+  content: "";
+  display: table;
+}
+#panelTitulo:after {
+  clear: both;
+}
+#panelTitulo div#memeGeneratorLogo {
+  float: left;
+  width: 50%;
+}
+#panelTitulo div.tituloCrear {
+  float: right;
+  width: 50%;
+}
+
 .tituloCrear {
   color: #980d2e;
   text-align: center;
   margin-bottom: 20px;
   font-size: 4em;
+  float: right;
+  margin-top: 10px;
 }
 
 .logoComic {
@@ -2149,6 +2196,20 @@ a.itemAction:hover {
   border-color: transparent transparent transparent #030303;
   z-index: 101;
 }
+.bx-controls-direction a .tooltipGlobo {
+  width: 50px;
+  height: 40px;
+  bottom: -70px;
+}
+.bx-controls-direction a .globo-normal {
+  background-position: 0 -860px;
+}
+.bx-controls-direction a .globo-exclamacion {
+  background-position: 0 -228px;
+}
+.bx-controls-direction a .globo-pensamiento {
+  background-position: 0 -810px;
+}
 .bx-controls-direction a:last-of-type {
   margin-left: 10px;
 }
@@ -2285,29 +2346,30 @@ a.selectedTab:hover {
   color: white;
 }
 
-#noFriends {
+#noFriends, #noMemes {
   clear: both;
   text-align: center;
-  width: 350px;
+  background: #fef200;
+  width: 100%;
   margin: 0 auto;
 }
-#noFriends:after, #noFriends:before {
+#noFriends:after, #noFriends:before, #noMemes:after, #noMemes:before {
   content: "";
   display: table;
 }
-#noFriends:after {
+#noFriends:after, #noMemes:after {
   clear: both;
 }
-#noFriends h3 {
+#noFriends h3, #noMemes h3 {
   padding: 30px 0 30px 0;
   font-size: 10em;
 }
-#noFriends p {
+#noFriends p, #noMemes p {
   display: block;
   font-size: 1.3em;
   margin-bottom: 30px;
 }
-#noFriends a {
+#noFriends a, #noMemes a {
   margin-bottom: 30px;
 }
 
@@ -2427,6 +2489,9 @@ a.selectedTab:hover {
 .js-slides:after {
   clear: both;
 }
+.js-slides .slides_container {
+  height: 375px;
+}
 .js-slides .slides_container .slide {
   margin-bottom: 10px;
   width: 480px;
@@ -2507,6 +2572,20 @@ a.selectedTab:hover {
   top: -13px;
   border-color: transparent transparent transparent #030303;
   z-index: 101;
+}
+.js-slides > a .tooltipGlobo {
+  width: 50px;
+  height: 40px;
+  bottom: -70px;
+}
+.js-slides > a .globo-normal {
+  background-position: 0 -860px;
+}
+.js-slides > a .globo-exclamacion {
+  background-position: 0 -228px;
+}
+.js-slides > a .globo-pensamiento {
+  background-position: 0 -810px;
 }
 .js-slides > a:first-of-type {
   right: 30px;
@@ -2595,6 +2674,20 @@ a.selectedTab:hover {
   border-color: transparent transparent transparent #030303;
   z-index: 101;
 }
+.js-slides-comic > a .tooltipGlobo {
+  width: 50px;
+  height: 40px;
+  bottom: -70px;
+}
+.js-slides-comic > a .globo-normal {
+  background-position: 0 -860px;
+}
+.js-slides-comic > a .globo-exclamacion {
+  background-position: 0 -228px;
+}
+.js-slides-comic > a .globo-pensamiento {
+  background-position: 0 -810px;
+}
 .js-slides-comic > a:first-of-type {
   right: 35px;
 }
@@ -2660,7 +2753,7 @@ a.selectedTab:hover {
 #wraper {
   margin: 10px auto;
   text-align: center;
-  width: 1002px;
+  width: 100%;
 }
 
 #overlay {
@@ -2675,18 +2768,21 @@ a.selectedTab:hover {
 }
 
 #popup {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  background: none repeat scroll 0 0 white;
-  border: 20px solid #dddddd;
-  left: 31%;
+  background: none repeat scroll 0 0 #ebc101;
+  border: 10px solid #980d2e;
+  left: 50%;
+  margin-left: -100px;
   padding: 50px;
   position: fixed;
   text-align: center;
-  top: 28%;
-  width: 380px;
+  top: 30%;
+  width: 100px;
   z-index: 200;
+  font-size: 1.2em;
+  color: #030303;
+}
+#popup p {
+  margin-top: 10px;
 }
 
 .jcrop-holder {
