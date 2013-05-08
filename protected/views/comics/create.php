@@ -414,6 +414,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             }
           });
           if(this.attrs.tipo==="globo"){
+            console.log(stageComic.getChildren().length - 1)
             this.setZIndex(stageComic.getChildren().length - 2);
           }
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
