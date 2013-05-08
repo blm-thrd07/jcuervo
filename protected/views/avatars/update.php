@@ -245,7 +245,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
       obj.on("mouseover", function() {
         if(!currentSelected){
-          this.setStroke("980d2e");
+          this.setStroke("#980d2e");
           this.setStrokeWidth(1);
           return layerPersonaje.draw();
         }
@@ -265,7 +265,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStrokeWidth(0);
         }
         currentSelected = this;
-        currentSelected.setStroke("980d2e");
+        currentSelected.setStroke("#980d2e");
         currentSelected.setStrokeWidth(1);
         if(currentSelected.attrs.tipo==2 || currentSelected.attrs.tipo==3 || currentSelected.attrs.tipo==4){
           currentSelected.moveToBottom();
@@ -279,7 +279,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           currentSelected.setStrokeWidth(0);
         }
         currentSelected = this;
-        currentSelected.setStroke("980d2e");
+        currentSelected.setStroke("#980d2e");
         currentSelected.setStrokeWidth(1);
         layerPersonaje.draw();
         if (trans) {
@@ -338,7 +338,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
         accesorio.on("mouseover", function() {
           if(!currentSelected){
-            this.setStroke("980d2e");
+            this.setStroke("#980d2e");
             this.setStrokeWidth(1);
             return layerPersonaje.draw();
           }
@@ -358,7 +358,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             currentSelected.setStrokeWidth(0);
           }
           currentSelected = this;
-          currentSelected.setStroke("980d2e");
+          currentSelected.setStroke("#980d2e");
           currentSelected.setStrokeWidth(1);
           layerPersonaje.draw();
         });
@@ -369,7 +369,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             currentSelected.setStrokeWidth(0);
           }
           currentSelected = this;
-          currentSelected.setStroke("980d2e");
+          currentSelected.setStroke("#980d2e");
           currentSelected.setStrokeWidth(1);
           layerPersonaje.draw();
           if (trans) {

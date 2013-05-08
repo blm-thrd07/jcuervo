@@ -337,7 +337,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         
         obj.on("mouseover", function() {
           if(!currentSelected && !currentText){
-            this.setStroke("980d2e");
+            this.setStroke("#980d2e");
             this.setStrokeWidth(1);
             return layerComic.draw();
           }
@@ -363,7 +363,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
           currentSelected = this;
           currentText = null;
-          currentSelected.setStroke("980d2e");
+          currentSelected.setStroke("#980d2e");
           currentSelected.setStrokeWidth(1);
           if(this.attrs.tipo==="globo"){
             this.setZIndex(2);
@@ -379,7 +379,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
           }
           currentSelected = this;
           currentText = null;
-          currentSelected.setStroke("980d2e");
+          currentSelected.setStroke("#980d2e");
           currentSelected.setStrokeWidth(1);
           layerComic.draw();
           if (trans) {
@@ -462,7 +462,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
 
     texto.on("mouseover", function() {
       if(!currentSelected && !currentText){
-        this.setStroke("980d2e");
+        this.setStroke("#980d2e");
         this.setStrokeWidth(1);
         return layerComic.draw();
       }
@@ -491,7 +491,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         currentText = null;
       }
 
-      this.setStroke("980d2e");
+      this.setStroke("#980d2e");
       this.setStrokeWidth(1);
       currentText = this;
       layerComic.draw();
