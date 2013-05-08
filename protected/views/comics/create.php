@@ -417,7 +417,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
             console.log("marco z: "+marco.getZIndex());
             console.log("this : "+this.getZIndex());
 
-            //this.setZIndex(2);
+            this.setZIndex(2);
           }
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
             removeImage();
@@ -455,19 +455,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
       fontSize: 18,
       fontFamily: "aldosemibold",
       fill: "#000000",
-      draggable: true,
-      dragBoundFunc: function(pos) { 
-        X=pos.x; Y=pos.y; 
-        dy = ((stageHeight-58)-(this.getTextHeight()*Math.abs(this.getScale().y))); 
-        dy2 = 8; 
-        dx = 12;
-        dx2 = (stageWidth-10-(this.getTextWidth()*Math.abs(this.getScale().x))); 
-        if(X<dx){X=dx} 
-        if(X>dx2){X=dx2;} 
-        if(Y<dy2){Y=dy2;} 
-        if(Y>dy){Y=dy;} 
-        return({x:X, y:Y}); 
-      }
+      draggable: true
     });
 
     layerComic.add(texto);
