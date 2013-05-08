@@ -219,7 +219,7 @@ $('#spic').live('click',function(){
     openEffect: "none",
     closeEffect: "none",
     scrolling: 'no',
-    width: 700
+    width: 790
   });
 
 
