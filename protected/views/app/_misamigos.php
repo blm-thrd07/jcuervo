@@ -61,8 +61,10 @@
             }     
           ?>
         </div>
+
+        <? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
       </div>
 
-    <? echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; ?> 
+    
 
 </div></section>
