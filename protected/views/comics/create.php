@@ -360,7 +360,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("click", function() {
-          if(aux==="globo"){
+          if(this.attrs.tipo==="globo"){
             this.setZIndex(stage.getChildren().length - 1);
           }
           $("#textinput").attr("class", "inputClose");
@@ -404,10 +404,7 @@ Yii::app()->getClientScript()->registerScript('registrar', '
         });
 
         obj.on("dragend", function(e) {
-          if(aux==="globo"){
-            //this.moveToBottom();
-            this.setZIndex(stage.getChildren().length - 1);
-          }
+          
           trans = this.transitionTo({
             duration: 0.5,
             easing: "elastic-ease-out",
@@ -416,6 +413,10 @@ Yii::app()->getClientScript()->registerScript('registrar', '
               y: this.attrs.startScale.y
             }
           });
+          if(this.attrs.tipo==="globo"){
+            //this.moveToBottom();
+            this.setZIndex(stage.getChildren().length - 1);
+          }
           if( (e.clientX-rect.left) < 0 || (e.clientX-rect.left) > stageComic.getWidth() || (e.clientY-rect.top) < 0 || (e.clientY-rect.top) > stageComic.getHeight() )
             removeImage();
         });
@@ -615,14 +616,16 @@ Yii::app()->getClientScript()->registerScript('registrar', '
   insertGlobo = function(){
     $("#textinput").attr("class", "inputClose");
     tipo = $(this).attr("data");
+    var conf=confObjeto;
+    conf.tipo="globo";
     if(tipo==="1"){
-      insertar("globo","globo_normal.jpg",confObjeto);
+      insertar("globo","globo_normal.jpg",conf);
     }
     if(tipo==="2"){
-      insertar("globo","globo_exclamacion.jpg",confObjeto);
+      insertar("globo","globo_exclamacion.jpg",conf);
     }
     if(tipo==="3"){
-      insertar("globo","globo_pensamiento.jpg",confObjeto);
+      insertar("globo","globo_pensamiento.jpg",conf);
     }
     return false;
   }
