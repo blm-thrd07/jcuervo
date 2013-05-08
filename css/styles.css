@@ -1857,7 +1857,7 @@ i {
   padding: 10px;
   background: #980d2e;
 }
-#panelContent > div > a {
+#panelContent > div > a:nth-of-type(1) {
   padding: 15px 0 15px 0;
   text-align: center;
   display: block;
@@ -1880,19 +1880,19 @@ i {
   font-size: 2em;
   margin-bottom: 30px;
 }
-#panelContent > div > a:hover {
+#panelContent > div > a:nth-of-type(1):hover {
   color: #980d2e;
 }
-#panelContent > div > a:active {
+#panelContent > div > a:nth-of-type(1):active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
 }
-#panelContent > div > a:after, #panelContent > div > a:before {
+#panelContent > div > a:nth-of-type(1):after, #panelContent > div > a:nth-of-type(1):before {
   content: "";
   display: table;
 }
-#panelContent > div > a:after {
+#panelContent > div > a:nth-of-type(1):after {
   clear: both;
 }
 

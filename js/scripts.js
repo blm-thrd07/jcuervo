@@ -213,7 +213,7 @@ $('#spic').live('click',function(){
     padding: 0,
     margin: 0,
     closeBtn: false,
-    fitToView: true,
+    fitToView: false,
     autoSize: false,
     closeClick: false,
     openEffect: "none",
