@@ -35,17 +35,17 @@ function getInternetExplorerVersion()
 }
 function checkVersion()
 {
-  var msg = "You're not using Internet Explorer.";
   var ver = getInternetExplorerVersion();
 
   if ( ver > -1 )
   {
     if ( ver >= 8.0 ) 
       msg = "Necesitas actualizar tu explorador";
+      alert( msg );
+
     else
       msg = "You should upgrade your copy of Internet Explorer.";
   }
-  alert( msg );
 }
 
 
