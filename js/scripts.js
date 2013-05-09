@@ -5,7 +5,7 @@ if (referrerIsFacebookApp()) {
     top.location = 'http://www.facebook.com/Lnx1337/app_342733185828640';
   }
 
-
+/*
 function referrerIsFacebookApp() {
   var isInIFrame = (window.location != window.parent.location) ? true : false;
   if (document.URL) {
@@ -33,6 +33,7 @@ function getInternetExplorerVersion()
   }
   return rv;
 }
+
 function checkVersion()
 {
   var ver = getInternetExplorerVersion();
@@ -52,7 +53,7 @@ function checkVersion()
 
 
 checkVersion();
-
+*/
 
  $(document).bind('selectstart dragstart', function(evt)
   { evt.preventDefault(); return false; });
