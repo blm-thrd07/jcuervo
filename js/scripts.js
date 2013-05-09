@@ -39,12 +39,14 @@ function checkVersion()
 
   if ( ver > -1 )
   {
-    if ( ver >= 8.0 ) 
+    if ( ver >= 8.0 ) {
       msg = "Necesitas actualizar tu explorador";
       alert( msg );
+      }
 
-    else
+    else{
       msg = "You should upgrade your copy of Internet Explorer.";
+      }
   }
 }
 
