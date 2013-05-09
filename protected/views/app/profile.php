@@ -61,7 +61,7 @@
 
               <article id="noMemes">
                 <h3>:(</h3>
-                <p>Aún no creas ningún meme</p><a href="#" class="btn"><i class="icon-plus"></i> Crea un meme nuevo</a>
+                <p>Aún no creas ningún meme</p><a href="<?php echo CController::CreateUrl('Comics/create'); ?>" class="btn"><i class="icon-plus"></i> Crea un meme nuevo</a>
               </article>
               
 
