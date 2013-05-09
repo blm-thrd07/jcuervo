@@ -1736,7 +1736,7 @@ i {
 }
 
 #container {
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 10px;
 }
 
@@ -2061,6 +2061,10 @@ i {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
   cursor: pointer;
 }
+.itemThumbnail:hover > div div img {
+  opacity: 1;
+  visibility: visible;
+}
 .itemThumbnail > div img {
   width: 100%;
   vertical-align: bottom;
@@ -2087,6 +2091,8 @@ i {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
+  opacity: 0;
+  visibility: none;
 }
 .itemThumbnail > div div:hover img {
   -webkit-border-radius: 0px;
@@ -2750,13 +2756,13 @@ a.selectedTab:hover {
   margin-bottom: 10px;
 }
 
-#wraper {
+#wraper, #wraper-ie8 {
   margin: 10px auto;
   text-align: center;
   width: 100%;
 }
 
-#overlay {
+#overlay, #overlay-ie8 {
   background-color: black;
   opacity: 0.5;
   background: rgba(0, 0, 0, 0.5);
@@ -2768,7 +2774,7 @@ a.selectedTab:hover {
   z-index: 100;
 }
 
-#popup {
+#popup, #popup-ie8 {
   background: none repeat scroll 0 0 #ebc101;
   border: 10px solid #980d2e;
   left: 50%;
@@ -2782,8 +2788,34 @@ a.selectedTab:hover {
   font-size: 1.2em;
   color: #030303;
 }
-#popup p {
+#popup p, #popup-ie8 p {
   margin-top: 10px;
+}
+
+#overlay-ie8 {
+  display: none;
+  background-color: black;
+  opacity: 1;
+}
+
+#popup-ie8 {
+  padding: 100px;
+  margin-left: -250px;
+  width: 300px;
+  top: 10%;
+}
+
+.tos {
+  margin-top: 20px;
+  text-align: center;
+}
+.tos a {
+  color: #030303;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+}
+.tos a:hover {
+  color: #980d2e;
 }
 
 .jcrop-holder {
