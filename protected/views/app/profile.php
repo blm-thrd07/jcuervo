@@ -56,7 +56,17 @@
                 <?
                   $count++;       
               }
-            }     
+            } else{
+?>
+
+              <article id="noMemes">
+                <h3>:(</h3>
+                <p>Aún no creas ningún meme</p><a href="#" class="btn"><i class="icon-plus"></i> Crea un meme nuevo</a>
+              </article>
+              
+
+<?
+            }    
           ?>
 
 

@@ -56,7 +56,15 @@
                 <?
                   $count++;       
               }
-            }     
+            }else{
+            ?>
+
+  <article id="noMemes">
+                <h3>:(</h3>
+                <p>Aún no creas ningún meme</p><a href="#" class="btn"><i class="icon-plus"></i> Crea un meme nuevo</a>
+              </article>
+          <?
+          }       
           ?>
       </div>
       <?  if(count($comics)>9){ echo '<a class="prev"><i class="icon-chevron-left"></i></a><a class="next"><i class="icon-chevron-right"></i></a>'; } ?> 
