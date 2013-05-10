@@ -179,7 +179,7 @@ $(".share").live('click',function(){
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
       link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/login",
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
-      name: 'Generador de Memes Jose Cuervo',
+      name: 'Especial Meme Generator',
       caption: 'Crea tu meme',
       description: 'Comienza creando tu avatar en Jose Cuervo'
     };
@@ -264,7 +264,7 @@ FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
   function FacebookInviteFriends()
   { 
-      FB.ui({method: 'apprequests', message: 'Generador de Memes Jose Cuervo'});
+      FB.ui({method: 'apprequests', message: 'Especial Meme Generator'});
       return false;
   }
 
