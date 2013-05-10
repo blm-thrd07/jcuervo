@@ -82,10 +82,11 @@ class AppController extends Controller
   }
 
   public function actionLogin(){
-
-$idFb = split('/', $_SERVER['PATH_INFO']); if(count($idFb)==4){ if($idFb[2]=='Profile'){ Yii::app()->session['nidFb']=$idFb[3]; } } 
-        $protocol="http://"; if(isset($_SERVER['HTTPS'])){ $protocol="https://"; }else{ $protocol="http://"; }
-        Yii::app()->session['protocol']=$protocol;
+    if(isset($_SERVER['PATH_INFO'])){
+      $idFb = split('/', $_SERVER['PATH_INFO']); if(count($idFb)==4){ if($idFb[2]=='Profile'){ Yii::app()->session['nidFb']=$idFb[3]; } } 
+    }
+    $protocol="http://"; if(isset($_SERVER['HTTPS'])){ $protocol="https://"; }else{ $protocol="http://"; }
+    Yii::app()->session['protocol']=$protocol;
 
     $loginUrl=null;
     //if(isset($_REQUEST['admin']) && $_REQUEST['admin']==="admin" ) {
