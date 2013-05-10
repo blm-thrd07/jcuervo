@@ -1,7 +1,6 @@
 
 (function() {
 
-
 function referrerIsFacebookApp() {
   var isInIFrame = (window.location != window.parent.location) ? true : false;
   if (document.URL) {
