@@ -8,9 +8,9 @@
   <section id="panelComic">
     <div id="insertText">
       <a href="#" id="js-createText" class="btn"><i class="icon-font"></i><div>Agregar texto</div></a>
-      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn" data="1"><span class="globo1"></span>
-        <div class="tooltipGlobo globo-normal"></div></a><a href="#" class="btn" data="2"><span class="globo2"></span>
-        <div class="tooltipGlobo globo-exclamacion"></div></a><a href="#" class="btn" data="3"><span class="globo3"></span>
+      <input type="text" id="textinput" class="inputClose"><a href="#" class="btn globo" data="1"><span class="globo1"></span>
+        <div class="tooltipGlobo globo-normal"></div></a><a href="#" class="btn globo" data="2"><span class="globo2"></span>
+        <div class="tooltipGlobo globo-exclamacion"></div></a><a href="#" class="btn globo" data="3"><span class="globo3"></span>
         <div class="tooltipGlobo globo-pensamiento"></div></a>
     </div>
 
