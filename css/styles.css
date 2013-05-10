@@ -2807,8 +2807,11 @@ a.selectedTab:hover {
 }
 
 .tos {
-  margin-top: 20px;
   text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -75px;
 }
 .tos a {
   color: #030303;
