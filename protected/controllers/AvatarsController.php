@@ -165,7 +165,7 @@ class AvatarsController extends Controller
 
 
 	public function ShareMemeLink($my_access_token,$link,$message){
-        $graph_url= "https://graph.facebook.com/".Yii::app()->session['id_album']."/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token."&link=https://www.facebook.com/JCEspecial?sk=app_342733185828640";
+        $graph_url= "https://graph.facebook.com/".Yii::app()->session['id_album']."/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $graph_url);
 		curl_setopt($ch, CURLOPT_HEADER, false);
@@ -409,7 +409,7 @@ class AvatarsController extends Controller
         $file = UPLOAD_DIR .$filename;
         $success = file_put_contents($file, $data);
 
-	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Mi Avatar para el Especial Meme Generator. Crea el tuyo aquí:');
+	    $this->ShareMemeLink($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Avatar/'.$filename,'Mi Avatar para el Especial Meme Generator. Crea el tuyo aquí: http://www.facebook.com/JCEspecial/app_342733185828640');
 	    unlink(Yii::app()->basePath.'/../Avatar/'.$filename);
         echo CController::CreateUrl("App/Profile",array("id"=>Yii::app()->session['id_facebook']));
 
