@@ -265,7 +265,7 @@ FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
 
   function FacebookInviteFriends()
   { 
-      FB.ui({method: 'apprequests', message: 'Te invito a hacer tus Memes en el Especial Meme Generator:'});
+      FB.ui({method: 'apprequests', message: 'Te invito a hacer tus Memes en el Especial Meme Generator'});
       return false;
   }
 
