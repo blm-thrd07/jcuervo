@@ -180,8 +180,8 @@ $(".share").live('click',function(){
       link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/login",
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
       name: 'Especial Meme Generator',
-      caption: 'Crea tu meme',
-      description: 'Comienza creando tu avatar en Jose Cuervo'
+      caption: '',
+      description: 'Me gusta este Meme, puedes verlo aquí:'
     };
 
     function callback(response) {
