@@ -5,8 +5,12 @@ function referrerIsFacebookApp() {
   var isInIFrame = (window.location != window.parent.location) ? true : false;
   if (document.URL) {
     if (isInIFrame) {
+      alert(document.URL.indexOf("apps.facebook.com") );
       return document.URL.indexOf("apps.facebook.com") != -1;
     } else {
+
+      alert(document.URL.indexOf("apps.facebook.com") );
+
       return document.URL.indexOf("apps.t2omedia.com") != -1;
     }
   }
