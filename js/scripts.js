@@ -14,7 +14,7 @@ function referrerIsFacebookApp() {
 }
 
 if (referrerIsFacebookApp()) {
-    top.location = 'https://www.facebook.com/JCEspecial/app_342733185828640';
+   // top.location = 'https://www.facebook.com/JCEspecial/app_342733185828640';
 
   }
 
