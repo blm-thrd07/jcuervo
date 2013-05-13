@@ -182,7 +182,7 @@ $(".share").live('click',function(){
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
       name: 'Especial Meme Generator',
       caption: 'Crea tu meme',
-      description: 'Me gusta este Meme, puedes verlo aquí:'
+      description: 'Me gusta este Meme, puedes verlo aquí'
     };
 
     function callback(response) {
