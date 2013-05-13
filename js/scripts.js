@@ -15,7 +15,7 @@ function referrerIsFacebookApp() {
 
 if (referrerIsFacebookApp()) {
     top.location = 'https://www.facebook.com/JCEspecial/app_342733185828640';
-    
+
   }
 
 
@@ -181,7 +181,6 @@ $(".share").live('click',function(){
       link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
       name: 'Especial Meme Generator',
-      caption: '',
       description: 'Me gusta este Meme, puedes verlo aquí:'
     };
 
