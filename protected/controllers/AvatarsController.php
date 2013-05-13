@@ -165,7 +165,7 @@ class AvatarsController extends Controller
 
 
 	public function ShareMemeLink($my_access_token,$link,$message){
-        $graph_url= "https://graph.facebook.com/".Yii::app()->session['id_album']."/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token."&link=https://www.facebook.com/JCEspecial/app_342733185828640";
+        $graph_url= "https://graph.facebook.com/".Yii::app()->session['id_album']."/photos?"."url=".urlencode($link)."&message=".urlencode($message)."&method=POST"."&access_token=".$my_access_token."&link=https://www.facebook.com/JCEspecial?sk=app_342733185828640";
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $graph_url);
 		curl_setopt($ch, CURLOPT_HEADER, false);
