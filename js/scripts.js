@@ -178,7 +178,7 @@ $(".share").live('click',function(){
     var obj = {
       method: 'feed',
       redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
-      link: "http://www.facebook.com/JCEspecial/app_342733185828640",
+      link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
       name: 'Especial Meme Generator',
       caption: 'Crea tu meme',
