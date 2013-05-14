@@ -2438,7 +2438,6 @@ a.selectedTab:hover {
   content: ":";
 }
 #comentarios article p {
-  font-size: 0.75em;
   text-transform: none;
   float: left;
   width: 280px;
