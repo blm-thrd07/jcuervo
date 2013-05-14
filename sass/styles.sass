@@ -1046,11 +1046,15 @@ a.selectedTab
 
 .admin-login
 	display: block
-	width: 500px
+	width: 265px
 	margin: 0 auto
 	margin-top: 200px
 	padding: 50px
 	border: 5px solid $primario
+	+box-shadow(rgba(black,0.3) 0px 3px 5px)
+
+	h1
+		text-align: center
 
 	label
 		width: 60px
@@ -1065,6 +1069,9 @@ a.selectedTab
 		border: 0
 		padding: 0
 		+btn
+		display: block
+		margin: 0 auto
+		margin-top: $spacer
 
 	div
 		margin-bottom: $spacer

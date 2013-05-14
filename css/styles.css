@@ -2839,11 +2839,17 @@ a.selectedTab:hover {
 
 .admin-login {
   display: block;
-  width: 500px;
+  width: 265px;
   margin: 0 auto;
   margin-top: 200px;
   padding: 50px;
   border: 5px solid #980d2e;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px;
+}
+.admin-login h1 {
+  text-align: center;
 }
 .admin-login label {
   width: 60px;
@@ -2875,6 +2881,9 @@ a.selectedTab:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .admin-login input[type="submit"]:hover {
   -webkit-transition: all 0.1s;
