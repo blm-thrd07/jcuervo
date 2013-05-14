@@ -2049,6 +2049,15 @@ i {
   border-radius: 0px;
 }
 
+#tab5 .itemMeme {
+  height: 112px;
+  display: table;
+}
+#tab5 .itemMeme img {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .itemThumbnail {
   width: 31.94%;
   position: relative;
