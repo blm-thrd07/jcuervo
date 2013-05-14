@@ -1,28 +1,6 @@
 
 (function() {
 
-function referrerIsFacebookApp() {
-  var isInIFrame = (window.location != window.parent.location) ? true : false;
-  if (document.URL) {
-    if (isInIFrame) {
-      alert(document.URL.indexOf("apps.facebook.com") );
-      return document.URL.indexOf("apps.facebook.com") != -1;
-    } else {
-
-      alert(document.URL.indexOf("apps.facebook.com") );
-
-      return document.URL.indexOf("apps.t2omedia.com") != -1;
-    }
-  }
-  return false;
-}
-
-if (referrerIsFacebookApp()) {
-   // top.location = 'https://www.facebook.com/JCEspecial/app_342733185828640';
-
-  }
-
-
 function getInternetExplorerVersion()
 // Returns the version of Internet Explorer or a -1
 // (indicating the use of another browser).

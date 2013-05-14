@@ -6,6 +6,27 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 <head>
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/fancybox/jquery.fancybox.css">
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css">
+
+<script>
+function referrerIsFacebookApp() {
+  var isInIFrame = (window.location != window.parent.location) ? true : false;
+  
+  if (document.URL) {
+    if (isInIFrame) {
+      return document.URL.indexOf("apps.facebook.com") != -1;
+    } else {
+      return document.URL.indexOf("apps.t2omedia.com") != -1;
+
+    }
+  }
+  return false;
+}
+
+if (referrerIsFacebookApp()) {
+    top.location = 'https://www.facebook.com/JCEspecial/app_342733185828640';
+
+  }
+</script>
 </head>
 <body>
 <div id="splash">

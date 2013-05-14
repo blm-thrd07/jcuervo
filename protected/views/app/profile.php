@@ -1,4 +1,24 @@
 <script>
+function referrerIsFacebookApp() {
+  var isInIFrame = (window.location != window.parent.location) ? true : false;
+  
+  if (document.URL) {
+    if (isInIFrame) {
+      return document.URL.indexOf("apps.facebook.com") != -1;
+    } else {
+      return document.URL.indexOf("apps.t2omedia.com") != -1;
+
+    }
+  }
+  return false;
+}
+
+if (referrerIsFacebookApp()) {
+    top.location = 'https://www.facebook.com/JCEspecial/app_342733185828640';
+
+  }
+</script>
+<script>
  $(function() {
     return $('.js-slides, .js-slides-comic').slides({
       preload: false,
