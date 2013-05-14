@@ -28,7 +28,7 @@
         
 
    <? 
-          if(((int)$cantidad_amigos)==0){?>
+          if(((int)$comicsAmigos==0){?>
               <article id="noFriends">
                 <div id='fb-root'></div>
                 <h3>:(</h3>

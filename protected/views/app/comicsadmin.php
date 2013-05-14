@@ -15,7 +15,6 @@
             'header' => 'Imagen', 
 	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
 	        'type'=>'raw',
-	       	'htmlOptions'=>array('width'=>10),
         ),
 		'imagen',
 		'date',
@@ -38,6 +37,15 @@
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
         ),
+        /*
+        array(
+            'header' => 'compartidos',
+	        'name'=>'isSpecial',
+	        'value'=>'CHtml::checkBox("cb_special",$data->isSpecial,array("value"=>$data->id))',
+	        'type'=>'raw',
+	        'htmlOptions'=>array('width'=>5),
+        ),
+        */
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
