@@ -377,7 +377,7 @@ class AppController extends Controller
 
 
   public function actionCatjoscuer(){
-        $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0'));
+        $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0 '));
         //$resultado=$modelComics->findAll(array('condition'=>'destacado=1'));
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
 
