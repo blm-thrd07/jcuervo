@@ -1,5 +1,5 @@
 
-<h2> Resumen</h2>
+<h2>Resumen</h2>
 
 <div style="float:'left';">
 	<a href="<?php echo CController::createUrl('App/adminusuarios'); ?>">Usuarios Admin</a>

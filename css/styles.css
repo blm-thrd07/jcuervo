@@ -1415,7 +1415,7 @@ ul.icons li [class*=" icon-"] {
   content: "\f115";
 }
 
-.spr-sprite, .spr-accesorios-on, .spr-accesorios, .spr-boca-on, .spr-boca, .spr-cabeza-on, .spr-cabeza, .spr-cuerpo-on, .spr-cuerpo, .spr-globo-exclamacion, .spr-globo-normal, .spr-globo-pensamiento, .spr-globo1, .spr-globo2, .spr-globo3, .spr-ojos-on, .spr-ojos, .globo1, .globo2, .globo3, .btn .globo-normal, .btn .globo-exclamacion, .btn .globo-pensamiento, .menuPersonaje li:nth-of-type(1) a span, .menuPersonaje li:nth-of-type(1) a.selected span, .menuPersonaje li:nth-of-type(2) a span, .menuPersonaje li:nth-of-type(2) a.selected span, .menuPersonaje li:nth-of-type(3) a span, .menuPersonaje li:nth-of-type(3) a.selected span, .menuPersonaje li:nth-of-type(4) a span, .menuPersonaje li:nth-of-type(4) a.selected span, .menuPersonaje li:nth-of-type(5) a span, .menuPersonaje li:nth-of-type(5) a.selected span, .bx-controls-direction a .globo-normal, .bx-controls-direction a .globo-exclamacion, .bx-controls-direction a .globo-pensamiento, .js-slides > a .globo-normal, .js-slides > a .globo-exclamacion, .js-slides > a .globo-pensamiento, .js-slides-comic > a .globo-normal, .js-slides-comic > a .globo-exclamacion, .js-slides-comic > a .globo-pensamiento {
+.spr-sprite, .spr-accesorios-on, .spr-accesorios, .spr-boca-on, .spr-boca, .spr-cabeza-on, .spr-cabeza, .spr-cuerpo-on, .spr-cuerpo, .spr-globo-exclamacion, .spr-globo-normal, .spr-globo-pensamiento, .spr-globo1, .spr-globo2, .spr-globo3, .spr-ojos-on, .spr-ojos, .globo1, .globo2, .globo3, .btn .globo-normal, .btn .globo-exclamacion, .btn .globo-pensamiento, .menuPersonaje li:nth-of-type(1) a span, .menuPersonaje li:nth-of-type(1) a.selected span, .menuPersonaje li:nth-of-type(2) a span, .menuPersonaje li:nth-of-type(2) a.selected span, .menuPersonaje li:nth-of-type(3) a span, .menuPersonaje li:nth-of-type(3) a.selected span, .menuPersonaje li:nth-of-type(4) a span, .menuPersonaje li:nth-of-type(4) a.selected span, .menuPersonaje li:nth-of-type(5) a span, .menuPersonaje li:nth-of-type(5) a.selected span, .bx-controls-direction a .globo-normal, .bx-controls-direction a .globo-exclamacion, .bx-controls-direction a .globo-pensamiento, .js-slides > a .globo-normal, .js-slides > a .globo-exclamacion, .js-slides > a .globo-pensamiento, .js-slides-comic > a .globo-normal, .js-slides-comic > a .globo-exclamacion, .js-slides-comic > a .globo-pensamiento, .admin-login input[type="submit"] .globo-normal, .admin-login input[type="submit"] .globo-exclamacion, .admin-login input[type="submit"] .globo-pensamiento {
   background: url('../img/spr-s29057f557b.png') no-repeat;
 }
 
@@ -2835,4 +2835,97 @@ a.selectedTab:hover {
 .jcrop-holder {
   margin: 0 auto;
   margin-bottom: 10px;
+}
+
+.admin-login {
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+}
+.admin-login input[type="submit"] {
+  padding: 10px;
+  position: relative;
+  color: #ebc101;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3MGEyOCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjODcwYTI4Ii8+PHN0b3Agb2Zmc2V0PSI1MSUiIHN0b3AtY29sb3I9IiM5ODBkMmUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5ODBkMmUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #870a28), color-stop(50%, #870a28), color-stop(51%, #980d2e), color-stop(100%, #980d2e));
+  background-image: -webkit-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -moz-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: -o-linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  background-image: linear-gradient(#870a28, #870a28 50%, #980d2e 51%, #980d2e);
+  text-align: center;
+  display: inline-block;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+.admin-login input[type="submit"]:hover {
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  color: white;
+}
+.admin-login input[type="submit"]:hover > div {
+  color: #ebc101;
+  visibility: visible;
+  opacity: 1;
+}
+.admin-login input[type="submit"]:active {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 3px inset;
+}
+.admin-login input[type="submit"] > div {
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+PHN0b3Agb2Zmc2V0PSI1MSUiIHN0b3AtY29sb3I9IiMyNTI1MjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNTI1MjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(51%, #252525), color-stop(100%, #252525));
+  background-image: -webkit-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: -moz-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: -o-linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  background-image: linear-gradient(#000000, #000000 50%, #252525 51%, #252525);
+  z-index: 100;
+  padding: 3px;
+  text-align: center;
+  width: 110px;
+  font-size: 0.85em;
+  visibility: hidden;
+  opacity: 0;
+}
+.admin-login input[type="submit"] > div::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 13px 12px 0 12px;
+  left: 0;
+  top: -13px;
+  border-color: transparent transparent transparent #030303;
+  z-index: 101;
+}
+.admin-login input[type="submit"] .tooltipGlobo {
+  width: 50px;
+  height: 40px;
+  bottom: -70px;
+}
+.admin-login input[type="submit"] .globo-normal {
+  background-position: 0 -860px;
+}
+.admin-login input[type="submit"] .globo-exclamacion {
+  background-position: 0 -228px;
+}
+.admin-login input[type="submit"] .globo-pensamiento {
+  background-position: 0 -810px;
 }

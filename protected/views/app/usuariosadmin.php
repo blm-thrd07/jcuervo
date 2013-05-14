@@ -1,5 +1,5 @@
 
-<h2> Administrador Usuarios</h2>
+<h2>Administrador Usuarios</h2>
 
 <a href="<?php echo CController::createUrl('app/admin'); ?>">Regresar</a>
 <div id="myerrordiv"></div>
