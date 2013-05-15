@@ -63,7 +63,6 @@
 
   </div>
       
-    <script> console.log('<? print_r($json["comic"]["comic"]["NoCompartido"]); ?>'); </script>
     <script src="/php2/jcuervo/assets/11f59b72/jquery.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/kinetic-v4.3.3.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easytabs.min.js"></script>

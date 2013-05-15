@@ -474,62 +474,11 @@ class AppController extends Controller
     return base64_decode(strtr($input, '-_', '+/'));
   }
   
-  public function actionF(){
-     header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
-
-
-   $facebook = new facebook(array(
-    'appId'  => '342733185828640',
-    'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-    ));
-
-$album_name = 'MIS MEMES ESPECIAL';
-$album_description = '';
- 
-// Get the user id
-$user = $facebook->getUser();
- 
-if ($user) {
-  try {
-    // Proceed knowing you have a logged in user who's authenticated.
-    $user_profile = $facebook->api('/me');
- 
-    // getting the user album
-    $user_albums = $facebook->api("/me/albums");
-     
-    if ($user_albums) {
-      foreach ($user_albums['data'] as $key => $album) {
-
-        if ($album['name'] == $album_name) {
-          $album_id = $album['id'];
-          break;
-        }
-        else {
-          $album_id = 'blank';
-        }
-      }
-    }
- 
-    // if the album is not present, create the album
-    if ($album_id == 'blank') {
-      $graph_url = "https://graph.facebook.com/me/albums?" . "access_token=". $user;
-       
-      $album_data = array(
-        'name' => $album_name,
-        'message' => $album_description,
-      );
- 
-      $new_album = $facebook->api("me/albums", 'post', $album_data);
-      $album_id = $new_album['id'];
-      echo $album_id;
-    }
-    
-  } catch (FacebookApiException $e) {
-    error_log($e);
-    $user = null;
-  }
-}
-
+  public function actionF($id){
+    $model_comic= new UsuariosComicsComentarios;
+    $json=$model_comic->getComentarios($id);
+    print_r($json);
+    //$this->renderPartial('//app/_detalle',array('json'=>$json));
   }
   
 }
