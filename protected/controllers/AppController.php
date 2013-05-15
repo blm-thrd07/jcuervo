@@ -482,17 +482,18 @@ class AppController extends Controller
     $delete=false;
     $deletec=false;
 
-print_r($comic->UsuariosComics[1]->NoCompartido);
+ $model_comic_detalle=new UsuariosHasTblComics;
+ $comic_det=$model_comic_detalle->find(array('condition'=>'tbl_comics_id=:id','params'=>array(':id'=>$comic->id)));
 
 
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->id,
                                          'imagen'=>$comic->imagen,
                                          'date'=>$comic->date,
-                                         'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
-                                         'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
-                                         'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
-                                         'destacado'=>$comic->UsuariosComics[0]->destacado,
+                                         'NoComentarios'=>$comic_det->NoComentarios,
+                                         'NoVisto'=>$comic_det->NoVisto,
+                                         'NoCompartido'=>$comic_det->NoCompartido,
+                                         'destacado'=>$comic_der->destacado,
                                          'comments'=>$comentarios,
                                          'eliminar'=>$delete
                                          ));                
