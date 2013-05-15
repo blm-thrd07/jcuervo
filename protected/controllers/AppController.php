@@ -36,12 +36,11 @@ class AppController extends Controller
 
   public function actionAdminUsuarios(){
     if(Yii::app()->session['admin_jcuervo']==="userlogged"){ 
-      $comics = UsuariosHasTblComics::getComicsSplash();
       $model = new Usuarios('search');
       $model->unsetAttributes();
       if(isset($_GET['Usuarios']))
         $model->attributes=$_GET['Usuarios'];
-      $this->render("usuariosadmin",array('model'=>$model,'comics'=>$comics));
+      $this->render("usuariosadmin",array('model'=>$model));
     } else{
       $this->redirect(array('App/admin'));
     }
@@ -186,8 +185,8 @@ class AppController extends Controller
             $this->redirect(array('App/Profile/'.$user_profile['id']));
 
            }else{
-               
-                      $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+            $comics = UsuariosHasTblComics::getComicsSplash();
+            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
 
            }
 
@@ -233,7 +232,8 @@ class AppController extends Controller
             
         }
     }else{
-       $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+       $comics = UsuariosHasTblComics::getComicsSplash();
+       $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl,'comics'=>$comics));
     }
   }
 
