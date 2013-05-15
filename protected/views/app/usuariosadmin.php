@@ -48,7 +48,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <br><br>
 
 
-<?php 
+<?php /*
 	$comics = UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0','limit'=>4)); 
     if(count($comics)==4){
       foreach ($comics as $key => $value) { ?>
@@ -56,5 +56,5 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		<?php
 			echo "imagen:".$value['imagen'];
       }
-    } 
+    } */
 ?>
