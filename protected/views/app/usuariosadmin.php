@@ -56,7 +56,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
       foreach ($comics as $key => $value) { ?>
       	<div class="itemThumbnail"><div><a href="#"><img src="<?php echo Yii::app()->request->baseUrl."/Comics/".$value['imagen']; ?>"></a></div></div>
 		<?php
-			//echo "imagen:".$value['imagen'];
       }
     }
 ?>
