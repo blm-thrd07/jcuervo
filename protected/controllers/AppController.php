@@ -186,7 +186,7 @@ class AppController extends Controller
 
            }else{
             $comics = UsuariosHasTblComics::getComicsSplash();
-            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl));
+            $this->renderPartial('//app/login',array('loginUrl'=>$loginUrl,'comics'=>$comics));
 
            }
 
