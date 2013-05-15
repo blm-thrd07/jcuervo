@@ -100,7 +100,7 @@ class UsuariosHasTblComics extends CActiveRecord
    }
 
     public static function getComicsSplash(){
-	    $response= UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'tbl_usuarios_id=:uid AND isHidden=0'));   
+	    $response= UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isHidden=0','limit'=>4));   
 	    $numero_comics=count($response);
 	    $comics=array();
 	    if($numero_comics>3){
