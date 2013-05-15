@@ -482,7 +482,7 @@ class AppController extends Controller
     $delete=false;
     $deletec=false;
 
-print_r($comic->UsuariosComics[0]->NoCompartido);
+print_r($comic->UsuariosComics[1]->NoCompartido);
 
 
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
