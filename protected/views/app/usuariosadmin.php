@@ -50,7 +50,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 <?php 
 
-    /*if(count($comics)>3){
+    if(count($comics)>3){
     				print_r($comics);
 
       //foreach ($comics as $key => $value) { ?>
@@ -58,5 +58,5 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		<?php
 			//echo "imagen:".$value['imagen'];
       //}
-    }*/
+    }
 ?>
