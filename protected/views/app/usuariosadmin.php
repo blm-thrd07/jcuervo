@@ -49,6 +49,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 
 <?php 
+/*
 	$comics = UsuariosHasTblComics::getComicsSplash();
     if(count($comics)==4){
     				print_r($comics);
@@ -58,5 +59,5 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		<?php
 			//echo "imagen:".$value['imagen'];
       }
-    } 
+    } */
 ?>
