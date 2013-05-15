@@ -485,7 +485,7 @@ class AppController extends Controller
 
  $model_comic_detalle=new UsuariosHasTblComics;
  $comic_det=$model_comic_detalle->find(array('condition'=>'tbl_comics_id=:id','params'=>array(':id'=>$comic->id)));
-print_r($comic_det[0]);
+//print_r($comic_det[0]);
 
 //echo "<br>".$comic_det[0]->NoCompartido;
 
