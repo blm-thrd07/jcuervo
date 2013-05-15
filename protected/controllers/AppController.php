@@ -475,12 +475,10 @@ class AppController extends Controller
   }
   
   public function actionF($id){
-    
-  
-
-
-    
-
+    $model_comic= new UsuariosComicsComentarios;
+    $json=$model_comic->getComentarios($id);
+    print_r($json);
+    //$this->renderPartial('//app/_detalle',array('json'=>$json));
   }
   
 }
