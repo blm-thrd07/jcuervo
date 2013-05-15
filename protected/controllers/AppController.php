@@ -481,7 +481,8 @@ class AppController extends Controller
     $comentarios=null;
     $delete=false;
     $deletec=false;
-print_r($comic->UsuariosComics[0]);
+
+print_r($comic->UsuariosComics);
 
 
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
