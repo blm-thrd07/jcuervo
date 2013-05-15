@@ -486,20 +486,6 @@ class AppController extends Controller
 
     
 
-
-    $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
-                          'comic'=>array('id'=>$comic->id,
-                                         'imagen'=>$comic->imagen,
-                                         'date'=>$comic->date,
-                                         'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
-                                         'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
-                                         'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
-                                         'destacado'=>$comic->UsuariosComics[0]->destacado,
-                                         'comments'=>$comentarios,
-                                         'eliminar'=>$delete
-                                         ));
-
-    print_r($json);                                 
   }
   
 }
