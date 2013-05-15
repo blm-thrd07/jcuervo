@@ -499,7 +499,7 @@ class AppController extends Controller
                                          'eliminar'=>$delete
                                          ));                
 
-//print_r($json);
+print_r($json);
 
   }
   
