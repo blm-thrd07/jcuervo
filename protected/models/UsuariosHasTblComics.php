@@ -103,7 +103,7 @@ class UsuariosHasTblComics extends CActiveRecord
 	    $response= UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'tbl_usuarios_id=:uid AND isHidden=0'));   
 	    $numero_comics=count($response);
 	    $comics=array();
-	   if($numero_comics>3){
+	    if($numero_comics>3){
 	   		for($count=0;$count<4;$count++){
 	   
 		      $comics[$count]=array(
@@ -115,10 +115,8 @@ class UsuariosHasTblComics extends CActiveRecord
 		       'idFb'=>$response[$count]->Usuario->id_facebook);
 
 		   }
-	   }
-
+	    }
 	   return $comics;
-
    }
 
 	/**

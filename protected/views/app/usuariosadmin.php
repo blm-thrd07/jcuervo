@@ -50,7 +50,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 <?php 
 
-	$comics = UsuariosHasTblComics::getComicsSplash();
     /*if(count($comics)>3){
     				print_r($comics);
 
