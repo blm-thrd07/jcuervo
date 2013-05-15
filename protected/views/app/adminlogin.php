@@ -1,14 +1,13 @@
-
 <form method="POST" class="admin-login">
 	<h1>Panel de Administración</h1>
 	<fieldset>
 		<div>
-			<label>Usuario</label>
+			<label>Usuario:</label>
 			<input type="text" name="admin_user">
 		</div>
 
 		<div>
-			<label>Password</label>
+			<label>Contraseña:</label>
 			<input type="password" name="admin_password">
 		</div>
 	</fieldset>
