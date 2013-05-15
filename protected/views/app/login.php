@@ -32,18 +32,17 @@ if (referrerIsFacebookApp()) {
 <div id="splash">
       <h1>Memespecial<br><span>Generator</span></h1><a id="login"  class="btn">Genera tu meme</a>
       <div>
-        <div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div></div>
-        </div>
-        <div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div></div>
-        </div>
-        <div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div></div>
-        </div>
-        <div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="detalle.html" class="js-lightbox"><img src="http://placehold.it/640x480.png"></a>
-          <div><a href="amigo.html"><img src="http://placehold.it/50x50.png"></a></div></div>
-        </div>
+        <?php 
+
+            if(count($comics)>3){
+                    //print_r($comics);
+
+              foreach ($comics as $key => $value) { ?>
+                <div class="itemThumbnail"><div><a href="#"><img src="<?php echo Yii::app()->request->baseUrl."/Comics/".$value['imagen']; ?>"></a></div></div>
+            <?php
+              }
+            }
+        ?>
       </div>
     </div>
 
