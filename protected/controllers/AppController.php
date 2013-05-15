@@ -489,7 +489,7 @@ print_r($comic_det[0]);
 
 echo "<br>".$comic_det[0]->NoCompartido;
 
-echo "<br>".$comic_det->NoCompartido;
+//echo "<br>".$comic_det->NoCompartido;
 /*
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->id,
