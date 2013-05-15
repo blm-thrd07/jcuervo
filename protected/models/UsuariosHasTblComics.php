@@ -99,49 +99,6 @@ class UsuariosHasTblComics extends CActiveRecord
 
    }
 
-   public static function getMyComics($id){
-	    $response= UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'tbl_usuarios_id=:uid AND isHidden=0','params'=>array(':uid'=>$id)));   
-	    $numero_comics=count($response);
-	    $comics=array();
-	   
-	   for($count=0;$count<$numero_comics;$count++){
-	   
-	      $comics[$count]=array(
-	       'id'=> $response[$count]->Comic->id,
-	       'imagen'=>$response[$count]->Comic->imagen,
-	       'NoComentarios'=>$response[$count]->NoComentarios,
-	       'NoVisto'=>$response[$count]->NoVisto,
-	       'destacado'=>$response[$count]->destacado,
-	       'idFb'=>$response[$count]->Usuario->id_facebook);
-
-	   }
-
-	   return $comics;
-
-   }
-/*
-   public static function getComicsSplash(){
-	    $response= UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'tbl_usuarios_id=:uid AND isHidden=0'));   
-	    $numero_comics=count($response);
-	    $comics=array();
-	   if($numero_comics>4){
-	   		for($count=0;$count<4;$count++){
-	   
-		      $comics[$count]=array(
-		       'id'=> $response[$count]->Comic->id,
-		       'imagen'=>$response[$count]->Comic->imagen,
-		       'NoComentarios'=>$response[$count]->NoComentarios,
-		       'NoVisto'=>$response[$count]->NoVisto,
-		       'destacado'=>$response[$count]->destacado,
-		       'idFb'=>$response[$count]->Usuario->id_facebook);
-
-		   }
-	   }
-
-	   return $comics;
-
-   }
-*/
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
