@@ -51,8 +51,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <?php 
 	$comics = UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0','limit'=>4)); 
     if(count($comics)==4){
-      foreach ($comics as $key => $value) {  
-        echo $value["id"]; // '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
+      foreach ($comics as $key => $value) { 
+      	print_r($value);
+        //echo $value["id"]; // '<div class="itemThumbnail"><div><a data-fancybox-type="iframe" href="'.Yii::app()->session['protocol'].'apps.t2omedia.com.mx/php2/jcuervo/index.php/App/detalle/'.$value["id"].'" class="js-lightbox">'.CHtml::image(Yii::app()->request->baseUrl."/Comics/".$value['imagen']).'</a></div></div>';        
       }
     } 
 ?>
