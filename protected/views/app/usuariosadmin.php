@@ -48,13 +48,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <br><br>
 
 
-<?php /*
+<?php 
 	$comics = UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0','limit'=>4)); 
     if(count($comics)==4){
       foreach ($comics as $key => $value) { ?>
       	<!--<div class="itemThumbnail"><div><a href="#"><img src="<?php echo Yii::app()->request->baseUrl."/Comics/".$value['imagen']; ?>"></a></div></div>-->
 		<?php
-			echo "imagen:".$value['imagen'];
+			echo "imagen:".$value->Comic->imagen;
       }
-    } */
+    } 
 ?>
