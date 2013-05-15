@@ -94,6 +94,9 @@ class UsuariosComicsComentarios extends CActiveRecord
     $deletec=false;
 
 
+    $model_comic_detalle=new UsuariosHasTblComics;
+    $comic_det=$model_comic_detalle->find(array('condition'=>'tbl_comics_id=:id','params'=>array(':id'=>$comic->id)));
+
     
 
     for($i=0;$i<$cantidad_comentarios;$i++){
@@ -124,10 +127,10 @@ class UsuariosComicsComentarios extends CActiveRecord
                           'comic'=>array('id'=>$comic->id,
                                          'imagen'=>$comic->imagen,
                                          'date'=>$comic->date,
-                                         'NoComentarios'=>$comic->UsuariosComics[0]->NoComentarios,
-                                         'NoVisto'=>$comic->UsuariosComics[0]->NoVisto,
-                                         'NoCompartido'=>$comic->UsuariosComics[0]->NoCompartido,
-                                         'destacado'=>$comic->UsuariosComics[0]->destacado,
+                                         'NoComentarios'=>$comic_det->NoComentarios,
+                                         'NoVisto'=>$comic_det->NoVisto,
+                                         'NoCompartido'=>$comic_det->NoCompartido,
+                                         'destacado'=>$comic_det->destacado,
                                          'comments'=>$comentarios,
                                          'eliminar'=>$delete
                                          ));                
