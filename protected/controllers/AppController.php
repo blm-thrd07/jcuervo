@@ -485,12 +485,9 @@ class AppController extends Controller
 
  $model_comic_detalle=new UsuariosHasTblComics;
  $comic_det=$model_comic_detalle->find(array('condition'=>'tbl_comics_id=:id','params'=>array(':id'=>$comic->id)));
-//print_r($comic_det[0]);
 
-//echo "<br>".$comic_det[0]->NoCompartido;
 
-echo "<br>".$comic_det->NoCompartido;
-/*
+
     $json['comic']=array('usuario' =>array('nombre'=>$comic->UsuariosComics[0]->Usuario->nombre,'idFb'=>$comic->UsuariosComics[0]->Usuario->id_facebook),
                           'comic'=>array('id'=>$comic->id,
                                          'imagen'=>$comic->imagen,
@@ -504,7 +501,7 @@ echo "<br>".$comic_det->NoCompartido;
                                          ));                
 
 print_r($json);
-*/
+
 
   }
   
