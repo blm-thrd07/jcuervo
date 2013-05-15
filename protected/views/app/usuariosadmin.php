@@ -51,12 +51,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <?php 
 
     if(count($comics)>3){
-    				print_r($comics);
+    				//print_r($comics);
 
-      //foreach ($comics as $key => $value) { ?>
-      	<!--<div class="itemThumbnail"><div><a href="#"><img src="<?php echo Yii::app()->request->baseUrl."/Comics/".$value['imagen']; ?>"></a></div></div>-->
+      foreach ($comics as $key => $value) { ?>
+      	<div class="itemThumbnail"><div><a href="#"><img src="<?php echo Yii::app()->request->baseUrl."/Comics/".$value['imagen']; ?>"></a></div></div>
 		<?php
 			//echo "imagen:".$value['imagen'];
-      //}
+      }
     }
 ?>
