@@ -476,12 +476,7 @@ class AppController extends Controller
   
   public function actionF($id){
     
-    $model_comic= new Comics;
-    $comic=$model_comic->find(array('condition'=>'id=:id','params'=>array(':id'=>$id)));
-    $cantidad_comentarios=count($comic->Coments);
-    $comentarios=null;
-    $delete=false;
-    $deletec=false;
+  
 
 
     
