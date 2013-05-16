@@ -105,7 +105,7 @@ class AppController extends Controller
     $user =$facebook->getUser();
     $album_name = 'MIS MEMES ESPECIAL';
     $album_description = '';
-
+    $album_id = 'blank';
 
     if ($user) {
        try {
@@ -141,12 +141,12 @@ class AppController extends Controller
 
         if ($user_albums) {
              foreach ($user_albums['data'] as $key => $album) {
-                   if ($album['name'] == $album_name) {
-                        $album_id = $album['id'];
-                         break;
-             }
+              if ($album['name'] == $album_name) {
+                $album_id = $album['id'];
+                break;
+              }
               else {
-                    $album_id = 'blank';
+                $album_id = 'blank';
               }
             }
         }
