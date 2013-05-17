@@ -63,8 +63,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=jcuervodb',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'rails',
+			'password' => 't2omedia',
 			'charset' => 'utf8',
 		),
 		
