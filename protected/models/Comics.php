@@ -103,7 +103,7 @@ class Comics extends CActiveRecord
 			$cmd->bindValue(":id", $id , PDO::PARAM_STR);
 			$row = $cmd->queryAll();
         	$cantidad=$row[0]['max'];
-        	echo "cantidad: ".CHtml::encode($cantidad);
+        	echo CHtml::encode($cantidad);
 		}
 	}
 
