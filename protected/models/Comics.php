@@ -94,14 +94,13 @@ class Comics extends CActiveRecord
 		));
 	}
 
-	/*public static function NoCompartidosTotalUsuario($id){
+	public static function NoCompartidosTotalUsuario($id){
 		if(Yii::app()->session['usuario_id']){
 			$cmd = Yii::app()->db->createCommand('select sum(NoCompartido) from tbl_usuarios_has_tbl_comics where tbl_usuarios_id=:id')
-        	$cmd = Yii::app()->db->createCommand($sql);
 			$cmd->bindValue(":id", $id , PDO::PARAM_STR);
 			$row = $cmd->queryAll();
         	$cantidad=$row[0]['max'];
         	echo CHtml::encode($cantidad);
 		}
-	}*/
+	}
 }
