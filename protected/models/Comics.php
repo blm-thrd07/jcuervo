@@ -98,7 +98,6 @@ class Comics extends CActiveRecord
 	{
 		if(Yii::app()->session['admin_jcuervo']==="userlogged")
 		{
-			//echo "hola";
 			$cmd = Yii::app()->db->createCommand('select sum(NoCompartido) as max from tbl_usuarios_has_tbl_comics where tbl_usuarios_id=:id');
 			$cmd->bindValue(":id", $id , PDO::PARAM_STR);
 			$row = $cmd->queryAll();
@@ -106,6 +105,20 @@ class Comics extends CActiveRecord
         	if($cantidad>0)
         		echo CHtml::encode($cantidad);
         	else echo "0";
+		}
+	}
+
+	public static function TotalCompartidos()
+	{
+		if(Yii::app()->session['admin_jcuervo']==="userlogged")
+		{
+			$cmd = Yii::app()->db->createCommand('select sum(NoCompartido) as max from tbl_usuarios_has_tbl_comics');
+			$cmd->bindValue(":id", $id , PDO::PARAM_STR);
+			$row = $cmd->queryAll();
+        	$cantidad=$row[0]['max'];
+        	if($cantidad>0)
+        		return $cantidad;
+        	else return "0";
 		}
 	}
 
