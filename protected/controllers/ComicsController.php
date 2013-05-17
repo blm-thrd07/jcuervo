@@ -141,7 +141,7 @@ class ComicsController extends Controller
       public function actionShare($id){
         
               $model=Comics::model()->findByPk($id);
-              $modelVotosUsuario=UsuarioVotosComics::model()->find(array('condition'=>'id_usuario=:id_usuario and id_comic:=:id_comic ','params'=>array(':id_usuario'=>Yii::app()->session['usuario_id'],':id_comic'=>$id)));
+              $modelVotosUsuario=UsuariosVotosComics::model()->find(array('condition'=>'id_usuario=:id_usuario and id_comic:=:id_comic ','params'=>array(':id_usuario'=>Yii::app()->session['usuario_id'],':id_comic'=>$id)));
               $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
 			  $numeroTotal=$modelUsuariosComics->NoCompartido;
 
