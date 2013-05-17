@@ -18,7 +18,7 @@
           <div class="itemMeme"><a href="#" id="catmasvist" class="itemAction subcat selectedTab"><i class="icon-eye-open"></i>Los + Vistos</a></div>
           <div class="itemMeme"><a href="#" id="catmascomp" class="itemAction subcat"><i class="icon-plus-sign"></i>Los + Votados</a></div>
           <div class="itemMeme"><a href="#" id="catmascome" class="itemAction subcat"><i class="icon-share-alt"></i>Los + Comentados</a></div>
-          <div class="itemMeme"><a href="#" id="catjoscuer" class="itemAction subcat"><i class="icon-star"></i>Seleccion Especial José Cuervo</a></div>
+          <div class="itemMeme"><a href="#" id="catjoscuer" class="itemAction subcat"><i class="icon-star"></i>Seleccion Especial Jose Cuervo</a></div>
         </div>
 
            <div class="response">
