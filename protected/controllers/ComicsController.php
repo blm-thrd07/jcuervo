@@ -156,7 +156,7 @@ class ComicsController extends Controller
 			      $modelVotosUsuarionew->id_comic=$modelUsuariosComics->tbl_comics_id;
 			      
 			      if($modelVotosUsuarionew->save(false)){
-			          echo $numeroTotal."mas";	
+			          echo $numeroTotal;	
 			      }
 			     
 			    
@@ -164,7 +164,7 @@ class ComicsController extends Controller
 
 
 			  }else{
-                 echo $numeroTotal+"ya votaste";
+                 echo "ya votaste";
 			  }
 
                
