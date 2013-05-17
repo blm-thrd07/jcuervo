@@ -34,7 +34,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	        'htmlOptions'=>array('width'=>5),
         ),
        	array(
-            'header' => 'No Compartidos totales',
+            'header' => 'votos totales',
             'value'=>' Comics::NoCompartidosTotalUsuario($data->id) ',
            	'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),

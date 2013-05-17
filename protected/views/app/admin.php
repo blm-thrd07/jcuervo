@@ -16,5 +16,5 @@
 <label>Numero de Usuarios: <?php echo Usuarios::model()->count(); ?></label><br>
 <label>Numero de Nuevos Usuarios: <?php echo ActividadUsuario::model()->count(); ?></label><br>
 <label>Numero de Comics: <?php echo Comics::model()->count(); ?></label><br>
-<label>Numero de Comics compartidos en total: <?php echo Comics::TotalCompartidos(); ?></label><br>
+<label>Numero de Comics votados en total: <?php echo Comics::TotalCompartidos(); ?></label><br>
 
