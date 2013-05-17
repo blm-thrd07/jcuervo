@@ -164,7 +164,7 @@ class ComicsController extends Controller
 
 
 			  }else{
-                 echo "ya votaste";
+                 echo $numeroTotal;
 			  }
 
                
