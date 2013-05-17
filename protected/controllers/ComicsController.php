@@ -151,7 +151,7 @@ class ComicsController extends Controller
 			    $modelUsuariosComics->NoCompartido=$numeroTotal;
 			    
 			    if($modelUsuariosComics->save(false)){
-			      $modelVotosUsuarionew= new UsuarioVotosComics;
+			      $modelVotosUsuarionew= new UsuariosVotosComics;
 			      $modelVotosUsuarionew->id_usuario=Yii::app()->session['usuario_id'];
 			      $modelVotosUsuarionew->id_comic=$modelUsuariosComics->tbl_comics_id;
 			      
