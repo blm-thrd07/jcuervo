@@ -33,12 +33,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	        'type'=>'raw',
 	        'htmlOptions'=>array('width'=>5),
         ),
-       	array(
+       	/* array(
             'header' => 'No Compartidos totales',
             'name' => 'isFan',
             'value'=>' Comics::NoCompartidosTotalUsuario($data->id); '
         ),
-        
+        */
 		/*array(
 			'class'=>'CButtonColumn',
 		),*/
