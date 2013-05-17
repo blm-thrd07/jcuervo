@@ -37,11 +37,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'header' => 'No Compartidos totales',
             'value'=>' Comics::NoCompartidosTotalUsuario($data->id) ',
            	'type'=>'raw',
+	        'htmlOptions'=>array('width'=>5),
         ),
-        
-		/*array(
-			'class'=>'CButtonColumn',
-		),*/
+    
 	),
 )); ?>
 
