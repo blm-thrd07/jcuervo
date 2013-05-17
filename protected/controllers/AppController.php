@@ -355,7 +355,7 @@ class AppController extends Controller
           $row= Yii::app()->db->createCommand('select max(NoCompartido) as max from tbl_usuarios_has_tbl_comics')->queryAll();
           $cantidad=$row[0]['max'];
           if($cantidad!=null){
-                  $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoCompartido<='.$cantidad.' and NoCompartido !=0 AND isHidden=0','order'=>'NoCompartido desc','limit'=>5));
+                  $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoCompartido<='.$cantidad.' and NoCompartido !=0 AND isHidden=0 AND isSpecial=0','order'=>'NoCompartido desc','limit'=>5));
           }else{
             $resultado=null;
           }
