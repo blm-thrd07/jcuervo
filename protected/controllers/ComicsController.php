@@ -140,33 +140,33 @@ class ComicsController extends Controller
 
       public function actionShare($id){
         
-        $model=Comics::model()->findByPk($id);
-
-        $facebook = new facebook(array(
-          'appId'  => '342733185828640',
-          'secret' => 'f645963f59ed7ee25410567dbfd0b73f',
-        ));
-
-        $my_access_token= $facebook->getAccessToken();
-        $user =$facebook->getUser();
-
-        if ($user) {
-           try {
-              // Proceed knowing you have a logged in user who's authenticated.
-              $user_profile =  $facebook->api('/me');
+              $model=Comics::model()->findByPk($id);
+              $modelVotosUsuario=UsuarioVotosComics::model()->find(array('condition'=>'id_usuario=:id_usuario and id_comic:=:id_comic ','params'=>array(':id_usuario'=>Yii::app()->session['usuario_id'],':id_comic'=>$id)));
               $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$id)));
 			  $numeroTotal=$modelUsuariosComics->NoCompartido;
-              $numeroTotal+=1;
-			  $modelUsuariosComics->NoCompartido=$numeroTotal;
-			  if($modelUsuariosComics->save(false)){
-			     echo $numeroTotal;
+
+              if(count($modelVotosUsuario)==0){
+                
+                $numeroTotal+=1;
+			    $modelUsuariosComics->NoCompartido=$numeroTotal;
+			    
+			    if($modelUsuariosComics->save(false)){
+			      $modelVotosUsuarionew= new UsuarioVotosComics;
+			      $modelVotosUsuarionew->id_usuario=Yii::app()->session['usuario_id'];
+			      $modelVotosUsuarionew->id_comic=$modelUsuariosComics->tbl_comics_id;
+			      
+			      if($modelVotosUsuarionew->save(false)){
+			          echo $numeroTotal;	
+			      }
+			     
+			    
+			    }
+
+
+			  }else{
+                 echo $numeroTotal+"ya votaste";
 			  }
 
-            } catch (FacebookApiException $e) {
-               error_log($e);
-               $user = null;
-             }
-         }
                
 
 	 }

@@ -1,18 +1,18 @@
 <?php
 
 /**
- * This is the model class for table "tbl_actividad_usuario".
+ * This is the model class for table "tbl_usuarios_votos_comics".
  *
- * The followings are the available columns in table 'tbl_actividad_usuario':
- * @property integer $tbl_actividad_actividad_id
- * @property integer $tbl_usuarios_id
+ * The followings are the available columns in table 'tbl_usuarios_votos_comics':
+ * @property integer $id_usuario
+ * @property integer $id_comic
  */
-class ActividadUsuario extends CActiveRecord
+class UsuariosVotosComics extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return ActividadUsuario the static model class
+	 * @return UsuariosVotosComics the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -24,7 +24,7 @@ class ActividadUsuario extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_actividad_usuario';
+		return 'tbl_usuarios_votos_comics';
 	}
 
 	/**
@@ -35,11 +35,11 @@ class ActividadUsuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tbl_actividad_actividad_id, tbl_usuarios_id', 'required'),
-			array('tbl_actividad_actividad_id, tbl_usuarios_id', 'numerical', 'integerOnly'=>true),
+			array('id_usuario, id_comic', 'required'),
+			array('id_usuario, id_comic', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tbl_actividad_actividad_id, tbl_usuarios_id', 'safe', 'on'=>'search'),
+			array('id_usuario, id_comic', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,8 +60,8 @@ class ActividadUsuario extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'tbl_actividad_actividad_id' => 'Tbl Actividad Actividad',
-			'tbl_usuarios_id' => 'Tbl Usuarios',
+			'id_usuario' => 'Id Usuario',
+			'id_comic' => 'Id Comic',
 		);
 	}
 
@@ -76,8 +76,8 @@ class ActividadUsuario extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('tbl_actividad_actividad_id',$this->tbl_actividad_actividad_id);
-		$criteria->compare('tbl_usuarios_id',$this->tbl_usuarios_id);
+		$criteria->compare('id_usuario',$this->id_usuario);
+		$criteria->compare('id_comic',$this->id_comic);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
