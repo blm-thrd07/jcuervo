@@ -139,9 +139,20 @@ class UsuariosComicsComentariosController extends Controller
 
 	public function actionDelete($id)
 	{
+		$model=$this->loadModel($id);
+
 		if($this->loadModel($id)->delete()){
 
-			echo "Comentario eliminado";
+          $cantidadcoments=count($model);
+          $cantidadcoments=(int)$cantidadcoments;
+          $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
+          $modelUsuariosComics->NoComentarios=$cantidadcoments;
+          
+          if($modelUsuariosComics->save(false)){
+          	 echo "Comentario eliminado";
+          }
+			
+
 		}else{
 			 echo "No se pudo eliminar";
 		}
