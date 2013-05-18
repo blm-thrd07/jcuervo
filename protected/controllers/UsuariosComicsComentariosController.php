@@ -145,12 +145,13 @@ class UsuariosComicsComentariosController extends Controller
 		if($this->loadModel($id)->delete()){
          
           $modelUsuariosComics=UsuariosComicsComentarios::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$modelcomicid)));
-         // $modelUsuariosComics->NoComentarios=count($modelUsuariosComics);
-          echo $modelcomicid;
-          //print_r($modelUsuariosComics);
-          //if($modelUsuariosComics->save(false)){
-          	// echo "Comentario eliminado";
-          //}
+           
+          $modelUsuariosHasTblComics= UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$modelcomicid))) 
+          $modelUsuariosHasTblComics->NoComentarios=count($modelUsuariosComics);
+          
+          if($modelUsuariosHasTblComics->save(false)){
+          	 echo "Comentario eliminado";
+          }
 			
 
 		}else{
