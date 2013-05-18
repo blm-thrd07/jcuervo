@@ -13,10 +13,20 @@
 	'columns'=>array(
 		array(
             'header' => 'Imagen', 
-	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
+	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen, "", array("style"=>"width:100px;height:100px;")),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
 	        'type'=>'raw',
         ),
-		'imagen',
+    array(
+      'header' => 'Usuario',
+      'value'=>'  CHtml::link(CHtml::image("https://graph.facebook.com/".$data->UsuariosComics[0]->Usuario->id_facebook."/picture"), "https://www.facebook.com/".$data->UsuariosComics[0]->Usuario->id_facebook) ',
+	    'type'=>'raw', 
+    ),
+    array(
+      'header' => 'correo',
+      //'name' => 'correo',
+      //'filter' => CHtml::listData(Usuarios::model()->findAll(),'id','correo'),
+      'value' => '$data->UsuariosComics[0]->Usuario->correo'
+    ),
 		'date',
 		array(
             'header' => 'esta oculto?',

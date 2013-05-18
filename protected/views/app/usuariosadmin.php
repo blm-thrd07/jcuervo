@@ -24,7 +24,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'nombre',
 		array(
             'header' => 'es Fan?',
-            'name' => 'isFan',
             'value'=>' Usuarios::isFan($data->id,$data->isFan); '
         ),
         array(

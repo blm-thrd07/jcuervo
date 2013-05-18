@@ -14,6 +14,8 @@
  */
 class Comics extends CActiveRecord
 {
+  public $correo;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -88,6 +90,13 @@ class Comics extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('date',$this->date,true);
+    if(!empty($this->correo))
+    {
+      $criteria->with = array('UsuariosComics');
+      $criteria->together = true;
+      $criteria->condition = "UsuariosComics.correo LIKE '%".$this->correo."%'";
+		  //$criteria->compare('correo',$this->UsuariosComics[0]->Usuario->correo);
+    }
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
