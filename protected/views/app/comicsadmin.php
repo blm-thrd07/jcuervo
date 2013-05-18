@@ -13,7 +13,7 @@
 	'columns'=>array(
 		array(
             'header' => 'Imagen', 
-	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen, "", array("style"=>"width:100px;height:100px;")),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
+	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen, "", array("style"=>"height:100px;")),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
 	        'type'=>'raw',
         ),
     array(
