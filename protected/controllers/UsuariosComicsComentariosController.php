@@ -143,9 +143,10 @@ class UsuariosComicsComentariosController extends Controller
 
 		if($this->loadModel($id)->delete()){
 
-          $cantidadcoments=count($model);
-          $cantidadcoments=(int)$cantidadcoments;
+          
           $modelUsuariosComics=UsuariosHasTblComics::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
+          $cantidadcoments=count($modelUsuariosComics);
+          $cantidadcoments=(int)$cantidadcoments;
           $modelUsuariosComics->NoComentarios=$cantidadcoments;
           
           if($modelUsuariosComics->save(false)){
