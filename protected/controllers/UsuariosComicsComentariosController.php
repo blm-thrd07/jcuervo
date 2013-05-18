@@ -140,11 +140,11 @@ class UsuariosComicsComentariosController extends Controller
 	public function actionDelete($id)
 	{
 		$model=$this->loadModel($id);
-
+        $modelcomicid=$model->tbl_comics_id;
+		
 		if($this->loadModel($id)->delete()){
-
-          
-          $modelUsuariosComics=UsuariosComicsComentarios::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$model->tbl_comics_id)));
+         
+          $modelUsuariosComics=UsuariosComicsComentarios::model()->find(array('condition'=>'tbl_comics_id=:cid','params'=>array(':cid'=>$modelcomicid)));
           $modelUsuariosComics->NoComentarios=count($modelUsuariosComics);
           
           //print_r($modelUsuariosComics);
