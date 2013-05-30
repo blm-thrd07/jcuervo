@@ -90,8 +90,7 @@ class Comics extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('date',$this->date,true);
-		$criteria->alias = "Comic";
-    $criteria->join = "LEFT JOIN tbl_usuarios_has_tbl_comics ON tbl_usuarios_has_tbl_comics.tbl_comics_id = Comic.id";
+		
     if(!empty($this->correo))
     {
       $criteria->with = array('UsuariosComics');
