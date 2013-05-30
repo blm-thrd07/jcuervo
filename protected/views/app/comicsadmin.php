@@ -27,12 +27,8 @@
       //'filter' => CHtml::listData(Usuarios::model()->findAll(),'id','correo'),
       'value' => '$data->UsuariosComics[0]->Usuario->correo'
     ),
+    'NoCompartido',
 		'date',
-		array(
-            'header' => 'esta oculto?',
-            'name' => 'isHidden',
-            'value' => '($data->isHidden == 0) ? "No" : "Si"'
-        ),
         array(
             'header' => 'esta oculto?',
 	        'name'=>'isHidden',
