@@ -58,12 +58,13 @@ from tbl_usuarios_has_tbl_comics c inner join tbl_usuarios b on b.id = c.tbl_usu
       $dataProvider=new CSqlDataProvider($sql, array(
           'totalItemCount'=>$count,
           'sort'=>array(
-              'attributes'=>array(
-                   'imagen','correo','NoCompartido','NoVisto','NoComentarios','date','id_facebook'
-              ),
+            'defaultOrder'=>'id ASC',
+            'attributes'=>array(
+              'imagen','correo','NoCompartido','NoVisto','NoComentarios','date','id_facebook'
+            ),
           ),
           'pagination'=>array(
-              'pageSize'=>10,
+              'pageSize'=>20,
           ),
       ));
 
