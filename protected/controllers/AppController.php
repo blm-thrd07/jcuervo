@@ -48,11 +48,27 @@ class AppController extends Controller
 
   public function actionAdminComics(){
     if(Yii::app()->session['admin_jcuervo']==="userlogged"){
-      $model = new Comics('search');
-      $model->unsetAttributes();
-      if(isset($_GET['Comics']))
-        $model->attributes=$_GET['Comics'];
-      $this->render("comicsadmin",array('model'=>$model));
+      //$model = new Comics('search');
+      //$model->unsetAttributes();
+      //if(isset($_GET['Comics']))
+        //$model->attributes=$_GET['Comics'];
+      $count=Yii::app()->db->createCommand('SELECT COUNT(*) from tbl_usuarios_has_tbl_comics c inner join tbl_usuarios b on b.id = c.tbl_usuarios_id inner join tbl_comics a on a.id = c.tbl_comics_id')->queryScalar();
+      $sql='select a.id, a.imagen, a.date, a.isSpecial, a.isHidden, b.id_facebook, b.correo, c.NoCompartido, c.NoComentarios, c.NoVisto 
+from tbl_usuarios_has_tbl_comics c inner join tbl_usuarios b on b.id = c.tbl_usuarios_id inner join tbl_comics a on a.id = c.tbl_comics_id';
+      $dataProvider=new CSqlDataProvider($sql, array(
+          'totalItemCount'=>$count,
+          'sort'=>array(
+            'defaultOrder'=>'id ASC',
+            'attributes'=>array(
+              'imagen','correo','NoCompartido','NoVisto','NoComentarios','date','id_facebook'
+            ),
+          ),
+          'pagination'=>array(
+              'pageSize'=>20,
+          ),
+      ));
+
+      $this->render("comicsadmin",array('model'=>$dataProvider));
     } else{
       $this->redirect(array('App/admin'));
     }

@@ -7,56 +7,58 @@
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-comic-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'dataProvider'=>$model,
+  //'filter'=>$model,
 	'ajaxUpdate' => true,
 	'columns'=>array(
 		array(
-            'header' => 'Imagen', 
-	        'value'=>'  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data->imagen, "", array("style"=>"height:100px;")),Yii::app()->request->baseUrl."/Comics/".$data->imagen) ',
-	        'type'=>'raw',
-        ),
-    array(
-      'header' => 'Usuario',
-      'value'=>'  CHtml::link(CHtml::image("https://graph.facebook.com/".$data->UsuariosComics[0]->Usuario->id_facebook."/picture"), "https://www.facebook.com/".$data->UsuariosComics[0]->Usuario->id_facebook) ',
-	    'type'=>'raw', 
+      'header' => 'Imagen',
+      //'name' => 'imagen',
+      'value'=> '  CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/Comics/".$data["imagen"], "", array("style"=>"height:100px;")),Yii::app()->request->baseUrl."/Comics/".$data["imagen"]) ',
+      'type'=>'raw',
     ),
     array(
-      'header' => 'correo',
-      //'name' => 'correo',
+      'header' => 'Usuario',
+      //'name' => 'id_facebook',
+      'value'=>'  CHtml::link(CHtml::image("https://graph.facebook.com/".$data["id_facebook"]."/picture"), "https://www.facebook.com/".$data["id_facebook"]) ',
+      'type'=>'raw', 
+    ),
+    array(
+      'header' => 'Correo',
+      'name' => 'correo',
       //'filter' => CHtml::listData(Usuarios::model()->findAll(),'id','correo'),
-      'value' => '$data->UsuariosComics[0]->Usuario->correo'
+      'value' => '$data["correo"]'
     ),
     array(
       'header' => 'Votos',
-      'value'=>'$data->UsuariosComics[0]->NoCompartido',
+      'name' => 'NoCompartido',
     ),
     array(
       'header' => 'Comentarios',
-      'value'=>'$data->UsuariosComics[0]->NoComentarios',
+      'name' => 'NoComentarios',
     ),
     array(
       'header' => 'Vistas',
-      'value'=>'$data->UsuariosComics[0]->NoVisto',
+      'name' => 'NoVisto',
     ),
     array(
       'header' => 'Fecha',
       'name' => 'date'
     ),
-        array(
-            'header' => 'esta oculto?',
-	        'name'=>'isHidden',
-	        'value'=>'CHtml::checkBox("cb_hidden",$data->isHidden,array("value"=>$data->id))',
-	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5),
-        ),
-        array(
-            'header' => 'es Especial?',
-	        'name'=>'isSpecial',
-	        'value'=>'CHtml::checkBox("cb_special",$data->isSpecial,array("value"=>$data->id))',
-	        'type'=>'raw',
-	        'htmlOptions'=>array('width'=>5),
-        ),
+    array(
+      'header' => 'Oculto',
+      'name'=>'isHidden',
+      'value'=>'CHtml::checkBox("cb_hidden",$data["isHidden"],array("value"=>$data["id"]))',
+      'type'=>'raw',
+      'htmlOptions'=>array('width'=>5),
+    ),
+    array(
+      'header' => 'Especial',
+      'name'=>'isSpecial',
+      'value'=>'CHtml::checkBox("cb_special",$data["isSpecial"],array("value"=>$data["id"]))',
+      'type'=>'raw',
+      'htmlOptions'=>array('width'=>5),
+    ),
         /*
         array(
             'header' => 'compartidos',
