@@ -1,3 +1,7 @@
+<?php
+$this->layout='admin';
+?>
+
 <form method="POST" class="admin-login">
 	<h1>Panel de Administración</h1>
 	<fieldset>

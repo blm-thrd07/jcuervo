@@ -3,7 +3,9 @@
 
 <a href="<?php echo CController::createUrl('app/admin'); ?>">Regresar</a>
 
-
+<?php
+$this->layout='admin';
+?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'admin-comic-grid',

@@ -1,4 +1,8 @@
 
+<?php
+$this->layout='admin';
+?>
+
 <h2>Resumen</h2>
 
 <div style="float:'left';">
@@ -8,7 +12,10 @@
 	<a href="<?php echo CController::createUrl('App/admincomics'); ?>">Comics Admin</a>
 </div>
 <div style="float:'right';">
-	<a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>">Salir</a>
+	<a href="<?php echo CController::createUrl('/accesorios'); ?>">Accesorios Admin</a>
+</div>
+<div style="float:'right';">
+  <a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>">Salir</a>
 </div>
 
 

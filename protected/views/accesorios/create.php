@@ -10,6 +10,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Accesorios</h1>
+<h1>Crear Nuevo Accesorio</h1>
+
+<div style="float:'left';">
+  <a href="<?php echo CController::createUrl('/accesorios'); ?>">Regresar</a>
+</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
