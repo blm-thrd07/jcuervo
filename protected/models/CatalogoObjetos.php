@@ -40,6 +40,7 @@ class CatalogoObjetos extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, url', 'safe', 'on'=>'search'),
+			array('url', 'file', 'types'=>'jpg, gif, png')
 		);
 	}
 

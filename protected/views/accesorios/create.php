@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Accesorioses'=>array('index'),
+	'Accesorios'=>array('index'),
 	'Create',
 );
 
@@ -11,9 +11,9 @@ $this->menu=array(
 ?>
 
 <h1>Crear Nuevo Accesorio</h1>
-
+<br/>
 <div style="float:'left';">
   <a href="<?php echo CController::createUrl('/accesorios'); ?>">Regresar</a>
 </div>
-
+<br/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

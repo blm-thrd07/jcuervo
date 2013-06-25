@@ -1,20 +1,20 @@
 <?php
 $this->breadcrumbs=array(
-  'Accesorios',
+  'Fondos',
 );
 ?>
 
-<h1>Accesorios</h1>
+<h1>Fondos</h1>
 
 <div style="float:'left';">
-  <a href="<?php echo CController::createUrl('accesorios/create'); ?>">Crear Nuevo Accesorio</a>
+  <a href="<?php echo CController::createUrl('backgrounds/create'); ?>">Crear Nuevo Fondo</a>
 </div>
 <div style="float:'left';">
   <a href="<?php echo CController::createUrl('app/Admin'); ?>">Regresar</a>
 </div>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-  'id'=>'admin-accesorios-grid',
+  'id'=>'admin-backgrounds-grid',
   'dataProvider'=>$dataProvider,
   'columns'=>array(
     array(
@@ -23,13 +23,13 @@ $this->breadcrumbs=array(
     ),
     array(
       'header' => 'Imagen',
-      'value'=> 'CHtml::image(Yii::app()->request->baseUrl."/images/accesorios/".$data->url, "")',
+      'value'=> 'CHtml::image(Yii::app()->request->baseUrl."/images/backgrounds/".$data->url, "")',
       'type'=>'raw',
     ),
     array(
       'class'=>'CButtonColumn',
       'template' => '{delete}',
-      'deleteButtonUrl'=>'Yii::app()->createUrl("/accesorios/delete", array("id" =>  $data["id"]))',
+      'deleteButtonUrl'=>'Yii::app()->createUrl("/backgrounds/delete", array("id" =>  $data["id_background"]))',
     ),
   ),
 ));

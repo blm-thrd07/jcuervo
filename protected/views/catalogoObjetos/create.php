@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Catalogo Objetoses'=>array('index'),
+	'Catalogo Objetos'=>array('index'),
 	'Create',
 );
 
@@ -10,6 +10,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create CatalogoObjetos</h1>
-
+<h1>Crear Nuevo Objeto</h1>
+<br/>
+<div style="float:'left';">
+  <a href="<?php echo CController::createUrl('/catalogoObjetos'); ?>">Regresar</a>
+</div>
+<br/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

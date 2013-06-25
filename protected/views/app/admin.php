@@ -6,13 +6,22 @@ $this->layout='admin';
 <h2>Resumen</h2>
 
 <div style="float:'left';">
-	<a href="<?php echo CController::createUrl('App/adminusuarios'); ?>">Usuarios Admin</a>
+	<a href="<?php echo CController::createUrl('App/adminusuarios'); ?>">Reporte de Usuarios</a>
 </div>
 <div style="float:'left';">
-	<a href="<?php echo CController::createUrl('App/admincomics'); ?>">Comics Admin</a>
+	<a href="<?php echo CController::createUrl('App/admincomics'); ?>">Reporte de Memes</a>
 </div>
 <div style="float:'right';">
-	<a href="<?php echo CController::createUrl('/accesorios'); ?>">Accesorios Admin</a>
+  <a href="<?php echo CController::createUrl('/catalogoPiezas'); ?>">Cuerpos, Cabezas, Ojos y Bocas para Avatar</a>
+</div>
+<div style="float:'right';">
+	<a href="<?php echo CController::createUrl('/accesorios'); ?>">Accesorios para Avatar</a>
+</div>
+<div style="float:'right';">
+  <a href="<?php echo CController::createUrl('/catalogoObjetos'); ?>">Objetos para Meme</a>
+</div>
+<div style="float:'right';">
+  <a href="<?php echo CController::createUrl('/backgrounds'); ?>">Fondos para Meme</a>
 </div>
 <div style="float:'right';">
   <a href="<?php echo CController::createUrl('app/admin').'/admin/salir'; ?>">Salir</a>

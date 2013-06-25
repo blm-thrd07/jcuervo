@@ -6,7 +6,7 @@ class CatalogoObjetosController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/admin';
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
@@ -32,7 +32,7 @@ class CatalogoObjetosController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'create', 'delete'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -73,8 +73,11 @@ class CatalogoObjetosController extends Controller
 		if(isset($_POST['CatalogoObjetos']))
 		{
 			$model->attributes=$_POST['CatalogoObjetos'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->url=CUploadedFile::getInstance($model,'url');
+			if($model->save()) {
+				$model->url->saveAs(Yii::app()->basePath.'/../images/objetos/'.$model->url->name);
+				$this->redirect(array('index'));
+			}
 		}
 
 		$this->render('create',array(
@@ -129,7 +132,7 @@ class CatalogoObjetosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CatalogoObjetos');
+		$dataProvider=new CActiveDataProvider('CatalogoObjetos', array('pagination'=>array('pageSize'=>20)));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

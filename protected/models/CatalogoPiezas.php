@@ -47,6 +47,7 @@ class CatalogoPiezas extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, tipo_pieza_id, url', 'safe', 'on'=>'search'),
+      array('url', 'file', 'types'=>'jpg, gif, png')
 		);
 	}
 
@@ -158,9 +159,13 @@ class CatalogoPiezas extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('tipo_pieza_id',$this->tipo_pieza_id);
 		$criteria->compare('url',$this->url,true);
+    $criteria->order = 'AvatarTipo.descripcion, t.id';
+    $criteria->with = 'AvatarTipo';
+    $criteria->together = true;
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+      'criteria'=>$criteria,
+      'pagination' => array('pageSize' => 20),
+    ));
 	}
 }
