@@ -358,7 +358,7 @@ from tbl_usuarios_has_tbl_comics c inner join tbl_usuarios b on b.id = c.tbl_usu
         $row= Yii::app()->db->createCommand('select max(NoVisto) as max from tbl_usuarios_has_tbl_comics')->queryAll();
         $cantidad=$row[0]['max'];
         if($cantidad!=null){
-            $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0','order'=>'NoVisto desc' ,'limit'=>5)); 
+            $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoVisto <= '.$cantidad.' and NoVisto !=0 AND isHidden=0','order'=>'NoVisto desc' ,'limit'=>9)); 
         }else{
             $resultado=null;
         }
@@ -371,7 +371,7 @@ from tbl_usuarios_has_tbl_comics c inner join tbl_usuarios b on b.id = c.tbl_usu
           $row= Yii::app()->db->createCommand('select max(NoCompartido) as max from tbl_usuarios_has_tbl_comics')->queryAll();
           $cantidad=$row[0]['max'];
           if($cantidad!=null){
-                  $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoCompartido<='.$cantidad.' and NoCompartido !=0 AND isHidden=0 AND isSpecial=0','order'=>'NoCompartido desc','limit'=>5));
+                  $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'NoCompartido<='.$cantidad.' and NoCompartido !=0 AND isHidden=0 AND isSpecial=0','order'=>'NoCompartido desc','limit'=>9));
           }else{
             $resultado=null;
           }
@@ -394,7 +394,7 @@ from tbl_usuarios_has_tbl_comics c inner join tbl_usuarios b on b.id = c.tbl_usu
 
 
   public function actionCatjoscuer(){
-        $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0 '));
+        $resultado=UsuariosHasTblComics::model()->with('Comic')->findAll(array('condition'=>'isSpecial=true AND isHidden=0', 'limit' =>9));
         //$resultado=$modelComics->findAll(array('condition'=>'destacado=1'));
         $this->renderPartial('//app/_filtros',array('resultado'=>$resultado));
 
