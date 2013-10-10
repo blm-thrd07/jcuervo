@@ -242,8 +242,16 @@ $('#spic').live('click',function(){
 
 
   
-
-FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
+window.fbAsyncInit = function() {
+	FB.init({ appId:'342733185828640',cookie:true,status:true,xfbml:true});
+};
+(function(d, debug){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/es_LA/all" + (debug ? "/debug" : "") + ".js";
+     ref.parentNode.insertBefore(js, ref);
+}(document, /*debug*/ false));
 
   function FacebookInviteFriends()
   { 
