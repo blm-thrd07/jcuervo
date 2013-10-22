@@ -51,7 +51,7 @@ if (referrerIsFacebookApp()) {
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=342733185828640';
   oauth_url += '&redirect_uri=' + encodeURIComponent('https://www.facebook.com/JCEspecial?sk=app_342733185828640');
-  oauth_url += '&scope=email,read_stream,user_likes,publish_actions,publish_stream,offline_access,user_photos'
+  oauth_url += '&scope=email,read_stream,user_likes,publish_actions,publish_stream,offline_access,user_photo'
 
 
   
